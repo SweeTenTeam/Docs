@@ -1,0 +1,105 @@
+name: Build LaTeX document
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - sources
+    paths:
+      - "documents/**"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout builds repository
+        uses: actions/checkout@v4
+        with:
+          repository: orlifera/ScubaDocs
+          ref: master
+          path: builds_repo
+          token: ${{ secrets.SECRET_KEY }}
+
+      - name: Move builds repo to RUNNER_TEMP
+        run: mv builds_repo "${RUNNER_TEMP}/builds_repo"
+
+      - name: Restore timestamps
+        uses: chetan/git-restore-mtime-action@v2
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          separator: ","
+          files: |
+            documents/**/*.tex
+
+      - name: Delete unchanged LaTeX documents
+        run: |
+          shopt -s globstar
+          ls documents/**/*.tex > .all
+          echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
+          comm -23 .all .changed > .latexignore
+          while IFS= read -r f; do rm -f "${f}"; done < .latexignore
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "**/!(*template*)/*.tex"
+          working_directory: documents/
+          work_in_root_file_dir: true
+          docker_image: ghcr.io/xu-cheng/texlive-small:latest
+          pre_compile: |
+            tlmgr update --self && tlmgr update --all
+            tlmgr install subfiles cbfonts-fd lipsum footmisc csquotes plex fontaxes mathabx textgreek makecell wrapfig siunitx adjustbox floatflt capt-of varwidth datatool xstring csvsimple ragged2e adjustbox threeparttable pgf pgfopts datetime2 enumitem
+
+      - name: Update builds with compiled files
+        run: |
+          shopt -s globstar
+          for f in documents/**/*.tex; do
+            [[ ! -f "$f" ]] && continue
+            filename=$(basename -- "$f")
+            pdf_file="${f%.tex}.pdf"
+            if [ -f "$pdf_file" ]; then
+              sudo touch -amd "$(date -R -r "$f")" "$pdf_file"
+              version=$(grep "^\s*% changelog:" "$f" | cut -d '"' -f2 | cut -d ',' -f1 | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
+              if [ -n "$version" ]; then
+                new_pdf_file="${f%.tex}_v${version}.pdf"
+                mv "$pdf_file" "$new_pdf_file"
+                pdf_file="$new_pdf_file"
+              fi
+              # Determine output directory based on type
+              if [[ "$f" == *"/interni/"* ]]; then
+                output_dir="docs/interni"
+              else
+                output_dir="docs/esterni"
+              fi
+              rsync -aR "$pdf_file" "${RUNNER_TEMP}/builds_repo/$output_dir"
+            fi
+          done
+
+      - name: Push changes to builds repository
+        run: |
+          cd "${RUNNER_TEMP}/builds_repo"
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git commit -m "Automatic LaTeX compilation $(date +%Y-%m-%d)" \
+            -m "Triggered by ${{ github.actor }} pushing changes to the source branch at $(date +%H:%M:%S)."; then
+            git push
+          else
+            echo "No changes to commit."
+          fi
+        shell: bash
+        env:
+          TZ: Europe/Rome
