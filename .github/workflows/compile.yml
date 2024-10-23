@@ -1,4 +1,4 @@
-name: Compile tex
+name: Compile and Move PDF
 
 on:
   workflow_dispatch:
@@ -12,22 +12,18 @@ on:
       nome-pdf:
         description: "Nome del pdf da creare"
         required: true
-      elimina-sorgenti:
-        description: "Elimina i file sorgenti"
-        type: boolean
-        required: true
-        default: false
 
 jobs:
   compile:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the source code
-      - name: Checkout code
+      # Checkout the develop branch
+      - name: Checkout develop branch
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ref: develop # Ensure we are in the develop branch
 
       # Ensure Python is set up (if needed)
       - name: Setup Python
@@ -43,28 +39,43 @@ jobs:
           working_directory: ${{ inputs.directory-sorgente }}
           latexmk_use_lualatex: true
 
-      # Move the generated PDF to the destination directory
-      - name: Move compiled PDF
+      # Move the compiled PDF to the destination directory
+      - name: Create destination directory
         run: |
-          mv ${{ inputs.directory-sorgente }}/main.pdf ${{ inputs.directory-destinazione }}/${{ inputs.nome-pdf }}.pdf
+          mkdir -p ${{ inputs.directory-destinazione }}
 
-      # Optionally delete the source files after compilation
-      - name: Commit and push changes
+      # Move the compiled PDF to the destination directory with the new name
+      - name: Move compiled PDF to sources
+        run: |
+          if [ -f ${{ inputs.directory-sorgente }}/main.pdf ]; then
+            mv ${{ inputs.directory-sorgente }}/main.pdf ${{ inputs.directory-sorgente }}/${{ inputs.nome-pdf }}.pdf
+          else
+            echo "Error: main.pdf not found in the source directory"
+            exit 1
+          fi
+
+      # Checkout master branch
+      - name: Checkout master branch
+        run: |
+          git fetch origin master
+          git checkout master
+
+      # Create destination directory in master if it doesn't exist
+      - name: Create destination directory in master
+        run: |
+          mkdir -p ${{ inputs.directory-destinazione }}
+
+      # Copy PDF from sources branch to master branch destination
+      - name: Copy PDF to master branch
+        run: |
+          cp ${{ inputs.directory-sorgente }}/${{ inputs.nome-pdf }}.pdf ${{ inputs.directory-destinazione }}/${{ inputs.nome-pdf }}.pdf
+          git add ${{ inputs.directory-destinazione }}/${{ inputs.nome-pdf }}.pdf
+
+      # Commit and push the PDF to the master branch
+      - name: Commit and push PDF to master
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-          if [ ${{ inputs.elimina-sorgenti }} == true ]; then
-            rm -r ${{ inputs.directory-sorgente }}
-            git add -A
-          else
-            git add '*.pdf' '*.tex'
-          fi
-
-          git commit -m "Compiled LaTeX document and moved PDF"
-
-          # Pull the latest changes from master
-          git pull --rebase https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} master
-
-          # Push changes to master
+          git commit -m "Added compiled PDF to master"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:master
