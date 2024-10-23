@@ -1,0 +1,103 @@
+
+
+\documentclass[italian, 12pt]{article}
+\input{candidatura/verbale_interno21-10/packages}
+\input{candidatura/verbale_interno21-10/variables}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+% -- TITOLO -- %
+\newcommand{\customtitle}{\Title} % o ESTERNO
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam_nobg.png}} 
+    \fancyhead[L]{\leftmark} 
+   	\renewcommand{\headrulewidth}{1pt} 
+  	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+\begin{document}
+\pagestyle{mystyle}
+\input{candidatura/verbale_interno21-10/firstPage}
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm}}
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			0.1 & 05/03/2024 & Orlando Ferazzani& Prima stesura del documento\\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+
+
+\tableofcontents
+\newpage
+
+
+\section{Registro presenze}
+
+\textbf{Orario di inizio}: 16:00\\
+\textbf{Orario di fine}: 18:00\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |c|c|c| } 
+		\hline
+		\textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza} \\
+  \hline 
+		Valeri Mihail Belenkov & Responsabile & Presente \\ 
+		Davide Benedetti 	& Redattore & Presente \\
+		Matteo Campagnaro	& Verificatore & Presente \\
+		Orlando Ferazzani 	& Redattore & Presente \\
+		Nicolas Fracaro 	& Verificatore & Presente \\
+		Mouad Mahdi		    & Redattore & Presente \\ 
+		Andrea Santi 	    & Verificatore & Presente \\
+		\hline
+	\end{tabular}
+	\end{table}
+	\end{flushleft}
+
+\section{Ordine del giorno}
+Durante l'incontro sono stati trattati i seguenti argomenti: 
+\begin{flushleft}
+        \begin{itemize}
+            \item Creazione Template per i file in \LaTeX
+            \item Creazione GitHub Action 
+            \item Stesura della valutazione dei capitolati
+        \end{itemize}
+\end{flushleft}
+\newpage
+
+\section{Verbale}
+\subsection{Creazione Template}
+Nella prima parte dell'incontro, il Team si è impegnato a creare il template di \LaTeX che verrà usato per la candidatura e tutta la documentazione interna.
+
+\subsection{Creazione GitHub Action}
+Dopo aver terminato il template per i vari documenti, alcuni membri del Team hanno impostato la GitHub action che permette il Push in automatico sulla master branch di tutti i documenti in formato PDF, scritti in \LaTeX che si trovano nella develop branch.
+
+\subsection{Stesura della valutazione dei capitolati}
+Mentre parte del team si occupava delle automazioni di GitHub, il resto iniziava la stesura della valutazione dei capitolati, partendo da quelli indicati nelle preferenze e poi muovendosi al resto. 
+
+
+
+
+
+\end{document}
