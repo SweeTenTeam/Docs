@@ -1,11 +1,11 @@
 % Set background color for cover page
 \pagecolor{beigeCover}
 
+\include{candidatura/valutazione_capitolati/variables}
 \begin{titlepage}
-\include{candidatura/verbale_interno10-15/variables}
 	\begin{tikzpicture}[remember picture, overlay]
 		\node[anchor=south east, opacity=0.5, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{images/logos/Universita_Padova_transparent.png}}; 
-		\node[anchor=north west, opacity=1, yshift = 8.4cm, xshift= 0.9cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{images/logos/sweetenteam_nobg.png}};
+		\node[anchor=north west, opacity=1, yshift = 8cm, xshift= 1.3cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{images/logos/sweetenteam_nobg.png}};
 	\end{tikzpicture}
 	
 	\begin{minipage}[t]{0.47\textwidth}
@@ -34,11 +34,11 @@
 	\vspace{4cm}
 	\begin{center}
 		\begin{flushright}
-			{\fontsize{30pt}{52pt}\selectfont \textbf{\Title \\ \date \\}} % o ESTERNO
+			{\fontsize{30pt}{52pt}\selectfont \textbf{\Title \\ \Date \\}} % o ESTERNO
 		\end{flushright}
-		\vspace{2.5cm}
+		\vspace{3cm}
 	\end{center}
-	\vspace{7.25 cm}
+	\vspace{7.5 cm}
 	{\small \textsc{\href{mailto: sweetenteam@gmail.com}{sweetenteam@gmail.com}}}
 \pagestyle{mystyle}
 \end{titlepage}
