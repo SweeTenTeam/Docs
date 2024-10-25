@@ -1,0 +1,98 @@
+\documentclass[italian, 12pt]{article}
+\input{candidatura/verbale_interno10-24/packages}
+\input{candidatura/verbale_interno10-24/variables}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+% -- TITOLO -- %
+\newcommand{\customtitle}{\Title} % o ESTERNO
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam_nobg.png}} 
+    \fancyhead[L]{\leftmark} 
+   	\renewcommand{\headrulewidth}{1pt} 
+  	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+\begin{document}
+\pagestyle{mystyle}
+\input{candidatura/verbale_interno10-24/firstPage}
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm}}
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			0.1 & 26/10/2024 & Valeri Mihail Belenkov& Prima stesura del documento\\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+
+
+\tableofcontents
+\newpage
+
+
+\section{Registro presenze}
+
+\textbf{Orario di inizio}: 16:00\\
+\textbf{Orario di fine}: 19:00\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |c|c|c| } 
+		\hline
+		\textbf{Componente} & \textbf{Matricola} & \textbf{Presenza} \\
+  \hline 
+		Valeri Mihail Belenkov & 2068232 & Presente \\
+		Davide Benedetti 	& 2042339 & Presente \\
+		Matteo Campagnaro	& 2068243 & Presente \\
+		Orlando Ferazzani 	& 2058653 & Presente \\
+		Nicolas Fracaro 	& 2076420 & Presente \\
+		Mouad Mahdi		    & 2044222 & Presente \\ 
+		Andrea Santi 	    & 2084624 & Presente \\
+		\hline
+	\end{tabular}
+	\end{table}
+	\end{flushleft}
+
+\section{Ordine del giorno}
+Durante l'incontro sono stati trattati i seguenti argomenti: 
+\begin{flushleft}
+        \begin{itemize}
+            \item Contatto aziende M31 e Azzurrodigitale
+            \item Stima dei costi 
+            \item Creazione powerpoint per il diario di bordo
+        \end{itemize}
+\end{flushleft}
+\newpage
+
+\section{Verbale}
+\subsection{Contatto aziende M31 e Azzurrodigitale}
+Nella prima parte dell'incontro, sono state ricontattate le aziende dei capitolati C6 e C9 e sono stati fissati dei meetings per chiarire i dubbi sul prodotto che ogni azienda aveva in mente.
+
+\subsection{Stima dei costi}
+Successivamente c'è stata una discussione per decidere il numero di ore che ogni membro del gruppo avrebbe dovuto lavorare e quante ore sarebbero state allocate per ogni ruolo; è stato quindi creato il documento della stima dei costi.
+
+\subsection{Creazione powerpoint per il diario di bordo}
+Infine il gruppo ha creato il template per le presentazioni del diario di bordo, e ha scritto le slides da esporre lunedì 28 ottobre.
+
+
+\end{document}
