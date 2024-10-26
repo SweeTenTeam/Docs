@@ -1,0 +1,87 @@
+
+
+\documentclass[italian, 12pt]{article}
+\input{candidatura/verbali_esterni/verbale_esterno10-17/packages}
+\input{candidatura/verbali_esterni/verbale_esterno10-17/variables}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+% -- TITOLO -- %
+\newcommand{\customtitle}{\Title} % o ESTERNO
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam_nobg.png}} 
+    \fancyhead[L]{\leftmark} 
+   	\renewcommand{\headrulewidth}{1pt} 
+  	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+\begin{document}
+\pagestyle{mystyle}
+\input{candidatura/verbali_esterni/verbale_esterno10-17/firstPage}
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm}}
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			0.2 & 26/10/2024 & Orlando Ferazzani & Prima revisione del documento \\
+			0.1 & 23/10/2024 & Nicolas Fracaro& Prima stesura del documento\\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+
+
+\tableofcontents
+\newpage
+
+\section{Contenuti del verbale}
+
+\subsection{Informazioni sull'incontro}
+\begin{itemize}
+    \item \textbf{Luogo:} Scambio di email all'indirizzo fornito nella presentazione del capitolato di \textit{AzzurroDigitale}
+    \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi
+    \item \textbf{Partecipanti esterni:} Nicola Boscaro (rappresentante di \textit{AzzurroDigitale})
+\end{itemize}
+
+\section{Obiettivi dell'incontro}
+Durante l'incontro sono stati trattati i seguenti temi:
+\begin{itemize}
+    \item Chiarire gli obiettivi e le tecnologie da utilizzare per il progetto presentato nel capitolato 9.
+\end{itemize}
+
+\section{Sintesi dell'incontro}
+Il team ha concordato di inviare direttamente domande specifiche via email per velocizzare le risposte, riducendo al minimo il tempo richiesto all'azienda proponente.
+
+\section{Domande effettuate e relative risposte}
+\subsection{BuddyBot deve accedere solo alle repository interne di \textit{AzzurroDigitale} o anche a repository pubbliche?}
+L'azienda ha confermato che è richiesto l'accesso esclusivo alle repository private tramite API.
+
+\subsection{Come viene gestita l'autenticazione e l'accesso alle diverse fonti di \textit{AzzurroDigitale} da parte dei vari utenti di BuddyBot?}
+L'azienda ha indicato che, per gli scopi di questo progetto, non è necessario implementare una gestione capillare dei permessi utente, confermando, però, che potrebbe essere uno sviluppo futuro interessante. L'integrazione con le fonti (Confluence, Jira, GitHub) avverrà su spazi di progetto specifici.
+
+\subsection{Cosa si intende per "sistema di Bug Reporting"?}
+L'azienda ha indicato l'uso della sezione "Issues" delle repository GitHub come metodo per fornire feedback su eventuali bug riscontrati.
+
+\subsection{È consentito l'uso di tecnologie diverse da quelle consigliate da \textit{AzzurroDigitale} nel capitolato?}
+L'azienda ha confermato che le tecnologie consigliate sono opzionali, lasciando libertà di utilizzare tecnologie alternative, come ad esempio React invece di Angular.
+
+
+
+\end{document}
