@@ -1,0 +1,80 @@
+\documentclass[italian, 12pt]{article}
+\input{candidatura/verbali_esterni/verbale_esterno10-25/packages}
+\input{candidatura/verbali_esterni/verbale_esterno10-25/variables}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+% -- TITOLO -- %
+\newcommand{\customtitle}{\Title} % o ESTERNO
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam_nobg.png}} 
+    \fancyhead[L]{\leftmark} 
+   	\renewcommand{\headrulewidth}{1pt} 
+  	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+\begin{document}
+\pagestyle{mystyle}
+\input{candidatura/verbali_esterni/verbale_esterno10-25/firstPage}
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm}}
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+            0.2 & 27/10/2024 & Orlando Ferazzani & Revisione e verifica del documento \\
+			0.1 & 26/10/2024 & Benedetti Davide & Prima stesura del documento\\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+
+
+\tableofcontents
+\newpage
+
+
+\section{Informazioni sulla riunione}
+\begin{itemize}
+    \item \textbf{Luogo:} Chiamata sulla piattaforma Teams
+    \item \textbf{Ora di inizio:} 15:10
+    \item \textbf{Ora di fine:} 15:35
+    \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi 
+    \item \textbf{Partecipanti esterni:} Luca Cossaro , xxxx
+\end{itemize}
+
+\section{Sintesi dell'incontro}
+Il team si è confrontato con l'azienda m31, riguardo il capitolato C6, inizialmente su una domanda inerente l'architettura del progetto, e, successivamente, su come poter svolgere al meglio il progetto e l'ambito organizzativo del gruppo.
+
+
+\section{Domande effettuate e relative risposte}
+\subsection{Architettura interna e connessione magazzini}
+E' stato chiarita la loro proposta di architettura su come i magazzini comunicano le loro disponibilità agli altri magazzini, inoltre è stato specificato che se avessimo delle proposte alternative che soddisfano ugualmente i loro requisiti, saranno più che felici di prenderle in considerazione
+
+\subsection{Collaborazioni passate}
+Il gruppo voleva sapere se avessero collaborato in passato con un gruppo simile al nostro, quindi un team universitario del numero simile di membri, per poter così reperire informazioni che sarebbero state utili per uno svolgimento ottimale del progetto. L'azienda, seppur non avesse mai collaborato con studenti universitari, lo ha fatto con gruppi di grandezza simile alla nostra, dandoci preziosi suggerimenti su come procedere al meglio:
+\begin{itemize}
+    \item Essere ben chiari e sinceri
+    \item Trovarsi spesso con tutti i membri del team, ma non solamente da remoto, ma anche dal vivo
+    \item Essendo composto da 7 membri, il team non è piccolo, sarà quindi importantissimo definire bene le task e obiettivi ad ogni sprint di ogni componente, in modo tale che ognuno sappia il proprio contesto di lavoro e non "pesti i piedi" di qualcun'altro
+    \item Mai dare nulla per scontato e, quindi, se dovessimo avere dei dubbi, è importante chiedere subito al cliente, per evitare di perdere tempo e evitare errori
+\end{itemize}
+
+
+\end{document}
