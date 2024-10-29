@@ -1,6 +1,6 @@
 \documentclass[italian, 12pt]{article}
-\input{candidatura/lettera_di_presentazione/packages}
-\input{candidatura/lettera_di_presentazione/variables}
+\input{candidatura/verbali_esterni/verbale_esterno10-28/packages}
+\input{candidatura/verbali_esterni/verbale_esterno10-28/variables}
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
@@ -27,70 +27,62 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{candidatura/lettera_di_presentazione/firstPage}
+\input{candidatura/verbali_esterni/verbale_esterno10-28/firstPage}
 
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm}}
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+            0.2 & 29/10/2024 & Davide Benedetti & Revisione e verifica del documento\\
+			0.1 & 28/10/2024 & Mouad Mahdi & Prima stesura del documento\\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+
+
+\tableofcontents
 \newpage
 
-Con la presente comunicazione, il gruppo \textit{SweeTen Team} desidera informare che intende proporsi ed impegnarsi nella realizzazione del progetto delegato da \hspace{0.1em} \raisebox{-0.3ex}{\includegraphics[height=1.8ex]{images/logos/AzzurroDigitale-logo.png}}
-\begin{center}
-  \textbf{BuddyBot}
-\end{center}
-In seguito viene fornito il link relativa a tutta la documentazione redatta dal team
-\begin{center}
-  \href{https://github.com/SweeTenTeam/Docs}{\textcolor{blue}{\underline{Documentazione \textit{SweeTen Team}}}}
-\end{center}
-in cui, oltre a tale lettera, si possono trovare:
+
+\section{Informazioni sulla riunione}
 \begin{itemize}
-    \item Verbali Interni
-    \begin{multicols}{2} % Start two-column layout here
-    \begin{itemize}
-        \item 15/10
-        \item 17/10
-        \item 21/10
-        \item 22/10
-        \item 24/10
-    \end{itemize}
-    \end{multicols}
-    \item Verbali Esterni
-    \begin{itemize}
-        \item 17/10 \& 18/10 (contatti via mail)
-        \item 25/10 meeting-M31
-        \item 28/10 meeting-AzzurroDigitale
-    \end{itemize}
-    \item Preventivo costi
-    \item Valutazione dei capitolati
+    \item \textbf{Luogo:} Videochiamata su Google meet
+    \item \textbf{Ora di inizio:} 15:00
+    \item \textbf{Ora di fine:} 15:20
+    \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi 
+    \item \textbf{Partecipanti esterni:} Martina Daniele, Giorgio Vallini , Mattia Gottardello
 \end{itemize}
 
-\textit{SweeTen Team} ha in programma di completare il prodotto richiesto entro il 28/03/2025, con un preventivo di spesa pari a 12.740,00€. Maggiori dettagli sono disponibili nel documento intitolato \underline{Preventivo costi}.
-\\Nella tabella che segue, i componenti del gruppo:
-\begin{flushleft}
-    \begin{minipage}{0.6\textwidth}
-        \begin{table}[H]
-            \centering
-            \begin{tabular}{|c|c|}
-                \hline
-                \textbf{Componente} & \textbf{Matricola} \\
-                \hline
-                Valeri Mihail Belenkov & 2068232 \\
-        		Davide Benedetti 	& 2042339 \\
-        		Matteo Campagnaro	& 2068243 \\
-        		Orlando Ferazzani 	& 2058653 \\
-        		Nicolas Fracaro 	& 2076420 \\
-        		Mouad Mahdi		    & 2044222 \\ 
-        		Andrea Santi 	    & 2084624 \\
-                \hline
-            \end{tabular}
-        \end{table}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.35\textwidth}
-        \vspace{1cm}
-        \begin{flushleft}
-            Cordiali saluti, \\
-            \textbf{SweeTen Team}
-        \end{flushleft}
-    \end{minipage}
-\end{flushleft}
-\end{document}
+\section{Motivo dell'incontro}
+Il team si è incontrato con i rappresentanti dell'azienda AzzurroDigitale per fare domande specifiche sul progetto e sul loro modo di lavorare con i gruppi ma anche per connoscere il loro team siccome è il progetto al quale teniamo maggiormente.
+
+\section{Domande effettuate e relative risposte}
+\subsection{Requisiti specifici per l'interfaccia grafica}
+I rappresentanti ci hanno specificato che abbiamo libera scelta su come fare l'intefaccia, l'unico vincolo, ovviamente, è che sia in modalità chat e che ci sia una sezione con la cronologia delle conversazioni passate fatte dall'utente (modello chatgpt).
+
+\subsection{Collaborazioni con altri gruppi in passato}
+Come per gli altri proponenti abbiamo chiesto se avessero già lavorato in passato con altri gruppi, in particolare universitari. Ci è stato risposto di si e sempre per un progetto di ingegneria del software, uno dei rappresentanti è addirittura un ex studente del nostro corso e ci ha dato delle direttive da seguire:
+\begin{itemize}
+    \item Dedicare tempo alla documentazione siccome viene presa molto in considerazione
+    \item Dedicare tempo all'apprendimento delle tecnologie prima di cimentarsi sulla pratica
+    \item Capire cosa richiederà tempo per le fasi che devono essere svolte da zero e quali invece si possono fare prendendo spunto da progetti già fatti di esperienze passate o, più in generale, online
+    \item Non perdere tempo nel perfezionare feature prima di terminare quelle che soddisfano i requisiti richiesti
+\end{itemize}
+
+\subsection{Attività che richiederà più tempo}
+Abbiamo chiesto quale secondo loro è la parte del progetto più impegnativa. La loro risposta è che la prate front-end e back-end non saranno difficili da realizzare e fattibili anche in 1-2 sprint mentre ci sarà molto da lavorare sulla comunicazione con servizi terzi (github, slack, ecc) e farli arrivare al servizio LLM per elaborarli.
+
+\subsection{Modalità di comunicazione}
+Volevamo sapere come sarebbe avvenuta la comunicazione con loro durante lo svolgimento del progetto. Ci è stato detto che una volta aggiudicato l'appalto ci sarà un incontro iniziale per specificare il loro way of working e i loro mezzi di comunicazione formali e informali (per contatti veloci dovuti a dubbi e problemi)
+
+\subsection{Modello AI da usare}
+Abbiamo chiesto se c'è un modello specifico da usare per questo progetto. Ci hanno detto che la scelta del modello migliore per questa applicazione fa parte del lavoro di ricerca e apprendimento che dovremo fare e se ce ne sarà bisogno ci forniranno le versioni a pagamento, con dei limiti da definire.
+
 
 \end{document}
