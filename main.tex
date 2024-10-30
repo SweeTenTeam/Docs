@@ -1,8 +1,6 @@
-
-
 \documentclass[italian, 12pt]{article}
-\input{candidatura/verbali_esterni/verbale_esterno10-17/packages}
-\input{candidatura/verbali_esterni/verbale_esterno10-17/variables}
+\input{candidatura/verbale_interno10-24/packages}
+\input{candidatura/verbale_interno10-24/variables}
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
@@ -29,7 +27,7 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{candidatura/verbali_esterni/verbale_esterno10-17/firstPage}
+\input{candidatura/verbale_interno10-24/firstPage}
 
 %-----------tabella versioni-----------%
 \begin{table}[!h]
@@ -40,8 +38,8 @@
 			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo}  \\
 			\\[-2ex] \hline \\[-1.5ex]
             1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Matteo Campagnaro & Verificatore\\
-			0.2 & 26/10/2024 & Prima revisione del documento & Orlando Ferazzani & Verificatore\\
-			0.1 & 23/10/2024 & Prima stesura del documento & Nicolas Fracaro & Redattore\\
+            0.2 & 26/10/2024 & Revisione e correzione sulla sintassi e layout & Andrea Santi & Verificatore  \\
+			0.1 & 25/10/2024 & Prima stesura del documento & Valeri Mihail Belenkov & Redattore\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -52,37 +50,51 @@
 \tableofcontents
 \newpage
 
-\section{Contenuti del verbale}
 
-\subsection{Informazioni sull'incontro}
-\begin{itemize}
-    \item \textbf{Luogo:} Scambio di email all'indirizzo fornito nella presentazione del capitolato di \textit{AzzurroDigitale}
-    \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi
-    \item \textbf{Partecipanti esterni:} Nicola Boscaro (rappresentante di \textit{AzzurroDigitale})
-\end{itemize}
+\section{Registro presenze}
 
-\section{Obiettivi dell'incontro}
-Durante l'incontro sono stati trattati i seguenti temi:
-\begin{itemize}
-    \item Chiarire gli obiettivi e le tecnologie da utilizzare per il progetto presentato nel capitolato 9.
-\end{itemize}
+\textbf{Orario di inizio}: 16:00\\
+\textbf{Orario di fine}: 19:00\\
 
-\section{Sintesi dell'incontro}
-Il team ha concordato di inviare direttamente domande specifiche via email per velocizzare le risposte, riducendo al minimo il tempo richiesto all'azienda proponente.
 
-\section{Domande effettuate e relative risposte}
-\subsection{BuddyBot deve accedere solo alle repository interne di \textit{AzzurroDigitale} o anche a repository pubbliche?}
-L'azienda ha confermato che è richiesto l'accesso esclusivo alle repository private tramite API.
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |c|c|c| } 
+		\hline
+		\textbf{Componente} & \textbf{Matricola} & \textbf{Presenza} \\
+  \hline 
+		Valeri Mihail Belenkov & 2068232 & Presente \\
+		Davide Benedetti 	& 2042339 & Presente \\
+		Matteo Campagnaro	& 2068243 & Presente \\
+		Orlando Ferazzani 	& 2058653 & Presente \\
+		Nicolas Fracaro 	& 2076420 & Presente \\
+		Mouad Mahdi		    & 2044222 & Presente \\ 
+		Andrea Santi 	    & 2084624 & Presente \\
+		\hline
+	\end{tabular}
+	\end{table}
+	\end{flushleft}
 
-\subsection{Come viene gestita l'autenticazione e l'accesso alle diverse fonti di \textit{AzzurroDigitale} da parte dei vari utenti di BuddyBot?}
-L'azienda ha indicato che, per gli scopi di questo progetto, non è necessario implementare una gestione capillare dei permessi utente, confermando, però, che potrebbe essere uno sviluppo futuro interessante. L'integrazione con le fonti (Confluence, Jira, GitHub) avverrà su spazi di progetto specifici.
+\section{Ordine del giorno}
+Durante l'incontro sono stati trattati i seguenti argomenti: 
+\begin{flushleft}
+        \begin{itemize}
+            \item Contatto aziende M31 e Azzurrodigitale
+            \item Stima dei costi 
+            \item Creazione powerpoint per il diario di bordo
+        \end{itemize}
+\end{flushleft}
+\newpage
 
-\subsection{Cosa si intende per "sistema di Bug Reporting"?}
-L'azienda ha indicato l'uso della sezione "Issues" delle repository GitHub come metodo per fornire feedback su eventuali bug riscontrati.
+\section{Verbale}
+\subsection{Contatto aziende M31 e Azzurrodigitale}
+Nella prima parte dell'incontro sono state nuovamente contattate le aziende dei capitolati C6 e C9 e, successivamente, sono stati fissati dei meetings per chiarire i dubbi sul prodotto che ogni azienda aveva in mente.
 
-\subsection{È consentito l'uso di tecnologie diverse da quelle consigliate da \textit{AzzurroDigitale} nel capitolato?}
-L'azienda ha confermato che le tecnologie consigliate sono opzionali, lasciando libertà di utilizzare tecnologie alternative, come ad esempio React invece di Angular.
+\subsection{Stima dei costi}
+Successivamente c'è stata una discussione per decidere il numero di ore che ogni membro del gruppo avrebbe dovuto lavorare e quante ore sarebbero state allocate per ogni ruolo; è stato quindi creato il documento della stima dei costi.
 
+\subsection{Creazione powerpoint per il diario di bordo}
+Infine il gruppo ha creato il template per le presentazioni del diario di bordo e ha scritto le slides che verranno esposte lunedì 28 ottobre.
 
 
 \end{document}
