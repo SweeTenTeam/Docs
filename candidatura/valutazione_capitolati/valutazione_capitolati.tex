@@ -35,9 +35,11 @@
 	\begin{center}
 		\begin{tabular}{ c c c p{9cm}}
 			\hline \\[-2ex]
-			Ver. & Data & Autore & Descrizione \\
+			Ver. & Data & Descrizione & Autore & Ruolo  \\
 			\\[-2ex] \hline \\[-1.5ex]
-			0.1 & 25/10/2024 & Matteo Campagnaro& Prima stesura del documento\\
+			1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Nicolas Fracaro & Verificatore\\
+			0.2 & 30/10/2024 & Verifica e correzione sintassi & Nicolas Fracaro & Verificatore\\
+			0.1 & 25/10/2024 & Prima stesura del documento & Matteo Campagnaro & Redattore\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -100,7 +102,7 @@ Il progetto è risultato ben bilanciato nelle richieste e nelle scadenze, permet
 L’azienda, oltre a essersi presentata in modo chiaro, si è resa anche molto disponibile rispondendo tempestivamente alle nostre domande, facendo un’ottima impressione rassicurando inoltre un continuo sostegno tramite le figure di riferimento interne presentate.
 
 \subsection{Conclusioni}
-per le motivazioni sopra citate, questo capitolato è stato votato dalla maggioranza dei membri, risultando così la nostra prima scelta.
+Per le motivazioni sopra citate, questo capitolato è stato votato dalla maggioranza dei membri, risultando così la nostra prima scelta.
 
 \section{Capitolato di interesse C6: Sistema di gestione di un magazzino distribuito}
 \subsection{Descrizione}
@@ -224,7 +226,7 @@ Sebbene il progetto e l’azienda avessero fatto una buona impressione, le prefe
 \begin{itemize}
 \item\textbf{Proponente}: Var Group S.p.A.
 \item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}: Creazione di un servizio di automazione che consente agli utenti di creare workflow personalizzati utilizzando le API dei software installati localmente e l'intelligenza artificiale automatizzare compiti quotidiani che normalmente vengono eseguiti manualmente.
+\item\textbf{Obiettivo}: Creazione di un servizio di automazione che consente agli utenti di creare workflow personalizzati utilizzando le API dei software installati localmente e l'intelligenza artificiale per automatizzare compiti quotidiani che normalmente vengono eseguiti manualmente.
 \end{itemize}
 
 \subsection{Dominio applicativo}
@@ -234,7 +236,7 @@ Lo scopo del progetto è creare un applicazione locale per ambienti windows e ap
 Per lo sviluppo di questo progetto vengono raccomandate le seguenti tecnologie, Python o C\# con MongoDB o altro database locale con React per interfacce applicative web, per l'ambiente Windows mentre Swift con Swift UI e MongoDB per l'ambiente Apple. Invece per lo sviluppo della API cloud responsabile dell'automazione si consiglia NodeJS, Python o Typescript.
 
 \subsection{Aspetti positivi}
-Il progetto sembra molto stimolante per il fatto che vengono utilizzate diverse tecnologie interessanti e per il fatto che la Gen AI viene usata in un modo diverso dai soliti servizi di assistenza che prende in input una domanda e da in output una risposta ma è una vera e propria automatizzazione di task che può essere estesa nel futuro.
+Il progetto sembra molto stimolante sia per l'uso di tecnologie interessanti, sia per l'impiego della Gen AI in un modo diverso rispetto ai tradizionali servizi di assistenza, che solitamente prendono in input una domanda e restituiscono una risposta. Qui, invece, si realizza una vera e propria automatizzazione di task, con possibilità di estensione futura.
 
 \subsection{Fattori critici}
 Il progetto presenta diverse difficoltà tra cui la creazione del servizio di automazione guidato da AI e la creazione di un'applicazione locale che permette agli utenti di disegnare dei workflow interattivi.
@@ -251,19 +253,30 @@ Dopo varie discussioni e votazioni non abbiamo messo questo capitolato tra le no
 \end{itemize}
 
 \subsection{Dominio applicativo}
-Il progetto richiede lo sviluppo di simulatori per generare dati GPS realistici che rappresentino i tragitti e la posizione attuale degli utenti, la predisposizione degli esercizi commerciali e dei profili degli utenti, l'implementazione di una piattaforma di archiviazione e gestione dei dati adatta per l'elaborazione tramite LLM, l'integrazione di un modulo di elaborazione basato su LLM e la realizzazione di una dashboard di visualizzazione che includa una mappa in tempo reale delle posizioni dei mezzi/utenti e la visualizzazione dei messaggi personalizzati degli esercizi commerciali, ma solo in caso di rilevato interesse dell'utente e in prossimità dell'attività commerciale.
+Il progetto richiede:
+\begin{itemize}
+    \item lo sviluppo di simulatori per generare dati GPS realistici che rappresentino i tragitti e la posizione attuale degli utenti;
+    \item la predisposizione degli esercizi commerciali e dei profili degli utenti;
+    \item l'implementazione di una piattaforma di archiviazione e gestione dei dati adatta per l'elaborazione tramite LLM;
+    \item l'integrazione di un modulo di elaborazione basato su LLM;
+    \item la realizzazione di una dashboard di visualizzazione che includa:
+    \begin{itemize}
+        \item una mappa in tempo reale delle posizioni dei mezzi/utenti;
+        \item la visualizzazione dei messaggi personalizzati degli esercizi commerciali, attivata solo in caso di rilevato interesse dell'utente e in prossimità dell'attività commerciale.
+    \end{itemize}
+\end{itemize}
 
 \subsection{Dominio tecnologico}
-Il progetto richiede l'utilizzo di framework come Python e librerie di generazione dati per simulare dati GPS realistici, broker come Apache Kafka, RabbitMQ o HiveMQ per disaccoppiare lo stream di informazioni, strumenti per lo stream processing come Apache Airflow, Apache NiFi, Apache Spark o Apache Flink, strumenti basati su LLM come LangChain o Flow per l'elaborazione dei messaggi, database e storage come PostGIS, ClickHouse o Timescale per la gestione di dati timeseries e geospaziali, e infine strumenti per la data visualization come Superset, Grafana o Tableau, sia lato utente che lato cliente.
+Il progetto richiede l'utilizzo di framework come Python e di librerie di generazione dati per simulare dati GPS realistici; broker come Apache Kafka, RabbitMQ o HiveMQ per disaccoppiare lo stream di informazioni; strumenti per lo stream processing come Apache Airflow, Apache NiFi, Apache Spark o Apache Flink; strumenti basati su LLM, come LangChain o Flow, per l'elaborazione dei messaggi; database e storage, come PostGIS, ClickHouse o Timescale, per la gestione di dati timeseries e geospaziali; e, infine, strumenti per la data visualization, come Superset, Grafana o Tableau, sia lato utente che lato cliente.
 
 \subsection{Aspetti positivi}
 Il progetto mira a risolvere un problema diverso dagli altri progetti e utilizza tecnologie specifiche per il trattamento, simulazione e utilizzo dei dati raccolti da diverse fonti.
 
 \subsection{Fattori critici}
-La realizzazione dell'algoritmo che mette insieme i diversi dati e la creazione del bias da usare per unire i diversi utenti alle possibili pubblicità sembra complicato e richiederà molto tempo per i test.
+La realizzazione dell'algoritmo che combina i vari dati e la creazione del bias da usare per associare i diversi utenti alle possibili pubblicità sembrano attività particolarmente complesse, che potrebbero richiedere molto tempo per i test.
 
 \subsection{Conclusioni}
-Non abbiamo preso in considerazione questo progetto perchè la presentazione dell’azienda ci è sembrata meno informativa rispetto alle altre e sembra che il progetto richieda una più grande ricerca personale su come svolgere il lavoro da fare rispetto agli altri progetti.
+Non abbiamo preso in considerazione questo progetto perchè la presentazione dell’azienda ci è sembrata meno informativa rispetto alle altre e sembra che il progetto richieda una ricerca personale più approfondita e onerosa per comprendere come svolgere il lavoro rispetto agli altri progetti.
 
 \section{Capitolato C7: LLM: Assistente virtuale}
 \subsection{Descrizione}
@@ -274,12 +287,8 @@ Non abbiamo preso in considerazione questo progetto perchè la presentazione del
 \end{itemize}
 
 \subsection{Dominio applicativo}
-Il progetto si concentra sullo sviluppo di un assistente virtuale basato su modelli linguistici di grandi dimensioni (LLM). L'obiettivo è aiutare i clienti nella ricerca di informazioni su prodotti complessi all'interno di cataloghi aziendali estesi. Questo assistente virtuale risponde a domande frequenti sui prodotti, migliorando l'accesso alle informazioni senza la necessità di interagire con esperti specifici in tempo reale. Le applicazioni includono:
-\begin{itemize}
-\item Analisi predittiva della domanda.
-\item Profilazione dei clienti per marketing.
-\item Risposte a domande sui prodotti in settori come l'alimentazione, la sicurezza e l'ordine multiprodotto.
-\end{itemize}
+Il progetto si concentra sullo sviluppo di un assistente virtuale basato su modelli linguistici di grandi dimensioni (LLM). L'obiettivo è aiutare i clienti nella ricerca di informazioni su prodotti complessi all'interno di cataloghi aziendali estesi. Questo assistente virtuale risponde a domande frequenti sui prodotti, migliorando l'accesso alle informazioni senza la necessità di interagire con esperti specifici in tempo reale.
+
 
 \subsection{Dominio tecnologico}
 Il sistema sfrutta Large Language Models (LLM) per comprendere e rispondere alle domande degli utenti. Le tecnologie proposte includono:
