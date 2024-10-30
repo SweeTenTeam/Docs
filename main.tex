@@ -1,8 +1,9 @@
 
 
 \documentclass[italian, 12pt]{article}
-\input{candidatura/verbali_esterni/verbale_esterno10-18/packages}
-\input{candidatura/verbali_esterni/verbale_esterno10-18/variables}
+\input{candidatura/verbali_esterni/verbale_esterno10-17/packages}
+\input{candidatura/verbali_esterni/verbale_esterno10-17/variables}
+
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
 
@@ -28,7 +29,7 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{candidatura/verbali_esterni/verbale_esterno10-18/firstPage}
+\input{candidatura/verbali_esterni/verbale_esterno10-17/firstPage}
 
 %-----------tabella versioni-----------%
 \begin{table}[!h]
@@ -39,7 +40,7 @@
 			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo}  \\
 			\\[-2ex] \hline \\[-1.5ex]
             1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Matteo Campagnaro & Verificatore\\
-			0.2 & 24/10/2024 & Prima revisione del documento & Orlando Ferazzani & Verificatore \\
+			0.2 & 26/10/2024 & Prima revisione del documento & Orlando Ferazzani & Verificatore\\
 			0.1 & 23/10/2024 & Prima stesura del documento & Nicolas Fracaro & Redattore\\
 			\\[-1.5ex] \hline
 		\end{tabular}
@@ -55,26 +56,33 @@
 
 \subsection{Informazioni sull'incontro}
 \begin{itemize}
-    \item \textbf{Luogo:} Scambio di email all'indirizzo fornito nella presentazione del capitolato di \textit{Sanmarco Informatica}
+    \item \textbf{Luogo:} Scambio di email all'indirizzo fornito nella presentazione del capitolato di \textit{AzzurroDigitale}
     \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi
-    \item \textbf{Partecipanti esterni:} Alex Beggiato (rappresentante di \textit{Sanmarco Informatica})
+    \item \textbf{Partecipanti esterni:} Nicola Boscaro (rappresentante di \textit{AzzurroDigitale})
 \end{itemize}
 
 \section{Obiettivi dell'incontro}
 Durante l'incontro sono stati trattati i seguenti temi:
 \begin{itemize}
-    \item Chiarire i casi d'uso dell'applicazione e gli eventuali requisiti di autenticazione richiesti da \textit{Sanmarco Informatica} per il progetto descritto nel capitolato 5.
+    \item Chiarire gli obiettivi e le tecnologie da utilizzare per il progetto presentato nel capitolato 9.
 \end{itemize}
 
 \section{Sintesi dell'incontro}
-Il team ha concordato di inviare domande specifiche via email per ottenere risposte più rapide e ridurre al minimo il tempo necessario all'azienda proponente.
+Il team ha concordato di inviare direttamente domande specifiche via email per velocizzare le risposte, riducendo al minimo il tempo richiesto all'azienda proponente.
 
 \section{Domande effettuate e relative risposte}
+\subsection{BuddyBot deve accedere solo alle repository interne di \textit{AzzurroDigitale} o anche a repository pubbliche?}
+L'azienda ha confermato che è richiesto l'accesso esclusivo alle repository private tramite API.
 
-\subsection{Quali sono i principali casi d'uso che \textit{Sanmarco Informatica} ha previsto per l'applicazione richiesta?}
-L'azienda ha indicato che l'applicazione sarà di uso generale e dovrà quindi essere in grado di gestire dati di diversa natura. Sono stati forniti alcuni esempi di casi d'uso, come "analisi delle vendite", "analisi demografica" e "analisi del codice". L'azienda ha inoltre suggerito la creazione di una landing page iniziale, in cui l'utente possa selezionare la fonte da cui reperire i dati, in considerazione della necessità di integrare informazioni provenienti da più fonti.
+\subsection{Come viene gestita l'autenticazione e l'accesso alle diverse fonti di \textit{AzzurroDigitale} da parte dei vari utenti di BuddyBot?}
+L'azienda ha indicato che, per gli scopi di questo progetto, non è necessario implementare una gestione capillare dei permessi utente, confermando, però, che potrebbe essere uno sviluppo futuro interessante. L'integrazione con le fonti (Confluence, Jira, GitHub) avverrà su spazi di progetto specifici.
 
-\subsection{È richiesto un sistema di autenticazione per l'accesso all'applicazione?}
-L'azienda ha confermato che, per il progetto in questione, non è necessario implementare alcun sistema di autenticazione.
+\subsection{Cosa si intende per "sistema di Bug Reporting"?}
+L'azienda ha indicato l'uso della sezione "Issues" delle repository GitHub come metodo per fornire feedback su eventuali bug riscontrati.
+
+\subsection{È consentito l'uso di tecnologie diverse da quelle consigliate da \textit{AzzurroDigitale} nel capitolato?}
+L'azienda ha confermato che le tecnologie consigliate sono opzionali, lasciando libertà di utilizzare tecnologie alternative, come ad esempio React invece di Angular.
+
+
 
 \end{document}
