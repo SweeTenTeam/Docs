@@ -1,7 +1,8 @@
-\documentclass[italian, 12pt]{article}
-\input{candidatura/verbali_esterni/verbale_esterno10-25/packages}
-\input{candidatura/verbali_esterni/verbale_esterno10-25/variables}
 
+
+\documentclass[italian, 12pt]{article}
+\input{candidatura/verbali_esterni/verbale_esterno10-18/packages}
+\input{candidatura/verbali_esterni/verbale_esterno10-18/variables}
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
 
@@ -27,7 +28,7 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{candidatura/verbali_esterni/verbale_esterno10-25/firstPage}
+\input{candidatura/verbali_esterni/verbale_esterno10-18/firstPage}
 
 %-----------tabella versioni-----------%
 \begin{table}[!h]
@@ -38,8 +39,8 @@
 			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo}  \\
 			\\[-2ex] \hline \\[-1.5ex]
             1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Matteo Campagnaro & Verificatore\\
-            0.2 & 27/10/2024 & Revisione e verifica del documento & Orlando Ferazzani & Verificatore\\
-			0.1 & 26/10/2024 & Prima stesura del documento & Benedetti Davide & Redattore\\
+			0.2 & 24/10/2024 & Prima revisione del documento & Orlando Ferazzani & Verificatore \\
+			0.1 & 23/10/2024 & Prima stesura del documento & Nicolas Fracaro & Redattore\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -50,32 +51,30 @@
 \tableofcontents
 \newpage
 
+\section{Contenuti del verbale}
 
-\section{Informazioni sulla riunione}
+\subsection{Informazioni sull'incontro}
 \begin{itemize}
-    \item \textbf{Luogo:} Chiamata sulla piattaforma Teams
-    \item \textbf{Ora di inizio:} 15:10
-    \item \textbf{Ora di fine:} 15:35
-    \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi 
-    \item \textbf{Partecipanti esterni:} Luca Cossaro , xxxx
+    \item \textbf{Luogo:} Scambio di email all'indirizzo fornito nella presentazione del capitolato di \textit{Sanmarco Informatica}
+    \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi
+    \item \textbf{Partecipanti esterni:} Alex Beggiato (rappresentante di \textit{Sanmarco Informatica})
+\end{itemize}
+
+\section{Obiettivi dell'incontro}
+Durante l'incontro sono stati trattati i seguenti temi:
+\begin{itemize}
+    \item Chiarire i casi d'uso dell'applicazione e gli eventuali requisiti di autenticazione richiesti da \textit{Sanmarco Informatica} per il progetto descritto nel capitolato 5.
 \end{itemize}
 
 \section{Sintesi dell'incontro}
-Il team si è confrontato con l'azienda m31, riguardo il capitolato C6, inizialmente su una domanda inerente l'architettura del progetto, e, successivamente, su come poter svolgere al meglio il progetto e l'ambito organizzativo del gruppo.
-
+Il team ha concordato di inviare domande specifiche via email per ottenere risposte più rapide e ridurre al minimo il tempo necessario all'azienda proponente.
 
 \section{Domande effettuate e relative risposte}
-\subsection{Architettura interna e connessione magazzini}
-E' stato chiarita la loro proposta di architettura su come i magazzini comunicano le loro disponibilità agli altri magazzini, inoltre è stato specificato che se avessimo delle proposte alternative che soddisfano ugualmente i loro requisiti, saranno più che felici di prenderle in considerazione
 
-\subsection{Collaborazioni passate}
-Il gruppo voleva sapere se avessero collaborato in passato con un gruppo simile al nostro, quindi un team universitario del numero simile di membri, per poter così reperire informazioni che sarebbero state utili per uno svolgimento ottimale del progetto. L'azienda, seppur non avesse mai collaborato con studenti universitari, lo ha fatto con gruppi di grandezza simile alla nostra, dandoci preziosi suggerimenti su come procedere al meglio:
-\begin{itemize}
-    \item Essere ben chiari e sinceri
-    \item Trovarsi spesso con tutti i membri del team, ma non solamente da remoto, ma anche dal vivo
-    \item Essendo composto da 7 membri, il team non è piccolo, sarà quindi importantissimo definire bene le task e obiettivi ad ogni sprint di ogni componente, in modo tale che ognuno sappia il proprio contesto di lavoro e non "pesti i piedi" di qualcun'altro
-    \item Mai dare nulla per scontato e, quindi, se dovessimo avere dei dubbi, è importante chiedere subito al cliente, per evitare di perdere tempo e evitare errori
-\end{itemize}
+\subsection{Quali sono i principali casi d'uso che \textit{Sanmarco Informatica} ha previsto per l'applicazione richiesta?}
+L'azienda ha indicato che l'applicazione sarà di uso generale e dovrà quindi essere in grado di gestire dati di diversa natura. Sono stati forniti alcuni esempi di casi d'uso, come "analisi delle vendite", "analisi demografica" e "analisi del codice". L'azienda ha inoltre suggerito la creazione di una landing page iniziale, in cui l'utente possa selezionare la fonte da cui reperire i dati, in considerazione della necessità di integrare informazioni provenienti da più fonti.
 
+\subsection{È richiesto un sistema di autenticazione per l'accesso all'applicazione?}
+L'azienda ha confermato che, per il progetto in questione, non è necessario implementare alcun sistema di autenticazione.
 
 \end{document}
