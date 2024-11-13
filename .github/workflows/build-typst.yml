@@ -1,0 +1,69 @@
+name: Compile Typst documents
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: checkout the builds repo
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: master
+          token: ${{secrets.GITHUB_TOKEN}}
+      - name: move master to runner.temp
+        run: |
+          mv master "${RUNNER_TEMP}"
+      - name: restore timestamps
+        uses: chetan/git-restore-mtime-action@v2
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          separator: ","
+          files: |
+            documents/**/*.typ
+      - name: delete ignored and unchanged typst documents
+        run: |
+          shopt -s globstar
+          ls documents/**/*.typ > .all
+          echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
+          comm -23 .all .changed >> .typstignore
+          echo $(cat .typstignore)
+          while IFS= read -r f; do rm -rf "${f}"; done < .typstignore
+      - uses: typst-community/setup-typst@v3
+      - name: typst compile
+        run: |
+          find documents -type f -name "*.typ" -exec typst compile --root . {} \;
+      - name: set timestamp and version for builds of changed files and replace the old ones in the local copy of `master`
+        run: |
+          shopt -s globstar
+          for f in documents/**/*.typ; do
+            [[ ! -f "$f" ]] && continue # skip if nothing to build
+            rm -f "${RUNNER_TEMP}/master/${f%.typ}"*
+            touch -amd "$( date -R -r "$f" )" "${f%.typ}.pdf"
+            version=$(grep --context 1 "changelog:" "$f" | tail -n1 | cut -d ',' -f1 | sed 's/\s//g; s/"//g')
+            [[ "$version" != 'none' ]] && mv "${f%.typ}.pdf" "${f%.typ}_v${version}.pdf" && f="${f%.typ}_v${version}.typ"
+            rsync -aR "${f%.typ}.pdf" "${RUNNER_TEMP}/master"
+          done
+      - name: push to builds repo
+        run: |
+          pushd "${RUNNER_TEMP}/master"
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "$(date)" || continue
+          git push
+        env:
+          TZ: Europe/Rome
