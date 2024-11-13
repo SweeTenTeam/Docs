@@ -10,6 +10,7 @@
   docs: "docs",
   jmap: "jmap",
   logo: "//images/logos/sweetenteam.png",
+  azzurro: "//images/logos/AzzurroDigitale-logo.png",
   unipd: "//images/logos/Universita_Padova_transparent.png"
 )
 
