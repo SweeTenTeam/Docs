@@ -1,5 +1,5 @@
 #import "//template/common.typ": *
-//template for documents
+//template for document
 #let getSurname(a) = {
   return a.split().at(-1)
 }
