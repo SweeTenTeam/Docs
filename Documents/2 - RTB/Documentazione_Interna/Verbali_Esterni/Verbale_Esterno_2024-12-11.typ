@@ -7,6 +7,7 @@
     p.cardin,
   ),
   changelog: (
+    "0.2", "2024-11-14", (p.ferazzani), (p.santi), "Verificato Verbale", 
     "0.1", "2024-11-05", (p.ferazzani), (p.santi), "Stesura iniziale del verbale",
   ),
 )
@@ -40,7 +41,7 @@ Il team di #box(image(g.azzurro, width: 5em, height: auto)), dopo una breve pres
 
 = Discussione sul progetto e way of working aziendale
 
-Dopo le varie presentazioni, ci è stata esposta la metodologia Agile che viene utilizzata da loro, e che utilizzeremo come gruppo per lo sviluppo di questo capitolato. 
+Dopo le varie presentazioni ci è stata esposta la metodologia Agile che viene utilizzata da loro e che utilizzeremo come gruppo per lo sviluppo di questo capitolato. 
 In particolare svolgeremo sprint bisettimanali con incrontri pre-programmati per le prossime 10 settimane. 
 La struttura di un singolo sprint si divide come segue: 
 + Raccolta specifiche \u{FE61}
