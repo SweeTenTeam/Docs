@@ -65,7 +65,7 @@
     if version != none {
       text(1.5em, weight: 600, [V#version])
     },
-    text(1.1em, link("mailto:"+g.mail)), 
+    text(1.1em, link("mailto:"+g.mail)),
     link(g.website)
 
   )
