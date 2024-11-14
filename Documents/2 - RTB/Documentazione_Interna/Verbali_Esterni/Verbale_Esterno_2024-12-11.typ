@@ -1,5 +1,5 @@
 #import "//template/document.typ": *
-//verbale esterno del 2024-12-11
+//verbale esterno del 2024-12-11 0.2
 #show: project.with(
   title: "Verbale Esterno del 2024-11-12",
   recipients: (
