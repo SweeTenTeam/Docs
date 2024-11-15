@@ -1,6 +1,6 @@
 \documentclass[italian, 12pt]{article}
-\input{candidatura/dichiarazione_impegni/packages}
-\input{candidatura/dichiarazione_impegni/variables}
+\input{documents/1-Candidatura/dichiarazione_impegni/packages}
+\input{documents/1-Candidatura/dichiarazione_impegni/variables}
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
@@ -17,7 +17,7 @@
 % -- INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam_nobg.png}} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam.png}} 
     \fancyhead[L]{\leftmark} 
    	\renewcommand{\headrulewidth}{1pt} 
   	\fancyhead[L]{\customtitle} 
@@ -27,19 +27,20 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{candidatura/dichiarazione_impegni/firstPage}
+\input{documents/1-Candidatura/dichiarazione_impegni/firstPage}
 
 %-----------tabella versioni-----------%
 \begin{table}[!h]
 	\caption{Versioni}
 	\begin{center}
-		\begin{tabular}{ c c c c c}
+		\begin{tabular}{ c c p{6.7cm} c c}
 			\hline \\[-2ex]
-			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo}  \\
+			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Verificatore}  \\
 			\\[-2ex] \hline \\[-1.5ex]
-            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Matteo Campagnaro & Verificatore\\
-			0.2 & 28/10/2024 & Revisione e verifica del documento & Mouad Mahdi & Verificatore\\
-			0.1 & 28/10/2024 & Prima stesura del documento & Nicolas Fracaro & Redattore\\
+            2.0 & 10/11/2024 & Aggiunte specifiche su \textit{"Metodo rotazione ruoli"} in seguito ai feedback del professore & Nicolas Fracaro & Mouad Mahdi\\
+            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Nicolas Fracaro & Mouad Mahdi\\
+			0.2 & 28/10/2024 &  Integrazione documento & Nicolas Fracaro & Mouad Mahdi\\
+			0.1 & 28/10/2024 & Prima stesura del documento & Nicolas Fracaro & Mouad Mahdi\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -108,6 +109,8 @@ La distribuzione delle ore è stata definita seguendo i seguenti criteri:
     \item \textbf{Qualità garantita dal Verificatore}: Il Verificatore ha un’allocazione rilevante per assicurare controlli continui, garantendo affidabilità e conformità del prodotto.
     \item \textbf{Equilibrio nella gestione}: I ruoli gestionali (Responsabile, Amministratore) sono distribuiti in modo da sostenere la pianificazione e coordinare le risorse senza compromettere l’attenzione agli aspetti operativi.
 \end{itemize}
+\subsection{Rotazione dei ruoli}
+In seguito ai feedback rilasciati dal professore in sede di aggiudicazione appalti, il team ha discusso in merito al metodo di rotazione dei ruoli. Dopo i primi contatti con l'azienda si è deciso di ruotare i ruoli ad ogni sprint, ritenendo tale metodo quello più ragionevole, con il fine di imparare a ricoprire le "vesti" di ciascun ruolo.
 
 
 \section{Preventivo dei costi}

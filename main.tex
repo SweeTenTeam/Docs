@@ -1,6 +1,6 @@
-\documentclass[italian, 11pt]{article}
-\input{documents/1-Candidatura/lettera_di_presentazione/packages}
-\input{documents/1-Candidatura/lettera_di_presentazione/variables}
+\documentclass[italian, 12pt]{article}
+\input{documents/1-Candidatura/dichiarazione_impegni/packages}
+\input{documents/1-Candidatura/dichiarazione_impegni/variables}
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
@@ -27,61 +27,96 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{documents/1-Candidatura/lettera_di_presentazione/firstPage}
+\input{documents/1-Candidatura/dichiarazione_impegni/firstPage}
 
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c p{6.7cm} c c}
+			\hline \\[-2ex]
+			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Verificatore}  \\
+			\\[-2ex] \hline \\[-1.5ex]
+            2.0 & 10/11/2024 & Aggiunte specifiche su \textit{"Metodo rotazione ruoli"} in seguito ai feedback del professore & Nicolas Fracaro & Mouad Mahdi\\
+            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Nicolas Fracaro & Mouad Mahdi\\
+			0.2 & 28/10/2024 &  Integrazione documento & Nicolas Fracaro & Mouad Mahdi\\
+			0.1 & 28/10/2024 & Prima stesura del documento & Nicolas Fracaro & Mouad Mahdi\\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+\section*{Contributo del gruppo}
+\noindent Tutti i membri del gruppo SweeTen Team (Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi) hanno contribuito equamente alla redazione del presente documento.
 \newpage
 
-Con la presente comunicazione, il gruppo \textit{SweeTen Team} desidera informare che intende proporsi ed impegnarsi nella realizzazione del progetto delegato da \hspace{0.1em} \raisebox{-0.3ex}{\includegraphics[height=1.8ex]{images/logos/AzzurroDigitale-logo.png}}
-\begin{center}
-  \textbf{BuddyBot}
-\end{center}
-In seguito viene fornito il link relativo a tutta la documentazione redatta dal team
-\begin{center}
-  \href{https://github.com/SweeTenTeam/Docs}{\textcolor{blue}{\underline{Documentazione \textit{SweeTen Team}}}}
-\end{center}
-in cui, oltre a questa lettera, si possono trovare:
+\tableofcontents
+\newpage
+
+
+\section{Scopo del documento}
+Il presente documento ha lo scopo di definire formalmente gli impegni del gruppo SweeTen Team per lo sviluppo del progetto BuddyBot proposto dall'azienda Azzurrodigitale. In particolare, vengono definiti:
 \begin{itemize}
-    \item \textbf{Verbali Interni}
-     % Start two-column layout here
-    \begin{itemize}
-        \item 15/10/2024
-        \item 17/10/2024
-        \item 21/10/2024
-        \item 22/10/2024
-        \item 24/10/2024
-    \end{itemize}
-    
-    \item \textbf{Verbali Esterni}
-    \begin{itemize}
-        \item 17/10/2024 mail-AzzurroDigitale
-        \item 18/10/2024 mail-Sanmarco Informatica 
-        \item 25/10/2024 meeting-M31
-        \item 28/10/2024 meeting-AzzurroDigitale
-    \end{itemize}
-    \item \textbf{Dichiarazione degli impegni}
-    \item \textbf{Valutazione capitolati}
+    \item La suddivisione dei ruoli e relative responsabilità
+    \item Il preventivo dei costi
+    \item La data di consegna prevista
+    \item Gli impegni orari di ciascun membro del gruppo
 \end{itemize}
 
-\textit{SweeTen Team} ha in programma di completare il prodotto richiesto entro il \textbf{28/03/2025}, con un preventivo di spesa pari a \textbf{12.740,00€}. Maggiori dettagli sono disponibili nel documento intitolato "\textbf{Dichiarazione degli impegni}".
-\\Nella tabella che segue, i componenti del gruppo:
- \begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        \textbf{Componente} & \textbf{Matricola} \\
-        \hline
-        Valeri Mihail Belenkov & 2068232 \\
-        Davide Benedetti 	& 2042339 \\
-        Matteo Campagnaro	& 2068243 \\
-        Orlando Ferazzani 	& 2058653 \\
-        Nicolas Fracaro 	& 2076420 \\
-        Mouad Mahdi		    & 2044222 \\ 
-        Andrea Santi 	    & 2084624 \\
-        \hline       
-    \end{tabular}
+\section{Impegni orari e suddivisione dei ruoli}
+Ogni componente del gruppo si impegna a dedicare al progetto un totale di 91 ore produttive. I ruoli verranno ricoperti a rotazione da tutti i membri del gruppo, garantendo una distribuzione equa del carico di lavoro.
+
+
+
+\subsection{Suddivisione ore e costi}
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Ruolo} & \textbf{Costo orario (€)} & \textbf{Ore totali} & \textbf{Costo totale (€)} & \textbf{Ore per membro} \\
+\midrule
+Responsabile & 30,00 & 63 & 1.890,00 & 9 \\
+Amministratore & 20,00 & 56 & 1.120,00 & 8 \\
+Analista & 25,00 & 77 & 1.925,00 & 11 \\
+Progettista & 25,00 & 119 & 2.975,00 & 17 \\
+Programmatore & 15,00 & 168 & 2.520,00 & 24 \\
+Verificatore & 15,00 & 154 & 2.310,00 & 22 \\
+\midrule
+\textbf{Totale} & & \textbf{637} & \textbf{12.740,00} & \textbf{91} \\
+\bottomrule
+\end{tabular}
 \end{table}
 
-Cordiali saluti, \\
-\textbf{SweeTen Team}
+\subsection{Ruoli e responsabilità}
+Di seguito sono elencati i ruoli previsti con relative responsabilità:
+\begin{itemize}
+    \item \textbf{Responsabile:} Coordina il gruppo, gestisce le risorse e rappresenta il progetto verso l'esterno
+    \item \textbf{Amministratore:} Gestisce l'ambiente IT di lavoro, gli strumenti e le procedure tecniche
+    \item \textbf{Analista:} Studia il dominio del problema e definisce i requisiti
+    \item \textbf{Progettista:} Definisce l'architettura e le scelte progettuali
+    \item \textbf{Programmatore:} Implementa e mantiene il codice secondo le specifiche
+    \item \textbf{Verificatore:} Assicura la qualità del prodotto attraverso verifiche e validazioni
+\end{itemize}
+
+\section{Partizione dei ruoli}
+La distribuzione delle ore rappresenta una pianificazione orientativa che mira a coprire adeguatamente le principali attività, riservandosi la possibilità di adattamenti in corso d’opera, ferma restando l'invariabilità del monte ore complessivo e del relativo preventivo economico stabilito.
+
+La struttura scelta cerca di bilanciare le responsabilità tecniche e gestionali, assicurando una gestione efficace delle risorse, uno sviluppo coerente con i requisiti progettuali e verifiche continue sulla qualità del prodotto finale. 
+
+La distribuzione delle ore è stata definita seguendo i seguenti criteri:
+\begin{itemize}
+    \item \textbf{Focus sui ruoli tecnici}: Vista la natura del progetto, le ore sono state orientate principalmente verso ruoli come Programmatore e Progettista, fondamentali per una solida implementazione e architettura.
+    \item \textbf{Qualità garantita dal Verificatore}: Il Verificatore ha un’allocazione rilevante per assicurare controlli continui, garantendo affidabilità e conformità del prodotto.
+    \item \textbf{Equilibrio nella gestione}: I ruoli gestionali (Responsabile, Amministratore) sono distribuiti in modo da sostenere la pianificazione e coordinare le risorse senza compromettere l’attenzione agli aspetti operativi.
+\end{itemize}
+\subsection{Rotazione dei ruoli}
+In seguito ai feedback rilasciati dal professore in sede di aggiudicazione appalti, il team ha discusso in merito al metodo di rotazione dei ruoli. Dopo i primi contatti con l'azienda si è deciso di ruotare i ruoli ad ogni sprint, ritenendo tale metodo quello più ragionevole, con il fine di imparare a ricoprire le "vesti" di ciascun ruolo.
+
+
+\section{Preventivo dei costi}
+In base al totale delle ore produttive richieste dal progetto ed alla loro suddivisione nei vari ruoli, si prevede un costo finale del progetto pari a €12.740,00.
+
+\section{Scadenza prevista}
+La scadenza stimata di consegna del prodotto terminato relativo al capitolato "BuddyBot" dell'azienda "Azzurrodigitale" è fissata per il 28 marzo 2024, considerando 20 settimane dall'aggiudicazione dell'appalto più 5 giorni cuscinetto.
 
 \end{document}
