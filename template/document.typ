@@ -367,7 +367,7 @@
 #let glossary(word) = {
   let t = underline(word)
   if word != "questo stile" {
-    t = link( g.website + "/docs/RTB/Glossario")[#word] //TODO:  + "#" + upper(word.first()) + word.slice(1).replace(" ","_") rimandare direttamente alla parola e non al glossario
+    t = link( g.website + "/docs/RTB/Glossario" + "#" + lower(word))[*#word*]
   }
   text(fill: rgb("#33805d"), style: "italic")[#t] 
   // text(style: "italic")[#word#sub("G")]
