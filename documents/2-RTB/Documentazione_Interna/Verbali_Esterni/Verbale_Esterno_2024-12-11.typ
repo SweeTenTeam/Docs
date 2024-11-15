@@ -8,7 +8,8 @@
     p.cardin,
   ),
   changelog: (
-    "0.2", "2024-11-14", (p.ferazzani), (p.santi), "Verificato Verbale", 
+    "1.0", "2024-11-14", (p.ferazzani), (p.santi),  "Approvazione Documento.",
+    "0.2", "2024-11-14", (p.ferazzani), (p.santi), "Verificato Verbale, modifica paragrafo 4", 
     "0.1", "2024-11-05", (p.ferazzani), (p.santi), "Stesura iniziale del verbale",
   ),
 )
