@@ -1,6 +1,6 @@
 \documentclass[italian, 12pt]{article}
-\input{documents/1-Candidatura/valutazione_capitolati/packages}
-\input{documents/1-Candidatura/valutazione_capitolati/variables}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-17/packages}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-17/variables}
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
@@ -27,316 +27,65 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{documents/1-Candidatura/valutazione_capitolati/firstPage}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-17/firstPage}
 
 %-----------tabella versioni-----------%
-\begin{table}[!h] 
-	\caption{Versioni} 
-	\begin{center} 
-	 \begin{tabular}{ c c c c c} 
-	  \hline \\[-2ex] 
-	  \textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Verificatore}  \\ 
-	  \\[-2ex] \hline \\[-1.5ex] 
-			   1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Matteo Campagnaro & Nicolas Fracaro\\ 
-			   0.2 & 30/10/2024 & Correzioni e aggiunte al documento & Matteo Campagnaro & Nicolas Fracaro\\ 
-			   0.1 & 25/10/2024 & Prima stesura del documento & Matteo Campagnaro & Nicolas Fracaro\\ 
-	  \\[-1.5ex] \hline 
-	 \end{tabular} 
-	\end{center} 
-   \end{table}
-%---------------------------------------%
-%---------scrittori documento-----------%
-\large \textbf{Scrittori del documento}\\
-I capitolati C6 e C9 sono stati scritti collettivamente perchè i due di principale interesse. La scrittura degli atri invece è stata spartita tra diversi componenti del gruppo come descritto dalla seguente tabella.
-
-\begin{flushleft}
 \begin{table}[!h]
-    \begin{tabularx}{\textwidth}{ |>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X| } 
-        \hline
-        \textbf{Componente} & \textbf{Matricola} & \textbf{Capitolati} \\
-        \hline 
-        Davide Benedetti 	& 2042339 & C1 - C2 \\
-        Mouad Mahdi		    & 2044222 & C3 - C4 \\ 
-        Matteo Campagnaro	& 2068243 & C5 - C7 \\
-        Andrea Santi 	    & 2084624 & C8 \\
-        \hline
-    \end{tabularx}
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c p{6.2cm} c c}
+			\hline \\[-2ex]
+			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Verificatore}  \\
+			\\[-2ex] \hline \\[-1.5ex]
+            2.0 & 10/11/2024 & Aggiunta sezione delle decisioni in seguito ai feedback del professore (post-candidatura) & Nicolas Fracaro & Orlando Ferazzani\\
+            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Nicolas Fracaro & Orlando Ferazzani\\
+			0.2 & 26/10/2024 & Correzioni layout & Nicolas Fracaro & Orlando Ferazzani\\
+			0.1 & 23/10/2024 & Prima stesura del documento & Nicolas Fracaro & Orlando Ferazzani\\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
 \end{table}
-\end{flushleft}
- %---------------------------------------%
+%---------------------------------------%
 
-\newpage
+
 \tableofcontents
 \newpage
 
-\section{Capitolato scelto C9: BuddyBot}
-\subsection{Descrizione}
+\section{Contenuti del verbale}
+
+\subsection{Informazioni sull'incontro}
 \begin{itemize}
-\item\textbf{Proponente}: azzurrodigitale Srl
-\item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}:  Il team Azzurrodigitale utilizza quotidianamente diverse piattaforme per redigere documentazione e consultare informazioni essenziali per i progetti, questo può spesso comportare inefficienze.\\
-Sviluppare un assistente virtuale che sia in grado di ottenere in modo facile e veloce informazioni dalle fonti specificate e di fornirle in base alle domande poste tramite chat in linguaggio naturale.
+    \item \textbf{Luogo:} Scambio di email all'indirizzo fornito nella presentazione del capitolato di \textit{AzzurroDigitale}
+    \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi
+    \item \textbf{Partecipanti esterni:} Nicola Boscaro (rappresentante di \textit{AzzurroDigitale})
 \end{itemize}
 
-\subsection{Dominio applicativo}
-Si richiede lo sviluppo di una piccola piattaforma web con un'interfaccia chat per interagire con l’IA che funga da assistente virtuale.\\
-BuddyBot è progettato per aggregare e centralizzare informazioni da diverse fonti tra cui gitHub, Confluence, Jira e, facoltativamente, Slack e canali di progetto aziendali di Telegram, permettendo un accesso facile e immediato con il fine di migliorare la produttività e dare supporto all’ OnBoarding.
-
-\subsection{Dominio tecnologico}
-L’azienda ha consigliato determinate tecnologie, sottolineando che queste non siano obbligatorie:
+\section{Obiettivi dell'incontro}
+Durante l'incontro sono stati trattati i seguenti temi:
 \begin{itemize}
-\item OpenAI: sarà il motore per le funzionalità di NPL, cioè di comprensione del testo e generazione delle risposte.
-
-\item Langchain: progetto open-source che permette di integrare modelli di AI (non solo ChatGPT di OpenAI) senza conoscerne i dettagli interni. Usa i modelli come delle blackbox, quindi è perfetto per chi vuole integrare funzionalità di AI.
-
-\item Angular: framework front-end per la costruzione di applicazioni web moderne, dinamiche e scalabili. Segue un'architettura basata su componenti, che permette di creare interfacce utente modulari e riutilizzabili.
-
-\item Node/NestJS: framework per lo sviluppo di applicazioni server-side. Basato su un'architettura modulare facilita la creazione di applicazioni scalabili e manutenibili, seguendo i principi del design orientato ai microservizi e alle API RESTful.
-
-\item Spring Boot: framework Java che offre un ambiente preconfigurato e un set di strumenti per creare applicazioni standalone e pronte per la produzione, con supporto integrato per database, sicurezza, gestione delle dipendenze e microservizi.
+    \item Chiarire gli obiettivi e le tecnologie da utilizzare per il progetto presentato nel capitolato 9.
 \end{itemize}
 
-\subsection{Motivazioni della scelta}
-L’idea di utilizzare l’ IA è stata subito apprezzata da tutti i membri del gruppo, essendo una tecnologia moderna e in continua evoluzione, in particolare la preferenza è ricaduta su questo progetto, perché rispetto ad altri chatbot presentati, questo utilizzava non solo file di testo, ma anche altre fonti (API).\\
-Il progetto è risultato ben bilanciato nelle richieste e nelle scadenze, permettendoci di conoscere e imparare non solo le tecnologie, ma anche a lavorare in gruppo.\\
-L’azienda, oltre a essersi presentata in modo chiaro, si è resa anche molto disponibile rispondendo tempestivamente alle nostre domande, facendo un’ottima impressione rassicurando inoltre un continuo sostegno tramite le figure di riferimento interne presentate.
+\section{Sintesi dell'incontro}
+Il team ha concordato di inviare direttamente domande specifiche via email per velocizzare le risposte, riducendo al minimo il tempo richiesto all'azienda proponente.
 
-\subsection{Conclusioni}
-Per le motivazioni sopra citate, questo capitolato è stato votato dalla maggioranza dei membri, risultando così la nostra prima scelta.
+\section{Domande effettuate e relative risposte}
+\subsection{BuddyBot deve accedere solo alle repository interne di \textit{AzzurroDigitale} o anche a repository pubbliche?}
+L'azienda ha confermato che è richiesto l'accesso esclusivo alle repository private tramite API.
 
-\section{Capitolato di interesse C6: Sistema di gestione di un magazzino distribuito}
-\subsection{Descrizione}
+\subsection{Come viene gestita l'autenticazione e l'accesso alle diverse fonti di \textit{AzzurroDigitale} da parte dei vari utenti di BuddyBot?}
+L'azienda ha indicato che, per gli scopi di questo progetto, non è necessario implementare una gestione capillare dei permessi utente, confermando, però, che potrebbe essere uno sviluppo futuro interessante. L'integrazione con le fonti (Confluence, Jira, GitHub) avverrà su spazi di progetto specifici.
+
+\subsection{Cosa si intende per "sistema di Bug Reporting"?}
+L'azienda ha indicato l'uso della sezione "Issues" delle repository GitHub come metodo per fornire feedback su eventuali bug riscontrati.
+
+\subsection{È consentito l'uso di tecnologie diverse da quelle consigliate da \textit{AzzurroDigitale} nel capitolato?}
+L'azienda ha confermato che le tecnologie consigliate sono opzionali, lasciando libertà di utilizzare tecnologie alternative, come ad esempio React invece di Angular.
+
+\section{Decisioni prese}
 \begin{itemize}
-\item\textbf{Proponente}: M31 S.r.l.
-\item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}: L’obiettivo del progetto è la creazione di un sistema altamente scalabile e distribuito, costruito su un’architettura a microservizi, per facilitare la comunicazione tra i magazzini e centralizzare in modo sicuro ed efficiente tutte le informazioni. Questo sistema sarà progettato per gestire operazioni distribuite, assicurando prestazioni ottimali anche durante picchi di carico dati e richieste simultanee.
+    \item Il team ha appreso meglio determinate specifiche inerenti al capitolato; se necessario, verrà richiesto un confronto con un meeting per ulteriori chiarimenti
+    \item Il team eseguirà delle valutazioni interne in merito a quali tecnologie impiegare e quali scartare
 \end{itemize}
-
-\subsection{Dominio applicativo}
-Il progetto si focalizza sulla gestione ottimale dell'inventario all'interno di una rete di magazzini distribuiti, con l'obiettivo di garantire la disponibilità costante di risorse e ottimizzare i livelli di scorte. Il sistema mira a fornire una visione centralizzata e in tempo reale dell'inventario, gestendo attività come il riassortimento, il trasferimento di prodotti tra diverse sedi e l'ottimizzazione delle scorte. Alcune funzionalità chiave includono: 
-\begin{itemize}
-\item Sincronizzazione dei dati tra magazzini in tempo reale. 
-\item Riassortimento predittivo basato su machine learning. \item Gestione autonoma dei magazzini e risoluzione dei conflitti di aggiornamento simultaneo.
-\end{itemize}
-
-\subsection{Dominio tecnologico}
-Il progetto utilizza un'architettura a microservizi, dove ogni magazzino agisce come un nodo autonomo con servizi distribuiti sia localmente che su cloud. Le tecnologie proposte includono: 
-\begin{itemize}
-\item Node.js e Nest.js per i microservizi. 
-\item Go per componenti ad alte prestazioni. 
-\item NATS o Apache Kafka per la gestione dei messaggi distribuiti. 
-\item Google Cloud Platform con Kubernetes per l'orchestrazione e la gestione centralizzata. 
-\item MongoDB e PostgreSQL per l'archiviazione di dati non strutturati e strutturati, rispettivamente. 
-\item Redis per caching e riduzione della latenza. 
-\item Angular per la creazione di interfacce utente web moderne.
-\end{itemize}
-
-\subsection{Aspetti positivi}
-Il progetto è risultato molto stimolante e “challenging”, integrando molte tecnologie interessanti, inoltre è stato l’unico capitolato ad aver incluso all’interno dei requisiti, quelli di sicurezza, un ambito che a molti membri del gruppo sarebbe piaciuto approfondire.
-
-\subsection{Fattori critici}
-Nonostante utilizzi delle tecnologie interessanti, ci è sembrato un carico di lavoro sproporzionato rispetto alle risorse che avremmo potuto allocare, rischiando di non riuscire a fornire un MVP soddisfacente rispetto alle richieste dell’azienda proponente.
-
-\subsection{Conclusioni}
-Abbiamo deciso di prendere come seconda scelta il progetto di m31 in seguito a una valutazione interna, data la sua originalità e la sua possibile utilità.
-
-
-\section{Capitolato di interesse C5: 3Dataviz}
-\subsection{Descrizione}
-\begin{itemize}
-\item\textbf{Proponente}: Sanmarco Informatica SPA
-\item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}: Realizzare un'interfaccia web per la visualizzazione in forma tridimensionale di dati tramite barre verticali (istogramma 3D) e i relativi dati di origine (tabella).
-\end{itemize}
-
-\subsection{Dominio applicativo}
-Il progetto riguarda la visualizzazione tridimensionale dei dati (3D data visualization). L'obiettivo principale è fornire un'interfaccia web che permetta la visualizzazione di dati in forma di istogramma 3D, rendendo l'analisi e la comprensione dei dati più immediata e intuitiva. Questa visualizzazione facilita decisioni aziendali e analisi complesse attraverso una rappresentazione visiva dei dati, come vendite, meteo o dati di stock. Il sistema offre funzionalità di interazione con il grafico 3D, come rotazione, zoom, e selezione di elementi per l'analisi approfondita.
-
-\subsection{Dominio tecnologico}
-Il progetto sfrutta tecnologie per la creazione di grafici 3D e la visualizzazione dei dati. Le tecnologie raccomandate includono:
-\begin{itemize}
-\item Three.js: una libreria JavaScript per la creazione e visualizzazione di grafica 3D nel browser.
-\item D3.js: una libreria JavaScript per la produzione di visualizzazioni dinamiche e interattive dei dati.
-\item Framework frontend: React o Angular per costruire l'interfaccia utente.
-\end{itemize}
-Il sistema prevede inoltre il reperimento dei dati da database tramite SQL o API REST, a seconda della modalità preferita.
-
-\subsection{Aspetti positivi}
-La maggior parte del gruppo ha riscontrato interesse nell'utilizzo di tecnologie come Three.js o D3.js. Inoltre questo progetto ci sembra una buona opportunità non solo perché ci permette di  acquisire alcune conoscenze tecniche, necessarie per la realizzazione, ma soprattutto perché ci permette di focalizzarci maggiormente sull'organizzazione del lavoro e sui processi di sviluppo di un progetto. Oltre a questo l'azienda è stata molto disponibile e tempestiva nel rispondere ai nostri dubbi.
-\subsection{Fattori critici}
-Non tutti nel gruppo hanno ritenuto questo progetto abbastanza completo e formativo. Le competenze tecniche necessarie per la realizzazione di questo progetto ci sono sembrate quantitativamente inferiori rispetto agli altri capitolati. Infine l'idea di lavorare con grafici non entusiasma alcuni componenti del team.
-\subsection{Conclusioni}
-Questo progetto è stato visto dal gruppo in modo positivo per le opportunità di crescita organizzativa ma, rispetto ad altri capitolati, ci è sembrato meno sfidante e stimolante.
-
-\section{Capitolato C1: Artificial QI}
-\subsection{Descrizione}
-\begin{itemize}
-\item\textbf{Proponente}: Zucchetti s.p.a.
-\item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}: Creare un sistema che testa e valuta come i modelli di Intelligenza Artificiale rispondono a domande, aiutando a capire l'effetto delle scelte tecniche. Questo permetterà di migliorare le prestazioni del modello e ottenere risultati più affidabili.
-\end{itemize}
-
-\subsection{Dominio applicativo}
-L’ azienda Zucchetti Spa chiede di sviluppare una applicazione che dovrà archiviare domande e risposte attese, eseguire test tramite API su un LLM esterno, valutare la correttezza e coerenza delle risposte ricevute e presentare i risultati in modo organico e fruibile.
-
-\subsection{Dominio tecnologico}
-API Rest secondo lo standard OpenAPI 3.1 per comunicare con i modelli di intelligenza artificiale esterni.\\
-Large Language Models (LLM) come ChatGPT-4-turbo e Mistral-7B, suggerendo anche l'uso di tecniche di "fine-tuning" e la "Retrieval Augmented Generation (RAG)" per migliorare le prestazioni.\\
-BM25 come possibile metodo tradizionale per il confronto basato su parole chiave.\\
-L'uso di JSON o XML per formati di risposta trattabili dai programmi.
-
-\subsection{Aspetti positivi} 
-L’ambito dell’intelligenza artificiale affascina particolarmente il gruppo.\\
-L’azienda è molto grande e esperta, segno di affidabilità e di grande sostegno tecnico in caso di difficoltà.
-
-\subsection{Fattori critici}
-Il progetto si focalizza troppo su una tematica che non è di interesse del gruppo (valutazione e test delle IA).
-
-\subsection{Conclusioni}
-Nonostante l’ottima impressione che l’azienda ha lasciato al gruppo, il capitolato in questione non è stato preso in considerazione causa l’applicazione trattata.
-
-\section{Capitolato C2: Vimar GENIALE}
-\subsection{Descrizione}
-\begin{itemize}
-\item\textbf{Proponente}: Vimar Spa
-\item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}: Realizzare un applicativo che sarà utilizzato dagli installatori per fare domande tecniche, fornendo risposte testuali e grafiche sui prodotti Vimar.
-\end{itemize}
-
-\subsection{Dominio applicativo}
-Il progetto è orientato al supporto degli installatori di sistemi Vimar, che necessitano di assistenza durante l’installazione e configurazione dei prodotti aziendali. Gli installatori spesso devono risolvere problemi tecnici in tempo reale, e la soluzione proposta mira a facilitare questo processo fornendo un sistema intelligente e immediato per rispondere a domande tecniche.
-
-\subsection{Dominio tecnologico}
-Data Engineering per l'estrazione, salvataggio e indicizzazione dei dati.\\
-Large Language Models (LLM) con un approccio RAG (Retrieval Augmented Generation) per migliorare le risposte.\\
-Cloud Computing con infrastruttura IaC (Infrastructure as Code) e tecnologie containerizzate per garantire scalabilità e gestione efficiente del sistema.\\
-Testing e validazione del software attraverso strumenti automatici per garantire alta copertura dei test.
-
-\subsection{Aspetti positivi}
-Il proponente del progetto si è mostrato interessato a fornire supporto continuo al team con riunioni e molteplici canali di comunicazione.
-
-\subsection{Fattori critici}
-Restrittività del dominio applicativo; al gruppo sarebbe piaciuto un utilizzo più vasto, e non limitato a quello aziendale.
-
-\subsection{Conclusioni}
-Sebbene il progetto e l’azienda avessero fatto una buona impressione, le preferenze del gruppo sono confluite verso altre applicazioni IA.
-
-\section{Capitolato C3: Automatizzare le routine digitali tramite l’intelligenza generativa}
-\subsection{Descrizione}
-\begin{itemize}
-\item\textbf{Proponente}: Var Group S.p.A.
-\item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}: Creazione di un servizio di automazione che consente agli utenti di creare workflow personalizzati utilizzando le API dei software installati localmente e l'intelligenza artificiale per automatizzare compiti quotidiani che normalmente vengono eseguiti manualmente.
-\end{itemize}
-
-\subsection{Dominio applicativo}
-Lo scopo del progetto è creare un applicazione locale per ambienti windows e apple che permette agli utenti di disegnare dei workflow che rappresentano le attività da fare e di un sistema GenAI in cloud in grado di tradurre gli schemi da linguaggio naturale ad azioni che vengono poi eseguite localmente o tramite l'utilizzo delle delle API dei diversi software.
-
-\subsection{Dominio tecnologico}
-Per lo sviluppo di questo progetto vengono raccomandate le seguenti tecnologie, Python o C\# con MongoDB o altro database locale con React per interfacce applicative web, per l'ambiente Windows mentre Swift con Swift UI e MongoDB per l'ambiente Apple. Invece per lo sviluppo della API cloud responsabile dell'automazione si consiglia NodeJS, Python o Typescript.
-
-\subsection{Aspetti positivi}
-Il progetto sembra molto stimolante sia per l'uso di tecnologie interessanti, sia per l'impiego della Gen AI in un modo diverso rispetto ai tradizionali servizi di assistenza, che solitamente prendono in input una domanda e restituiscono una risposta. Qui, invece, si realizza una vera e propria automatizzazione di task, con possibilità di estensione futura.
-
-\subsection{Fattori critici}
-Il progetto presenta diverse difficoltà tra cui la creazione del servizio di automazione guidato da AI e la creazione di un'applicazione locale che permette agli utenti di disegnare dei workflow interattivi.
-
-\subsection{Conclusioni}
-Dopo varie discussioni e votazioni non abbiamo messo questo capitolato tra le nostre scelte per via delle complicanze che potrebbe portare e per il fatto che la maggior parte dei componenti del gruppo ha trovato più interessanti altri progetti.
-
-\section{Capitolato C4: NearYou - Smart custom advertising platform}
-\subsection{Descrizione}
-\begin{itemize}
-\item\textbf{Proponente}: Sync Lab S.R.L.
-\item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}: Un sistema di pubblicità personalizzata che utilizza Large Language Model (LLM) per fornire annunci mirati e contestuali agli utenti basandosi sulle loro informazioni personali e sulla loro posizione geografica in tempo reale.
-\end{itemize}
-
-\subsection{Dominio applicativo}
-Il progetto richiede:
-\begin{itemize}
-    \item lo sviluppo di simulatori per generare dati GPS realistici che rappresentino i tragitti e la posizione attuale degli utenti;
-    \item la predisposizione degli esercizi commerciali e dei profili degli utenti;
-    \item l'implementazione di una piattaforma di archiviazione e gestione dei dati adatta per l'elaborazione tramite LLM;
-    \item l'integrazione di un modulo di elaborazione basato su LLM;
-    \item la realizzazione di una dashboard di visualizzazione che includa:
-    \begin{itemize}
-        \item una mappa in tempo reale delle posizioni dei mezzi/utenti;
-        \item la visualizzazione dei messaggi personalizzati degli esercizi commerciali, attivata solo in caso di rilevato interesse dell'utente e in prossimità dell'attività commerciale.
-    \end{itemize}
-\end{itemize}
-
-\subsection{Dominio tecnologico}
-Il progetto richiede l'utilizzo di framework come Python e di librerie di generazione dati per simulare dati GPS realistici; broker come Apache Kafka, RabbitMQ o HiveMQ per disaccoppiare lo stream di informazioni; strumenti per lo stream processing come Apache Airflow, Apache NiFi, Apache Spark o Apache Flink; strumenti basati su LLM, come LangChain o Flow, per l'elaborazione dei messaggi; database e storage, come PostGIS, ClickHouse o Timescale, per la gestione di dati timeseries e geospaziali; e, infine, strumenti per la data visualization, come Superset, Grafana o Tableau, sia lato utente che lato cliente.
-
-\subsection{Aspetti positivi}
-Il progetto mira a risolvere un problema diverso dagli altri progetti e utilizza tecnologie specifiche per il trattamento, simulazione e utilizzo dei dati raccolti da diverse fonti.
-
-\subsection{Fattori critici}
-La realizzazione dell'algoritmo che combina i vari dati e la creazione del bias da usare per associare i diversi utenti alle possibili pubblicità sembrano attività particolarmente complesse, che potrebbero richiedere molto tempo per i test.
-
-\subsection{Conclusioni}
-Non abbiamo preso in considerazione questo progetto perchè la presentazione dell’azienda ci è sembrata meno informativa rispetto alle altre e sembra che il progetto richieda una ricerca personale più approfondita e onerosa per comprendere come svolgere il lavoro rispetto agli altri progetti.
-
-\section{Capitolato C7: LLM: Assistente virtuale}
-\subsection{Descrizione}
-\begin{itemize}
-\item\textbf{Proponente}: Ergon Informatica Srl
-\item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}: L'obiettivo del progetto è realizzare un assistente virtuale LLM in grado di rispondere automaticamente alle domande dei clienti su un vasto catalogo di prodotti, migliorando l'efficienza nell'accesso alle informazioni senza il coinvolgimento diretto di esperti.
-\end{itemize}
-
-\subsection{Dominio applicativo}
-Il progetto si concentra sullo sviluppo di un assistente virtuale basato su modelli linguistici di grandi dimensioni (LLM). L'obiettivo è aiutare i clienti nella ricerca di informazioni su prodotti complessi all'interno di cataloghi aziendali estesi. Questo assistente virtuale risponde a domande frequenti sui prodotti, migliorando l'accesso alle informazioni senza la necessità di interagire con esperti specifici in tempo reale.
-
-
-\subsection{Dominio tecnologico}
-Il sistema sfrutta Large Language Models (LLM) per comprendere e rispondere alle domande degli utenti. Le tecnologie proposte includono:
-\begin{itemize}
-\item Modelli LLM: BLOOM, Falcon IA, Pythia, Italia by iGenius, Minerva.
-\item Database relazionale: MySQL, MariaDB o altri per la gestione dei dati.
-\item API REST per la comunicazione tra il modello LLM e l'applicazione utente.
-\item Interfaccia utente mobile: per interagire con l'assistente virtuale, sviluppata su piattaforme come .NET MAUI o Android.
-\item Embedding models: per convertire i dati di input in vettori utilizzabili dal sistema.
-\end{itemize}
-
-\subsection{Aspetti positivi}
-L'azienda durante la presentazione ha fatto una buona impressione, si è mostrata molto disponibile e pronta ad aiutare proponendo anche degli incontri in azienda. Le tecnologie da utilizzare inoltre ci sono sembrate interessanti e attuali.
-
-\subsection{Fattori critici}
-Questo progetto rispetto agli altri che riguardavano l'utilizzo dell'intelligenza artificiale non ha convinto a pieno risultando meno completo e originale. Dall'intelligenza artificiali vengono utilizzati solamente file di testo.
-
-\subsection{Conclusioni}
-Anche se l'azienda si è mostrata molto disponibile non abbiamo preso in considerazione da subito questo progetto perché abbiamo ritenuto che altri progetti siano più formativi e completi.
-
-\section{Capitolato C8: Requirement Tracker - Plug-in VS Code}
-\subsection{Descrizione}
-\begin{itemize}
-\item\textbf{Proponente}: Bluewind s.r.l.
-\item\textbf{Committenti}: Prof. Tullio Vardanega e Prof. Riccardo Cardin
-\item\textbf{Obiettivo}: L'obiettivo del progetto è sviluppare un plug-in per Visual Studio Code, chiamato "Requirement Tracker-VS Code Plug-in", che automatizzi il tracciamento dei requisiti di progetto nel codice sorgente.
-Il plug-in mira a:
-\begin{itemize}
-\item Tracciare l'implementazione dei requisiti nel codice, verificandone la copertura;
-\item Migliorare la qualità dei requisiti
-\item Facilitare l'estensione futura del plug-in, facilitando possibili integrazioni di nuove funzionalità.
-\end{itemize}
-In sostanza, il progetto punta a migliorare la gestione dei requisiti in ambito embedded, riducendo gli errori e aumentando l'efficienza nello sviluppo software.
-\end{itemize}
-
-\subsection{Dominio applicativo}
-Il dominio applicativo del progetto è lo sviluppo software per ambienti embedded, con particolare attenzione alla tracciabilità dei requisiti nel codice sorgente e alla qualità della loro definizione. Questo progetto si rivolge a sviluppatori che lavorano su sistemi complessi, spesso nel settore hardware, come dispositivi elettronici basati su microcontrollori (es. STM32).
-
-\subsection{Dominio tecnologico}
-Le tecnologie consigliate includono l'uso di Visual Studio Code Extension API per garantire un'architettura modulare, API REST per connettersi ai modelli AI, Python o Node.js per l'integrazione flessibile, modelli AI pre-addestrati (come GPT) per analisi semantiche, e, in via opzionale, Ollama per il deployment locale di LLM.
-
-\subsection{Aspetti positivi}
-Il progetto di BlueWind è quello che tratta più degli altri la parte “embedded”, rendendolo quindi più ricercato e alternativo. Inoltre, l'azienda ha fornito un esempio concreto di scenario applicativo, facendo riferimento all'uso di microcontrollori STM32, offrendo al nostro gruppo una chiara visione delle applicazioni pratiche del progetto.
-
-\subsection{Fattori critici}
-Nonostante la sua originalità, il progetto risulta particolarmente oneroso a causa della combinazione tra l'elevato numero di requisiti e la complessità, inclusi aspetti come la conformità alle normative e la visualizzazione grafica avanzata.
-
-\subsection{Conclusioni}
-Il capitolato in questione non è mai stato preso concretamente in considerazione poiché l’ambito “embedded” non rientra tra le aree di interesse del gruppo. Inoltre, l’esposizione del capitolato non ha fornito una presentazione convincente, portandoci a valutare più attentamente altri progetti.
 
 \end{document}
