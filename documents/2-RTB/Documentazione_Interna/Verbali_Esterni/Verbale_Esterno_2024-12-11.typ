@@ -1,4 +1,4 @@
-#import "//template/document.typ": *
+#import "/template/document.typ": *
 //verbale esterno del 2024-12-11 0.2
 //p
 #show: project.with(
