@@ -1,6 +1,6 @@
 \documentclass[italian, 12pt]{article}
-\input{documents/1-Candidatura/Verbali_Interni/verbale_interno2024-10-17/packages}
-\input{documents/1-Candidatura/Verbali_Interni/verbale_interno2024-10-17/variables}
+\input{documents/1-Candidatura/Verbali_Interni/verbale_interno2024-10-21/packages}
+\input{documents/1-Candidatura/Verbali_Interni/verbale_interno2024-10-21/variables}
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
@@ -27,21 +27,20 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{documents/1-Candidatura/Verbali_Interni/verbale_interno2024-10-17/firstPage}
+\input{documents/1-Candidatura/Verbali_Interni/verbale_interno2024-10-21/firstPage}
 
 %-----------tabella versioni-----------%
 \begin{table}[!h]
 	\caption{Versioni}
 	\begin{center}
-        \fontsize{11.9}{13}\selectfont
 		\begin{tabular}{ c c p{6.2cm} c c}
 			\hline \\[-2ex]
 			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Verificatore}  \\
 			\\[-2ex] \hline \\[-1.5ex]
-            2.0 & 10/11/2024 & Aggiunta sezione delle decisioni in seguito ai feedback del professore (post-candidatura) & Valeri Mihail Belenkov & Andrea Santi\\
-            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Valeri Mihail Belenkov & Andrea Santi\\
-            0.2 & 25/10/2024 & Correzione sulla sintassi e layout & Valeri Mihail Belenkov & Andrea Santi\\
-			0.1 & 23/10/2024 & Prima stesura del documento & Valeri Mihail Belenkov & Andrea Santi\\
+            2.0 & 10/11/2024 & Aggiunta sezione delle decisioni in seguito ai feedback del professore (post-candidatura) & Orlando Ferazzani & Andrea Santi\\
+            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Orlando Ferazzani & Andrea Santi\\
+            0.2 & 25/10/2024 & Correzione sintassi e layout & Orlando Ferazzani & Andrea Santi\\
+			0.1 & 22/10/2024 & Prima stesura del documento & Orlando Ferazzani & Andrea Santi\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -65,7 +64,7 @@
 		\hline
 		\textbf{Componente} & \textbf{Matricola} & \textbf{Presenza} \\
   \hline 
-		Valeri Mihail Belenkov & 2068232 & Presente \\
+		Valeri Mihail Belenkov & 2068232 & Presente \\ 
 		Davide Benedetti 	& 2042339 & Presente \\
 		Matteo Campagnaro	& 2068243 & Presente \\
 		Orlando Ferazzani 	& 2058653 & Presente \\
@@ -81,27 +80,29 @@
 Durante l'incontro sono stati trattati i seguenti argomenti: 
 \begin{flushleft}
         \begin{itemize}
-            \item Revisione delle preferenze dei capitolati
-            \item Discussione tecnica dei capitolati 
-            \item Richiesta di approfondimento specifiche alle aziende
+            \item Creazione Template per i file in \LaTeX
+            \item Creazione GitHub Action 
+            \item Stesura della valutazione dei capitolati
         \end{itemize}
 \end{flushleft}
 \newpage
 
 \section{Verbale}
-\subsection{Revisione delle preferenze dei capitolati}
-Nella prima parte dell'incontro, c'è stata una revisione delle preferenze decise nell'incontro precedente.
+\subsection{Creazione Template}
+Nella prima parte dell'incontro, il Team si è impegnato a creare il template di \LaTeX che verrà usato per la candidatura e tutta la documentazione interna.
 
-\subsection{Discussione tecnica dei capitolati}
-Successivamente c'è stata una discussione più approfondita sulle tecnologie da usare per ogni capitolato e di come sarebbe possibile creare il software richiesto da ciascuna azienda, ponendo particolare attenzione all'architettura suggerita nel documento di specifiche.
+\subsection{Creazione GitHub Action}
+Dopo aver terminato il template per i vari documenti, alcuni membri del Team hanno impostato la GitHub action che permette il Push in automatico sulla master branch di tutti i documenti in formato PDF, scritti in \LaTeX che si trovano nella develop branch.
 
-\subsection{Richiesta di approfondimento specifiche alle aziende}
-Durante la discussione sono sorti dei dubbi su alcune questioni tecniche ed è stato deciso di inviare una mail a ciascuna delle 3 aziende per avere ulteriori delucidazioni sulle tecnologie da usare e sulle scelte architetturali.
+\subsection{Stesura della valutazione dei capitolati}
+Mentre parte del team si occupava delle automazioni di GitHub, il resto iniziava la stesura della valutazione dei capitolati, partendo da quelli indicati nelle preferenze e poi muovendosi al resto. 
 
 \subsection{Decisioni prese}
 \begin{itemize}
-    \item Confermati i 3 capitolati più interessanti
-    \item Invio di 3 e-mail alle aziende proponenti dei captiolati di maggiore interesse in seguito a dubbi emersi dal team
+    \item Approvazione template \LaTeX
+    \item Inizio stesura "Valutazione dei capitolati"
 \end{itemize}
+
+
 
 \end{document}
