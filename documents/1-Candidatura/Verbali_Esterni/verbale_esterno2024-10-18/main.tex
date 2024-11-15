@@ -1,8 +1,6 @@
-
-
 \documentclass[italian, 12pt]{article}
-\input{candidatura/verbali_esterni/verbale_esterno10-18/packages}
-\input{candidatura/verbali_esterni/verbale_esterno10-18/variables}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-18/packages}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-18/variables}
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
 
@@ -18,7 +16,7 @@
 % -- INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam_nobg.png}} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam.png}} 
     \fancyhead[L]{\leftmark} 
    	\renewcommand{\headrulewidth}{1pt} 
   	\fancyhead[L]{\customtitle} 
@@ -28,19 +26,19 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{candidatura/verbali_esterni/verbale_esterno10-18/firstPage}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-18/firstPage}
 
 %-----------tabella versioni-----------%
 \begin{table}[!h]
 	\caption{Versioni}
 	\begin{center}
-		\begin{tabular}{ c c c c c}
+		\begin{tabular}{ c c p{6.2cm} c c}
 			\hline \\[-2ex]
-			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo}  \\
+			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Verificatore}  \\
 			\\[-2ex] \hline \\[-1.5ex]
-            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Matteo Campagnaro & Verificatore\\
-			0.2 & 24/10/2024 & Prima revisione del documento & Orlando Ferazzani & Verificatore \\
-			0.1 & 23/10/2024 & Prima stesura del documento & Nicolas Fracaro & Redattore\\
+            2.0 & 10/11/2024 & Aggiunta sezione delle decisioni in seguito ai feedback del professore (post-candidatura) & Nicolas Fracaro & Orlando Ferazzani\\
+            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Nicolas Fracaro & Orlando Ferazzani\\
+			0.1 & 23/10/2024 & Prima stesura del documento & Nicolas Fracaro & Orlando Ferazzani\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -76,5 +74,10 @@ L'azienda ha indicato che l'applicazione sarà di uso generale e dovrà quindi e
 
 \subsection{È richiesto un sistema di autenticazione per l'accesso all'applicazione?}
 L'azienda ha confermato che, per il progetto in questione, non è necessario implementare alcun sistema di autenticazione.
+
+\section{Decisioni prese}
+\begin{itemize}
+    \item Il team ha appreso meglio determinate specifiche inerenti al capitolato; se necessario, verrà richiesto un confronto con un meeting per ulteriori chiarimenti
+\end{itemize}
 
 \end{document}
