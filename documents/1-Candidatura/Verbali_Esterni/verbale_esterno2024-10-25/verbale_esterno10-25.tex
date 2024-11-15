@@ -1,6 +1,6 @@
 \documentclass[italian, 12pt]{article}
-\input{candidatura/verbali_esterni/verbale_esterno10-25/packages}
-\input{candidatura/verbali_esterni/verbale_esterno10-25/variables}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-25/packages}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-25/variables}
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
@@ -17,7 +17,7 @@
 % -- INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam_nobg.png}} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam.png}} 
     \fancyhead[L]{\leftmark} 
    	\renewcommand{\headrulewidth}{1pt} 
   	\fancyhead[L]{\customtitle} 
@@ -27,19 +27,20 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{candidatura/verbali_esterni/verbale_esterno10-25/firstPage}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-25/firstPage}
 
 %-----------tabella versioni-----------%
 \begin{table}[!h]
 	\caption{Versioni}
 	\begin{center}
-		\begin{tabular}{ c c c c c}
+		\begin{tabular}{ c c p{6.2cm} c c}
 			\hline \\[-2ex]
-			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo}  \\
+			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Verificatore}  \\
 			\\[-2ex] \hline \\[-1.5ex]
-            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Matteo Campagnaro & Verificatore\\
-            0.2 & 27/10/2024 & Revisione e verifica del documento & Orlando Ferazzani & Verificatore\\
-			0.1 & 26/10/2024 & Prima stesura del documento & Benedetti Davide & Redattore\\
+            2.0 & 10/11/2024 & Aggiunta sezione delle decisioni in seguito ai feedback del professore (post-candidatura) & Davide Benedetti & Orlando Ferazzani\\
+            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Davide Benedetti & Orlando Ferazzani\\
+            0.2 & 27/10/2024 & Integrazione documento & Davide Benedetti & Orlando Ferazzani\\
+			0.1 & 26/10/2024 & Prima stesura del documento & Davide Benedetti & Orlando Ferazzani\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -75,6 +76,11 @@ Il gruppo voleva sapere se avessero collaborato in passato con un gruppo simile 
     \item Trovarsi spesso con tutti i membri del team, ma non solamente da remoto, ma anche dal vivo
     \item Essendo composto da 7 membri, il team non è piccolo, sarà quindi importantissimo definire bene le task e obiettivi ad ogni sprint di ogni componente, in modo tale che ognuno sappia il proprio contesto di lavoro e non "pesti i piedi" di qualcun'altro
     \item Mai dare nulla per scontato e, quindi, se dovessimo avere dei dubbi, è importante chiedere subito al cliente, per evitare di perdere tempo e evitare errori
+\end{itemize}
+
+\section{Decisioni prese}
+\begin{itemize}
+    \item Il gruppo ha sciolto numerosi dubbi legati all'architettura interna. Si è deciso a tal punto di guardare e comprendere in maniera più dettagliata l'utilità di alcune tecnologie citate durante la \textit{call}, con il fine di sciogliere eventuali ed ulteriori dubbi.
 \end{itemize}
 
 

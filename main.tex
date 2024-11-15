@@ -1,6 +1,7 @@
 \documentclass[italian, 12pt]{article}
-\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-18/packages}
-\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-18/variables}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-25/packages}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-25/variables}
+
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
 
@@ -26,7 +27,7 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-18/firstPage}
+\input{documents/1-Candidatura/Verbali_Esterni/verbale_esterno2024-10-25/firstPage}
 
 %-----------tabella versioni-----------%
 \begin{table}[!h]
@@ -36,9 +37,10 @@
 			\hline \\[-2ex]
 			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Verificatore}  \\
 			\\[-2ex] \hline \\[-1.5ex]
-            2.0 & 10/11/2024 & Aggiunta sezione delle decisioni in seguito ai feedback del professore (post-candidatura) & Nicolas Fracaro & Orlando Ferazzani\\
-            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Nicolas Fracaro & Orlando Ferazzani\\
-			0.1 & 23/10/2024 & Prima stesura del documento & Nicolas Fracaro & Orlando Ferazzani\\
+            2.0 & 10/11/2024 & Aggiunta sezione delle decisioni in seguito ai feedback del professore (post-candidatura) & Davide Benedetti & Orlando Ferazzani\\
+            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Davide Benedetti & Orlando Ferazzani\\
+            0.2 & 27/10/2024 & Integrazione documento & Davide Benedetti & Orlando Ferazzani\\
+			0.1 & 26/10/2024 & Prima stesura del documento & Davide Benedetti & Orlando Ferazzani\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -49,35 +51,37 @@
 \tableofcontents
 \newpage
 
-\section{Contenuti del verbale}
 
-\subsection{Informazioni sull'incontro}
+\section{Informazioni sulla riunione}
 \begin{itemize}
-    \item \textbf{Luogo:} Scambio di email all'indirizzo fornito nella presentazione del capitolato di \textit{Sanmarco Informatica}
-    \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi
-    \item \textbf{Partecipanti esterni:} Alex Beggiato (rappresentante di \textit{Sanmarco Informatica})
-\end{itemize}
-
-\section{Obiettivi dell'incontro}
-Durante l'incontro sono stati trattati i seguenti temi:
-\begin{itemize}
-    \item Chiarire i casi d'uso dell'applicazione e gli eventuali requisiti di autenticazione richiesti da \textit{Sanmarco Informatica} per il progetto descritto nel capitolato 5.
+    \item \textbf{Luogo:} Chiamata sulla piattaforma Teams
+    \item \textbf{Ora di inizio:} 15:10
+    \item \textbf{Ora di fine:} 15:35
+    \item \textbf{Partecipanti:} Valeri Mihail Belenkov, Davide Benedetti, Matteo Campagnaro, Orlando Ferazzani, Nicolas Fracaro, Mouad Mahdi, Andrea Santi 
+    \item \textbf{Partecipanti esterni:} Luca Cossaro , xxxx
 \end{itemize}
 
 \section{Sintesi dell'incontro}
-Il team ha concordato di inviare domande specifiche via email per ottenere risposte più rapide e ridurre al minimo il tempo necessario all'azienda proponente.
+Il team si è confrontato con l'azienda m31, riguardo il capitolato C6, inizialmente su una domanda inerente l'architettura del progetto, e, successivamente, su come poter svolgere al meglio il progetto e l'ambito organizzativo del gruppo.
+
 
 \section{Domande effettuate e relative risposte}
+\subsection{Architettura interna e connessione magazzini}
+E' stato chiarita la loro proposta di architettura su come i magazzini comunicano le loro disponibilità agli altri magazzini, inoltre è stato specificato che se avessimo delle proposte alternative che soddisfano ugualmente i loro requisiti, saranno più che felici di prenderle in considerazione
 
-\subsection{Quali sono i principali casi d'uso che \textit{Sanmarco Informatica} ha previsto per l'applicazione richiesta?}
-L'azienda ha indicato che l'applicazione sarà di uso generale e dovrà quindi essere in grado di gestire dati di diversa natura. Sono stati forniti alcuni esempi di casi d'uso, come "analisi delle vendite", "analisi demografica" e "analisi del codice". L'azienda ha inoltre suggerito la creazione di una landing page iniziale, in cui l'utente possa selezionare la fonte da cui reperire i dati, in considerazione della necessità di integrare informazioni provenienti da più fonti.
-
-\subsection{È richiesto un sistema di autenticazione per l'accesso all'applicazione?}
-L'azienda ha confermato che, per il progetto in questione, non è necessario implementare alcun sistema di autenticazione.
+\subsection{Collaborazioni passate}
+Il gruppo voleva sapere se avessero collaborato in passato con un gruppo simile al nostro, quindi un team universitario del numero simile di membri, per poter così reperire informazioni che sarebbero state utili per uno svolgimento ottimale del progetto. L'azienda, seppur non avesse mai collaborato con studenti universitari, lo ha fatto con gruppi di grandezza simile alla nostra, dandoci preziosi suggerimenti su come procedere al meglio:
+\begin{itemize}
+    \item Essere ben chiari e sinceri
+    \item Trovarsi spesso con tutti i membri del team, ma non solamente da remoto, ma anche dal vivo
+    \item Essendo composto da 7 membri, il team non è piccolo, sarà quindi importantissimo definire bene le task e obiettivi ad ogni sprint di ogni componente, in modo tale che ognuno sappia il proprio contesto di lavoro e non "pesti i piedi" di qualcun'altro
+    \item Mai dare nulla per scontato e, quindi, se dovessimo avere dei dubbi, è importante chiedere subito al cliente, per evitare di perdere tempo e evitare errori
+\end{itemize}
 
 \section{Decisioni prese}
 \begin{itemize}
-    \item Il team ha appreso meglio determinate specifiche inerenti al capitolato; se necessario, verrà richiesto un confronto con un meeting per ulteriori chiarimenti
+    \item Il gruppo ha sciolto numerosi dubbi legati all'architettura interna. Si è deciso a tal punto di guardare e comprendere in maniera più dettagliata l'utilità di alcune tecnologie citate durante la \textit{call}, con il fine di sciogliere eventuali ed ulteriori dubbi.
 \end{itemize}
+
 
 \end{document}
