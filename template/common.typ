@@ -8,10 +8,9 @@
   website: "https://sweetenteam.github.io",
   org: "https://github.com/SweeTenTeam",
   docs: "docs",
-  jmap: "jmap",
-  logo: "//images/logos/sweetenteam.png",
-  azzurro: "//images/logos/AzzurroDigitale-logo.png",
-  unipd: "//images/logos/Universita_Padova_transparent.png"
+  logo: "/images/logos/sweetenteam.png",
+  azzurro: "/images/logos/AzzurroDigitale-logo.png",
+  unipd: "/images/logos/Universita_Padova_transparent.png"
 )
 //team members
 #let p = (
