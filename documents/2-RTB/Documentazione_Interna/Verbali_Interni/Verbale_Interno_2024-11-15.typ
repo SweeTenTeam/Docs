@@ -21,20 +21,20 @@
 
 == Ordine del giorno
 - Riorganizzazione della documentazione;
-- Discussione sui file da inizire;
+- Discussione sui file da iniziare;
 - Supporto al gruppo.
 
 = Riorganizzazione della documentazione
 
-Riorganizzazione della repo per iniziare la documentazione per RTB e test del nuovo workflow per compilare i documenti in Typst.
+Il team ha deciso di riorganizzare la repository per avviare la documentazione relativa all'RTB. Inoltre, abbiamo iniziato a testare un nuovo workflow per la compilazione dei documenti utilizzando Typst, in modo da rendere il processo più fluido e efficiente.
 
 = Discussione sui file da inizire
 
-Dialogo per decidere i documenti da iniziare per L'RTB e per l'incontro della settimana prossima con l'azienda con la creazione delle prime milestone e la loro divisione in issue su github.
+Abbiamo avuto una conversazione approfondita per stabilire quali documenti iniziare a redigere per l'RTB e abbiamo discusso dell'incontro programmato per la prossima settimana con l'azienda, decidendo insieme le prime milestone da raggiungere. Per facilitare il lavoro, abbiamo anche pensato di suddividere queste milestone in issue su GitHub, in modo da tenere tutto organizzato e sotto controllo.
 
 = Supporto al gruppo
 
-Simulazione live per mostrare a tutti la procedura da seguire per la stesura di un verbale su un branch secondario, la creazione di una pull per la sua verifica e la sua conferma per spostarlo nel branch master.
+Due membri del gruppo hanno simulato dal vivo la creazione e la verifica di un documento. Durante la sessione è stato mostrato come creare una pull request per la verifica del documento e come procedere con la sua approvazione, in modo da poterlo successivamente spostare nel branch master. È stata un'ottima opportunità per chiarire i passaggi e rispondere a eventuali domande.
 
 = Decisioni prese
 
