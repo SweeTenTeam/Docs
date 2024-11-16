@@ -40,4 +40,4 @@ Due membri del gruppo hanno simulato dal vivo la creazione e la verifica di un d
 
 - Decisione dei ruoli per il primo sprint e cosa presentare per il fururo incontro con l'azienda;
 - Passaggio da Trello a github e jira per l'assegnazione dei compiti su consiglio dell'azienda;
-- Divisione del lavoro da fare tra i diversi mebri del gruppo con l'uso delle issue di github. 
+- Divisione del lavoro da fare tra i diversi membri del gruppo con l'uso delle issue di github. 
