@@ -1,4 +1,4 @@
-#import "//templates/document.typ": *
+#import "/template/document.typ": *
 
 #show: project.with(
   title: "Verbale interno del 2024-11-15",
