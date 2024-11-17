@@ -30,7 +30,7 @@ Il documento non si pone come una soluzione tecnica al problema, quanto più una
 In particolare, le finalità di questo documento possono essere descritte nei seguenti punti:\
 
 -  *Definire le esigenze del proponente*:\
-Questo documento si basa principalmente sulle richieste del proponente, ossia le idee che quest'ultimo ha riguardo a come dovrebbe essere il software che verrà sviluppato da noi. Tali idee verranno raccolte tramite i vari documenti e incontri con #box(image(g.azzurro, width: 5em, height: auto)) che avverranno lungo il percorso dello svolgimento del progetto.\
+Questo documento si basa principalmente sulle richieste del proponente, ossia le idee che quest'ultimo ha riguardo a come dovrebbe essere il software che verrà sviluppato dal nostro team. Tali idee verranno raccolte tramite i vari documenti e incontri con #box(image(g.azzurro, width: 5em, height: auto)) che avverranno lungo il percorso dello svolgimento del progetto.\
 
 - *Fornire una base per la progettazione del sistema*:\
 L'Analisi dei Requisiti fornisce una base per la progettazione del sistema, in quanto definisce le funzionalità che il sistema dovrà offrire, permettendo così ai programmatori di comprendere le esigenze dei proponenti identificando le soluzioni che più si adeguano a tali esigenze.\
