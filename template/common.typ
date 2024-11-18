@@ -14,6 +14,7 @@
 )
 //team members
 #let p = (
+  azzurro: "AzzurroDigitale",
   belenkov: "Valeri Mihail Belenkov",
   benedetti: "Davide Benedetti",
   campagnaro: "Matteo Campagnaro",

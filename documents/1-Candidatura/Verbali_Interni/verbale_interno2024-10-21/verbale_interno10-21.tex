@@ -1,8 +1,6 @@
-
-
 \documentclass[italian, 12pt]{article}
-\input{candidatura/verbale_interno10-21/packages}
-\input{candidatura/verbale_interno10-21/variables}
+\input{documents/1-Candidatura/Verbali_Interni/verbale_interno2024-10-21/packages}
+\input{documents/1-Candidatura/Verbali_Interni/verbale_interno2024-10-21/variables}
 
 \linespread{1.2}
 \captionsetup[table]{labelformat=empty}
@@ -19,7 +17,7 @@
 % -- INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam_nobg.png}} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/sweetenteam.png}} 
     \fancyhead[L]{\leftmark} 
    	\renewcommand{\headrulewidth}{1pt} 
   	\fancyhead[L]{\customtitle} 
@@ -29,19 +27,20 @@
 
 \begin{document}
 \pagestyle{mystyle}
-\input{candidatura/verbale_interno10-21/firstPage}
+\input{documents/1-Candidatura/Verbali_Interni/verbale_interno2024-10-21/firstPage}
 
 %-----------tabella versioni-----------%
 \begin{table}[!h]
 	\caption{Versioni}
 	\begin{center}
-		\begin{tabular}{ c c c c c}
+		\begin{tabular}{ c c p{6.2cm} c c}
 			\hline \\[-2ex]
-			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo}  \\
+			\textbf{Ver.} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Verificatore}  \\
 			\\[-2ex] \hline \\[-1.5ex]
-            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Matteo Campagnaro & Verificatore\\
-            0.2 & 25/10/2024 & Revisione e correzione sintassi & Andrea Santi & Verificatore\\
-			0.1 & 22/10/2024 & Prima stesura del documento & Orlando Ferazzani & Redattore\\
+            2.0 & 10/11/2024 & Aggiunta sezione delle decisioni in seguito ai feedback del professore (post-candidatura) & Orlando Ferazzani & Andrea Santi\\
+            1.0 & 30/10/2024 & \textbf{Approvazione per Candidatura} & Orlando Ferazzani & Andrea Santi\\
+            0.2 & 25/10/2024 & Correzione sintassi e layout & Orlando Ferazzani & Andrea Santi\\
+			0.1 & 22/10/2024 & Prima stesura del documento & Orlando Ferazzani & Andrea Santi\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -98,7 +97,11 @@ Dopo aver terminato il template per i vari documenti, alcuni membri del Team han
 \subsection{Stesura della valutazione dei capitolati}
 Mentre parte del team si occupava delle automazioni di GitHub, il resto iniziava la stesura della valutazione dei capitolati, partendo da quelli indicati nelle preferenze e poi muovendosi al resto. 
 
-
+\subsection{Decisioni prese}
+\begin{itemize}
+    \item Approvazione template \LaTeX
+    \item Inizio stesura "Valutazione dei capitolati"
+\end{itemize}
 
 
 
