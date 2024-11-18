@@ -3,7 +3,7 @@
 #show: project.with(
   title: "Glossario",
   recipients: (p.vardanega, p.cardin),
-  changelog: ("0.1", "2024-11-18", p.ferazzani, p.blank, "Prima stesura del glossario"),
+  changelog: ("0.1", "2024-11-18", p.ferazzani, p.santi, "Prima stesura del glossario"),
 )
 
 = Introduzione
