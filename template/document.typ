@@ -144,7 +144,8 @@
 }
 
 #let issue_to_link(repo, id) = {
-  return link(g.org + "/" + repo + "/issues/" + str(id))[#repo \##id]
+  let t = link(g.org + "/" + repo + "/issues/" + str(id))[#repo \##id]
+  text(fill: rgb("#a99c84"), style: "italic")[#t]
 }
 
 #let tasks(t) = {
@@ -299,6 +300,13 @@
   }
 
   text(fill: rgb("#a99c84"), style: "italic")[#t*#sub("G")*]
+}
+
+#let LTG(word) = {
+  let url = g.website + "/docs/RTB/Glossario#" + lower(word);
+  let t = underline(word);
+  let LTG = link(url)[*#t*];
+  return LTG;
 }
 
 #let neg(word)= {
