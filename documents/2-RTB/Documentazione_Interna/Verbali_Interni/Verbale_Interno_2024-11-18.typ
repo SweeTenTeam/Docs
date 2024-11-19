@@ -10,7 +10,7 @@
 
 == Informazioni sulla riunuione
 
-- *Luogo*: Asincrona (Discord)
+- *Luogo*: Discord
 - *Ora di inizio*: 15:30
 - *Ora di fine*: 17:00
 - *Partecipanti*: #p.ferazzani, #p.belenkov, #p.santi, #p.mahdi, #p.fracaro.
