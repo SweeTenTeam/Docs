@@ -2,8 +2,17 @@
 
 #show: project.with(
   title: "Glossario",
-  recipients: (p.vardanega, p.cardin),
-  changelog: ("0.1", "2024-11-18", p.ferazzani, p.blank, "Prima stesura del glossario"),
+  recipients: (
+    p.vardanega,
+    p.cardin,
+  ),
+  changelog: (
+    "0.1",
+    "2024-11-18",
+    p.ferazzani,
+    p.blank,
+    "Prima stesura del glossario",
+  ),
 )
 
 = Introduzione
@@ -23,7 +32,7 @@ la #text("sottolineatura"), oltre ad avere una #text("G", style: "italic", fill:
 
 La programmazione Agile è caratterizzata da uno sviluppo iterativo e incrementale. Si concentra sulla realizzazione di
 un MVP il più rapidamente possibile, ottenendo un feedback continuo dai clienti e rispondendo ai cambiamenti dei
-requisiti o della tecnologia
+requisiti o della tecnologia.
 
 == #LTG("Amministratore")
 
@@ -31,21 +40,18 @@ Un amministratore è una persona responsabile del controllo e dell'amministrazio
 dal gruppo ed è anche il punto di riferimento per quanto concerne le norme di progetto. Le sue principali mansioni sono:
 affrontare e risolvere le problematiche associate alla gestione dei processi; gestire l'archiviazione e le versioni
 della documentazione; gestire la configurazione del prodotto; redigere ed attuare le norme e le procedure per la
-gestione della qualità; amministrare le infrastrutture e i servizi per i processi di supporto
+gestione della qualità; amministrare le infrastrutture e i servizi per i processi di supporto.
 
 == #LTG("Analisi Dei Reqiuisiti")
 
-L'analisi dei requisiti è una fase fondamentale nello sviluppo del software, che coinvolge la raccolta, l'analisi, la
-documentazione e la comprensione approfondita delle esigenze e delle specifiche di un sistema o di un'applicazione
-software che si intende sviluppare (oltre ad essere un documento all'interno del nostro progetto)
+L'#glossary("analisi dei requisiti") è una fase fondamentale nello sviluppo del software, che comprende la raccolta, l'analisi, la documentazione e la comprensione delle esigenze e delle specifiche richieste dagli stakeholder per un sistema o un'applicazione software da sviluppare. Durante questa fase si formalizza quanto raccolto e si ottiene un documento dei requisiti, che descrive in modo chiaro e dettagliato le funzionalità del sistema.
 
 == #LTG("Analista")
 
 Figura professionale con competenze avanzate riguardo l’attività di analisi dei requisiti ed il dominio applicativo del
 problema. Il suo ruolo è quello di identificare, documentare e comprendere a fondo le esigenze e le specifiche del
 progetto, traducendole in requisiti chiari e dettagliati. Si occupa di: analizzare il contesto di riferimento, definire
-il problema in esame e stabilire gli obiettivi da raggiungere; comprendere il problema e definire la complessità e i
-requisiti; redigere il documento Analisi dei requisiti; studiare i bisogni espliciti ed impliciti
+il problema in esame e stabilire gli obiettivi da raggiungere; comprendere il problema e definire la complessità e i requisiti, redigere il documento Analisi dei requisiti; studiare i bisogni espliciti ed impliciti.
 
 #pagebreak()
 
@@ -64,18 +70,16 @@ esperimenti, senza modificare il codice stabile.
 
 Documento che contiene le specifiche e le condizioni per lo sviluppo di un progetto software. II capitolato viene
 redatto dal proponente e viene presentato ai fornitori o agli sviluppatori interessati a partecipare all'appalto per la
-realizzazione del prodotto software
+realizzazione del prodotto software.
 
 == #LTG("Committente")
 
 Il committente è la persona o l'organizzazione che richiede la realizzazione di un progetto software e finanzia il suo
-sviluppo. Il committente definisce i requisiti e le specifiche del progetto e valuta il prodotto finale rispetto ai
-propri obiettivi e aspettative
+sviluppo. Il committente definisce i requisiti e le specifiche del progetto e valuta il prodotto finale rispetto ai propri obiettivi e aspettative.
 
 == #LTG("Confluence")
 
-Confluence è uno strumento collaborativo di gestione della conoscenza e documentazione, sviluppato da Atlassian,
-progettato per aiutare i team a creare, organizzare e condividere contenuti in un'unica piattaforma centralizzata.
+Confluence è uno strumento collaborativo di gestione della conoscenza e documentazione, sviluppato da Atlassian, progettato per aiutare i team a creare, organizzare e condividere contenuti in un'unica piattaforma centralizzata.
 
 == #LTG("Cruscotto")
 
@@ -87,9 +91,7 @@ un'applicazione web che fornisce una panoramica visiva delle metriche e delle st
 della qualità del software. Questo cruscotto di solito raccoglie dati da varie fonti, come sistemi di gestione del
 versionamento del codice, strumenti di test automatizzati, sistemi di monitoraggio delle prestazioni e altri strumenti
 di analisi. Il suo obiettivo principale è quello di fornire agli sviluppatori, ai tester e ai responsabili un modo
-rapido ed efficace per valutare lo stato del progetto, identificare eventuali problemi o anomalie e prendere decisioni
-informate sulle azioni da intraprendere per migliorare la qualità del software
-
+rapido ed efficace per valutare lo stato del progetto, identificare eventuali problemi o anomalie e prendere decisioni basate sui dati per migliorare la qualità del software.
 #pagebreak()
 
 = #LTG("D")
@@ -97,7 +99,7 @@ informate sulle azioni da intraprendere per migliorare la qualità del software
 == #LTG("Dev team")
 
 In Scrum, il Development Team si riferisce all'insieme dei membri che svolge un ruolo nello sviluppo e nel supporto del
-prodotto e può includere ricercatori, architetti, designer, programmatori, e molti altri
+prodotto e può includere ricercatori, architetti, designer, programmatori, e molti altri.
 
 == #LTG("Diagramma dei casi d'uso")
 
@@ -119,13 +121,13 @@ funzionalità del sistema dal punto di vista dell'utente e a documentare i requi
 
 GitHub è una piattaforma di sviluppo collaborativo basata su Git, un sistema di controllo delle versioni distribuito. È
 ampiamente utilizzato da sviluppatori di software e team di sviluppo per gestire progetti, tenere traccia delle
-modifiche al codice sorgente, coordinare il lavoro tra i membri del team e facilitare la collaborazione su larga scala
+modifiche al codice sorgente, coordinare il lavoro tra i membri del team e facilitare la collaborazione su larga scala.
 
 == #LTG("Glossario")
 
 Elenco strutturato di termini tecnici o specializzati, ognuno corredato dalla propria definizione o spiegazione. Questo
 strumento aiuta a migliorare la comunicazione tra le varie parti coinvolte in un progetto, riducendo le ambiguità e
-garantendo una comprensione condivisa dei termini utilizzati in un determinato contesto
+garantendo una comprensione condivisa dei termini utilizzati in un determinato contesto.
 
 == #LTG("GUI (Graphical User Interface)")
 
@@ -145,9 +147,9 @@ utilizzare solo comandi testuali o linee di comando.
 
 == #LTG("Jira")
 
-Jira è uno strumento software sviluppato da Atlassian, utilizzato per la gestione di progetti, il monitoraggio dei
-problemi e il controllo dello sviluppo agile. È particolarmente popolare tra i team di sviluppo software, ma è anche
-ampiamente utilizzato in altri ambiti aziendali.
+Jira è uno strumento software sviluppato da Atlassian, utilizzato per la gestione di progetti, il monito
+raggio dei problemi e il controllo dello sviluppo agile. È particolarmente popolare tra i team di sviluppo
+software, specie grazie al servizio di ticketing che offre, ma è anche ampiamente utilizzato in altri ambiti aziendali.
 
 #pagebreak()
 
@@ -158,7 +160,7 @@ ampiamente utilizzato in altri ambiti aziendali.
 I Key Performance Indicator (KPI) sono misure quantitative utilizzate per valutare le prestazioni di un'organizzazione,
 di un progetto o di un processo rispetto agli obiettivi prefissati. I KPI forniscono un modo oggettivo per monitorare e
 valutare il successo di un'attività, identificare le aree di miglioramento e prendere decisioni informate per
-ottimizzare le prestazioni
+ottimizzare le prestazioni.
 
 #pagebreak()
 
@@ -168,8 +170,8 @@ ottimizzare le prestazioni
 
 LaTeX è un linguaggio di markup e un sistema di preparazione di documenti utilizzato principalmente per la produzione di
 documenti scientifici, accademici e tecnici, ma anche per altri tipi di pubblicazioni come libri, tesi, articoli e
-presentazioni. È basato su TeX, un sistema di tipografia creato da Donald Knuth negli anni '70, ma LaTeX aggiunge una
-serie di comandi e pacchetti che ne semplificano l'utilizzo.
+presentazioni. È basato su TeX, un sistema di tipografia creato da Donald Knuth negli anni \u{0027}70, ma LaTeX aggiunge una //this is weird
+serie di funzionalità e pacchetti per semplificare la scrittura e la formattazione dei documenti.
 
 #pagebreak()
 
@@ -179,14 +181,14 @@ serie di comandi e pacchetti che ne semplificano l'utilizzo.
 
 Le Milestone sono strumenti utilizzati nella gestione dei progetti per segnare punti specifici lungo la timeline di un
 progetto. Questi punti possono segnalare ancore come una data di inizio e di fine del progetto, o la necessità di una
-revisione. In molti casi, le milestone, non incidono sulla durata del progetto. Si concentrano invece sui principali
-punti di avanzamento che devono essere raggiunti per ottenere il successo
+revisione. In molti casi, le milestone, non incidono sulla durata del progetto ma si concentrano invece sui principali
+punti di avanzamento che devono essere raggiunti per ottenere il successo.
 
 == #LTG("Minimum Viable Product (MVP)")
 
 È una versione semplificata di un prodotto software che include solo le funzionalità essenziali per soddisfare i bisogni
 dei primi utenti. L'obiettivo principale di un MVP è testare e validare l'idea di base del prodotto, raccogliere
-feedback dagli utenti e ridurre al minimo il tempo e le risorse necessarie per il suo sviluppo
+feedback dagli utenti e ridurre al minimo il tempo e le risorse necessarie per il suo sviluppo.
 
 #pagebreak()
 
@@ -196,7 +198,7 @@ feedback dagli utenti e ridurre al minimo il tempo e le risorse necessarie per i
 
 Regole e linee guida stabilite all'interno di un progetto per garantire coerenza e qualità nelle attività svolte.
 Definiscono standard e procedure, come documentazione, gestione delle versioni e criteri di codifica, per assicurare
-uniformità nell'approccio e nel risultato finale
+uniformità nell'approccio e nel risultato finale.
 
 #pagebreak()
 
@@ -238,15 +240,15 @@ funzionante del prodotto che rappresenti la base per ulteriori sviluppi e miglio
 == #LTG("Product Owner")
 
 Un product owner supervisiona lo sviluppo di un prodotto software. È il membro di un team di sviluppo Scrum che mantiene
-la visione di un progetto di sviluppo secondo la metodologia Agile. Le loro responsabilità comprendono il mantenimento
+la visione di un progetto di sviluppo secondo la metodologia Agile. Le sue responsabilità comprendono il mantenimento
 di un backlog del prodotto, ovvero un elenco prioritario di opzioni di funzionalità.
 
 == #LTG("Progettista")
 
-Il progettista è la figura di riferimento per quanto riguarda le scelte progettuali partendo dal lavoro dell’analista.
+Il progettista è la figura di riferimento per quanto riguarda le scelte progettuali partendo dal lavoro dell'analista.
 Spetta al progettista assumere decisioni di natura tecnica e tecnologica, oltre a supervisionare il processo di
 sviluppo. Tuttavia, non è responsabile della manutenzione del prodotto. In particolare si occupa di: progettare
-l’architettura del prodotto secondo specifiche tecniche dettagliate; prendere decisioni per sviluppare soluzioni che
+l'architettura del prodotto secondo specifiche tecniche dettagliate; prendere decisioni per sviluppare soluzioni che
 soddisfino i criteri di affidabilità, efficienza, sostenibilità e conformità ai requisiti; redige la Specifica
 Architetturale e la parte pragmatica del Piano di Qualifica.
 
@@ -298,14 +300,13 @@ proprio computer) o remoti (su piattaforme come GitHub, GitLab, Bitbucket).
 Fase iniziale e fondamentale del processo di sviluppo di un software. In questa fase, l'obiettivo principale è stabilire
 e comprendere i requisiti del sistema e definire la base tecnologica sulla quale il progetto si svilupperà. Le tre
 principali attività di questa fase sono: l'analisi dei requisiti, la definizione della baseline tecnologica e la
-definizione della baseline di progetto
+definizione della baseline di progetto.
 
 == #LTG("Responsabile")
 
-Figura fondamentale che coordinare il gruppo, funge da punto di riferimento per il committente e per il team, svolgendo
+Figura fondamentale che coordina il gruppo, funge da punto di riferimento per il committente e per il team, svolgendo
 il ruolo di mediatore tra le due parti. In particolare si occupa di: gestire le relazioni con l’esterno; pianificare le
-attività (quali svolgere, data di inizio e fine, assegnazione delle priorità); valutare i rischi delle scelte da
-effettuare; controllare i progressi del progetto; gestire le risorse umane; approvare la documentazione
+attività (quali svolgere, data di inizio e fine, assegnazione delle priorità), valutare i rischi associati alle decisioni da prendere, controllare i progressi del progetto, gestire le risorse umane e approvare la documentazione.
 
 #pagebreak()
 
@@ -314,32 +315,32 @@ effettuare; controllare i progressi del progetto; gestire le risorse umane; appr
 == #LTG("Stato Avanzamento Lavori (SAL)")
 
 Nell'ambito del project management, è una riunione periodica (o attività di confronto analoga) che viene stabilita per
-garantire e verificare l'avanzamento di un progetto rispetto ai propri obiettivi
+garantire e verificare l'avanzamento di un progetto rispetto agli obiettivi prestabiliti.
 
 == #LTG("Scrum")
 
 Scrum è una struttura Agile di collaborazione tra team, comunemente utilizzata nello sviluppo di software e in altri
 settori. Scrum prescrive ai team di suddividere il lavoro in obiettivi da completare entro iterazioni a tempo, chiamate
-sprint
+sprint.
 
 == #LTG("Scrum master")
 
 Il ruolo di uno Scrum Master è quello di utilizzare la gestione agile dei progetti per sostenere un progetto, i team e i
 membri del team. Poiché gli Scrum Master possono lavorare in diversi contesti, i compiti e le responsabilità possono
-variare
+variare.
 
 == #LTG("Sprint")
 
 Gli sprint sono periodi di tempo che vanno da una settimana a un mese, durante i quali il Product Owner, lo Scrum Master
 e il Development Team lavorano per completare una specifica aggiunta al prodotto. Durante uno sprint, si lavora per
-creare nuove funzionalità basate sulle user stories e sul backlog
+creare nuove funzionalità basate sulle user stories e sul backlog.
 
 == #LTG("Stakeholder")
 
 Gli stakeholder sono le persone o le organizzazioni coinvolte o interessate a un progetto o a un'organizzazione. Gli
 stakeholder possono includere clienti, utenti finali, fornitori, dipendenti, investitori, partner commerciali,
 organizzazioni non governative e altri soggetti che possono influenzare o essere influenzati dalle decisioni e dalle
-azioni di un'organizzazione
+azioni di un'organizzazione.
 
 #pagebreak()
 
@@ -354,7 +355,7 @@ il lavoro da svolgere.
 
 == #LTG("Ticket")
 
-Un ticket è una registrazione formale di un'attività, problema, o richiesta all'interno di un sistema di gestione del
+Un ticket è una registrazione formale di un'attività, problema o richiesta all'interno di un sistema di gestione del
 lavoro o del supporto tecnico. I ticket sono utilizzati per tracciare, monitorare e gestire le richieste di assistenza,
 i bug, le nuove funzionalità o qualsiasi altra attività che richiede attenzione. Ogni ticket contiene informazioni come
 la descrizione del problema o della richiesta, lo stato attuale (ad esempio, "aperto", "in corso", "chiuso"),
@@ -376,7 +377,7 @@ l'integrazione di elementi grafici, come immagini e tabelle, e offre un'esperien
 
 == #LTG("User Story")
 
-Una user story è una descrizione informale, in linguaggio naturale, delle caratteristiche di un sistema software
+Una user story è una descrizione informale, in linguaggio naturale, delle caratteristiche di un sistema software.
 
 #pagebreak()
 
@@ -387,10 +388,10 @@ Una user story è una descrizione informale, in linguaggio naturale, delle carat
 La principale responsabilità del verificatore consiste nell’ispezionare il lavoro svolto da altri membri del team per
 assicurare la qualità del prodotto e la conformità alle attese prefissate. Stabilisce se il lavoro è stato svolto
 correttamente sulla base delle proprie competenze tecniche, esperienza e conoscenza delle norme. In particolare il
-verificatore si occupadi: verificare che il lavoro svolto sia conforme alle Norme di Progetto; verificare che il lavoro
+verificatore si occupa di: verificare che il lavoro svolto sia conforme alle Norme di Progetto; verificare che il lavoro
 svolto sia conforme alle Specifiche Tecniche; ricercare ed in caso segnalare eventuali errori; redigere la sezione
-retrospettiva del Piano di Qualifica, descrivendo le verifiche ele prove effettuate durante il processo di sviluppo del
-prodotto
+retrospettiva del Piano di Qualifica, descrivendo le verifiche e le prove effettuate durante il processo di sviluppo del
+prodotto.
 
 #pagebreak()
 
