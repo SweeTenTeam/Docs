@@ -42,7 +42,7 @@ affrontare e risolvere le problematiche associate alla gestione dei processi; ge
 della documentazione; gestire la configurazione del prodotto; redigere ed attuare le norme e le procedure per la
 gestione della qualità; amministrare le infrastrutture e i servizi per i processi di supporto.
 
-== #LTG("Analisi Dei Reqiuisiti")
+== #LTG("Analisi Dei Requisiti")
 
 L'#glossary("analisi dei requisiti") è una fase fondamentale nello sviluppo del software, che comprende la raccolta, l'analisi, la documentazione e la comprensione delle esigenze e delle specifiche richieste dagli stakeholder per un sistema o un'applicazione software da sviluppare. Durante questa fase si formalizza quanto raccolto e si ottiene un documento dei requisiti, che descrive in modo chiaro e dettagliato le funzionalità del sistema.
 
