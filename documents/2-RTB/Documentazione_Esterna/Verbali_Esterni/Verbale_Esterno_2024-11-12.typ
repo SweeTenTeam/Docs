@@ -19,7 +19,7 @@
     (p.santi),
     "Verificato Verbale, modifica paragrafo 4",
     "0.1",
-    "2024-11-05",
+    "2024-11-12",
     (p.ferazzani),
     (p.santi),
     "Stesura iniziale del verbale",
@@ -32,7 +32,7 @@
 - *Luogo*: Uffici AzzurroDigitale;
 - *Ora di inizio*: 16:00;
 - *Ora di fine*: 18:00;
-- *Partecipanti*: #p.ferazzani, #p.belenkov, #p.santi, #p.mahdi, #p.fracaro.
+- *Partecipanti*: #p.ferazzani, #p.belenkov, #p.santi, #p.mahdi, #p.fracaro, #p.campagnaro, #p.benedetti;
 - *Partecipanti Esterni*: Team AzzurroDigitale e Team SwegLabs.
 
 == Ordine del giorno
