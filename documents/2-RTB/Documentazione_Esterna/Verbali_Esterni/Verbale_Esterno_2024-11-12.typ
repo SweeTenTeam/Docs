@@ -8,9 +8,21 @@
     p.cardin,
   ),
   changelog: (
-    "1.0", "2024-11-14", (p.ferazzani), (p.santi),  "Approvazione Documento.",
-    "0.2", "2024-11-14", (p.ferazzani), (p.santi), "Verificato Verbale, modifica paragrafo 4", 
-    "0.1", "2024-11-05", (p.ferazzani), (p.santi), "Stesura iniziale del verbale",
+    "1.0",
+    "2024-11-14",
+    (p.ferazzani),
+    (p.santi),
+    "Approvazione Documento.",
+    "0.2",
+    "2024-11-14",
+    (p.ferazzani),
+    (p.santi),
+    "Verificato Verbale, modifica paragrafo 4",
+    "0.1",
+    "2024-11-12",
+    (p.ferazzani),
+    (p.santi),
+    "Stesura iniziale del verbale",
   ),
 )
 
@@ -20,8 +32,8 @@
 - *Luogo*: Uffici AzzurroDigitale;
 - *Ora di inizio*: 16:00;
 - *Ora di fine*: 18:00;
-- *Partecipanti*: #p.ferazzani, #p.belenkov, #p.santi, #p.mahdi, #p.fracaro.
-- *Partecipanti Esterni*: Team AzzurroDigitale e Team SwegLabs. 
+- *Partecipanti*: #p.ferazzani, #p.belenkov, #p.santi, #p.mahdi, #p.fracaro, #p.campagnaro, #p.benedetti;
+- *Partecipanti Esterni*: Team AzzurroDigitale e Team SwegLabs.
 
 == Ordine del giorno
 - Kick-off del progetto;
@@ -43,9 +55,9 @@ Il team di #box(image(g.azzurro, width: 5em, height: auto)), dopo una breve pres
 
 = Discussione sul progetto e way of working aziendale
 
-Dopo le varie presentazioni ci è stata esposta la metodologia Agile che viene utilizzata da loro e che utilizzeremo come gruppo per lo sviluppo di questo capitolato. 
-In particolare svolgeremo sprint bisettimanali con incrontri pre-programmati per le prossime 10 settimane. 
-La struttura di un singolo sprint si divide come segue: 
+Dopo le varie presentazioni ci è stata esposta la metodologia Agile che viene utilizzata da loro e che utilizzeremo come gruppo per lo sviluppo di questo capitolato.
+In particolare svolgeremo sprint bisettimanali con incrontri pre-programmati per le prossime 10 settimane.
+La struttura di un singolo sprint si divide come segue:
 + Raccolta specifiche \u{FE61}
 + Creazione ticket e assegnazione ticket
 + Planning Poker
@@ -68,8 +80,8 @@ E' stata discussa anche la struttura base del progetto, come la GUI, la logica e
 = Prossimi step
 - Incontro per la raccolta delle specifiche fissato per il 2024-11-19 alle ore 17:00;
 - Sviluppo piano di lavoro
-- Comunicazione all'azienda di un eventuale budget per l'acquisto di Key OpenAI. 
-- Redazione Obiettivi primi 3-4 sprint. 
+- Comunicazione all'azienda di un eventuale budget per l'acquisto di Key OpenAI.
+- Redazione Obiettivi primi 3-4 sprint.
 
 #pagebreak()
 
