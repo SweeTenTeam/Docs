@@ -11,7 +11,7 @@
     "0.0.1",
     "2024-11-20",
     (p.ferazzani),
-    (p.santi),
+    (p.campagnaro),
     "Stesura del capitolo: Processi di Supporto - Gestione della qualità",
   ),
 
