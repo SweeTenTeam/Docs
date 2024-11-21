@@ -4,15 +4,20 @@
   title: "Analisi dei Requisiti",
   managers: p.belenkov,
   recipients: (p.vardanega, p.cardin, p.azzurro,),
-  changelog: ("0.0.1", "2024-11-16", p.belenkov, p.santi, [
-    Stesura iniziale del documento e breve introduzione.
-  ]),
-  ("0.0.2", "2024-11-21", p.mahdi, p.santi, [
-    Fine punto 1 e inizio punto 2.
-  ]),
+  changelog: (
+    "0.0.1",
+    "2024-11-16", 
+    (p.belenkov), 
+    (p.santi),
+    "Stesura iniziale del documento e breve introduzione.",
+    "0.0.2",
+    "2024-11-21",
+    (p.mahdi), 
+    (p.santi), 
+    "Fine punto 1 e inizio punto 2."
+  ),
   show_images_list: true,
   show_tables_list: true,
-  outline_depth: 3,
 )
 
 = *Introduzione*
