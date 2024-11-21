@@ -7,7 +7,7 @@
   changelog: ("0.0.1", "2024-11-16", p.belenkov, p.santi, [
     Stesura iniziale del documento e breve introduzione.
   ]),
-  changelog: ("0.0.2", "2024-11-21", p.mahdi, p.santi, [
+  ("0.0.2", "2024-11-21", p.mahdi, p.santi, [
     Fine punto 1 e inizio punto 2.
   ]),
   show_images_list: true,
