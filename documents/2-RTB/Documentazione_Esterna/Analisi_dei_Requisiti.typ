@@ -4,19 +4,14 @@
   title: "Analisi dei Requisiti",
   managers: p.belenkov,
   recipients: (p.vardanega, p.cardin, p.azzurro,),
-  changelog: (
-    "0.0.1", 
-    "2024-11-16",
-    (p.belenkov), 
-    (p.santi),
-    "Stesura iniziale del documento e breve introduzione.",
-    "0.0.2",
-    "2024-11-16", 
-    (p.mahdi), (p.santi),
-    "Stesura dello scopo del progetto."
-  ),
-  show_images_list: false,
-  show_tables_list: false,
+  changelog: ("0.0.1", "2024-11-16", p.belenkov, p.santi, [
+    Stesura iniziale del documento e breve introduzione.
+  ]),
+  changelog: ("0.0.2", "2024-11-21", p.mahdi, p.santi, [
+    Fine punto 1 e inizio punto 2.
+  ]),
+  show_images_list: true,
+  show_tables_list: true,
   outline_depth: 3,
 )
 
@@ -69,6 +64,23 @@ vengono riportate tutte le definizioni delle parole ambigue utilizzate nei docum
 Nel documento verranno riportati tutti i termini definiti nel loro ambiente di utilizzo con la descrizione del loro significato.
 I termini presenti nel glossario sono evidenziati e hanno una piccola 'G' alla fine
 
+== Sviluppo e miglioramento
+Questo documento è stato sviluppato in modo graduale e progressivo, 
+con l'obiettivo di facilitare eventuali modifiche future 
+in base alle necessità concordate tra il gruppo di progetto e l'azienda committente. 
+Pertanto è soggetto a un continuo miglioramento.
+
 == Riferimenti
-Presentazione pdf del capitolato C9:
-https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf
+=== Normativi
+  Presentazione pdf del capitolato C9:
+  https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf
+=== Informativi
+  Slide del corso(T5): 
+  https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
+
+= Descrizione
+== Obiettivo del prodotto
+Lo scopo del progetto è la creazione di un #glossary("chatbot") #glossary("text-to-text") per l'azienda #box(image(g.azzurro, width: 5em, height: auto)) 
+che centralizza le informazioni relative all'azienda provenienti da diverse piattaforme e con l'uso di un #glossary("LLM") le elabora per creare delle risposte 
+in linguaggio naturale. Il #glossary("chatbot") sarà in grado di rispondere a domande che variano dalla data di un determinato incontro fissato su #glossary("Jira") 
+a cosa è cambiato in un determinato commit su #glossary("Github"). Inoltre aiuterà i nuovi membri a navigare tra tra le risorse aziendali e rispondendo alle domande frequenti.
