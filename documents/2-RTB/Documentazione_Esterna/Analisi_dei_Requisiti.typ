@@ -4,12 +4,17 @@
   title: "Analisi dei Requisiti",
   managers: p.belenkov,
   recipients: (p.vardanega, p.cardin, p.azzurro,),
-  changelog: ("0.0.1", "2024-11-16", p.belenkov, p.santi, [
-    Stesura iniziale del documento e breve introduzione.
-  ]),
-  ("0.0.2", "2024-11-16", p.mahdi, p.santi, [
-    Stesura dello scopo del progetto.
-  ]),
+  changelog: (
+    "0.0.1", 
+    "2024-11-16",
+    (p.belenkov), 
+    (p.santi),
+    "Stesura iniziale del documento e breve introduzione.",
+    "0.0.2",
+    "2024-11-16", 
+    (p.mahdi), (p.santi),
+    "Stesura dello scopo del progetto."
+  ),
   show_images_list: false,
   show_tables_list: false,
   outline_depth: 3,
