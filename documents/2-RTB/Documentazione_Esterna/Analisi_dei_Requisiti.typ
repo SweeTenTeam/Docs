@@ -7,7 +7,7 @@
   changelog: ("0.0.1", "2024-11-16", p.belenkov, p.santi, [
     Stesura iniziale del documento e breve introduzione.
   ]),
-  changelog: ("0.0.2", "2024-11-16", p.mahdi, p.santi, [
+  ("0.0.2", "2024-11-16", p.mahdi, p.santi, [
     Stesura dello scopo del progetto.
   ]),
   show_images_list: false,
