@@ -10,7 +10,7 @@
     "0.1",
     "2024-11-18",
     p.ferazzani,
-    p.campagnaro,
+    p.santi,
     "Prima stesura del glossario",
   ),
 )
