@@ -14,7 +14,12 @@
     "2024-11-21",
     (p.mahdi), 
     (p.santi), 
-    "Fine punto 1 e inizio punto 2."
+    "Fine punto 1 e inizio punto 2.",
+    "0.0.3",
+    "2024-11-21",
+    (p.santi), 
+    (p.mahdi), 
+    "Terminata la descrizione (punto 2)."
   ),
   show_images_list: true,
   show_tables_list: true,
@@ -89,3 +94,20 @@ Lo scopo del progetto è la creazione di un #glossary("chatbot") #glossary("text
 che centralizza le informazioni relative all'azienda provenienti da diverse piattaforme e con l'uso di un #glossary("LLM") le elabora per creare delle risposte 
 in linguaggio naturale. Il #glossary("chatbot") sarà in grado di rispondere a domande che variano dalla data di un determinato incontro fissato su #glossary("Jira") 
 a cosa è cambiato in un determinato commit su #glossary("Github"). Inoltre aiuterà i nuovi membri a navigare tra tra le risorse aziendali e rispondendo alle domande frequenti.
+
+
+== Funzionalità del prodotto
+BuddyBot è un assistente virtuale progettato per garantire un accesso facile e immediato alle informazioni aziendali attraverso un’interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall’azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest’ultime e fornendo le risposte alle domande poste dall’utente.
+
+L’assistente virtuale utilizza tecnologie di Intelligenza Artificiale (nel nostro progetto verranno utilizzati #glossary("GroqCloud") e #glossary("Langchain") lato #glossary("LLM")) per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate. 
+
+A seguire, BuddyBot garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("PostgreSQL") a un volume #glossary("Docker").
+
+== Utenti e caratteristiche
+Il prodotto si rivolge principalmente al team aziendale:
+
+  - *Sviluppatori*, che accedono a informazioni tecniche come codice e documentazione;
+  - #glossary("Project Manager"), che usa BuddyBot per monitorare task e risorse;
+  - *Nuovi membri* del team, che vengono supportati nell'onboarding e nella ricerca delle informazioni necessarie, facilitando la loro integrazione nell’azienda;
+  - In generale, allo *staff aziendale*.
+Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l’uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
