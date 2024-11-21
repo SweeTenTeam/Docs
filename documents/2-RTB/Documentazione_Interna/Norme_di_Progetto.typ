@@ -8,6 +8,11 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.2",
+    "2024-11-21",
+    (p.campagnaro),
+    (p.ferazzani),
+    "Stesura del capitolo: Introduzione",
     "0.0.1",
     "2024-11-20",
     (p.ferazzani),
@@ -19,6 +24,38 @@
   show_tables_list: true,
 )
 
+= Introduzione
+== Scopo del documento
+Il presente documento ha lo scopo di definire le linee guida operative che il gruppo adotterà per la realizzazione del progetto didattico. In questo documento sono raccolte le procedure da seguire per ogni #glossary("processo") e attività.
+Per la realizzazione di questo documento è prevista la modifica e l'aggiunta di nuove indicazioni in base alle decisioni che verranno prese dal gruppo durante lo svolgimento del progetto.
+Tutti i membri del gruppo si impegnano a consultare regolarmente questo documento e ad attenersi scrupolosamente alle procedure in esso descritte, al fine di garantire un approccio professionale, coerente e uniforme nello svolgimento delle attività.
+
+== Scopo del progetto
+Il team #p.azzurro utilizza quotidianamente diverse piattaforme per redigere documentazione e consultare informazioni essenziali per i progetti, questo può spesso comportare inefficienze.
+L'obiettivo del progetto Buddybot è lo sviluppo di una piccola piattaforma web con un’interfaccia #glossary("chat") per interagire con l’#glossary("IA") che funga da assistente virtuale.
+Questo deve essere in grado di ottenere in modo facile e veloce informazioni dalle fonti specificate e di fornirle in base alle domande poste tramite #glossary("chat") in linguaggio naturale. Tali informazioni devono essere aggregate e centralizzate da diverse fonti tra cui #glossary("GitHub"), #glossary("Confluence") e #glossary("Jira") permettendo un accesso facile
+e immediato con il fine di migliorare la produttività e dare supporto all’#glossary("OnBoarding").
+
+== Glossario
+Per garantire chiarezza e coerenza nella terminologia utilizzata nei documenti, è stato deciso di creare un glossario contenente le definizioni dei termini. Questo strumento raccoglierà tutti i termini specifici del dominio d’uso, accompagnati dai rispettivi significati. L’inclusione di un termine nel glossario sarà segnalata attraverso #glossary("questo stile") dedicato.
+
+== Riferimenti
+=== Riferimenti normativi
+- `Norme di Progetto v1.0.0`
+-  Documentazione e presentazione del capitolato d'appalto C9: BuddyBot \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9.pdf") (Ultimo accesso: 2024-11-21) \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf") (Ultimo accesso: 2024-11-21)
+- Regolamento del progetto didattico: \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf") (Ultimo accesso: 2024-11-21)
+
+=== Riferimenti informativi
+- I processi di ciclo di vita del software \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf") (Ultimo accesso: 2024-11-21)
+- `Glossario v1.0.0`: \ #link("https://sweetenteam.github.io/docs/RTB/Glossario")
+- Documentazione #glossary("git"): \
+  #link("https://git-scm.com/docs") (Ultimo accesso: 2024-11-21)
+- Documentazione #glossary("GitHub"): \ 
+  #link("https://docs.github.com/en") (Ultimo accesso: 2024-11-21)
+- Documentazione #glossary("Typst") \ 
+  #link("https://typst.app/docs/") (Ultimo accesso: 2024-11-21)
 
 // PARTE DI MATTEO
 
