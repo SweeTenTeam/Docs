@@ -8,6 +8,13 @@
     p.cardin,
   ),
   changelog: (
+    "1.0",
+    "2024-11-21",
+    (p.benedetti),
+    (p.mahdi),
+    [
+      Approvazione documento
+    ],
     "0.2",
     "2024-11-21",
     (p.benedetti),
