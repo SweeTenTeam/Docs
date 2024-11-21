@@ -8,6 +8,11 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.2",
+    "2024-11-21",
+    (p.campagnaro),
+    (p.ferazzani),
+    "Stesura del capitolo: Introduzione",
     "0.0.1",
     "2024-11-20",
     (p.ferazzani),
@@ -28,7 +33,7 @@ Tutti i membri del gruppo si impegnano a consultare regolarmente questo document
 == Scopo del progetto
 Il team #p.azzurro utilizza quotidianamente diverse piattaforme per redigere documentazione e consultare informazioni essenziali per i progetti, questo può spesso comportare inefficienze.
 L'obiettivo del progetto Buddybot è lo sviluppo di una piccola piattaforma web con un’interfaccia #glossary("chat") per interagire con l’#glossary("IA") che funga da assistente virtuale.
-Questo deve essere in grado di ottenere in modo facile e veloce informazioni dalle fonti specificate e di fornirle in base alle domande poste tramite #glossary("chat") in linguaggio naturale. Tali informazioni devono essere aggregare e centralizzare da diverse fonti tra cui #glossary("GitHub"), #glossary("Confluence") e #glossary("Jira") permettendo un accesso facile
+Questo deve essere in grado di ottenere in modo facile e veloce informazioni dalle fonti specificate e di fornirle in base alle domande poste tramite #glossary("chat") in linguaggio naturale. Tali informazioni devono essere aggregate e centralizzate da diverse fonti tra cui #glossary("GitHub"), #glossary("Confluence") e #glossary("Jira") permettendo un accesso facile
 e immediato con il fine di migliorare la produttività e dare supporto all’#glossary("OnBoarding").
 
 == Glossario
