@@ -5,8 +5,8 @@
   managers: p.belenkov,
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
-    "0.0.1",
-    "2024-11-16", 
+    "0.0.3",
+    "2024-11-22", 
     (p.belenkov), 
     (p.santi),
     "Stesura iniziale del documento e breve introduzione.",
@@ -63,21 +63,17 @@ comprenderli pienamente, allora verrà data una rappresentazione formale grafica
 #glossary("diagrammi dei casi d'uso").
 
 == Scopo del progetto
-Lo scopo del progetto è la realizzazione dei un assistente virtuale sotto forma di #glossary("chatbot") in grado di assistere gli utenti rispondendo alle loro domande in linguaggio naturale. 
-Il chatbot garantirà un accesso rapido alle informazioni interne dell'azienda aggregando i dati provenienti dalle piattaforme #glossary("Jira"), #glossary("Github") e #glossary("Confluence") ed elaborando questi ultimi con l'uso dell'intelligenza artificiale per dare risposte chiare.
-Questo strumento sarà utile non solo ai membri già attivi dell'azienda per tagliare i tempi lunghi di ricerca manuale di una determinata informazione ma anche per il processo di onboarding dei nuovi arrivati rispondendo alle domande più frequenti e guidandoli nel processo di apprendimento delle risorse aziendali senza il bisogno di una figura di supporto.
+Lo scopo del progetto è la realizzazione dei un assistente virtuale sotto forma di #glossary("chatbot") in grado di assistere gli utenti, rispondendo alle loro domande in linguaggio naturale. 
+Il chatbot garantirà un accesso rapido alle informazioni interne dell'azienda, aggregando i dati provenienti dalle piattaforme #glossary("Jira"), #glossary("Github") e #glossary("Confluence") ed elaborando questi ultimi con l'uso dell'intelligenza artificiale per dare risposte chiare.
+Questo strumento sarà utile non solo ai membri già attivi dell'azienda per tagliare i tempi lunghi di ricerca manuale di una determinata informazione, ma anche per il processo di onboarding dei nuovi arrivati rispondendo alle domande più frequenti e guidandoli nel processo di apprendimento delle risorse aziendali senza il bisogno di una figura di supporto.
 
 == Glossario
-Al fine di evitare eventuali equivoci o incomprensioni riguardo la terminologia utilizzata all’interno di 
-questo documento, si è deciso di adottare un Glossario, file e pagina web, in cui
-vengono riportate tutte le definizioni delle parole ambigue utilizzate nei documenti di questo progetto. 
+Al fine di evitare eventuali equivoci o incomprensioni , si è deciso di adottare un Glossario presente come file e nella pagina web, in cui vengono riportate tutte le definizioni delle parole ambigue utilizzate nei documenti di questo progetto. 
 Nel documento verranno riportati tutti i termini definiti nel loro ambiente di utilizzo con la descrizione del loro significato.
-I termini presenti nel glossario sono evidenziati e hanno una piccola 'G' alla fine
+I termini presenti nel glossario sono evidenziati e hanno una piccola 'G' alla fine.
 
 == Sviluppo e miglioramento
-Questo documento è stato sviluppato in modo graduale e progressivo, 
-con l'obiettivo di facilitare eventuali modifiche future 
-in base alle necessità concordate tra il gruppo di progetto e l'azienda committente. 
+Questo documento è stato sviluppato in modo graduale e progressivo, con l'obiettivo di facilitare eventuali modifiche future in base alle necessità concordate tra il gruppo di progetto e l'azienda committente. 
 Pertanto è soggetto a un continuo miglioramento.
 
 == Riferimenti
@@ -90,10 +86,8 @@ Pertanto è soggetto a un continuo miglioramento.
 
 = Descrizione
 == Obiettivo del prodotto
-Lo scopo del progetto è la creazione di un #glossary("chatbot") #glossary("text-to-text") per l'azienda #box(image(g.azzurro, width: 5em, height: auto)) 
-che centralizza le informazioni relative all'azienda provenienti da diverse piattaforme e con l'uso di un #glossary("LLM") le elabora per creare delle risposte 
-in linguaggio naturale. Il #glossary("chatbot") sarà in grado di rispondere a domande che variano dalla data di un determinato incontro fissato su #glossary("Jira") 
-a cosa è cambiato in un determinato commit su #glossary("Github"). Inoltre aiuterà i nuovi membri a navigare tra tra le risorse aziendali e rispondendo alle domande frequenti.
+Questo progetto consiste nella creazione di un #glossary("chatbot") #glossary("text-to-text") per l'azienda #box(image(g.azzurro, width: 5em, height: auto)), che centralizza le informazioni relative all'azienda provenienti da diverse piattaforme e, con l'uso di un #glossary("LLM"), le elabora per creare delle risposte in linguaggio naturale. BuddyBot sarà in grado di rispondere a domande che variano dalla data di un determinato incontro fissato su #glossary("Jira"), a cosa è cambiato in un determinato commit su #glossary("Github") e a richieste specifiche su documenti presenti in #glossary("Confluence"). Inoltre aiuterà i nuovi membri a navigare tra tra le risorse aziendali, rispondendo alle domande frequenti.
+Tale prodotto, in conclusione, risponde alla necessità di accedere in modo facile e immediato alle informazioni.
 
 
 == Funzionalità del prodotto
