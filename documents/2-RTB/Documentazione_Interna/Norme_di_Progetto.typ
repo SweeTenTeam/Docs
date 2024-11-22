@@ -49,7 +49,7 @@ Per la realizzazione di questo documento è prevista la modifica e l'aggiunta di
 Tutti i membri del gruppo si impegnano a consultare regolarmente questo documento e ad attenersi scrupolosamente alle procedure in esso descritte, al fine di garantire un approccio professionale, coerente e uniforme nello svolgimento delle attività.
 
 == Scopo del progetto
-Il team #p.azzurro utilizza quotidianamente diverse piattaforme per redigere documentazione e consultare informazioni essenziali per i progetti, questo può spesso comportare inefficienze.
+Il team #box(image(g.azzurro, width: 5em, height: auto)) utilizza quotidianamente diverse piattaforme per redigere documentazione e consultare informazioni essenziali per i progetti, questo può spesso comportare inefficienze.
 L'obiettivo del progetto Buddybot è lo sviluppo di una piccola piattaforma web con un’interfaccia #glossary("chat") per interagire con l’#glossary("IA") che funga da assistente virtuale.
 Questo deve essere in grado di ottenere in modo facile e veloce informazioni dalle fonti specificate e di fornirle in base alle domande poste tramite #glossary("chat") in linguaggio naturale. Tali informazioni devono essere aggregate e centralizzate da diverse fonti tra cui #glossary("GitHub"), #glossary("Confluence") e #glossary("Jira") permettendo un accesso facile
 e immediato con il fine di migliorare la produttività e dare supporto all’#glossary("OnBoarding").
@@ -84,6 +84,7 @@ Lo scopo di questo processo è di tracciare e descrivere le attività svolte da 
 
 === Descrizione
 Queste sono le attività definite nel processo primario di #glossary("fornitura"):
+
 - *Acquisizione e preparazione*: si individuano le necessità del cliente e vengono definiti eventuali requisiti, con associate analisi dei costi pecuniari e temporali (preventivo), e valutazione delle varie opzioni;
 - *Contrattazione*: vengono negoziati tra fornitore e cliente i termini e le condizioni contrattuali, e vengono stipulati di comune accordo obiettivi, costi, tempistiche e responsabilità di entrambe le parti;
 - *Pianificazione*: vengono pianificate le attività e le stesure dei documenti utili alla realizzazione del progetto nel rispetto degli accordi presi;
@@ -92,25 +93,29 @@ Queste sono le attività definite nel processo primario di #glossary("fornitura"
 - *Completamento e consegna*: una volta completato il progetto, viene consegnato al cliente il prodotto finale, secondo quanto stipulato nel contratto.
 
 === Aspettative
-Il gruppo SweeTen Team intende instaurare e mantenere uno stretto rapporto di collaborazione con l’azienda proponente AzzurroDigitale e, in particolare, con le figure dei referenti: Giorgio Vallini, Martina Daniele, Mattia Gottardello e Nicola Boscaro.
+Il gruppo SweeTen Team intende instaurare e mantenere uno stretto rapporto di collaborazione con l’azienda proponente #box(image(g.azzurro, width: 5em, height: auto)) e, in particolare, con le figure dei referenti: Giorgio Vallini, Martina Daniele, Mattia Gottardello e Nicola Boscaro.
+
 Grazie ad un dialogo continuo, il gruppo intende:
+
 - Ricevere #glossary("feedback") sul lavoro svolto;
 - Verificare che i vincoli e i requisiti individuati corrispondano a quanto richiesto dal capitolato e dall’azienda proponente.
 
 
 === Rapporti con il proponente
-L’azienda AzzurroDigitale ha messo a disposizione un canale di comunicazione costante e tempestivo per facilitare il dialogo con i responsabili del progetto assegnato al team. Questo canale, istituito sulla piattaforma #glossary("Discord"), consente di risolvere dubbi, ricevere consigli e gestire l’organizzazione del lavoro. Oltre a #glossary("Discord"), per delle richieste più formali è possibile contattare la Proponente anche tramite posta elettronica.
+L’azienda #box(image(g.azzurro, width: 5em, height: auto)) ha messo a disposizione un canale di comunicazione costante e tempestivo per facilitare il dialogo con i responsabili del progetto assegnato al team. Questo canale, istituito sulla piattaforma #glossary("Discord"), consente di risolvere dubbi, ricevere consigli e gestire l’organizzazione del lavoro. Oltre a #glossary("Discord"), per delle richieste più formali è possibile contattare la Proponente anche tramite posta elettronica.
 
 Inoltre, è stato concordato di organizzare regolarmente riunioni di Stato Avanzamento Lavori (#glossary("SAL")), che si tengono generalmente ogni due settimane, il martedì alle 17:00 (con eventuali modifiche di data o orario in caso di necessità). Queste riunioni coincidono con la conclusione dello Sprint corrente e l’inizio del successivo. Durante gli incontri, il team presenta il lavoro svolto nello #glossary("Sprint"), riceve feedback dall’azienda, discute eventuali problemi riscontrati e pianifica le attività per il prossimo #glossary("Sprint").
 
 Per ogni colloquio con l’azienda proponente verrà redatto un resoconto sotto forma di Verbale Esterno, che riporterà nel nome e all’interno del documento la data del relativo incontro. I verbali redatti potranno essere consultati all’interno della relativa cartella presente sul #glossary("repository") #link("https://github.com/SweeTenTeam/Docs/tree/master/documents"), disponibile per ogni #glossary("baseline") del progetto.
 
 === Documentazione fornita
-In aggiunta alle attività volte alla realizzazione del progetto, vengono redatti e resi disponibili all’azienda #glossary("propronente") AzzurroDigitale e ai Committenti Prof. Vardanega e Prof. Cardin i seguenti documenti:
+In aggiunta alle attività volte alla realizzazione del progetto, vengono redatti e resi disponibili all’azienda #glossary("propronente") #box(image(g.azzurro, width: 5em, height: auto)) e ai Committenti Prof. Vardanega e Prof. Cardin i seguenti documenti:
 
 ==== Valutazione dei Capitolati
 La Valutazione dei Capitolati è un documento che fornisce una panoramica dettagliata sui capitolati d’appalto presentati il 15 ottobre 2023. Per ogni progetto vengono analizzate le richieste del #glossary("proponente"), individuate le possibili soluzioni e identificate eventuali criticità.
+
 Ogni capitolato è stato suddiviso nelle seguenti sezioni:
+
 - *Descrizione*: nome del progetto, azienda proponente, informazioni generali relative al prodotto da sviluppare secondo quanto descritto nella presentazione del capitolato;
 - *Dominio applicativo*: contesto del progetto;
 - *Dominio tecnologico*: tecnologie da utilizzare per lo sviluppo;
@@ -119,7 +124,10 @@ Ogni capitolato è stato suddiviso nelle seguenti sezioni:
 - *Conclusioni*: motivazioni sulla scelta/non scelta del capitolato
 
 ==== Dichiarazione degli Impegni
-Questo documento formalizza la volontà del gruppo di impegnarsi nella realizzazione del prodotto previsto da un capitolato specifico (nel nostro caso, #glossary("BuddyBot"), proposto dall’azienda AzzurroDigitale). Oltre a dichiarare l’impegno, il documento include:
+Questo documento formalizza la volontà del gruppo di impegnarsi nella realizzazione del prodotto previsto da un capitolato specifico (nel nostro caso, #glossary("BuddyBot"), proposto dall’azienda #box(image(g.azzurro, width: 5em, height: auto))). 
+
+Oltre a dichiarare l’impegno, il documento include:
+
 - La suddivisione del monte ore complessivo e dei singoli ruoli tra i membri del gruppo;
 - La descrizione dettagliata dei ruoli e delle loro responsabilità, con riferimento alle specifiche del progetto;
 - Un preventivo iniziale dei costi;
@@ -133,7 +141,9 @@ La Lettera di Presentazione è un documento che accompagna la documentazione e i
 
 ==== Analisi dei Requisiti
 L’Analisi dei Requisiti è un documento che definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del proponente. Descrive in dettaglio i casi d’uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del software.
+
 Contiene le seguenti informazioni:
+
 - *Descrizione del prodotto*: obiettivo finale del prodotto e le sue funzionalità principali;
 - *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati: 
   - Scenario;
@@ -143,10 +153,12 @@ Contiene le seguenti informazioni:
 
 ==== Piano di Progetto
 Il Piano di Progetto è un documento versionato e soggetto ad approvazione, redatto e aggiornato dal Responsabile del progetto con il supporto degli Amministratori durante l’intera durata del lavoro. Il suo scopo è delineare la pianificazione e la gestione delle attività necessarie per la realizzazione del progetto.
+
 Il documento include le seguenti sezioni:
+
 - *Analisi dei Rischi*: identifica le potenziali problematiche che potrebbero rallentare o ostacolare lo sviluppo. Per prevenire questi problemi, il gruppo propone soluzioni da applicare tempestivamente. I rischi sono classificati in:
-  - *Rischi organizzativi*
-  - *Rischi tecnologici*
+  - *#glossary("Rischi organizzativi")*
+  - *#glossary("Rischi tecnologici")*
 - *Modello di sviluppo*: descrive l’approccio metodologico e strutturato adottato dal team per sviluppare il prodotto.
 - *Pianificazione*: suddivide il progetto in periodi definiti, ciascuno corredato da eventi e attività specifiche. Per ogni periodo, il documento mostra una stima dell’impegno richiesto a ciascun membro del gruppo.
 - *Preventivo*: fornisce una stima della durata di ogni periodo e il tempo necessario per completare tutte le attività previste.
@@ -156,6 +168,7 @@ Il documento include le seguenti sezioni:
 Il Piano di Qualifica descrive le strategie di verifica e validazione per garantire la qualità del prodotto e dei processi del progetto. È un documento dinamico e aggiornato che definisce le pratiche di controllo qualità, con focus sulle metriche di valutazione del prodotto.
 
 Le principali sezioni sono:
+
 - *Qualità di processo*: garantisce che i processi di sviluppo siano ottimali, integrando la qualità in tutte le attività del ciclo di vita del #glossary("software").
 - *Qualità di prodotto*: assicura che il prodotto soddisfi i requisiti del progetto, concentrandosi su affidabilità, funzionalità, manutenibilità e usabilità.
 - *Test*: include il piano di testing, comprendente test di unità, integrazione, sistema e accettazione, per verificare la correttezza finale del prodotto.
@@ -164,6 +177,7 @@ Le principali sezioni sono:
 Il documento Norme di Progetto ha lo scopo di definire un insieme di standard e regole riguardanti i processi e le loro modalità operative (#glossary("Way of Working")), da seguire obbligatoriamente dal team di sviluppo durante l'intero ciclo di vita del progetto, per garantire la qualità e la conformità agli obiettivi e requisiti stabiliti con il cliente. 
 
 Il documento è suddiviso nelle seguenti sezioni:
+
 - Introduzione
 - Processi primari
 - Processi di supporto
@@ -179,16 +193,23 @@ Il documento Manuale Utente serve a descrivere i requisiti minimi e le istruzion
 Il documento Specifica Tecnica ha lo scopo di descrivere e chiarire gli aspetti tecnici chiave del progetto, oltre a servire come guida per la codifica e la manutenzione del sistema. La sua finalità principale è fornire una descrizione dettagliata e approfondita dell'architettura implementativa del sistema, analizzando anche il codice e i design pattern utilizzati. Inoltre, il documento ha il compito di monitorare la copertura dei requisiti definiti nell'Analisi dei Requisiti.
 
 ==== Verbali Interni
-La documentazione relativa alle riunioni interne avvenute tramite la piattaforma comunicativa #glossary("Discord") del team, viene riportata sottoforma di verbali interni. Lo scopo dei verbali interni è quello di fissare per iscritto:
+La documentazione relativa alle riunioni interne avvenute tramite la piattaforma comunicativa #glossary("Discord") del team, viene riportata sottoforma di verbali interni. 
+
+Lo scopo dei verbali interni è quello di fissare per iscritto:
+
 - Discussioni, proposte, dubbi ed eventuali problemi riscontrati;
 - Riassunto dell’andamento dell’ultimo periodo;
 - Organizzazione per il prossimo periodo.
 
 ==== Verbali esterni
-La documentazione relativa alle riunioni esterne avvenute tramite la piattaforma comunicativa #glossary("Google Meet") dal team e dai referenti del progetto, viene riportata sottoforma di verbali esterni. Lo scopo dei verbali esterni è quello di fissare per iscritto:
+La documentazione relativa alle riunioni esterne avvenute tramite la piattaforma comunicativa #glossary("Google Meet") dal team e dai referenti del progetto, viene riportata sottoforma di verbali esterni. 
+
+Lo scopo dei verbali esterni è quello di fissare per iscritto:
+
 - Discussioni, proposte, dubbi ed eventuali problemi riscontrati;
 - Resoconto del lavoro svolto durante l’ultimo Sprint con #glossary("feedback") della Proponente;
-- Organizzazione e obiettivi per il prossimo #glossary("Sprint"). 
+- Organizzazione e obiettivi per il prossimo #glossary("Sprint").
+
 I verbali esterni, al contrario dei verbali interni, una volta redatti, verranno inviati telematicamente alla Proponente per una essere verificati e convalidati.
 
 === Strumenti
@@ -201,7 +222,7 @@ Servizio di messaggistica istantanea utilizzato per come metodo di comunicunicaz
 Servizio di posta elettronica utilizzato come metodo di comunicunicazione formale fra il team e i referenti del progetto.
 
 ==== #glossary("Discord")
-Piattaforma utilizzata dal team per effettuare videochiamate e per lo scambio di informzzioni, file, dati utili, link e appunti. #glossary("Discord"), attraverso un apposito canale, viene utilizzato anche per avere un riscontro immediato con il team di AzzurroDigitale.
+Piattaforma utilizzata dal team per effettuare videochiamate e scambiare informazioni, file, dati utili, link e appunti. #glossary("Discord"), attraverso un apposito canale, viene utilizzato anche per avere un riscontro immediato con il team di #box(image(g.azzurro, width: 5em, height: auto)).
 
 ==== #glossary("Google Meet")
 Piattaforma dove vengono svolti incontri, ogni due settimane, con l’azienda e i responsabili del progetto.
@@ -241,6 +262,7 @@ Sono state quindi definite le `best practices` di modo che ogni componente del g
 Il documento *Piano di Qualifica* è fondamentale per garantire il rispetto gli standard di qualità richiesti, per il completamento degli obiettivi di questo #glossary("processo") e per soddisfare le richieste e le aspettative degli #glossary("Stakeholders").
 
 Il documento si estende, e non si limita, a:
+
 - Definire gli obiettivi di qualità del progetto;
 - Definire le metriche di visione quantitativa;
 - Definire test di qualità e di accettazione;
@@ -248,7 +270,9 @@ Il documento si estende, e non si limita, a:
 
 === Testing
 Il suddetto documento *Piano di Qualifica* definisce obiettivi di qualità sia dei processi che dei prodotti. Le metriche relative forniscono una verifica sugli aspetti di accessibilità, mentre i test garantiscono la qualità generale del software e dei processi.
+
 Le categorie di test sono:
+
 + #glossary("Test di unità"): verifica il corretto sviluppo e funzionamento di un'unica unità del sistema. Un'unità è definita come un elemento indivisibile e unico del sistema stesso.
 + #glossary("Test di integrazione"): verifica il corretto funzionamento di più unità del sistema, integrate tra loro, ma che cooperano per svolgere un'unica funzione all'interno del sistema.
 + #glossary("Test di sistema"): verifica il funzionamento del sistema nel suo intero. I requisiti funzionali, di vincolo, di qualità e di prestazione precedentemente concordati con il Proponente sono testati e verificati in questa fase.
@@ -257,7 +281,9 @@ Le categorie di test sono:
 === Metriche
 
 Le metriche di qualità sono fondamentali per garantire il rispetto degli standard di qualità richiesti. Il documento *Piano di Qualifica* fornisce varie metriche utilizzate per misurare e rispettare gli standard di qualità.
+
 Le metriche sono divise in due categorie:
+
 - Processo: PRC
 - Prodotto: PRD
 
@@ -265,6 +291,7 @@ Inoltre, le suddette metriche sono identificate come segue:
 *#align("M-[Categoria-Metrica]-[Sigla-Identificativa-Metrica]", center)*
 
 Ogni metrica ha:
+
 - un valore minimo (o accettabile): valore sotto il quale il processo o il prodotto misurato diventa inaccettabile
 - un valore ammissibile (o ottimale): valore ideale che dovrebbe essere raggiunto dalla metrica
 - descrizione: descrizione breve della metrica
@@ -274,6 +301,7 @@ Ogni metrica ha:
 === Aspettative
 
 Il team si aspetta di rispettare in ogni momento gli standard di qualità definiti. Inoltre, il team si aspetta:
+
 - Ottima qualità del prodotto
 - Ottima qualità dei processi
 - Miglioramento costante
@@ -290,6 +318,7 @@ Come stabilito dallo Standard `ISO/IEC 12207:1997`, il processo organizzativo di
 
 === Descrizione
 Il processo è diviso nelle seguenti attività:
+
 - Inizio e definizione dello Scopo;
 - Pianificazione;
 - Esecuzione e Controllo;
@@ -326,6 +355,7 @@ I ruoli in depth:
 
 *Responsabile di progetto*\
 Ha il compito fondamentale di rappresentare il gruppo e di esporlo al Proponente e ai committenti.
+
 I compiti di questo ruolo sono:
 
 - Approvare la documentazione
@@ -386,6 +416,7 @@ I compiti principali sono:
 Il Team utilizza il sistema di #glossary("Issue Tracking Sistem") (ITS) di GitHub. Questo permette di assegnare compiti e ruoli ai membri del Team, di monitorare l'avanzamento del progetto e di tenere traccia delle attività svolte, oltre ad essere facilmente collegabile a #glossary("Pull Request") e #glossary("Commit").
 
 Le issue principali sono create dal responsabile del gruppo che assegna i compiti ai vari membri del team. In seguito, ogni problema è ulteriormente suddiviso in sotto-problemi e di conseguenza, "sotto-issue". Queste ultime sono create non dal Responsabile, ma dall'assegnatario della issue principale. Questo permette di avere una visione chiara e dettagliata delle attività da svolgere e di monitorare l'avanzamento del progetto. Ad esempio:
+
 - Responsabile crea la Issue `Norme di Progetto` e la assegna al componente X
 - X studia il documento `Norme di progetto` e individua sotto-issue per rendere il problema più approcciabile.
 - X crea le sotto-issue individutae, le auto-asssegna e sceglie il verificatore.
@@ -441,7 +472,7 @@ Su #glossary("Telegram") sono affrontate solamente questioni di rapida risoluzio
 
 ===== Esterne
 
-Tutte le comunicazioni esterne sono gestite dal Responsabile del Progetto, previa consultazione con il Team e visione della comunicazione stessa. Le comunicazioni formali vengono effettuale tramite email attraverso questo indirizzo: #link("mailto:" + g.mail). L'azienda AzzurroDigitale ha messo a disposizione anche un canale di comunicazione per facilitare il dialogo con i responsabili del progetto assegnato al team.
+Tutte le comunicazioni esterne sono gestite dal Responsabile del Progetto, previa consultazione con il Team e visione della comunicazione stessa. Le comunicazioni formali vengono effettuale tramite email attraverso questo indirizzo: #link("mailto:" + g.mail). L'azienda #box(image(g.azzurro, width: 5em, height: auto)) ha messo a disposizione anche un canale di comunicazione per facilitare il dialogo con i responsabili del progetto assegnato al team.
 
 
 
