@@ -7,8 +7,8 @@
   changelog: (
     "0.0.3",
     "2024-11-22", 
-    (p.mahdi), 
-    (p.santi),
+    (p.santi), 
+    (p.mahdi),
     "Terminata la descrizione (punto 2).",
     "0.0.2",
     "2024-11-21",
