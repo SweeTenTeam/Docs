@@ -2,24 +2,24 @@
 
 #show: project.with(
   title: "Analisi dei Requisiti",
-  managers: p.belenkov,
+  managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
     "0.0.3",
     "2024-11-22", 
-    (p.belenkov), 
+    (p.mahdi), 
     (p.santi),
-    "Stesura iniziale del documento e breve introduzione.",
+    "Terminata la descrizione (punto 2).",
     "0.0.2",
     "2024-11-21",
     (p.mahdi), 
     (p.santi), 
     "Fine punto 1 e inizio punto 2.",
-    "0.0.3",
-    "2024-11-21",
+    "0.0.1",
+    "2024-11-19",
+    (p.belenkov), 
     (p.santi), 
-    (p.mahdi), 
-    "Terminata la descrizione (punto 2)."
+    "Stesura iniziale del documento e breve introduzione."
   ),
   show_images_list: true,
   show_tables_list: true,
