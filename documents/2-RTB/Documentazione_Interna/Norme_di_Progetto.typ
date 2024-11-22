@@ -8,6 +8,13 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.4",
+    "2024-11-22",
+    (p.campagnaro),
+    (p.ferazzani),
+    [
+      Stesura del capitolo: Processi Primari - Fornitura
+    ],
     "0.0.3",
     "2024-11-21",
     (p.ferazzani),
@@ -68,10 +75,153 @@ Per garantire chiarezza e coerenza nella terminologia utilizzata nei documenti, 
 - Documentazione #glossary("Typst") \
   #link("https://typst.app/docs/") (Ultimo accesso: 2024-11-21)
 
+#pagebreak()
+= Processi primari
+== Fornitura
+=== Scopo
+Il processo primario di #glossary("fornitura"), definito dallo standard `ISO/IEC 12207:1995` (versione aggiornata al 2017), descrive l'insieme delle attività necessarie per sviluppare un prodotto software che soddisfi completamente i requisiti e le esigenze del #glossary("Committente"). Questo processo copre tutte le fasi, dalla formulazione della proposta fino alla consegna finale del prodotto, assicurando un percorso chiaro, strutturato, #glossary("efficiente") ed #glossary("efficace"). \
+Lo scopo di questo processo è di tracciare e descrivere le attività svolte da ogni componente del gruppo SweeTenTeam, per determinare quanto lavoro è ancora da completare oppure è stato ultimato rispetto alle richieste del #glossary("proponente").
+
+=== Descrizione
+Queste sono le attività definite nel processo primario di #glossary("fornitura"):
+- *Acquisizione e preparazione*: si individuano le necessità del cliente e vengono definiti eventuali requisiti, con associate analisi dei costi pecuniari e temporali (preventivo), e valutazione delle varie opzioni;
+- *Contrattazione*: vengono negoziati tra fornitore e cliente i termini e le condizioni contrattuali, e vengono stipulati di comune accordo obiettivi, costi, tempistiche e responsabilità di entrambe le parti;
+- *Pianificazione*: vengono pianificate le attività e le stesure dei documenti utili alla realizzazione del progetto nel rispetto degli accordi presi;
+- *Attuazione e controllo*: vengono eseguite le attività pianificate, controllando regolarmente e consistentemente lo stato di avanzamento e il rispetto degli impegni prefissati conformemente al costo, alle tempistiche e ai requisiti accordati in precedenza;
+- *Revisione e valutazione*: vengono effettuate revisioni periodiche e confronti con il cliente, per assicurare il corretto svolgimento del progetto secondo i termini prefissati e risolvere dubbi e incertezze;
+- *Completamento e consegna*: una volta completato il progetto, viene consegnato al cliente il prodotto finale, secondo quanto stipulato nel contratto.
+
+=== Aspettative
+Il gruppo SweeTen Team intende instaurare e mantenere uno stretto rapporto di collaborazione con l’azienda proponente AzzurroDigitale e, in particolare, con le figure dei referenti: Giorgio Vallini, Martina Daniele, Mattia Gottardello e Nicola Boscaro.
+Grazie ad un dialogo continuo, il gruppo intende:
+- Ricevere #glossary("feedback") sul lavoro svolto;
+- Verificare che i vincoli e i requisiti individuati corrispondano a quanto richiesto dal capitolato e dall’azienda proponente.
+
+
+=== Rapporti con il proponente
+L’azienda AzzurroDigitale ha messo a disposizione un canale di comunicazione costante e tempestivo per facilitare il dialogo con i responsabili del progetto assegnato al team. Questo canale, istituito sulla piattaforma #glossary("Discord"), consente di risolvere dubbi, ricevere consigli e gestire l’organizzazione del lavoro. Oltre a #glossary("Discord"), per delle richieste più formali è possibile contattare la Proponente anche tramite posta elettronica.
+
+Inoltre, è stato concordato di organizzare regolarmente riunioni di Stato Avanzamento Lavori (#glossary("SAL")), che si tengono generalmente ogni due settimane, il martedì alle 17:00 (con eventuali modifiche di data o orario in caso di necessità). Queste riunioni coincidono con la conclusione dello Sprint corrente e l’inizio del successivo. Durante gli incontri, il team presenta il lavoro svolto nello #glossary("Sprint"), riceve feedback dall’azienda, discute eventuali problemi riscontrati e pianifica le attività per il prossimo #glossary("Sprint").
+
+Per ogni colloquio con l’azienda proponente verrà redatto un resoconto sotto forma di Verbale Esterno, che riporterà nel nome e all’interno del documento la data del relativo incontro. I verbali redatti potranno essere consultati all’interno della relativa cartella presente sul #glossary("repository") #link("https://github.com/SweeTenTeam/Docs/tree/master/documents"), disponibile per ogni #glossary("baseline") del progetto.
+
+=== Documentazione fornita
+In aggiunta alle attività volte alla realizzazione del progetto, vengono redatti e resi disponibili all’azienda #glossary("propronente") AzzurroDigitale e ai Committenti Prof. Vardanega e Prof. Cardin i seguenti documenti:
+
+==== Valutazione dei Capitolati
+La Valutazione dei Capitolati è un documento che fornisce una panoramica dettagliata sui capitolati d’appalto presentati il 15 ottobre 2023. Per ogni progetto vengono analizzate le richieste del #glossary("proponente"), individuate le possibili soluzioni e identificate eventuali criticità.
+Ogni capitolato è stato suddiviso nelle seguenti sezioni:
+- *Descrizione*: nome del progetto, azienda proponente, informazioni generali relative al prodotto da sviluppare secondo quanto descritto nella presentazione del capitolato;
+- *Dominio applicativo*: contesto del progetto;
+- *Dominio tecnologico*: tecnologie da utilizzare per lo sviluppo;
+- *Aspetti positivi*;
+- *Fattori critici*;
+- *Conclusioni*: motivazioni sulla scelta/non scelta del capitolato
+
+==== Dichiarazione degli Impegni
+Questo documento formalizza la volontà del gruppo di impegnarsi nella realizzazione del prodotto previsto da un capitolato specifico (nel nostro caso, #glossary("BuddyBot"), proposto dall’azienda AzzurroDigitale). Oltre a dichiarare l’impegno, il documento include:
+- La suddivisione del monte ore complessivo e dei singoli ruoli tra i membri del gruppo;
+- La descrizione dettagliata dei ruoli e delle loro responsabilità, con riferimento alle specifiche del progetto;
+- Un preventivo iniziale dei costi;
+- La scadenza prefissata prevista per il completamento del progetto.
+
+==== Glossario
+Il Glossario è un documento di supporto pensato per i membri del team, i committenti e l’azienda #glossary("proponente"). La sua creazione ha l’obiettivo di eliminare ambiguità o incomprensioni legate alla terminologia utilizzata nella documentazione del progetto, garantendo chiarezza e coerenza nella comunicazione.
+
+==== Lettera di presentazione
+La Lettera di Presentazione è un documento che accompagna la documentazione e il prodotto forniti all’azienda #glossary("proponente") durante le fasi di revisione del progetto. Il suo scopo è fornire un rapido contesto sullo stato di avanzamento dei lavori (o sul loro avvio, nel caso della lettera relativa ai capitolati) e offrire una breve panoramica della documentazione prodotta fino a quel momento.
+
+==== Analisi dei Requisiti
+L’Analisi dei Requisiti è un documento che definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del proponente. Descrive in dettaglio i casi d’uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del software.
+Contiene le seguenti informazioni:
+- *Descrizione del prodotto*: obiettivo finale del prodotto e le sue funzionalità principali;
+- *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati: 
+  - Scenario;
+  - Attori coinvolti;
+  - Azioni eseguibili.
+- *Lista dei requisiti*: tutte le richieste o vincoli definiti dal proponente o dedotti dal team per la realizzazione del prodotto finale. I requisiti possono essere obbligatori, desiderabili e opzionali e verranno classificati dal gruppo a seconda della loro importanza.
+
+==== Piano di Progetto
+Il Piano di Progetto è un documento versionato e soggetto ad approvazione, redatto e aggiornato dal Responsabile del progetto con il supporto degli Amministratori durante l’intera durata del lavoro. Il suo scopo è delineare la pianificazione e la gestione delle attività necessarie per la realizzazione del progetto.
+Il documento include le seguenti sezioni:
+- *Analisi dei Rischi*: identifica le potenziali problematiche che potrebbero rallentare o ostacolare lo sviluppo. Per prevenire questi problemi, il gruppo propone soluzioni da applicare tempestivamente. I rischi sono classificati in:
+  - *Rischi organizzativi*
+  - *Rischi tecnologici*
+- *Modello di sviluppo*: descrive l’approccio metodologico e strutturato adottato dal team per sviluppare il prodotto.
+- *Pianificazione*: suddivide il progetto in periodi definiti, ciascuno corredato da eventi e attività specifiche. Per ogni periodo, il documento mostra una stima dell’impegno richiesto a ciascun membro del gruppo.
+- *Preventivo*: fornisce una stima della durata di ogni periodo e il tempo necessario per completare tutte le attività previste.
+- *Consuntivo*: analizza il lavoro effettivamente svolto rispetto al preventivo, valutando lo stato di avanzamento del progetto al termine di ciascun periodo.
+
+==== Piano di Qualifica
+Il Piano di Qualifica descrive le strategie di verifica e validazione per garantire la qualità del prodotto e dei processi del progetto. È un documento dinamico e aggiornato che definisce le pratiche di controllo qualità, con focus sulle metriche di valutazione del prodotto.
+
+Le principali sezioni sono:
+- *Qualità di processo*: garantisce che i processi di sviluppo siano ottimali, integrando la qualità in tutte le attività del ciclo di vita del #glossary("software").
+- *Qualità di prodotto*: assicura che il prodotto soddisfi i requisiti del progetto, concentrandosi su affidabilità, funzionalità, manutenibilità e usabilità.
+- *Test*: include il piano di testing, comprendente test di unità, integrazione, sistema e accettazione, per verificare la correttezza finale del prodotto.
+
+==== Norme di Progetto
+Il documento Norme di Progetto ha lo scopo di definire un insieme di standard e regole riguardanti i processi e le loro modalità operative (#glossary("Way of Working")), da seguire obbligatoriamente dal team di sviluppo durante l'intero ciclo di vita del progetto, per garantire la qualità e la conformità agli obiettivi e requisiti stabiliti con il cliente. 
+
+Il documento è suddiviso nelle seguenti sezioni:
+- Introduzione
+- Processi primari
+- Processi di supporto
+- Processi organizzativi
+- Standard `ISO/IEC 9126` per la qualità
+- Metriche di qualitá del processo
+- Metriche di qualitá del prodotto
+
+==== Manuale Utente
+Il documento Manuale Utente serve a descrivere i requisiti minimi e le istruzioni utili all’installazione/utilizzo del prodotto finale. Descrive inoltre le funzionalità del prodotto e di come l’utente può usufruirne.
+
+==== Specifica Tecnica
+Il documento Specifica Tecnica ha lo scopo di descrivere e chiarire gli aspetti tecnici chiave del progetto, oltre a servire come guida per la codifica e la manutenzione del sistema. La sua finalità principale è fornire una descrizione dettagliata e approfondita dell'architettura implementativa del sistema, analizzando anche il codice e i design pattern utilizzati. Inoltre, il documento ha il compito di monitorare la copertura dei requisiti definiti nell'Analisi dei Requisiti.
+
+==== Verbali Interni
+La documentazione relativa alle riunioni interne avvenute tramite la piattaforma comunicativa #glossary("Discord") del team, viene riportata sottoforma di verbali interni. Lo scopo dei verbali interni è quello di fissare per iscritto:
+- Discussioni, proposte, dubbi ed eventuali problemi riscontrati;
+- Riassunto dell’andamento dell’ultimo periodo;
+- Organizzazione per il prossimo periodo.
+
+==== Verbali esterni
+La documentazione relativa alle riunioni esterne avvenute tramite la piattaforma comunicativa #glossary("Google Meet") dal team e dai referenti del progetto, viene riportata sottoforma di verbali esterni. Lo scopo dei verbali esterni è quello di fissare per iscritto:
+- Discussioni, proposte, dubbi ed eventuali problemi riscontrati;
+- Resoconto del lavoro svolto durante l’ultimo Sprint con #glossary("feedback") della Proponente;
+- Organizzazione e obiettivi per il prossimo #glossary("Sprint"). 
+I verbali esterni, al contrario dei verbali interni, una volta redatti, verranno inviati telematicamente alla Proponente per una essere verificati e convalidati.
+
+=== Strumenti
+Gli strumenti software utilizzati nel processo di fornitura sono descritti di seguito.
+
+==== #glossary("Telegram")
+Servizio di messaggistica istantanea utilizzato per come metodo di comunicunicazione asincrona tra membri del gruppo.
+
+==== #glossary("Gmail")
+Servizio di posta elettronica utilizzato come metodo di comunicunicazione formale fra il team e i referenti del progetto.
+
+==== #glossary("Discord")
+Piattaforma utilizzata dal team per effettuare videochiamate e per lo scambio di informzzioni, file, dati utili, link e appunti. #glossary("Discord"), attraverso un apposito canale, viene utilizzato anche per avere un riscontro immediato con il team di AzzurroDigitale.
+
+==== #glossary("Google Meet")
+Piattaforma dove vengono svolti incontri, ogni due settimane, con l’azienda e i responsabili del progetto.
+
+==== #glossary("Google Calendar")
+Servizio che offre la possibilità di visualizzare le riunioni esterne e fissate dalla Proponente.
+
+==== #glossary("Fogli Google")
+Applicazione online che consente di creare e formattare fogli di calcolo. Viene utilizzata dal team per inserire e organizzare i dati relativi a preventivi e consuntivi dei vari periodi;
+
+==== #glossary("GitHub")
+Piattaforma online che consente agli sviluppatori di creare, salvare, gestire e condividere il proprio codice sorgente, facilitando la collaborazione e il controllo delle versioni.
+
+==== #glossary("Typst")
+Linguaggio utilizzato per la creazione e la redazione della documentazione.
+
 // PARTE DI MATTEO
 
 
-
+#pagebreak()
 = Processi di Supporto
 // PARTE DI MATTEO
 
@@ -103,7 +253,7 @@ Le categorie di test sono:
 + #glossary("Test di integrazione"): verifica il corretto funzionamento di più unità del sistema, integrate tra loro, ma che cooperano per svolgere un'unica funzione all'interno del sistema.
 + #glossary("Test di sistema"): verifica il funzionamento del sistema nel suo intero. I requisiti funzionali, di vincolo, di qualità e di prestazione precedentemente concordati con il Proponente sono testati e verificati in questa fase.
 + #glossary("Test di accettazione"): verifica il soddisfacimento del Proponente rispetto ai requisiti concordati. Questi test sono eseguiti in presenza del Proponente stesso. Il superamento di questi test garantisce il rilascio del prodotto.
-#pagebreak()
+
 === Metriche
 
 Le metriche di qualità sono fondamentali per garantire il rispetto degli standard di qualità richiesti. Il documento *Piano di Qualifica* fornisce varie metriche utilizzate per misurare e rispettare gli standard di qualità.
@@ -130,7 +280,7 @@ Il team si aspetta di rispettare in ogni momento gli standard di qualità defini
 - Test frequenti e predicibili
 - Soddisfazione delle richieste e aspettative del Proponente
 
-
+#pagebreak()
 = Processi Organizzativi
 I processi organizzativi sono fondamentali per garantire il corretto svolgimento del progetto in conformità con gli standard di qualità prefissati.
 
@@ -146,7 +296,7 @@ Il processo è diviso nelle seguenti attività:
 - Revisione e Valutazione;
 - Chiusura.
 
-#pagebreak()
+
 === Pianificazione
 ==== Scopo
 Come da `Standard ISO/IEC 12207:1997`, il #glossary("Responsabile") ha il compito di predisporre i piani per l'esecuzione di tutte le attività di pianificazione. I piani dovranno essere dettagliati, contenere la descrizione delle attività e dei compiti (e ruoli) assegnati.
