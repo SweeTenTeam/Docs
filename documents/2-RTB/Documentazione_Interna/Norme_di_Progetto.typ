@@ -136,7 +136,7 @@ I processi organizzativi sono fondamentali per garantire il corretto svolgimento
 
 == Gestione dei Processi
 === Scopo
-Come stabilito dallo Standard `ISO/IEC 12207:1997`, il processo organizzativo di gestione dei processi ha come scopo quello di identificare le attività generali che ogni membro del team è chiamato a svolgere. E' un' attività chiave per garantire il completamento del progetto in modo efficiente e in linea con gli standard di qualità già definiti e con le aspettative del Proponente.
+Come stabilito dallo Standard `ISO/IEC 12207:1997`, il processo organizzativo di gestione dei processi ha come scopo quello di identificare le attività generali che ogni membro del team è chiamato a svolgere. È un'attività chiave per garantire il completamento del progetto in modo efficiente e in linea con gli standard di qualità già definiti e con le aspettative del Proponente.
 
 === Descrizione
 Il processo è diviso nelle seguenti attività:
@@ -151,7 +151,7 @@ Il processo è diviso nelle seguenti attività:
 ==== Scopo
 Come da `Standard ISO/IEC 12207:1997`, il #glossary("Responsabile") ha il compito di predisporre i piani per l'esecuzione di tutte le attività di pianificazione. I piani dovranno essere dettagliati, contenere la descrizione delle attività e dei compiti (e ruoli) assegnati.
 Il Responsabile dovrà redigere questa pianificazione all'interno del documento #glossary("Piano di Progetto").
-Questo documento riporta tutte le descrizioni e pianificazioni delle attività da svolgere in un certo periodo (uno o più sprint)
+Questo documento riporta tutte le descrizioni e pianificazioni delle attività da svolgere in un certo periodo (uno o più sprint).
 
 ==== Descrizione
 L'attività di pianificazione viene articolata nelle due seguenti sezioni:
@@ -161,6 +161,7 @@ L'attività di pianificazione viene articolata nelle due seguenti sezioni:
 
 ==== Aspettative
 L'attività di pianificazione aiuta il team a:
+
 - Organizzare e pianificare le attività da svolgere;
 - Assegnare i compiti ai membri del team;
 - Rispettare le scadenze prefissate;
@@ -176,6 +177,7 @@ I ruoli in depth:
 *Responsabile di progetto*\
 Ha il compito fondamentale di rappresentare il gruppo e di esporlo al Proponente e ai committenti.
 I compiti di questo ruolo sono:
+
 - Approvare la documentazione
 - Gestire la pianificazione del progetto
 - Coordinare i membri del gruppo assegnando tasks e ruoli
@@ -183,9 +185,10 @@ I compiti di questo ruolo sono:
 - Coordinare e curare i rapporti esterni ed interni.
 
 *Amministratore* \
-Definisce, controlla e gestisce l'ambiente e gli strumenti di lavoro del progetto. Ha piena responsabilità sull'efficacia ed efficienza del #glossary("Way of Working")
+Definisce, controlla e gestisce l'ambiente e gli strumenti di lavoro del progetto. Ha piena responsabilità sull'efficacia ed efficienza del #glossary("Way of Working").
 
 I pricipali compiti sono:
+
 - Redigere e mantenere aggiornata la documentazione: gestisce il versionamento
 - Gestire la configurazione del progetto e del prodotto: controllo sul prodotto software
 - Gestire i processi: problem solving rispetto ai processi
@@ -195,7 +198,9 @@ I pricipali compiti sono:
 
 *Analista* \
 L'#glossary("Analista") approfondisce le richieste, tecniche e non, del #glossary("Capitolato"). E' principalmente fondamentale, e presente, nella prima fase del progetto, quando viene redatta l'analisi dei requisiti. Supervisiona la scrittura della stessa, in quanto è di vitale importanza che non vi siano errori. Avere errori nell'Analisi dei Requisiti comprometterebbe l'intero progetto.
+
 Ha il compito di:
+
 - Studiare il progetto e il suo contesto applicativo
 - Raccogliere, analizzare e studiare i bisogni del cliente
 - Scrivere l'Analisi dei Requisiti
@@ -205,6 +210,7 @@ Ha il compito di:
 Determina le scelte tecniche del progetto, trasformando i requisiti trovati dagli Analisti in un'architettura che strutturi e rappresenti il problema. Il progettista inoltre seguirà lo sviluppo ma non la manutenzione.
 
 I compiti principali sono:
+
 - Sviluppare un prodotto economico e facilmente manutenibile partendo dalle indicazioni degli Analisti
 - Favorire efficienza ed efficacia con le sue scelte
 
@@ -212,12 +218,14 @@ I compiti principali sono:
 Controlla il lavoro svolto dagli altri membri del Team e si assicura che sia conforme agli standard di qualità definiti.
 
 Il Verificatore ha il compito di:
+
 - Verificare che le attività svolte siano corrette e conformi agli standard attraverso le tecniche e gli strumenti definiti nelle `Norme di Progetto`
 
 *Programmatore* \
 Svolge l'attività di codifica del progetto e delle sue componenti di supporto basandosi sull'architettura indicata dal Progettista.
 
 I compiti principali sono:
+
 - Implementare le funzionalità richieste dal Progettista
 - Scrivere codice pulito, documentato e manutenibile che rispetti le `Norme di Progetto`
 - Creare Test per verifica e validazione del codice
@@ -229,10 +237,11 @@ Il Team utilizza il sistema di #glossary("Issue Tracking Sistem") (ITS) di GitHu
 
 Le issue principali sono create dal responsabile del gruppo che assegna i compiti ai vari membri del team. In seguito, ogni problema è ulteriormente suddiviso in sotto-problemi e di conseguenza, "sotto-issue". Queste ultime sono create non dal Responsabile, ma dall'assegnatario della issue principale. Questo permette di avere una visione chiara e dettagliata delle attività da svolgere e di monitorare l'avanzamento del progetto. Ad esempio:
 - Responsabile crea la Issue `Norme di Progetto` e la assegna al componente X
-- X studia il documento `Norme di progetto` e individua sotto-issue per rendere il problemapiù approcciabile.
+- X studia il documento `Norme di progetto` e individua sotto-issue per rendere il problema più approcciabile.
 - X crea le sotto-issue individutae, le auto-asssegna e sceglie il verificatore.
 
-Ogni Issue è composta da:
+Ogni _Issue_ è composta da:
+
 - Titolo: titolo della issue
 - Descrizione: descrizione dell'attività da completare
 - Assegnatario (o Assegnatari): chi deve svolgere questa issue
@@ -254,21 +263,21 @@ La creazione e la gestione della issue segue il seguente flusso:
 6. Spostamento della Issue da `To Do` a `In Progress`
 7. Svolgimento attività
 8. Fine attività
-9. Creazione Pull Request
+9. Creazione #glossary("Pull Request")
 10. Verifica del lavoro svolto
   1. se corretto, si passa al punto 11
-  2. se non corretto, il verificatore lascia commenti sulla PR riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete il punto 9
+  2. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10
 11. Chiusura della Issue
 12. Spostamento della Issue da `In Progress` a `Done`
-13. Chiusura PR e merge su branch `Develop`
+13. Chiusura #glossary("Pull Request") e merge su branch `Develop`
 14. Eventuale eliminazione del branch (solo se non deve essere riutilizzato)
 
 *Milestones* \
-Il gruppo, dopo una pianificazione accurata, ha deciso di impostare le milestones ad "artefatti" e non a "sprint".
-Il gruppo ritiene che le Milestones indichino qualcosa di completato, quindi è stato deciso di ritenere una milestone completata solamente quando un artefatto è stato completato e verificato. Al contrario, è stata impostata una data di inizio e una data di fine alla singola issue, di modo che sia comunque monitorabile nel tempo l'avanzamento del progetto.
+Il gruppo, dopo una pianificazione accurata, ha deciso di impostare le milestones ad '#glossary("Artefatti")' e non a '#glossary("sprint")'.
+Il gruppo ritiene che le Milestones indichino qualcosa di completato, quindi è stato deciso di ritenere una milestone completata solamente quando un artefatto è stato completato e verificato. Al contrario, è stata impostata una data di inizio e una data di fine alla singola issue, in modo che l'avanzamento del progetto sia comunque monitorabile nel tempo.
 
 === Coordinamento
-E' l'attività responsabile della gestione delle comunicazioni e incontri, sia interni che esterni. Questo compito assume un ruolo fondamentale nella corretta riuscita del progetto, garantendo l'efficienza e l'efficacia del Team stesso.
+È l'attività responsabile della gestione delle comunicazioni e degli incontri, sia interni che esterni. Questo compito assume un ruolo fondamentale nella corretta riuscita del progetto, garantendo l'efficienza e l'efficacia del Team stesso.
 
 Le attività di coordinamento comprendono le comunicazioni interne ed esterne, l'organizzazioni delle riunioni e la gestione delle scadenze.
 
@@ -276,13 +285,15 @@ Le attività di coordinamento comprendono le comunicazioni interne ed esterne, l
 
 ===== Interne
 
-Le comunicazioni interne avvengono con due modalità: le comunicazioni scritte, formali e non, avvengono attraverso Telegram. Le comunicazioni verbali, quindi le riunioni, la condivisione di file, di codice, e di qualsiasi altra risorsa avvengono attraverso Discord.
+Le comunicazioni interne avvengono con due modalità: le comunicazioni scritte, formali e non, avvengono attraverso #glossary("Telegram"). Le comunicazioni verbali, quindi le riunioni, la condivisione di file, di codice, e di qualsiasi altra risorsa avvengono attraverso #glossary("Discord").
 
-Su Telegram sono affrontate solamente questioni di rapida risoluzione, e comunicazioni off-topic. Le decisioni più strutturate, come elencato sopra, verranno prese su discord in presenza di tutti i memebri del Team durante la riunione settimanale.
+Su #glossary("Telegram") sono affrontate solamente questioni di rapida risoluzione, e comunicazioni off-topic. Le decisioni più strutturate, come elencato sopra, verranno prese su discord in presenza di tutti i memebri del Team durante la riunione settimanale.
 
 ===== Esterne
 
-Tutte le comunicazioni esterne sono gestite dal Responsabile del Progetto, previa consultazione con il Team e visione della comunicazione stessa. Vengono effettuale esclusivamente tramite email attraverso questo indirizzo: #link("mailto:" + g.mail).
+Tutte le comunicazioni esterne sono gestite dal Responsabile del Progetto, previa consultazione con il Team e visione della comunicazione stessa. Le comunicazioni formali vengono effettuale tramite email attraverso questo indirizzo: #link("mailto:" + g.mail). L'azienda AzzurroDigitale ha messo a disposizione anche un canale di comunicazione per facilitare il dialogo con i responsabili del progetto assegnato al team.
+
+
 
 ==== Riunioni
 
@@ -294,7 +305,8 @@ Le riunioni interne avvengono settimanalmente, il giorno e l'ora sono decisi dal
 
 ===== Esterne
 
-Le riunioni esterne avvengono con il Proponente e con i Committenti ad orari prestabiliti: i martedì dalle 17 alle 18. Le riunioni esterne sono effettuate su Google Meet. Queste riunioni sono gestite dal Responsabile del Progetto, che si occupa di organizzare l'incontro, di redigere l'ordine del giorno e di redigere il verbale esterno. Quest'ultimo viene condiviso con il Team e con il Proponente.
+Le riunioni esterne che coinvolgono il Proponente e i Committenti si tengono generalmente ogni due settimane, il martedì dalle 17:00 alle 18:00 (con eventuali modifiche di data o orario in caso di necessità).
+Le riunioni esterne sono effettuate su #glossary("Google Meet"). Queste riunioni sono gestite dal Responsabile del Progetto, che si occupa di organizzare l'incontro, di redigere l'ordine del giorno e il verbale esterno. Quest'ultimo viene condiviso con il Team e con il Proponente.
 
 ==== Verbali
 
@@ -302,9 +314,9 @@ Dopo ogni incontro, sia esso interno od esterno, viene redatto un verbale dal Re
 
 ===== Interni
 
-In ogni incontro interno vengono affrontati diversi temi, come si vede al punto 3.1.4.2.1. Al termine di una riunione, viene creata dal responsabile una issue, che è auto-assegnata. Dopo la redazione di tale verbale, viene verificato, creata la PR e chiusa la issue.
+In ogni incontro interno vengono affrontati diversi temi, come si vede al punto 3.1.4.2.1. Al termine di una riunione, viene creata dal responsabile una issue, che è auto-assegnata. Dopo la redazione di tale verbale, viene verificato, creata la #glossary("Pull Request") e chiusa la issue.
 
 ===== Esterni
 
-Le modalità sono le stesse del punto precedente. Dopo che la issue viene chiusa, il verbale viene mandato al Proponente e ai Committenti per essere firmato e approvato. Dopo la firma, il verbale viene caricato su GitHub.
+Le modalità sono le stesse del punto precedente. Dopo che la issue viene chiusa, il verbale viene mandato al Proponente e ai Committenti per essere firmato e approvato. Dopo la firma, il verbale viene caricato su #glossary("GitHub").
 
