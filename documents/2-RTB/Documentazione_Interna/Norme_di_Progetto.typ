@@ -343,7 +343,9 @@ Questo documento riporta tutte le descrizioni e pianificazioni delle attività d
 L'attività di pianificazione viene articolata nelle due seguenti sezioni:
 
 + Ruoli
++ Metodo di Lavoro
 + Ticketing
+
 
 ==== Aspettative
 L'attività di pianificazione aiuta il team a:
@@ -418,6 +420,17 @@ I compiti principali sono:
 - Creare Test per verifica e validazione del codice
 - Scrivere il #glossary("manuale utente")
 
+==== Metodo di Lavoro
+
+Per lo svoglimento del progetto, SweeTenTeam ha deciso di adottare il modello di sviluppo #glossary("Agile"), in particolare il framework #glossary("Scrum"). Questo modello prevede la suddivisione del progetto in periodi di tempo definiti, chiamati #glossary("Sprint"). Gli sprint garantiscono una corretta pianificazione delle attività da svolgere e una maggiore modularità di esse, in quanto permettono una maggiore suddivisione in "sotto-attività".
+
+Ogni Sprint è caratterizzato dalle seguenti fasi:
+
+- *Sprint Planning*: definizione degli obiettivi e delle attività da svolgere assegnandole ad ogni membro. Queste attività sono scelte in base all'incontro SAL precedentemente svolto con il Proponente. Inoltre, vengono discusse le attività rimaste dallo sprint precedente. Vengono poi create le _Issues_ su GitHub e assegnate ai membri del Team.
+- *Svolgimento*: nell'arco delle due settimane le issue vengono portate a termine dai membri del team assegnati. Si veda il paragrafo del #link(<flow>, "workflow") per maggiori dettagli.
+- *Revisione*: Alla fine dello sprint, viene effettuata la revisione delle varie attività completate e quelle che sono rimaste attive. Questo permette di avere una visione chiara dell'avanzamento del progetto e di eventuali problemi riscontrati.
+- *Retrospettiva*: viene valutato l'andamento generale dello sprint oltre che all'effettivo lavoro svolto. Vengono discusse le difficoltà riscontrate e le soluzioni adottate.
+
 ==== Ticketing
 
 Il Team utilizza il sistema di #glossary("Issue Tracking Sistem") (ITS) di GitHub. Questo permette di assegnare compiti e ruoli ai membri del Team, di monitorare l'avanzamento del progetto e di tenere traccia delle attività svolte, oltre ad essere facilmente collegabile a #glossary("Pull Request") e #glossary("Commit").
@@ -442,7 +455,7 @@ Ogni _Issue_ è composta da: <issue>
 - data di fine: data di fine dell'attività
 
 La creazione e la gestione della issue segue il seguente flusso:
-
+<flow>
 1. Creazione della Issue
 2. Assegnazione della Issue
 3. Creazione delle sotto-issue
@@ -453,8 +466,8 @@ La creazione e la gestione della issue segue il seguente flusso:
 8. Fine attività
 9. Creazione #glossary("Pull Request")
 10. Verifica del lavoro svolto
-  1. se corretto, si passa al punto 11
-  2. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10
+  11. se corretto, si passa al punto 11
+  12. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10
 11. Chiusura della Issue
 12. Spostamento della Issue da `In Progress` a `Done`
 13. Chiusura #glossary("Pull Request") e merge su branch `Develop`
@@ -603,13 +616,13 @@ Il processo di miglioramento è costituito da tre fasi:
 
 ==== Stabilimento dei processi
 
-Inizialmente, si devono stabilire dei processi organizzativi atti a milgiorare efficacia ed efficienza del prodotto. Questi processi devono essere definiti in modo chiaro e preciso, in modo che ogni membro del Team possa seguirli senza problemi e documentati in modo che possano essere facilmente consultabili.
+Inizialmente, si devono stabilire dei processi organizzativi atti a migliorare efficacia ed efficienza del prodotto. Questi processi devono essere definiti in modo chiaro e preciso, in modo che ogni membro del Team possa seguirli senza problemi e documentarli in modo che possano essere facilmente consultabili.
 
 ==== Valutazione dei processi
 
 Come anticipato, sviluppare, documentare e applicare una procedura di valutazione del processo. Questa viene eseguita basandosi sugli obiettivi del processo stesso, sulle metriche di qualità e sulle aspettative del Proponente.
 
-==== Migliorameto dei processi
+==== Miglioramento dei processi
 
 Infine, individuati i processi da migliorare, si applicano le modifiche necessarie per ottimizzare il processo stesso.
 Di conseguenza, si deve aggiornare la documentazione relativa al processo di modo che rifletta le modifiche apportate.
@@ -639,7 +652,7 @@ Il processo di formazione ha come obiettivo quello di garantire che ogni membro 
 
 === Descrizione
 
-Al fine di promuovere un ambiente di lavoro efficacie ed efficiente, che garantisce un processo organico, ogni membro del Team si impegna autonamente a:
+Al fine di promuovere un ambiente di lavoro efficace ed efficiente, che garantisce un processo organico, ogni membro del Team si impegna autonomamente a:
 
 - Individurare le proprie lacune riguardanti le tecnologie e i requisiti del progetto
 - Colmare queste lacune attraverso lo studio autonomo e asincrono
@@ -647,8 +660,8 @@ Al fine di promuovere un ambiente di lavoro efficacie ed efficiente, che garanti
 
 === Aspettative
 
-È previsto che ogni membro del Team acquisisca le competenze e conoscenze necessarie al corretto e efficacie svolgimento del progetto, oltre che le competenze trasversali necessarie per il lavoro di gruppo.
+È previsto che ogni membro del Team acquisisca le competenze e conoscenze necessarie al corretto e efficace svolgimento del progetto, oltre che le competenze trasversali necessarie per il lavoro di gruppo.
 
 === Strumenti
 
-Al fine di completare questo percorso formativo, ogni membro utilizzerà tutti gli strumenti che ritiene necessari e li condividerà tramite link o file con gli altri membri del Team attraverso i canali di comunicazione interna dedicati al fine di promuoovere la condivisione delle conoscenze.
+Al fine di completare questo percorso formativo, ogni membro utilizzerà tutti gli strumenti che ritiene necessari e li condividerà tramite link o file con gli altri membri del Team attraverso i canali di comunicazione interna dedicati al fine di promuovere la condivisione delle conoscenze.
