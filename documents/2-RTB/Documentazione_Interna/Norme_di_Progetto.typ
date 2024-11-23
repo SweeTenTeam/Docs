@@ -8,6 +8,13 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.5",
+    "2024-11-22",
+    (p.ferazzani),
+    (p.campagnaro),
+    [
+      Stesura del capitolo: Processi Organizzativi - Sottosezioni Infrastruttura, Miglioramento, Formazione
+    ],
     "0.0.4",
     "2024-11-22",
     (p.campagnaro),
@@ -124,7 +131,7 @@ Ogni capitolato è stato suddiviso nelle seguenti sezioni:
 - *Conclusioni*: motivazioni sulla scelta/non scelta del capitolato
 
 ==== Dichiarazione degli Impegni
-Questo documento formalizza la volontà del gruppo di impegnarsi nella realizzazione del prodotto previsto da un capitolato specifico (nel nostro caso, #glossary("BuddyBot"), proposto dall’azienda #box(image(g.azzurro, width: 5em, height: auto))). 
+Questo documento formalizza la volontà del gruppo di impegnarsi nella realizzazione del prodotto previsto da un capitolato specifico (nel nostro caso, #glossary("BuddyBot"), proposto dall’azienda #box(image(g.azzurro, width: 5em, height: auto))).
 
 Oltre a dichiarare l’impegno, il documento include:
 
@@ -145,7 +152,7 @@ L’Analisi dei Requisiti è un documento che definisce le funzionalità che il 
 Contiene le seguenti informazioni:
 
 - *Descrizione del prodotto*: obiettivo finale del prodotto e le sue funzionalità principali;
-- *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati: 
+- *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati:
   - Scenario;
   - Attori coinvolti;
   - Azioni eseguibili.
@@ -174,7 +181,7 @@ Le principali sezioni sono:
 - *Test*: include il piano di testing, comprendente test di unità, integrazione, sistema e accettazione, per verificare la correttezza finale del prodotto.
 
 ==== Norme di Progetto
-Il documento Norme di Progetto ha lo scopo di definire un insieme di standard e regole riguardanti i processi e le loro modalità operative (#glossary("Way of Working")), da seguire obbligatoriamente dal team di sviluppo durante l'intero ciclo di vita del progetto, per garantire la qualità e la conformità agli obiettivi e requisiti stabiliti con il cliente. 
+Il documento Norme di Progetto ha lo scopo di definire un insieme di standard e regole riguardanti i processi e le loro modalità operative (#glossary("Way of Working")), da seguire obbligatoriamente dal team di sviluppo durante l'intero ciclo di vita del progetto, per garantire la qualità e la conformità agli obiettivi e requisiti stabiliti con il cliente.
 
 Il documento è suddiviso nelle seguenti sezioni:
 
@@ -193,7 +200,7 @@ Il documento Manuale Utente serve a descrivere i requisiti minimi e le istruzion
 Il documento Specifica Tecnica ha lo scopo di descrivere e chiarire gli aspetti tecnici chiave del progetto, oltre a servire come guida per la codifica e la manutenzione del sistema. La sua finalità principale è fornire una descrizione dettagliata e approfondita dell'architettura implementativa del sistema, analizzando anche il codice e i design pattern utilizzati. Inoltre, il documento ha il compito di monitorare la copertura dei requisiti definiti nell'Analisi dei Requisiti.
 
 ==== Verbali Interni
-La documentazione relativa alle riunioni interne avvenute tramite la piattaforma comunicativa #glossary("Discord") del team, viene riportata sottoforma di verbali interni. 
+La documentazione relativa alle riunioni interne avvenute tramite la piattaforma comunicativa #glossary("Discord") del team, viene riportata sottoforma di verbali interni.
 
 Lo scopo dei verbali interni è quello di fissare per iscritto:
 
@@ -202,7 +209,7 @@ Lo scopo dei verbali interni è quello di fissare per iscritto:
 - Organizzazione per il prossimo periodo.
 
 ==== Verbali esterni
-La documentazione relativa alle riunioni esterne avvenute tramite la piattaforma comunicativa #glossary("Google Meet") dal team e dai referenti del progetto, viene riportata sottoforma di verbali esterni. 
+La documentazione relativa alle riunioni esterne avvenute tramite la piattaforma comunicativa #glossary("Google Meet") dal team e dai referenti del progetto, viene riportata sottoforma di verbali esterni.
 
 Lo scopo dei verbali esterni è quello di fissare per iscritto:
 
@@ -336,7 +343,9 @@ Questo documento riporta tutte le descrizioni e pianificazioni delle attività d
 L'attività di pianificazione viene articolata nelle due seguenti sezioni:
 
 + Ruoli
++ Metodo di Lavoro
 + Ticketing
+
 
 ==== Aspettative
 L'attività di pianificazione aiuta il team a:
@@ -411,6 +420,17 @@ I compiti principali sono:
 - Creare Test per verifica e validazione del codice
 - Scrivere il #glossary("manuale utente")
 
+==== Metodo di Lavoro
+
+Per lo svoglimento del progetto, SweeTenTeam ha deciso di adottare il modello di sviluppo #glossary("Agile"), in particolare il framework #glossary("Scrum"). Questo modello prevede la suddivisione del progetto in periodi di tempo definiti, chiamati #glossary("Sprint"). Gli sprint garantiscono una corretta pianificazione delle attività da svolgere e una maggiore modularità di esse, in quanto permettono una maggiore suddivisione in "sotto-attività".
+
+Ogni Sprint è caratterizzato dalle seguenti fasi:
+
+- *Sprint Planning*: definizione degli obiettivi e delle attività da svolgere assegnandole ad ogni membro. Queste attività sono scelte in base all'incontro SAL precedentemente svolto con il Proponente. Inoltre, vengono discusse le attività rimaste dallo sprint precedente. Vengono poi create le _Issues_ su GitHub e assegnate ai membri del Team.
+- *Svolgimento*: nell'arco delle due settimane le issue vengono portate a termine dai membri del team assegnati. Si veda il paragrafo del #link(<flow>, "workflow") per maggiori dettagli.
+- *Revisione*: Alla fine dello sprint, viene effettuata la revisione delle varie attività completate e quelle che sono rimaste attive. Questo permette di avere una visione chiara dell'avanzamento del progetto e di eventuali problemi riscontrati.
+- *Retrospettiva*: viene valutato l'andamento generale dello sprint oltre che all'effettivo lavoro svolto. Vengono discusse le difficoltà riscontrate e le soluzioni adottate.
+
 ==== Ticketing
 
 Il Team utilizza il sistema di #glossary("Issue Tracking Sistem") (ITS) di GitHub. Questo permette di assegnare compiti e ruoli ai membri del Team, di monitorare l'avanzamento del progetto e di tenere traccia delle attività svolte, oltre ad essere facilmente collegabile a #glossary("Pull Request") e #glossary("Commit").
@@ -421,7 +441,7 @@ Le issue principali sono create dal responsabile del gruppo che assegna i compit
 - X studia il documento `Norme di progetto` e individua sotto-issue per rendere il problema più approcciabile.
 - X crea le sotto-issue individutae, le auto-asssegna e sceglie il verificatore.
 
-Ogni _Issue_ è composta da:
+Ogni _Issue_ è composta da: <issue>
 
 - Titolo: titolo della issue
 - Descrizione: descrizione dell'attività da completare
@@ -435,7 +455,7 @@ Ogni _Issue_ è composta da:
 - data di fine: data di fine dell'attività
 
 La creazione e la gestione della issue segue il seguente flusso:
-
+<flow>
 1. Creazione della Issue
 2. Assegnazione della Issue
 3. Creazione delle sotto-issue
@@ -446,8 +466,8 @@ La creazione e la gestione della issue segue il seguente flusso:
 8. Fine attività
 9. Creazione #glossary("Pull Request")
 10. Verifica del lavoro svolto
-  1. se corretto, si passa al punto 11
-  2. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10
+  11. se corretto, si passa al punto 11
+  12. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10
 11. Chiusura della Issue
 12. Spostamento della Issue da `In Progress` a `Done`
 13. Chiusura #glossary("Pull Request") e merge su branch `Develop`
@@ -472,7 +492,8 @@ Su #glossary("Telegram") sono affrontate solamente questioni di rapida risoluzio
 
 ===== Esterne
 
-Tutte le comunicazioni esterne sono gestite dal Responsabile del Progetto, previa consultazione con il Team e visione della comunicazione stessa. Le comunicazioni formali vengono effettuale tramite email attraverso questo indirizzo: #link("mailto:" + g.mail). L'azienda #box(image(g.azzurro, width: 5em, height: auto)) ha messo a disposizione anche un canale di comunicazione per facilitare il dialogo con i responsabili del progetto assegnato al team.
+Tutte le comunicazioni esterne sono gestite dal Responsabile del Progetto, previa consultazione con il Team e visione della comunicazione stessa. Le comunicazioni formali vengono effettuale tramite email attraverso questo indirizzo: #link("mailto:" + g.mail). L'azienda
+#box(image(g.azzurro, width: 5em, height: auto)) ha messo a disposizione anche un canale di comunicazione per facilitare il dialogo con i responsabili del progetto assegnato al team.
 
 
 
@@ -480,7 +501,8 @@ Tutte le comunicazioni esterne sono gestite dal Responsabile del Progetto, previ
 
 Il responsabile attuale ha il compito di introdurre i punti che saranno trattati nella riunione e di redigere il verbale interno, oltre che a decidere chi lo verificherà. La riunione avviene su Discord, in un canale dedicato.
 
-===== Interne
+#pagebreak()
+===== Interne <interno>
 
 Le riunioni interne avvengono settimanalmente, il giorno e l'ora sono decisi dal Responsabile e comunicati al Team in base alle esigenze di ogni membro. Queste riunioni servono per discutere lo stato del progetto, le attività svolte e da svolgere, e per prendere decisioni importanti.
 
@@ -495,9 +517,151 @@ Dopo ogni incontro, sia esso interno od esterno, viene redatto un verbale dal Re
 
 ===== Interni
 
-In ogni incontro interno vengono affrontati diversi temi, come si vede al punto 3.1.4.2.1. Al termine di una riunione, viene creata dal responsabile una issue, che è auto-assegnata. Dopo la redazione di tale verbale, viene verificato, creata la #glossary("Pull Request") e chiusa la issue.
+In ogni incontro interno vengono affrontati diversi temi, come si vede al punto #link(<interno>, "4.1.4.2.1"). Al termine di una riunione, viene creata dal responsabile una issue, che è auto-assegnata. Dopo la redazione di tale verbale, viene verificato, creata la #glossary("Pull Request") e chiusa la issue.
 
 ===== Esterni
 
 Le modalità sono le stesse del punto precedente. Dopo che la issue viene chiusa, il verbale viene mandato al Proponente e ai Committenti per essere firmato e approvato. Dopo la firma, il verbale viene caricato su #glossary("GitHub").
 
+
+
+== Infrastruttura
+
+Fanno parte dell'Infrastruttura organizzativa tutti gli strumenti che il Team utilizza per la gestione del progetto. Questi strumenti sono fondamentali per garantire la corretta riuscita del progetto e per mantenere un alto livello di efficacia ed efficienza. Tali strumenti permettono la comunicazione, il coordinamento e la pianificazione.
+
+=== Strumenti
+==== GitHub
+
+È la piattaforma principale utilizzata dal Team per la gestione e il controllo di versione del progetto.
+Il #glossary("Workflow ") utilizzato dal Team è GitHub Flow, che è un modello di sviluppo leggero che prevede l'utilizzo di branch per lo sviluppo di nuove funzionalità e la creazione di #glossary("Pull Request") per la loro integrazione nel branch principale.
+
+In particolare, il flow si espande come segue:
+
+- Riallineamento della #glossary("repository") locale con quella remota
+- Creazione di un #glossary("branch") locale per lo sviluppo di una singola feature (ogni branch segue la nomenclatura `tipo-feature/nome-feature`, ad esempio `doc/norme-di-progetto`)
+- Push del branch locale sulla repository remota
+- Creazione di una #glossary("Pull Request") per la feature
+- Verifica della #glossary("Pull Request") da parte del/dei Verificatore/i
+- Eliminazione della branch.
+
+Viene anche utilizzata la #glossary("project board") di GitHub per la gestione delle issue e delle milestone.
+
+La board possiede le seguenti viste:
+- _KanBan_:
+  - To Do: issue appena create e da completare
+  - In Progress: issue in corso di svolgimento
+  - Verify: issue completate e in attesa di verifica
+  - Done: issue completate e verificate
+
+#figure(
+  image(g.board, width: 100%),
+  caption: [Kanban Board aggiornata al 22/11/2024],
+)
+
+
+- _Roadmap_:
+  - Start Date: data di inizio della issue
+  - End Date: data di fine della issue
+
+#figure(
+  image(g.road, width: 100%),
+  caption: [Roadmap aggiornata al 22/11/2024],
+)
+
+
+Per quanto concerne le _Issue_ si veda il capitolo *#link(<issue>, "4.1.3.5) Ticketing")*. Le _Issue_ non vengono mai eliminate, ma solamente chiuse (GitHub le sposta automaticamente nella sezione `Closed`).
+
+==== Telegram
+
+È il principale strumento di comunicazione interna scritta utilizzato dal Team. Viene utilizzato per comunicazioni rapide e informali, per condividere link e per discutere di questioni di minore importanza.
+
+==== Discord
+
+È la piattaforma utilizzata dal Team per le comunicazioni sincrone, che siano verbali o scritte e per la condivisione di file, dati, link e appunti.
+
+In un canale apposito, viene utilizzato anche per comunicazioni informali o urgenti con il proponente.
+
+
+==== Google Meet
+
+È la piattaforma utilizzata per le riunioni esterne sincrone con il Proponente e i Committenti.
+
+
+==== Google Calendar
+
+È il servizio utilizzato per la gestione delle riunioni esterne con il Proponente e i Committenti. Viene utilizzato per fissare le date delle riunioni e per inviare gli inviti ai partecipanti.
+
+==== Google Drive
+
+È il servizio utilizzato per la condivisione di documenti e file tra i membri del Team. In particolare, vengono condivisi i fogli per la rendicontazione delle ore di lavoro e i termini da inserire nel glossario.
+
+==== Gmail
+
+È il servizio di posta elettronica utilizzato per le comunicazioni formali con il Proponente e i Committenti.
+
+
+== Miglioramento
+
+=== Scopo
+
+Rappresenta un procedimento atto ad istituire, valutare, controllare e ottimizzare il ciclo di vita del software.
+Si applica un processo ciclico, dove i ruoli dei membri cambiano ogni sprint, e dove le fasi vengono costantemente migliorate.
+
+=== Descrizione
+Il processo di miglioramento è costituito da tre fasi:
+
+- Stabilimento dei processi
+- Valutazione dei processi
+- Miglioramento dei processi
+
+==== Stabilimento dei processi
+
+Inizialmente, si devono stabilire dei processi organizzativi atti a migliorare efficacia ed efficienza del prodotto. Questi processi devono essere definiti in modo chiaro e preciso, in modo che ogni membro del Team possa seguirli senza problemi e documentarli in modo che possano essere facilmente consultabili.
+
+==== Valutazione dei processi
+
+Come anticipato, sviluppare, documentare e applicare una procedura di valutazione del processo. Questa viene eseguita basandosi sugli obiettivi del processo stesso, sulle metriche di qualità e sulle aspettative del Proponente.
+
+==== Miglioramento dei processi
+
+Infine, individuati i processi da migliorare, si applicano le modifiche necessarie per ottimizzare il processo stesso.
+Di conseguenza, si deve aggiornare la documentazione relativa al processo di modo che rifletta le modifiche apportate.
+
+=== Metriche
+
+La misurazione del miglioramento interessa diverse aree, caratterizzate a loro volta da diverse metriche che
+riflettono aspetti chiave del processo stesso.
+
+Individuiamo le seguenti:
+
+- Velocità di sviluppo;
+- Tasso di errori;
+- Conformità agli standard.
+
+=== Strumenti
+
+Per monitorare i miglioramenti, il gruppo utilizza il seguente strumento:
+
+- #glossary("GitHub"): per la gestione del codice e delle issue, e per la creazione di #glossary("Pull Request") e #glossary("Branch"). GitHub permette un tracciamento sia temporale che qualitativo del lavoro svolto.
+
+== Formazione
+
+=== Scopo
+
+Il processo di formazione ha come obiettivo quello di garantire che ogni membro del Team abbia le competenze necessarie per svolgere il proprio ruolo in modo efficace ed efficiente. Questo processo è fondamentale per garantire il corretto svolgimento del progetto e per il suo successo.
+
+=== Descrizione
+
+Al fine di promuovere un ambiente di lavoro efficace ed efficiente, che garantisce un processo organico, ogni membro del Team si impegna autonomamente a:
+
+- Individurare le proprie lacune riguardanti le tecnologie e i requisiti del progetto
+- Colmare queste lacune attraverso lo studio autonomo e asincrono
+- Condividere le proprie conoscenze con gli altri membri del Team
+
+=== Aspettative
+
+È previsto che ogni membro del Team acquisisca le competenze e conoscenze necessarie al corretto e efficace svolgimento del progetto, oltre che le competenze trasversali necessarie per il lavoro di gruppo.
+
+=== Strumenti
+
+Al fine di completare questo percorso formativo, ogni membro utilizzerà tutti gli strumenti che ritiene necessari e li condividerà tramite link o file con gli altri membri del Team attraverso i canali di comunicazione interna dedicati al fine di promuovere la condivisione delle conoscenze.

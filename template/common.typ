@@ -11,6 +11,8 @@
   logo: "/images/logos/sweetenteam.png",
   azzurro: "/images/logos/AzzurroDigitale-logo.png",
   unipd: "/images/logos/Universita_Padova_transparent.png",
+  board: "/images/Board.png",
+  road: "/images/Roadmap.png",
 )
 //team members
 #let p = (
