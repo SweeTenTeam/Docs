@@ -8,6 +8,13 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.6",
+    "2024-11-25",
+    (p.ferazzani),
+    (p.campagnaro),
+    [
+      Stesura del capitolo: Processi Organizzativi - Standard ISO/IEC 9126
+    ],
     "0.0.5",
     "2024-11-22",
     (p.ferazzani),
@@ -665,3 +672,88 @@ Al fine di promuovere un ambiente di lavoro efficace ed efficiente, che garantis
 === Strumenti
 
 Al fine di completare questo percorso formativo, ogni membro utilizzerà tutti gli strumenti che ritiene necessari e li condividerà tramite link o file con gli altri membri del Team attraverso i canali di comunicazione interna dedicati al fine di promuovere la condivisione delle conoscenze.
+
+#pagebreak()
+
+= Standard ISO/IEC 9126
+
+Lo standard ISO/IEC 9126 è una norma internazionale che ha contribuito a definire i parametri fondamentali per la valutazione della qualità e la validazione del software. Questo standard rappresenta un insieme di norme e linee guida dettagliate, oltre che a criteri di valutazione, per gli attributi di qualità di un prodotto software.
+Andando più nel dettaglio, questo standard individua sei categorie di attributi di qualità. Ognuna di queste categorie, è a sua volta suddivisa in sotto-categorie, che rappresentano i parametri di _*valutazione*_ e _*misurazione*_ per la qualità del software.
+
+Queste categorie sono:
+
+- _*Funzionalità*_
+- _*Affidabilità*_
+- _*Usabilità*_
+- _*Efficienza*_
+- _*Manutenibilità*_
+- _*Portabilità*_
+
+== Funzionalità
+Questo parametro si concentra sulla valutazione della capacità del software di fornire le funzionalità e le richieste specificate dal proponente.
+
+Le sotto-categorie di questo parametro sono:
+
+- _*Adeguatezza*_: Capacità del software di fornire funzionalità che soddisfano i requisiti specificati e il contesto d'uso.
+- _*Accuratezza*_: Capacità del software di fornire risultati corretti o concordati con i requisiti specificati e il grado di precisione richiesto.
+- _*Interoperabilità*_: Capacità del software di interagire efficientemente ed efficacemente con uno o più sistemi specificati.
+- _*Conformità*_: Capacità del software di aderire a standard, convenzioni e regolamentazioni specificate.
+- _*Sicurezza*_: Capacità del software di proteggere informazioni e dati da accessi non autorizzati e da malfunzionamenti.
+
+== Affidabilità
+
+Questo parametro si concentra sulla valutazione della capacità del software di mantenere un certo livello di prestazioni nel tempo anche in presenza di malfunzionamenti.
+
+Le sotto-categorie di questo parametro sono:
+
+- _*Maturità*_: Capacità del software di evitare malfunzionamenti, guasti o errori in fase di esecuzione.
+- _*Tolleranza agli errori*_: Capacità del software di mantenere un certo livello di prestazioni anche in presenza di malfunzionamenti o errori.
+- _*Recuperabilità*_: Capacità del software di ripristinare un certo livello di prestazioni e di recuperare i dati in caso di malfunzionamenti.
+- _*Affidabilità delle informazioni*_: Precisione e affidabilità delle informazioni ritornate dal software.
+
+
+== Usabilità
+
+Questo è un aspetto fondamentale della qualità del software in quanto influisce direttamente sulla user experience durante l'interazione con il prodotto.
+
+Le sotto-categorie di questo parametro sono:
+
+- _*Comprensibilità*_: Capacità del software di essere compreso facilmente dall'utente.
+- _*Apprendibilità*_: Capacità del software di essere appreso facilmente dall'utente al primo utilizzo.
+- _*Operabilità*_: Facilità con cui un utente può portare a termine le operazioni desiderate in modo efficiente, senza incorrere in problemi e con un utilizzo normale di risorse.
+- _*Attrattività*_: Capacità dell'interfaccia e del design del software di essere piacevole e attraente per l'utente.
+- _*Aderenza all'usabilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard e convenzioni di usabilità.
+
+== Efficienza
+
+Si concentra sulla capacità del prodotto di avere un utilizzo delle risorse ottimale ed efficiente, oltre che di garantire prestazioni elevate e tempi rapidi di risposta.
+
+Le sotto-categorie di questo parametro sono:
+
+- _*Comportamento rispetto al tempo*_: Capacità del software di fornire risposte in tempi accettabili.
+- _*Utilizzo delle risorse*_: Capacità del software di utilizzare in modo efficiente le risorse a disposizione.
+- _*Aderenza all'efficienza*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard e convenzioni di efficienza.
+
+== Manutenibilità
+
+Questo parametro si concentra sulla capacità del software di essere modificato, corretto e migliorato nel tempo.
+
+Le sotto-categorie di questo parametro sono:
+
+- _*Analizzabilità*_: Capacità del software di essere analizzato facilmente per individuare errori e problemi o sezioni da migliorare.
+- _*Modificabilità*_: Capacità del software di essere modificato facilmente per correggere errori, migliorare le prestazioni e adattarsi a nuove esigenze senza generare nuovi errori.
+- _*Stabilità*_: Capacità del software di mantenere un certo livello di prestazioni anche in presenza di modifiche, evitando di compromettere il codice esistente.
+- _*Testabilità*_: Capacità del software di essere testato facilmente per garantire la qualità e la correttezza del prodotto e delle modifiche apportate.
+- _*Aderenza alla manutenibilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard
+
+== Portabilità
+
+Questo parametro si concentra sulla capacità del software di essere trasferito da un ambiente di sviluppo a un altro senza dover subire modifiche.
+
+Le sotto-categorie di questo parametro sono:
+
+- _*Adattabilità*_: Capacità del software di essere adattato facilmente a diversi ambienti di sviluppo.
+- _*Installabilità*_: Capacità del software di essere installato facilmente in diversi ambienti.
+- _*Sostituibilità*_: Capacità del software di essere sostituito facilmente da un altro software nello stesso ambiente.
+- _*Coesistenza*_: Capacità del software di coesistere all'interno di un ambiente o sistema condiviso con altri applicativi.
+- _*Conformità alla portabilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard e convenzioni di portabilità.
