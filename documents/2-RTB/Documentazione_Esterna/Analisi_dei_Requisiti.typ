@@ -5,6 +5,11 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
+    "0.0.4",
+    "2024-11-25",
+    (p.santi),
+    (p.mahdi),
+    "Introdotti i casi d'uso (3) + UC1",
     "0.0.3",
     "2024-11-22", 
     (p.santi), 
@@ -91,7 +96,7 @@ Tale prodotto, in conclusione, risponde alla necessità di accedere in modo faci
 
 
 == Funzionalità del prodotto
-BuddyBot è un assistente virtuale progettato per garantire un accesso facile e immediato alle informazioni aziendali attraverso un’interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall’azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest’ultime e fornendo le risposte alle domande poste dall’utente.
+BuddyBot è un assistente virtuale progettato per garantire un accesso facile e immediato alle informazioni aziendali attraverso un'interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall'azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest'ultime e fornendo le risposte alle domande poste dall'utente.
 
 L’assistente virtuale utilizza tecnologie di Intelligenza Artificiale (nel nostro progetto verranno utilizzati #glossary("GroqCloud") e #glossary("Langchain") lato #glossary("LLM")) per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate. 
 
@@ -102,6 +107,37 @@ Il prodotto si rivolge principalmente al team aziendale:
 
   - *Sviluppatori*, che accedono a informazioni tecniche come codice e documentazione;
   - #glossary("Project Manager"), che usa BuddyBot per monitorare task e risorse;
-  - *Nuovi membri* del team, che vengono supportati nell'onboarding e nella ricerca delle informazioni necessarie, facilitando la loro integrazione nell’azienda;
+  - *Nuovi membri* del team, che vengono supportati nell'onboarding e nella ricerca delle informazioni necessarie, facilitando la loro integrazione nell'azienda;
   - In generale, allo *staff aziendale*.
-Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l’uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
+Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l'uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
+
+= Casi d'uso
+== Introduzione ai casi d'uso e obbiettivi
+In questa sezione vengono elencati dettagliatamente i casi d'uso individuati dal gruppo in seguito ad analisi e valutazioni circa le specifiche del capitolato.
+Gli scenari sottostanti seguono uno schema e può prevedere:
+  - *Titolo*
+  - *Attori*: il soggetto che esegue un'azione in quel contesto
+  - *Precondizioni* e *Postcondizioni*: stato del sistema prima e dopo il caso d'uso
+  - *Scenario principale*: descrizione dettagliata delle azioni che l'attore deve compiere per completare il caso d'uso; vengono formalizzati anche ipotesi e risultati attesi
+  - *Estensioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, è possibile prevedere varianti o comportamenti alternativi che arricchiscono o modificano lo scenario principale
+  - *Inclusioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, alcune funzionalità o azioni comuni appartengono a un altro caso d'uso, sempre eseguito come parte integrante dello scenario principale
+  - *Generalizzazioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, esso rappresenta una variante o un'istanza di un caso d'uso più generale che descrive caratteristiche o comportamenti comuni a più scenari
+== Attori
+L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio ponendo domande all'assistente virtuale.
+
+== Definizione casi d'uso
+=== UC1, Consultazione Jira
+- *Attore coinvolto*: User
+- *Precondizioni*
+  - API Jira disponibili e configurate correttamente.
+- *Scenario principale*
+  - L'utente interagisce con BuddyBot tramite l'interfaccia chat, ponendo una domanda 
+    - esempio: "Quali issue sono assegnate a me per questa settimana?"
+  - BuddyBot autentica la connessione con Jira 
+
+  - Il sistema invia una richiesta alle API di Jira per estrarre i dati 
+    - nel nostro esempio, vengono quindi estratti dati relativi alle issue assegnate all'utente con scadenza entro la settimana corrente.
+  - BuddyBot elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
+    - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di titoli, priorità, date di scadenza e stati.
+- *Postcondizioni*
+  - Le informazioni richieste vengono presentate correttamente all'utente, che può visualizzarle e utilizzarle per pianificare le proprie attività.
