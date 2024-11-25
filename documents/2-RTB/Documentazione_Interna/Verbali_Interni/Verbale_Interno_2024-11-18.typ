@@ -7,7 +7,11 @@
     p.cardin,
   ),
   changelog: (
-    "0.1", "2024-11-18", (p.ferazzani), (p.fracaro), "Stesura del verbale",
+    "0.1",
+    "2024-11-18",
+    (p.ferazzani),
+    (p.fracaro),
+    "Stesura del verbale",
   ),
 )
 
