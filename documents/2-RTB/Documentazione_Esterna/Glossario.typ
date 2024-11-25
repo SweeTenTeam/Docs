@@ -7,11 +7,16 @@
     p.cardin,
   ),
   changelog: (
+    "0.2",
+    "2024-11-25",
+    p.ferazzani,
+    p.santi,
+    [Aggiunte nuove voci al glossario],
     "0.1",
     "2024-11-18",
     p.ferazzani,
     p.santi,
-    "Prima stesura del glossario",
+    [Prima stesura del glossario],
   ),
 )
 
@@ -53,9 +58,23 @@ problema. Il suo ruolo è quello di identificare, documentare e comprendere a fo
 progetto, traducendole in requisiti chiari e dettagliati. Si occupa di: analizzare il contesto di riferimento, definire
 il problema in esame e stabilire gli obiettivi da raggiungere; comprendere il problema e definire la complessità e i requisiti, redigere il documento Analisi dei requisiti; studiare i bisogni espliciti ed impliciti.
 
+== #LTG("API")
+
+Un'API è un'interfaccia che consente a due sistemi software di comunicare tra loro. Le API definiscono un insieme di regole e protocolli che specificano come i dati devono essere inviati e ricevuti. Sono utilizzate, ad esempio, per collegare frontend e backend, accedere a servizi di terze parti (come mappe, notifiche o dati meteo) e sviluppare applicazioni integrate.
+
+== #LTG("Artefatti")
+
+Documenti, diagrammi, codici o output creati durante lo sviluppo software, utilizzati per supportare il processo di sviluppo e la comunicazione tra i team.
+
+
+
 #pagebreak()
 
 = #LTG("B")
+
+== #LTG("Baseline")
+
+Riferimento fisso in un progetto, come specifiche, piani o documenti, utilizzato per monitorare e confrontare i progressi.
 
 == #LTG("Branch")
 
@@ -71,6 +90,14 @@ esperimenti, senza modificare il codice stabile.
 Documento che contiene le specifiche e le condizioni per lo sviluppo di un progetto software. II capitolato viene
 redatto dal proponente e viene presentato ai fornitori o agli sviluppatori interessati a partecipare all'appalto per la
 realizzazione del prodotto software.
+
+== #LTG("Chatbot")
+
+Applicazione software che utilizza algoritmi di intelligenza artificiale per simulare una conversazione umana. I chatbot sono progettati per interagire con gli utenti attraverso messaggi di testo o vocali, rispondendo a domande, eseguendo attività o fornendo supporto in maniera automatica e personalizzata.
+
+== #LTG("Commit")
+
+Operazione di salvataggio nel repository Git che memorizza una versione specifica dei file, permettendo di tracciare le modifiche nel tempo.
 
 == #LTG("Committente")
 
@@ -96,6 +123,12 @@ rapido ed efficace per valutare lo stato del progetto, identificare eventuali pr
 
 = #LTG("D")
 
+== #LTG("Database Vettoriale")
+
+Un database vettoriale è progettato per archiviare e gestire dati sotto forma di vettori, che sono rappresentazioni numeriche di informazioni come testo, immagini o audio. Questi database sono ottimizzati per eseguire ricerche di similarità su grandi insiemi di dati, ad esempio per trovare elementi simili in base al loro contesto o contenuto. Sono comunemente usati in applicazioni di machine learning, AI e ricerca semantica.
+
+
+
 == #LTG("Dev team")
 
 In Scrum, il Development Team si riferisce all'insieme dei membri che svolge un ruolo nello sviluppo e nel supporto del
@@ -107,15 +140,38 @@ Un diagramma di casi d'uso è uno strumento grafico utilizzato nella modellazion
 rappresentare le interazioni tra gli attori (utenti o sistemi esterni) e un sistema software. Serve a descrivere le
 funzionalità del sistema dal punto di vista dell'utente e a documentare i requisiti funzionali in modo chiaro e visivo.
 
+== #LTG("Docker")
+
+Docker è una piattaforma che consente di creare, distribuire ed eseguire applicazioni in container. Un container è un ambiente isolato che include tutto il necessario per eseguire un'applicazione, come il codice, le librerie e le dipendenze. Docker facilita il deployment, garantendo che le applicazioni funzionino in modo coerente su diverse piattaforme e infrastrutture.
+
+
+
 #pagebreak()
 
 = #LTG("E")
 #pagebreak()
 
 = #LTG("F")
+
+== #LTG("Feature")
+
+una feature è una caratteristica o una funzionalità specifica di un software o applicazione progettata per soddisfare un bisogno o offrire un vantaggio agli utenti. Una feature può essere un'azione che l'utente può eseguire, un comportamento del sistema, o un miglioramento che aggiunge valore al software.
+
+== #LTG("Feedback")
+
+Informazioni o commenti ricevuti su un prodotto, processo o servizio, usati per apportare miglioramenti.
+
+// == #LTG("Fornitura")
+
+// Consegna o disponibilità di risorse, materiali o servizi necessari per completare un progetto.
+
 #pagebreak()
 
 = #LTG("G")
+
+== #LTG("Git")
+
+Sistema di controllo di versione distribuito che consente a più sviluppatori di lavorare su un progetto contemporaneamente, mantenendo un registro delle modifiche apportate al codice.
 
 == #LTG("GitHub")
 
@@ -141,6 +197,17 @@ utilizzare solo comandi testuali o linee di comando.
 #pagebreak()
 
 = #LTG("I")
+
+== #LTG("Issue")
+
+Un GitHub Issue è uno strumento offerto da GitHub per la gestione delle attività e il tracciamento dei problemi all'interno di un progetto software.
+
+== #LTG("Issue Tracking System")
+
+Strumento per registrare, monitorare e gestire problemi, richieste di miglioramento o errori in un progetto software.
+
+
+
 #pagebreak()
 
 = #LTG("J")
@@ -166,6 +233,16 @@ ottimizzare le prestazioni.
 
 = #LTG("L")
 
+== #LTG("Label")
+
+Tag o etichette usate in GitHub (o altri strumenti di issue tracking) per classificare problemi, richieste di pull o attività secondo criteri specifici.
+
+== #LTG("LangChain")
+
+LangChain è un framework progettato per costruire applicazioni basate su modelli di linguaggio (LLM). Consente di combinare LLM con altre tecnologie come database, API o strumenti di esecuzione per creare flussi di lavoro complessi. È particolarmente utile per la costruzione di chatbot, sistemi di recupero informazioni e strumenti di automazione.
+
+
+
 == #LTG("LaTeX")
 
 LaTeX è un linguaggio di markup e un sistema di preparazione di documenti utilizzato principalmente per la produzione di
@@ -173,9 +250,19 @@ documenti scientifici, accademici e tecnici, ma anche per altri tipi di pubblica
 presentazioni. È basato su TeX, un sistema di tipografia creato da Donald Knuth negli anni \u{0027}70, ma LaTeX aggiunge una //this is weird
 serie di funzionalità e pacchetti per semplificare la scrittura e la formattazione dei documenti.
 
+== #LTG("LLM")
+
+Un LLM (large language model) è un modello di intelligenza artificiale basato su reti neurali di grandi dimensioni, addestrato su enormi quantità di testo per comprendere e generare linguaggio naturale. Esempi popolari includono GPT (Generative Pre-trained Transformer) e BERT. Questi modelli sono usati in applicazioni come chatbot, traduzione automatica, completamento del testo e analisi del sentiment.
+
+
+
 #pagebreak()
 
 = #LTG("M")
+
+== #LTG("Manuale Utente")
+
+Documento che spiega agli utenti finali come utilizzare il software, spesso includendo istruzioni dettagliate e risoluzioni comuni ai problemi.
 
 == #LTG("Milestone")
 
@@ -203,6 +290,13 @@ uniformità nell'approccio e nel risultato finale.
 #pagebreak()
 
 = #LTG("O")
+
+== #LTG("Onboarding")
+
+Processo per integrare nuovi membri in un team o progetto, fornendo loro le informazioni e le risorse necessarie per iniziare.
+
+
+
 #pagebreak()
 
 = #LTG("P")
@@ -222,6 +316,14 @@ lo sviluppo di un progetto. Contiene una descrizione dettagliata delle strategie
 valutazione e dei criteri di accettazione del prodotto finale. L'obiettivo principale del Piano di Qualifica è garantire
 che il prodotto soddisfi gli standard di qualità prefissati e che il processo di sviluppo segua procedure coerenti ed
 efficaci.
+
+== #LTG("Postgres")
+
+Postgres è un sistema di gestione di database relazionale open-source, noto per la sua affidabilità, flessibilità e conformità agli standard SQL. Supporta funzionalità avanzate come transazioni complesse, estensioni personalizzabili, gestione di grandi volumi di dati e supporto per tipi di dati avanzati. È largamente utilizzato in applicazioni web, analisi dei dati e gestione delle informazioni.
+
+== #LTG("Processo")
+
+Un processo è un insieme di attività correlate e coordinate che trasformano input in output, seguendo regole e procedure.
 
 == #LTG("Product Backlog")
 
@@ -282,6 +384,13 @@ principale (di solito chiamato main o master).
 #pagebreak()
 
 = #LTG("Q")
+
+== #LTG("QDrant")
+
+Qdrant è un motore di database vettoriale open-source progettato per memorizzare e cercare rappresentazioni vettoriali di dati (embeddings). Supporta ricerche di similarità ad alta velocità e applicazioni di machine learning, come motori di raccomandazione e ricerca semantica. È spesso utilizzato con LLM per migliorare l'elaborazione dei dati.
+
+
+
 #pagebreak()
 
 = #LTG("R")
@@ -295,7 +404,7 @@ monitorare le modifiche nel tempo. I repository sono usati per gestire il ciclo 
 facilitando la collaborazione tra sviluppatori e il versionamento del codice. I repository possono essere locali (sul
 proprio computer) o remoti (su piattaforme come GitHub, GitLab, Bitbucket).
 
-== #LTG("RTB (Requirements and Technology Baseline)")
+== #LTG("RTB")
 
 Fase iniziale e fondamentale del processo di sviluppo di un software. In questa fase, l'obiettivo principale è stabilire
 e comprendere i requisiti del sistema e definire la base tecnologica sulla quale il progetto si svilupperà. Le tre
@@ -307,6 +416,14 @@ definizione della baseline di progetto.
 Figura fondamentale che coordina il gruppo, funge da punto di riferimento per il committente e per il team, svolgendo
 il ruolo di mediatore tra le due parti. In particolare si occupa di: gestire le relazioni con l’esterno; pianificare le
 attività (quali svolgere, data di inizio e fine, assegnazione delle priorità), valutare i rischi associati alle decisioni da prendere, controllare i progressi del progetto, gestire le risorse umane e approvare la documentazione.
+
+== #LTG("Rischi organizzativi")
+
+Problemi legati alla gestione, alla pianificazione o alla comunicazione che possono influire sul successo di un progetto.
+
+== #LTG("Rischi tecnologici")
+
+Problemi legati alla tecnologia utilizzata, come software obsoleti, bug critici o incompatibilità.
 
 #pagebreak()
 
@@ -353,6 +470,30 @@ I task sono generalmente definiti in modo chiaro e conciso, con obiettivi, scade
 Possono essere assegnati a singoli membri del team o a gruppi di lavoro e sono utilizzati per organizzare e monitorare
 il lavoro da svolgere.
 
+== #LTG("Telegram")
+
+Telegram è un'applicazione di messaggistica istantanea e di comunicazione basata su cloud, sviluppata da Telegram.
+
+== #LTG("Test di Accettazione")
+
+Verifica finale condotta dall'utente o dal cliente per assicurarsi che il prodotto soddisfi le loro aspettative e sia pronto per l’uso.
+
+== #LTG("Test di Integrazione")
+
+Test che verificano l'interazione tra diverse unità o moduli di codice per garantire che lavorino insieme correttamente.
+
+== #LTG("Test di Sistema")
+
+Valutazione dell’intero sistema software per verificare che soddisfi i requisiti specificati.
+
+== #LTG("Test di Unità")
+
+Verifica di singole unità o componenti del codice (come funzioni o metodi) per assicurarsi che funzionino correttamente in isolamento.
+
+== #LTG("Text-to-Text")
+
+Un chatbot text-to-text è un tipo di intelligenza artificiale conversazionale che utilizza il Natural Language Processing (NLP) e algoritmi di machine learning per comprendere e rispondere a input testuali forniti dagli utenti. Questi chatbot sono progettati per simulare conversazioni simili a quelle umane, offrendo risposte utili e informative alle domande degli utenti.
+
 == #LTG("Ticket")
 
 Un ticket è una registrazione formale di un'attività, problema o richiesta all'interno di un sistema di gestione del
@@ -382,6 +523,14 @@ Una user story è una descrizione informale, in linguaggio naturale, delle carat
 #pagebreak()
 
 = #LTG("V")
+
+== #LTG("Validazione")
+
+La validazione è il processo volto ad assicurarsi che il prodotto software, modulo o sistema soddisfi le necessità e le aspettative dell'utente finale, indipendentemente dalle specifiche tecniche. Si concentra sul fatto che il sistema faccia ciò che serve.
+
+== #LTG("Verifica")
+
+La verifica è il processo volto ad accertare che un prodotto software, un modulo, un sistema o un processo soddisfi i requisiti specificati o i criteri di progettazione. Si concentra sul fatto che il sistema sia stato costruito correttamente, ovvero in conformità alle specifiche tecniche o funzionali.
 
 == #LTG("Verificatore")
 
