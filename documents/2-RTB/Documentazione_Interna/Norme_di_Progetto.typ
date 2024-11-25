@@ -673,6 +673,8 @@ Al fine di promuovere un ambiente di lavoro efficace ed efficiente, che garantis
 
 Al fine di completare questo percorso formativo, ogni membro utilizzerà tutti gli strumenti che ritiene necessari e li condividerà tramite link o file con gli altri membri del Team attraverso i canali di comunicazione interna dedicati al fine di promuovere la condivisione delle conoscenze.
 
+#pagebreak()
+
 = Standard ISO/IEC 9126
 
 Lo standard ISO/IEC 9126 è una norma internazionale che ha contribuito a definire i parametri fondamentali per la valutazione della qualità e la validazione del software. Questo standard rappresenta un insieme di norme e linee guida dettagliate, oltre che a criteri di valutazione, per gli attributi di qualità di un prodotto software.
@@ -720,7 +722,7 @@ Le sotto-categorie di questo parametro sono:
 - _*Apprendibilità*_: Capacità del software di essere appreso facilmente dall'utente al primo utilizzo.
 - _*Operabilità*_: Facilità con cui un utente può portare a termine le operazioni desiderate in modo efficiente, senza incorrere in problemi e con un utilizzo normale di risorse.
 - _*Attrattività*_: Capacità dell'interfaccia e del design del software di essere piacevole e attraente per l'utente.
-- _*Aderenza all'usabilità*_: Capacità del software di aderire e rispettare nel suo ciclio di vita standard e convenzioni di usabilità.
+- _*Aderenza all'usabilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard e convenzioni di usabilità.
 
 == Efficienza
 
@@ -740,8 +742,8 @@ Le sotto-categorie di questo parametro sono:
 
 - _*Analizzabilità*_: Capacità del software di essere analizzato facilmente per individuare errori e problemi o sezioni da migliorare.
 - _*Modificabilità*_: Capacità del software di essere modificato facilmente per correggere errori, migliorare le prestazioni e adattarsi a nuove esigenze senza generare nuovi errori.
-- _*Stabilità*_: Capacità del software di mantenere un certo livello di prestazioni anche in presenza di modifiche di evitare di inificiare il codice esistente durante le modifiche.
-- _*Testabilità*_: Capacità del software di essere testato facilmente per garantire la qualità e la correttezza del prodotto e delle modifiche appportate.
+- _*Stabilità*_: Capacità del software di mantenere un certo livello di prestazioni anche in presenza di modifiche, evitando di compromettere il codice esistente.
+- _*Testabilità*_: Capacità del software di essere testato facilmente per garantire la qualità e la correttezza del prodotto e delle modifiche apportate.
 - _*Aderenza alla manutenibilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard
 
 == Portabilità
