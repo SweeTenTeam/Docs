@@ -96,24 +96,24 @@ Tale prodotto, in conclusione, risponde alla necessità di accedere in modo faci
 
 
 == Funzionalità del prodotto
-BuddyBot è un assistente virtuale progettato per garantire un accesso facile e immediato alle informazioni aziendali attraverso un'interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall'azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest'ultime e fornendo le risposte alle domande poste dall'utente.
+#glossary("BuddyBot") è un assistente virtuale progettato per garantire un accesso facile e immediato alle informazioni aziendali attraverso un'interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall'azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest'ultime e fornendo le risposte alle domande poste dall'utente.
 
 L’assistente virtuale utilizza tecnologie di Intelligenza Artificiale (nel nostro progetto verranno utilizzati #glossary("GroqCloud") e #glossary("Langchain") lato #glossary("LLM")) per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate. 
 
-A seguire, BuddyBot garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("PostgreSQL") a un volume #glossary("Docker").
+A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("PostgreSQL") a un volume #glossary("Docker").
 
 == Utenti e caratteristiche
 Il prodotto si rivolge principalmente al team aziendale:
 
   - *Sviluppatori*, che accedono a informazioni tecniche come codice e documentazione;
-  - #glossary("Project Manager"), che usa BuddyBot per monitorare task e risorse;
-  - *Nuovi membri* del team, che vengono supportati nell'onboarding e nella ricerca delle informazioni necessarie, facilitando la loro integrazione nell'azienda;
+  - #glossary("Project Manager"), che usa #glossary("BuddyBot") per monitorare task e risorse;
+  - *Nuovi membri* del team, che vengono supportati nell'#glossary("onboarding") e nella ricerca delle informazioni necessarie, facilitando la loro integrazione nell'azienda;
   - In generale, allo *staff aziendale*.
 Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l'uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
 
 = Casi d'uso
 == Introduzione ai casi d'uso e obbiettivi
-In questa sezione vengono elencati dettagliatamente i casi d'uso individuati dal gruppo in seguito ad analisi e valutazioni circa le specifiche del capitolato.
+In questa sezione vengono elencati dettagliatamente i #glossary("casi d'uso (UC)") individuati dal gruppo in seguito ad analisi e valutazioni circa le specifiche del capitolato.
 Gli scenari sottostanti seguono uno schema e può prevedere:
   - *Titolo*
   - *Attori*: il soggetto che esegue un'azione in quel contesto
@@ -129,15 +129,15 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 === UC1, Consultazione Jira
 - *Attore coinvolto*: User
 - *Precondizioni*
-  - API Jira disponibili e configurate correttamente.
+  - #glossary("API") #glossary("Jira") disponibili e configurate correttamente.
 - *Scenario principale*
-  - L'utente interagisce con BuddyBot tramite l'interfaccia chat, ponendo una domanda 
-    - esempio: "Quali issue sono assegnate a me per questa settimana?"
-  - BuddyBot autentica la connessione con Jira 
+  - L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda 
+    - esempio: "Quali #glossary("issue") sono assegnate a me per questa settimana?"
+  - #glossary("BuddyBot") autentica la connessione con Jira 
 
-  - Il sistema invia una richiesta alle API di Jira per estrarre i dati 
-    - nel nostro esempio, vengono quindi estratti dati relativi alle issue assegnate all'utente con scadenza entro la settimana corrente.
-  - BuddyBot elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
+  - Il sistema invia una richiesta alle #glossary("API") di #glossary("Jira") per estrarre i dati 
+    - nel nostro esempio, vengono quindi estratti dati relativi alle #glossary("issue") assegnate all'utente con scadenza entro la settimana corrente.
+  - #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
     - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di titoli, priorità, date di scadenza e stati.
 - *Postcondizioni*
   - Le informazioni richieste vengono presentate correttamente all'utente, che può visualizzarle e utilizzarle per pianificare le proprie attività.
