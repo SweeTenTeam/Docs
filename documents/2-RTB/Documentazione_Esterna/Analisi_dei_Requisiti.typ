@@ -9,7 +9,7 @@
     "2024-11-25",
     (p.santi),
     (p.mahdi),
-    "Introdotti i casi d'uso (3) + UC1",
+    "Introdotte sezioni Casi d'Uso (3) + Requisiti (4), impaginazione tabelle",
     "0.0.3",
     "2024-11-22", 
     (p.santi), 
@@ -126,7 +126,7 @@ Gli scenari sottostanti seguono uno schema e può prevedere:
 L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio ponendo domande all'assistente virtuale.
 
 == Definizione casi d'uso
-=== UC1, Consultazione Jira
+/*=== UC1, Consultazione Jira
 - *Attore coinvolto*: User
 - *Precondizioni*
   - #glossary("API") #glossary("Jira") disponibili e configurate correttamente.
@@ -141,3 +141,163 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
     - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di titoli, priorità, date di scadenza e stati.
 - *Postcondizioni*
   - Le informazioni richieste vengono presentate correttamente all'utente, che può visualizzarle e utilizzarle per pianificare le proprie attività.
+*/
+
+= Requisiti
+In questa sezione vengono esposti i requisiti individuati in seguito alle analisi effettuate dal gruppo e dai #glossary("casi d'uso (UC)") esaminati in precedenza. Per garantire maggiore chiarezza, i vari requisiti verranno identificati da codici univoci a seconda della loro natura e dall'obbligatorietà o meno...
+
+Come anticipato, i requisiti possono appartenere a tre categorie differenti:
+  - funzionali
+  - di qualità
+  - di vincolo
+
+
+== Requisiti Funzionali
+I #glossary("Requisiti Funzionali") definiscono cosa il sistema deve fare, ovvero le sue funzionalità principali e i comportamenti attesi, concentrandosi quindi sulle operazioni che gli utenti/attori devono poter eseguire.
+
+Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
+- RFO-x: Requisito Funzionale Obbligatorio numero "x"
+- RFD-x: Requisito Funzionale Desiderabile numero "x"
+
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it))
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (3cm, 10cm, 3cm),
+  [Codice], [Descrizione], [Fonti],
+
+  [], [], [],
+  [], [], [],
+  [], [], [],
+)
+
+
+
+== Requisiti di Qualità
+I #glossary("Requisiti di Qualità") riguardano *come* il sistema deve funzionare, definendo quindi caratteristiche cruciali per garantire un ottima "#glossary("User Experience")", soddisfacendo le sue esigenze.
+
+Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
+- RQO-x: Requisito di Qualità Obbligatorio numero "x"
+- RQD-x: Requisito di Qualità Desiderabile numero "x"
+
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it)) // Allinea al centro e usa testo in grassetto
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (3cm, 10cm, 3cm),
+  [Codice], [Descrizione], [Fonti],
+
+  [], [], [],
+  [], [], [],
+  [], [], [],
+)
+
+
+
+== Requisiti di Vincolo
+I #glossary("Requisiti di Vincolo") definiscono i limiti tecnici e/o progettuali entro i quali il sistema deve essere sviluppato.
+
+Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
+- RVO-x: Requisito di Vincolo Obbligatorio numero "x"
+- RVD-x: Requisito di Vincolo Desiderabile numero "x"
+
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it)) 
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (3cm, 10cm, 3cm),
+  [Codice], [Descrizione], [Fonti],
+
+  [], [], [],
+  [], [], [],
+  [], [], [],
+)
+
+== Tracciamento
+Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito del progetto alle sue "fonti" di origine (capitolato, incontri con l'azienda, incontri interni) e alle sue implementazioni, come i #glossary("Casi d'Uso (UC)").
+
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it)) 
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (6cm, 6cm),
+  [Fonte], [Requisito],
+
+  [], [],
+  [], [],
+  [], [],
+)
+
+== Riepilogo
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it)) 
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (4cm, 3cm, 3cm, 3cm),
+  [Tipologia], [Obbligatorio], [Desiderabile], [Totale],
+
+  [], [], [], [],
+  [], [], [], [],
+  [], [], [], [],
+)
+Il totale dei Requisiti è: //somma della colonna "totale" della tabella di cui sopra
