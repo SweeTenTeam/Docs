@@ -155,7 +155,7 @@ Docker è una piattaforma che consente di creare, distribuire ed eseguire applic
 
 == #LTG("Feature")
 
-una feature è una caratteristica o una funzionalità specifica di un software o applicazione progettata per soddisfare un bisogno o offrire un vantaggio agli utenti. Una feature può essere un'azione che l'utente può eseguire, un comportamento del sistema, o un miglioramento che aggiunge valore al software.
+Una feature è una caratteristica o una funzionalità specifica di un software o applicazione progettata per soddisfare un bisogno o offrire un vantaggio agli utenti. Una feature può essere un'azione che l'utente può eseguire, un comportamento del sistema o un miglioramento che aggiunge valore al software.
 
 == #LTG("Feedback")
 
@@ -200,7 +200,7 @@ utilizzare solo comandi testuali o linee di comando.
 
 == #LTG("Issue")
 
-Un GitHub Issue è uno strumento offerto da GitHub per la gestione delle attività e il tracciamento dei problemi all'interno di un progetto software.
+Un GitHub Issue è uno strumento offerto da GitHub per la gestione delle attività e il tracciamento dei problemi all'interno di un progetto software. Ogni issue rappresenta un'unità di lavoro o un problema specifico, e può essere personalizzata tramite assegnatari, che identificano i responsabili della sua risoluzione, label, che ne permettono la categorizzazione e milestone, che raggruppano più issue sotto un obiettivo comune per monitorare il progresso verso una scadenza o un risultato.
 
 == #LTG("Issue Tracking System")
 
@@ -293,7 +293,7 @@ uniformità nell'approccio e nel risultato finale.
 
 == #LTG("Onboarding")
 
-Processo per integrare nuovi membri in un team o progetto, fornendo loro le informazioni e le risorse necessarie per iniziare.
+Processo per integrare nuovi membri in un team o progetto, fornendo loro le informazioni e le risorse necessarie per iniziare a lavorare in modo efficace, efficiente, e in linea con le pratiche e gli standard dell'azienda.
 
 
 
@@ -423,7 +423,7 @@ Problemi legati alla gestione, alla pianificazione o alla comunicazione che poss
 
 == #LTG("Rischi tecnologici")
 
-Problemi legati alla tecnologia utilizzata, come software obsoleti, bug critici o incompatibilità.
+Problemi legati a una o più tecnologie utilizzate, come software obsoleti, bug critici o incompatibilità.
 
 #pagebreak()
 
@@ -526,7 +526,7 @@ Una user story è una descrizione informale, in linguaggio naturale, delle carat
 
 == #LTG("Validazione")
 
-La validazione è il processo volto ad assicurarsi che il prodotto software, modulo o sistema soddisfi le necessità e le aspettative dell'utente finale, indipendentemente dalle specifiche tecniche. Si concentra sul fatto che il sistema faccia ciò che serve.
+La validazione è il processo volto ad assicurare che il prodotto software, modulo o sistema soddisfi le necessità e le aspettative dell'utente finale, indipendentemente dalle specifiche tecniche. Si concentra, quindi, sul garantire che il sistema svolga ciò per cui è stato progettato.
 
 == #LTG("Verifica")
 

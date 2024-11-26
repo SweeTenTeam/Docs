@@ -28,7 +28,7 @@
 ) = {
   set page(fill: rgb(209, 197, 174))
 
-  set text(font: "Linux Libertine", lang: "it")
+  set text(font: "Libertinus Serif", lang: "it")
   set heading(numbering: heading_numbers)
   set page(numbering: "1 / 1")
   show link: underline
