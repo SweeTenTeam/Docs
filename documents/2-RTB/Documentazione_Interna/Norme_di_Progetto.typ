@@ -8,11 +8,20 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.8",
+    "2024-11-26",
+    (p.campagnaro),
+    (p.ferazzani),
+    [
+      Stesura capitolo:  Processi Primari - Svilippo
+    ],
     "0.0.7",
     "2024-11-26",
     (p.ferazzani),
     (p.campagnaro),
-    [Stesura capitolo Metriche di Qualità del processo],
+    [
+      Stesura capitolo: Metriche di Qualità del processo
+    ],
     "0.0.6",
     "2024-11-25",
     (p.ferazzani),
@@ -128,7 +137,7 @@ Inoltre, è stato concordato di organizzare regolarmente riunioni di Stato Avanz
 Per ogni colloquio con l’azienda proponente verrà redatto un resoconto sotto forma di Verbale Esterno, che riporterà nel nome e all’interno del documento la data del relativo incontro. I verbali redatti potranno essere consultati all’interno della relativa cartella presente sul #glossary("repository") #link("https://github.com/SweeTenTeam/Docs/tree/master/documents"), disponibile per ogni #glossary("baseline") del progetto.
 
 === Documentazione fornita
-In aggiunta alle attività volte alla realizzazione del progetto, vengono redatti e resi disponibili all’azienda #glossary("propronente") #box(image(g.azzurro, width: 5em, height: auto)) e ai Committenti Prof. Vardanega e Prof. Cardin i seguenti documenti:
+In aggiunta alle attività volte alla realizzazione del progetto, vengono redatti e resi disponibili all’azienda #glossary("proponente") #box(image(g.azzurro, width: 5em, height: auto)) e ai Committenti Prof. Vardanega e Prof. Cardin i seguenti documenti:
 
 ==== Valutazione dei Capitolati
 La Valutazione dei Capitolati è un documento che fornisce una panoramica dettagliata sui capitolati d’appalto presentati il 15 ottobre 2023. Per ogni progetto vengono analizzate le richieste del #glossary("proponente"), individuate le possibili soluzioni e identificate eventuali criticità.
@@ -258,7 +267,320 @@ Piattaforma online che consente agli sviluppatori di creare, salvare, gestire e 
 ==== #glossary("Typst")
 Linguaggio utilizzato per la creazione e la redazione della documentazione.
 
-// PARTE DI MATTEO
+== Sviluppo
+=== Introduzione
+Lo sviluppo, delineato dallo standard `ISO/IEC 12207:1995`, si occupa di organizzare ed eseguire le attività per garantire che il prodotto completo soddisfi i tutti requisiti descritti nel #glossary("contratto"). Questa sequenza include tutte le azioni intraprese dai membri del team, finalizzate alla realizzazione di un prodotto che rispecchi le esigenze e le specifiche definite dal #glossary("Proponente").
+
+Le fasi che compongono lo sviluppo sono:
+
+- *Analisi dei requisiti*
+- *Progettazione*
+- *Codifica*
+
+=== Analisi dei requisiti
+==== Descrizione
+L’Analisi dei Requisiti definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del #glossary("proponente"). Descrive in dettaglio i casi d’uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del software.
+Contiene le seguenti informazioni:
+- *Descrizione del prodotto*: obiettivo finale del prodotto e le sue funzionalità principali;
+- *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati: 
+  - Scenario;
+  - Attori coinvolti;
+  - Azioni eseguibili.
+- *Lista dei requisiti*: tutte le richieste o vincoli definiti dal proponente o dedotti dal team per la realizzazione del prodotto finale. I requisiti possono essere obbligatori, desiderabili e opzionali e verranno classificati dal gruppo a seconda della loro importanza.
+
+==== Obiettivo
+L'analisi mira a ottenere una comprensione dettagliata delle necessità degli utenti, delle caratteristiche del prodotto e delle condizioni operative previste.
+
+Questa fase include tre aspetti principali:
+
+- *Identificazione* degli *obiettivi* e delle *finalità* del prodotto: Definizione chiara e condivisa degli scopi e dei risultati attesi, tenendo conto delle esigenze degli utenti e delle proposte dell’azienda.
+- *Supporto alla progettazione*: Fornitura di una base chiara e strutturata che consenta ai progettisti di definire in modo efficace l’architettura e il design del sistema, facilitando il lavoro successivo.
+- *Miglioramento della comunicazione*: Creazione di un linguaggio comune che agevoli il dialogo tra i fornitori e gli #glossary("stakeholder"), assicurando un allineamento completo sulle aspettative e sugli obiettivi.
+
+==== Diagrammi UML dei casi d’uso 
+Un diagramma di caso d’uso è uno strumento grafico e intuitivo utilizzato per rappresentare in modo sintetico e comprensibile le funzionalità di un sistema e le interazioni tra gli attori e il sistema stesso. Fornisce una visione d’insieme degli scenari d’uso, descrivendo le azioni necessarie per consentire agli utenti di completare specifiche attività. Questo tipo di diagramma è particolarmente utile durante la fase di analisi e progettazione, in quanto evidenzia chiaramente i requisiti funzionali del sistema senza entrare nei dettagli implementativi.
+
+*Componenti principali*:
+
+- *Attore*: un’entità esterna (persona, organizzazione o sistema) che interagisce con il sistema per soddisfare un’esigenza.
+
+#figure(
+  image(gn.attore, height: 6em),
+  caption: [Rappresentazione di un attore nel diagramma UML.],
+)
+
+- *Caso d’uso*: una funzionalità offerta dal sistema con cui l’attore può interagire.
+
+#figure(
+  image(gn.caso_uso, height: 5em),
+  caption: [Rappresentazione di un caso d'uso nel diagramma UML.],
+)
+
+- *Sottocasi*: descrivono in modo più dettagliato aspetti specifici di casi d’uso generali.
+
+#figure(
+  image(gn.sottocasi, height: 12em),
+  caption: [Rappresentazione di sottocasi d'uso nel diagramma UML.],
+)
+
+- *Sistema*: rappresenta il software o prodotto in esame. I casi d’uso sono contenuti all’interno del sistema, mentre gli attori sono posizionati all’esterno.
+
+#figure(
+  image(gn.sistema, height: 8em),
+  caption: [Rappresentazione di un sistema nel diagramma UML.],
+)
+
+- *Relazione attore-caso d’uso*: indica come un attore utilizza una particolare funzionalità del sistema.
+
+#figure(
+  image(gn.attore_caso, height: 6em),
+  caption: [Rappresentazione di una relazione di associazione nel diagramma UML.],
+)
+
+- *Generalizzazione tra attori*: descrive una relazione gerarchica in cui un attore specializzato eredita comportamenti e caratteristiche da un attore base (o "padre"). Questo consente di rappresentare differenze specifiche senza duplicare informazioni.
+
+#figure(
+  image(gn.generalizzazione_attori, height: 12em),
+  caption: [Rappresentazione di una generalizzazione tra attori nel diagramma UML.],
+)
+
+*Tipologie di relazioni tra casi d’uso*:
+
+- *Inclusione*: un caso d’uso (includente) integra un altro caso d’uso (incluso) come parte del suo processo, evitando ridondanze.
+
+#figure(
+  image(gn.inclusione, height: 12em),
+  caption: [Rappresentazione di una relazione di inclusione nel diagramma UML.],
+)
+
+- *Estensione*: un caso d’uso (estendibile) include opzionalmente un altro caso d’uso (esteso) al verificarsi di condizioni specifiche, gestendo scenari particolari senza complicare il caso principale.
+
+#figure(
+  image(gn.estensione, height: 12em),
+  caption: [Rappresentazione di una relazione di estensione nel diagramma UML.],
+)
+
+- *Generalizzazione*: un caso d’uso più specifico eredita comportamenti e proprietà da un caso d’uso più generale.
+
+#figure(
+  image(gn.generalizzazione_caso_uso, height: 12em),
+  caption: [Rappresentazione di una relazione di generalizzazione nel diagramma UML.],
+)
+
+==== Codice dei casi d’uso
+A ogni caso d'uso è associato un codice univoco, strutturato nel seguente formato:
+
+#align(center)[*`UC-[X].[Y]`*]
+
+Dove *`X`* rappresenta un identificativo univoco e *`Y`* indica una variante specifica del medesimo caso d'uso.
+
+==== Requisiti
+I requisiti di un #glossary("software"), stabiliti all'inizio del progetto con la #glossary("proponente"), stabiliscono in modo chiaro le prestazioni, le funzionalità, le caratteristiche e le restrizioni che il prodotto deve soddisfare. Questi requisiti fungono da guida nelle fasi di sviluppo, testing e valutazione finale, garantendo che il prodotto finito rispetti le aspettative e gli obiettivi fissati.
+
+I requisiti possono essere suddivisi in queste categorie:
+
+- *Funzionali*: Questi requisiti descrivono le funzionalità del sistema, cioè i servizi che il #glossary("software") deve offrire per rispondere alle necessità dell'utente. Un requisito funzionale stabilisce come deve comportarsi il sistema.
+- *Qualità*: Questi requisiti riguardano gli standard di qualità che il prodotto finale deve rispettare.
+- *Vincolanti*: I requisiti di questo tipo indicano i limiti e le restrizioni stabilite nel capitolato che il prodotto deve seguire.
+- *Prestazionali*: Questi requisiti determinano le performance che il sistema deve raggiungere.
+
+==== Codice dei requisiti
+A ciascun requisito è associato un codice univoco, strutturato nel seguente formato:
+
+#align(center)[*`R[X]-[Y]`*]
+
+Dove *`X`* rappresenta la tipologia di requisito e *`Y`* è un identificativo progressivo.
+
+=== Progettazione
+==== Descrizione
+L’obiettivo della progettazione è individuare una soluzione adeguata ai requisiti definiti nell’Analisi dei Requisiti. La progettazione del prodotto, a cura dei progettisti, si articola in due fasi principali:
+
+*Progettazione logica*: Questa fase riguarda la selezione delle tecnologie, dei #glossary("framework") e delle librerie da utilizzare per la realizzazione del prodotto, con l’obiettivo di garantirne l’adeguatezza attraverso il #glossary("Proof of Concept") (PoC). 
+
+I principali aspetti di questa fase sono:
+
+- Scelta delle tecnologie da utilizzare;
+- Realizzazione del #glossary("Proof of Concept") (PoC);
+- Creazione dei diagrammi #glossary("UML").
+
+*Progettazione di dettaglio*: In questa fase si definisce l'architettura di base del prodotto, costruendo su quanto stabilito nella progettazione logica. 
+
+Gli elementi chiave includono:
+
+- Diagrammi delle classi;
+- Tracciamento delle classi;
+- Applicazione dei #glossary("Design Pattern");
+- #glossary("Test") di unità per ciascun componente.
+
+==== Vincoli di qualità
+Le seguenti #glossary("best practice") dovranno essere adottate durante la progettazione e lo sviluppo del prodotto:
+
+- *Analisi*: La progettazione inizia solo dopo un'analisi approfondita dei requisiti concordati con la parte proponente.
+- *Affidabilità*: Il #glossary("software") è progettato per funzionare correttamente e in modo prevedibile.
+- *Coesione*: Ogni componente è focalizzato su una singola responsabilità.
+- *Chiarezza*: Il prodotto e la documentazione sono facilmente comprensibili, con diagrammi e spiegazioni.
+- *Decoupling*: I componenti sono indipendenti, favorendo manutenibilità e flessibilità.
+- *Flessibilità*: Il sistema si adatta facilmente a nuovi requisiti.
+- *Incapsulamento*: I dettagli interni sono protetti e l'interazione avviene solo tramite interfacce stabilite.
+- *Modularità*: L'architettura è divisa in parti autonome, facilmente gestibili.
+- *Riusabilità*: I moduli e il codice sono creati per essere utilizzati in diversi contesti.
+- *Scalabilità*: Il sistema può gestire crescenti carichi e nuove funzionalità senza problemi.
+- *Semplicità*: La progettazione è pulita, senza complessità inutili.
+- *Sufficienza*: Si assicura che tutti i requisiti stabiliti vengano soddisfatti.
+
+==== Diagrammi delle classi
+I diagrammi delle classi sono utilizzati per completare la progettazione del prodotto, poiché sono fondamentali per definire le caratteristiche e le relazioni tra i vari componenti del sistema.
+
+Una classe è rappresentata graficamente come un rettangolo suddiviso in tre sezioni principali:
+
+1. *Nome della classe*: Questo campo rappresenta il nome identificativo della classe, che viene scritto in grassetto seguendo la convenzione PascalCase, eccetto per le classi astratte, il cui nome è scritto in corsivo. 
+
+2. *Attributi*: Gli attributi sono i campi dati della classe e sono rappresentati singolarmente, ciascuno su una riga separata. Il formato di rappresentazione degli attributi è il seguente:
+
+    #align(center)[*`Visibilità Nome: Tipo<T> [Molteplicità] = Valore/i di Default`*]
+    
+    Dove:
+    
+    - *Visibilità*: Indica l'accessibilità dell'attributo e può essere:
+      - *`-`* : visibilità privata.
+      - *`#`* : visibilità protetta.
+      - *`+`* : visibilità pubblica.
+      - *`~`* : visibilità di package.
+    - *Nome*: Il nome dell'attributo, che deve essere unico per ogni campo. La convenzione di nomenclatura è camelCase mentre per le costanti, i nomi sono scritti in maiuscolo.
+    - *Tipo*: Specifica il tipo dell'attributo, che può essere primitivo o un tipo complesso.
+    - *`<T>`*: Nel caso di collezioni o container (come liste o array), si indica il tipo di oggetto contenuto.
+    - *Molteplicità*: Indica la quantità di elementi nel caso di collezioni. Se la dimensione è sconosciuta, si usa *`"[*]"`*. Se si tratta di un singolo elemento, la molteplicità è opzionale.
+    - *Valore/i di default*: Ogni campo può essere inizializzato con un valore predefinito, se applicabile.
+    
+3. *Firme dei metodi*: Le firme dei metodi descrivono il comportamento di ciascun metodo e sono rappresentate ciascuna su una riga separata. Il formato di rappresentazione è il seguente:
+    
+    #align(center)[*`Visibilità Nome (Parametri Formali): Tipo di ritorno`*]
+    
+    Dove:
+    
+    - *Visibilità*: Indica l'accessibilità del metodo e segue gli stessi simboli degli attributi:
+      - *`-`* : visibilità privata.
+      - *`#`* : visibilità protetta.
+      - *`+`* : visibilità pubblica.
+      - *`~`* : visibilità di package.
+    - *Nome*: Il nome del metodo, che deve essere descrittivo e indicare chiaramente la funzionalità del metodo stesso.
+    - *Parametri formali*: I parametri richiesti dal metodo, separati da virgole.
+    - *Tipo di ritorno*: Il tipo di valore che il metodo restituisce, se applicabile.
+
+Per convenzione, i metodi di tipo getter/setter e i costruttori non vengono generalmente rappresentati nel diagramma. Se un attributo o un metodo è assente, questo viene indicato graficamente, e nel caso di ereditarietà, eventuali metodi ereditati che non sono specificati possono essere ignorati.
+
+==== Relazioni tra classi
+Le classi in un diagramma delle classi possono essere collegate tramite diverse tipologie di relazioni, ognuna rappresentata graficamente in modo specifico. 
+
+Ecco le principali:
+
+- *Dipendenza*: Una classe dipende da un'altra quando utilizza i suoi metodi o attributi. È rappresentata con una freccia tratteggiata. 
+
+  Può essere etichettata con:
+
+  - *"`use`"*: quando la classe utilizza metodi o attributi dell'altra classe.
+  - *"`create`"*: quando crea un'istanza prima di utilizzarla.
+
+#figure(
+  image(gn.dipendenza, height: 6em),
+  caption: [Rappresentazione di una dipendenza.],
+)
+
+- *Associazione*: Quando una classe contiene un riferimento ad un’altra, indicata con una linea continua. La molteplicità (quanti oggetti di una classe sono associati a un'altra) può essere espressa vicino alla freccia, e se è 1, può essere omessa.
+
+#figure(
+  image(gn.associazione, height: 6em),
+  caption: [Rappresentazione di una associazione.],
+)
+
+- *Aggregazione*: Una classe è composta da un’altra, ma le classi componenti possono esistere indipendentemente. È rappresentata con una freccia con un diamante vuoto.
+
+#figure(
+  image(gn.aggregazione, height: 6em),
+  caption: [Rappresentazione di una aggregazione.],
+)
+
+- *Composizione*: Una relazione più forte rispetto all'aggregazione, dove le classi "parti" non possono esistere senza la classe principale. È indicata con una freccia con un diamante pieno.
+
+#figure(
+  image(gn.composizione, height: 6em),
+  caption: [Rappresentazione di una composizione.],
+)
+
+- *Generalizzazione*: Quando una sottoclasse eredita da una superclasse, acquisendo i suoi attributi e metodi. È rappresentata con una freccia continua e vuota.
+
+#figure(
+  image(gn.generalizzazione_classe, height: 6em),
+  caption: [Rappresentazione di una generalizzazione.],
+)
+
+- *Interface Realization*: Una classe concreta implementa i metodi definiti in un’interfaccia. È collegata all’interfaccia tramite una linea semplice, con l'interfaccia rappresentata da un cerchio.
+
+#figure(
+  image(gn.interfaccia, height: 6em),
+  caption: [Rappresentazione di una realizzazione di interfaccia.],
+)
+
+==== Design Pattern
+Un #glossary("design pattern") è una soluzione consolidata, ampiamente riconosciuta per risolvere problemi che tendono a ripresentarsi frequentemente durante il processo di sviluppo #glossary("software"). Si tratta di un approccio testato che offre un metodo chiaro e strutturato per affrontare situazioni ricorrenti, facilmente riutilizzabile in diverse circostanze. Questi pattern derivano dall’esperienza pratica e sono progettati per aumentare l’efficienza, migliorare la qualità e favorire una maggiore manutenibilità del #glossary("software"). Ogni pattern include una descrizione approfondita del suo scopo nell’architettura, contribuendo così a comprendere il suo valore e il modo migliore per applicarlo.
+
+==== Test
+Il processo di test ha come scopo quello di garantire la qualità del prodotto in tutte le sue fasi, dalla progettazione e sviluppo fino alla fase finale. Durante la definizione dei test, vengono stabiliti i requisiti necessari, i casi da testare e i criteri di accettazione per convalidare il #glossary("software"). L’obiettivo primario è quello di scoprire e risolvere errori, #glossary("bug") e difetti nel #glossary("software") prima della sua distribuzione. Inoltre, il testing è essenziale per garantire che il prodotto rispetti appieno le specifiche e i requisiti definiti con il cliente.
+
+=== Codifica
+L’obiettivo della codifica, che spetta ai programmatori, è tradurre le specifiche in un prodotto funzionante e utilizzabile. 
+
+Questo prodotto deve poi rispondere a vari requisiti, tra cui:
+
+- *Test di unità*;
+- *Conformità all'uso* dei metodi di codifica e agli standard adottati;
+- *Test di integrazione*;
+- *Funzionalità e manutenibilità* del prodotto finale.
+
+====  Stile di Codifica
+Le seguenti norme, ispirate ai principi di `Clean Code di Robert C. Martin`, dovranno essere rispettate dal team durante la scrittura del codice del prodotto:
+
+- *Chiarezza e leggibilità*:
+  - Il codice deve essere chiaro e facilmente comprensibile. Se necessario, migliorare i nomi e aggiungere commenti esplicativi.
+  - Ogni parte del codice deve rispondere chiaramente alla domanda "Cosa fa?", rendendolo comprensibile nel tempo.
+
+- *Nomina delle variabili, metodi e classi*:
+  - Usare *PascalCase* per le classi e *camelCase* per variabili e metodi. I nomi devono essere chiari, descrittivi e concisi.
+  - Evitare abbreviazioni poco chiare.
+
+- *Lunghezza del metodo e della classe*:
+  - Ogni metodo deve implementare una sola funzione e non superare le 20-30 righe di codice.
+  - Ogni classe deve essere chiara, facilmente comprensibile e gestire un'unica responsabilità.
+
+- *Indentazione e formattazione*:
+  - Usare 4 spazi per l'indentazione.
+  - Separare i blocchi di codice con righe vuote per migliorarne la leggibilità.
+
+- *Commenti e documentazione*:
+  - Scrivere commenti solo quando il codice non è autoesplicativo. I commenti devono spiegare il "perché" di una decisione, non il "come".
+  - I commenti devono essere chiari, concisi e non ridondanti.
+  - Ogni classe e metodo deve avere una documentazione che ne descriva la funzionalità e i parametri.
+
+- *Gestione degli errori*:
+  - Gli errori vanno gestiti esplicitamente tramite eccezioni.
+  - Utilizzare eccezioni per gli errori inaspettati e mantenere il flusso di lavoro stabile.
+
+- *Testabilità e unit test*:
+  - Ogni componente deve essere facilmente testabile.
+  - Scrivere unit test per metodi complessi o che interagiscono con componenti esterni.
+  - Ogni test deve essere indipendente e focalizzarsi su un comportamento specifico.
+
+- *Controllo dei cicli annidati*:
+  - Limitare i cicli annidati a 3 livelli.
+  - Usare funzioni di ordine superiore per semplificare il flusso logico.
+
+- *Modularità e riusabilità*:
+  - Il codice deve essere suddiviso in moduli riutilizzabili e facilmente testabili.
+  - Evitare duplicazioni, usando funzioni e metodi per centralizzare la logica.
+
+- *Performance e ottimizzazione*:
+  - Scrivere codice leggibile prima di ottimizzare le performance.
+  - Ottimizzare solo quando la performance è effettivamente un problema misurato.
 
 
 #pagebreak()
@@ -480,12 +802,12 @@ La creazione e la gestione della issue segue il seguente flusso:
 8. Fine attività
 9. Creazione #glossary("Pull Request")
 10. Verifica del lavoro svolto
-  11. se corretto, si passa al punto 11
+  11. se corretto, si passa al punto 13
   12. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10
-11. Chiusura della Issue
-12. Spostamento della Issue da `In Progress` a `Done`
-13. Chiusura #glossary("Pull Request") e merge su branch `Develop`
-14. Eventuale eliminazione del branch (solo se non deve essere riutilizzato)
+13. Chiusura della Issue
+14. Spostamento della Issue da `In Progress` a `Done`
+15. Chiusura #glossary("Pull Request") e merge su branch `Develop`
+16. Eventuale eliminazione del branch (solo se non deve essere riutilizzato)
 
 *Milestones* \
 Il gruppo, dopo una pianificazione accurata, ha deciso di impostare le milestones ad '#glossary("Artefatti")' e non a '#glossary("sprint")'.
@@ -568,7 +890,7 @@ La board possiede le seguenti viste:
   - Done: issue completate e verificate
 
 #figure(
-  image(g.board, width: 100%),
+  image(gn.board, width: 100%),
   caption: [Kanban Board aggiornata al 22/11/2024],
 )
 
@@ -578,7 +900,7 @@ La board possiede le seguenti viste:
   - End Date: data di fine della issue
 
 #figure(
-  image(g.road, width: 100%),
+  image(gn.road, width: 100%),
   caption: [Roadmap aggiornata al 22/11/2024],
 )
 

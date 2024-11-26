@@ -11,9 +11,31 @@
   logo: "/images/logos/sweetenteam.png",
   azzurro: "/images/logos/AzzurroDigitale-logo.png",
   unipd: "/images/logos/Universita_Padova_transparent.png",
-  board: "/images/Board.png",
-  road: "/images/Roadmap.png",
 )
+
+//Norme di progetto Immagini
+#let gn = (
+  attore: "/images/norme/attore.png",
+  caso_uso: "/images/norme/caso_uso.png",
+  sottocasi: "/images/norme/sottocasi.png",
+  sistema: "/images/norme/sistema.png",
+  attore_caso: "/images/norme/attore_caso.png",
+  generalizzazione_attori: "/images/norme/generalizzazione_attori.png",
+  inclusione: "/images/norme/inclusione.png",
+  estensione: "/images/norme/estensione.png",
+  generalizzazione_caso_uso: "/images/norme/generalizzazione_caso_uso.png",
+
+  dipendenza: "/images/norme/dipendenza.png",
+  associazione: "/images/norme/associazione.png",
+  aggregazione: "/images/norme/aggregazione.png",
+  composizione: "/images/norme/composizione.png",
+  generalizzazione_classe: "/images/norme/generalizzazione_classe.png",
+  interfaccia: "/images/norme/interfaccia.png",
+  
+  board: "/images/norme/board.png",
+  road: "/images/norme/roadmap.png",
+)
+
 //team members
 #let p = (
   azzurro: "AzzurroDigitale",
