@@ -786,11 +786,11 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 
 - *M-PRC-RSI* - Requirements Stability Index: stabilità dei requisiti nel tempo.
   #align($"RSI" = 100 - (frac("RM + RA + RR", "NR")) * 100$, center)
-  - *M-PRC-RA*: numero di requisiti aggiunti nel periodo considerato
-  - *M-PRC-RM*: Requisiti modificati
-  - *M-PRC-RR*: Requisidi rimossi
-  - *M-PRC-NR*: Numero di requisiti al momento dell'analisi
-- *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfrtuttano un modulo specifico
+  - *RA*: numero di requisiti aggiunti nel periodo considerato
+  - *RM*: Requisiti modificati
+  - *RR*: Requisiti rimossi
+  - *NR*: Numero di requisiti al momento dell'analisi
+- *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfruttano un modulo specifico
 - *M-PRC-SFO* - Structural Fan-Out: componenti utilizzate dal modulo in osservazione.
 
 == Processi di supporto
@@ -813,6 +813,6 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 
 == Processi Organizzativi
 
-- *M-PRC-NR* - Non-Calculated Risk: monitoraggio dei rischi non inclusi nelle stime.
+- *M-PRC-NCR* - Non-Calculated Risk: monitoraggio dei rischi non inclusi nelle stime.
 - *M-PRC-TE*: - Temporal Efficiency: Monitoraggio dell'efficienza temporale.
 #align($"TE" = frac(O#sub("orologio", size: 1em), O#sub("produttive", size: 1em))$, center)
