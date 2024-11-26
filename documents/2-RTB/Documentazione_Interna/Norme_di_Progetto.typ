@@ -279,8 +279,10 @@ Le fasi che compongono lo sviluppo sono:
 
 === Analisi dei requisiti
 ==== Descrizione
-L’Analisi dei Requisiti definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del #glossary("proponente"). Descrive in dettaglio i casi d’uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del software.
+L’Analisi dei Requisiti definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del #glossary("proponente"). Descrive in dettaglio i casi d’uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del #glossary("software").
+
 Contiene le seguenti informazioni:
+
 - *Descrizione del prodotto*: obiettivo finale del prodotto e le sue funzionalità principali;
 - *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati: 
   - Scenario;
@@ -293,11 +295,11 @@ L'analisi mira a ottenere una comprensione dettagliata delle necessità degli ut
 
 Questa fase include tre aspetti principali:
 
-- *Identificazione* degli *obiettivi* e delle *finalità* del prodotto: Definizione chiara e condivisa degli scopi e dei risultati attesi, tenendo conto delle esigenze degli utenti e delle proposte dell’azienda.
+- *Identificazione degli obiettivi e delle finalità del prodotto*: Definizione chiara e condivisa degli scopi e dei risultati attesi, tenendo conto delle esigenze degli utenti e delle proposte dell’azienda.
 - *Supporto alla progettazione*: Fornitura di una base chiara e strutturata che consenta ai progettisti di definire in modo efficace l’architettura e il design del sistema, facilitando il lavoro successivo.
-- *Miglioramento della comunicazione*: Creazione di un linguaggio comune che agevoli il dialogo tra i fornitori e gli #glossary("stakeholder"), assicurando un allineamento completo sulle aspettative e sugli obiettivi.
+- *Miglioramento della comunicazione*: Creazione di un linguaggio comune che agevoli il dialogo tra i fornitori e gli #glossary("stakeholders"), assicurando un allineamento completo sulle aspettative e sugli obiettivi.
 
-==== Diagrammi UML dei casi d’uso 
+==== Diagrammi #glossary("UML") dei casi d’uso 
 Un diagramma di caso d’uso è uno strumento grafico e intuitivo utilizzato per rappresentare in modo sintetico e comprensibile le funzionalità di un sistema e le interazioni tra gli attori e il sistema stesso. Fornisce una visione d’insieme degli scenari d’uso, descrivendo le azioni necessarie per consentire agli utenti di completare specifiche attività. Questo tipo di diagramma è particolarmente utile durante la fase di analisi e progettazione, in quanto evidenzia chiaramente i requisiti funzionali del sistema senza entrare nei dettagli implementativi.
 
 *Componenti principali*:
@@ -306,42 +308,42 @@ Un diagramma di caso d’uso è uno strumento grafico e intuitivo utilizzato per
 
 #figure(
   image(gn.attore, height: 6em),
-  caption: [Rappresentazione di un attore nel diagramma UML.],
+  caption: [Rappresentazione di un attore nel diagramma #glossary("UML").],
 )
 
 - *Caso d’uso*: una funzionalità offerta dal sistema con cui l’attore può interagire.
 
 #figure(
   image(gn.caso_uso, height: 5em),
-  caption: [Rappresentazione di un caso d'uso nel diagramma UML.],
+  caption: [Rappresentazione di un caso d'uso nel diagramma #glossary("UML").],
 )
 
 - *Sottocasi*: descrivono in modo più dettagliato aspetti specifici di casi d’uso generali.
 
 #figure(
   image(gn.sottocasi, height: 12em),
-  caption: [Rappresentazione di sottocasi d'uso nel diagramma UML.],
+  caption: [Rappresentazione di sottocasi d'uso nel diagramma #glossary("UML").],
 )
 
 - *Sistema*: rappresenta il software o prodotto in esame. I casi d’uso sono contenuti all’interno del sistema, mentre gli attori sono posizionati all’esterno.
 
 #figure(
   image(gn.sistema, height: 8em),
-  caption: [Rappresentazione di un sistema nel diagramma UML.],
+  caption: [Rappresentazione di un sistema nel diagramma #glossary("UML").],
 )
 
 - *Relazione attore-caso d’uso*: indica come un attore utilizza una particolare funzionalità del sistema.
 
 #figure(
   image(gn.attore_caso, height: 6em),
-  caption: [Rappresentazione di una relazione di associazione nel diagramma UML.],
+  caption: [Rappresentazione di una relazione di associazione nel diagramma #glossary("UML").],
 )
 
 - *Generalizzazione tra attori*: descrive una relazione gerarchica in cui un attore specializzato eredita comportamenti e caratteristiche da un attore base (o "padre"). Questo consente di rappresentare differenze specifiche senza duplicare informazioni.
 
 #figure(
   image(gn.generalizzazione_attori, height: 12em),
-  caption: [Rappresentazione di una generalizzazione tra attori nel diagramma UML.],
+  caption: [Rappresentazione di una generalizzazione tra attori nel diagramma #glossary("UML").],
 )
 
 *Tipologie di relazioni tra casi d’uso*:
@@ -350,21 +352,21 @@ Un diagramma di caso d’uso è uno strumento grafico e intuitivo utilizzato per
 
 #figure(
   image(gn.inclusione, height: 12em),
-  caption: [Rappresentazione di una relazione di inclusione nel diagramma UML.],
+  caption: [Rappresentazione di una relazione di inclusione nel diagramma #glossary("UML").],
 )
 
 - *Estensione*: un caso d’uso (estendibile) include opzionalmente un altro caso d’uso (esteso) al verificarsi di condizioni specifiche, gestendo scenari particolari senza complicare il caso principale.
 
 #figure(
   image(gn.estensione, height: 12em),
-  caption: [Rappresentazione di una relazione di estensione nel diagramma UML.],
+  caption: [Rappresentazione di una relazione di estensione nel diagramma #glossary("UML").],
 )
 
 - *Generalizzazione*: un caso d’uso più specifico eredita comportamenti e proprietà da un caso d’uso più generale.
 
 #figure(
   image(gn.generalizzazione_caso_uso, height: 12em),
-  caption: [Rappresentazione di una relazione di generalizzazione nel diagramma UML.],
+  caption: [Rappresentazione di una relazione di generalizzazione nel diagramma #glossary("UML").],
 )
 
 ==== Codice dei casi d’uso
@@ -410,7 +412,7 @@ Gli elementi chiave includono:
 - Diagrammi delle classi;
 - Tracciamento delle classi;
 - Applicazione dei #glossary("Design Pattern");
-- #glossary("Test") di unità per ciascun componente.
+- #glossary("Test di unità") per ciascun componente.
 
 ==== Vincoli di qualità
 Le seguenti #glossary("best practice") dovranno essere adottate durante la progettazione e lo sviluppo del prodotto:
@@ -433,7 +435,7 @@ I diagrammi delle classi sono utilizzati per completare la progettazione del pro
 
 Una classe è rappresentata graficamente come un rettangolo suddiviso in tre sezioni principali:
 
-1. *Nome della classe*: Questo campo rappresenta il nome identificativo della classe, che viene scritto in grassetto seguendo la convenzione PascalCase, eccetto per le classi astratte, il cui nome è scritto in corsivo. 
+1. *Nome della classe*: Questo campo rappresenta il nome identificativo della classe, che viene scritto in grassetto seguendo la convenzione #glossary("PascalCase"), eccetto per le classi astratte, il cui nome è scritto in corsivo. 
 
 2. *Attributi*: Gli attributi sono i campi dati della classe e sono rappresentati singolarmente, ciascuno su una riga separata. Il formato di rappresentazione degli attributi è il seguente:
 
@@ -446,7 +448,7 @@ Una classe è rappresentata graficamente come un rettangolo suddiviso in tre sez
       - *`#`* : visibilità protetta.
       - *`+`* : visibilità pubblica.
       - *`~`* : visibilità di package.
-    - *Nome*: Il nome dell'attributo, che deve essere unico per ogni campo. La convenzione di nomenclatura è camelCase mentre per le costanti, i nomi sono scritti in maiuscolo.
+    - *Nome*: Il nome dell'attributo, che deve essere unico per ogni campo. La convenzione di nomenclatura è #glossary("camelCase") mentre per le costanti, i nomi sono scritti in maiuscolo.
     - *Tipo*: Specifica il tipo dell'attributo, che può essere primitivo o un tipo complesso.
     - *`<T>`*: Nel caso di collezioni o container (come liste o array), si indica il tipo di oggetto contenuto.
     - *Molteplicità*: Indica la quantità di elementi nel caso di collezioni. Se la dimensione è sconosciuta, si usa *`"[*]"`*. Se si tratta di un singolo elemento, la molteplicità è opzionale.
@@ -532,7 +534,7 @@ L’obiettivo della codifica, che spetta ai programmatori, è tradurre le specif
 
 Questo prodotto deve poi rispondere a vari requisiti, tra cui:
 
-- *Test di unità*;
+- *#glossary("Test di unità")*;
 - *Conformità all'uso* dei metodi di codifica e agli standard adottati;
 - *Test di integrazione*;
 - *Funzionalità e manutenibilità* del prodotto finale.
@@ -545,7 +547,7 @@ Le seguenti norme, ispirate ai principi di `Clean Code di Robert C. Martin`, dov
   - Ogni parte del codice deve rispondere chiaramente alla domanda "Cosa fa?", rendendolo comprensibile nel tempo.
 
 - *Nomina delle variabili, metodi e classi*:
-  - Usare *PascalCase* per le classi e *camelCase* per variabili e metodi. I nomi devono essere chiari, descrittivi e concisi.
+  - Usare *#glossary("PascalCase")* per le classi e *#glossary("camelCase")* per variabili e metodi. I nomi devono essere chiari, descrittivi e concisi.
   - Evitare abbreviazioni poco chiare.
 
 - *Lunghezza del metodo e della classe*:
