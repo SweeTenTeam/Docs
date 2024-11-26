@@ -8,6 +8,11 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.7",
+    "2024-11-26",
+    (p.ferazzani),
+    (p.campagnaro),
+    [Stesura capitolo Metriche di Qualità del processo],
     "0.0.6",
     "2024-11-25",
     (p.ferazzani),
@@ -292,7 +297,9 @@ Le categorie di test sono:
 + #glossary("Test di sistema"): verifica il funzionamento del sistema nel suo intero. I requisiti funzionali, di vincolo, di qualità e di prestazione precedentemente concordati con il Proponente sono testati e verificati in questa fase.
 + #glossary("Test di accettazione"): verifica il soddisfacimento del Proponente rispetto ai requisiti concordati. Questi test sono eseguiti in presenza del Proponente stesso. Il superamento di questi test garantisce il rilascio del prodotto.
 
-=== Metriche
+#pagebreak()
+
+=== Metriche <metriche>
 
 Le metriche di qualità sono fondamentali per garantire il rispetto degli standard di qualità richiesti. Il documento *Piano di Qualifica* fornisce varie metriche utilizzate per misurare e rispettare gli standard di qualità.
 
@@ -757,3 +764,55 @@ Le sotto-categorie di questo parametro sono:
 - _*Sostituibilità*_: Capacità del software di essere sostituito facilmente da un altro software nello stesso ambiente.
 - _*Coesistenza*_: Capacità del software di coesistere all'interno di un ambiente o sistema condiviso con altri applicativi.
 - _*Conformità alla portabilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard e convenzioni di portabilità.
+
+= Metriche Di Qualità Del Processo
+
+Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: *M-PRC-[S.I.]*.
+
+== Processi Primari
+
+=== Fornitura:
+- *M-PRC-EV* - Earned Value: valore del lavoro effettivamente completato rispetto al piano.
+- *M-PRC-PV* - Planned Value: valore pianificato del lavoro in un determinato periodo di tempo.
+- *M-PRC-AC* - Actual Cost: costo effettivamente sostenuto per completare il lavoro in un determinato periodo temporale.
+- *M-PRC-CV* - Cost Variance: differenza tra il EV ed AC. Se è negativo, si è sforato il budget.
+- *M-PRC-SV* - Schedule Variance: indica la differenza tra il EV e PV.
+- *M-PRC-EAC* - Estimated at Completion: stima del costo totale basata sul rendimento attuale. #align($"EAC" = "ETC" + "AC"$, center)
+- *M-PRC-ETC* - Estimate to Complete: stima dei costi rimanenti. #align($"ETC" = "BAC" - "EV"$, center)
+- *M-PRC-BAC* - #glossary("Budget at Completion").
+
+
+=== Sviluppo
+
+- *M-PRC-RSI* - Requirements Stability Index: stabilità dei requisiti nel tempo.
+  #align($"RSI" = 100 - (frac("RM + RA + RR", "NR")) * 100$, center)
+  - *RA*: numero di requisiti aggiunti nel periodo considerato
+  - *RM*: Requisiti modificati
+  - *RR*: Requisiti rimossi
+  - *NR*: Numero di requisiti al momento dell'analisi
+- *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfruttano un modulo specifico
+- *M-PRC-SFO* - Structural Fan-Out: componenti utilizzate dal modulo in osservazione.
+
+== Processi di supporto
+=== Documentazione
+
+- *M-PRC-GLP* - Gulpease Index: Valuta la leggibilità.
+  #align($"GLP" = 89 + frac(300*N#sub("f") - 10*N#sub("l"), N#sub("p"))$, center)
+  - *N#sub("f")* : Numero frasi
+  - *N#sub("p")* : Numero parole
+  - *N#sub("l")* : Numero lettere
+- *M-PRC-CO* - Correttezza Ortografica
+
+=== Verifica
+- *M-PRC-CC* - Code Coverage: Percentuale di codice testato rispetto al totale
+
+=== Gestione Qualità
+
+- *M-PRC-QMS* - Quality Metrics Satisfied: grado di soddisfacimento delle metriche di qualità
+
+
+== Processi Organizzativi
+
+- *M-PRC-NCR* - Non-Calculated Risk: monitoraggio dei rischi non inclusi nelle stime.
+- *M-PRC-TE*: - Temporal Efficiency: Monitoraggio dell'efficienza temporale.
+#align($"TE" = frac(O#sub("orologio", size: 1em), O#sub("produttive", size: 1em))$, center)
