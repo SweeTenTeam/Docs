@@ -8,6 +8,11 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.7",
+    "2024-11-26",
+    (p.ferazzani),
+    (p.campagnaro),
+    [Stesura capitolo Metriche di Qualità del processo],
     "0.0.6",
     "2024-11-25",
     (p.ferazzani),
