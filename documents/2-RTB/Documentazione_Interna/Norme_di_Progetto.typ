@@ -8,12 +8,19 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.9",
+    "2024-11-26",
+    (p.ferazzani),
+    (p.campagnaro),
+    [
+      Stesura capitolo: Metriche di qualità del prodotto
+    ],
     "0.0.8",
     "2024-11-26",
     (p.campagnaro),
     (p.ferazzani),
     [
-      Stesura capitolo:  Processi Primari - Svilippo
+      Stesura capitolo: Processi Primari - Svilippo
     ],
     "0.0.7",
     "2024-11-26",
@@ -284,7 +291,7 @@ L’Analisi dei Requisiti definisce le funzionalità che il prodotto deve offrir
 Contiene le seguenti informazioni:
 
 - *Descrizione del prodotto*: obiettivo finale del prodotto e le sue funzionalità principali;
-- *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati: 
+- *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati:
   - Scenario;
   - Attori coinvolti;
   - Azioni eseguibili.
@@ -299,7 +306,7 @@ Questa fase include tre aspetti principali:
 - *Supporto alla progettazione*: Fornitura di una base chiara e strutturata che consenta ai progettisti di definire in modo efficace l’architettura e il design del sistema, facilitando il lavoro successivo.
 - *Miglioramento della comunicazione*: Creazione di un linguaggio comune che agevoli il dialogo tra i fornitori e gli #glossary("stakeholders"), assicurando un allineamento completo sulle aspettative e sugli obiettivi.
 
-==== Diagrammi #glossary("UML") dei casi d’uso 
+==== Diagrammi #glossary("UML") dei casi d’uso
 Un diagramma di caso d’uso è uno strumento grafico e intuitivo utilizzato per rappresentare in modo sintetico e comprensibile le funzionalità di un sistema e le interazioni tra gli attori e il sistema stesso. Fornisce una visione d’insieme degli scenari d’uso, descrivendo le azioni necessarie per consentire agli utenti di completare specifiche attività. Questo tipo di diagramma è particolarmente utile durante la fase di analisi e progettazione, in quanto evidenzia chiaramente i requisiti funzionali del sistema senza entrare nei dettagli implementativi.
 
 *Componenti principali*:
@@ -397,7 +404,7 @@ Dove *`X`* rappresenta la tipologia di requisito e *`Y`* è un identificativo pr
 ==== Descrizione
 L’obiettivo della progettazione è individuare una soluzione adeguata ai requisiti definiti nell’Analisi dei Requisiti. La progettazione del prodotto, a cura dei progettisti, si articola in due fasi principali:
 
-*Progettazione logica*: Questa fase riguarda la selezione delle tecnologie, dei #glossary("framework") e delle librerie da utilizzare per la realizzazione del prodotto, con l’obiettivo di garantirne l’adeguatezza attraverso il #glossary("Proof of Concept") (PoC). 
+*Progettazione logica*: Questa fase riguarda la selezione delle tecnologie, dei #glossary("framework") e delle librerie da utilizzare per la realizzazione del prodotto, con l’obiettivo di garantirne l’adeguatezza attraverso il #glossary("Proof of Concept") (PoC).
 
 I principali aspetti di questa fase sono:
 
@@ -405,7 +412,7 @@ I principali aspetti di questa fase sono:
 - Realizzazione del #glossary("Proof of Concept") (PoC);
 - Creazione dei diagrammi #glossary("UML").
 
-*Progettazione di dettaglio*: In questa fase si definisce l'architettura di base del prodotto, costruendo su quanto stabilito nella progettazione logica. 
+*Progettazione di dettaglio*: In questa fase si definisce l'architettura di base del prodotto, costruendo su quanto stabilito nella progettazione logica.
 
 Gli elementi chiave includono:
 
@@ -435,48 +442,48 @@ I diagrammi delle classi sono utilizzati per completare la progettazione del pro
 
 Una classe è rappresentata graficamente come un rettangolo suddiviso in tre sezioni principali:
 
-1. *Nome della classe*: Questo campo rappresenta il nome identificativo della classe, che viene scritto in grassetto seguendo la convenzione #glossary("PascalCase"), eccetto per le classi astratte, il cui nome è scritto in corsivo. 
+1. *Nome della classe*: Questo campo rappresenta il nome identificativo della classe, che viene scritto in grassetto seguendo la convenzione #glossary("PascalCase"), eccetto per le classi astratte, il cui nome è scritto in corsivo.
 
 2. *Attributi*: Gli attributi sono i campi dati della classe e sono rappresentati singolarmente, ciascuno su una riga separata. Il formato di rappresentazione degli attributi è il seguente:
 
-    #align(center)[*`Visibilità Nome: Tipo<T> [Molteplicità] = Valore/i di Default`*]
-    
-    Dove:
-    
-    - *Visibilità*: Indica l'accessibilità dell'attributo e può essere:
-      - *`-`* : visibilità privata.
-      - *`#`* : visibilità protetta.
-      - *`+`* : visibilità pubblica.
-      - *`~`* : visibilità di package.
-    - *Nome*: Il nome dell'attributo, che deve essere unico per ogni campo. La convenzione di nomenclatura è #glossary("camelCase") mentre per le costanti, i nomi sono scritti in maiuscolo.
-    - *Tipo*: Specifica il tipo dell'attributo, che può essere primitivo o un tipo complesso.
-    - *`<T>`*: Nel caso di collezioni o container (come liste o array), si indica il tipo di oggetto contenuto.
-    - *Molteplicità*: Indica la quantità di elementi nel caso di collezioni. Se la dimensione è sconosciuta, si usa *`"[*]"`*. Se si tratta di un singolo elemento, la molteplicità è opzionale.
-    - *Valore/i di default*: Ogni campo può essere inizializzato con un valore predefinito, se applicabile.
-    
+  #align(center)[*`Visibilità Nome: Tipo<T> [Molteplicità] = Valore/i di Default`*]
+
+  Dove:
+
+  - *Visibilità*: Indica l'accessibilità dell'attributo e può essere:
+    - *`-`* : visibilità privata.
+    - *`#`* : visibilità protetta.
+    - *`+`* : visibilità pubblica.
+    - *`~`* : visibilità di package.
+  - *Nome*: Il nome dell'attributo, che deve essere unico per ogni campo. La convenzione di nomenclatura è #glossary("camelCase") mentre per le costanti, i nomi sono scritti in maiuscolo.
+  - *Tipo*: Specifica il tipo dell'attributo, che può essere primitivo o un tipo complesso.
+  - *`<T>`*: Nel caso di collezioni o container (come liste o array), si indica il tipo di oggetto contenuto.
+  - *Molteplicità*: Indica la quantità di elementi nel caso di collezioni. Se la dimensione è sconosciuta, si usa *`"[*]"`*. Se si tratta di un singolo elemento, la molteplicità è opzionale.
+  - *Valore/i di default*: Ogni campo può essere inizializzato con un valore predefinito, se applicabile.
+
 3. *Firme dei metodi*: Le firme dei metodi descrivono il comportamento di ciascun metodo e sono rappresentate ciascuna su una riga separata. Il formato di rappresentazione è il seguente:
-    
-    #align(center)[*`Visibilità Nome (Parametri Formali): Tipo di ritorno`*]
-    
-    Dove:
-    
-    - *Visibilità*: Indica l'accessibilità del metodo e segue gli stessi simboli degli attributi:
-      - *`-`* : visibilità privata.
-      - *`#`* : visibilità protetta.
-      - *`+`* : visibilità pubblica.
-      - *`~`* : visibilità di package.
-    - *Nome*: Il nome del metodo, che deve essere descrittivo e indicare chiaramente la funzionalità del metodo stesso.
-    - *Parametri formali*: I parametri richiesti dal metodo, separati da virgole.
-    - *Tipo di ritorno*: Il tipo di valore che il metodo restituisce, se applicabile.
+
+  #align(center)[*`Visibilità Nome (Parametri Formali): Tipo di ritorno`*]
+
+  Dove:
+
+  - *Visibilità*: Indica l'accessibilità del metodo e segue gli stessi simboli degli attributi:
+    - *`-`* : visibilità privata.
+    - *`#`* : visibilità protetta.
+    - *`+`* : visibilità pubblica.
+    - *`~`* : visibilità di package.
+  - *Nome*: Il nome del metodo, che deve essere descrittivo e indicare chiaramente la funzionalità del metodo stesso.
+  - *Parametri formali*: I parametri richiesti dal metodo, separati da virgole.
+  - *Tipo di ritorno*: Il tipo di valore che il metodo restituisce, se applicabile.
 
 Per convenzione, i metodi di tipo getter/setter e i costruttori non vengono generalmente rappresentati nel diagramma. Se un attributo o un metodo è assente, questo viene indicato graficamente, e nel caso di ereditarietà, eventuali metodi ereditati che non sono specificati possono essere ignorati.
 
 ==== Relazioni tra classi
-Le classi in un diagramma delle classi possono essere collegate tramite diverse tipologie di relazioni, ognuna rappresentata graficamente in modo specifico. 
+Le classi in un diagramma delle classi possono essere collegate tramite diverse tipologie di relazioni, ognuna rappresentata graficamente in modo specifico.
 
 Ecco le principali:
 
-- *Dipendenza*: Una classe dipende da un'altra quando utilizza i suoi metodi o attributi. È rappresentata con una freccia tratteggiata. 
+- *Dipendenza*: Una classe dipende da un'altra quando utilizza i suoi metodi o attributi. È rappresentata con una freccia tratteggiata.
 
   Può essere etichettata con:
 
@@ -530,7 +537,7 @@ Un #glossary("design pattern") è una soluzione consolidata, ampiamente riconosc
 Il processo di test ha come scopo quello di garantire la qualità del prodotto in tutte le sue fasi, dalla progettazione e sviluppo fino alla fase finale. Durante la definizione dei test, vengono stabiliti i requisiti necessari, i casi da testare e i criteri di accettazione per convalidare il #glossary("software"). L’obiettivo primario è quello di scoprire e risolvere errori, #glossary("bug") e difetti nel #glossary("software") prima della sua distribuzione. Inoltre, il testing è essenziale per garantire che il prodotto rispetti appieno le specifiche e i requisiti definiti con il cliente.
 
 === Codifica
-L’obiettivo della codifica, che spetta ai programmatori, è tradurre le specifiche in un prodotto funzionante e utilizzabile. 
+L’obiettivo della codifica, che spetta ai programmatori, è tradurre le specifiche in un prodotto funzionante e utilizzabile.
 
 Questo prodotto deve poi rispondere a vari requisiti, tra cui:
 
@@ -539,7 +546,7 @@ Questo prodotto deve poi rispondere a vari requisiti, tra cui:
 - *Test di integrazione*;
 - *Funzionalità e manutenibilità* del prodotto finale.
 
-====  Stile di Codifica
+==== Stile di Codifica
 Le seguenti norme, ispirate ai principi di `Clean Code di Robert C. Martin`, dovranno essere rispettate dal team durante la scrittura del codice del prodotto:
 
 - *Chiarezza e leggibilità*:
@@ -1089,9 +1096,9 @@ Le sotto-categorie di questo parametro sono:
 - _*Coesistenza*_: Capacità del software di coesistere all'interno di un ambiente o sistema condiviso con altri applicativi.
 - _*Conformità alla portabilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard e convenzioni di portabilità.
 
-= Metriche Di Qualità Del Processo
+= Metriche Di Qualità Del Processo <qualità_del_processo>
 
-Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: *M-PRC-[S.I.]*.
+Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: *#align(center, "M-PRC-[S.I.]")*
 
 == Processi Primari
 
@@ -1101,8 +1108,8 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-AC* - Actual Cost: costo effettivamente sostenuto per completare il lavoro in un determinato periodo temporale.
 - *M-PRC-CV* - Cost Variance: differenza tra il EV ed AC. Se è negativo, si è sforato il budget.
 - *M-PRC-SV* - Schedule Variance: indica la differenza tra il EV e PV.
-- *M-PRC-EAC* - Estimated at Completion: stima del costo totale basata sul rendimento attuale. #align($"EAC" = "ETC" + "AC"$, center)
-- *M-PRC-ETC* - Estimate to Complete: stima dei costi rimanenti. #align($"ETC" = "BAC" - "EV"$, center)
+- *M-PRC-EAC* - Estimated at Completion: stima del costo totale basata sul rendimento attuale. #align($"EAC" = "ETC" + "AC"$, center) #linebreak()
+- *M-PRC-ETC* - Estimate to Complete: stima dei costi rimanenti. #align($"ETC" = "BAC" - "EV"$, center) #linebreak()
 - *M-PRC-BAC* - #glossary("Budget at Completion").
 
 
@@ -1114,9 +1121,12 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
   - *RM*: Requisiti modificati
   - *RR*: Requisiti rimossi
   - *NR*: Numero di requisiti al momento dell'analisi
+
+#linebreak()
 - *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfruttano un modulo specifico
 - *M-PRC-SFO* - Structural Fan-Out: componenti utilizzate dal modulo in osservazione.
 
+#pagebreak()
 == Processi di supporto
 === Documentazione
 
@@ -1125,6 +1135,8 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
   - *N#sub("f")* : Numero frasi
   - *N#sub("p")* : Numero parole
   - *N#sub("l")* : Numero lettere
+
+#linebreak()
 - *M-PRC-CO* - Correttezza Ortografica
 
 === Verifica
@@ -1140,3 +1152,76 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-NCR* - Non-Calculated Risk: monitoraggio dei rischi non inclusi nelle stime.
 - *M-PRC-TE*: - Temporal Efficiency: Monitoraggio dell'efficienza temporale.
 #align($"TE" = frac(O#sub("orologio", size: 1em), O#sub("produttive", size: 1em))$, center)
+
+
+= Metriche Di Qualità Del Prodotto
+
+Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche seguono la struttura definita al paragrafo #link(<metriche>, "'metriche'"). In questo capitolo, la prima parte della struttura sarà: *#align("M-PRD-[S.I.]", center)*.
+
+== Funzionalità
+
+- *M-PRD-CRV* - Copertura Requisiti Vincolanti: percentuale di requisiti vincolanti coperti.
+  #align($"CRV" = frac("RVC", "RVT") * 100$, center)
+  - *RVC*: Requisiti Vincolanti Coperti
+  - *RVT*: Requisiti Vincolanti Totali
+
+#linebreak()
+- *M-PRD-CRD* - Copertura Requisiti Desiderabili: percentuale di requisiti desiderabili coperti.
+  #align($"CRD" = frac("RDC", "RDT") * 100$, center)
+  - *RDC*: Requisiti Desiderabili Coperti
+  - *RDT*: Requisiti Desiderabili Totali
+
+#linebreak()
+- *M-PRD-CRO* - Copertura Requisiti Opzionali: percentuale di requisiti opzionali coperti.
+  #align($"CRO" = frac("ROC", "ROT") * 100$, center)
+  - *ROC*: Requisiti Opzionali Coperti
+  - *ROT*: Requisiti Opzionali Totali
+
+
+== Affidabilità
+
+- *M-PRD-CC* - Code Coverage: percentuale di eseguito durante i test rispetto a quello scritto.
+  #align($"CC" = frac("LCE", "LCT") * 100$, center)
+  - *LCE*: Linee di Codice Eseguito
+  - *LCT*: Linee di Codice Totali
+
+#linebreak()
+- *M-PRD-BC* - Branch Coverage: percentuale di branch decisionali testati rispetto a quelli creati.
+  #align($"BC" = frac("BT", "BC") * 100$, center)
+  - *BT*: Branch Testati
+  - *BC*: Branch creati
+
+#linebreak()
+- *M-PRD-SC* - Statement Coverage: percentuale di istruzioni testate rispetto a quelle scritte.
+  #align($"SC" = frac("IE", "IT") * 100$, center)
+  - *IE*: Istruzioni Eseguite
+  - *IT*: Istruzioni Totali
+
+#linebreak()
+- *M-PRD-FD* - Failure Density: numero di failure riscontrati durante i test. //da rivedere con il team
+  #align($"FD" = frac("F", "T")$, center)
+  - *F*: Numero di Failure
+  - *T*: Numero di Test
+
+#linebreak()
+== Usabilità
+
+- *M-PRD-FU* - Facilità Di Utilizzo: valuta la complessità di utilizzo del sistema
+- *M-PRD-TA* - Tempo di Apprendimento: valuta il tempo necessario per apprendere il sistema
+- *M-PRD-AU* - Aderenza all'usabilità: misura la capacità del software di aderire alle convenzioni di usabilità nel suo ciclo di vita
+- *M-PRD-AT* - Attrattività: valuta l'aspetto estetico del software
+- *M-PRD-CO* - Comprensibilità: valuta la facilità di comprensione del software
+
+#linebreak()
+== Efficienza
+
+- *M-PRD-UR* - Utilizzo Risorse: valuta l'efficienza nell'utilizzo delle risorse
+
+== Manutenibilità
+
+- *M-PRD-CP* - Complessità Ciclomatica: valuta la complessità del sistema attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo di flusso
+- *M-PRD-CS* - Code Smell: valuta la qualità del codice attraverso la rilevazione di #glossary("Bad Practices")
+- *M-PRD-MD* - Module Dependency: valuta la dipendenza tra i moduli del sistema
+  #align($"MD" = frac("NDM", "NTM") * 100$, center)
+  - *NDM*: Numero di Dipendenze tra Moduli
+  - *NTM*: Numero Totale Moduli
