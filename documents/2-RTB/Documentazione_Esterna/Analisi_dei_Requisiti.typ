@@ -5,6 +5,11 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
+    "0.0.4",
+    "2024-11-25",
+    (p.santi),
+    (p.mahdi),
+    "Introdotte sezioni Casi d'Uso (3) + Requisiti (4), impaginazione tabelle",
     "0.0.3",
     "2024-11-22", 
     (p.santi), 
@@ -91,17 +96,208 @@ Tale prodotto, in conclusione, risponde alla necessità di accedere in modo faci
 
 
 == Funzionalità del prodotto
-BuddyBot è un assistente virtuale progettato per garantire un accesso facile e immediato alle informazioni aziendali attraverso un’interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall’azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest’ultime e fornendo le risposte alle domande poste dall’utente.
+#glossary("BuddyBot") è un assistente virtuale progettato per garantire un accesso facile e immediato alle informazioni aziendali attraverso un'interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall'azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest'ultime e fornendo le risposte alle domande poste dall'utente.
 
 L’assistente virtuale utilizza tecnologie di Intelligenza Artificiale (nel nostro progetto verranno utilizzati #glossary("GroqCloud") e #glossary("Langchain") lato #glossary("LLM")) per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate. 
 
-A seguire, BuddyBot garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("PostgreSQL") a un volume #glossary("Docker").
+A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("PostgreSQL") a un volume #glossary("Docker").
 
 == Utenti e caratteristiche
 Il prodotto si rivolge principalmente al team aziendale:
 
   - *Sviluppatori*, che accedono a informazioni tecniche come codice e documentazione;
-  - #glossary("Project Manager"), che usa BuddyBot per monitorare task e risorse;
-  - *Nuovi membri* del team, che vengono supportati nell'onboarding e nella ricerca delle informazioni necessarie, facilitando la loro integrazione nell’azienda;
+  - #glossary("Project Manager"), che usa #glossary("BuddyBot") per monitorare task e risorse;
+  - *Nuovi membri* del team, che vengono supportati nell'#glossary("onboarding") e nella ricerca delle informazioni necessarie, facilitando la loro integrazione nell'azienda;
   - In generale, allo *staff aziendale*.
-Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l’uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
+Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l'uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
+
+= Casi d'uso
+== Introduzione ai casi d'uso e obbiettivi
+In questa sezione vengono elencati dettagliatamente i #glossary("casi d'uso (UC)") individuati dal gruppo in seguito ad analisi e valutazioni circa le specifiche del capitolato.
+Gli scenari sottostanti seguono uno schema e può prevedere:
+  - *Titolo*
+  - *Attori*: il soggetto che esegue un'azione in quel contesto
+  - *Precondizioni* e *Postcondizioni*: stato del sistema prima e dopo il caso d'uso
+  - *Scenario principale*: descrizione dettagliata delle azioni che l'attore deve compiere per completare il caso d'uso; vengono formalizzati anche ipotesi e risultati attesi
+  - *Estensioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, è possibile prevedere varianti o comportamenti alternativi che arricchiscono o modificano lo scenario principale
+  - *Inclusioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, alcune funzionalità o azioni comuni appartengono a un altro caso d'uso, sempre eseguito come parte integrante dello scenario principale
+  - *Generalizzazioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, esso rappresenta una variante o un'istanza di un caso d'uso più generale che descrive caratteristiche o comportamenti comuni a più scenari
+== Attori
+L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio ponendo domande all'assistente virtuale.
+
+== Definizione casi d'uso
+/*=== UC1, Consultazione Jira
+- *Attore coinvolto*: User
+- *Precondizioni*
+  - #glossary("API") #glossary("Jira") disponibili e configurate correttamente.
+- *Scenario principale*
+  - L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda 
+    - esempio: "Quali #glossary("issue") sono assegnate a me per questa settimana?"
+  - #glossary("BuddyBot") autentica la connessione con Jira 
+
+  - Il sistema invia una richiesta alle #glossary("API") di #glossary("Jira") per estrarre i dati 
+    - nel nostro esempio, vengono quindi estratti dati relativi alle #glossary("issue") assegnate all'utente con scadenza entro la settimana corrente.
+  - #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
+    - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di titoli, priorità, date di scadenza e stati.
+- *Postcondizioni*
+  - Le informazioni richieste vengono presentate correttamente all'utente, che può visualizzarle e utilizzarle per pianificare le proprie attività.
+*/
+
+= Requisiti
+In questa sezione vengono esposti i requisiti individuati in seguito alle analisi effettuate dal gruppo e dai #glossary("casi d'uso (UC)") esaminati in precedenza. Per garantire maggiore chiarezza, i vari requisiti verranno identificati da codici univoci a seconda della loro natura e dall'obbligatorietà o meno...
+
+Come anticipato, i requisiti possono appartenere a tre categorie differenti:
+  - funzionali
+  - di qualità
+  - di vincolo
+
+
+== Requisiti Funzionali
+I #glossary("Requisiti Funzionali") definiscono cosa il sistema deve fare, ovvero le sue funzionalità principali e i comportamenti attesi, concentrandosi quindi sulle operazioni che gli utenti/attori devono poter eseguire.
+
+Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
+- RFO-x: Requisito Funzionale Obbligatorio numero "x"
+- RFD-x: Requisito Funzionale Desiderabile numero "x"
+
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it))
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (3cm, 10cm, 3cm),
+  [Codice], [Descrizione], [Fonti],
+
+  [], [], [],
+  [], [], [],
+  [], [], [],
+)
+
+
+
+== Requisiti di Qualità
+I #glossary("Requisiti di Qualità") riguardano *come* il sistema deve funzionare, definendo quindi caratteristiche cruciali per garantire un ottima "#glossary("User Experience")", soddisfacendo le sue esigenze.
+
+Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
+- RQO-x: Requisito di Qualità Obbligatorio numero "x"
+- RQD-x: Requisito di Qualità Desiderabile numero "x"
+
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it)) // Allinea al centro e usa testo in grassetto
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (3cm, 10cm, 3cm),
+  [Codice], [Descrizione], [Fonti],
+
+  [], [], [],
+  [], [], [],
+  [], [], [],
+)
+
+
+
+== Requisiti di Vincolo
+I #glossary("Requisiti di Vincolo") definiscono i limiti tecnici e/o progettuali entro i quali il sistema deve essere sviluppato.
+
+Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
+- RVO-x: Requisito di Vincolo Obbligatorio numero "x"
+- RVD-x: Requisito di Vincolo Desiderabile numero "x"
+
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it)) 
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (3cm, 10cm, 3cm),
+  [Codice], [Descrizione], [Fonti],
+
+  [], [], [],
+  [], [], [],
+  [], [], [],
+)
+
+== Tracciamento
+Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito del progetto alle sue "fonti" di origine (capitolato, incontri con l'azienda, incontri interni) e alle sue implementazioni, come i #glossary("Casi d'Uso (UC)").
+
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it)) 
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (6cm, 6cm),
+  [Fonte], [Requisito],
+
+  [], [],
+  [], [],
+  [], [],
+)
+
+== Riepilogo
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it)) 
+  } else {
+    it
+  }
+}
+
+#table(
+  columns: (4cm, 3cm, 3cm, 3cm),
+  [Tipologia], [Obbligatorio], [Desiderabile], [Totale],
+
+  [], [], [], [],
+  [], [], [], [],
+  [], [], [], [],
+)
+Il totale dei Requisiti è: //somma della colonna "totale" della tabella di cui sopra
