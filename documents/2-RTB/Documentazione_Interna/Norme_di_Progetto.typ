@@ -1098,7 +1098,7 @@ Le sotto-categorie di questo parametro sono:
 
 = Metriche Di Qualità Del Processo <qualità_del_processo>
 
-Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: *M-PRC-[S.I.]*.
+Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: *#align(center, "M-PRC-[S.I.]")*
 
 == Processi Primari
 
@@ -1108,8 +1108,8 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-AC* - Actual Cost: costo effettivamente sostenuto per completare il lavoro in un determinato periodo temporale.
 - *M-PRC-CV* - Cost Variance: differenza tra il EV ed AC. Se è negativo, si è sforato il budget.
 - *M-PRC-SV* - Schedule Variance: indica la differenza tra il EV e PV.
-- *M-PRC-EAC* - Estimated at Completion: stima del costo totale basata sul rendimento attuale. #align($"EAC" = "ETC" + "AC"$, center)
-- *M-PRC-ETC* - Estimate to Complete: stima dei costi rimanenti. #align($"ETC" = "BAC" - "EV"$, center)
+- *M-PRC-EAC* - Estimated at Completion: stima del costo totale basata sul rendimento attuale. #align($"EAC" = "ETC" + "AC"$, center) #linebreak()
+- *M-PRC-ETC* - Estimate to Complete: stima dei costi rimanenti. #align($"ETC" = "BAC" - "EV"$, center) #linebreak()
 - *M-PRC-BAC* - #glossary("Budget at Completion").
 
 
@@ -1121,9 +1121,12 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
   - *RM*: Requisiti modificati
   - *RR*: Requisiti rimossi
   - *NR*: Numero di requisiti al momento dell'analisi
+
+#linebreak()
 - *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfruttano un modulo specifico
 - *M-PRC-SFO* - Structural Fan-Out: componenti utilizzate dal modulo in osservazione.
 
+#pagebreak()
 == Processi di supporto
 === Documentazione
 
@@ -1132,6 +1135,8 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
   - *N#sub("f")* : Numero frasi
   - *N#sub("p")* : Numero parole
   - *N#sub("l")* : Numero lettere
+
+#linebreak()
 - *M-PRC-CO* - Correttezza Ortografica
 
 === Verifica
@@ -1156,15 +1161,19 @@ Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche segu
 == Funzionalità
 
 - *M-PRD-CRV* - Copertura Requisiti Vincolanti: percentuale di requisiti vincolanti coperti.
-  #align($"CRV" = frac("RV", "RT") * 100$, center)
+  #align($"CRV" = frac("RVC", "RVT") * 100$, center)
   - *RVC*: Requisiti Vincolanti Coperti
   - *RVT*: Requisiti Vincolanti Totali
+
+#linebreak()
 - *M-PRD-CRD* - Copertura Requisiti Desiderabili: percentuale di requisiti desiderabili coperti.
-  #align($"CRD" = frac("RD", "RT") * 100$, center)
+  #align($"CRD" = frac("RDC", "RDT") * 100$, center)
   - *RDC*: Requisiti Desiderabili Coperti
   - *RDT*: Requisiti Desiderabili Totali
+
+#linebreak()
 - *M-PRD-CRO* - Copertura Requisiti Opzionali: percentuale di requisiti opzionali coperti.
-  #align($"CRO" = frac("RO", "RT") * 100$, center)
+  #align($"CRO" = frac("ROC", "ROT") * 100$, center)
   - *ROC*: Requisiti Opzionali Coperti
   - *ROT*: Requisiti Opzionali Totali
 
@@ -1175,35 +1184,44 @@ Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche segu
   #align($"CC" = frac("LCE", "LCT") * 100$, center)
   - *LCE*: Linee di Codice Eseguito
   - *LCT*: Linee di Codice Totali
+
+#linebreak()
 - *M-PRD-BC* - Branch Coverage: percentuale di branch decisionali testati rispetto a quelli creati.
   #align($"BC" = frac("BT", "BC") * 100$, center)
   - *BT*: Branch Testati
   - *BC*: Branch creati
 
-#pagebreak()
+#linebreak()
 - *M-PRD-SC* - Statement Coverage: percentuale di istruzioni testate rispetto a quelle scritte.
   #align($"SC" = frac("IE", "IT") * 100$, center)
   - *IE*: Istruzioni Eseguite
   - *IT*: Istruzioni Totali
+
+#linebreak()
 - *M-PRD-FD* - Failure Density: numero di failure riscontrati durante i test. //da rivedere con il team
   #align($"FD" = frac("F", "T")$, center)
   - *F*: Numero di Failure
   - *T*: Numero di Test
 
+#linebreak()
 == Usabilità
 
-- *M-PRD-FU* - Facilità Di Utilizzo: valutà la complessità di utilizzo del sistema
+- *M-PRD-FU* - Facilità Di Utilizzo: valuta la complessità di utilizzo del sistema
 - *M-PRD-TA* - Tempo di Apprendimento: valuta il tempo necessario per apprendere il sistema
+- *M-PRD-AU* - Aderenza all'usabilità: misura la capacità del software di aderire alle convenzioni di usabilità nel suo ciclo di vita
+- *M-PRD-AT* - Attrattività: valuta l'aspetto estetico del software
+- *M-PRD-CO* - Comprensibilità: valuta la facilità di comprensione del software
 
+#linebreak()
 == Efficienza
 
 - *M-PRD-UR* - Utilizzo Risorse: valuta l'efficienza nell'utilizzo delle risorse
 
 == Manutenibilità
 
-- *M-PRD-CP* - Complessità Ciclomatica: valuta la complessità del sistema la attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo di flusso
+- *M-PRD-CP* - Complessità Ciclomatica: valuta la complessità del sistema attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo di flusso
 - *M-PRD-CS* - Code Smell: valuta la qualità del codice attraverso la rilevazione di #glossary("Bad Practices")
 - *M-PRD-MD* - Module Dependency: valuta la dipendenza tra i moduli del sistema
-  #align($"MD" = frac("DM", "TM") * 100$, center)
+  #align($"MD" = frac("NDM", "NTM") * 100$, center)
   - *NDM*: Numero di Dipendenze tra Moduli
   - *NTM*: Numero Totale Moduli
