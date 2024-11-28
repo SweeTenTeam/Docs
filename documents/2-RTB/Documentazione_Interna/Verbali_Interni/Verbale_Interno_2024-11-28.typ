@@ -27,7 +27,7 @@
 = Ordine Del giorno
 - Chiarimenti sugli attori del sistema
 - Discussione delle decisioni redatte nel documento Norme di progetto
-- Sezione Prossime attività da aggiungere nei prossimi verbali interni
+- Sezione "Prossime attività" da aggiungere nei prossimi verbali interni
 - Modifica procedura creazione delle #glossary("issue")
 - Modifica procedura di approvazione dei documenti
 - Modifica #glossary("Pull Request")
@@ -45,9 +45,9 @@ L'incontro si è aperto con una discussione se l'#glossary("LLM" ) fosse o meno 
 //Matte my glorious king.
 l team ha deciso di adottare un approccio collaborativo e iterativo per la creazione e la gestione del documento Norme di Progetto. Inizialmente, il documento sarà redatto in modo completo, includendo tutte le linee guida, i processi e le norme necessari per una gestione efficiente e allineata agli obiettivi del progetto. Tuttavia, il team ha concordato che questo documento non sarà definitivo, ma sarà sottoposto a revisioni continue. Le modifiche verranno discusse e valutate durante gli incontri periodici, garantendo che il documento rimanga sempre aggiornato e adatto alle esigenze del progetto.
 
-== Sezione Prossime attività da aggiungere nei prossimi verbali interni
+== Sezione "Prossime attività" da aggiungere nei prossimi verbali interni
 
-A partire dal prossimo sprint, il responsabile si impegna a creare tutte le issue previste per il prossimo periodo e a riportarle nella sezione Prossime attività, del verbale interno dell'incontro, in una tabella strutturata come segue:
+A partire dal prossimo sprint, il responsabile si impegna a creare tutte le issue previste per il prossimo periodo e a riportarle nella sezione "Prossime attività", del verbale interno dell'incontro, in una tabella strutturata come segue:
 #table(
   columns: (1fr, 1fr, 1fr),
   align: horizon + center,
@@ -110,7 +110,7 @@ Il Responsabile dovrà:
 
 - Il #glossary("LLM") è un attore esterno del sistema.
 - Gestione dinamica e aggiornamento delle Norme di Progetto dopo la stesura iniziale
-- Sezione Prossime attività da aggiungere nei prossimi verbali interni
+- Sezione "Prossime attività" da aggiungere nei prossimi verbali interni
 - La creazione delle issue specifiche sarà compito del responsabile.
 - Il responsabile approverà ogni documento.
 - Le Pull Request non verranno più aggiunte alla Project Board.
