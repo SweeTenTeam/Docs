@@ -26,8 +26,8 @@
 
 = Ordine Del giorno
 - Chiarimenti sugli attori del sistema
-- Scrittura decisioni conformi alle norme di progetto
-- Creazione di una tabella con tutte le #glossary("issue") programmate per lo sprint in atto.
+- Discussione delle decisioni redatte nel documento Norme di progetto
+- Sezione Prossime attività da aggiungere nei prossimi verbali interni
 - Modifica procedura creazione delle #glossary("issue")
 - Modifica procedura di approvazione dei documenti
 - Modifica #glossary("Pull Request")
@@ -38,16 +38,16 @@
 
 == Chiarimenti sugli attori del sistema
 
-L'incontro si è aperro con una discussione se l'#glossary("LLM" ) fosse o meno un attore del sistema. Dopo un'attenta analisi, basata anche sulle slide del corso e in particolare l'esempio del LogIn con servizi terzi come Facebook, si è deciso che l'#glossary("LLM") è un attore esterno in quanto risiede su un sistema separato con cui il team non può interagire se non attraverso delle richieste.
+L'incontro si è aperto con una discussione se l'#glossary("LLM" ) fosse o meno un attore del sistema. Dopo un'attenta analisi, basata anche sulle slide del corso e in particolare l'esempio del LogIn con servizi terzi come Facebook, si è deciso che l'#glossary("LLM") è un attore esterno in quanto risiede su un sistema separato con cui il team non può interagire se non attraverso delle richieste.
 
-== Scrittura decisioni conformi alle norme di progetto
+== Discussione delle decisioni redatte nel documento Norme di progetto
 
-//Matte non ricordo, correggi pure quello da correggere lol.
-Il team, avendo riscontrato problemi a tracciare in maniera efficiente ed efficace le decisioni prese, ha deciso di modificarne la struttura in modo che queste rispecchino le direttive imposte dalle norme di progetto.
+//Matte my glorious king.
+l team ha deciso di adottare un approccio collaborativo e iterativo per la creazione e la gestione del documento Norme di Progetto. Inizialmente, il documento sarà redatto in modo completo, includendo tutte le linee guida, i processi e le norme necessari per una gestione efficiente e allineata agli obiettivi del progetto. Tuttavia, il team ha concordato che questo documento non sarà definitivo, ma sarà sottoposto a revisioni continue. Le modifiche verranno discusse e valutate durante gli incontri periodici, garantendo che il documento rimanga sempre aggiornato e adatto alle esigenze del progetto.
 
-== Creazione di una tabella con tutte le #glossary("issue") programmate per lo sprint in atto.
+== Sezione Prossime attività da aggiungere nei prossimi verbali interni
 
-A partire dal prossimo sprint, il responsabile si impegna a creare tutte le issue previste per lo sprint in corso e a riportarle in una tabella con le seguenti colonne:
+A partire dal prossimo sprint, il responsabile si impegna a creare tutte le issue previste per il prossimo periodo e a riportarle nella sezione Prossime attività, del verbale interno dell'incontro, in una tabella strutturata come segue:
 #table(
   columns: (1fr, 1fr, 1fr),
   align: horizon + center,
@@ -82,7 +82,7 @@ Il team ha deciso di modificare la procedura di approvazione dei documenti. Ora,
 
 == Modifica #glossary("Pull Request")
 
-Il team ha deciso di modificare la procedura di creazione dei #glossary("Pull Request"). Ora, le #glossary("Pull Request") non verranno più aggiunte alla Project Board, ma verranno solo collegate alla issue interessata, in modo da evitare confusione, sovraccarico di informazioni e duplicati nella board.
+Il team ha deciso di modificare la procedura di creazione delle #glossary("Pull Request"). Ora, le #glossary("Pull Request") non verranno più aggiunte alla Project Board, ma verranno solo collegate alla issue interessata, in modo da evitare confusione, sovraccarico di informazioni e duplicati nella board.
 
 == Creazione documento glossario e pianificazione incontri
 
@@ -109,8 +109,8 @@ Il Responsabile dovrà:
 //Fammi sapere come vuoi scritte le decisioni in modo che siano conformi alle norme di progetto.
 
 - Il #glossary("LLM") è un attore esterno del sistema.
-- Le decisioni saranno scritte conformemente alle norme di progetto.
-- Creazione di una tabella con tutte le issue programmate per lo sprint in atto.
+- Gestione dinamica e aggiornamento delle Norme di Progetto dopo la stesura iniziale
+- Sezione Prossime attività da aggiungere nei prossimi verbali interni
 - La creazione delle issue specifiche sarà compito del responsabile.
 - Il responsabile approverà ogni documento.
 - Le Pull Request non verranno più aggiunte alla Project Board.
