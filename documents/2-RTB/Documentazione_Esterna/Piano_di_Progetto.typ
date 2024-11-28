@@ -12,6 +12,11 @@
     p.azzurro,
   ),
   changelog: (
+        "0.0.2",
+    "2024-11-21",
+    (p.fracaro),
+    (p.benedetti),
+    "Stesura sezioni 3, 4, 5",
     "0.0.1",
     "2024-11-21",
     p.fracaro,
