@@ -636,13 +636,13 @@ Per la creazione tipografica dei documenti, abbiamo scelto di utilizzare #glossa
 
 #glossary("Typst") presenta diversi vantaggi rispetto a #glossary("LaTeX"):
 
-- *Facilità d'uso*: la sintassi è simile a quella di Markdown, rendendo l'approccio più semplice.
+- *Facilità d'uso*: la sintassi è simile a quella di `Markdown`, rendendo l'approccio più semplice.
 - *Programmabilità vera e propria*: al posto di un sistema basato su macro, offre una Programmabilità più diretta e flessibile.
 - *Compilazione rapida*: la generazione dei documenti avviene in tempi quasi immediati.
 
 L'adozione di #glossary("Typst") semplifica la creazione e la manutenzione della documentazione, permettendo ai redattori di concentrarsi sul contenuto piuttosto che sulla parte grafica, e assicurando al contempo coerenza nella documentazione del progetto.
 
-Il template sviluppato per questo scopo è disponibile nella #link("https://github.com/SweeTenTeam/Docs","repository Docs"), all’interno della cartella `template`.
+Il template sviluppato e utilizzato per questo scopo è visionabile all'interno della #link("https://github.com/SweeTenTeam/Docs/blob/develop/template", "repository Docs").
 
 === Struttura dei documenti
 ==== Intestazione
@@ -750,7 +750,7 @@ I documenti PDF presenti nella #link("https://github.com/SweeTenTeam/Docs","repo
 I file sorgente `.typ` non includono la versione nel nome. La versione viene aggiunta ai PDF automaticamente durante la compilazione. Usare lo stesso nome per i documenti permette di tracciare facilmente le modifiche con Git, sfruttando la funzione "*`diff`*" per confrontare i cambiamenti nei file di testo.
 
 ==== Stile del testo
-Nei documenti è possibile utilizzare diversi stili di formattazione, tra cui il _corsivo_, il *grassetto* e il `monospace`, a discrezione del redattore. Questi strumenti sono impiegati per migliorare la leggibilità, enfatizzare concetti chiave e rendere il contenuto più chiaro e accessibile ai lettori. Per gli stessi scopi, possono essere utilizzati ulteriori elementi di impaginazione, come interruzioni di riga e di pagina, varie modalità di allineamento del testo e, quando richiesto, il logo della proponente "#box(image(g.azzurro, width: 5em, height: auto))" in sostituzione del testo "*`AzzurroDigitale`*".
+Nei documenti è possibile utilizzare diversi stili di formattazione, tra cui il _corsivo_, il *grassetto* e il `monospace`, a discrezione del redattore. Questi strumenti sono impiegati per migliorare la leggibilità, enfatizzare concetti chiave e rendere il contenuto più chiaro e accessibile ai lettori. Per gli stessi scopi, possono essere utilizzati ulteriori elementi di impaginazione, come interruzioni di riga e di pagina, varie modalità di allineamento del testo e, quando ritenuto opportuno, il logo della proponente "#box(image(g.azzurro, width: 5em, height: auto))" in sostituzione del testo "*`AzzurroDigitale`*".
 
 
 ==== Elenchi puntati
