@@ -9,6 +9,14 @@
     p.azzurro,
   ),
   changelog: (
+    "0.0.2",
+    "2024-11-29",
+    p.benedetti,
+    p.fracaro,
+    [
+      Stesura sezioni 1 e 2 del documento
+    ],
+
     "0.0.1",
     "2024-11-21",
     p.fracaro,
@@ -67,12 +75,10 @@ La presenza di un termine all'interno del Glossario è evidenziata dal #glossary
 - Regolamento progetto didattico#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf
 
 === Riferimenti informativi
-- T2 - Processi di ciclo di vita del software
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
-- T4 - Gestione di progetto
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
-- Glossario
-https://sweetenteam.github.io/docs/RTB/Glossario
+- T2 - Processi di ciclo di vita del software#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
+
+- T4 - Gestione di progetto#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
+- Glossario#linebreak()https://sweetenteam.github.io/docs/RTB/Glossario
 
 #pagebreak()
 = *Analisi dei rischi*
@@ -105,14 +111,14 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: (auto, 1fr),
     inset: (5pt),
     fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
-    [*Descrizione*], [Mancanza di alcuni membri del gruppo o dell'interezza dello stesso di esperienze professionali nella gestione e realizzazione di un progetto software. Mancanza di conoscenze delle tecnologie necessarie allo sviluppo del prodotto.],
+    [*Descrizione*], [Assenza di esperienza professionale, da parte di alcuni membri del team o dell'intero gruppo, nella gestione e realizzazione di un progetto software. Insufficiente conoscenza delle tecnologie richieste per lo sviluppo del prodotto.],
     [*Grado di rischio*], [5],
     [*Pericolosità*], [Alta],
-    [*Precauzioni*], [Studio a monte di pratiche utilizzate in contesti realistici, e delle tecnologie coinvolte. Supporto interno tra i membri del team. Inoltre la metodologia di lavoro utilizzata dal gruppo di progetto, la quale prevede la divisioni dei compiti relativi relativi ad una singola sprint da svolgere generalmente in coppia, favorisce la condivisione delle conoscenze e aiuto reciproco per sopperire a lacune di tipo tecnologico.],
+    [*Precauzioni*], [Studio preliminare delle pratiche utilizzate in contesti reali e delle tecnologie coinvolte. È previsto anche un supporto interno tra i membri del team. La metodologia di lavoro adottata dal gruppo, con compiti di ogni sprint spesso svolti in coppia, facilita la condivisione delle conoscenze e il mutuo aiuto per superare eventuali carenze tecnologiche.],
     [*Piano di contingenza*], [Comunicazioni interne ed esterne rapide in caso di dubbi per chiarimenti e delucidazioni. Eventuali #glossary("workshop") da parte dei membri del gruppo più esperti su specifiche tecnologie.],
   )
 )
-#align(center)[Tabella 2: RP1 - Mancanza di competenze tecniche specifiche.]
+#align(center)[Tabella 1: RP1 - Mancanza di competenze tecniche specifiche.]
 
 #table(
   columns: (1fr),
@@ -124,15 +130,15 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: (auto, 1fr),
     inset: (5pt),
     fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
-    [*Descrizione*], [Irregolarità nell'impegno di uno o più componenti del team rispetto a quanto patuito.],
+    [*Descrizione*], [Discontinuità nell'impegno di uno o più membri del team rispetto agli accordi stabiliti.],
     [*Grado di rischio*], [3],
     [*Pericolosità*], [Alta],
     [*Precauzioni*], [Buone pratiche di pianificazione, e assegnazione dei ruoli in modo da avere un #glossary("cruscotto") completo dei lavori fin da subito. Mantenere una comunicazione costante nel tempo tra tutti i membri del team di progetto.],
-    [*Piano di contingenza*], [Comunicazione e discussione con il docente del corso. Conseguente adeguamento e ridistribuzione dei compiti.],
+    [*Piano di contingenza*], [Interazione e confronto con il docente del corso, con conseguente adattamento e redistribuzione delle attività.],
   )
 )
-#align(center)[Tabella 3: RP2 - Non conformità agli impegni dichiarati.]
-
+#align(center)[Tabella 2: RP2 - Non conformità agli impegni dichiarati.]
+#pagebreak()
 #table(
   columns: (1fr),
   inset: 10pt,
@@ -143,14 +149,14 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: (auto, 1fr),
     inset: (5pt),
     fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
-    [*Descrizione*], [Intesi a livello personale, si intendono tutte le possibili divergenze tra le componenti del team che possono portare a tensione e discussioni, intaccando così l'armonia e la collaborazione all'interno del gruppo di lavoro.],
+    [*Descrizione*], [A livello personale, si riferiscono a tutte le possibili divergenze tra i membri del team che possono generare tensioni e discussioni, compromettendo così l'armonia e la collaborazione all'interno del gruppo di lavoro.],
     [*Grado di rischio*], [3],
-    [*Pericolosità*], [Alta],
+    [*Pericolosità*], [Media],
     [*Precauzioni*], [Instaurare un rapporto umano e sociale tra i membri del gruppo. Avere pratiche di risoluzione dei conflitti efficaci e veloci. Inotre il Responsabile ha il compito di intervenire e cercare di mediare, cercando di portare ad una risoluzione che ristabilisca il clima di lavoro positivo.],
-    [*Piano di contingenza*], [Definire dei meeting nel quale esporre le varie divergenze e poi cercare di arrivare ad una soluzione di gruppo, trammite eventuali votazioni. Avviare una ipotetica comunicazione e discussione con il docente del corso. Conseguente adeguamento e ridistribuzione dei compiti.],
+    [*Piano di contingenza*], [Organizzare meeting per discutere le divergenze emerse e cercare di giungere a una soluzione condivisa, eventualmente attraverso votazioni. Avviare un confronto con il docente del corso per affrontare le problematiche, con successivo adeguamento e redistribuzione dei compiti.],
   )
 )
-#align(center)[Tabella 4: RP3 - Problemi di comunicazione e collaborazione.]
+#align(center)[Tabella 3: RP3 - Problemi di comunicazione e collaborazione.]
 
 #table(
   columns: (1fr),
@@ -162,16 +168,90 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: (auto, 1fr),
     inset: (5pt),
     fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
-    [*Descrizione*], [Malattia di uno o più membri del team, indisponibilità legata a eventuali impegni universitari o personali, o problematiche di altro genere. Questa problematica potrebbe essere più evidente durante il periodo invernale caratterizzato dalle molte influenze stagionali, in prossimità delle vacanze e delle sessioni di esami.],
+    [*Descrizione*], [Malattia di uno o più membri del team, indisponibilità dovuta a impegni universitari o personali, o altre problematiche. Questa difficoltà potrebbe manifestarsi in modo più evidente durante il periodo invernale, quando le influenze stagionali sono più frequenti, così come in prossimità delle vacanze e delle sessioni di esami.],
     [*Grado di rischio*], [3],
     [*Pericolosità*], [Media],
     [*Precauzioni*], [Gestione delle attività il più possibile preventiva, definendo deadline "larghe" che lascino spazio a imprevisti di questo genere. Mantenere una comunicazione con tutti i membri del gruppo e questi devono impegnarsi ad avvisare tempostivamente i colleghi così da provvedere ad eventuali #glossary("context switch").],
     [*Piano di contingenza*], [Conseguente adeguamento e ridistribuzione dei compiti],
   )
 )
-#align(center)[Tabella 5: RP4 - Malattia o indisponibilità.]
-
+#align(center)[Tabella 4: RP4 - Malattia o indisponibilità.]
+#pagebreak()
 == Rischi organizzativi interni ed esterni 
 === Interni
+#table(
+  columns: (1fr),
+  inset: 10pt,
+  align: center,
+  fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+  [*ROI1 - Comunicativi e organizzativi.*], 
+  table(
+    columns: (auto, 1fr),
+    inset: (5pt),
+    fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+    [*Descrizione*], [Difficoltà nell'organizzare le diverse sezioni del team e nel mantenere comunicazioni interne efficaci, con conseguenti disguidi e ritardi nell'avanzamento del progetto.],
+    [*Grado di rischio*], [3],
+    [*Pericolosità*], [Media],
+    [*Precauzioni*], [Scelta di strumenti di comunicazione "affidabili" e pratici, utilizzati sia per discussioni generali tramite chat testuali o vocali, sia per gestire le attività da svolgere e monitorarne l'avanzamento nel tempo, tramite strumenti come gli ITS e i grafici di Gantt. Elevato numero di meeting interni, anche solo a scopo organizzativo.],
+    [*Piano di contingenza*], [Conseguente adeguamento e ridistribuzione dei compiti.],
+  )
+)
+#align(center)[Tabella 5: ROI1 - Comunicativi e organizzativi.]
+
+#table(
+  columns: (1fr),
+  inset: 10pt,
+  align: center,
+  fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+  [*ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.*],
+  table(columns: (auto, 1fr), inset: (5pt),
+  fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+  [*Descrizione*], [Metodologia inadeguata o inefficace per assegnare i ruoli e distribuire le attività.],
+  [*Grado di rischio*], [3],
+  [*Pericolosità*], [Alta],
+  [*Precauzioni*], [Adottare in anticipo una metodologia consolidata nel settore, con evidenze di successo.],
+  [*Piano di contingenza*], [Rivedere e ridistribuire i compiti in base alle necessità.],)
+)
+#align(center)[Tabella 6: ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.]
+#pagebreak()
 === Esterni
+#table(
+  columns: (1fr),
+  inset: 10pt,
+  align: center,
+  fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+  [*ROE1 - Problemi di comunicazione.*],
+  table(
+    columns: (auto, 1fr),
+    inset: (5pt),
+    fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+    [*Descrizione*], [Difficoltà nella comunicazione con soggetti esterni, come il proponente e il committente.],
+    [*Grado di rischio*], [3],
+    [*Pericolosità*], [Media],
+    [*Precauzioni*], [Scelta di mezzi di comunicazione pratici ed efficienti. Comunicazioni tempestive verso l'esterno. Invio anticipato di domande e richieste di materiale utile prima di ogni incontro con il proponente, per garantire tempo sufficiente per risposte complete e per ottimizzare l'efficacia del meeting, favorendo uno sviluppo continuo senza interruzioni dovute alla necessità di feedback.],
+    [*Piano di contingenza*], [Chiarimento con il committente e il proponente, seguito da un adeguamento e dall'introduzione di nuovi strumenti di comunicazione.],
+  )
+)
+#align(center)[Tabella 7: ROE1 - Problemi di comunicazione.]
+
 == Rischi tecnologici/software
+#table(
+  columns: (1fr),
+  inset: 10pt,
+  align: center,
+  fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+  [*RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.*], 
+  table(
+    columns: (auto, 1fr),
+    inset: (5pt),
+    fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+    [*Descrizione*], [Situazione in cui alcune tecnologie selezionate risultano indisponibili o subiscono modifiche sostanziali che potrebbero compromettere l'efficacia del lavoro già svolto.],
+    [*Grado di rischio*], [2],
+    [*Pericolosità*], [Alta],
+    [*Precauzioni*], [Effettuare una scelta oculata delle tecnologie. Progettare un ambiente di lavoro che possa adattarsi ai cambiamenti. Collaborare attivamente con il proponente, che riveste il ruolo di mentore, per chiarire eventuali dubbi e ricevere consigli da una figura esperta nel settore.],
+    [*Piano di contingenza*], [Confronto diretto con il proponente per definire strategie di adattamento e valutare nuove soluzioni tecnologiche per il progetto.],
+  )
+)
+#align(center)[Tabella 8: RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.]
+
+#pagebreak()
