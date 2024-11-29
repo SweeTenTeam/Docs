@@ -8,6 +8,13 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.10",
+    "2024-11-28",
+    (p.campagnaro),
+    (p.ferazzani),
+    [
+      Stesura capitolo: Processi di supporto - Documentazione
+    ],
     "0.0.9",
     "2024-11-26",
     (p.ferazzani),
@@ -97,6 +104,7 @@ Per garantire chiarezza e coerenza nella terminologia utilizzata nei documenti, 
 - `Norme di Progetto v1.0.0`
 - Documentazione e presentazione del capitolato d'appalto C9: BuddyBot \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9.pdf") (Ultimo accesso: 2024-11-21) \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf") (Ultimo accesso: 2024-11-21)
+- Standard `ISO/IEC 12207:1995` \ #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf") (Ultimo accesso: 2024-11-28)
 - Regolamento del progetto didattico: \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf") (Ultimo accesso: 2024-11-21)
 
 === Riferimenti informativi
@@ -156,7 +164,7 @@ Ogni capitolato è stato suddiviso nelle seguenti sezioni:
 - *Dominio tecnologico*: tecnologie da utilizzare per lo sviluppo;
 - *Aspetti positivi*;
 - *Fattori critici*;
-- *Conclusioni*: motivazioni sulla scelta/non scelta del capitolato
+- *Conclusioni*: motivazioni sulla scelta/non scelta del capitolato.
 
 ==== Dichiarazione degli Impegni
 Questo documento formalizza la volontà del gruppo di impegnarsi nella realizzazione del prodotto previsto da un capitolato specifico (nel nostro caso, #glossary("BuddyBot"), proposto dall’azienda #box(image(g.azzurro, width: 5em, height: auto))).
@@ -184,6 +192,7 @@ Contiene le seguenti informazioni:
   - Scenario;
   - Attori coinvolti;
   - Azioni eseguibili.
+
 - *Lista dei requisiti*: tutte le richieste o vincoli definiti dal proponente o dedotti dal team per la realizzazione del prodotto finale. I requisiti possono essere obbligatori, desiderabili e opzionali e verranno classificati dal gruppo a seconda della loro importanza.
 
 ==== Piano di Progetto
@@ -192,8 +201,9 @@ Il Piano di Progetto è un documento versionato e soggetto ad approvazione, reda
 Il documento include le seguenti sezioni:
 
 - *Analisi dei Rischi*: identifica le potenziali problematiche che potrebbero rallentare o ostacolare lo sviluppo. Per prevenire questi problemi, il gruppo propone soluzioni da applicare tempestivamente. I rischi sono classificati in:
-  - *#glossary("Rischi organizzativi")*
-  - *#glossary("Rischi tecnologici")*
+  - *#glossary("Rischi organizzativi")*;
+  - *#glossary("Rischi tecnologici")*.
+
 - *Modello di sviluppo*: descrive l’approccio metodologico e strutturato adottato dal team per sviluppare il prodotto.
 - *Pianificazione*: suddivide il progetto in periodi definiti, ciascuno corredato da eventi e attività specifiche. Per ogni periodo, il documento mostra una stima dell’impegno richiesto a ciascun membro del gruppo.
 - *Preventivo*: fornisce una stima della durata di ogni periodo e il tempo necessario per completare tutte le attività previste.
@@ -213,13 +223,13 @@ Il documento Norme di Progetto ha lo scopo di definire un insieme di standard e 
 
 Il documento è suddiviso nelle seguenti sezioni:
 
-- Introduzione
-- Processi primari
-- Processi di supporto
-- Processi organizzativi
-- Standard `ISO/IEC 9126` per la qualità
-- Metriche di qualitá del processo
-- Metriche di qualitá del prodotto
+- Introduzione;
+- Processi primari;
+- Processi di supporto;
+- Processi organizzativi;
+- Standard `ISO/IEC 9126` per la qualità;
+- Metriche di qualitá del processo;
+- Metriche di qualitá del prodotto.
 
 ==== Manuale Utente
 Il documento Manuale Utente serve a descrivere i requisiti minimi e le istruzioni utili all’installazione/utilizzo del prodotto finale. Descrive inoltre le funzionalità del prodotto e di come l’utente può usufruirne.
@@ -280,9 +290,9 @@ Lo sviluppo, delineato dallo standard `ISO/IEC 12207:1995`, si occupa di organiz
 
 Le fasi che compongono lo sviluppo sono:
 
-- *Analisi dei requisiti*
-- *Progettazione*
-- *Codifica*
+- *Analisi dei requisiti*;
+- *Progettazione*;
+- *Codifica*.
 
 === Analisi dei requisiti
 ==== Descrizione
@@ -295,6 +305,7 @@ Contiene le seguenti informazioni:
   - Scenario;
   - Attori coinvolti;
   - Azioni eseguibili.
+
 - *Lista dei requisiti*: tutte le richieste o vincoli definiti dal proponente o dedotti dal team per la realizzazione del prodotto finale. I requisiti possono essere obbligatori, desiderabili e opzionali e verranno classificati dal gruppo a seconda della loro importanza.
 
 ==== Obiettivo
@@ -455,6 +466,7 @@ Una classe è rappresentata graficamente come un rettangolo suddiviso in tre sez
     - *`#`* : visibilità protetta.
     - *`+`* : visibilità pubblica.
     - *`~`* : visibilità di package.
+
   - *Nome*: Il nome dell'attributo, che deve essere unico per ogni campo. La convenzione di nomenclatura è #glossary("camelCase") mentre per le costanti, i nomi sono scritti in maiuscolo.
   - *Tipo*: Specifica il tipo dell'attributo, che può essere primitivo o un tipo complesso.
   - *`<T>`*: Nel caso di collezioni o container (come liste o array), si indica il tipo di oggetto contenuto.
@@ -472,6 +484,7 @@ Una classe è rappresentata graficamente come un rettangolo suddiviso in tre sez
     - *`#`* : visibilità protetta.
     - *`+`* : visibilità pubblica.
     - *`~`* : visibilità di package.
+
   - *Nome*: Il nome del metodo, che deve essere descrittivo e indicare chiaramente la funzionalità del metodo stesso.
   - *Parametri formali*: I parametri richiesti dal metodo, separati da virgole.
   - *Tipo di ritorno*: Il tipo di valore che il metodo restituisce, se applicabile.
@@ -593,8 +606,171 @@ Le seguenti norme, ispirate ai principi di `Clean Code di Robert C. Martin`, dov
 
 
 #pagebreak()
-= Processi di Supporto
-// PARTE DI MATTEO
+= Processi di supporto
+== Documentazione
+=== Scopo
+La documentazione è importante nello sviluppo del #glossary("software") perché aiuta a tenere traccia di tutte le attività e le decisioni del progetto. Contiene informazioni utili e direttive per chi sviluppa, utilizza o distribuisce il #glossary("software"). È un supporto pratico per il team, che serve a organizzare meglio il lavoro in ogni fase. Aggiornandola regolarmente, rimane chiara e utile, rendendo più facile la manutenzione del progetto.
+
+=== Ciclo di vita
+Le sette fasi principali che compongono il ciclo di vita di un documento sono:
+
+1. *Creazione o adattamento del template*: la prima fase prevede la creazione o l’adattamento di un modello per il documento corrente. Questo modello definisce struttura, formattazione e informazioni base, come titolo, autore e data.
+2. *Pianificazione e assegnazione delle sezioni*: in questa fase le sezioni del documento vengono pianificate e assegnate ai redattori incaricati. I redattori sono responsabili della stesura delle proprie sezioni in conformità con le norme di progetto.
+3. *Raccolta dei contenuti e preparazione della prima bozza*: i redattori raccolgono i materiali necessari e preparano una bozza iniziale del documento, che sarà la base per successive discussioni e revisioni.
+4. *Stesura delle sezioni*: i redattori completano le sezioni assegnate, rispettando il modello e le linee guida del progetto.
+5. *Verifica dei contenuti*: i redattori controllano che i contenuti delle sezioni siano coerenti con le norme di progetto e privi di errori.
+6. *Revisione*: un verificatore revisiona l’intero documento per accertarsi che non ci siano errori o mancanze.
+7. *Approvazione e pubblicazione*: il documento viene approvato da un responsabile e pubblicato nella sua versione definitiva.
+
+=== Documentation as Code
+Per la documentazione viene adottato l’approccio #glossary("Documentation as Code"), che si basa sull’utilizzo di pratiche e strumenti tipici dello sviluppo #glossary("software") per la creazione, gestione e distribuzione dei documenti. Questo metodo offre un modello organizzato e flessibile, con i seguenti punti chiave:
+
+- *Automazione*: sfruttare strumenti automatizzati per generare e aggiornare i documenti.
+- *Collaborazione*: promuovere il lavoro di squadra attraverso piattaforme e strumenti condivisi.
+- *Distribuzione*: rendere i documenti facilmente accessibili a tutti gli interessati.
+- *Integrazione incrementale*: incorporare modifiche in modo graduale e continuo.
+- *Versionamento*: mantenere traccia di tutte le modifiche per garantire trasparenza e controllo.
+
+=== Sistema di composizione tipografica
+Per la creazione tipografica dei documenti, abbiamo scelto di utilizzare #glossary("Typst") anziché il tradizionale #glossary("LaTeX"). 
+
+#glossary("Typst") presenta diversi vantaggi rispetto a #glossary("LaTeX"):
+
+- *Facilità d'uso*: la sintassi è simile a quella di `Markdown`, rendendo l'approccio più semplice.
+- *Programmabilità vera e propria*: al posto di un sistema basato su macro, offre una Programmabilità più diretta e flessibile.
+- *Compilazione rapida*: la generazione dei documenti avviene in tempi quasi immediati.
+
+L'adozione di #glossary("Typst") semplifica la creazione e la manutenzione della documentazione, permettendo ai redattori di concentrarsi sul contenuto piuttosto che sulla parte grafica, e assicurando al contempo coerenza nella documentazione del progetto.
+
+Il template sviluppato e utilizzato per questo scopo è visionabile all'interno della #link("https://github.com/SweeTenTeam/Docs/blob/develop/template", "repository Docs").
+
+=== Struttura dei documenti
+==== Intestazione
+La prima pagina funge da intestazione del documento e presenta gli elementi elencati di seguito:
+
+- *Logo del gruppo*: presente nel percorso `images/logos/sweetenteam.png`;
+- *Nome del documento*;
+- *Data*: la data in cui è stata approvata l’ultima versione del documento;
+- *Versione*: la versione corrente del documento;
+- *Email*: `sweetenteam@gmail.com`;
+- *Link al sito vetrina*: #link("https://sweetenteam.github.io");
+- *Logo dell'Università di Padova*: presente nel percorso `images/logos/Universita_Padova_transparent.png`;
+- *Destinatari*: a chi è il rivolto il documento;
+- *Redattori*: incaricati della stesura del documento;
+- *Verificatori*: incaricati della verifica del documento.
+
+==== Registro delle modifiche
+La seconda pagina è dedicata al *_registro delle modifiche_* che è organizzato in una tabella che consente di monitorare i cambiamenti apportati al documento.
+
+La tabella include i seguenti campi:
+
+- *Versione*: il numero di versione del documento;
+- *Data*: la data di approvazione della versione del documento;
+- *Autori*: le persone che hanno effettuato le modifiche;
+- *Verificatori*: le persone che hanno approvato le modifiche;
+- *Dettaglio*: una breve descrizione delle modifiche effettuate.
+
+==== Indice
+Nella pagina che segue il registro delle modifiche è presente l’*_indice_* dove vengono elencate le sezioni contenute nel documento.
+
+==== Lista delle immagini e delle tabelle
+Nella pagina che segue l'indice, qualora nel documento siano presenti delle immagini o delle tabelle, sono presenti la *_lista delle immagini_* e la *_lista delle tabelle_* che descrivono il contenuto e la posizione nel documento di questi elementi.
+
+==== Corpo del documento
+Il contenuto del documento è suddiviso in capitoli, ognuno dei quali è formato da più sezioni ed eventuali sottosezioni.
+
+==== Corpo dei verbali interni
+Il contenuto del verbale interni è suddiviso nelle seguenti sezioni:
+
+- *Contenuti del verbale*:
+  - *Informazioni sulla riunione*:
+    - Luogo;
+    - Ora di inizio;
+    - Ora di fine;
+    - Partecipanti;
+    
+  - *Ordine del giorno*: un elenco di ciò che verrà discusso durante la riunione;
+  
+- *Decisioni prese*: sezione che elenca in forma testuale le decisioni prese durante l’incontro. Alcune di queste potrebbero risultare in “attività individuate”.
+- *Prossime attività*: illustrazione dettagliata delle attività assegnate ai diversi membri del gruppo a conclusione dell’incontro. Queste informazioni, inserite in un’apposita tabella, riportano:
+  - *ID*: collegamento alla relativa issue su GitHub
+  - *Descrizione*: breve spiegazione dell’attività;
+  - *Assegnatari*: i nomi degli incaricati a svolgere l’attività.
+
+==== Corpo dei verbali esterni
+Il contenuto del verbale esterni è suddiviso nelle seguenti sezioni:
+
+- *Contenuti del verbale*:
+  - *Informazioni sulla riunione*:
+    - Luogo;
+    - Ora di inizio;
+    - Ora di fine;
+    - Partecipanti;
+    - Partecipanti esterni.
+    
+  - *Ordine del giorno*: un elenco di ciò che verrà discusso durante la riunione;
+  
+- *Sintesi dell'incontro*: un elenco di ciò che verrà discusso durante la riunione;
+- *Domande effettuate e relative risposte*;
+- *Prossimi step*: prossimi incontri e attività generali su cui riflettere e organizzarsi;
+- *Decisioni prese*: sezione che elenca in forma testuale le decisioni prese durante l’incontro. Alcune di queste potrebbero risultare in “attività individuate”.
+
+==== Documenti del progetto
+Verranno redatti i seguenti documenti:
+
+- *`Dichiarazione Impegni`*;
+- *`Valutazione Capitolati`*;
+- *`Verbali Interni`*;
+- *`Verbali Esterni`*;
+- *`Lettera di Presentatione`*.
+- *`Norme di Progetto`*;
+- *`Piano di Progetto`*;
+- *`Piano di Qualifica`*;
+- *`Analisi dei Requisiti`*;
+- *`Glossario`*;
+- *`Specifica Tecnica`*;
+- *`Manuale Utente`*;
+
+=== Regole stilistiche
+==== Nomi assegnati ai file
+I documenti PDF presenti nella #link("https://github.com/SweeTenTeam/Docs","repository Docs"), seguono precise convenzioni di denominazione in base al tipo di documento.
+
+- *Verbali*: per i verbali viene utilizzata una nomenclatura del tipo: #align(center)[*`[Verbale_Interno]/[Verbale_Esterno] + _ + [data] + _ + [versione]`*]
+
+  - *Spaziatura*: fra le parole la spaziatura verrà sostituita da un underscore, ("*`_`*");
+  - *Data*: scritta nel formato *`YYYY-MM-DD`*, dove `YYYY` indica l’anno, `MM` il mese e `DD` il giorno
+  - *Versione*: scritta nel formato: *`v.X.Y.Z`*.
+
+- *Altri documenti*: i nomi di tutti gli altri documenti presenti nel progetto invece saranno del tipo: #align(center)[*`[Nome_del_File] + _ + [versione]`*]
+
+  - *Nome_del_File*: le parole sono scritte in Title Case (con la prima lettera maiuscola per le parole principali, come sostantivi, verbi, aggettivi e avverbi, e in minuscolo per le parole secondarie, come preposizioni, congiunzioni e articoli) e separate da un underscore, ("*`_`*").
+  - *Spaziatura*: fra le parole la spaziatura verrà sostituita da un underscore, ("*`_`*");
+  - *Versione*: scritta nel formato: *`v.X.Y.Z`*.
+
+I file sorgente `.typ` non includono la versione nel nome. La versione viene aggiunta ai PDF automaticamente durante la compilazione. Usare lo stesso nome per i documenti permette di tracciare facilmente le modifiche con Git, sfruttando la funzione "*`diff`*" per confrontare i cambiamenti nei file di testo.
+
+==== Stile del testo
+Nei documenti è possibile utilizzare diversi stili di formattazione, tra cui il _corsivo_, il *grassetto* e il `monospace`, a discrezione del redattore. Questi strumenti sono impiegati per migliorare la leggibilità, enfatizzare concetti chiave e rendere il contenuto più chiaro e accessibile ai lettori. Per gli stessi scopi, possono essere utilizzati ulteriori elementi di impaginazione, come interruzioni di riga e di pagina, varie modalità di allineamento del testo e, quando ritenuto opportuno, il logo della proponente "#box(image(g.azzurro, width: 5em, height: auto))" in sostituzione del testo "*`AzzurroDigitale`*".
+
+
+==== Elenchi puntati
+Ogni elemento dell'elenco inizia con la lettera maiuscola e termina con un punto e virgola ("*`;`*"), tranne l'ultimo, che si chiude con un punto ("*`.`*"), a meno che non contenga più frasi: in tal caso può terminare con un punto indipendentemente dalla posizione. Il grassetto viene utilizzato solo dove appropriato.
+
+==== Formato delle date
+Per le date è stato deciso di adottare lo standard internazionale `ISO 8601`, nella forma *`YYYY-MM-DD`*, dove:
+
+- *`YYYY`*: l’anno con 4 cifre;
+- *`MM`*: il mese con 2 cifre;
+- *`DD`*: il giorno con 2 cifre.
+
+==== Descrizione immagini
+Ogni immagine o tabella deve presentare una descrizione associata, utile a fornire una breve descrizione o spiegazione del contenuto.
+
+=== Strumenti
+Per la realizzazione della documentazione sono stati scelti dal team i seguenti strumenti:
+
+- *#glossary("Typst")*: linguaggio utilizzato per la stesura dei documenti;
+- *#glossary("GitHub")*: piattaforma per l'hosting di codice sorgente, utilizzata per condividere file, verificarli, gestirne le versioni e automatizzare determinati processi, seguendo il principio della #glossary("Documentation as Code").
 
 
 
@@ -636,17 +812,17 @@ Le metriche di qualità sono fondamentali per garantire il rispetto degli standa
 
 Le metriche sono divise in due categorie:
 
-- Processo: PRC
-- Prodotto: PRD
+- Processo: PRC;
+- Prodotto: PRD.
 
 Inoltre, le suddette metriche sono identificate come segue:
 *#align("M-[Categoria-Metrica]-[Sigla-Identificativa-Metrica]", center)*
 
 Ogni metrica ha:
 
-- un valore minimo (o accettabile): valore sotto il quale il processo o il prodotto misurato diventa inaccettabile
-- un valore ammissibile (o ottimale): valore ideale che dovrebbe essere raggiunto dalla metrica
-- descrizione: descrizione breve della metrica
+- un valore minimo (o accettabile): valore sotto il quale il processo o il prodotto misurato diventa inaccettabile;
+- un valore ammissibile (o ottimale): valore ideale che dovrebbe essere raggiunto dalla metrica;
+- descrizione: descrizione breve della metrica.
 
 //to do: ricontrollare questo paragrafo
 
@@ -654,11 +830,11 @@ Ogni metrica ha:
 
 Il team si aspetta di rispettare in ogni momento gli standard di qualità definiti. Inoltre, il team si aspetta:
 
-- Ottima qualità del prodotto
-- Ottima qualità dei processi
-- Miglioramento costante
-- Test frequenti e predicibili
-- Soddisfazione delle richieste e aspettative del Proponente
+- Ottima qualità del prodotto;
+- Ottima qualità dei processi;
+- Miglioramento costante;
+- Test frequenti e predicibili;
+- Soddisfazione delle richieste e aspettative del Proponente.
 
 #pagebreak()
 = Processi Organizzativi
@@ -680,16 +856,16 @@ Il processo è diviso nelle seguenti attività:
 
 === Pianificazione
 ==== Scopo
-Come da `Standard ISO/IEC 12207:1997`, il #glossary("Responsabile") ha il compito di predisporre i piani per l'esecuzione di tutte le attività di pianificazione. I piani dovranno essere dettagliati, contenere la descrizione delle attività e dei compiti (e ruoli) assegnati.
+Come da Standard `ISO/IEC 12207:1997`, il #glossary("Responsabile") ha il compito di predisporre i piani per l'esecuzione di tutte le attività di pianificazione. I piani dovranno essere dettagliati, contenere la descrizione delle attività e dei compiti (e ruoli) assegnati.
 Il Responsabile dovrà redigere questa pianificazione all'interno del documento #glossary("Piano di Progetto").
 Questo documento riporta tutte le descrizioni e pianificazioni delle attività da svolgere in un certo periodo (uno o più sprint).
 
 ==== Descrizione
 L'attività di pianificazione viene articolata nelle due seguenti sezioni:
 
-+ Ruoli
-+ Metodo di Lavoro
-+ Ticketing
++ Ruoli;
++ Metodo di Lavoro;
++ Ticketing.
 
 
 ==== Aspettative
@@ -712,10 +888,10 @@ Ha il compito fondamentale di rappresentare il gruppo e di esporlo al Proponente
 
 I compiti di questo ruolo sono:
 
-- Approvare la documentazione
-- Gestire la pianificazione del progetto
-- Coordinare i membri del gruppo assegnando tasks e ruoli
-- Studiare e gestire l'analisi dei rischi
+- Approvare la documentazione;
+- Gestire la pianificazione del progetto;
+- Coordinare i membri del gruppo assegnando tasks e ruoli;
+- Studiare e gestire l'analisi dei rischi;
 - Coordinare e curare i rapporti esterni ed interni.
 
 *Amministratore* \
@@ -723,10 +899,10 @@ Definisce, controlla e gestisce l'ambiente e gli strumenti di lavoro del progett
 
 I pricipali compiti sono:
 
-- Redigere e mantenere aggiornata la documentazione: gestisce il versionamento
-- Gestire la configurazione del progetto e del prodotto: controllo sul prodotto software
-- Gestire i processi: problem solving rispetto ai processi
-- Migliorare l'ambiente di lavoro: ricerca gli strumenti e le tecnologie necessarie per migliorare e automatizzare il lavoro
+- Redigere e mantenere aggiornata la documentazione: gestisce il versionamento;
+- Gestire la configurazione del progetto e del prodotto: controllo sul prodotto software;
+- Gestire i processi: problem solving rispetto ai processi;
+- Migliorare l'ambiente di lavoro: ricerca gli strumenti e le tecnologie necessarie per migliorare e automatizzare il lavoro.
 
 \
 
@@ -735,35 +911,35 @@ L'#glossary("Analista") approfondisce le richieste, tecniche e non, del #glossar
 
 Ha il compito di:
 
-- Studiare il progetto e il suo contesto applicativo
-- Raccogliere, analizzare e studiare i bisogni del cliente
-- Scrivere l'Analisi dei Requisiti
-- Definire la complessità dei vari requisiti
+- Studiare il progetto e il suo contesto applicativo;
+- Raccogliere, analizzare e studiare i bisogni del cliente;
+- Scrivere l'Analisi dei Requisiti;
+- Definire la complessità dei vari requisiti.
 
 *Progettista* \
 Determina le scelte tecniche del progetto, trasformando i requisiti trovati dagli Analisti in un'architettura che strutturi e rappresenti il problema. Il progettista inoltre seguirà lo sviluppo ma non la manutenzione.
 
 I compiti principali sono:
 
-- Sviluppare un prodotto economico e facilmente manutenibile partendo dalle indicazioni degli Analisti
-- Favorire efficienza ed efficacia con le sue scelte
+- Sviluppare un prodotto economico e facilmente manutenibile partendo dalle indicazioni degli Analisti;
+- Favorire efficienza ed efficacia con le sue scelte.
 
 *Verificatore* \
 Controlla il lavoro svolto dagli altri membri del Team e si assicura che sia conforme agli standard di qualità definiti.
 
 Il Verificatore ha il compito di:
 
-- Verificare che le attività svolte siano corrette e conformi agli standard attraverso le tecniche e gli strumenti definiti nelle `Norme di Progetto`
+- Verificare che le attività svolte siano corrette e conformi agli standard attraverso le tecniche e gli strumenti definiti nelle `Norme di Progetto`.
 
 *Programmatore* \
 Svolge l'attività di codifica del progetto e delle sue componenti di supporto basandosi sull'architettura indicata dal Progettista.
 
 I compiti principali sono:
 
-- Implementare le funzionalità richieste dal Progettista
-- Scrivere codice pulito, documentato e manutenibile che rispetti le `Norme di Progetto`
-- Creare Test per verifica e validazione del codice
-- Scrivere il #glossary("manuale utente")
+- Implementare le funzionalità richieste dal Progettista;
+- Scrivere codice pulito, documentato e manutenibile che rispetti le `Norme di Progetto`;
+- Creare Test per verifica e validazione del codice;
+- Scrivere il #glossary("manuale utente").
 
 ==== Metodo di Lavoro
 
@@ -782,41 +958,41 @@ Il Team utilizza il sistema di #glossary("Issue Tracking Sistem") (ITS) di GitHu
 
 Le issue principali sono create dal responsabile del gruppo che assegna i compiti ai vari membri del team. In seguito, ogni problema è ulteriormente suddiviso in sotto-problemi e di conseguenza, "sotto-issue". Queste ultime sono create non dal Responsabile, ma dall'assegnatario della issue principale. Questo permette di avere una visione chiara e dettagliata delle attività da svolgere e di monitorare l'avanzamento del progetto. Ad esempio:
 
-- Responsabile crea la Issue `Norme di Progetto` e la assegna al componente X
-- X studia il documento `Norme di progetto` e individua sotto-issue per rendere il problema più approcciabile.
+- Responsabile crea la Issue `Norme di Progetto - Processi Primari` e la assegna al componente X.
+- X studia il documento `Norme di progetto` e, se lo ritiene opportuno, individua sotto-issue per rendere il problema più approcciabile.
 - X crea le sotto-issue individutae, le auto-asssegna e sceglie il verificatore.
 
 Ogni _Issue_ è composta da: <issue>
 
-- Titolo: titolo della issue
-- Descrizione: descrizione dell'attività da completare
-- Assegnatario (o Assegnatari): chi deve svolgere questa issue
-- Verificatore: chi deve verificare il lavoro svoltop
-- #glossary("Milestone"): traguardo da raggiungere
-- #glossary("Label"): etichetta per categorizzare le issue
-- #glossary("Project"): progetto a cui appartiene la issue
+- Titolo: titolo della issue;
+- Descrizione: descrizione dell'attività da completare;
+- Assegnatario (o Assegnatari): chi deve svolgere questa issue;
+- Verificatore: chi deve verificare il lavoro svoltop;
+- #glossary("Milestone"): traguardo da raggiungere;
+- #glossary("Label"): etichetta per categorizzare le issue;
+- #glossary("Project"): progetto a cui appartiene la issue;
 - stato: aperta, chiusa, in corso, ecc.
-- data di inizio: data di inizio dell'attività
-- data di fine: data di fine dell'attività
+- data di inizio: data di inizio dell'attività;
+- data di fine: data di fine dell'attività.
 
 La creazione e la gestione della issue segue il seguente flusso:
 <flow>
-1. Creazione della Issue
-2. Assegnazione della Issue
-3. Creazione delle sotto-issue
-4. Assegnazione delle sotto-issue
-5. Inizio dell'attività
-6. Spostamento della Issue da `To Do` a `In Progress`
-7. Svolgimento attività
-8. Fine attività
-9. Creazione #glossary("Pull Request")
-10. Verifica del lavoro svolto
-  11. se corretto, si passa al punto 13
-  12. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10
-13. Chiusura della Issue
-14. Spostamento della Issue da `In Progress` a `Done`
-15. Chiusura #glossary("Pull Request") e merge su branch `Develop`
-16. Eventuale eliminazione del branch (solo se non deve essere riutilizzato)
+1. Creazione della Issue;
+2. Assegnazione della Issue;
+3. Creazione delle sotto-issue;
+4. Assegnazione delle sotto-issue;
+5. Inizio dell'attività;
+6. Spostamento della Issue da `To Do` a `In Progress`;
+7. Svolgimento attività;
+8. Fine attività;
+9. Creazione #glossary("Pull Request");
+10. Verifica del lavoro svolto:
+  11. se corretto, si passa al punto 13;
+  12. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10.
+13. Chiusura della Issue;
+14. Spostamento della Issue da `In Progress` a `Done`;
+15. Chiusura #glossary("Pull Request") e merge su branch `Develop`;
+16. Eventuale eliminazione del branch (solo se non deve essere riutilizzato).
 
 *Milestones* \
 Il gruppo, dopo una pianificazione accurata, ha deciso di impostare le milestones ad '#glossary("Artefatti")' e non a '#glossary("sprint")'.
@@ -882,21 +1058,21 @@ Il #glossary("Workflow ") utilizzato dal Team è GitHub Flow, che è un modello 
 
 In particolare, il flow si espande come segue:
 
-- Riallineamento della #glossary("repository") locale con quella remota
-- Creazione di un #glossary("branch") locale per lo sviluppo di una singola feature (ogni branch segue la nomenclatura `tipo-feature/nome-feature`, ad esempio `doc/norme-di-progetto`)
-- Push del branch locale sulla repository remota
-- Creazione di una #glossary("Pull Request") per la feature
-- Verifica della #glossary("Pull Request") da parte del/dei Verificatore/i
+- Riallineamento della #glossary("repository") locale con quella remota;
+- Creazione di un #glossary("branch") locale per lo sviluppo di una singola feature (ogni branch segue la nomenclatura `tipo-feature/nome-feature`, ad esempio `doc/norme-di-progetto`);
+- Push del branch locale sulla repository remota;
+- Creazione di una #glossary("Pull Request") per la feature;
+- Verifica della #glossary("Pull Request") da parte del/dei Verificatore/i;
 - Eliminazione della branch.
 
 Viene anche utilizzata la #glossary("project board") di GitHub per la gestione delle issue e delle milestone.
 
 La board possiede le seguenti viste:
 - _KanBan_:
-  - To Do: issue appena create e da completare
-  - In Progress: issue in corso di svolgimento
-  - Verify: issue completate e in attesa di verifica
-  - Done: issue completate e verificate
+  - To Do: issue appena create e da completare;
+  - In Progress: issue in corso di svolgimento;
+  - Verify: issue completate e in attesa di verifica;
+  - Done: issue completate e verificate.
 
 #figure(
   image(gn.board, width: 100%),
@@ -905,8 +1081,8 @@ La board possiede le seguenti viste:
 
 
 - _Roadmap_:
-  - Start Date: data di inizio della issue
-  - End Date: data di fine della issue
+  - Start Date: data di inizio della issue;
+  - End Date: data di fine della issue.
 
 #figure(
   image(gn.road, width: 100%),
@@ -955,9 +1131,9 @@ Si applica un processo ciclico, dove i ruoli dei membri cambiano ogni sprint, e 
 === Descrizione
 Il processo di miglioramento è costituito da tre fasi:
 
-- Stabilimento dei processi
-- Valutazione dei processi
-- Miglioramento dei processi
+- Stabilimento dei processi;
+- Valutazione dei processi;
+- Miglioramento dei processi.
 
 ==== Stabilimento dei processi
 
@@ -999,9 +1175,9 @@ Il processo di formazione ha come obiettivo quello di garantire che ogni membro 
 
 Al fine di promuovere un ambiente di lavoro efficace ed efficiente, che garantisce un processo organico, ogni membro del Team si impegna autonomamente a:
 
-- Individurare le proprie lacune riguardanti le tecnologie e i requisiti del progetto
-- Colmare queste lacune attraverso lo studio autonomo e asincrono
-- Condividere le proprie conoscenze con gli altri membri del Team
+- Individurare le proprie lacune riguardanti le tecnologie e i requisiti del progetto;
+- Colmare queste lacune attraverso lo studio autonomo e asincrono;
+- Condividere le proprie conoscenze con gli altri membri del Team.
 
 === Aspettative
 
@@ -1013,19 +1189,19 @@ Al fine di completare questo percorso formativo, ogni membro utilizzerà tutti g
 
 #pagebreak()
 
-= Standard ISO/IEC 9126
+= Standard `ISO/IEC 9126`
 
-Lo standard ISO/IEC 9126 è una norma internazionale che ha contribuito a definire i parametri fondamentali per la valutazione della qualità e la validazione del software. Questo standard rappresenta un insieme di norme e linee guida dettagliate, oltre che a criteri di valutazione, per gli attributi di qualità di un prodotto software.
+Lo standard `ISO/IEC 9126` è una norma internazionale che ha contribuito a definire i parametri fondamentali per la valutazione della qualità e la validazione del software. Questo standard rappresenta un insieme di norme e linee guida dettagliate, oltre che a criteri di valutazione, per gli attributi di qualità di un prodotto software.
 Andando più nel dettaglio, questo standard individua sei categorie di attributi di qualità. Ognuna di queste categorie, è a sua volta suddivisa in sotto-categorie, che rappresentano i parametri di _*valutazione*_ e _*misurazione*_ per la qualità del software.
 
 Queste categorie sono:
 
-- _*Funzionalità*_
-- _*Affidabilità*_
-- _*Usabilità*_
-- _*Efficienza*_
-- _*Manutenibilità*_
-- _*Portabilità*_
+- _*Funzionalità*_;
+- _*Affidabilità*_;
+- _*Usabilità*_;
+- _*Efficienza*_;
+- _*Manutenibilità*_;
+- _*Portabilità*_.
 
 == Funzionalità
 Questo parametro si concentra sulla valutazione della capacità del software di fornire le funzionalità e le richieste specificate dal proponente.
@@ -1082,7 +1258,7 @@ Le sotto-categorie di questo parametro sono:
 - _*Modificabilità*_: Capacità del software di essere modificato facilmente per correggere errori, migliorare le prestazioni e adattarsi a nuove esigenze senza generare nuovi errori.
 - _*Stabilità*_: Capacità del software di mantenere un certo livello di prestazioni anche in presenza di modifiche, evitando di compromettere il codice esistente.
 - _*Testabilità*_: Capacità del software di essere testato facilmente per garantire la qualità e la correttezza del prodotto e delle modifiche apportate.
-- _*Aderenza alla manutenibilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard
+- _*Aderenza alla manutenibilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard.
 
 == Portabilità
 
@@ -1117,13 +1293,13 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 
 - *M-PRC-RSI* - Requirements Stability Index: stabilità dei requisiti nel tempo.
   #align($"RSI" = 100 - (frac("RM + RA + RR", "NR")) * 100$, center)
-  - *RA*: numero di requisiti aggiunti nel periodo considerato
-  - *RM*: Requisiti modificati
-  - *RR*: Requisiti rimossi
-  - *NR*: Numero di requisiti al momento dell'analisi
+  - *RA*: numero di requisiti aggiunti nel periodo considerato;
+  - *RM*: Requisiti modificati;
+  - *RR*: Requisiti rimossi;
+  - *NR*: Numero di requisiti al momento dell'analisi.
 
 #linebreak()
-- *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfruttano un modulo specifico
+- *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfruttano un modulo specifico.
 - *M-PRC-SFO* - Structural Fan-Out: componenti utilizzate dal modulo in osservazione.
 
 #pagebreak()
@@ -1132,19 +1308,19 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 
 - *M-PRC-GLP* - Gulpease Index: Valuta la leggibilità.
   #align($"GLP" = 89 + frac(300*N#sub("f") - 10*N#sub("l"), N#sub("p"))$, center)
-  - *N#sub("f")* : Numero frasi
-  - *N#sub("p")* : Numero parole
-  - *N#sub("l")* : Numero lettere
+  - *N#sub("f")* : Numero frasi;
+  - *N#sub("p")* : Numero parole;
+  - *N#sub("l")* : Numero lettere.
 
 #linebreak()
-- *M-PRC-CO* - Correttezza Ortografica
+- *M-PRC-CO* - Correttezza Ortografica.
 
 === Verifica
-- *M-PRC-CC* - Code Coverage: Percentuale di codice testato rispetto al totale
+- *M-PRC-CC* - Code Coverage: Percentuale di codice testato rispetto al totale.
 
 === Gestione Qualità
 
-- *M-PRC-QMS* - Quality Metrics Satisfied: grado di soddisfacimento delle metriche di qualità
+- *M-PRC-QMS* - Quality Metrics Satisfied: grado di soddisfacimento delle metriche di qualità.
 
 
 == Processi Organizzativi
@@ -1156,72 +1332,72 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 
 = Metriche Di Qualità Del Prodotto
 
-Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche seguono la struttura definita al paragrafo #link(<metriche>, "'metriche'"). In questo capitolo, la prima parte della struttura sarà: *#align("M-PRD-[S.I.]", center)*.
+Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche seguono la struttura definita al paragrafo #link(<metriche>, "'metriche'"). In questo capitolo, la prima parte della struttura sarà: *#align("M-PRD-[S.I.]", center)*
 
 == Funzionalità
 
 - *M-PRD-CRV* - Copertura Requisiti Vincolanti: percentuale di requisiti vincolanti coperti.
   #align($"CRV" = frac("RVC", "RVT") * 100$, center)
-  - *RVC*: Requisiti Vincolanti Coperti
-  - *RVT*: Requisiti Vincolanti Totali
+  - *RVC*: Requisiti Vincolanti Coperti;
+  - *RVT*: Requisiti Vincolanti Totali.
 
 #linebreak()
 - *M-PRD-CRD* - Copertura Requisiti Desiderabili: percentuale di requisiti desiderabili coperti.
   #align($"CRD" = frac("RDC", "RDT") * 100$, center)
-  - *RDC*: Requisiti Desiderabili Coperti
-  - *RDT*: Requisiti Desiderabili Totali
+  - *RDC*: Requisiti Desiderabili Coperti;
+  - *RDT*: Requisiti Desiderabili Totali.
 
 #linebreak()
 - *M-PRD-CRO* - Copertura Requisiti Opzionali: percentuale di requisiti opzionali coperti.
   #align($"CRO" = frac("ROC", "ROT") * 100$, center)
-  - *ROC*: Requisiti Opzionali Coperti
-  - *ROT*: Requisiti Opzionali Totali
+  - *ROC*: Requisiti Opzionali Coperti;
+  - *ROT*: Requisiti Opzionali Totali.
 
 
 == Affidabilità
 
 - *M-PRD-CC* - Code Coverage: percentuale di eseguito durante i test rispetto a quello scritto.
   #align($"CC" = frac("LCE", "LCT") * 100$, center)
-  - *LCE*: Linee di Codice Eseguito
-  - *LCT*: Linee di Codice Totali
+  - *LCE*: Linee di Codice Eseguito;
+  - *LCT*: Linee di Codice Totali.
 
 #linebreak()
 - *M-PRD-BC* - Branch Coverage: percentuale di branch decisionali testati rispetto a quelli creati.
   #align($"BC" = frac("BT", "BC") * 100$, center)
-  - *BT*: Branch Testati
-  - *BC*: Branch creati
+  - *BT*: Branch Testati;
+  - *BC*: Branch creati.
 
 #linebreak()
 - *M-PRD-SC* - Statement Coverage: percentuale di istruzioni testate rispetto a quelle scritte.
   #align($"SC" = frac("IE", "IT") * 100$, center)
-  - *IE*: Istruzioni Eseguite
-  - *IT*: Istruzioni Totali
+  - *IE*: Istruzioni Eseguite;
+  - *IT*: Istruzioni Totali.
 
 #linebreak()
 - *M-PRD-FD* - Failure Density: numero di failure riscontrati durante i test. //da rivedere con il team
   #align($"FD" = frac("F", "T")$, center)
-  - *F*: Numero di Failure
-  - *T*: Numero di Test
+  - *F*: Numero di Failure;
+  - *T*: Numero di Test.
 
 #linebreak()
 == Usabilità
 
-- *M-PRD-FU* - Facilità Di Utilizzo: valuta la complessità di utilizzo del sistema
-- *M-PRD-TA* - Tempo di Apprendimento: valuta il tempo necessario per apprendere il sistema
-- *M-PRD-AU* - Aderenza all'usabilità: misura la capacità del software di aderire alle convenzioni di usabilità nel suo ciclo di vita
-- *M-PRD-AT* - Attrattività: valuta l'aspetto estetico del software
-- *M-PRD-CO* - Comprensibilità: valuta la facilità di comprensione del software
+- *M-PRD-FU* - Facilità Di Utilizzo: valuta la complessità di utilizzo del sistema.
+- *M-PRD-TA* - Tempo di Apprendimento: valuta il tempo necessario per apprendere il sistema.
+- *M-PRD-AU* - Aderenza all'usabilità: misura la capacità del software di aderire alle convenzioni di usabilità nel suo ciclo di vita.
+- *M-PRD-AT* - Attrattività: valuta l'aspetto estetico del software.
+- *M-PRD-CO* - Comprensibilità: valuta la facilità di comprensione del software.
 
 #linebreak()
 == Efficienza
 
-- *M-PRD-UR* - Utilizzo Risorse: valuta l'efficienza nell'utilizzo delle risorse
+- *M-PRD-UR* - Utilizzo Risorse: valuta l'efficienza nell'utilizzo delle risorse.
 
 == Manutenibilità
 
-- *M-PRD-CP* - Complessità Ciclomatica: valuta la complessità del sistema attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo di flusso
-- *M-PRD-CS* - Code Smell: valuta la qualità del codice attraverso la rilevazione di #glossary("Bad Practices")
+- *M-PRD-CP* - Complessità Ciclomatica: valuta la complessità del sistema attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo di flusso.
+- *M-PRD-CS* - Code Smell: valuta la qualità del codice attraverso la rilevazione di #glossary("Bad Practices").
 - *M-PRD-MD* - Module Dependency: valuta la dipendenza tra i moduli del sistema
   #align($"MD" = frac("NDM", "NTM") * 100$, center)
-  - *NDM*: Numero di Dipendenze tra Moduli
-  - *NTM*: Numero Totale Moduli
+  - *NDM*: Numero di Dipendenze tra Moduli;
+  - *NTM*: Numero Totale Moduli.
