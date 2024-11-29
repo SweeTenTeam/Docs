@@ -12,7 +12,7 @@
     p.azzurro,
   ),
   changelog: (
-    "0.0.2",
+    "0.0.3",
     "2024-11-29",
     p.benedetti,
     p.fracaro,
@@ -218,7 +218,6 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
 #align(center)[Tabella 6: ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.]
 #pagebreak()
 === Esterni
-<<<<<<< HEAD
 #table(
   columns: (1fr),
   inset: 10pt,
@@ -259,112 +258,3 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
 #align(center)[Tabella 8: RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.]
 
 #pagebreak()
-=======
-== Rischi tecnologici/software
-#pagebreak()
-= *Calendario di progetto*
-== Introduzione
-In questa sezione vengono presentate le tempistiche delle revisioni principali del progetto, con le relative scadenze, tenendo conto dei rischi identificati nella pianificazione.
-
-== Prima stesura *2024/11/27* 
-Partendo delle osservazioni fatte nella sezione 2 _Analisi dei rischi_, si è deciso di pianificare lo svolgimento dei lavori in modo da completare i documenti e gli artefatti necessari per le due revisioni di progetto nelle date riportate nella tabella #num_tab_calendario_prj.
-
-#align(center)[#table(
-  columns: 2,
-  align: left,
-    [*Revisione*], [*Data*],
-    [#glossary("RTB") (Requirements and Technology Baseline)], [2025-01-13],
-    [#glossary("PB") (Product Baseline)], [2025-03-28],
-)]
-#align(center)[Tabella #num_tab_calendario_prj: Calendario di progetto]
-
-
-= *Stima costi realizzazione*
-== Introduzione
-Questa sezione presenta la stima dei costi per la realizzazione del progetto, calcolata in base al costo orario dei ruoli e alle ore previste per ciascuna attività. La stima si basa su quanto discusso nella sezione 2 _Analisi dei rischi_ e nei documenti _#glossary("Analisi dei requisiti")_ e _Dichiarazione degli impegni_.
-
-
-== Prima stesura *2024/11/27* 
-#align(center)[
-  #table(
-    columns: 4,
-    align: (left, center, center, center),
-      [*Ruolo*], [*Costo orario (€ / h)*], [*Ore per ruolo (h)*], [*Ore per membro (h)*],
-      [Responsabile], [30], [63], [9],
-      [Amministratore], [20], [56], [8],
-      [Analista], [25], [77], [11],
-      [Progettista], [25], [119], [17],
-      [Programmatore], [15], [168], [24],
-      [Verificatore], [15], [154], [22],
-      [Totale], [€ 12.740], [637], [91],
-  )
-]
-
-#align(center)[
-  Tabella #num_tab_prev_costi: Preventivo costi
-]
-
-Il costo totale del progetto è fissato a € 12.740, rappresentando il limite massimo del budget disponibile. Qualora si presentasse il rischio di superare tale importo, sarà avviata una rinegoziazione dei requisiti tra il gruppo fornitore e il proponente.
-
-= *Modello di Sviluppo*
-
-== Modello adottato
-
-A seguito di un confronto approfondito con l'azienda proponente e dopo un'attenta valutazione delle metodologie di sviluppo software, il team ha optato per un approccio #glossary("Agile"). La scelta è stata fortemente incoraggiata dall'azienda, che ha condiviso la propria esperienza positiva maturata nell'adozione di questa metodologia in contesti di sviluppo software complessi.
-
-A differenza dei modelli tradizionali, l'#glossary("Agile") si caratterizza per un approccio iterativo e dinamico. Il modello scelto implementato prevede cicli di sviluppo della durata di una o due settimane, durante i quali il team lavora in modo autonomo, pianificando, eseguendo e valutando le attività progettuali.
-
-== Principi Fondamentali
-
-L'approccio #glossary("Agile") si basa su alcuni principi chiave che lo distinguono dai modelli di sviluppo tradizionali:
-
-- *Flessibilità*: Capacità di adattarsi rapidamente ai cambiamenti dei requisiti, mantenendo alta la qualità del prodotto.
-- *Collaborazione*: Creazione di un ambiente di lavoro che favorisce comunicazione continua, condivisione delle conoscenze e supporto reciproco.
-- *Sviluppo Incrementale*: Realizzazione del prodotto attraverso rilasci frequenti e funzionali, che permettono una verifica continua.
-
-== Vantaggi Attesi
-
-L'adozione del modello #glossary("Agile") offre diversi benefici strategici:
-
-- *Gestione dei Rischi*: Cicli brevi consentono di identificare e risolvere tempestivamente le criticità, riducendo i rischi di fallimento del progetto.
-- *Soddisfazione degli Stakeholder*: Review periodiche e feedback continui garantiscono che il prodotto finale corrisponda alle aspettative dei committenti.
-- *Motivazione del Team*: L'approccio auto-organizzativo e la visualizzazione dei progressi mantengono alto il coinvolgimento dei membri.
-
-== Pratiche Implementative
-
-Il modello #glossary("Agile") si concretizzerà attraverso:
-
-- Utilizzo di strumenti di Continuous Integration/Continuous Deployment (CI/CD)
-- Pianificazione periodica e revisione delle attività
-- Analisi critica e miglioramento continuo dei processi
-- Revisione collaborativa del codice
-- Monitoraggio delle performance del team e del progetto
-
-In particolare, i periodi di sviluppo saranno suddivisi in #glossary("sprint") di due settimane per il primo periodo (#glossary("RTB")), con successiva riduzione a #glossary("sprint") settimanali nel secondo periodo (#glossary("PB")). Ogni #glossary("sprint") sarà seguito da incontri periodici tra il team di sviluppo e l'azienda proponente, durante i quali verranno verificati gli avanzamenti rispetto agli obiettivi prefissati e pianificati i cicli successivi. Questa struttura garantirà un controllo continuo sull'evoluzione del progetto, facilitando l'adattamento alle necessità emergenti e migliorando la collaborazione tra le parti.
-
-
-
-= *Periodi*
-
-Per ogni periodo si riportano di seguito le seguenti informazioni:
-- Data di inizio, data di fine prevista, data di fine attuale ed eventuali giorni di ritardo;
-- Pianificazione delle attività da svolgere al suo interno (avanzamento atteso), con tanto di potenziali rischi;
-- Tempo stimato per poter completare tutte le attività previste (preventivo);
-- Confronto fra il lavoro svolto (avanzamento conseguito) e quello preventivato, con annessa analisi
-dei costi;
-- Rischi eﬀettivamente occorsi, valutandone il loro impatto e la loro mitigazione;
-- Retrospettiva di periodo per capire cosa e come migliorare in futuro e cosa invece mantenere;
-
-I periodi del progetto sono suddivisi in due fasi, ciascuna corrispondente a una revisione di avanzamento:
-
-- #glossary("RTB")
-- #glossary("PB")
-
-Ogni fase si concentra sulla preparazione dei documenti e artefatti richiesti dalle specifiche revisioni, come indicato nella tabella #num_tab_doc_revisioni.
-
-#align(center)[ #table( columns: 3, align: (left, center, center), [Revisione], [Documenti richiesti], [Artefatti], [#glossary("RTB")], [#glossary("Piano di progetto"), #glossary("Piano di qualifica"), #glossary("Norme di progetto"), #glossary("Analisi dei requisiti"), #glossary("Glossario")], [#glossary("PoC") (Proof of Concept)], [#glossary("PB")], [#glossary("Specifica tecnica"), #glossary("Manuale utente"), #glossary("Piano di progetto"), #glossary("Piano di qualifica"), #glossary("Norme di progetto"), #glossary("Analisi dei requisiti"), #glossary("Glossario")], [#glossary("MVP") (Minimum Viable Product)], ) ]
-
-#align(center)[ Tabella #num_tab_doc_revisioni: Documenti e artefatti richiesti ]
-
-== *RTB*
->>>>>>> 448dfb372a5e535786094fa7532b27ec1afed6af
