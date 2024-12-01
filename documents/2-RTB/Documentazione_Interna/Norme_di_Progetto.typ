@@ -812,11 +812,11 @@ Il contenuto della repository è organizzato in due #glossary("branch") distinti
 - *`master`*: contiene i file PDF compilati.
 - *`develop`*: ospita i sorgenti #glossary("Typst"). Ogni volta che un file viene aggiunto o modificato in questo #glossary("branch"), il sistema avvia automaticamente la compilazione e carica il risultato nel branch `master`, rendendo i documenti compilati accessibili a tutti.
 
-Per entrambe i #glossary("branch"), è stata adottata una struttura chiara che separa i documenti dai file di supporto, come `LICENSE`, `README`, _actions_, _template_ e _images_. Infatti la documentazione è raccolta all’interno della cartella *`documents`*, che include i materiali relativi alle varie fasi del progetto: 
+Per entrambi i #glossary("branch"), è stata adottata una struttura chiara che separa i documenti dai file di supporto, come `LICENSE`, `README`, _actions_, _template_ e _images_. Infatti la documentazione è raccolta all’interno della cartella *`documents`*, che include i materiali relativi alle varie fasi del progetto: 
 
 - *`1-Candidatura`*: documenti relativi alla gara per l'aggiudicazione dell'appalto dei capitolati.
-- *`2-RTB`*: _Requirements and Technology Baseline_, definisce i requisiti da soddisfare in collaborazione con il proponente e giustifica la scelta di tecnologie, framework e librerie, dimostrandone l’adeguatezza e la compatibilità.
-- *`3-PB`*: _Product Baseline_, valuta la maturità della baseline architetturale del software e la sua implementazione, con l’obiettivo di raggiungere l’*#glossary("MVP")* (Minimum Viable Product).
+- *`2-RTB`*: _Requirements and Technology Baseline_, definisce i requisiti da soddisfare in collaborazione con il proponente e giustifica la scelta di tecnologie, framework e librerie, dimostrandone l’adeguatezza e la compatibilità. Questa cartella contiene tutti i documenti relativi alla prima revisione di avanzamento (*`RTB`*).
+- *`3-PB`*: _Product Baseline_, valuta la maturità della baseline architetturale del software e la sua implementazione, con l’obiettivo di raggiungere l’*#glossary("MVP")* (Minimum Viable Product). Questa cartella contiene tutti i documenti relativi alla seconda e ultima revisione di avanzamento (*`PB`*).
 
 Queste cartelle sono organizzate nel modo seguente, (i termini in *`grassetto`* indicano il nome di una directory):
 // Da rivedere prima di approvazione
@@ -863,7 +863,7 @@ La sincronizzazione avviene attraverso #glossary("repository") condivise su #glo
 La struttura dei branch descritta in precedenza si basa sulla metodologia single-purpose, che prevede la creazione di un #glossary("branch") per ciascuna attività specifica. Questo approccio consente di suddividere il lavoro in compiti distinti, garantendo un flusso di lavoro stabile e organizzato. Una volta completata un'attività, il #glossary("branch") corrispondente viene unito al "branch principale" (*`develop`*) e successivamente eliminato. È importante chiarire che *`master`* è il "branch di default", mentre per "branch principale" si intende il #glossary("branch") in cui le modifiche devono essere integrate.
 
 ==== Pull request
-Al termine di un'attività o di una sua parte, il membro incaricato apre una #glossary("Pull Request"), indicando il verificatore. Quest'ultimo, dopo aver convalidato le modifiche, si occupa di eseguire il #glossary("merge") della #glossary("Pull Request") nel "branch principale" e di chiudere l'#glossary("issue") associata.
+Al termine di un'attività o di una sua parte, il membro incaricato apre una #glossary("Pull Request"), indicando il verificatore. Quest'ultimo, dopo aver convalidato le modifiche, esegue il #glossary("merge") della #glossary("Pull Request") nel "branch principale", chiude l'#glossary("issue") associata ed elimina il branch di lavoro se non più necessario.
 
 == Gestione della qualità
 === Scopo
