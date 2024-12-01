@@ -8,6 +8,13 @@
     p.cardin,
   ),
   changelog: (
+    "0.0.11",
+    "2024-11-30",
+    (p.campagnaro),
+    (p.ferazzani),
+    [
+      Stesura capitolo: Processi di supporto - Gestione della configurazione
+    ],
     "0.0.10",
     "2024-11-28",
     (p.campagnaro),
@@ -81,7 +88,7 @@
   ),
 
   show_images_list: true,
-  show_tables_list: true,
+  show_tables_list: false,
 )
 
 = Introduzione
@@ -772,8 +779,91 @@ Per la realizzazione della documentazione sono stati scelti dal team i seguenti 
 - *#glossary("Typst")*: linguaggio utilizzato per la stesura dei documenti;
 - *#glossary("GitHub")*: piattaforma per l'hosting di codice sorgente, utilizzata per condividere file, verificarli, gestirne le versioni e automatizzare determinati processi, seguendo il principio della #glossary("Documentation as Code").
 
+== Gestione della configurazione
+=== Descrizione e Scopo
+Il processo di gestione della configurazione si applica durante l’intero ciclo di vita di un progetto #glossary("software") e definisce regole per assicurare il monitoraggio delle modifiche apportate a documentazione e codice. Questo processo permette di accedere in qualsiasi momento allo storico delle modifiche, offrendo una visione chiara delle motivazioni alla base di ogni cambiamento e dei relativi autori, migliorando così la tracciabilità e la responsabilità all’interno del team.
 
+=== Versionamento
+Il versionamento consente di monitorare e documentare le modifiche apportate a un file nel tempo, permettendo di visualizzare l'evoluzione del contenuto e, se necessario, ripristinare una versione precedente.
 
+Il team ha adottato un formato specifico per il versionamento dei documenti: *`X.Y.Z`*, dove ciascun valore rappresenta:
+
+- *`X`*: identifica il completamento di una fase significativa del progetto. Questa versione viene definita dal responsabile durante la validazione.
+- *`Y`*: indica una versione intermedia che integra più modifiche incrementali (*`Z`*) in modo coerente. Le versioni con il formato *`X.Y.0`* sono considerate stabili, anche se non completamente definitive.
+- *`Z`*: corrisponde a modifiche incrementali minori, come l’aggiunta o l’aggiornamento di una sezione.
+
+Ogni modifica approvata comporta un incremento di versione, il cui impatto dipende dall’entità della modifica stessa. Inoltre, un aggiornamento di una cifra comporta l’azzeramento delle cifre a destra di essa. Per i verbali e il glossario, viene utilizzato un formato ridotto a due cifre, poiché, per i primi, il testo è generalmente breve e rapido da redigere, per il glossario, le modifiche devono sempre portare a una versione stabile.
+
+=== Tecnologie utilizzate
+- *Git*: strumento per il controllo di versione, utilizzato per tracciare le modifiche a documenti e codice sorgente.
+- *GitHub*: servizio di hosting per progetti software utilizzato per gestire il versionamento e coordinare le attività del team. Include anche un #glossary("Issue Tracking System") per monitorare e gestire segnalazioni e attività.
+
+=== Repository
+==== Lista repository
+Il team all’interno della propria #glossary("GitHub Organization") utilizza 3 repository:
+
+- *`Docs`*: repository destinata alla gestione della documentazione del progetto;
+- *`BuddyBot`*: repository dedicata allo sviluppo e all'implementazione del software;
+- *`SweeTenTeam.github.io`*: repository utilizzata per il sito vetrina del progetto.
+
+==== Struttura della repository Docs
+Il contenuto della repository è organizzato in due #glossary("branch") distinti, ciascuno con una funzione specifica:
+
+- *`master`*: contiene i file PDF compilati.
+- *`develop`*: ospita i sorgenti #glossary("Typst"). Ogni volta che un file viene aggiunto o modificato in questo #glossary("branch"), il sistema avvia automaticamente la compilazione e carica il risultato nel branch `master`, rendendo i documenti compilati accessibili a tutti.
+
+Per entrambi i #glossary("branch"), è stata adottata una struttura chiara che separa i documenti dai file di supporto, come `LICENSE`, `README`, _actions_, _template_ e _images_. Infatti la documentazione è raccolta all’interno della cartella *`documents`*, che include i materiali relativi alle varie fasi del progetto: 
+
+- *`1-Candidatura`*: documenti relativi alla gara per l'aggiudicazione dell'appalto dei capitolati.
+- *`2-RTB`*: _Requirements and Technology Baseline_, definisce i requisiti da soddisfare in collaborazione con il proponente e giustifica la scelta di tecnologie, framework e librerie, dimostrandone l’adeguatezza e la compatibilità. Questa cartella contiene tutti i documenti relativi alla prima revisione di avanzamento (*`RTB`*).
+- *`3-PB`*: _Product Baseline_, valuta la maturità della baseline architetturale del software e la sua implementazione, con l’obiettivo di raggiungere l’*#glossary("MVP")* (Minimum Viable Product). Questa cartella contiene tutti i documenti relativi alla seconda e ultima revisione di avanzamento (*`PB`*).
+
+Queste cartelle sono organizzate nel modo seguente, (i termini in *`grassetto`* indicano il nome di una directory):
+// Da rivedere prima di approvazione
+- *`1-Candidatura`*:
+  - *`Verbali_Esterni`*;
+  - *`Verbali_Interni`*;
+  - `Dichiarazione_Degli_Impegni_V1.0.pdf`;
+  - `Lettera_di_presentazione_V1.0.pdf`;
+  - `Valutazione_Capitolati_V1.0.pdf`.
+
+- *`2-RTB`*:
+  - *`Documentazione_Esterna`*:
+    - *`Verbali_Esterni`*;
+    - `Analisi_dei_Requisiti_v1.0.0.pdf`;
+    - `Glossario_v1.0.pdf`;
+    - `Piano_di_Progetto_v1.0.0.pdf`;
+    - `Piano_di_Qualifica_v1.0.0.pdf`.
+    
+  - *`Documentazione_Interna`*:
+    - *`Verbali_Interni`*;
+    - `Norme_di_Progetto_v1.0.0.pdf`.
+
+- *`3-PB`*
+
+==== Struttura della repository BuddyBot
+In questa repository utilizziamo due branch principali:
+
+- *`master`*: contiene l'ultima versione stabile del codice.
+- *`develop`*: raccoglie le ultime modifiche in corso di sviluppo.
+
+Le modifiche apportate in `develop` vengono generalmente integrate in `master` al termine di ogni periodo di lavoro.
+
+La struttura della repository è organizzata come segue, con i nomi delle directory indicati in *grassetto*:
+// Da rivedere prima di approvazione
+- *`PoC`*
+
+==== Sito Vetrina
+La repository #link("https://github.com/SweeTenTeam/SweeTenTeam.github.io","SweeTenTeam.github.io") ospita il codice del sito dedicato al progetto. Il sito ha l'obiettivo di fornire un'interfaccia veloce e intuitiva, nella quale poter visualizzare ergonomicamente e in maniera organizzata i documenti relativi al progetto stesso. Tra le funzionalità del sito, è inclusa anche la visualizzazione diretta del #link("https://sweetenteam.github.io/docs/RTB/Glossario","Glossario"), che fornisce definizioni chiare e precise dei termini rilevanti. Questa sezione aiuta a prevenire fraintendimenti o interpretazioni ambigue e permette di accedere rapidamente alle definizioni cliccando sui termini presenti nei documenti.
+
+=== Sincornizzazione
+La sincronizzazione avviene attraverso #glossary("repository") condivise su #glossary("GitHub"), dove ogni attività è tracciata tramite un'apposita #glossary("issue"). All'inizio di ogni task, il membro del team crea un nuovo #glossary("branch") a partire da *`develop`*. Questo approccio consente di avere ambienti di lavoro indipendenti, permettendo di svolgere più attività in parallelo e ottimizzando la collaborazione all'interno del team.
+
+==== Branch
+La struttura dei branch descritta in precedenza si basa sulla metodologia single-purpose, che prevede la creazione di un #glossary("branch") per ciascuna attività specifica. Questo approccio consente di suddividere il lavoro in compiti distinti, garantendo un flusso di lavoro stabile e organizzato. Una volta completata un'attività, il #glossary("branch") corrispondente viene unito al "branch principale" (*`develop`*) e successivamente eliminato. È importante chiarire che *`master`* è il "branch di default", mentre per "branch principale" si intende il #glossary("branch") in cui le modifiche devono essere integrate.
+
+==== Pull request
+Al termine di un'attività o di una sua parte, il membro incaricato apre una #glossary("Pull Request"), indicando il verificatore. Quest'ultimo, dopo aver convalidato le modifiche, esegue il #glossary("merge") della #glossary("Pull Request") nel "branch principale", chiude l'#glossary("issue") associata ed elimina il branch di lavoro se non più necessario.
 
 == Gestione della qualità
 === Scopo
@@ -804,7 +894,6 @@ Le categorie di test sono:
 + #glossary("Test di sistema"): verifica il funzionamento del sistema nel suo intero. I requisiti funzionali, di vincolo, di qualità e di prestazione precedentemente concordati con il Proponente sono testati e verificati in questa fase.
 + #glossary("Test di accettazione"): verifica il soddisfacimento del Proponente rispetto ai requisiti concordati. Questi test sono eseguiti in presenza del Proponente stesso. Il superamento di questi test garantisce il rilascio del prodotto.
 
-#pagebreak()
 
 === Metriche <metriche>
 
@@ -1022,7 +1111,6 @@ Tutte le comunicazioni esterne sono gestite dal Responsabile del Progetto, previ
 
 Il responsabile attuale ha il compito di introdurre i punti che saranno trattati nella riunione e di redigere il verbale interno, oltre che a decidere chi lo verificherà. La riunione avviene su Discord, in un canale dedicato.
 
-#pagebreak()
 ===== Interne <interno>
 
 Le riunioni interne avvengono settimanalmente, il giorno e l'ora sono decisi dal Responsabile e comunicati al Team in base alle esigenze di ogni membro. Queste riunioni servono per discutere lo stato del progetto, le attività svolte e da svolgere, e per prendere decisioni importanti.
@@ -1188,7 +1276,6 @@ Al fine di promuovere un ambiente di lavoro efficace ed efficiente, che garantis
 Al fine di completare questo percorso formativo, ogni membro utilizzerà tutti gli strumenti che ritiene necessari e li condividerà tramite link o file con gli altri membri del Team attraverso i canali di comunicazione interna dedicati al fine di promuovere la condivisione delle conoscenze.
 
 #pagebreak()
-
 = Standard `ISO/IEC 9126`
 
 Lo standard `ISO/IEC 9126` è una norma internazionale che ha contribuito a definire i parametri fondamentali per la valutazione della qualità e la validazione del software. Questo standard rappresenta un insieme di norme e linee guida dettagliate, oltre che a criteri di valutazione, per gli attributi di qualità di un prodotto software.
@@ -1272,6 +1359,7 @@ Le sotto-categorie di questo parametro sono:
 - _*Coesistenza*_: Capacità del software di coesistere all'interno di un ambiente o sistema condiviso con altri applicativi.
 - _*Conformità alla portabilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard e convenzioni di portabilità.
 
+#pagebreak()
 = Metriche Di Qualità Del Processo <qualità_del_processo>
 
 Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: *#align(center, "M-PRC-[S.I.]")*
@@ -1302,7 +1390,6 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfruttano un modulo specifico.
 - *M-PRC-SFO* - Structural Fan-Out: componenti utilizzate dal modulo in osservazione.
 
-#pagebreak()
 == Processi di supporto
 === Documentazione
 
@@ -1329,7 +1416,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-TE*: - Temporal Efficiency: Monitoraggio dell'efficienza temporale.
 #align($"TE" = frac(O#sub("orologio", size: 1em), O#sub("produttive", size: 1em))$, center)
 
-
+#pagebreak()
 = Metriche Di Qualità Del Prodotto
 
 Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche seguono la struttura definita al paragrafo #link(<metriche>, "'metriche'"). In questo capitolo, la prima parte della struttura sarà: *#align("M-PRD-[S.I.]", center)*
