@@ -12,7 +12,14 @@
     p.azzurro,
   ),
   changelog: (
-        "0.0.2",
+    "0.0.3",
+    "2024-11-29",
+    p.benedetti,
+    p.fracaro,
+    [
+      Stesura sezioni 1 e 2 del documento
+    ],
+    "0.0.2",
     "2024-11-21",
     (p.fracaro),
     (p.benedetti),
@@ -75,12 +82,10 @@ La presenza di un termine all'interno del Glossario è evidenziata dal #glossary
 - Regolamento progetto didattico#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf
 
 === Riferimenti informativi
-- T2 - Processi di ciclo di vita del software
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
-- T4 - Gestione di progetto
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
-- Glossario
-https://sweetenteam.github.io/docs/RTB/Glossario
+- T2 - Processi di ciclo di vita del software#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
+
+- T4 - Gestione di progetto#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
+- Glossario#linebreak()https://sweetenteam.github.io/docs/RTB/Glossario
 
 #pagebreak()
 = *Analisi dei rischi*
@@ -113,14 +118,14 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: (auto, 1fr),
     inset: (5pt),
     fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
-    [*Descrizione*], [Mancanza di alcuni membri del gruppo o dell'interezza dello stesso di esperienze professionali nella gestione e realizzazione di un progetto software. Mancanza di conoscenze delle tecnologie necessarie allo sviluppo del prodotto.],
+    [*Descrizione*], [Assenza di esperienza professionale, da parte di alcuni membri del team o dell'intero gruppo, nella gestione e realizzazione di un progetto software. Insufficiente conoscenza delle tecnologie richieste per lo sviluppo del prodotto.],
     [*Grado di rischio*], [5],
     [*Pericolosità*], [Alta],
-    [*Precauzioni*], [Studio a monte di pratiche utilizzate in contesti realistici, e delle tecnologie coinvolte. Supporto interno tra i membri del team. Inoltre la metodologia di lavoro utilizzata dal gruppo di progetto, la quale prevede la divisioni dei compiti relativi relativi ad una singola sprint da svolgere generalmente in coppia, favorisce la condivisione delle conoscenze e aiuto reciproco per sopperire a lacune di tipo tecnologico.],
+    [*Precauzioni*], [Studio preliminare delle pratiche utilizzate in contesti reali e delle tecnologie coinvolte. È previsto anche un supporto interno tra i membri del team. La metodologia di lavoro adottata dal gruppo, con compiti di ogni sprint spesso svolti in coppia, facilita la condivisione delle conoscenze e il mutuo aiuto per superare eventuali carenze tecnologiche.],
     [*Piano di contingenza*], [Comunicazioni interne ed esterne rapide in caso di dubbi per chiarimenti e delucidazioni. Eventuali #glossary("workshop") da parte dei membri del gruppo più esperti su specifiche tecnologie.],
   )
 )
-#align(center)[Tabella 2: RP1 - Mancanza di competenze tecniche specifiche.]
+#align(center)[Tabella 1: RP1 - Mancanza di competenze tecniche specifiche.]
 
 #table(
   columns: (1fr),
@@ -132,15 +137,15 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: (auto, 1fr),
     inset: (5pt),
     fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
-    [*Descrizione*], [Irregolarità nell'impegno di uno o più componenti del team rispetto a quanto patuito.],
+    [*Descrizione*], [Discontinuità nell'impegno di uno o più membri del team rispetto agli accordi stabiliti.],
     [*Grado di rischio*], [3],
     [*Pericolosità*], [Alta],
     [*Precauzioni*], [Buone pratiche di pianificazione, e assegnazione dei ruoli in modo da avere un #glossary("cruscotto") completo dei lavori fin da subito. Mantenere una comunicazione costante nel tempo tra tutti i membri del team di progetto.],
-    [*Piano di contingenza*], [Comunicazione e discussione con il docente del corso. Conseguente adeguamento e ridistribuzione dei compiti.],
+    [*Piano di contingenza*], [Interazione e confronto con il docente del corso, con conseguente adattamento e redistribuzione delle attività.],
   )
 )
-#align(center)[Tabella 3: RP2 - Non conformità agli impegni dichiarati.]
-
+#align(center)[Tabella 2: RP2 - Non conformità agli impegni dichiarati.]
+#pagebreak()
 #table(
   columns: (1fr),
   inset: 10pt,
@@ -151,14 +156,14 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: (auto, 1fr),
     inset: (5pt),
     fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
-    [*Descrizione*], [Intesi a livello personale, si intendono tutte le possibili divergenze tra le componenti del team che possono portare a tensione e discussioni, intaccando così l'armonia e la collaborazione all'interno del gruppo di lavoro.],
+    [*Descrizione*], [A livello personale, si riferiscono a tutte le possibili divergenze tra i membri del team che possono generare tensioni e discussioni, compromettendo così l'armonia e la collaborazione all'interno del gruppo di lavoro.],
     [*Grado di rischio*], [3],
-    [*Pericolosità*], [Alta],
+    [*Pericolosità*], [Media],
     [*Precauzioni*], [Instaurare un rapporto umano e sociale tra i membri del gruppo. Avere pratiche di risoluzione dei conflitti efficaci e veloci. Inotre il Responsabile ha il compito di intervenire e cercare di mediare, cercando di portare ad una risoluzione che ristabilisca il clima di lavoro positivo.],
-    [*Piano di contingenza*], [Definire dei meeting nel quale esporre le varie divergenze e poi cercare di arrivare ad una soluzione di gruppo, trammite eventuali votazioni. Avviare una ipotetica comunicazione e discussione con il docente del corso. Conseguente adeguamento e ridistribuzione dei compiti.],
+    [*Piano di contingenza*], [Organizzare meeting per discutere le divergenze emerse e cercare di giungere a una soluzione condivisa, eventualmente attraverso votazioni. Avviare un confronto con il docente del corso per affrontare le problematiche, con successivo adeguamento e redistribuzione dei compiti.],
   )
 )
-#align(center)[Tabella 4: RP3 - Problemi di comunicazione e collaborazione.]
+#align(center)[Tabella 3: RP3 - Problemi di comunicazione e collaborazione.]
 
 #table(
   columns: (1fr),
@@ -170,122 +175,90 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: (auto, 1fr),
     inset: (5pt),
     fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
-    [*Descrizione*], [Malattia di uno o più membri del team, indisponibilità legata a eventuali impegni universitari o personali, o problematiche di altro genere. Questa problematica potrebbe essere più evidente durante il periodo invernale caratterizzato dalle molte influenze stagionali, in prossimità delle vacanze e delle sessioni di esami.],
+    [*Descrizione*], [Malattia di uno o più membri del team, indisponibilità dovuta a impegni universitari o personali, o altre problematiche. Questa difficoltà potrebbe manifestarsi in modo più evidente durante il periodo invernale, quando le influenze stagionali sono più frequenti, così come in prossimità delle vacanze e delle sessioni di esami.],
     [*Grado di rischio*], [3],
     [*Pericolosità*], [Media],
     [*Precauzioni*], [Gestione delle attività il più possibile preventiva, definendo deadline "larghe" che lascino spazio a imprevisti di questo genere. Mantenere una comunicazione con tutti i membri del gruppo e questi devono impegnarsi ad avvisare tempostivamente i colleghi così da provvedere ad eventuali #glossary("context switch").],
     [*Piano di contingenza*], [Conseguente adeguamento e ridistribuzione dei compiti],
   )
 )
-#align(center)[Tabella 5: RP4 - Malattia o indisponibilità.]
-
+#align(center)[Tabella 4: RP4 - Malattia o indisponibilità.]
+#pagebreak()
 == Rischi organizzativi interni ed esterni 
 === Interni
-=== Esterni
-== Rischi tecnologici/software
-#pagebreak()
-= *Calendario di progetto*
-== Introduzione
-In questa sezione vengono presentate le tempistiche delle revisioni principali del progetto, con le relative scadenze, tenendo conto dei rischi identificati nella pianificazione.
-
-== Prima stesura *2024/11/27* 
-Partendo delle osservazioni fatte nella sezione 2 _Analisi dei rischi_, si è deciso di pianificare lo svolgimento dei lavori in modo da completare i documenti e gli artefatti necessari per le due revisioni di progetto nelle date riportate nella tabella #num_tab_calendario_prj.
-
-#align(center)[#table(
-  columns: 2,
-  align: left,
-    [*Revisione*], [*Data*],
-    [#glossary("RTB") (Requirements and Technology Baseline)], [2025-01-13],
-    [#glossary("PB") (Product Baseline)], [2025-03-28],
-)]
-#align(center)[Tabella #num_tab_calendario_prj: Calendario di progetto]
-
-
-= *Stima costi realizzazione*
-== Introduzione
-Questa sezione presenta la stima dei costi per la realizzazione del progetto, calcolata in base al costo orario dei ruoli e alle ore previste per ciascuna attività. La stima si basa su quanto discusso nella sezione 2 _Analisi dei rischi_ e nei documenti _#glossary("Analisi dei requisiti")_ e _Dichiarazione degli impegni_.
-
-
-== Prima stesura *2024/11/27* 
-#align(center)[
-  #table(
-    columns: 4,
-    align: (left, center, center, center),
-      [*Ruolo*], [*Costo orario (€ / h)*], [*Ore per ruolo (h)*], [*Ore per membro (h)*],
-      [Responsabile], [30], [63], [9],
-      [Amministratore], [20], [56], [8],
-      [Analista], [25], [77], [11],
-      [Progettista], [25], [119], [17],
-      [Programmatore], [15], [168], [24],
-      [Verificatore], [15], [154], [22],
-      [Totale], [€ 12.740], [637], [91],
+#table(
+  columns: (1fr),
+  inset: 10pt,
+  align: center,
+  fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+  [*ROI1 - Comunicativi e organizzativi.*], 
+  table(
+    columns: (auto, 1fr),
+    inset: (5pt),
+    fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+    [*Descrizione*], [Difficoltà nell'organizzare le diverse sezioni del team e nel mantenere comunicazioni interne efficaci, con conseguenti disguidi e ritardi nell'avanzamento del progetto.],
+    [*Grado di rischio*], [3],
+    [*Pericolosità*], [Media],
+    [*Precauzioni*], [Scelta di strumenti di comunicazione "affidabili" e pratici, utilizzati sia per discussioni generali tramite chat testuali o vocali, sia per gestire le attività da svolgere e monitorarne l'avanzamento nel tempo, tramite strumenti come gli ITS e i grafici di Gantt. Elevato numero di meeting interni, anche solo a scopo organizzativo.],
+    [*Piano di contingenza*], [Conseguente adeguamento e ridistribuzione dei compiti.],
   )
-]
+)
+#align(center)[Tabella 5: ROI1 - Comunicativi e organizzativi.]
 
-#align(center)[
-  Tabella #num_tab_prev_costi: Preventivo costi
-]
+#table(
+  columns: (1fr),
+  inset: 10pt,
+  align: center,
+  fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+  [*ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.*],
+  table(columns: (auto, 1fr), inset: (5pt),
+  fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+  [*Descrizione*], [Metodologia inadeguata o inefficace per assegnare i ruoli e distribuire le attività.],
+  [*Grado di rischio*], [3],
+  [*Pericolosità*], [Alta],
+  [*Precauzioni*], [Adottare in anticipo una metodologia consolidata nel settore, con evidenze di successo.],
+  [*Piano di contingenza*], [Rivedere e ridistribuire i compiti in base alle necessità.],)
+)
+#align(center)[Tabella 6: ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.]
+#pagebreak()
+=== Esterni
+#table(
+  columns: (1fr),
+  inset: 10pt,
+  align: center,
+  fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+  [*ROE1 - Problemi di comunicazione.*],
+  table(
+    columns: (auto, 1fr),
+    inset: (5pt),
+    fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+    [*Descrizione*], [Difficoltà nella comunicazione con soggetti esterni, come il proponente e il committente.],
+    [*Grado di rischio*], [3],
+    [*Pericolosità*], [Media],
+    [*Precauzioni*], [Scelta di mezzi di comunicazione pratici ed efficienti. Comunicazioni tempestive verso l'esterno. Invio anticipato di domande e richieste di materiale utile prima di ogni incontro con il proponente, per garantire tempo sufficiente per risposte complete e per ottimizzare l'efficacia del meeting, favorendo uno sviluppo continuo senza interruzioni dovute alla necessità di feedback.],
+    [*Piano di contingenza*], [Chiarimento con il committente e il proponente, seguito da un adeguamento e dall'introduzione di nuovi strumenti di comunicazione.],
+  )
+)
+#align(center)[Tabella 7: ROE1 - Problemi di comunicazione.]
 
-Il costo totale del progetto è fissato a € 12.740, rappresentando il limite massimo del budget disponibile. Qualora si presentasse il rischio di superare tale importo, sarà avviata una rinegoziazione dei requisiti tra il gruppo fornitore e il proponente.
+== Rischi tecnologici/software
+#table(
+  columns: (1fr),
+  inset: 10pt,
+  align: center,
+  fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+  [*RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.*], 
+  table(
+    columns: (auto, 1fr),
+    inset: (5pt),
+    fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+    [*Descrizione*], [Situazione in cui alcune tecnologie selezionate risultano indisponibili o subiscono modifiche sostanziali che potrebbero compromettere l'efficacia del lavoro già svolto.],
+    [*Grado di rischio*], [2],
+    [*Pericolosità*], [Alta],
+    [*Precauzioni*], [Effettuare una scelta oculata delle tecnologie. Progettare un ambiente di lavoro che possa adattarsi ai cambiamenti. Collaborare attivamente con il proponente, che riveste il ruolo di mentore, per chiarire eventuali dubbi e ricevere consigli da una figura esperta nel settore.],
+    [*Piano di contingenza*], [Confronto diretto con il proponente per definire strategie di adattamento e valutare nuove soluzioni tecnologiche per il progetto.],
+  )
+)
+#align(center)[Tabella 8: RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.]
 
-= *Modello di Sviluppo*
-
-== Modello adottato
-
-A seguito di un confronto approfondito con l'azienda proponente e dopo un'attenta valutazione delle metodologie di sviluppo software, il team ha optato per un approccio #glossary("Agile"). La scelta è stata fortemente incoraggiata dall'azienda, che ha condiviso la propria esperienza positiva maturata nell'adozione di questa metodologia in contesti di sviluppo software complessi.
-
-A differenza dei modelli tradizionali, l'#glossary("Agile") si caratterizza per un approccio iterativo e dinamico. Il modello scelto implementato prevede cicli di sviluppo della durata di una o due settimane, durante i quali il team lavora in modo autonomo, pianificando, eseguendo e valutando le attività progettuali.
-
-== Principi Fondamentali
-
-L'approccio #glossary("Agile") si basa su alcuni principi chiave che lo distinguono dai modelli di sviluppo tradizionali:
-
-- *Flessibilità*: Capacità di adattarsi rapidamente ai cambiamenti dei requisiti, mantenendo alta la qualità del prodotto.
-- *Collaborazione*: Creazione di un ambiente di lavoro che favorisce comunicazione continua, condivisione delle conoscenze e supporto reciproco.
-- *Sviluppo Incrementale*: Realizzazione del prodotto attraverso rilasci frequenti e funzionali, che permettono una verifica continua.
-
-== Vantaggi Attesi
-
-L'adozione del modello #glossary("Agile") offre diversi benefici strategici:
-
-- *Gestione dei Rischi*: Cicli brevi consentono di identificare e risolvere tempestivamente le criticità, riducendo i rischi di fallimento del progetto.
-- *Soddisfazione degli Stakeholder*: Review periodiche e feedback continui garantiscono che il prodotto finale corrisponda alle aspettative dei committenti.
-- *Motivazione del Team*: L'approccio auto-organizzativo e la visualizzazione dei progressi mantengono alto il coinvolgimento dei membri.
-
-== Pratiche Implementative
-
-Il modello #glossary("Agile") si concretizzerà attraverso:
-
-- Utilizzo di strumenti di Continuous Integration/Continuous Deployment (CI/CD)
-- Pianificazione periodica e revisione delle attività
-- Analisi critica e miglioramento continuo dei processi
-- Revisione collaborativa del codice
-- Monitoraggio delle performance del team e del progetto
-
-In particolare, i periodi di sviluppo saranno suddivisi in #glossary("sprint") di due settimane per il primo periodo (#glossary("RTB")), con successiva riduzione a #glossary("sprint") settimanali nel secondo periodo (#glossary("PB")). Ogni #glossary("sprint") sarà seguito da incontri periodici tra il team di sviluppo e l'azienda proponente, durante i quali verranno verificati gli avanzamenti rispetto agli obiettivi prefissati e pianificati i cicli successivi. Questa struttura garantirà un controllo continuo sull'evoluzione del progetto, facilitando l'adattamento alle necessità emergenti e migliorando la collaborazione tra le parti.
-
-
-
-= *Periodi*
-
-Per ogni periodo si riportano di seguito le seguenti informazioni:
-- Data di inizio, data di fine prevista, data di fine attuale ed eventuali giorni di ritardo;
-- Pianificazione delle attività da svolgere al suo interno (avanzamento atteso), con tanto di potenziali rischi;
-- Tempo stimato per poter completare tutte le attività previste (preventivo);
-- Confronto fra il lavoro svolto (avanzamento conseguito) e quello preventivato, con annessa analisi
-dei costi;
-- Rischi eﬀettivamente occorsi, valutandone il loro impatto e la loro mitigazione;
-- Retrospettiva di periodo per capire cosa e come migliorare in futuro e cosa invece mantenere;
-
-I periodi del progetto sono suddivisi in due fasi, ciascuna corrispondente a una revisione di avanzamento:
-
-- #glossary("RTB")
-- #glossary("PB")
-
-Ogni fase si concentra sulla preparazione dei documenti e artefatti richiesti dalle specifiche revisioni, come indicato nella tabella #num_tab_doc_revisioni.
-
-#align(center)[ #table( columns: 3, align: (left, center, center), [Revisione], [Documenti richiesti], [Artefatti], [#glossary("RTB")], [#glossary("Piano di progetto"), #glossary("Piano di qualifica"), #glossary("Norme di progetto"), #glossary("Analisi dei requisiti"), #glossary("Glossario")], [#glossary("PoC") (Proof of Concept)], [#glossary("PB")], [#glossary("Specifica tecnica"), #glossary("Manuale utente"), #glossary("Piano di progetto"), #glossary("Piano di qualifica"), #glossary("Norme di progetto"), #glossary("Analisi dei requisiti"), #glossary("Glossario")], [#glossary("MVP") (Minimum Viable Product)], ) ]
-
-#align(center)[ Tabella #num_tab_doc_revisioni: Documenti e artefatti richiesti ]
-
-== *RTB*
+#pagebreak()
