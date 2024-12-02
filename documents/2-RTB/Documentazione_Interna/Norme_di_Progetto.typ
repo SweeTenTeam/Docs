@@ -8,6 +8,13 @@
     p.cardin,
   ),
   changelog: (
+    "0.1.0",
+    "2024-12-2",
+    (p.campagnaro),
+    (p.ferazzani),
+    [
+      Stesura capitoli: Processi di supporto - Verifica e Validazione
+    ],
     "0.0.11",
     "2024-11-30",
     (p.campagnaro),
@@ -742,13 +749,13 @@ Verranno redatti i seguenti documenti:
 ==== Nomi assegnati ai file
 I documenti PDF presenti nella #link("https://github.com/SweeTenTeam/Docs","repository Docs"), seguono precise convenzioni di denominazione in base al tipo di documento.
 
-- *Verbali*: per i verbali viene utilizzata una nomenclatura del tipo: #align(center)[*`[Verbale_Interno]/[Verbale_Esterno] + _ + [data] + _ + [versione]`*]
+- *Verbali*: per i verbali viene utilizzata una nomenclatura del tipo: #align(center)[*`[Verbale_Interno]/[Verbale_Esterno] + _ + [Data] + _ + [Versione]`*]
 
   - *Spaziatura*: fra le parole la spaziatura verrà sostituita da un underscore, ("*`_`*");
   - *Data*: scritta nel formato *`YYYY-MM-DD`*, dove `YYYY` indica l’anno, `MM` il mese e `DD` il giorno
   - *Versione*: scritta nel formato: *`v.X.Y.Z`*.
 
-- *Altri documenti*: i nomi di tutti gli altri documenti presenti nel progetto invece saranno del tipo: #align(center)[*`[Nome_del_File] + _ + [versione]`*]
+- *Altri documenti*: i nomi di tutti gli altri documenti presenti nel progetto invece saranno del tipo: #align(center)[*`[Nome_del_File] + _ + [Versione]`*]
 
   - *Nome_del_File*: le parole sono scritte in Title Case (con la prima lettera maiuscola per le parole principali, come sostantivi, verbi, aggettivi e avverbi, e in minuscolo per le parole secondarie, come preposizioni, congiunzioni e articoli) e separate da un underscore, ("*`_`*").
   - *Spaziatura*: fra le parole la spaziatura verrà sostituita da un underscore, ("*`_`*");
@@ -865,6 +872,98 @@ La struttura dei branch descritta in precedenza si basa sulla metodologia single
 ==== Pull request
 Al termine di un'attività o di una sua parte, il membro incaricato apre una #glossary("Pull Request"), indicando il verificatore. Quest'ultimo, dopo aver convalidato le modifiche, esegue il #glossary("merge") della #glossary("Pull Request") nel "branch principale", chiude l'#glossary("issue") associata ed elimina il branch di lavoro se non più necessario.
 
+== Verifica
+=== Scopo ed Aspettative
+La verifica nel ciclo di vita del #glossary("software") è un'attività costante che parte dalla fase di progettazione e continua fino alla manutenzione. Questo processo è fondamentale per assicurare che gli output del #glossary("software"), come codice sorgente, documentazione e test, rispettino le specifiche e gli obiettivi definiti, basandosi su principi di coerenza, completezza e accuratezza.
+
+Lo scopo primario è implementare un sistema di controllo per ogni prodotto, garantendo un'analisi efficace e risultati affidabili. Attraverso tecniche strutturate di analisi e test, si verifica la conformità dei prodotti ai requisiti prefissati. Procedure ben definite e criteri rigorosi, insieme alla validazione finale, rappresentano i pilastri per un processo di sviluppo corretto. 
+
+La solidità del prodotto, ottenuta grazie alla verifica, costituisce una base essenziale per facilitare la transizione alla fase di validazione e per garantire elevati standard di qualità.
+
+=== Descrizione
+La verifica è un'attività sistematica e continua, affidata ai verificatori, che si applica ai processi in corso per garantire il rispetto degli standard stabiliti. Questo processo si ripete ciclicamente e si adatta alle esigenze del progetto man mano che queste evolvono.
+
+Il `Piano di Qualifica` rappresenta lo strumento centrale della verifica. Esso specifica gli obiettivi, i criteri di accettazione e i metodi necessari per eseguire un controllo accurato ed efficace.
+
+La documentazione prodotta durante la verifica non è un semplice obbligo formale, ma uno strumento chiave per assicurare trasparenza, tracciabilità e ripetibilità. Nei punti seguenti verranno illustrate le attività da considerare per rendere la verifica più efficace.
+
+=== Analisi statica
+L'analisi statica è una metodologia di verifica che non richiede l'esecuzione del prodotto, ma si basa su una revisione approfondita del codice e della documentazione. Il suo scopo principale è garantire il rispetto dei requisiti, individuare eventuali errori e confermare che siano presenti tutte le caratteristiche richieste. Le due metodologie principali per condurre l’analisi statica, sono: l’#glossary("inspection") e il #glossary("walkthrough").
+
+==== Inspection
+Questa metodologia adotta un approccio strutturato per individuare potenziali difetti nel prodotto e nella documentazione. I difetti vengono inizialmente definiti e organizzati in specifiche liste di controllo, che vengono successivamente utilizzate in modo sistematico per valutare codice e documenti.
+
+==== Walkthrough
+A differenza del metodo #glossary("inspection"), il #glossary("walkthrough") privilegia una verifica più collaborativa tra l’autore e il verificatore, ponendo maggiore enfasi su un confronto approfondito. Questo metodo non si limita a individuare problemi specifici, ma mira a garantire una correttezza complessiva, adattandosi meglio al contesto del documento o del codice analizzato. Sebbene richieda un impiego maggiore di risorse, il #glossary("walkthrough") offre un livello più elevato di accuratezza. Per questo progetto, il team ha deciso di adottare questo approccio per la revisione della documentazione. Tale scelta nasce dall'esigenza di gestire un insieme di dati variegato e complesso, dove il metodo inspection potrebbe risultare troppo rigido per garantire una valutazione completa e adeguata.
+
+=== Analisi dinamica
+L'analisi dinamica si focalizza sul monitoraggio del comportamento del codice durante la sua esecuzione, per individuare eventuali errori. Questo tipo di metodologia è specifica per ogni progetto, poiché le attività di verifica, tra cui i test, sono determinati dal contenuto del codice e dai requisiti specifici. I test eseguiti in questa fase permettono una valutazione oggettiva del codice e delle sue funzionalità, poiché, essendo ripetibili, forniscono gli stessi risultati ogni volta, senza influenze da fattori esterni. La progettazione e l'esecuzione dei test si basano sui principi del #glossary("Modello a V").
+
+==== Test di unità
+I #glossary("Test di unità") si concentrano sulle singole componenti autonome del #glossary("software") e vengono generalmente implementati durante la fase di progettazione. 
+
+Questi test si suddividono in due categorie, a seconda del tipo di verifica da effettuare:
+
+- *Test funzionali*: accertano che l'output generato corrisponda ai risultati attesi.
+- *Test strutturali*: esaminano i vari percorsi del codice, verificando la copertura di tutti i cammini possibili attraverso una serie di test mirati.
+
+==== Test di integrazione
+I #glossary("Test di integrazione") vengono definiti durante la fase di progettazione dell'architettura, successivamente ai #glossary("Test di unità"). Questi test, con un approccio graduale, verificano la corretta integrazione tra le diverse unità #glossary("software") precedentemente testate. In caso di errori, è possibile annullare le modifiche apportate, ripristinando così uno stato sicuro.
+
+Esistono due principali approcci per condurre i #glossary("Test di integrazione"):
+
+- *`Top-down`*: si inizia testando le componenti di sistema con maggiori dipendenze e visibilità esterna, così da rendere subito disponibili le funzionalità di alto livello. Questo approccio favorisce una verifica approfondita delle funzionalità centrali.
+- *`Bottom-up`*: si parte dalle componenti con minori dipendenze e maggiore rilevanza interna, quelle meno visibili all’utente, per testare prima i componenti più basilari e meno complessi.
+
+==== Test di sistema
+I #glossary("Test di sistema") vengono progettati dopo i #glossary("Test di integrazione"). Questi test sono finalizzati a garantire il corretto funzionamento complessivo del sistema, verificando che tutti i requisiti #glossary("software"), definiti nel capitolato e redatti nel documento `Analisi dei Requisiti`, siano implementati e operativi.
+
+==== Controlli di regressione
+I controlli di regressione verificano che le modifiche apportate a specifiche componenti architetturali, come correzioni o espansioni, non compromettano il funzionamento dell'intero sistema. 
+
+Questi controlli consistono nella ripetizione mirata di:
+
+- #glossary("Test di unità") ; 
+- #glossary("Test di integrazione") ;
+- #glossary("Test di sistema"). 
+
+Questi sono fondamentali per assicurare che le funzionalità precedentemente verificate rimangano intatte e non si verifichino regressioni nel comportamento del sistema.
+
+==== Test di accettazione
+I #glossary("Test di accettazione") hanno lo scopo di garantire che il prodotto finale soddisfi le richieste e le aspettative stabilite dalla #glossary("Proponente"). Per questa ragione, devono essere svolti obbligatoriamente in sua presenza.
+
+==== Identificazione e stato dei test
+Ogni test è identificato da un codice univoco nel formato seguente: #align(center)[*`T[Tipologia]-[Numero]`*]
+
+Dove *`Tipologia`* indica il tipo di test:
+
+- *`U`*: Test di unità;
+- *`I`*: Test di integrazione;
+- *`S`*: Test di sistema;
+- *`A`*: Test di accettazione.
+
+Ogni test ha anche uno *`stato`* che ne indica l'esito:
+
+- *`V`*: Verificato (test superato);
+- *`NV`*: Non Verificato (test fallito);
+- *`NI`*: Non Implementato (test non eseguito).
+
+== Validazione
+=== Scopo ed aspettative
+La validazione rappresenta una fase cruciale nello sviluppo del #glossary("software"), che si assicura che il prodotto finale sia in linea con i requisiti e le esigenze del cliente.
+
+Questo processo si concentra su quattro aspetti principali:
+
+- *Conformità ai requisiti*: il prodotto deve rispettare tutte le specifiche definite;
+- *Correttezza operativa*: il prodotto deve operare correttamente, in conformità con la logica di progettazione;
+- *Usabilità*: il prodotto deve essere intuitivo e semplice da utilizzare per gli utenti;
+- *Efficacia*: il prodotto deve dimostrarsi efficace nel soddisfare le necessità dei clienti.
+
+L'aspettativa finale è quella di ottenere un prodotto che soddisfi completamente i requisiti definiti e funzioni in modo corretto.
+
+=== Descrizione
+Durante la fase di validazione, faremo riferimento ai test precedentemente eseguiti durante la verifica, come indicato nelle relative sezioni delle *`Norme di Progetto`*. Il processo di validazione del prodotto si concluderà con l'esecuzione dei test di accettazione, che ne confermeranno la conformità.
+
 == Gestione della qualità
 === Scopo
 Il processo di Gestione Della Qualità ha come obiettivo principale quello di garantire che i processi, i prodotti e gli artefatti tutti nel ciclo di vita del progetto, siano conformi ai piani specificati, allineati con i requisiti stabiliti e che, in generale, rispettino i canoni di qualità in precedenza decisi.
@@ -905,7 +1004,7 @@ Le metriche sono divise in due categorie:
 - Prodotto: PRD.
 
 Inoltre, le suddette metriche sono identificate come segue:
-*#align("M-[Categoria-Metrica]-[Sigla-Identificativa-Metrica]", center)*
+#align(center)[*`M-[Categoria-Metrica]-[Sigla-Identificativa-Metrica]`*]
 
 Ogni metrica ha:
 
@@ -1362,7 +1461,7 @@ Le sotto-categorie di questo parametro sono:
 #pagebreak()
 = Metriche Di Qualità Del Processo <qualità_del_processo>
 
-Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: *#align(center, "M-PRC-[S.I.]")*
+Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: #align(center)[*`M-PRC-[S.I.]`*]
 
 == Processi Primari
 
@@ -1377,6 +1476,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-BAC* - #glossary("Budget at Completion").
 
 
+#linebreak()
 === Sviluppo
 
 - *M-PRC-RSI* - Requirements Stability Index: stabilità dei requisiti nel tempo.
@@ -1390,6 +1490,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfruttano un modulo specifico.
 - *M-PRC-SFO* - Structural Fan-Out: componenti utilizzate dal modulo in osservazione.
 
+#linebreak()
 == Processi di supporto
 === Documentazione
 
@@ -1402,6 +1503,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 #linebreak()
 - *M-PRC-CO* - Correttezza Ortografica.
 
+#linebreak()
 === Verifica
 - *M-PRC-CC* - Code Coverage: Percentuale di codice testato rispetto al totale.
 
@@ -1410,6 +1512,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-QMS* - Quality Metrics Satisfied: grado di soddisfacimento delle metriche di qualità.
 
 
+#linebreak()
 == Processi Organizzativi
 
 - *M-PRC-NCR* - Non-Calculated Risk: monitoraggio dei rischi non inclusi nelle stime.
@@ -1419,7 +1522,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 #pagebreak()
 = Metriche Di Qualità Del Prodotto
 
-Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche seguono la struttura definita al paragrafo #link(<metriche>, "'metriche'"). In questo capitolo, la prima parte della struttura sarà: *#align("M-PRD-[S.I.]", center)*
+Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche seguono la struttura definita al paragrafo #link(<metriche>, "'metriche'"). In questo capitolo, la prima parte della struttura sarà: #align(center)[*`M-PRD-[S.I.]`*]
 
 == Funzionalità
 
@@ -1441,6 +1544,7 @@ Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche segu
   - *ROT*: Requisiti Opzionali Totali.
 
 
+#linebreak()
 == Affidabilità
 
 - *M-PRD-CC* - Code Coverage: percentuale di eseguito durante i test rispetto a quello scritto.
@@ -1480,6 +1584,7 @@ Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche segu
 
 - *M-PRD-UR* - Utilizzo Risorse: valuta l'efficienza nell'utilizzo delle risorse.
 
+#linebreak()
 == Manutenibilità
 
 - *M-PRD-CP* - Complessità Ciclomatica: valuta la complessità del sistema attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo di flusso.
