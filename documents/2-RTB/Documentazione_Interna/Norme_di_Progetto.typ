@@ -749,13 +749,13 @@ Verranno redatti i seguenti documenti:
 ==== Nomi assegnati ai file
 I documenti PDF presenti nella #link("https://github.com/SweeTenTeam/Docs","repository Docs"), seguono precise convenzioni di denominazione in base al tipo di documento.
 
-- *Verbali*: per i verbali viene utilizzata una nomenclatura del tipo: #align(center)[*`[Verbale_Interno]/[Verbale_Esterno] + _ + [data] + _ + [versione]`*]
+- *Verbali*: per i verbali viene utilizzata una nomenclatura del tipo: #align(center)[*`[Verbale_Interno]/[Verbale_Esterno] + _ + [Data] + _ + [Versione]`*]
 
   - *Spaziatura*: fra le parole la spaziatura verrà sostituita da un underscore, ("*`_`*");
   - *Data*: scritta nel formato *`YYYY-MM-DD`*, dove `YYYY` indica l’anno, `MM` il mese e `DD` il giorno
   - *Versione*: scritta nel formato: *`v.X.Y.Z`*.
 
-- *Altri documenti*: i nomi di tutti gli altri documenti presenti nel progetto invece saranno del tipo: #align(center)[*`[Nome_del_File] + _ + [versione]`*]
+- *Altri documenti*: i nomi di tutti gli altri documenti presenti nel progetto invece saranno del tipo: #align(center)[*`[Nome_del_File] + _ + [Versione]`*]
 
   - *Nome_del_File*: le parole sono scritte in Title Case (con la prima lettera maiuscola per le parole principali, come sostantivi, verbi, aggettivi e avverbi, e in minuscolo per le parole secondarie, come preposizioni, congiunzioni e articoli) e separate da un underscore, ("*`_`*").
   - *Spaziatura*: fra le parole la spaziatura verrà sostituita da un underscore, ("*`_`*");
@@ -919,7 +919,15 @@ Esistono due principali approcci per condurre i #glossary("Test di integrazione"
 I #glossary("Test di sistema") vengono progettati dopo i #glossary("Test di integrazione"). Questi test sono finalizzati a garantire il corretto funzionamento complessivo del sistema, verificando che tutti i requisiti #glossary("software"), definiti nel capitolato e redatti nel documento `Analisi dei Requisiti`, siano implementati e operativi.
 
 ==== Controlli di regressione
-I controlli di regressione verificano che le modifiche apportate a specifiche componenti architetturali, come correzioni o espansioni, non compromettano il funzionamento dell'intero sistema. Questi controlli consistono nella ripetizione mirata di #glossary("Test di unità"), di #glossary("Test di integrazione") e di #glossary("Test di sistema"), fondamentali per assicurare che le funzionalità precedentemente verificate rimangano intatte e non si verifichino regressioni nel comportamento del sistema.
+I controlli di regressione verificano che le modifiche apportate a specifiche componenti architetturali, come correzioni o espansioni, non compromettano il funzionamento dell'intero sistema. 
+
+Questi controlli consistono nella ripetizione mirata di:
+
+- #glossary("Test di unità") ; 
+- #glossary("Test di integrazione") ;
+- #glossary("Test di sistema"). 
+
+Questi sono fondamentali per assicurare che le funzionalità precedentemente verificate rimangano intatte e non si verifichino regressioni nel comportamento del sistema.
 
 ==== Test di accettazione
 I #glossary("Test di accettazione") hanno lo scopo di garantire che il prodotto finale soddisfi le richieste e le aspettative stabilite dalla #glossary("Proponente"). Per questa ragione, devono essere svolti obbligatoriamente in sua presenza.
@@ -996,7 +1004,7 @@ Le metriche sono divise in due categorie:
 - Prodotto: PRD.
 
 Inoltre, le suddette metriche sono identificate come segue:
-*#align("M-[Categoria-Metrica]-[Sigla-Identificativa-Metrica]", center)*
+#align(center)[*`M-[Categoria-Metrica]-[Sigla-Identificativa-Metrica]`*]
 
 Ogni metrica ha:
 
@@ -1453,7 +1461,7 @@ Le sotto-categorie di questo parametro sono:
 #pagebreak()
 = Metriche Di Qualità Del Processo <qualità_del_processo>
 
-Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: *#align(center, "M-PRC-[S.I.]")*
+Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: #align(center)[*`M-PRC-[S.I.]`*]
 
 == Processi Primari
 
@@ -1468,6 +1476,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-BAC* - #glossary("Budget at Completion").
 
 
+#linebreak()
 === Sviluppo
 
 - *M-PRC-RSI* - Requirements Stability Index: stabilità dei requisiti nel tempo.
@@ -1481,6 +1490,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-SFI* - Structural Fan In: quantità di componenti che sfruttano un modulo specifico.
 - *M-PRC-SFO* - Structural Fan-Out: componenti utilizzate dal modulo in osservazione.
 
+#linebreak()
 == Processi di supporto
 === Documentazione
 
@@ -1493,6 +1503,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 #linebreak()
 - *M-PRC-CO* - Correttezza Ortografica.
 
+#linebreak()
 === Verifica
 - *M-PRC-CC* - Code Coverage: Percentuale di codice testato rispetto al totale.
 
@@ -1501,6 +1512,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 - *M-PRC-QMS* - Quality Metrics Satisfied: grado di soddisfacimento delle metriche di qualità.
 
 
+#linebreak()
 == Processi Organizzativi
 
 - *M-PRC-NCR* - Non-Calculated Risk: monitoraggio dei rischi non inclusi nelle stime.
@@ -1510,7 +1522,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 #pagebreak()
 = Metriche Di Qualità Del Prodotto
 
-Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche seguono la struttura definita al paragrafo #link(<metriche>, "'metriche'"). In questo capitolo, la prima parte della struttura sarà: *#align("M-PRD-[S.I.]", center)*
+Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche seguono la struttura definita al paragrafo #link(<metriche>, "'metriche'"). In questo capitolo, la prima parte della struttura sarà: #align(center)[*`M-PRD-[S.I.]`*]
 
 == Funzionalità
 
@@ -1532,6 +1544,7 @@ Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche segu
   - *ROT*: Requisiti Opzionali Totali.
 
 
+#linebreak()
 == Affidabilità
 
 - *M-PRD-CC* - Code Coverage: percentuale di eseguito durante i test rispetto a quello scritto.
@@ -1571,6 +1584,7 @@ Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche segu
 
 - *M-PRD-UR* - Utilizzo Risorse: valuta l'efficienza nell'utilizzo delle risorse.
 
+#linebreak()
 == Manutenibilità
 
 - *M-PRD-CP* - Complessità Ciclomatica: valuta la complessità del sistema attraverso la misurazione del numero di cammini indipendenti attraverso il grafo di controllo di flusso.
