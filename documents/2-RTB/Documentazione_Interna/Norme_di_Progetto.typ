@@ -8,6 +8,20 @@
     p.cardin,
   ),
   changelog: (
+    "0.2.0",
+    "2024-12-3",
+    (p.campagnaro),
+    (p.ferazzani),
+    [
+      Correzione capitolo: Processi Organizzativi
+    ],
+    "0.1.1",
+    "2024-12-3",
+    (p.campagnaro),
+    (p.ferazzani),
+    [
+      Correzione capitolo: Processi di supporto - Gestione della configurazione - Sincronizzazione
+    ],
     "0.1.0",
     "2024-12-2",
     (p.campagnaro),
@@ -864,13 +878,13 @@ La struttura della repository è organizzata come segue, con i nomi delle direct
 La repository #link("https://github.com/SweeTenTeam/SweeTenTeam.github.io","SweeTenTeam.github.io") ospita il codice del sito dedicato al progetto. Il sito ha l'obiettivo di fornire un'interfaccia veloce e intuitiva, nella quale poter visualizzare ergonomicamente e in maniera organizzata i documenti relativi al progetto stesso. Tra le funzionalità del sito, è inclusa anche la visualizzazione diretta del #link("https://sweetenteam.github.io/docs/RTB/Glossario","Glossario"), che fornisce definizioni chiare e precise dei termini rilevanti. Questa sezione aiuta a prevenire fraintendimenti o interpretazioni ambigue e permette di accedere rapidamente alle definizioni cliccando sui termini presenti nei documenti.
 
 === Sincornizzazione
-La sincronizzazione avviene attraverso #glossary("repository") condivise su #glossary("GitHub"), dove ogni attività è tracciata tramite un'apposita #glossary("issue"). All'inizio di ogni task, il membro del team crea un nuovo #glossary("branch") a partire da *`develop`*. Questo approccio consente di avere ambienti di lavoro indipendenti, permettendo di svolgere più attività in parallelo e ottimizzando la collaborazione all'interno del team.
+La sincronizzazione avviene attraverso #glossary("repository") condivise su #glossary("GitHub"), dove ogni attività è tracciata tramite un'apposita #glossary("issue"). Per ogni documento o feature esiste un #glossary("branch") dedicato, che è stato originariamente creato a partire dal #glossary("branch") *`develop`*. Quando un membro del team inizia un nuovo task, crea un nuovo #glossary("branch") a partire dal #glossary("branch") specifico per il documento o la feature correlata al task. Tuttavia, per i _verbali_ e il _glossario_, i #glossary("branch") vengono creati direttamente a partire da *`develop`*, poiché questi documenti sono meno complessi e richiedono modifiche più leggere. Questo approccio consente di avere ambienti di lavoro indipendenti, permettendo di svolgere più attività in parallelo e ottimizzando la collaborazione all'interno del team.
 
 ==== Branch
-La struttura dei branch descritta in precedenza si basa sulla metodologia single-purpose, che prevede la creazione di un #glossary("branch") per ciascuna attività specifica. Questo approccio consente di suddividere il lavoro in compiti distinti, garantendo un flusso di lavoro stabile e organizzato. Una volta completata un'attività, il #glossary("branch") corrispondente viene unito al "branch principale" (*`develop`*) e successivamente eliminato. È importante chiarire che *`master`* è il "branch di default", mentre per "branch principale" si intende il #glossary("branch") in cui le modifiche devono essere integrate.
+La struttura dei branch descritta in precedenza si basa sulla metodologia single-purpose, che prevede la creazione di un #glossary("branch") per ciascuna attività specifica. Questo approccio consente di suddividere il lavoro in compiti distinti, garantendo un flusso di lavoro stabile e organizzato. Una volta completata un'attività, il #glossary("branch") corrispondente viene unito al #glossary("branch") specifico per il documento o la feature correlata e successivamente eliminato. Una volta che il documento o la feature raggiunge uno stato coerente e stabile, il suo #glossary("branch") specifico viene unito al "brach principale" (*`develop`*). È importante chiarire che *`master`* è il "branch di default", mentre per "branch principale" si intende il #glossary("branch") in cui le modifiche devono essere integrate.
 
 ==== Pull request
-Al termine di un'attività o di una sua parte, il membro incaricato apre una #glossary("Pull Request"), indicando il verificatore. Quest'ultimo, dopo aver convalidato le modifiche, esegue il #glossary("merge") della #glossary("Pull Request") nel "branch principale", chiude l'#glossary("issue") associata ed elimina il branch di lavoro se non più necessario.
+Al termine di un'attività o di una sua parte, il membro incaricato apre una #glossary("Pull Request"), indicando il verificatore. Quest'ultimo, dopo aver convalidato le modifiche, esegue il #glossary("merge") della #glossary("Pull Request") nel #glossary("branch") specifico per il documento o la feature correlata, chiude l'#glossary("issue") associata ed elimina il branch di lavoro se non più necessario.
 
 == Verifica
 === Scopo ed Aspettative
@@ -1179,7 +1193,7 @@ La creazione e la gestione della issue segue il seguente flusso:
   12. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10.
 13. Chiusura della Issue;
 14. Spostamento della Issue da `In Progress` a `Done`;
-15. Chiusura #glossary("Pull Request") e merge su branch `Develop`;
+15. Chiusura #glossary("Pull Request") e merge sul branch specifico per il documento o la feature correlata alla Issue;
 16. Eventuale eliminazione del branch (solo se non deve essere riutilizzato).
 
 *Milestones* \
@@ -1241,16 +1255,17 @@ Fanno parte dell'Infrastruttura organizzativa tutti gli strumenti che il Team ut
 ==== GitHub
 
 È la piattaforma principale utilizzata dal Team per la gestione e il controllo di versione del progetto.
-Il #glossary("Workflow ") utilizzato dal Team è GitHub Flow, che è un modello di sviluppo leggero che prevede l'utilizzo di branch per lo sviluppo di nuove funzionalità e la creazione di #glossary("Pull Request") per la loro integrazione nel branch principale.
+Il #glossary("Workflow ") utilizzato dal Team è GitHub Flow, che è un modello di sviluppo leggero che prevede l'utilizzo di branch per lo sviluppo di nuove funzionalità e la creazione di #glossary("Pull Request") per la loro integrazione.
 
 In particolare, il flow si espande come segue:
 
 - Riallineamento della #glossary("repository") locale con quella remota;
-- Creazione di un #glossary("branch") locale per lo sviluppo di una singola feature (ogni branch segue la nomenclatura `tipo-feature/nome-feature`, ad esempio `doc/norme-di-progetto`);
+- Creazione di un #glossary("branch") locale per lo sviluppo di una singola feature, partedo dal branch specifico per il documento o la feature correlata al task (ogni branch segue la nomenclatura `[tipo-feature]/[nome-feature]-[numero_issue]`, ad esempio `doc/norme-di-progetto-32`);
+- Per i verbali e il glossario, il #glossary("branch") viene creato direttamente a partire da develop, poiché questi documenti richiedono modifiche più leggere (ogni branch dei verbali segue la nomenclatura `doc/[verbale]/[tipo-verbale]-[data]`, ad esempio `doc/verbale/interno-11-28`);
 - Push del branch locale sulla repository remota;
 - Creazione di una #glossary("Pull Request") per la feature;
 - Verifica della #glossary("Pull Request") da parte del/dei Verificatore/i;
-- Eliminazione della branch.
+- Merge ed eliminazione del #glossary("branch").
 
 Viene anche utilizzata la #glossary("project board") di GitHub per la gestione delle issue e delle milestone.
 
