@@ -8,6 +8,13 @@
     p.cardin,
   ),
   changelog: (
+    "0.2.0",
+    "2024-12-3",
+    (p.campagnaro),
+    (p.ferazzani),
+    [
+      Correzione capitolo: Processi Organizzativi
+    ],
     "0.1.1",
     "2024-12-3",
     (p.campagnaro),
@@ -1186,7 +1193,7 @@ La creazione e la gestione della issue segue il seguente flusso:
   12. se non corretto, il verificatore lascia commenti sulla #glossary("Pull Request") riguardanti le modifiche necessarie, l'assegnatario della issue apporta le modifiche e si ripete dal punto 10.
 13. Chiusura della Issue;
 14. Spostamento della Issue da `In Progress` a `Done`;
-15. Chiusura #glossary("Pull Request") e merge su branch `Develop`;
+15. Chiusura #glossary("Pull Request") e merge sul branch specifico per il documento o la feature correlata alla Issue;
 16. Eventuale eliminazione del branch (solo se non deve essere riutilizzato).
 
 *Milestones* \
@@ -1248,16 +1255,17 @@ Fanno parte dell'Infrastruttura organizzativa tutti gli strumenti che il Team ut
 ==== GitHub
 
 È la piattaforma principale utilizzata dal Team per la gestione e il controllo di versione del progetto.
-Il #glossary("Workflow ") utilizzato dal Team è GitHub Flow, che è un modello di sviluppo leggero che prevede l'utilizzo di branch per lo sviluppo di nuove funzionalità e la creazione di #glossary("Pull Request") per la loro integrazione nel branch principale.
+Il #glossary("Workflow ") utilizzato dal Team è GitHub Flow, che è un modello di sviluppo leggero che prevede l'utilizzo di branch per lo sviluppo di nuove funzionalità e la creazione di #glossary("Pull Request") per la loro integrazione.
 
 In particolare, il flow si espande come segue:
 
 - Riallineamento della #glossary("repository") locale con quella remota;
-- Creazione di un #glossary("branch") locale per lo sviluppo di una singola feature (ogni branch segue la nomenclatura `tipo-feature/nome-feature`, ad esempio `doc/norme-di-progetto`);
+- Creazione di un #glossary("branch") locale per lo sviluppo di una singola feature, partedo dal branch specifico per il documento o la feature correlata al task (ogni branch segue la nomenclatura `[tipo-feature]/[nome-feature]-[numero_issue]`, ad esempio `doc/norme-di-progetto-32`);
+- Per i verbali e il glossario, il #glossary("branch") viene creato direttamente a partire da develop, poiché questi documenti richiedono modifiche più leggere (ogni branch dei verbali segue la nomenclatura `doc/[verbale]/[tipo-verbale]-[data]`, ad esempio `doc/verbale/interno-11-28`);
 - Push del branch locale sulla repository remota;
 - Creazione di una #glossary("Pull Request") per la feature;
 - Verifica della #glossary("Pull Request") da parte del/dei Verificatore/i;
-- Eliminazione della branch.
+- Merge ed eliminazione del #glossary("branch").
 
 Viene anche utilizzata la #glossary("project board") di GitHub per la gestione delle issue e delle milestone.
 
