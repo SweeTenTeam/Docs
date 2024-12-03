@@ -12,6 +12,14 @@
   azzurro: "/images/logos/AzzurroDigitale-logo.png",
   unipd: "/images/logos/Universita_Padova_transparent.png",
 )
+
+#let ar = (
+  diagUC1: "/images/analisi-dei-requisiti/UCJira.png",
+  diagUC2: "/images/analisi-dei-requisiti/UCGitHub.png",
+  diagUC3: "/images/analisi-dei-requisiti/UCConfluence.png",
+)
+
+
 //team members
 #let p = (
   azzurro: "AzzurroDigitale",

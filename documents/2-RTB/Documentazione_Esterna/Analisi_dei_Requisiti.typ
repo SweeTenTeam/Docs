@@ -133,9 +133,10 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 #pagebreak()
 
 == Definizione casi d'uso
-=== UC1, Consultazione Jira
+//===UC1, Consultazione Jira
 #columns(2, gutter: 3cm)[
   #box[
+  === UC1, Consultazione Jira
     *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno)
   
     *Precondizioni*
@@ -146,7 +147,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   ]
   #colbreak()
   #figure(
-    image("../../../images/analisi-dei-requisiti/UCJira.png", width: 28em,fit: "contain"),
+    image(ar.diagUC1, width: 22em, fit: "contain"),
     caption: "Diagramma UC1, consultazione Jira"
   )
 ]
@@ -161,53 +162,65 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
   - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di titoli, priorità, date di scadenza e stati.
 
+*Inclusioni*
+- Reperimento delle informazioni (#glossary("API"))
+- Elaborazione dei dati ricevuti (#glossary("LLM"))
 
-=== UC2, Consultazione GitHub
-*Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno)
+//=== UC2, Consultazione GitHub
+#columns(2, gutter: 3cm)[
+  === UC2, Consultazione GitHub
+  *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno)
 
-*Precondizioni*
-  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente.
+  *Precondizioni*
+    - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente.
 
-*Postcondizioni*
-  - Le informazioni richieste vengono presentate correttamente all'utente.
+  *Postcondizioni*
+    - Le informazioni richieste vengono presentate correttamente all'utente.
 
-*Scenario principale*
-- L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda 
-  - esempio: "Quali sono stati i cambiamenti nell'ultimo #glossary("commit") sul #glossary("branch") master?"
-- #glossary("BuddyBot") autentica la connessione con #glossary("GitHub") e invia una richiesta all'#glossary("API") per recuperare i dettagli dell’ultimo #glossary("commit") sul #glossary("branch") specificato.
+  *Scenario principale*
+  - L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda 
+  #colbreak()
+   #figure(
+    image(ar.diagUC2, width: 24em, fit: "contain"),
+    caption: "Diagramma UC2, consultazione GitHub"
+  )
+]
+- esempio: "Quali sono stati i cambiamenti nell'ultimo #glossary("commit") sul #glossary("branch") master?"
+- #glossary("BuddyBot") autentica la connessione con #glossary("GitHub") e invia una richiesta all'#glossary("API") per recuperare i dettagli dell'ultimo #glossary("commit") sul #glossary("branch") specificato.
 
 - I dettagli ricevuti vengono elaborati per generare una risposta e, nel nostro esempio, sintetizzerà: file modificati, descrizione delle modifiche, informazioni generali riguardanti il #glossary("commit") (autore, data...).
 - #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente in un formato ordinato e leggibile (linguaggio naturale).
 
-#align(center)[
-  #figure(
-    image("../../../images/analisi-dei-requisiti/UCGitHub.png", width: 30em, fit: "contain"),
-    caption: "Diagramma UC2, consultazione GitHub"
-  )
-]
+*Inclusioni*
+- Reperimento delle informazioni (#glossary("API"))
+- Elaborazione dei dati ricevuti (#glossary("LLM"))
 
 === UC3, Consultazione Confluence
 #columns(2, gutter: 2cm)[
   #box[
   *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno).
 
-  *Precondizioni*:  
+  *Precondizioni*:
   - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
   *Postcondizioni*:  
   - L'utente riceve un link diretto al documento richiesto o un messaggio che segnala l'assenza del documento.
+  *Scenario principale*
+  - L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda/richiesta.
+  - esempio: "Mostrami l'ultima guida aggiornata per il deploy."
+  - #glossary("LLM") interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
   ]
   #colbreak()
   #figure(
-    image("../../../images/analisi-dei-requisiti/UCConfluence.png", width: 25em, fit: "contain"),
+    image(ar.diagUC3, width: 25em, fit: "contain"),
     caption: "Diagramma UC3, consultazione Confluence"
   )
 ]
 
-*Scenario principale*
-- L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda/richiesta.
-  - esempio: "Mostrami l'ultima guida aggiornata per il deploy."
-- #glossary("LLM") interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
 - Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
+
+*Inclusioni*
+- Reperimento delle informazioni (#glossary("API"))
+- Elaborazione dei dati ricevuti (#glossary("LLM"))
 
 
 #pagebreak()
