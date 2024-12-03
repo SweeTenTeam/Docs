@@ -5,6 +5,11 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
+    "0.0.5",
+    "2024-12-02",
+    (p.santi),
+    (p.mahdi),
+    "Inseriti primi UC, sistemate immagini e tabelle",
     "0.0.4",
     "2024-11-25",
     (p.santi),
@@ -125,23 +130,100 @@ Gli scenari sottostanti seguono uno schema e può prevedere:
 == Attori
 L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio ponendo domande all'assistente virtuale.
 
-== Definizione casi d'uso
-/*=== UC1, Consultazione Jira
-- *Attore coinvolto*: User
-- *Precondizioni*
-  - #glossary("API") #glossary("Jira") disponibili e configurate correttamente.
-- *Scenario principale*
-  - L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda 
-    - esempio: "Quali #glossary("issue") sono assegnate a me per questa settimana?"
-  - #glossary("BuddyBot") autentica la connessione con Jira 
+#pagebreak()
 
-  - Il sistema invia una richiesta alle #glossary("API") di #glossary("Jira") per estrarre i dati 
-    - nel nostro esempio, vengono quindi estratti dati relativi alle #glossary("issue") assegnate all'utente con scadenza entro la settimana corrente.
-  - #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
-    - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di titoli, priorità, date di scadenza e stati.
-- *Postcondizioni*
-  - Le informazioni richieste vengono presentate correttamente all'utente, che può visualizzarle e utilizzarle per pianificare le proprie attività.
-*/
+== Definizione casi d'uso
+//===UC1, Consultazione Jira
+#columns(2, gutter: 3cm)[
+  #box[
+  === UC1, Consultazione Jira
+    *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno)
+  
+    *Precondizioni*
+    - Le #glossary("API") di #glossary("Jira") sono disponibili e configurate correttamente.
+
+    *Postcondizioni*
+    - Le informazioni richieste vengono presentate correttamente all'utente e può visualizzarle per pianificare le proprie attività.
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUC1, width: 22em, fit: "contain"),
+    caption: "Diagramma UC1, consultazione Jira"
+  )
+]
+
+*Scenario principale*
+- L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda 
+  - esempio: "Quali #glossary("issue") sono assegnate a me per questa settimana?"
+- #glossary("BuddyBot") autentica la connessione con Jira 
+
+- Il sistema invia una richiesta alle #glossary("API") di #glossary("Jira") per estrarre i dati 
+  - nel nostro esempio, vengono quindi estratti dati relativi alle #glossary("issue") assegnate all'utente con scadenza entro la settimana corrente.
+- #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
+  - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di titoli, priorità, date di scadenza e stati.
+
+*Inclusioni*
+- Reperimento delle informazioni (#glossary("API"))
+- Elaborazione dei dati ricevuti (#glossary("LLM"))
+
+//=== UC2, Consultazione GitHub
+#columns(2, gutter: 3cm)[
+  === UC2, Consultazione GitHub
+  *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno)
+
+  *Precondizioni*
+    - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente.
+
+  *Postcondizioni*
+    - Le informazioni richieste vengono presentate correttamente all'utente.
+
+  *Scenario principale*
+  - L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda 
+  #colbreak()
+   #figure(
+    image(ar.diagUC2, width: 24em, fit: "contain"),
+    caption: "Diagramma UC2, consultazione GitHub"
+  )
+]
+- esempio: "Quali sono stati i cambiamenti nell'ultimo #glossary("commit") sul #glossary("branch") master?"
+- #glossary("BuddyBot") autentica la connessione con #glossary("GitHub") e invia una richiesta all'#glossary("API") per recuperare i dettagli dell'ultimo #glossary("commit") sul #glossary("branch") specificato.
+
+- I dettagli ricevuti vengono elaborati per generare una risposta e, nel nostro esempio, sintetizzerà: file modificati, descrizione delle modifiche, informazioni generali riguardanti il #glossary("commit") (autore, data...).
+- #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente in un formato ordinato e leggibile (linguaggio naturale).
+
+*Inclusioni*
+- Reperimento delle informazioni (#glossary("API"))
+- Elaborazione dei dati ricevuti (#glossary("LLM"))
+
+=== UC3, Consultazione Confluence
+#columns(2, gutter: 2cm)[
+  #box[
+  *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno).
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  *Postcondizioni*:  
+  - L'utente riceve un link diretto al documento richiesto o un messaggio che segnala l'assenza del documento.
+  *Scenario principale*
+  - L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda/richiesta.
+  - esempio: "Mostrami l'ultima guida aggiornata per il deploy."
+  - #glossary("LLM") interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUC3, width: 25em, fit: "contain"),
+    caption: "Diagramma UC3, consultazione Confluence"
+  )
+]
+
+- Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
+
+*Inclusioni*
+- Reperimento delle informazioni (#glossary("API"))
+- Elaborazione dei dati ricevuti (#glossary("LLM"))
+
+
+#pagebreak()
 
 = Requisiti
 In questa sezione vengono esposti i requisiti individuati in seguito alle analisi effettuate dal gruppo e dai #glossary("casi d'uso (UC)") esaminati in precedenza. Per garantire maggiore chiarezza, i vari requisiti verranno identificati da codici univoci a seconda della loro natura e dall'obbligatorietà o meno...
@@ -174,15 +256,17 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
   }
 }
 
-#table(
-  columns: (3cm, 10cm, 3cm),
-  [Codice], [Descrizione], [Fonti],
+#figure(
+  table(
+    columns: (3cm, 10cm, 3cm),
+    [Codice], [Descrizione], [Fonti],
 
-  [], [], [],
-  [], [], [],
-  [], [], [],
+    [], [], [],
+    [], [], [],
+    [], [], [],
+  ),
+  caption: "Requisiti Funzionali"
 )
-
 
 
 == Requisiti di Qualità
@@ -207,16 +291,17 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
   }
 }
 
-#table(
-  columns: (3cm, 10cm, 3cm),
-  [Codice], [Descrizione], [Fonti],
+#figure(
+  table(
+    columns: (3cm, 10cm, 3cm),
+    [Codice], [Descrizione], [Fonti],
 
-  [], [], [],
-  [], [], [],
-  [], [], [],
+    [], [], [],
+    [], [], [],
+    [], [], [],
+  ),
+  caption: "Requisiti di Qualità"
 )
-
-
 
 == Requisiti di Vincolo
 I #glossary("Requisiti di Vincolo") definiscono i limiti tecnici e/o progettuali entro i quali il sistema deve essere sviluppato.
@@ -240,13 +325,16 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
   }
 }
 
-#table(
-  columns: (3cm, 10cm, 3cm),
-  [Codice], [Descrizione], [Fonti],
+#figure(
+  table(
+    columns: (3cm, 10cm, 3cm),
+    [Codice], [Descrizione], [Fonti],
 
-  [], [], [],
-  [], [], [],
-  [], [], [],
+    [], [], [],
+    [], [], [],
+    [], [], [],
+  ),
+  caption: "Requisiti di Vincolo"
 )
 
 == Tracciamento
@@ -267,13 +355,16 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
   }
 }
 
-#table(
-  columns: (6cm, 6cm),
-  [Fonte], [Requisito],
+#figure(
+  table(
+    columns: (6cm, 6cm),
+    [Fonte], [Requisito],
 
-  [], [],
-  [], [],
-  [], [],
+    [], [],
+    [], [],
+    [], [],
+  ),
+  caption: "Tracciamento"
 )
 
 == Riepilogo
@@ -292,12 +383,15 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
   }
 }
 
-#table(
-  columns: (4cm, 3cm, 3cm, 3cm),
-  [Tipologia], [Obbligatorio], [Desiderabile], [Totale],
+#figure(
+  table(
+    columns: (4cm, 3cm, 3cm, 3cm),
+    [Tipologia], [Obbligatorio], [Desiderabile], [Totale],
 
-  [], [], [], [],
-  [], [], [], [],
-  [], [], [], [],
+    [], [], [], [],
+    [], [], [], [],
+    [], [], [], [],
+  ),
+  caption: "Riepilogo"
 )
 Il totale dei Requisiti è: //somma della colonna "totale" della tabella di cui sopra
