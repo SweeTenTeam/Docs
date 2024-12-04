@@ -12,18 +12,13 @@
     p.azzurro,
   ),
   changelog: (
-    "0.0.3",
+    "0.0.2",
     "2024-11-29",
     p.benedetti,
     p.fracaro,
     [
       Stesura sezioni 1 e 2 del documento
     ],
-    "0.0.2",
-    "2024-11-21",
-    (p.fracaro),
-    (p.benedetti),
-    "Stesura sezioni 3, 4, 5",
     "0.0.1",
     "2024-11-21",
     p.fracaro,
@@ -62,14 +57,14 @@ facilitando la gestione del processo e il monitoraggio dei progressi.
 #linebreak()
 == Scopo del prodotto
 
-Il progetto ha l'obiettivo di sviluppare un assistente virtuale che centralizzi e aggrega le informazioni provenienti da GitHub, Confluence e Jira, sfruttando le potenzialità delle tecnologie di intelligenza artificiale per migliorare l'efficacia e la personalizzazione del supporto offerto agli utenti. L'assistente consentirà un accesso facile, rapido e intuitivo a tutte le informazioni aziendali rilevanti, semplificando la ricerca e riducendo i tempi di navigazione tra diverse piattaforme.#linebreak()
+Il progetto ha l'obiettivo di sviluppare un assistente virtuale che centralizzi e aggreghi le informazioni provenienti da GitHub, Confluence e Jira, sfruttando le potenzialità delle tecnologie di intelligenza artificiale per migliorare l'efficacia e la personalizzazione del supporto offerto agli utenti. L'assistente consentirà un accesso facile, rapido e intuitivo a tutte le informazioni aziendali rilevanti, semplificando la ricerca e riducendo i tempi di navigazione tra diverse piattaforme.#linebreak()
 In questo modo, l'assistente non solo contribuirà a ottimizzare i flussi di lavoro, ma aiuterà anche a migliorare la produttività complessiva dell'organizzazione, garantendo una gestione delle informazioni più smart e un supporto sempre più personalizzato. La soluzione offrirà quindi un significativo vantaggio competitivo, permettendo ai membri dell'azienda di concentrarsi su attività a maggior valore aggiunto e migliorando i risultati aziendali a lungo termine.
 
 #linebreak()
 == Glossario
 Al fine di evitare eventuali equivoci o incomprensioni riguardo la terminologia utilizzata all'interno di questo documento,
 si è deciso di adottare un Glossario, con file apposito, in cui
-vengono riportate tutte le definizioni rigogliose delle parole ambigue utilizzate in ambito di
+vengono riportate tutte le definizioni rigorose delle parole ambigue utilizzate in ambito di
 questo progetto. Nel documento appena descritto verranno riportati tutti i termini definiti nel
 loro ambiente di utilizzo con annessa descrizione del loro significato.
 La presenza di un termine all'interno del Glossario è evidenziata dal #glossary("colore marrone")
@@ -97,12 +92,18 @@ Il processo di gestione dei rischi si articola in cinque fasi principali:
 2. Analisi dei rischi: consente di sviluppare una comprensione approfondita di ciascun rischio e contribuisce a determinare strategie adeguate per affrontarli.
 3. Valutazione dei rischi: sulla base dei risultati dell'analisi, si prendono decisioni per stabilire quali rischi trattare e come prioritizzarne il trattamento.
 4. Trattamento dei rischi: include misure preventive, mitigazioni o il trasferimento del rischio tramite strumenti come assicurazioni, per ridurre l'impatto o la probabilità che si verifichi.
-5. Monitoraggio e revisione: entrambe le attività vengono integrate nella pianificazione e richiedono controlli regolari per garantire che i rischi siano gestiti in modo continuo ed efficace.Per migliorare la gestione, i rischi sono presentati in forma tabellare, con dettagli come descrizione, grado di rischio (scala da 1 a 5), pericolosità (Alta, Media, Bassa), precauzioni da adottare e un piano riorganizzato in caso di necessità. Questa struttura facilita il monitoraggio continuo durante l'intero ciclo di vita del progetto e consente interventi tempestivi per limitare i danni.
+5. Il monitoraggio e la revisione sono attività integrate nella pianificazione e richiedono controlli regolari per garantire una gestione continua ed efficace dei rischi. Per rendere il processo più efficiente, i rischi vengono presentati in forma tabellare, includendo dettagli chiave come:
+
+- Descrizione del rischio;
+- Grado di rischio, valutato su una scala numerica da 1 a 5 per quantificare la probabilità di accadimento o l'entità dell'impatto;
+- Pericolosità, che indica qualitativamente il livello di minaccia rappresentato dal rischio (Alta, Media, Bassa) in base alla sua potenziale gravità;
+- Precauzioni da adottare per mitigare il rischio;
+- Piano di contingenza per affrontare eventuali emergenze;
 
 Le principali categorie di rischi includono:
 
-- Rischi personali (RP): problemi relativi al personale, come assenze o conflitti di competenze.
-- Rischi organizzativi interni ed esterni (ROI/ROE): fattori che coinvolgono processi aziendali o relazioni con stakeholder esterni.
+- Rischi personali (RP): problemi relativi al personale, come assenze o conflitti di competenze;
+- Rischi organizzativi interni ed esterni (ROI/ROE): fattori che coinvolgono processi aziendali o relazioni con stakeholder esterni;
 - Rischi tecnologici/software (RT): malfunzionamenti tecnici o errori di implementazione.
 In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli o rallentamenti che potrebbero compromettere il progresso del progetto, fornendo un approccio metodico e dettagliato alla gestione dei rischi, per garantire il raggiungimento degli obiettivi prefissati.
 
