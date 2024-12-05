@@ -17,7 +17,7 @@
 
 = Contenuti del verbale
 
-== Informazioni sulla riunuione
+== Informazioni sulla riunione
 
 - *Luogo*: Discord;
 - *Ora di inizio*: 15:00;
@@ -26,15 +26,15 @@
 
 == Ordine Del giorno
 
-- Presentazione Azzurro;
+- Presentazione AzzurroDigitale;
 - Struttura repo;
 - Sprint Review;
 - Discussione sul versionamento dei file;
-- Nomencaltura file;
+- Nomenclatura file;
 - Struttura verbali;
 - Uso dei feature branch.
 
-= Presentazione Azzurro
+= Presentazione AzzurroDigitale
 
 Il responsabile ha discusso con il team la presentazione fatta in vista dell'incontro del giorno dopo, 03/12/2024, con l'azienda #box(image(g.azzurro, width: 5em, height: auto)) per avere una conferma dal gruppo dei lavori segnati come completati e per segnare le domande da fare all'azienda per lo #glossary("sprint") successivo.
 
@@ -48,11 +48,11 @@ Il team ha revisionato i compiti completati per il primo sprint e confermato il 
 
 = Discussione sul versionamento dei file
 
-Il team dopo una attenta anlisi e discussione ha deciso di cambiare il numero di cifre di versionamento, da 2 a 3, dei verbali e del glossario ritenendo non necessario un versionamento a 3 cifre per documenti che non venngono modificati frequentemente.
+Dopo un'attenta analisi e discussione, il team ha deciso di adottare un sistema di versionamento a 3 cifre, aumentando rispetto alle 2 cifre precedenti. Tuttavia, per i documenti che subiscono meno modifiche frequenti, come i verbali e il glossario, si è scelto di mantenere il versionamento a 2 cifre, ritenendolo più adeguato.
 
-= Nomencaltura file
+= Nomenclatura file
 
-Il team ha discusso e poi stabilito una nomencaltura standard per i diversi file, branch, issue e pull request, aggiornando di conseguenza la sua sezione nel file Norme di Progetto.
+Il team ha discusso e poi stabilito una nomenclatura standard per i diversi file, branch, issue e pull request, aggiornando di conseguenza la sezione nel file Norme di Progetto.
 
 = Struttura verbali
 
@@ -60,12 +60,20 @@ Il team dopo avere notato che i verbali non seguivano esattamente lo stesso layo
 
 = Uso dei feature branch
 
-Il team, dopo la segnalazione da parte di un suo mebro di una difficoltà nel lavorare in più persone sullo stesso documento, ha fatto un breve brainstorming e deciso di usare la tecnica dei #glossary("feature-branch") per lavorare in parallelo sui documenti principali.
+Il team, dopo la segnalazione da parte di un suo membro di una difficoltà nel lavorare in più persone sullo stesso documento, ha fatto un breve brainstorming e deciso di usare la tecnica dei #glossary("feature-branch") per lavorare in parallelo sui documenti principali si è concluso anche che per il glossario non servirà questa tecnica in quanto verrà modificato a fine #glossary("sprint") da una persona sola nel suo branch.
 
 = Decisioni prese
 
-- Passaggio al versionamento a due cifre per verbali e glossario;
+- Passaggio al versionamento a 3 cifre tranne che per verbali e glossario che sarà a 2 cifre;
 - Alla fine ci saranno due repository, una per i documenti e una per l'#glossary("MVP") con dentro la cartella #glossary("PoC") ;
 - Per ogni nuova aggiunta ai documenti principali si dovrà creare un branch nuovo che parte dal branch del documento, tranne per il glossario che verrà aggiornato ad ogni #glossary("sprint") e partirà da develop direttamente;
 - Decisione dei nuovi ruoli e compiti per creare le #glossary("issue") per il secondo #glossary("sprint");
-- #p.belenkov è il nuovo responsabile.
+- #p.belenkov è il nuovo responsabile del team.
+
+= Prossime attività
+
+- Incontro con #box(image(g.azzurro, width: 5em, height: auto)) per il primo #glossary("sprint-review");
+- Continuazione del #glossary("PoC") con gli obiettivi per il secondo #glossary("sprint") ;
+- Continuazione del documento Analisi dei Requisiti con nuovi casi d'uso;
+- Inizio stesura del documento Piano di Qualifica;
+- Continuazione del documento Piano di Progetto. 
