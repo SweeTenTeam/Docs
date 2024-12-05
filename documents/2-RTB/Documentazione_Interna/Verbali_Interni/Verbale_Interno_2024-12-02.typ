@@ -60,7 +60,7 @@ Il team dopo avere notato che i verbali non seguivano esattamente lo stesso layo
 
 = Uso dei feature branch
 
-Il team, dopo la segnalazione da parte di un suo membro di una difficoltà nel lavorare in più persone sullo stesso documento, ha fatto un breve brainstorming e deciso di usare la tecnica dei #glossary("feature-branch") per lavorare in parallelo sui documenti principali si è concluso anche che per il glossario non servirà questa tecnica in quanto verrà modificato a fine #glossary("sprint") da una persona sola nel suo branch.
+Il team, dopo la segnalazione da parte di un suo membro di una difficoltà nel lavorare in più persone sullo stesso documento, ha fatto un breve brainstorming e deciso di usare la tecnica dei #glossary("feature-branch") per lavorare in parallelo sui documenti principali. Si è concluso anche che per il glossario non servirà questa tecnica in quanto verrà modificato a fine #glossary("sprint") da una persona sola nel suo branch.
 
 = Decisioni prese
 
@@ -72,8 +72,32 @@ Il team, dopo la segnalazione da parte di un suo membro di una difficoltà nel l
 
 = Prossime attività
 
-- Incontro con #box(image(g.azzurro, width: 5em, height: auto)) per il primo #glossary("sprint-review");
-- Continuazione del #glossary("PoC") con gli obiettivi per il secondo #glossary("sprint") ;
-- Continuazione del documento Analisi dei Requisiti con nuovi casi d'uso;
-- Inizio stesura del documento Piano di Qualifica;
-- Continuazione del documento Piano di Progetto. 
+#set table(
+  stroke: 1pt,
+  fill: (x, y) =>
+    if y == 0 { rgb(209, 197, 174) },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it)) 
+  } else {
+    it
+  }
+}
+
+#figure(
+  table(
+    columns: (1cm, 7cm, 7cm),
+    [ID], [Descrizione], [Assegnatari],
+
+    [#78], [Continuazione del #glossary("PoC") con gli obiettivi per il secondo #glossary("sprint")], [#p.belenkov e #p.fracaro],
+    [#77], [Inizio Requisiti(punto 4) nel documento Analisi dei Requisiti], [#p.mahdi, #p.fracaro, #p.santi, #p.ferazzani], 
+    [#76], [Aggiunta nuovi casi d'uso], [#p.mahdi, #p.fracaro, #p.santi, #p.ferazzani],
+    [#72], [Aggiunta sezione #glossary("sprint") 1 al documento Piano di Progetto], [#p.campagnaro],
+    [#70], [Introduzione e struttura del documento Piano di Qualifica], [#p.benedetti],
+    [#71], [Sistemazione del file per la rendicontazione delle ore], [#p.campagnaro],
+  ),
+  caption: "Tabella delle prossime attività"
+)
