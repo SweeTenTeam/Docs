@@ -292,7 +292,7 @@ Partendo delle osservazioni fatte nella sezione 2 _Analisi dei rischi_, si è de
     [#glossary("PB") (Product Baseline)], [2025-03-28],
 ),caption:"Calendario di progetto") <tab_cal_prj>]
 
-
+#pagebreak()
 = *Stima costi realizzazione*
 == Introduzione
 Questa sezione presenta la stima dei costi per la realizzazione del progetto, calcolata in base al costo orario dei ruoli e alle ore previste per ciascuna attività. La stima si basa su quanto discusso nella sezione 2 _Analisi dei rischi_ e nei documenti _#glossary("Analisi dei requisiti")_ e _Dichiarazione degli impegni_.
@@ -316,14 +316,14 @@ Questa sezione presenta la stima dei costi per la realizzazione del progetto, ca
 ]
 
 Il costo totale del progetto è fissato a € 12.740, rappresentando il limite massimo del budget disponibile. Qualora si presentasse il rischio di superare tale importo, sarà avviata una rinegoziazione dei requisiti tra il gruppo fornitore e il proponente.
-
+#pagebreak()
 = *Modello di Sviluppo*
 
 == Modello adottato
 
 A seguito di un confronto approfondito con l'azienda proponente e dopo un'attenta valutazione delle metodologie di sviluppo software, il team ha optato per un approccio #glossary("Agile"). La scelta è stata fortemente incoraggiata dall'azienda, che ha condiviso la propria esperienza positiva maturata nell'adozione di questa metodologia in contesti di sviluppo software complessi.
 
-A differenza dei modelli tradizionali, l'#glossary("Agile") si caratterizza per un approccio iterativo e dinamico. Il modello scelto implementato prevede cicli di sviluppo della durata di una o due settimane, durante i quali il team lavora in modo autonomo, pianificando, eseguendo e valutando le attività progettuali.
+A differenza dei modelli tradizionali, quello #glossary("Agile") si caratterizza per un approccio iterativo e dinamico. Il modello scelto implementato prevede cicli di sviluppo della durata di una o due settimane, durante i quali il team lavora in modo autonomo, pianificando, eseguendo e valutando le attività progettuali.
 
 == Principi Fondamentali
 
@@ -354,15 +354,14 @@ Il modello #glossary("Agile") si concretizzerà attraverso:
 In particolare, i periodi di sviluppo saranno suddivisi in #glossary("sprint") di due settimane per il primo periodo (#glossary("RTB")), con successiva riduzione a #glossary("sprint") settimanali nel secondo periodo (#glossary("PB")). Ogni #glossary("sprint") sarà seguito da incontri periodici tra il team di sviluppo e l'azienda proponente, durante i quali verranno verificati gli avanzamenti rispetto agli obiettivi prefissati e pianificati i cicli successivi. Questa struttura garantirà un controllo continuo sull'evoluzione del progetto, facilitando l'adattamento alle necessità emergenti e migliorando la collaborazione tra le parti.
 
 
-
+#pagebreak()
 = *Periodi*
 
 Per ogni periodo si riportano di seguito le seguenti informazioni:
 - Data di inizio, data di fine prevista, data di fine attuale ed eventuali giorni di ritardo;
 - Pianificazione delle attività da svolgere al suo interno (avanzamento atteso), con tanto di potenziali rischi;
 - Tempo stimato per poter completare tutte le attività previste (preventivo);
-- Confronto fra il lavoro svolto (avanzamento conseguito) e quello preventivato, con annessa analisi
-dei costi;
+- Confronto fra il lavoro svolto (avanzamento conseguito) e quello preventivato, con annessa analisi dei costi;
 - Rischi eﬀettivamente occorsi, valutandone il loro impatto e la loro mitigazione;
 - Retrospettiva di periodo per capire cosa e come migliorare in futuro e cosa invece mantenere;
 
