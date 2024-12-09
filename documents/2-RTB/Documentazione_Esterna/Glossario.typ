@@ -58,7 +58,7 @@ L'#glossary("analisi dei requisiti") è una fase fondamentale nello sviluppo del
 
 == #LTG("Analista")
 
-Figura professionale con competenze avanzate riguardo l’attività di analisi dei requisiti ed il dominio applicativo del
+Figura professionale con competenze avanzate riguardo l'attività di analisi dei requisiti ed il dominio applicativo del
 problema. Il suo ruolo è quello di identificare, documentare e comprendere a fondo le esigenze e le specifiche del
 progetto, traducendole in requisiti chiari e dettagliati. Si occupa di: analizzare il contesto di riferimento, definire
 il problema in esame e stabilire gli obiettivi da raggiungere; comprendere il problema e definire la complessità e i requisiti, redigere il documento Analisi dei requisiti; studiare i bisogni espliciti ed impliciti.
@@ -237,7 +237,7 @@ utilizzare solo comandi testuali o linee di comando.
 
 == #LTG("Inspection")
 
-Una tecnica formale di revisione del software in cui un team analizza codice o documentazione per identificare errori o incongruenze rispetto agli standard. L’ispezione include solitamente un moderatore, lettori e un protocollo definito.
+Una tecnica formale di revisione del software in cui un team analizza codice o documentazione per identificare errori o incongruenze rispetto agli standard. L'ispezione include solitamente un moderatore, lettori e un protocollo definito.
 
 == #LTG("Issue")
 
@@ -414,9 +414,9 @@ sviluppatori interessati a partecipare all'appalto.
 == #LTG("Programmatore")
 
 Il programmatore è la figura professionale incaricata della scrittura del codice software. Il suo compito primario è
-implementare il codice conformemente alle specifiche fornite dall’analista e all’architettura definita dal progettista.
+implementare il codice conformemente alle specifiche fornite dall'analista e all'architettura definita dal progettista.
 In particolare, il programmatore: scrive codice manutenibile in conformità con le Specifiche Tecniche; codifica le varie
-componenti dell’architettura seguendo quanto ideato dai progettisti; realizza gli strumenti per verificare e validare il
+componenti dell'architettura seguendo quanto ideato dai progettisti; realizza gli strumenti per verificare e validare il
 codice; redige il Manuale Utente.
 
 == #LTG("Proof Of Concept (PoC)")
@@ -469,7 +469,7 @@ definizione della baseline di progetto.
 == #LTG("Responsabile")
 
 Figura fondamentale che coordina il gruppo, funge da punto di riferimento per il committente e per il team, svolgendo
-il ruolo di mediatore tra le due parti. In particolare si occupa di: gestire le relazioni con l’esterno; pianificare le
+il ruolo di mediatore tra le due parti. In particolare si occupa di: gestire le relazioni con l'esterno; pianificare le
 attività (quali svolgere, data di inizio e fine, assegnazione delle priorità), valutare i rischi associati alle decisioni da prendere, controllare i progressi del progetto, gestire le risorse umane e approvare la documentazione.
 
 == #LTG("Rischi organizzativi")
@@ -539,7 +539,7 @@ Telegram è un'applicazione di messaggistica istantanea e di comunicazione basat
 
 == #LTG("Test di Accettazione")
 
-Verifica finale condotta dall'utente o dal cliente per assicurarsi che il prodotto soddisfi le loro aspettative e sia pronto per l’uso.
+Verifica finale condotta dall'utente o dal cliente per assicurarsi che il prodotto soddisfi le loro aspettative e sia pronto per l'uso.
 
 == #LTG("Test di Integrazione")
 
@@ -547,7 +547,7 @@ Test che verificano l'interazione tra diverse unità o moduli di codice per gara
 
 == #LTG("Test di Sistema")
 
-Valutazione dell’intero sistema software per verificare che soddisfi i requisiti specificati.
+Valutazione dell'intero sistema software per verificare che soddisfi i requisiti specificati.
 
 == #LTG("Test di Unità")
 
@@ -601,7 +601,7 @@ La verifica è il processo volto ad accertare che un prodotto software, un modul
 
 == #LTG("Verificatore")
 
-La principale responsabilità del verificatore consiste nell’ispezionare il lavoro svolto da altri membri del team per
+La principale responsabilità del verificatore consiste nell'ispezionare il lavoro svolto da altri membri del team per
 assicurare la qualità del prodotto e la conformità alle attese prefissate. Stabilisce se il lavoro è stato svolto
 correttamente sulla base delle proprie competenze tecniche, esperienza e conoscenza delle norme. In particolare il
 verificatore si occupa di: verificare che il lavoro svolto sia conforme alle Norme di Progetto; verificare che il lavoro
@@ -615,7 +615,7 @@ prodotto.
 
 == #LTG("Walkthrough")
 
-Una revisione informale di codice, documentazione o requisiti, guidata dall’autore, con lo scopo di ottenere feedback iniziale. I walkthrough sono meno strutturati rispetto alle inspection.
+Una revisione informale di codice, documentazione o requisiti, guidata dall'autore, con lo scopo di ottenere feedback iniziale. I walkthrough sono meno strutturati rispetto alle inspection.
 
 == #LTG("Way of Working (WoW)")
 
