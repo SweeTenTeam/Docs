@@ -98,7 +98,7 @@ esperimenti, senza modificare il codice stabile.
 
 = #LTG("C")
 
-== #LTG("camleCase")
+== #LTG("camelCase")
 
 Uno stile di scrittura di identificatori simile a PascalCase, ma con la prima parola in lettere minuscole e le successive con iniziali maiuscole. Esempio: `myVariableName`.
 
