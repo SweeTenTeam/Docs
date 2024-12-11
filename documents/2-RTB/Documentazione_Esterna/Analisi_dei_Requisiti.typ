@@ -202,21 +202,35 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Elaborazione dei dati ricevuti (#glossary("LLM"))
 
 #pagebreak()
+
+
 === UC3, Consultazione Confluence
 #columns(2, gutter: 2cm)[
   #box[
     *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno), #glossary("Confluence") #glossary("API").
+
+    *Inclusioni*
+    - Reperimento delle informazioni (#glossary("API"))
+    - Elaborazione dei dati ricevuti (#glossary("LLM"))
+
+    *Specializzazioni*
+    - UC3.1, Consultazione Documenti
+    - UC3.2, Consultazione Pagina
+    - UC3.3, Consultazione Task
 
     *Precondizioni*:
     - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
     - Il #glossary("LLM") è in grado di interpretare le richieste dell'utente.
     *Postcondizioni*:
     - L'utente riceve un link diretto al documento richiesto o la parte interessata di tale documento.
-    *Scenario principale*
+    *Scenario principale*:
     - L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda/richiesta.
     - esempio: "Mostrami l'ultima guida aggiornata per il deploy."
-    - #glossary("LLM") interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+    - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
     - Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
+
+    *User Story Associata*:
+    - "Come utente, voglio poter accedere alle informazioni aziendali presenti in Confluence in modo rapido e intuitivo, per poter risolvere i miei dubbi e problemi in modo efficace."
   ]
   #colbreak()
   #figure(
@@ -234,14 +248,69 @@ Quelle interessate per questo progetto sono:
 - *Task*: per accedere a task e attività da svolgere.
 
 
-*Inclusioni*
-- Reperimento delle informazioni (#glossary("API"))
-- Elaborazione dei dati ricevuti (#glossary("LLM"))
+#pagebreak()
+
+==== UC3.1, Consultazione Documenti
+*Attori coinvolti*: #glossary("User"), Sistema, #glossary("Confluence") #glossary("API").
+
+*Precondizioni*:
+- L'utente ha richiesto la visualizzazione di tutta o una parte della guida all'#glossary("onboarding").
+- Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+- Il #glossary("LLM") è in grado di interpretare le richieste dell'utente.
+*Postcondizioni*:
+- L'utente riceve un link diretto alla guida o la parte richiesta di tale documento.
+*Scenario principale*
+- L'utente apre l'interfaccia di #glossary("BuddyBot") e pone la richiesta.
+- Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+- Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
+*User Story*:
+- "Buddybot, sono un nuovo dipendente azzurroDigitale, come devo impostare i miei strumenti per iniziare a lavorare in modo efficiente ed efficace?".
+
+
+==== UC3.2, Consultazione Project Documentation
+
+*Attori coinvolti*: #glossary("User"), Sistema, #glossary("Confluence") #glossary("API").
+
+*Precondizioni*:
+- L'utente ha richiesto la documentazione di un progetto.
+- Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+- Il #glossary("LLM") è in grado di interpretare le richieste dell'utente.
+- Il progetto richiesto è presente su #glossary("Confluence").
+*Postcondizioni*:
+- L'utente riceve un link diretto alla documentazione del progetto richiesto.
+- L'utente può visualizzare la documentazione del progetto richiesto.
+*Scenario principale*
+- L'utente apre l'interfaccia di #glossary("BuddyBot") e pone la richiesta.
+- Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence").
+- Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
+*User Story*:
+- "Buddybot, sto lavorando al progetto C9 ma non ricordo quali erano le linee guida per lo sviluppo del frontend".
+
+==== UC3.3, Consultazione Tasks
+
+*Attori coinvolti*: #glossary("User"), Sistema, #glossary("Confluence") #glossary("API").
+
+*Precondizioni*:
+- L'utente ha richiesto lo stato di una o più tasks.
+- Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+- Il #glossary("LLM") è in grado di interpretare le richieste dell'utente.
+
+*Postcondizioni*:
+- L'utente riceve un link diretto alla documentazione del progetto richiesto o lo stato della task richiesta.
+*Scenario principale*
+- L'utente apre l'interfaccia di #glossary("BuddyBot") e pone la richiesta.
+- Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence").
+- Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
+*User Story*:
+- "Buddybot, quali sono le task ancora attive di questo progetto?".
+
+#figure(
+  image(ar.diagSubUC3),
+  caption: ["Diagramma UC3.1, UC3.2, UC3.3],
+)
 
 
 #pagebreak()
-
-
 = Requisiti
 In questa sezione vengono esposti i requisiti individuati in seguito alle analisi effettuate dal gruppo e dai #glossary("casi d'uso (UC)") esaminati in precedenza. Per garantire maggiore chiarezza, i vari requisiti verranno identificati da codici univoci a seconda della loro natura e dall'obbligatorietà o meno...
 
