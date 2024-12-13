@@ -18,7 +18,11 @@
   diagUC1: "/images/analisi-dei-requisiti/UCJira.png",
   diagUC2: "/images/analisi-dei-requisiti/UCGitHub.png",
   diagUC3: "/images/analisi-dei-requisiti/UCConfluence.png",
-  diagUC4: "/images/analisi-dei-requisiti/UCStoricoChat.png",
+  diagUCStChat: "/images/analisi-dei-requisiti/UCStoricoChat.png",
+  diagUCStChatV: "/images/analisi-dei-requisiti/UCStoricoChatVuoto.png",
+  diagDomandaNoContesto: "/images/analisi-dei-requisiti/UCDomandaNoContesto.png",
+  diagDomandaDocAgg: "/images/analisi-dei-requisiti/UCDomandaDocAgg.png",
+  diagDomandaNoDoc: "/images/analisi-dei-requisiti/UCDomandaNoDoc.png",
 )
 
 //Norme di progetto Immagini
