@@ -18,6 +18,7 @@
   diagUC1: "/images/analisi-dei-requisiti/UCJira.png",
   diagUC2: "/images/analisi-dei-requisiti/UCGitHub.png",
   diagUC3: "/images/analisi-dei-requisiti/UCConfluence.png",
+  diagUC4: "/images/analisi-dei-requisiti/UCStoricoChat.png",
 )
 
 //Norme di progetto Immagini

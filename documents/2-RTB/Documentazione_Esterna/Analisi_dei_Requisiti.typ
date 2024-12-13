@@ -1,10 +1,21 @@
 #import "/template/document.typ": *
 
+#let nUCStoricoChat = 4
+#let nUCStoricoChatV =  nUCStoricoChat+0.1
+#let nUCDomandaNoContesto = 5
+#let nUCDomandaDocAgg = 6
+#let nUCDomandaNoDoc = 7
+
 #show: project.with(
   title: "Analisi dei Requisiti",
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
+    "0.0.7",
+    "2024-12-13",
+    (p.fracaro),
+    (p.ferazzani),
+    "Inseriti UC4, UC5, UC6, UC7",
     "0.0.5",
     "2024-12-02",
     (p.santi),
@@ -222,6 +233,142 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Reperimento delle informazioni (#glossary("API"))
 - Elaborazione dei dati ricevuti (#glossary("LLM"))
 
+
+=== UC#{nUCStoricoChat}, Visualizzazione storico chat
+
+#columns(2, gutter: 2cm)[
+  #box[
+*Attori:*
+- User;
+- Database;
+
+*Precondizioni:*
+- Il sistema è collegato al database esternno correttamente;
+*Postcondizioni:*
+- L’utente visualizza lo storico dei messaggi nella finestra di chat altrimenti riceve l’indicazione che non ci sono messaggi da mostrare;
+
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUCStChat, width: 25em, fit: "contain"),
+    caption: "Diagramma UC"+str(nUCStoricoChat)+", Visualizzazione storico chat"
+  )
+]
+*Scenario principale:*
+
+- L'user accede all’interfaccia della chat;
+- L'user richiede di visualizzare lo storico della chat;
+- Il sistema interroga il database per recuperare i messaggi associati all’utente;
+- I messaggi recuperati vengono visualizzati nell’interfaccia della chat;
+*Estensioni:*
+
+- Nessun messaggio nello storico della chat;
+
+==== UC#{nUCStoricoChatV}, Nessun messaggio nello storico della chat
+
+#columns(2, gutter: 2cm)[
+  #box[
+*Attori:*
+- Primario: User;
+- Secondario: Database;
+
+*Precondizioni:*
+- Il sistema è collegato al database esternno correttamente;
+
+*Postcondizioni:*
+- L'utente viene informato che non ci sono messaggi nello storico della chat; 
+]
+  #colbreak()
+  #figure(
+    image(ar.diagUCStChatV, width: 25em, fit: "contain"),
+    caption: "Diagramma UC" + str(nUCStoricoChatV) + ", Nessun messaggio nello storico della chat"
+  )
+]
+*Scenario principale:*
+- L'user accede all’interfaccia della chat;
+- L'user richiede di visualizzare lo storico della chat;
+- Il sistema interroga il database per recuperare i messaggi associati all’utente;
+- L'utente viene informato che non ci sono messaggi nello storico della chat;
+
+=== UC#{nUCDomandaNoContesto}, Domanda fuori contesto
+#columns(2, gutter: 2cm)[
+  #box[
+*Attori:*
+- User;
+- #glossary("LLM");
+
+*Precondizioni:*
+- Le richieste al modello LLM esterno funzionano correttamente;
+*Postcondizioni:*
+- L’utente viene informato che l'#glossary("LLM") non è in grado di fornire una risposta a questo tipo di domanda.
+
+*Scenario principale:*
+  - L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda/richiesta che non è nel contesto delle domande a cui il sistema può rispondere;
+  - esempio: "Chi ha vinto i mondiali di calcio nel 2006?";
+  - #glossary("LLM") interpreta la domanda e restituisce una risposta che informa l'utente dell'impossibilità di rispondere a quel tipo di richiesta;
+
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagDomandaNoContesto, width: 25em, fit: "contain"),
+    caption: "Diagramma UC"+str(nUCDomandaNoContesto)+", Domanda fuori contesto"
+  )
+]
+
+=== UC#{nUCDomandaDocAgg}, Domanda su documenti non aggiornati
+#columns(2, gutter: 2cm)[
+  #box[
+*Attori:*
+- User;
+- #glossary("LLM") ;
+- #glossary("API") di: Github, Confluence, Jira;
+
+*Precondizioni:*
+- Le richieste al modello LLM esterno funzionano correttamente;
+- Le #glossary("API") sono configurate correttamente;
+*Postcondizioni:*
+- L’utente riceve una risposta corretta ma basata su documenti non aggiornati provenienti da Github, Confluence o Jira con annesso la data dell'ultimo aggiornamento di tale documento;
+
+*Scenario principale:*
+  - L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda/richiesta che richiede l'accesso ad una versione aggiornata dei documenti rispetto a quelli a cui il sistema ha accesso;
+  - esempio: "Quali sono i #glossary("commit") del progetto XYZ sul #glossary("branch") M creati nelle ultime 24 ore?";
+  - #glossary("LLM") interpreta la domanda e restituisce una risposta basata su documenti obsoleti che potrebbe non essere corretta notificando all'utente la data dell'ultimo aggiornamento di tali docuemnti;
+
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagDomandaDocAgg, width: 25em, fit: "contain"),
+    caption: "Diagramma UC"+str(nUCDomandaDocAgg)+", Domanda documenti non aggiornati"
+  )
+]
+
+=== UC#{nUCDomandaNoDoc}, Domanda su documenti inesistenti
+#columns(2, gutter: 2cm)[
+  #box[
+*Attori:*
+- User;
+- #glossary("LLM") ;
+- #glossary("API") di: Github, Confluence, Jira;
+
+*Precondizioni:*
+- Le richieste al modello LLM esterno funzionano correttamente;
+- Le #glossary("API") sono configurate correttamente;
+*Postcondizioni:*
+- L’utente riceve una risposta che lo informa che la risorsa richiesta non esiste nelle fonti a cui #glossary("BuddyBot") ha accesso.
+
+*Scenario principale:*
+  - L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda/richiesta che fa riferimento a risorse inesistenti nelle fonti a cui il sistema ha accesso;
+  - esempio: "A chi è assegnato il #glossary("ticket") con id 123ABC?";
+  - Il sistema interroga le #glossary("API") delle varie fonti senza trovare la risorsa desiderata;
+  - #glossary("LLM") interpreta la domanda e restituisce una risposta segnalando che la risosrsa richiesta è inestitente;
+
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagDomandaNoDoc, width: 25em, fit: "contain"),
+    caption: "Diagramma UC"+str(nUCDomandaNoDoc)+", Domanda documenti inesistenti"
+  )
+]
 
 #pagebreak()
 
