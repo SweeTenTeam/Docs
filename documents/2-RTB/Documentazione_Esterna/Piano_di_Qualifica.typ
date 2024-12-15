@@ -8,7 +8,7 @@
     "2024-12-07",
     (p.benedetti), 
     (p.ferazzani), 
-    "Stesura introduzione e obiettivi di qualità."
+    [Stesura introduzione e obiettivi di qualità.]
   ),
   show_images_list: true,
   show_tables_list: true,
@@ -23,45 +23,45 @@ Il Piano di Qualifica illustra le pratiche di controllo della qualità degli art
 
 L'approccio adottato mira a promuovere il miglioramento continuo attraverso misure quantitative che permettano di monitorare e valutare il progresso del progetto. Questo impegno costante per la qualità si traduce in aggiornamenti regolari del documento, garantendo così la crescita e l'evoluzione sia del prodotto che dei processi nel tempo.
 
-== Scopo del prodotto
-Lo scopo del prodotto è quello di sviluppare un assistente virtuale intelligente in grado di centralizzare e ottimizzare l'accesso alle informazioni aziendali. Grazie all'integrazione con piattaforme come GitHub, Confluence e Jira, BuddyBot fornisce risposte precise e personalizzate alle richieste degli utenti attraverso una chat in linguaggio naturale. Questo strumento mira a ridurre le inefficienze operative, migliorare la produttività e supportare il processo di onboarding, facilitando la condivisione e il trasferimento delle conoscenze all'interno dei team.
+== Scopo del progetto
+Lo scopo del progetto è quello di sviluppare un assistente virtuale intelligente in grado di centralizzare e ottimizzare l'accesso alle informazioni aziendali. Grazie all'integrazione con piattaforme come GitHub, Confluence e Jira, BuddyBot fornisce risposte precise e personalizzate alle richieste degli utenti attraverso una chat in linguaggio naturale. Questo strumento mira a ridurre le inefficienze operative, migliorare la produttività e supportare il processo di #glossary("onboarding"), facilitando la condivisione e il trasferimento delle conoscenze all'interno dei team.
 
 == Glossario
 Per evitare ambiguità o incomprensioni riguardanti la terminologia utilizzata nei documenti, è stato redatto un Glossario che raccoglie le definizioni dei termini specifici del dominio d'uso. Ogni termine incluso nel Glossario è accompagnato dal relativo significato, al fine di garantire chiarezza e uniformità nella comprensione del testo.
 
-La presenza di un termine nel Glossario viene segnalata direttamente nel documento adottando uno #glossary("stile specifico"). L'inserimento di un termine nel Glossario è considerato completo solo dopo averne fornito una definizione chiara e accurata, contribuendo così alla coerenza del linguaggio e alla comprensione condivisa tra tutti i lettori del documento.
+La presenza di un termine nel Glossario viene segnalata direttamente nel documento adottando uno #glossary("questo stile"). L'inserimento di un termine nel Glossario è considerato completo solo dopo averne fornito una definizione chiara e accurata, contribuendo così alla coerenza del linguaggio e alla comprensione condivisa tra tutti i lettori del documento.
 
 #pagebreak()
 
 == Riferimenti
 === Normativi
 - Norme di progetto v1.0.0
-- Presentazione capitolato d'appalto: https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9.pdf
+- Presentazione capitolato d'appalto: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9.pdf")
 
 === Informativi
 
 - ISO/EIC 9126
-https://en.wikipedia.org/wiki/ISO/IEC_9126
+#link("https://en.wikipedia.org/wiki/ISO/IEC_9126")
 
 #linebreak()
 - T7 - Qualità del software
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
 
 #linebreak()
 - T8 - Qualità di processo
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
 
 #linebreak()
 - T9 - Verifica e validazione: introduzione
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf")
 
 #linebreak()
 - T10 - Verifica e validazione: analisi statica
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf")
 
 #linebreak()
 - T11 - Verifica e validazione: analisi dinamica aka testing
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf")
 
 = *Obiettivi di qualità*
 Ogni #glossary("processo") viene valutato mediante l'applicazione di metriche specifiche, la cui definizione è dettagliata nelle sezioni Metriche di qualità del processo e Metriche di qualità del prodotto del documento Norme di Progetto v1.0.0. Queste sezioni delineano i criteri necessari affinchè le metriche siano considerate accettabili o eccellenti.
