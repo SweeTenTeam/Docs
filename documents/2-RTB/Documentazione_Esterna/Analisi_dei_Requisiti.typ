@@ -190,7 +190,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 
 #figure(
   image(ar.diagUC1, width: 42em, fit: "contain"),
-    caption: "Diagramma UC1, consultazione Jira"
+    caption: "Diagramma UC1, consultazione Jira (bozza)"
 )
 
 #pagebreak()
