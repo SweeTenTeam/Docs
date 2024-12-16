@@ -105,7 +105,7 @@ Tale prodotto, in conclusione, risponde alla necessità di accedere in modo faci
 
 L’assistente virtuale utilizza tecnologie di Intelligenza Artificiale (nel nostro progetto verranno utilizzati #glossary("GroqCloud") e #glossary("Langchain") lato #glossary("LLM")) per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate. 
 
-A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("PostgreSQL") a un volume #glossary("Docker").
+A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("Postgres") a un volume #glossary("Docker").
 
 == Utenti e caratteristiche
 Il prodotto si rivolge principalmente al team aziendale:
@@ -306,7 +306,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - L'utente riceve una risposta chiara in linguaggio naturale dello stato della #glossary("Board") del progetto, mostrando ticket "da completare", "in corso", "completati"...
 
 *Scenario principale*
-- L'utente interagisce con l'interfaccia di #glossary("BuddyBot") e richiede la #glossary("Timeline") di un determinato progetto.
+- L'utente interagisce con l'interfaccia di #glossary("BuddyBot") e richiede la #glossary("Board") di un determinato progetto.
   - esempio: "Mostrami i ticket della #glossary("Board") del progetto 'BuddyBot-MVP'"
 - Il sistema interpreta la richiesta e la inoltra alle #glossary("API") di #glossary("Jira") per reperire le attività della #glossary("Board") richiesta.
 - #glossary("LLM") elabora la risposta, restituendo i ticket della #glossary("Board") richiesta.
