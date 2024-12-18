@@ -131,6 +131,7 @@ Gli scenari sottostanti seguono uno schema e può prevedere:
 - *Scenario principale*: descrizione dettagliata delle azioni che l'attore deve compiere per completare il caso d'uso; vengono formalizzati anche ipotesi e risultati attesi
 - *Estensioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, è possibile prevedere varianti o comportamenti alternativi che arricchiscono o modificano lo scenario principale
 - *Inclusioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, alcune funzionalità o azioni comuni appartengono a un altro caso d'uso, sempre eseguito come parte integrante dello scenario principale
+- *User Story*: descrizione di una funzionalità del software dal punto di vista dell'utente; aiuta a comprendere le esigenze dell'utente e a definire i requisiti del sistema
 - *Generalizzazioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, esso rappresenta una variante o un'istanza di un caso d'uso più generale che descrive caratteristiche o comportamenti comuni a più scenari
 == Attori
 L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio ponendo domande all'assistente virtuale.
@@ -165,7 +166,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema invia una richiesta alle #glossary("API") di #glossary("Jira") per estrarre i dati
   - nel nostro esempio, vengono quindi estratti dati relativi alle #glossary("issue") assegnate all'utente con scadenza entro la settimana corrente.
 - #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
-  - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di titoli, priorità, date di scadenza e stati.
+  - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di *titoli*, priorità, date di scadenza e stati.
 
 *Inclusioni*
 - Reperimento delle informazioni (#glossary("API"))
@@ -227,7 +228,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
     - L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda/richiesta.
     - esempio: "Mostrami l'ultima guida aggiornata per il deploy."
     - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
-    - Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
+    - Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazioni.
 
     *User Story Associata*:
     - "Come utente, voglio poter accedere alle informazioni aziendali presenti in Confluence in modo rapido e intuitivo, per poter risolvere i miei dubbi e problemi in modo efficace."
@@ -305,7 +306,7 @@ Quelle interessate per questo progetto sono:
 - "Buddybot, quali sono le task ancora attive di questo progetto?".
 
 #figure(
-  image(ar.diagSubUC3),
+  image(ar.diagSUBUC3),
   caption: ["Diagramma UC3.1, UC3.2, UC3.3],
 )
 

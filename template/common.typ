@@ -18,7 +18,7 @@
   diagUC1: "/images/analisi-dei-requisiti/UCJira.png",
   diagUC2: "/images/analisi-dei-requisiti/UCGitHub.png",
   diagUC3: "/images/analisi-dei-requisiti/UCConfluence.png",
-  diagSubUC3: "/images/analisi-dei-requisiti/SubUCConfluence.png",
+  diagSUBUC3: "/images/analisi-dei-requisiti/SUBUCConfluence.png",
 )
 
 //Norme di progetto Immagini
