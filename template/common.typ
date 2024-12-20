@@ -15,10 +15,10 @@
 
 //Diagrammi UML per doc AdR
 #let ar = (
-  //diagUC1: "/images/analisi-dei-requisiti/UCJira.png",
-  diagUC1: "/images/analisi-dei-requisiti/UC1_Jira_BOZZA.png",
-  diagUC2: "/images/analisi-dei-requisiti/UCGitHub.png",
-  diagUC3: "/images/analisi-dei-requisiti/UCConfluence.png",
+  diagUC1: "/images/analisi-dei-requisiti/UC1_RecuperoInfo.png",
+  diagUC2: "/images/analisi-dei-requisiti/UC2_InfoJira.png",
+  diagUC3: "/images/analisi-dei-requisiti/UCGitHub.png",
+  diagUC4: "/images/analisi-dei-requisiti/UCConfluence.png",
 )
 
 //Norme di progetto Immagini

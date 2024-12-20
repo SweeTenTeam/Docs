@@ -131,203 +131,42 @@ Gli scenari sottostanti seguono uno schema e può prevedere:
 L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio ponendo domande all'assistente virtuale.
 
 #pagebreak()
-/*
-== Definizione casi d'uso
-//===UC1, Consultazione Jira
-#columns(2, gutter: 3cm)[
-  #box[
-  === UC1, Consultazione Jira
-    *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno)
-  
-    *Precondizioni*
-    - Le #glossary("API") di #glossary("Jira") sono disponibili e configurate correttamente.
 
-    *Postcondizioni*
-    - Le informazioni richieste vengono presentate correttamente all'utente e può visualizzarle per pianificare le proprie attività.
-  ]
-  #colbreak()
-  #figure(
-    image(ar.diagUC1, width: 22em, fit: "contain"),
-    caption: "Diagramma UC1, consultazione Jira"
-  )
-]
-
-*Scenario principale*
-- L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda 
-  - esempio: "Quali #glossary("issue") sono assegnate a me per questa settimana?"
-- #glossary("BuddyBot") autentica la connessione con Jira 
-
-- Il sistema invia una richiesta alle #glossary("API") di #glossary("Jira") per estrarre i dati 
-  - nel nostro esempio, vengono quindi estratti dati relativi alle #glossary("issue") assegnate all'utente con scadenza entro la settimana corrente.
-- #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
-  - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di titoli, priorità, date di scadenza e stati.
-
-*Inclusioni*
-- Reperimento delle informazioni (#glossary("API"))
-- Elaborazione dei dati ricevuti (#glossary("LLM"))
-*/
-=== UC1, Consultazione Jira
-*Attori coinvolti*: #glossary("User")
+=== UC2, Richiesta che richiede informazioni da Jira
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
 - #glossary("BuddyBot") è operativo e accessibile all'utente.
 - Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+- L'informazione richiesta dall'utente è presente in #glossary("Jira").
 
 *Postcondizioni*
-- La richiesta viene inoltrata correttamente alle #glossary("API") di #glossary("Jira").
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale.
 
 *Scenario principale*
 - L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda in linguaggio naturale
-- Il sistema interpreta la domanda e tale richiesta  viene inviata al modulo di connessione con le #glossary("API") di #glossary("Jira") con il fine di estrarre i dati utili.
+- Il sistema interpreta la domanda digitata nell'interfaccia (#glossary("GUI")) e tale richiesta  viene inviata al modulo di connessione con le #glossary("API") di #glossary("Jira") con il fine di estrarre i dati utili.
+- #glossary("LLM") elabora le informazioni ottenute per fornire all'utente una risposta chiara e comprensibile.
 
-*Generalizzazioni*
-- UC1.1, "Ritorno di un ticket e dettagli"
-- UC1.2, "Visualizzazione Backlog"
-- UC1.3, "Visualizzazione attività Timeline"
-- UC1.4, "Visualizzazione della Board"
+*Inclusioni*
+- UC2.1, "Richiesta che richiede nome (titolo) di un ticket"
+- UC2.2, "Richiesta che richiede assegnatario di un ticket"
+- UC2.3, "Richiesta che richiede etichette di un ticket"
+- UC2.4, "Richiesta che richiede stato di un ticket"
+- UC2.5, "Richiesta che richiede attività principale collegata a un ticket"
+- UC2.6, "Richiesta che richiede team di appartenenza di un ticket"
+- UC2.7, "Richiesta che richiede sprint di appartenenza di un ticket"
+- UC2.8, "Richiesta che richiede #glossary("story point estimate") di un ticket"
+- UC2.9, "Richiesta che richiede il richiedente/creatore di un ticket"
 
-#box(height: 3em, width: auto, fill: none)[]  // spazio vuoto per separare text - img
+#pagebreak()
 
 #figure(
-  image(ar.diagUC1, width: 42em, fit: "contain"),
-    caption: "Diagramma UC1, consultazione Jira (bozza)"
+  image(ar.diagUC2, width: 45em, fit: "contain"),
+    caption: "Diagramma UC2, richiesta informazioni Jira"
 )
 
 #pagebreak()
-
-==== UC1.1, Ritorno di un ticket e dettagli
-*Attori coinvolti*: #glossary("User")
-
-*Precondizioni*
-- #glossary("BuddyBot") è operativo e accessibile all'utente.
-- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
-- L'informazione richiesta dall'utente è presente in #glossary("Jira").
-
-*Postcondizioni*
-- L'utente visualizza i dettagli del ticket richiesto in un formato testuale leggibile (linguaggio naturale).
-
-*Scenario principale*
-- L'utente interpella #glossary("BuddyBot") per ottenere maggiori informazioni in merito a un ticket.
-  - Si osservi che un utente può effettuare una ricerca generica ma anche specifica secondo certi criteri: "ID", "Tipo", "Assegnatario", "Stato", "Data/Scadenza"...
-  - esempio: "Mostrami i ticket di tipo "task" ancora da completare."
-  - esempio: "Ritorna i ticket che hanno scadenza 15/12/2024."
-- Il sistema, dopo aver interpretato la domanda, invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
-- #glossary("LLM") elabora le informazioni ottenute per fornire all'utente una risposta chiara e comprensibile.
-
-=== UC1.2, Visualizzazione Backlog
-*Attori coinvolti*: #glossary("User")
-
-*Precondizioni*
-- #glossary("BuddyBot") è operativo e accessibile all'utente.
-- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
-- L'informazione richiesta dall'utente è presente in #glossary("Jira").
-
-*Postcondizioni*
-- L'utente riceve una lista, in formato chiaro e leggibile, dei ticket presenti nel #glossary("Backlog") del progetto richiesto.
-
-*Scenario principale*
-- L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda riguardante la sezione #glossary("Backlog") di #glossary("Jira").
-  - esempio: "Mostrami il #glossary("Backlog") del progetto 'BuddyBot-MVP'."
-- Il sistema interpreta la richiesta e la inoltra alle #glossary("API") di #glossary("Jira") per recuperare i ticket presenti nel #glossary("Backlog") del progetto richiesto.
-- #glossary("LLM") elabora la risposta, fornendo all'utente una visualizzazione del #glossary("Backlog") richiesto (e dei suoi ticket) in linguaggio naturale.
-
-*Estensioni*
-- UC1.2.1 - Vista personalizzabile - attività Backlog.
-
-==== UC1.2.1, Vista personalizzabile - attività Backlog
-*Attori coinvolti*: #glossary("User")
-
-*Precondizioni*
-- #glossary("BuddyBot") è operativo e accessibile all'utente.
-- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
-- L'informazione richiesta dall'utente è presente in #glossary("Jira").
-
-*Postcondizioni*
-- Viene fornita una risposta con il #glossary("Backlog") del progetto richiesto, contenente le attività disposte in ordine in base ai criteri richiesti dall'utente.
-
-*Scenario principale*
-- L'utente richiede di "filtrare" i ticket di un determinato #glossary("Backlog") secondo certi parametri: "Assegnatario", "Stato", "Tipo", "Sprint"...
-  - esempio: "Mostrami il #glossary("Backlog") dello Sprint 3 con i ticket assegnati ad Andrea Santi."
-  - esempio: "Mostrami il #glossary("Backlog") con i ticket di tipo "Bug" ancora da completare."
-- Il sistema interpreta la richiesta e la inoltra alle #glossary("API") di #glossary("Jira") per recuperare le informazioni utili.
-- #glossary("LLM") elabora la risposta, fornendo all'utente una visualizzazione filtrata del #glossary("Backlog") richiesto (e dei suoi ticket) in linguaggio naturale.
-
-#pagebreak()
-
-=== UC1.3, Visualizzazione attività Timeline
-*Attori coinvolti*: #glossary("User")
-
-*Precondizioni*
-- #glossary("BuddyBot") è operativo e accessibile all'utente.
-- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
-- L'informazione richiesta dall'utente è presente in #glossary("Jira").
-
-*Postcondizioni*
-- L'utente riceve una panoramica leggibile della #glossary("Timeline") del progetto, comprendente attività, scadenze e stato.
-
-*Scenario principale*
-- L'utente interagisce con l'interfaccia di #glossary("BuddyBot") e richiede la #glossary("Timeline") di un determinato progetto.
-  - esempio: "Mostrami la #glossary("Timeline") del progetto 'BuddyBot-MVP'"
-- Il sistema interpreta la richiesta e la inoltra alle #glossary("API") di #glossary("Jira") per individuare e reperire le attività (ticket) della #glossary("Timeline") richiesta.
-- Una volta ottenute le informazioni, #glossary("LLM") elabora la risposta, restituendo ticket e i suoi dati (assegnatario, titolo, stato, date).
-
-*Generalizzazioni*
-- UC1.3.1 - Vista personalizzabile - Timeline
-
-==== UC1.3.1, Vista personalizzabile - Timeline
-*Attori coinvolti*: #glossary("User")
-
-*Precondizioni*
-- #glossary("BuddyBot") è operativo e accessibile all'utente.
-- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
-- L'informazione richiesta dall'utente è presente in #glossary("Jira").
-
-*Postcondizioni*
-- L'utente riceve una vista della timeline personalizzata in base ai criteri richiesti.
-
-*Scenario principale*
-- L'utente pone una domanda al #glossary("Chatbot"), richiedendo di poter ottenere informazioni in merito a una determinata #glossary("Timeline") secondo determinati criteri/filtri...
-  - esempio: "Mostrami la #glossary("Timeline") del progetto 'BuddyBot-MVP' con i ticket assegnati a Matteo Campagnaro ancora da completare."
-  - esempio: "Mostrami la #glossary("Timeline") del progetto 'BuddyBot-MVP' con i ticket con scadenza 15/12/2024."
-- Il sistema interpreta la richiesta e la inoltra alle #glossary("API") di #glossary("Jira") per recuperare i ticket presenti nella #glossary("Timeline") del progetto richiesto, secondo i criteri specificati dall'utente.
-- #glossary("LLM") elabora la risposta, fornendo all'utente una visualizzazione della #glossary("Timeline") richiesta (e dei suoi ticket) in linguaggio naturale.
-
-#pagebreak()
-
-=== UC1.4, Visualizzazione Board
-*Attori coinvolti*: #glossary("User")
-
-*Precondizioni*
-- #glossary("BuddyBot") è operativo e accessibile all'utente.
-- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
-- L'informazione richiesta dall'utente è presente in #glossary("Jira").
-
-*Postcondizioni*
-- L'utente riceve una risposta chiara in linguaggio naturale dello stato della #glossary("Board") del progetto, mostrando ticket "da completare", "in corso", "completati"...
-
-*Scenario principale*
-- L'utente interagisce con l'interfaccia di #glossary("BuddyBot") e richiede la #glossary("Board") di un determinato progetto.
-  - esempio: "Mostrami i ticket della #glossary("Board") del progetto 'BuddyBot-MVP'"
-- Il sistema interpreta la richiesta e la inoltra alle #glossary("API") di #glossary("Jira") per reperire le attività della #glossary("Board") richiesta.
-- #glossary("LLM") elabora la risposta, restituendo i ticket della #glossary("Board") richiesta.
-
-*Generalizzazione*
-- UC1.4.1, Vista personalizzabile - Board
-
-==== UC1.4.1, Vista personalizzabile - Board
-*Attori coinvolti*: #glossary("User")
-
-*Precondizioni*
-- #glossary("BuddyBot") è operativo e accessibile all'utente.
-- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
-- L'informazione richiesta dall'utente è presente in #glossary("Jira").
-
-*Postcondizioni*
-- L'utente riceve una risposta chiara in linguaggio naturale dello stato della #glossary("Board") del progetto, mostrando ticket secondo i criteri specificati dall'utente (assegnatario, stato, tipo, sprint).
-  - esempio: "Mostrami la #glossary("Board") del progetto 'BuddyBot-MVP', con le attività "da completare" assegnate ad Orlando Ferazzani."
-  - esempio: "Mostrami la #glossary("Board") del progetto 'BuddyBot-MVP, con le attività "in corso" del secondo sprint."
-- Il sistema interpreta la richiesta e la inoltra alle #glossary("API") di #glossary("Jira") per recuperare le attività richieste secondo i criteri forniti dall'utente.
-- #glossary("LLM") elabora la risposta, restituendo i ticket richiesti della #glossary("Board").
 
 //=== UC2, Consultazione GitHub
 #columns(2, gutter: 3cm)[
