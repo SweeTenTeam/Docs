@@ -32,7 +32,7 @@ Abbiamo presentato ad #p.azzurro :
 - Il resoconto del lavoro svolto durante il primo sprint;
 - Una demo live del #glossary("PoC");
 - Le attività e gli obiettivi del prossimo sprint; 
-- Chiarimenti sui dubbi che avevamo.
+- Dubbi su alcune parti del progetto.
 
 
 = Sintesi dell'incontro
@@ -44,7 +44,7 @@ Abbiamo presentato ad #p.azzurro :
 == Casi d'uso
 - Il team ha domandato se l'azienda aveva dei casi d'uso specifici oltre a quelli messi come esempio nella presentazione del capitolato. Ci è stato risposto che quelli sono solo di esempio ma gli altri saranno basati sulle funzionalità richieste e quelle che decideremo di implementare.
 == Aggiornamento database
-- Il team ha chiesto se il database delle domande andasse aggiornato con una frequanza precisa o ad ogni nuova interazione. Ci è sato risposto che possiamo aggiornarlo manualmente per il #glossary("PoC") e poi per il #glossary("MVP") decidere una frequenza di aggiornamento il più frequente possibile ma che non sovraccarichi il sistema.
+- Il team ha chiesto se il database vettoriale andasse aggiornato con una frequanza precisa o ad ogni nuova interazione. Ci è sato risposto che possiamo aggiornarlo manualmente per il #glossary("PoC") e poi per il #glossary("MVP") decidere una frequenza di aggiornamento il più frequente possibile ma che non sovraccarichi il sistema.
 
 
 = Prossimi step
