@@ -395,7 +395,7 @@ Ogni fase si concentra sulla preparazione dei documenti e artefatti richiesti da
 #pagebreak()
 == *RTB*
 *Inizio*: 2024-11-12;\
-*Fine prevista*: 2025-01-14;\
+*Fine prevista*: 2025-01-13;\
 *Fine attuale*: ;\
 *Giorni di ritardo*: ;\
 
