@@ -201,6 +201,71 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
 - #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente l'assegnatario del ticket richiesto.
 
+==== UC2.3, Richiesta che richiede etichette di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+- L'informazione richiesta dall'utente è presente in #glossary("Jira").
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- L'utente interpella #glossary("BuddyBot") per ottenere maggiori informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente le etichette associate al ticket richiesto.
+
+==== UC2.4, Richiesta che richiede stato di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+- L'informazione richiesta dall'utente è presente in #glossary("Jira").
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- L'utente interpella #glossary("BuddyBot") per ottenere maggiori informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente lo stato ("Da completare", "In corso", "Completato") del ticket richiesto.
+
+==== UC2.5, "Richiesta che richiede attività principale collegata a un ticket"
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+- L'informazione richiesta dall'utente è presente in #glossary("Jira").
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- L'utente interpella #glossary("BuddyBot") per ottenere maggiori informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verranno mostrate nell'interfaccia-chat, attraverso una risposta in linguaggio naturale, le eventuali etichette/attività principali dello specifico ticket preso in esame.
+
+==== UC2.6, "Richiesta che richiede team di appartenenza di un ticket"
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+- L'informazione richiesta dall'utente è presente in #glossary("Jira").
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- L'utente interpella #glossary("BuddyBot") per ottenere maggiori informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. In questo caso verrà restituita una risposta chiara e comprensibile contente il team al quale è associato il ticket preso in esame.
+
+
 #pagebreak()
 
 = Requisiti
