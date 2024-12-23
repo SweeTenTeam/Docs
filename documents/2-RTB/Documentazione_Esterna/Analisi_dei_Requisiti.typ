@@ -263,8 +263,55 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 *Scenario principale*
 - L'utente interpella #glossary("BuddyBot") per ottenere maggiori informazioni in merito a un ticket.
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
-- #glossary("LLM") elabora le informazioni ottenute. In questo caso verrà restituita una risposta chiara e comprensibile contente il team al quale è associato il ticket preso in esame.
+- #glossary("LLM") elabora le informazioni ottenute. In questo caso verrà restituita una risposta contente il team al quale è associato il ticket preso in esame.
 
+==== UC2.7, Richiesta che richiede sprint di appartenenza di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+- L'informazione richiesta dall'utente è presente in #glossary("Jira").
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- L'utente interpella #glossary("BuddyBot") per ottenere maggiori informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Verrà infine ritornata nella #glossary("GUI") una risposta contenete lo Sprint di appartenenza del ticket richiesto dall'utente.
+
+==== UC2.8, Richiesta che richiede #glossary("story point estimate") di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+- L'informazione richiesta dall'utente è presente in #glossary("Jira").
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- L'utente interpella #glossary("BuddyBot") per ottenere maggiori informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Verrà generata una risposta in linguaggio naturale contenente la #glossary("story point estimate"), ossia un'unità di misura che indicizza la complessità del ticket richiesto.
+
+==== UC2.9, Richiesta che richiede il richiedente/creatore di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+- L'informazione richiesta dall'utente è presente in #glossary("Jira").
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- L'utente interpella #glossary("BuddyBot") per ottenere maggiori informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Verrà generata una risposta in linguaggio naturale contenente la persona che ha creato e richiesto il completamento dell'attività richiesta.
 
 #pagebreak()
 
