@@ -248,9 +248,6 @@ Quelle interessate per questo progetto sono:
 - *Pagina*: per accedere a informazioni specifiche presenti in una pagina;
 - *Task*: per accedere a task e attività da svolgere.
 
-
-#pagebreak()
-
 ==== UC3.1, Consultazione Documenti
 *Attori coinvolti*: #glossary("User"), Sistema, #glossary("Confluence") #glossary("API").
 
@@ -305,10 +302,6 @@ Quelle interessate per questo progetto sono:
 *User Story*:
 - "Buddybot, quali sono le task ancora attive di questo progetto?".
 
-#figure(
-  image(ar.diagSUBUC3),
-  caption: ["Diagramma UC3.1, UC3.2, UC3.3],
-)
 
 
 #pagebreak()
