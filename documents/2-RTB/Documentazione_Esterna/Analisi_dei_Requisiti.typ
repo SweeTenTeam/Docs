@@ -204,31 +204,42 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 
 #pagebreak()
 
-
+//confluence
 === UC3, Consultazione Confluence
 #columns(2, gutter: 2cm)[
   #box[
-    *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno), #glossary("Confluence") #glossary("API").
+    *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
 
-    *Inclusioni*
-    - Reperimento delle informazioni (#glossary("API"))
-    - Elaborazione dei dati ricevuti (#glossary("LLM"))
+    *Inclusioni* //non sapevo se metterle come inclusioni o specializzazioni quindi ho seguito il diagramma
+    - UC3.1 Richiesta Id di una pagina
+    - UC3.2 Richiesta titolo di una pagina
+    - UC3.3 Richiesta status di una pagina
+    - UC3.4 Richiesta autore di una pagina
+    - UC3.5 Richiesta owner di una pagina
+    - UC3.6 Richiesta spazio di una pagina
+    - UC3.7 Richiesta Body di una pagina
+    - UC3.8 Richiesta Id di una Task
+    - UC3.9 Richiesta Status di una Task
+    - UC3.10 Richiesta creatore di una Task
+    - UC3.11 Richiesta assegnatario di una Task
+    - UC3.12 Richiesta data di scadenza di una Task
 
-    *Specializzazioni*
-    - UC3.1, Consultazione Documenti
-    - UC3.2, Consultazione Pagina
-    - UC3.3, Consultazione Task
+    // *Specializzazioni*
+    // - UC3.1, Consultazione Documenti
+    // - UC3.2, Consultazione Pagina
+    // - UC3.3, Consultazione Task
 
     *Precondizioni*:
     - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
-    - Il #glossary("LLM") è in grado di interpretare le richieste dell'utente.
+    - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente. //BOH
+    - L'utente ha posto una richiesta non fuori contesto e conforme con lo scope del sistema
+
     *Postcondizioni*:
-    - L'utente riceve un link diretto al documento richiesto o la parte interessata di tale documento.
+    - L'utente riceve la parte interessata di tale documento.
+
     *Scenario principale*:
-    - L'utente apre l'interfaccia di #glossary("BuddyBot") e pone una domanda/richiesta.
-    - esempio: "Mostrami l'ultima guida aggiornata per il deploy."
-    - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
-    - Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazioni.
+    - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente. //anche qui solo questa?
+    - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile. //BOHH
 
     *User Story Associata*:
     - "Come utente, voglio poter accedere alle informazioni aziendali presenti in Confluence in modo rapido e intuitivo, per poter risolvere i miei dubbi e problemi in modo efficace."
@@ -244,67 +255,252 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 
 Quelle interessate per questo progetto sono:
 
-- *Documenti*: per accedere a documenti e guide aziendali;
 - *Pagina*: per accedere a informazioni specifiche presenti in una pagina;
 - *Task*: per accedere a task e attività da svolgere.
 
-==== UC3.1, Consultazione Documenti
-*Attori coinvolti*: #glossary("User"), Sistema, #glossary("Confluence") #glossary("API").
 
-*Precondizioni*:
-- L'utente ha richiesto la visualizzazione di tutta o una parte della guida all'#glossary("onboarding").
-- Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
-- Il #glossary("LLM") è in grado di interpretare le richieste dell'utente.
-*Postcondizioni*:
-- L'utente riceve un link diretto alla guida o la parte richiesta di tale documento.
-*Scenario principale*
-- L'utente apre l'interfaccia di #glossary("BuddyBot") e pone la richiesta.
-- Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
-- Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
-*User Story*:
-- "Buddybot, sono un nuovo dipendente azzurroDigitale, come devo impostare i miei strumenti per iniziare a lavorare in modo efficiente ed efficace?".
+/*
+ * DISCLAIMER PER NICOLAS lol.
+ * Non ho messo i sottocasi come specializzazioni
+ * come negli altri gruppi perché nel nostro
+ * diagramma sono marcate come inclusioni.
+ * Nei sottocasi ho scritto ad esempio "Quale è l'id
+ * della pagina con titolo: ... ."
+ * so che non è quello che ci eravamo detti ma
+ * secondo me non è sbagliato neanche così,
+ * e non saprei come metterlo nel modo che avevamo
+ * detto su TG. Poi magari parliamo con il prof e
+ * sentiamo cosa dice.
+ * Buona Review e buon anno <3
+ */
+
+==== Inclusioni:
+- *UC3.1, Richiesta Id di una pagina*
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente. //BOH
+  - L'utente ha richiesto l'id di una pagina
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente. //anche qui solo questa?
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile. //BOHH
+
+  *User Story Associata*:
+  - "Hey BuddyBot, quale ' l'id della pagina che ha questo titolo: ... ."
+
+- *UC3.2, Richiesta titolo di una pagina*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto il titolo di una pagina
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, qual è il titolo della pagina con id: ... ."
+- *UC3.3, Richiesta status di una pagina*
+- *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto lo status di una pagina
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, qual è lo status della pagina con id: ... ."
+
+- *UC3.4, Richiesta autore di una pagina*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto l'autore di una pagina
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, chi è l'autore della pagina con id: ... ."
+
+- *UC3.5, Richiesta owner di una pagina*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto l'owner di una pagina
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, chi è l'owner della pagina con id: ... ."
+
+- *UC3.6, Richiesta spazio di una pagina*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto lo spazio di una pagina
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, in quale spazio si trova la pagina con id: ... ."
+
+- *UC3.7, Richiesta Body di una pagina*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto il body di una pagina
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, puoi mostrarmi il contenuto della pagina con id: ... ."
+
+- *UC3.8, Richiesta Id di una Task*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto l'id di una task
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, qual è l'id della task con titolo: ... ."
+
+- *UC3.9, Richiesta Status di una Task*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto lo status di una task
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, qual è lo status della task con id: ... ."
+
+- *UC3.10, Richiesta creatore di una Task*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto il creatore di una task
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, chi è il creatore della task con id: ... ."
+
+- *UC3.11, Richiesta assegnatario di una Task*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto l'assegnatario di una task
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, chi è l'assegnatario della task con id: ... ."
+
+- *UC3.12, Richiesta data di scadenza di una Task*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente.
+  - L'utente ha richiesto la data di scadenza di una task
+
+  *Postcondizioni*:
+  - L'utente riceve la parte interessata di tale documento.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente.
+  - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, qual è la data di scadenza della task con id: ... ."
 
 
-==== UC3.2, Consultazione Project Documentation
-
-*Attori coinvolti*: #glossary("User"), Sistema, #glossary("Confluence") #glossary("API").
-
-*Precondizioni*:
-- L'utente ha richiesto la documentazione di un progetto.
-- Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
-- Il #glossary("LLM") è in grado di interpretare le richieste dell'utente.
-- Il progetto richiesto è presente su #glossary("Confluence").
-*Postcondizioni*:
-- L'utente riceve un link diretto alla documentazione del progetto richiesto.
-- L'utente può visualizzare la documentazione del progetto richiesto.
-*Scenario principale*
-- L'utente apre l'interfaccia di #glossary("BuddyBot") e pone la richiesta.
-- Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence").
-- Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
-*User Story*:
-- "Buddybot, sto lavorando al progetto C9 ma non ricordo quali erano le linee guida per lo sviluppo del frontend".
-
-==== UC3.3, Consultazione Tasks
-
-*Attori coinvolti*: #glossary("User"), Sistema, #glossary("Confluence") #glossary("API").
-
-*Precondizioni*:
-- L'utente ha richiesto lo stato di una o più tasks.
-- Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
-- Il #glossary("LLM") è in grado di interpretare le richieste dell'utente.
-
-*Postcondizioni*:
-- L'utente riceve un link diretto alla documentazione del progetto richiesto o lo stato della task richiesta.
-*Scenario principale*
-- L'utente apre l'interfaccia di #glossary("BuddyBot") e pone la richiesta.
-- Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence").
-- Dopo aver ottenuto le informazioni necessarie, #glossary("LLM") le elabora per fornire una risposta chiara, leggibile e comprensibile all'utente, facilitando a quest'ultimo l'accesso alle informazione.
-*User Story*:
-- "Buddybot, quali sono le task ancora attive di questo progetto?".
-
-
-
-#pagebreak()
 = Requisiti
 In questa sezione vengono esposti i requisiti individuati in seguito alle analisi effettuate dal gruppo e dai #glossary("casi d'uso (UC)") esaminati in precedenza. Per garantire maggiore chiarezza, i vari requisiti verranno identificati da codici univoci a seconda della loro natura e dall'obbligatorietà o meno...
 
