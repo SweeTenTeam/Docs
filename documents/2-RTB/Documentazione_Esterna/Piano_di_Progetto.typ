@@ -9,6 +9,13 @@
     p.azzurro,
   ),
   changelog: (
+    "0.2.0",
+    "2024-12-26",
+    p.benedetti,
+    p.campagnaro,
+    [
+      Stesura del consuntivo del periodo 2
+    ],
     "0.1.0",
     "2024-12-15",
     p.campagnaro,
@@ -433,7 +440,7 @@ I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
 - #R.OI2;
 - #R.OE1;
 
-Questo perché, trovandoci all’inizio del progetto, siamo ancora in una fase di organizzazione e apprendimento, con diverse incertezze da affrontare. Di conseguenza, la possibilità di incontrare alcune delle problematiche tra quelle riportate è piuttosto elevata.
+Questo perché, trovandoci allinizio del progetto, siamo ancora in una fase di organizzazione e apprendimento, con diverse incertezze da affrontare. Di conseguenza, la possibilità di incontrare alcune delle problematiche tra quelle riportate è piuttosto elevata.
 
 ==== Preventivo
 ===== Preventivo orario
@@ -472,3 +479,62 @@ Inoltre, ci siamo resi conto che l’approccio migliore e più efficace prevede 
 Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.317,50 €`*, risultando inferiore di *`32,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`11.422,50 €`*. 
 
 #avanzamento(25, 0, "1")
+
+#pagebreak()
+=== *Periodo 2*
+*Inizio*: 2024-12-03;\
+*Fine prevista*: 2024-12-17;\
+*Fine attuale*: 2024-12-17;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana del secondo sprint, che si è svolta dal 3 dicembre 2024 al 17 dicembre 2024, il team ha continuato a lavorare sulla redazione dei documenti essenziali per il proseguimento del progetto. In particolare, i lavori sull'analisi dei requisiti, il piano di progetto e il piano di qualifica stanno procedendo, rappresentando elementi fondamentali per garantire un avanzamento ordinato e ben strutturato delle attività.
+
+Nel corso di questa fase, sono emerse alcune difficoltà specifiche legate all'analisi dei requisiti, che hanno richiesto un impegno maggiore per definire con precisione alcuni aspetti critici. Tuttavia, il team è riuscito a gestire queste complessità attraverso un'attenta collaborazione e un approccio mirato alla risoluzione dei problemi.
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P4;
+- #R.T1;
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+===== Preventivo economico
+#prev-economico((11,14,13,4,5,16),"2")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Analisti, Programmatori e Verificatori hanno richiesto *meno* ore;
+- Progettisti hanno richiesto *più* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile. In questa fase, un lieve surplus durante la progettazione può rientrare nella normalità.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(((0,0,3,2,2,2),(0,4,2,0,0,1.5),(3,3,0,0,0,3),(2,3,0,1.5,2,2),(2,3,0,2,0,2),(4,0,3,0,0,1.5),(0,1,4,0,0,3)),((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+
+#ore-rimaste(((9,8,5,13,19,19),(9,1,6,17,24,18.5),(3,1.5,11,17,24,16),(5,1.5,11,15.5,20,18),(5,2,11,13,24,19),(1,8,6,17,24,18.5),(9,6,3,17,24,14.5)),"2")
+
+===== Consuntivo economico
+#cons-economico((11,14,12,5.5,4,15),(11,14,13,4,5,16),"2")
+
+==== Rischi occorsi, impatto e loro mitigazione
+A differenza dello #glossary("Sprint") precedente, durante il quale il rischio emerso è stato mitigato attraverso la redazione e l'analisi delle #glossary("Norme di Progetto"), in quello attuale non si sono verificati ulteriori rischi. Questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti. Inoltre, va sottolineato che i membri del gruppo stanno lavorando in modo efficace e coeso, dimostrando un'eccellente collaborazione e un impegno costante nel raggiungimento degli obiettivi prefissati.
+
+==== Retrospettiva
+Nel complesso, il lavoro è proseguito senza troppi intoppi, dimostrando una buona capacità del team di affrontare le attività previste con efficienza e coesione. Le norme di progetto adottate si sono rivelate un supporto fondamentale, fungendo da strumento efficace per garantire lo svolgimento ordinato e corretto del progetto. La loro applicazione ha contribuito a mantenere un alto livello di organizzazione, favorendo il rispetto delle tempistiche e delle modalità operative stabilite.
+
+Un momento particolarmente significativo durante questa fase è stato rappresentato dalla presentazione di una prima demo del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). Questa anteprima ha permesso di condividere una visione concreta dell'avanzamento del progetto, offrendo un'opportunità per raccogliere feedback utili e allineare le aspettative sulle prossime fasi di sviluppo.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.332,50 €`*, risultando inferiore di *`17,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista, Programmatore e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`10.090 €`*. 
+
+#avanzamento(50, 0, "1")
