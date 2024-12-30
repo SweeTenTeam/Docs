@@ -246,12 +246,13 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   )
 ]
 
-#glossary("Confluence") permette di reperire diversi tipi di informazione.
+#glossary("Confluence") consente di accedere a diversi tipi di informazione.
 
-Quelle interessate per questo progetto sono:
+Per il progetto in questione, le tipologie di dati rilevanti sono:
 
-- *Pagina*: per accedere a informazioni specifiche presenti in una pagina;
-- *Task*: per accedere a task e attività da svolgere.
+- *Pagina*: informazioni specifiche contenute all'interno di una singola pagina;
+- *Task*: dettagli relativi a task e attività da svolgere.
+
 
 
 /*
