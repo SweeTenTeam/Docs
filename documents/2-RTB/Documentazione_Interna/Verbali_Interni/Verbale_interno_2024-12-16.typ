@@ -28,8 +28,8 @@
  
 - Retrospettiva #glossary("sprint") 2;
 - Piano di progetto: inserimento automatico dei grafici;
-- Analisi dei requisiti : casi d'uso;
-- Verbali interni: Miglioramento tabella delle decisioni;
+- Analisi dei requisiti: casi d'uso;
+- Verbali interni: miglioramento tabella delle decisioni;
 - Nuovo sprint: assegnazione nuove issue;
 
 
@@ -43,7 +43,7 @@ Durante la retrospettiva, il team ha analizzato le issue assegnate a ciascun mem
 Dopo aver discusso delle difficoltà riscontrate nell'individuazione e nella rappresentazione dei casi d'uso, il team ha deciso di proseguire il lavoro su queste issue anche durante lo #glossary("sprint") 3. L'obiettivo è completarle il prima possibile, dopo un incontro con il professor Cardin per chiarire i dubbi emersi. Una volta risolte queste issue, i nuovi membri assegnati ai task relativi all'analisi dei requisiti potranno avviare il lavoro previsto per lo sprint 3.
 
 
-= Verbali interni: Miglioramento della tabella delle prossime attività
+= Verbali interni: miglioramento della tabella delle prossime attività
 Il team ha discusso il miglioramento della tabella delle prossime attività all'interno dei verbali interni. In particolare, è stato deciso di aggiungere un link alle issue di #glossary("github") per ogni attività, al fine di facilitare la consultazione e il tracciamento.
 
 = Decisioni prese
@@ -73,14 +73,18 @@ Il team ha discusso il miglioramento della tabella delle prossime attività all'
 
 #figure(
   table(
-    columns: (1.5cm, 5cm, 5cm, 5cm),
-    [ID], [Descrizione], [Assegnatari], [Link],
+    columns: (auto, 1fr, 1fr),
+    [ID], [Descrizione], [Assegnatari],
 
-    [#93], [Stesura della sezione relativa allo #glossary("sprint") 2 del #glossary("piano di progetto")], [#p.benedetti], [https://github.com/SweeTenTeam/Docs/issues/93],
-    [#94], [Completare la stesura del #glossary("Piano di qualifica")], [#p.santi, #p.campagnaro], [https://github.com/SweeTenTeam/Docs/issues/94], 
-    [#95], [Completare la stesura di tutti i casi d'uso], [#p.belenkov, #p.ferazzani, #p.fracaro], [https://github.com/SweeTenTeam/Docs/issues/95],
-    [#96], [Stesura verbale interno del 3 Dicembre 2024], [#p.mahdi], [https://github.com/SweeTenTeam/Docs/issues/96],
-    [POC6], [Integrazione recupero informazioni da #glossary("Jira") e #glossary("Confluence")], [#p.mahdi], [https://github.com/SweeTenTeam/BuddyBot---POC/issues/6],
+    [#issue_to_link("Docs",93)], [Stesura della sezione relativa allo #glossary("sprint") 2 del #glossary("piano di progetto")], [#p.benedetti],
+
+    [#issue_to_link("Docs",94)], [Completare la stesura del #glossary("Piano di qualifica")], [#p.santi, #p.campagnaro], 
+
+    [#issue_to_link("Docs",95)], [Completare la stesura di tutti i casi d'uso], [#p.belenkov, #p.ferazzani, #p.fracaro],
+
+    [#issue_to_link("Docs",96)], [Stesura verbale interno del 3 Dicembre 2024], [#p.mahdi],
+    
+    [#link("https://github.com/SweeTenTeam/BuddyBot---POC/issues/6")[POC6]], [Integrazione recupero informazioni da #glossary("Jira") e #glossary("Confluence")], [#p.mahdi],
   ),
   caption: "Tabella delle prossime attività"
 )
