@@ -185,22 +185,21 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   - Le informazioni richieste vengono presentate correttamente all'utente.
 
   *Scenario principale*
-  - L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda
+  - L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda.
   #colbreak()
   #figure(
     image(ar.diagUC2, width: 24em, fit: "contain"),
     caption: "Diagramma UC2, consultazione GitHub",
   )
 ]
-- esempio: "Quali sono stati i cambiamenti nell'ultimo #glossary("commit") sul #glossary("branch") master?"
-- #glossary("BuddyBot") autentica la connessione con #glossary("GitHub") e invia una richiesta all'#glossary("API") per recuperare i dettagli dell'ultimo #glossary("commit") sul #glossary("branch") specificato.
-
-- I dettagli ricevuti vengono elaborati per generare una risposta e, nel nostro esempio, sintetizzerà: file modificati, descrizione delle modifiche, informazioni generali riguardanti il #glossary("commit") (autore, data...).
+- esempio: "Quali sono stati i cambiamenti nell'ultimo #glossary("commit") sul #glossary("branch") master?";
+- #glossary("BuddyBot") autentica la connessione con #glossary("GitHub") e invia una richiesta all'#glossary("API") per recuperare i dettagli dell'ultimo #glossary("commit") sul #glossary("branch") specificato;
+- I dettagli ricevuti vengono elaborati per generare una risposta e, nel nostro esempio, sintetizzerà: file modificati, descrizione delle modifiche, informazioni generali riguardanti il #glossary("commit") (autore, data...);
 - #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente in un formato ordinato e leggibile (linguaggio naturale).
 
 *Inclusioni*
-- Reperimento delle informazioni (#glossary("API"))
-- Elaborazione dei dati ricevuti (#glossary("LLM"))
+- Reperimento delle informazioni (#glossary("API"));
+- Elaborazione dei dati ricevuti (#glossary("LLM")).
 
 #pagebreak()
 
@@ -211,29 +210,29 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
     *Attori coinvolti*: #glossary("GUI"), #glossary("Confluence") #glossary("API").
 
     *Inclusioni* //non sapevo se metterle come inclusioni o specializzazioni quindi ho seguito il diagramma
-    - UC3.1 Richiesta Id di una pagina
-    - UC3.2 Richiesta titolo di una pagina
-    - UC3.3 Richiesta status di una pagina
-    - UC3.4 Richiesta autore di una pagina
-    - UC3.5 Richiesta owner di una pagina
-    - UC3.6 Richiesta spazio di una pagina
-    - UC3.7 Richiesta body di una pagina
-    - UC3.8 Richiesta id di una task
-    - UC3.9 Richiesta status di una task
-    - UC3.10 Richiesta creatore di una task
-    - UC3.11 Richiesta assegnatario di una task
-    - UC3.12 Richiesta data di scadenza di una task
+    - UC3.1 Richiesta Id di una pagina;
+    - UC3.2 Richiesta titolo di una pagina;
+    - UC3.3 Richiesta status di una pagina;
+    - UC3.4 Richiesta autore di una pagina;
+    - UC3.5 Richiesta owner di una pagina;
+    - UC3.6 Richiesta spazio di una pagina;
+    - UC3.7 Richiesta body di una pagina;
+    - UC3.8 Richiesta id di una task;
+    - UC3.9 Richiesta status di una task;
+    - UC3.10 Richiesta creatore di una task;
+    - UC3.11 Richiesta assegnatario di una task;
+    - UC3.12 Richiesta data di scadenza di una task.
 
     *Precondizioni*:
-    - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente.
-    - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente. //BOH
-    - L'utente ha posto una richiesta non fuori contesto e conforme con lo scope del sistema
+    - Le #glossary("API") di #glossary("Confluence") sono disponibili e configurate correttamente;
+    - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente; //BOH
+    - L'utente ha posto una richiesta non fuori contesto e conforme con lo scope del sistema.
 
     *Postcondizioni*:
     - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal documento.
 
     *Scenario principale*:
-    - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente. //anche qui solo questa?
+    - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("Confluence") per ricercare le informazioni sulla base dei dettagli forniti dall'utente; //anche qui solo questa?
     - il sistema ritorna la risposta all'utente in modo chiaro e comprensibile. //BOHH
 
     *User Story Associata*:
