@@ -31,14 +31,12 @@
   inclusione: "/images/norme/inclusione.png",
   estensione: "/images/norme/estensione.png",
   generalizzazione_caso_uso: "/images/norme/generalizzazione_caso_uso.png",
-
   dipendenza: "/images/norme/dipendenza.png",
   associazione: "/images/norme/associazione.png",
   aggregazione: "/images/norme/aggregazione.png",
   composizione: "/images/norme/composizione.png",
   generalizzazione_classe: "/images/norme/generalizzazione_classe.png",
   interfaccia: "/images/norme/interfaccia.png",
-  
   board: "/images/norme/board.png",
   road: "/images/norme/roadmap.png",
 )
