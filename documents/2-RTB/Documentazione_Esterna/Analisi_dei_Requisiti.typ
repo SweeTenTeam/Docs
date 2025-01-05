@@ -132,7 +132,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 
 #pagebreak()
 
-=== UC2, Richiesta che richiede informazioni da Jira
+=== UC2, Messaggio che richiede informazioni da Jira
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
@@ -149,27 +149,27 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - #glossary("LLM") elabora le informazioni ottenute per fornire all'utente una risposta chiara e comprensibile.
 
 *Inclusioni*
-- UC2.1, "Richiesta che richiede nome (titolo) di un ticket"
-- UC2.2, "Richiesta che richiede assegnatario di un ticket"
-- UC2.3, "Richiesta che richiede etichette di un ticket"
-- UC2.4, "Richiesta che richiede stato di un ticket"
-- UC2.5, "Richiesta che richiede attività principale collegata a un ticket"
-- UC2.6, "Richiesta che richiede team di appartenenza di un ticket"
-- UC2.7, "Richiesta che richiede sprint di appartenenza di un ticket"
-- UC2.8, "Richiesta che richiede #glossary("story point estimate") di un ticket"
-- UC2.9, "Richiesta che richiede il richiedente/creatore di un ticket"
+- UC2.1, "Messaggio che richiede nome (titolo) di un ticket"
+- UC2.2, "Messaggio che richiede assegnatario di un ticket"
+- UC2.3, "Messaggio che richiede etichette di un ticket"
+- UC2.4, "Messaggio che richiede stato di un ticket"
+- UC2.5, "Messaggio che richiede attività principale collegata a un ticket"
+- UC2.6, "Messaggio che richiede team di appartenenza di un ticket"
+- UC2.7, "Messaggio che richiede sprint di appartenenza di un ticket"
+- UC2.8, "Messaggio che richiede #glossary("story point estimate") di un ticket"
+- UC2.9, "Messaggio che richiede il richiedente/creatore di un ticket"
 
 #pagebreak() 
 
 //pagina dedicata all'immagine vista la dimensione
 #figure(
   image(ar.diagUC2, width: 45em, fit: "contain"),
-    caption: "Diagramma UC2, richiesta informazioni Jira"
+    caption: "Diagramma UC2, Messaggio informazioni Jira"
 )
 
 #pagebreak()
 
-==== UC2.1, Richiesta che richiede nome (titolo) di un ticket
+==== UC2.1, Messaggio che richiede nome (titolo) di un ticket
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
@@ -185,7 +185,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
 - #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente il titolo del ticket richiesto.
 
-==== UC2.2, Richiesta che richiede assegnatario di un ticket
+==== UC2.2, Messaggio che richiede assegnatario di un ticket
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
@@ -201,7 +201,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
 - #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente l'assegnatario del ticket richiesto.
 
-==== UC2.3, Richiesta che richiede etichette di un ticket
+==== UC2.3, Messaggio che richiede etichette di un ticket
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
@@ -217,7 +217,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
 - #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente le etichette associate al ticket richiesto.
 
-==== UC2.4, Richiesta che richiede stato di un ticket
+==== UC2.4, Messaggio che richiede stato di un ticket
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
@@ -233,7 +233,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
 - #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente lo stato ("Da completare", "In corso", "Completato") del ticket richiesto.
 
-==== UC2.5, "Richiesta che richiede attività principale collegata a un ticket"
+==== UC2.5, "Messaggio che richiede attività principale collegata a un ticket"
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
@@ -249,7 +249,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
 - #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verranno mostrate nell'interfaccia-chat, attraverso una risposta in linguaggio naturale, le eventuali etichette/attività principali dello specifico ticket preso in esame.
 
-==== UC2.6, "Richiesta che richiede team di appartenenza di un ticket"
+==== UC2.6, "Messaggio che richiede team di appartenenza di un ticket"
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
@@ -265,7 +265,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
 - #glossary("LLM") elabora le informazioni ottenute. In questo caso verrà restituita una risposta contente il team al quale è associato il ticket preso in esame.
 
-==== UC2.7, Richiesta che richiede sprint di appartenenza di un ticket
+==== UC2.7, Messaggio che richiede sprint di appartenenza di un ticket
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
@@ -281,7 +281,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
 - #glossary("LLM") elabora le informazioni ottenute. Verrà infine ritornata nella #glossary("GUI") una risposta contenete lo Sprint di appartenenza del ticket richiesto dall'utente.
 
-==== UC2.8, Richiesta che richiede #glossary("story point estimate") di un ticket
+==== UC2.8, Messaggio che richiede #glossary("story point estimate") di un ticket
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
@@ -297,7 +297,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
 - #glossary("LLM") elabora le informazioni ottenute. Verrà generata una risposta in linguaggio naturale contenente la #glossary("story point estimate"), ossia un'unità di misura che indicizza la complessità del ticket richiesto.
 
-==== UC2.9, Richiesta che richiede il richiedente/creatore di un ticket
+==== UC2.9, Messaggio che richiede il richiedente/creatore di un ticket
 *Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
 
 *Precondizioni*
