@@ -5,6 +5,11 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
+    "0.0.6",
+    "2024-12-02",
+    (p.santi),
+    (p.fracaro),
+    "Sistemati UC Jira, aggiunto diagramma",
     "0.0.5",
     "2024-12-02",
     (p.santi),
