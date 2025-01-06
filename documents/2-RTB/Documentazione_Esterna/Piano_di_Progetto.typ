@@ -9,12 +9,19 @@
     p.azzurro,
   ),
   changelog: (
+    "0.2.1",
+    "2024-01-06",
+    p.benedetti,
+    p.campagnaro,
+    [
+      Verifica, pianificazione sprint 2
+    ],
     "0.2.0",
     "2024-12-26",
     p.benedetti,
     p.campagnaro,
     [
-      Stesura del consuntivo del periodo 2
+      Stesura del preventivo e consuntivo del periodo 2
     ],
     "0.1.0",
     "2024-12-15",
@@ -488,9 +495,9 @@ Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti
 *Giorni di ritardo*: #pos(0);\
 
 ==== Pianificazione
-Durante la settimana del secondo sprint, che si è svolta dal 3 dicembre 2024 al 17 dicembre 2024, il team ha continuato a lavorare sulla redazione dei documenti essenziali per il proseguimento del progetto. In particolare, i lavori sull'analisi dei requisiti, il piano di progetto e il piano di qualifica stanno procedendo, rappresentando elementi fondamentali per garantire un avanzamento ordinato e ben strutturato delle attività.
+Durante la settimana del secondo sprint, (dal 3 dicembre 2024 al 17 dicembre 2024), il team si dedicherà sulla redazione dei documenti essenziali per il proseguimento del progetto. In particolare, i lavori sull'analisi dei requisiti, il piano di progetto e il piano di qualifica, rappresentando elementi fondamentali per garantire un avanzamento ordinato e ben strutturato delle attività.
 
-Nel corso di questa fase, sono emerse alcune difficoltà specifiche legate all'analisi dei requisiti, che hanno richiesto un impegno maggiore per definire con precisione alcuni aspetti critici. Tuttavia, il team è riuscito a gestire queste complessità attraverso un'attenta collaborazione e un approccio mirato alla risoluzione dei problemi.
+Sarà prevista inoltre la prima presentazione del #glossary("Poc") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
 
 ==== Rischi attesi
 I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
