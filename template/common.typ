@@ -20,6 +20,7 @@
   diagUC3: "/images/analisi-dei-requisiti/UCConfluence.png",
   diagUC_storico_chat:"/images/analisi-dei-requisiti/UCStoricoChat.png",
   diagUC_single_messaggio:"/images/analisi-dei-requisiti/UC_view_single_mess.png",
+  diagUC_ask_user-gui:"/images/analisi-dei-requisiti/UC_ask_user-GUI.png",
 )
 
 //Norme di progetto Immagini

@@ -139,10 +139,9 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 #pagebreak()
 
 == Definizione casi d'uso
-
+=== UC1, Visualizzazione storico chat//todo maybe add backend as secondary actor???
 #columns(2, gutter: 3cm)[
   #box[
-    === UC1, Visualizzazione storico chat
     *Attori coinvolti*: #glossary("User").
 
     *Precondizioni*
@@ -220,10 +219,9 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad intrnet così da poter provvedere alla risoluzione del problema".
 
 
- 
+ ==== UC1.4, Visualizzazione singolo messaggio
   #columns(2, gutter: 3cm)[
   #box[
-     ==== UC1.4, Visualizzazione singolo messaggio
     *Attori coinvolti*: #glossary("User").
 
     *Precondizioni*
@@ -303,6 +301,60 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *User story associata*
   - "Come utente, voglio poter visualizzare il mittente di un messaggio della chat in modo da distinguere chi ha inviato il messaggio e comprendere meglio il contesto delle mie interazioni con #glossary("Buddybot")".
 
+
+//domanda USER-GUI
+=== UC2, Domanda utente all'interfaccia grafica//todo maybe add backend as secondary actor???
+#columns(2, gutter: 3cm)[
+  #box[
+    *Attori coinvolti*: #glossary("User").
+
+    *Precondizioni*
+    - L'interfaccia grafica è pronta alle interazione con l'utente. 
+
+    *Postcondizioni*
+    - L'interfaccia grafica viene aggiornata con il contenuto, la data, l'ora e il mittente del messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
+
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUC_ask_user-gui, width: 22em, fit: "contain"),
+    caption: "Diagramma UC2, Domanda utente alla GUI",
+  )
+]
+    *Scenario principale*
+    - L'utente accede alla chat con #glossary("Buddybot") tramite l'applicazione web;
+    - L'utente scrive la propria domanda;
+    - L'utente invia il messaggio con la proprio domanda;
+    - L'interfaccia grafica invia la richiesta dell'utente al backend per generare una risposta alla domanda;
+    - L'interfaccia grafica riceve al risposta alla domanda dell'utente;
+    - L'interfaccia grafica viene aggiornata con il messaggio iviato dall'utente;
+    - L'interfaccia grafica viene aggiornata con il messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
+*Estensioni*
+- UC2.1, Errore nella generazione della risposta;
+- UC1.3, Errore di connessione;
+*Inclusioni*
+- UC1.4, Visualizzazione singolo messaggio.
+*User story associata*
+- "Come utente voglio interagire con Buddybot attraverso una chat per porre domande e ricevere risposte in modo rapido e intuitivo. Inoltre, desidero visualizzare tutti i dettagli di ogni messaggio, inclusi contenuto, data, ora e mittente, in modo da avere un'esperienza chiara e completa durante l'interazione."
+
+==== UC2.1, Errore nella generazione della risposta
+  *Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando il mittente del messaggio.
+
+  *Scenario principale*
+  - L'utente accede alla chat con #glossary("Buddybot") tramite l'applicazione web;
+  - L'utente scrive la propria domanda;
+  - L'utente invia il messaggio con la proprio domanda;
+  - L'interfaccia grafica invia la richiesta dell'utente al backend per generare una risposta alla domanda;
+  - Si verifica un errore durante la generazione della risposta;
+  - L'interfaccia grafica viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile generare la risposta alla sua domanda.
+  *User story associata*
+  - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se si verifica un problema durante la generazione della risposta da parte di #glossary("Buddybot"), in modo da sapere che la mia richiesta non è stata elaborata e poter eventualmente riprovare".
 
 
 
