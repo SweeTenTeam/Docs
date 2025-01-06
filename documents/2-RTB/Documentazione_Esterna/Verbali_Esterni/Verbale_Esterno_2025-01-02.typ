@@ -7,7 +7,20 @@
     p.cardin,
   ),
   changelog: (
-
+    "1.0",
+    "2024-01-06",
+    (p.benedetti),
+    (p.belenkov),
+    [
+      Approvazione Documento
+    ],
+    "0.2",
+    "2024-01-06",
+    (p.benedetti),
+    (p.belenkov),
+    [
+      Verificato, lievi correzioni
+    ],
     "0.1",
     "2024-01-04",
     (p.benedetti),
@@ -47,7 +60,7 @@ Abbiamo presentato ad #p.azzurro :
 
 = Prossimi step
 - Prossimo incontro con l'azienda fissato per le ore 17:00 del 2025-01-14;
-- Ultimare e perfezionare il #glossary("PoC") facendo in modo di ottenere buone risposte dal bot, da domande che comportino retrival di più dati da documenti differenti.
+- Ultimare e perfezionare il #glossary("PoC") facendo in modo di ottenere buone risposte dal bot, da domande che comportino retrieval di più dati da documenti differenti.
 
 
 = Decisioni prese
