@@ -1,14 +1,14 @@
 #import "/template/document.typ": *
 
 #show: project.with(
-  title: "Verbale interno del 2024-01-06",
+  title: "Verbale interno del 2025-01-06",
   recipients: (
     p.vardanega,
     p.cardin,
   ),
   changelog: (
     "0.1",
-    "2024-01-06",
+    "2025-01-06",
     (p.benedetti),
     (p.santi),
     "Stesura del verbale",
