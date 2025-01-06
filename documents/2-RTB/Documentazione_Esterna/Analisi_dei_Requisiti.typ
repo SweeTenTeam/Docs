@@ -139,6 +139,173 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 #pagebreak()
 
 == Definizione casi d'uso
+
+#columns(2, gutter: 3cm)[
+  #box[
+    === UC1, Visualizzazione storico chat
+    *Attori coinvolti*: #glossary("User").
+
+    *Precondizioni*
+    - L'interfaccia grafica è pronta alle interazione con l'utente. 
+
+    *Postcondizioni*
+    - L'interfaccia grafica viene aggiornata con i messaggi delle passate interazioni tra l'utente e #glossary("Buddybot").
+    *Scenario principale*
+    - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
+    - La GUI recupera i messaggi delle precedenti interazioni;
+    - Nella scermata appaiono i messaggi riguardanti le passate interazioni con #glossary("Buddybot").
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUC_storico_chat, width: 22em, fit: "contain"),
+    caption: "Diagramma UC1, visualizzazione storico chat",
+  )
+]
+
+*Estensioni*
+- UC1.1, Nessun messaggio nello storico della chat;
+- UC1.2, Errore durante il recupero dello storico della chat;
+- UC1.3, Errore di connessione;
+*Inclusioni*
+- UC1.4, Visualizzazione singolo messaggio.
+*User story associata*
+- "Come utente, voglio poter vedere i messaggi delle passate interazioni con Buddybot, in modo da avere una conferma delle informazioni ricevute e poter approfondire eventuali dubbi o richiedere ulteriori dettagli."
+
+
+==== UC1.1, Nessun messaggio nello storico della chat
+  *Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia grafica viene aggiornata con un messaggio informativo che informa l'utente che non ci sono messaggi precedenti disponibili.
+  *Scenario principale*
+  - L'utente accede all'interfaccia di #glossary("Buddybot");
+  - La GUI cerca di recuperare i messaggi delle precedenti interazioni ma non è presente nessun messaggio nello storico della chat;
+  - L'utente viene informato che non sono presenti messaggi precedenti tramite un aggiornamento dell'interfaccia grafica.
+  *User story associata*
+  - "Quando l'utente accede a Buddybot per la prima volta, viene informato che, non essendoci interazioni pregresse, non sono disponibili messaggi nello storico".
+
+  ==== UC1.2, Errore durante il recupero dello storico della chat
+  *Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia grafica viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile recuperare i messaggi precedenti per un errore.
+  *Scenario principale*
+  - L'utente accede all'interfaccia di #glossary("Buddybot");
+  - La GUI cerca di recuperare i messaggi delle precedenti interazioni ma si verifica un errore durante il processo che impedisce il recupero di tali messaggi;
+  - L'utente viene informato che si è verificato un errore durante il recupero dei messaggi precedenti tramite un aggiornamento dell'interfaccia grafica.
+  *User story associata*
+  - "Come utente, voglio essere informato in modo chiaro se si verifica un errore durante il recupero dei messaggi precedenti, in modo da sapere che i dati non sono disponibili e poter agire di conseguenza senza confusione".
+
+
+  ==== UC1.3, Errore di connessione
+  *Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia grafica viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile eseguire l'operazione richiesta per la mancanza di connessione ad internet e invita a controllare tale connessione.
+
+  *Scenario principale*
+  - L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia grafica di eseguire un'operazione che richiede la connessione ad internet;
+  - La GUI cerca di eseguire la richiesta dell'utente ma non riesce a portarla a termine per la mancanza di connessione ad internet;
+  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un aggiornamento dell'interfaccia grafica.
+  *User story associata*
+  - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad intrnet così da poter provvedere alla risoluzione del problema".
+
+
+ 
+  #columns(2, gutter: 3cm)[
+  #box[
+     ==== UC1.4, Visualizzazione singolo messaggio
+    *Attori coinvolti*: #glossary("User").
+
+    *Precondizioni*
+    - L'interfaccia grafica di #glossary("Buddybot") è funzionante e pronta per l'utilizzo;
+    - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+    *Postcondizioni*
+    - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando il messaggio.
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUC_single_messaggio, width: 22em, fit: "contain"),
+    caption: "Diagramma UC1, consultazione Jira",
+  )
+]
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza il contenuto del messaggio;
+- L'utente visualizza data e ora dell'invio del messaggio;
+- L'utente visualizza il mittente del messaggio.
+
+*Inclusioni*
+- Visualizzazione contenuto del messaggio;
+- Visualizzazione data e ora del messaggio;
+- Visualizzazione mittente del messaggio;
+
+*User story associata*
+- "Come utente voglio poter visualizzare il contenuto, la data e l'ora di invio, e il mittente di un singolo messaggio della chat in modo chiaro e comprensibile in modo da avere sempre una chiara idea del contesto e dei dettagli delle passate interazioni con #glossary("Buddybot")".
+
+
+===== UC1.4.1, Visualizzazione contenuto del messaggio
+*Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+  *Postcondizioni*
+  - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando il contenuto del messaggio.
+
+  *Scenario principale*
+  - L'utente vuole visualizzare il contenuto della chat;
+  - L'utente visualizza il contenuto del messaggio;
+  *User story associata*
+  - "Come utente, voglio poter visualizzare il contenuto di un messaggio della chat in modo da comprendere le informazioni scambiate durante le passate interazioni con Buddybot".
+
+  ===== UC1.4.2, Visualizzazione data e ora del messaggio;
+*Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+  *Postcondizioni*
+  - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando la data e l'ora del messaggio.
+
+  *Scenario principale*
+  - L'utente vuole visualizzare il contenuto della chat;
+  - L'utente visualizza la data e l'ora del messaggio.
+  *User story associata*
+  - "Come utente, voglio poter visualizzare la data e l'ora di un messaggio della chat in modo da sapere quando è stato inviato e contestualizzarlo all'interno delle mie interazioni con #glossary("Buddybot")".
+
+
+  ===== UC1.4.3, Visualizzazione mittente del messaggio
+*Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+  *Postcondizioni*
+  - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando il mittente del messaggio.
+
+  *Scenario principale*
+  - L'utente vuole visualizzare il contenuto della chat;
+  - L'utente visualizza il mittente del messaggio;
+  *User story associata*
+  - "Come utente, voglio poter visualizzare il mittente di un messaggio della chat in modo da distinguere chi ha inviato il messaggio e comprendere meglio il contesto delle mie interazioni con #glossary("Buddybot")".
+
+
+
+
 //===UC1, Consultazione Jira
 #columns(2, gutter: 3cm)[
   #box[
