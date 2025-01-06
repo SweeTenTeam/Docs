@@ -7,7 +7,13 @@
     p.cardin,
   ),
   changelog: (
-
+    "1.0",
+    "2024-01-06",
+    (p.benedetti),
+    (p.belenkov),
+    [
+      Approvazione Documento
+    ],
     "0.1",
     "2024-12-23",
     (p.fracaro),
