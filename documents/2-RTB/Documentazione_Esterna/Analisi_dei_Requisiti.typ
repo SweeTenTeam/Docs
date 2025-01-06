@@ -234,7 +234,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   #colbreak()
   #figure(
     image(ar.diagUC_single_messaggio, width: 22em, fit: "contain"),
-    caption: "Diagramma UC1, consultazione Jira",
+    caption: "Diagramma UC1.4, Visualizzazione messaggio singolo",
   )
 ]
 *Scenario principale*
@@ -356,8 +356,121 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *User story associata*
   - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se si verifica un problema durante la generazione della risposta da parte di #glossary("Buddybot"), in modo da sapere che la mia richiesta non è stata elaborata e poter eventualmente riprovare".
 
+=== UC3, Elaborazione domanda utente
+#columns(2, gutter: 3cm)[
+  #box[
+    *Attori coinvolti*:
+    - Primari:
+      - #glossary("User") .
+    - Secondari:
+      - #glossary("Jira") ;
+      - #glossary("Github") ;
+      - #glossary("Confluence") ;
+      - #glossary("LLM") . 
+
+    *Precondizioni*
+    - La GUI e il backend di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia grafica ha acquisito una domanda dall'utente.
+
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUC_elab_domanda, width: 22em, fit: "contain"),
+    caption: "Diagramma UC3, Elaborazione domanda utente",
+  )
+]
+
+*Postcondizioni*
+- Il backend genera e restituisce una risposta accurata in linguaggio naturale alla domanda ricevuta dall'interfaccia grafica.
+- La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.
+  
+*Scenario principale*
+- L'interfaccia grafica invia al backend di Buddybot la domanda formulata dall'utente;
+- Il backend analizza la domanda e recupera tutti i documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
+- La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
+- La risposta generata dal #glossary("LLM") viene restituita dal backend all'interfaccia grafica;
+- La domanda dell'utente e la risposta generata vengono aggiunte allo storico della chat, rendendole d- isponibili per la visualizzazione successiva.
+
+*Estensioni*
+- UC3.1, Domanda fuori contesto;
+- UC3.2, Errore durante la generazione della risposta;
+*Inclusioni*
+- UC4, Visualizzazione singolo messaggio;
+- UC5, Visualizzazione singolo messaggio;
+- UC6, Visualizzazione singolo messaggio;
+- UC3.3, Visualizzazione singolo messaggio.
+
+*User story associata*
+  - "Come utente di Buddybot, voglio poter porre domande attraverso l'interfaccia grafica e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da Jira, GitHub e Confluence, così da ottenere informazioni utili e coerenti con il contesto del sistema..
 
 
+==== UC3.1, Domanda fuori contesto
+  *Attori coinvolti*:
+  - Primari:
+      - #glossary("User") .
+  - Secondari:
+     - #glossary("LLM").
+
+  *Precondizioni*
+    - La GUI e il backend di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia grafica ha acquisito una domanda dall'utente.
+
+  *Postcondizioni*
+ - Il backend genera e restituisce una risposta che informa che non è stato possibile rispondere alla domanda in quanto non il linea con il contesto di #glossary("Buddybot").
+  - La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.  
+
+  *Scenario principale*
+  - L'interfaccia grafica invia al backend di Buddybot la domanda formulata dall'utente.
+  - Il backend analizza la domanda e tenta di recuperare documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"). Tuttavia, non trova documenti correlati poiché la domanda è fuori dal contesto operativo di #glossary("Buddybot").
+  - La domanda dell'utente viene inoltrata al #glossary("LLM") per generare una risposta in linguaggio naturale che informa l'utente che la domanda non è pertinente al contesto.
+  - La risposta generata dal #glossary("LLM") viene restituita dal backend all'interfaccia grafica.
+  - La domanda e la risposta vengono archiviate nello storico della chat, rendendole disponibili per future visualizzazioni.
+  *User story associata*
+  - "Come utente di #glossary("Buddybot"), voglio ricevere una risposta chiara e in linguaggio naturale quando pongo una domanda fuori contesto, in modo da essere informato che la mia richiesta non è pertinente al sistema e capire meglio i limiti del suo ambito operativo".
+
+==== UC3.2, Errore durante la generazione della risposta
+  *Attori coinvolti*:
+  - #glossary("User") .
+
+  *Precondizioni*
+    - La GUI e il backend di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia grafica ha acquisito una domanda dall'utente. 
+
+  *Postcondizioni*
+ - Il backend ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta.
+
+  *Scenario principale*
+  - L'interfaccia grafica invia al backend di Buddybot la domanda formulata dall'utente.
+  - Il backend tenta di analizzare la domanda, di recuperare i documenti pertinenti e di generare una risposta in linguaggio naturale ma non ci riesce per un errore;
+  - Il backend ritorna un errore informado l'interfaccia grafica che non è stato possibile generare la risposta alla domanda richiesta.
+  *User story associata*
+  - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda, così da poter eventualmente riformulare la domanda o contattare un supporto alternativo".
+
+==== UC3.3, Generazione risposta in linguaggio naturale
+  *Attori coinvolti*:
+  - Primari:
+      - #glossary("User") .
+  - Secondari:
+     - #glossary("LLM").
+
+  *Precondizioni*
+    - La GUI e il backend di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia grafica ha acquisito una domanda dall'utente.
+
+  *Postcondizioni*
+  - Viene generata e ritornata una risposta in linguaggio naturale alla domanda presentata dall'interfaccia utente.
+
+  *Scenario principale*
+    - L'interfaccia grafica invia al backend di Buddybot la domanda formulata dall'utente.
+    - Il backend invia la domanda e i documenti rilevanti al #glossary("LLM") per generare una risposta in linguaggio naturale;
+    - Viene ritornata un messaggio di risposta in linguaggio naturale;
+  *User story associata*
+   - "Come utente voglio ricevere una risposta in linguaggio naturale alla mia domanda, così da ottenere informazioni chiare e comprensibili.".
+
+
+
+
+#pagebreak()
 //===UC1, Consultazione Jira
 #columns(2, gutter: 3cm)[
   #box[
