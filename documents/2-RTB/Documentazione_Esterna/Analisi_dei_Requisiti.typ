@@ -5,6 +5,11 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.0.8",
+    "2025-01-04",
+    (p.mahdi),
+    (p.ferazzani),
+    [Insertito UC GitHub],
     "0.0.6",
     "2024-12-10",
     (p.ferazzani),
@@ -174,32 +179,263 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 
 #pagebreak()
 //=== UC2, Consultazione GitHub
-#columns(2, gutter: 3cm)[
-  === UC2, Consultazione GitHub
-  *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno)
 
-  *Precondizioni*
-  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente.
+=== UC2, Consultazione GitHub
+#columns(2, gutter: 2cm)[
+  #box[
+    *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
 
-  *Postcondizioni*
-  - Le informazioni richieste vengono presentate correttamente all'utente.
+    *Inclusioni*:
+    - UC2.1 Informazioni generali sulla repository;
+    - UC2.2 Stato di una determinata issue;
+    - UC2.3 Elenco delle issue aperte;
+    - UC2.4 Ultimo commit fatto da un utente;
+    - UC2.5 Milestones attive;
+    - UC2.6 Issue da completare per una milestone;
+    - UC2.7 Username del responsabile di una issue;
+    - UC2.8 File presenti in una directory;
+    - UC2.9 Elenco dei collaboratori nel repository;
+    - UC2.10 Pull request attive da chiudere;
+    - UC2.11 Stato dei workflow di GitHub Action.
 
-  *Scenario principale*
-  - L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda.
+    *Precondizioni*:
+    - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+    - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+    - L'utente ha posto una richiesta non fuori contesto e conforme con lo scope del sistema.
+
+    *Postcondizioni*:
+    - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+    *Scenario principale*:
+    - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+    - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+    *User Story Associata*:
+    - "Come utente, voglio poter accedere alle informazioni relative a un repository GitHub in modo rapido e intuitivo, per poter risolvere i miei dubbi e problemi in modo efficace."
+  ]
   #colbreak()
   #figure(
-    image(ar.diagUC2, width: 24em, fit: "contain"),
-    caption: "Diagramma UC2, consultazione GitHub",
+    image(ar.diagUC2, width: 25em, fit: "contain"),
+    caption: "Diagramma UC3, consultazione GitHub",
   )
 ]
-- esempio: "Quali sono stati i cambiamenti nell'ultimo #glossary("commit") sul #glossary("branch") master?";
-- #glossary("BuddyBot") autentica la connessione con #glossary("GitHub") e invia una richiesta all'#glossary("API") per recuperare i dettagli dell'ultimo #glossary("commit") sul #glossary("branch") specificato;
-- I dettagli ricevuti vengono elaborati per generare una risposta e, nel nostro esempio, sintetizzerà: file modificati, descrizione delle modifiche, informazioni generali riguardanti il #glossary("commit") (autore, data...);
-- #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente in un formato ordinato e leggibile (linguaggio naturale).
 
-*Inclusioni*
-- Reperimento delle informazioni (#glossary("API"));
-- Elaborazione dei dati ricevuti (#glossary("LLM")).
+#glossary("GitHub") consente di accedere a diversi tipi di informazione.
+
+Per il progetto in questione, le tipologie di dati rilevanti sono:
+
+- *Repository*: informazioni generali, issue, pull request, commit, collaboratori, file e directory;
+- *Workflow*: stato dei workflow di GitHub Actions.
+
+==== Inclusioni:
+- *UC2.1, Informazioni generali sulla repository*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto informazioni generali su un repository.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, quali sono le informazioni generali del repository?"
+
+- *UC2.2, Stato di una determinata issue*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto lo stato di una specifica issue.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, qual è lo stato dell'issue #123?"
+
+- *UC2.3, Elenco delle issue aperte*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto l'elenco delle issue aperte.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, quali sono le issue aperte nel repository?"
+
+- *UC2.4, Ultimo commit fatto da un utente*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto l'ultimo commit fatto da un utente specifico.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, qual è l'ultimo commit fatto da 'username_utente'?"
+
+- *UC2.5, Milestones attive*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto le milestones attive.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, quali sono le milestones attive nel repository?"
+
+- *UC2.6, Issue da completare per una milestone*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto le issue da completare per una specifica milestone.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, quali issue devono essere completate per la milestone 'Sprint 1'?"
+
+- *UC2.7, Username del responsabile di una issue*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto il responsabile di una specifica issue.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, chi è il responsabile dell'issue #46?"
+
+- *UC2.8, File presenti in una directory*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto i file presenti in una specifica directory.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, quali file ci sono nella directory 'src'?"
+
+- *UC2.9, Elenco dei collaboratori nel repository*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto l'elenco dei collaboratori.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, chi sono i collaboratori del repository?"
+
+- *UC2.10, Pull request attive da chiudere*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto le pull request attive da chiudere.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, quali sono le pull request attive da chiudere?"
+
+- *UC2.11, Stato dei workflow di GitHub Action*
+
+  *Attori coinvolti*: #glossary("GUI"), #glossary("GitHub") #glossary("API").
+
+  *Precondizioni*:
+  - Le #glossary("API") di #glossary("GitHub") sono disponibili e configurate correttamente;
+  - La #glossary("GUI") di #glossary("BuddyBot") è attiva e pronta per l'interazione con l'utente;
+  - L'utente ha richiesto lo stato dei workflow di GitHub Actions.
+
+  *Postcondizioni*:
+  - L'utente riceve una risposta corretta che include i dati richiesti provenienti dal repository.
+
+  *Scenario principale*:
+  - Il sistema interpreta la domanda dell'utente e invia una richiesta alle #glossary("API") di #glossary("GitHub") per ricercare le informazioni sulla base dei dettagli forniti dall'utente;
+  - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
+
+  *User Story Associata*:
+  - "Hey BuddyBot, qual è lo stato dell'ultimo workflow di GitHub Actions?"
 
 #pagebreak()
 
