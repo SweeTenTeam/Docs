@@ -5,6 +5,11 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.0.9",
+    "2025-01-07",
+    (p.fracaro),
+    (p.santi),
+    [Insertiti UC1, UC2, UC3],
     "0.0.6",
     "2024-12-10",
     (p.ferazzani),
