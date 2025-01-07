@@ -264,7 +264,7 @@ Per il progetto in questione, le tipologie di dati rilevanti sono:
   - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
 
   *User Story Associata*:
-  - "Hey BuddyBot, qual è lo stato dell'issue #123?"
+  - "Hey BuddyBot, qual è lo stato dell'issue #sym.hash 123 ?"
 
 - *UC2.3, Elenco delle issue aperte*
 
@@ -359,7 +359,7 @@ Per il progetto in questione, le tipologie di dati rilevanti sono:
   - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
 
   *User Story Associata*:
-  - "Hey BuddyBot, chi è il responsabile dell'issue #46?"
+  - "Hey BuddyBot, chi è l'assegnatario dell'issue #sym.hash 46 ?"
 
 - *UC2.8, File presenti in una directory*
 
@@ -378,7 +378,7 @@ Per il progetto in questione, le tipologie di dati rilevanti sono:
   - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
 
   *User Story Associata*:
-  - "Hey BuddyBot, quali file ci sono nella directory 'src'?"
+  - "Hey BuddyBot, quali file ci sono nella directory src?"
 
 - *UC2.9, Elenco dei collaboratori nel repository*
 
@@ -435,7 +435,7 @@ Per il progetto in questione, le tipologie di dati rilevanti sono:
   - Il sistema ritorna la risposta all'utente in modo chiaro e comprensibile.
 
   *User Story Associata*:
-  - "Hey BuddyBot, qual è lo stato dell'ultimo workflow di GitHub Actions?"
+  - "Hey BuddyBot, qual è lo stato dell'ultimo #glossary("Workflow") di #glossary("GitHub Actions")?"
 
 #pagebreak()
 
