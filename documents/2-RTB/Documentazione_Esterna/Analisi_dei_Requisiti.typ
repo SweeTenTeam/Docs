@@ -150,7 +150,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
     *Attori coinvolti*: #glossary("User").
 
     *Precondizioni*
-    - L'interfaccia grafica è pronta alle interazione con l'utente. 
+    - L'interfaccia grafica è pronta all'interazione con l'utente. 
 
     *Postcondizioni*
     - L'interfaccia grafica viene aggiornata con i messaggi delle passate interazioni tra l'utente e #glossary("Buddybot").
@@ -180,7 +180,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *Attori coinvolti*: #glossary("User").
 
   *Precondizioni*
-  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
 
   *Postcondizioni*
   - L'interfaccia grafica viene aggiornata con un messaggio informativo che informa l'utente che non ci sono messaggi precedenti disponibili.
@@ -195,10 +195,10 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *Attori coinvolti*: #glossary("User").
 
   *Precondizioni*
-  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
 
   *Postcondizioni*
-  - L'interfaccia grafica viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile recuperare i messaggi precedenti per un errore.
+  - L'interfaccia grafica mostra un alert che informa l'utente dell'impossibilità di recuperare i messaggi precedenti a causa di un problema.
   *Scenario principale*
   - L'utente accede all'interfaccia di #glossary("Buddybot");
   - La GUI cerca di recuperare i messaggi delle precedenti interazioni ma si verifica un errore durante il processo che impedisce il recupero di tali messaggi;
@@ -211,7 +211,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *Attori coinvolti*: #glossary("User").
 
   *Precondizioni*
-  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
 
   *Postcondizioni*
   - L'interfaccia grafica viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile eseguire l'operazione richiesta per la mancanza di connessione ad internet e invita a controllare tale connessione.
@@ -221,7 +221,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   - La GUI cerca di eseguire la richiesta dell'utente ma non riesce a portarla a termine per la mancanza di connessione ad internet;
   - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un aggiornamento dell'interfaccia grafica.
   *User story associata*
-  - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad intrnet così da poter provvedere alla risoluzione del problema".
+  - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
 
 
  ==== UC1.4, Visualizzazione singolo messaggio
@@ -261,7 +261,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 *Attori coinvolti*: #glossary("User").
 
   *Precondizioni*
-  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
   - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
   *Postcondizioni*
@@ -277,7 +277,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 *Attori coinvolti*: #glossary("User").
 
   *Precondizioni*
-  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
   - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
   *Postcondizioni*
@@ -294,7 +294,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 *Attori coinvolti*: #glossary("User").
 
   *Precondizioni*
-  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
   - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
   *Postcondizioni*
@@ -314,7 +314,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
     *Attori coinvolti*: #glossary("User").
 
     *Precondizioni*
-    - L'interfaccia grafica è pronta alle interazione con l'utente. 
+    - L'interfaccia grafica è pronta all'interazione con l'utente. 
 
     *Postcondizioni*
     - L'interfaccia grafica viene aggiornata con il contenuto, la data, l'ora e il mittente del messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
@@ -331,8 +331,8 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
     - L'utente scrive la propria domanda;
     - L'utente invia il messaggio con la proprio domanda;
     - L'interfaccia grafica invia la richiesta dell'utente al backend per generare una risposta alla domanda;
-    - L'interfaccia grafica riceve al risposta alla domanda dell'utente;
-    - L'interfaccia grafica viene aggiornata con il messaggio iviato dall'utente;
+    - L'interfaccia grafica riceve la risposta alla domanda dell'utente;
+    - L'interfaccia grafica viene aggiornata con il messaggio inviato dall'utente;
     - L'interfaccia grafica viene aggiornata con il messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
 *Estensioni*
 - UC2.1, Errore nella generazione della risposta;
@@ -340,13 +340,13 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 *Inclusioni*
 - UC1.4, Visualizzazione singolo messaggio.
 *User story associata*
-- "Come utente voglio interagire con Buddybot attraverso una chat per porre domande e ricevere risposte in modo rapido e intuitivo. Inoltre, desidero visualizzare tutti i dettagli di ogni messaggio, inclusi contenuto, data, ora e mittente, in modo da avere un'esperienza chiara e completa durante l'interazione."
+- "Come utente voglio interagire con #glossary("Buddybot") attraverso una chat per porre domande e ricevere risposte in modo rapido e intuitivo. Inoltre, desidero visualizzare tutti i dettagli di ogni messaggio, inclusi contenuto, data, ora e mittente, in modo da avere un'esperienza chiara e completa durante l'interazione."
 
 ==== UC2.1, Errore nella generazione della risposta
   *Attori coinvolti*: #glossary("User").
 
   *Precondizioni*
-  - L'interfaccia grafica è pronta alle interazione con l'utente. 
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
 
   *Postcondizioni*
   - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando il mittente del messaggio.
@@ -390,23 +390,23 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.
   
 *Scenario principale*
-- L'interfaccia grafica invia al backend di Buddybot la domanda formulata dall'utente;
+- L'interfaccia grafica invia al backend di #glossary("Buddybot") la domanda formulata dall'utente;
 - Il backend analizza la domanda e recupera tutti i documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
 - La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
 - La risposta generata dal #glossary("LLM") viene restituita dal backend all'interfaccia grafica;
-- La domanda dell'utente e la risposta generata vengono aggiunte allo storico della chat, rendendole d- isponibili per la visualizzazione successiva.
+- La domanda dell'utente e la risposta generata vengono aggiunte allo storico della chat, rendendole disponibili per la visualizzazione successiva.
 
 *Estensioni*
 - UC3.1, Domanda fuori contesto;
 - UC3.2, Errore durante la generazione della risposta;
 *Inclusioni*
-- UC4, Visualizzazione singolo messaggio;
-- UC5, Visualizzazione singolo messaggio;
-- UC6, Visualizzazione singolo messaggio;
-- UC3.3, Visualizzazione singolo messaggio.
+- UC4, Domanda dell'utente che richiede l'utilizzo di informazioni da #glossary("Jira");
+- UC5, Domanda dell'utente che richiede l'utilizzo di informazioni da #glossary("GitHub");
+- UC6, Domanda dell'utente che richiede l'utilizzo di informazioni da #glossary("Confluence");
+- UC3.3, Generazione risposta in linguaggio naturale.
 
 *User story associata*
-  - "Come utente di Buddybot, voglio poter porre domande attraverso l'interfaccia grafica e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da Jira, GitHub e Confluence, così da ottenere informazioni utili e coerenti con il contesto del sistema..
+  - "Come utente di #glossary("Buddybot"), voglio poter porre domande attraverso l'interfaccia grafica e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), così da ottenere informazioni utili e coerenti con il contesto del sistema..
 
 
 ==== UC3.1, Domanda fuori contesto
@@ -421,7 +421,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
     - L'interfaccia grafica ha acquisito una domanda dall'utente.
 
   *Postcondizioni*
- - Il backend genera e restituisce una risposta che informa che non è stato possibile rispondere alla domanda in quanto non il linea con il contesto di #glossary("Buddybot").
+  - Il backend genera e restituisce una risposta che informa che non è stato possibile rispondere alla domanda in quanto non il linea con il contesto di #glossary("Buddybot").
   - La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.  
 
   *Scenario principale*
@@ -442,10 +442,10 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
     - L'interfaccia grafica ha acquisito una domanda dall'utente. 
 
   *Postcondizioni*
- - Il backend ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta.
+  - Il backend ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta.
 
   *Scenario principale*
-  - L'interfaccia grafica invia al backend di Buddybot la domanda formulata dall'utente.
+  - L'interfaccia grafica invia al backend di #glossary("Buddybot") la domanda formulata dall'utente.
   - Il backend tenta di analizzare la domanda, di recuperare i documenti pertinenti e di generare una risposta in linguaggio naturale ma non ci riesce per un errore;
   - Il backend ritorna un errore informado l'interfaccia grafica che non è stato possibile generare la risposta alla domanda richiesta.
   *User story associata*
@@ -468,7 +468,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *Scenario principale*
     - L'interfaccia grafica invia al backend di Buddybot la domanda formulata dall'utente.
     - Il backend invia la domanda e i documenti rilevanti al #glossary("LLM") per generare una risposta in linguaggio naturale;
-    - Viene ritornata un messaggio di risposta in linguaggio naturale;
+    - Viene ritornato un messaggio di risposta in linguaggio naturale;
   *User story associata*
    - "Come utente voglio ricevere una risposta in linguaggio naturale alla mia domanda, così da ottenere informazioni chiare e comprensibili.".
 
