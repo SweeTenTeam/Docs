@@ -8,11 +8,6 @@
   ),
   changelog: (
     "0.1",
-    "2025-01-08",
-    (p.benedetti),
-    (p.santi),
-    "Verifica, apportate correzioni",
-    "0.1",
     "2025-01-06",
     (p.benedetti),
     (p.santi),
