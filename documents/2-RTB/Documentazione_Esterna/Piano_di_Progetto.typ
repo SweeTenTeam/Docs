@@ -9,6 +9,13 @@
     p.azzurro,
   ),
   changelog: (
+    "0.3.0",
+    "2024-12-26",
+    p.benedetti,
+    p.campagnaro,
+    [
+      Stesura del preventivo e consuntivo del periodo 3
+    ],
     "0.2.1",
     "2024-01-06",
     p.benedetti,
@@ -497,7 +504,7 @@ Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti
 ==== Pianificazione
 Durante la settimana del secondo sprint, (dal 3 dicembre 2024 al 17 dicembre 2024), il team si dedicherà sulla redazione dei documenti essenziali per il proseguimento del progetto. In particolare, i lavori sull'analisi dei requisiti, il piano di progetto e il piano di qualifica, rappresentando elementi fondamentali per garantire un avanzamento ordinato e ben strutturato delle attività.
 
-Sarà prevista inoltre la prima presentazione del #glossary("Poc") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
+Sarà prevista inoltre la prima presentazione del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
 
 ==== Rischi attesi
 I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
@@ -544,4 +551,71 @@ Un momento particolarmente significativo durante questa fase è stato rappresent
 ==== Punto di avanzamento raggiunto e prospettive di completamento
 Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.332,50 €`*, risultando inferiore di *`17,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista, Programmatore e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`10.090 €`*. 
 
-#avanzamento(50, 0, "1")
+#avanzamento(50, 0, "2")
+
+#pagebreak()
+=== *Periodo 3*
+*Inizio*: 2024-12-17;\
+*Fine prevista*: 2024-01-25;\
+*Fine attuale*: 2024-01-25;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+//TODO
+Durante la settimana del terzo sprint, (dal 3 dicembre 2024 al 17 dicembre 2024), il team si dedicherà sulla redazione dei documenti essenziali per il proseguimento del progetto. In particolare, i lavori sull'analisi dei requisiti, il piano di progetto e il piano di qualifica, rappresentando elementi fondamentali per garantire un avanzamento ordinato e ben strutturato delle attività.
+
+Sarà prevista inoltre la prima presentazione del #glossary("Poc") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P4;
+- #R.OI1;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+//TODO
+#prev-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+===== Preventivo economico
+//TODO
+#prev-economico((11,14,13,4,5,16),"2")
+
+==== Consuntivo
+//TODO
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Analisti, Programmatori e Verificatori hanno richiesto *meno* ore;
+- Progettisti hanno richiesto *più* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile. In questa fase, un lieve surplus durante la progettazione può rientrare nella normalità.
+
+#pagebreak()
+===== Consuntivo orario
+//TODO
+#cons-orario(((0,0,3,2,2,2),(0,4,2,0,0,1.5),(3,3,0,0,0,3),(2,3,0,1.5,2,2),(2,3,0,2,0,2),(4,0,3,0,0,1.5),(0,1,4,0,0,3)),((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+
+#ore-rimaste(((9,8,5,13,19,19),(9,1,6,17,24,18.5),(3,1.5,11,17,24,16),(5,1.5,11,15.5,20,18),(5,2,11,13,24,19),(1,8,6,17,24,18.5),(9,6,3,17,24,14.5)),"2")
+
+===== Consuntivo economico
+//TODO
+#cons-economico((11,14,12,5.5,4,15),(11,14,13,4,5,16),"2")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Nella parte finale dello sprint il team ha individuato un leggero rallentamento nei documenti dell'#glossary("Analisi dei Requisiti") e del #glossary("Piano di qualifica").
+Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati in simbiosi, poiché ciascuno dipende dall'altro.
+
+==== Retrospettiva
+//TODO
+- Collo di bottiglia analisi dei rischi e piano di qualifica
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+//TODO
+Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.332,50 €`*, risultando inferiore di *`17,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista, Programmatore e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`10.090 €`*. 
+
+#avanzamento(70, 0, "3")
