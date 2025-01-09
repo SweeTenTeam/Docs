@@ -15,8 +15,7 @@
 
 //Diagrammi UML per doc AdR
 #let ar = (
-  diagUC1: "/images/analisi-dei-requisiti/UCJira.png",
-  diagUC2: "/images/analisi-dei-requisiti/UCGitHub.png",
+  diagUC2: "/images/analisi-dei-requisiti/UC2_InfoJira.png",
   diagUC3: "/images/analisi-dei-requisiti/UCConfluence.png",
   diagUC_storico_chat:"/images/analisi-dei-requisiti/UCStoricoChat.png",
   diagUC_single_messaggio:"/images/analisi-dei-requisiti/UC_view_single_mess.png",
