@@ -943,7 +943,7 @@
         inset: 7pt,
         align: center,
         fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
-        [*Preventivo orario perido #periodo*], 
+        [*Preventivo orario periodo #periodo*], 
         table(
             columns: (auto,)+(1fr,)*6+(auto,),
             inset: 5pt,
@@ -1083,7 +1083,7 @@ v(1.5em)
         inset: 7pt,
         align: center,
         fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
-        [*Preventivo economico perido #periodo*], 
+        [*Preventivo economico periodo #periodo*], 
         table(
             columns: (1fr,)*3,
             inset:5pt,
@@ -1142,7 +1142,7 @@ v(1.5em)
         inset: 7pt,
         align: center,
         fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
-        [*Consuntivo orario perido #periodo*], 
+        [*Consuntivo orario periodo #periodo*], 
         table(
             columns: (auto,)+(1fr,)*6+(auto,),
             inset: 5pt,
@@ -1193,7 +1193,7 @@ v(1.5em)
         inset: 7pt,
         align: center,
         fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
-        [*Consuntivo economico perido #periodo*], 
+        [*Consuntivo economico periodo #periodo*], 
         table(
             columns: (1fr,)*3,
             inset:5pt,
@@ -1227,7 +1227,7 @@ v(1.5em)
         inset: 7pt,
         align: center,
         fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
-        [*Ore rimanenti dopo perido #periodo*], 
+        [*Ore rimanenti dopo periodo #periodo*], 
         table(
             columns: (auto,)+(1fr,)*6+(auto,),
             inset: 5pt,
