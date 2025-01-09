@@ -66,7 +66,7 @@ A seguito di un'attenta e approfondita analisi condotta dal team sullo stato dei
     columns: (auto, 1fr, 1fr),
     [ID], [Descrizione], [Assegnatari],
 
-    [#issue_to_link("Docs",104)], [Stesura della sezione relativa al testing del #glossary("Piano di qualifica")], [#p.santi],
+    [#issue_to_link("Docs",104)], [Stesura della sezione relativa al testing del #glossary("Piano di qualifica")], [#p.santi, #p.mahdi],
 
     [#issue_to_link("Docs",105)], [Stesura del cruscotto del #glossary("Piano di qualifica")], [#p.campagnaro], 
 
