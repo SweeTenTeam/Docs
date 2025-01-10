@@ -5,11 +5,22 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.0.9",
+    "2025-01-07",
+    (p.fracaro),
+    (p.santi),
+    [Insertiti UC1, UC2, UC3],
     "0.0.8",
     "2025-01-04",
     (p.mahdi),
     (p.ferazzani),
     [Insertito UC GitHub],
+    "0.0.7",
+    "2024-12-02",
+    (p.santi),
+    (p.fracaro),
+    "Sistemati UC Jira, aggiunto diagramma",
+
     "0.0.6",
     "2024-12-10",
     (p.ferazzani),
@@ -115,7 +126,7 @@ Tale prodotto, in conclusione, risponde alla necessità di accedere in modo faci
 
 L’assistente virtuale utilizza tecnologie di Intelligenza Artificiale (nel nostro progetto verranno utilizzati #glossary("GroqCloud") e #glossary("Langchain") lato #glossary("LLM")) per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate.
 
-A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("PostgreSQL") a un volume #glossary("Docker").
+A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("Postgres") a un volume #glossary("Docker").
 
 == Utenti e caratteristiche
 Il prodotto si rivolge principalmente al team aziendale:
@@ -142,40 +153,510 @@ Gli scenari sottostanti seguono uno schema e può prevedere:
 L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio ponendo domande all'assistente virtuale.
 
 #pagebreak()
-
 == Definizione casi d'uso
-//===UC1, Consultazione Jira
+=== UC1, Visualizzazione storico chat//todo maybe add backend as secondary actor???
 #columns(2, gutter: 3cm)[
   #box[
-    === UC1, Consultazione Jira
-    *Attori coinvolti*: #glossary("User"), #glossary("LLM") (attore esterno)
+    *Attori coinvolti*: #glossary("User").
 
     *Precondizioni*
-    - Le #glossary("API") di #glossary("Jira") sono disponibili e configurate correttamente.
+    - L'interfaccia grafica è pronta all'interazione con l'utente. 
 
     *Postcondizioni*
-    - Le informazioni richieste vengono presentate correttamente all'utente e può visualizzarle per pianificare le proprie attività.
+    - L'interfaccia grafica viene aggiornata con i messaggi delle passate interazioni tra l'utente e #glossary("Buddybot").
+    *Scenario principale*
+    - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
+    - La GUI recupera i messaggi delle precedenti interazioni;
+    - Nella scermata appaiono i messaggi riguardanti le passate interazioni con #glossary("Buddybot").
   ]
   #colbreak()
   #figure(
-    image(ar.diagUC1, width: 22em, fit: "contain"),
-    caption: "Diagramma UC1, consultazione Jira",
+    image(ar.diagUC_storico_chat, width: 22em, fit: "contain"),
+    caption: "Diagramma UC1, visualizzazione storico chat",
   )
 ]
 
-*Scenario principale*
-- L'utente interagisce con #glossary("BuddyBot") tramite l'interfaccia chat, ponendo una domanda
-  - esempio: "Quali #glossary("issue") sono assegnate a me per questa settimana?"
-- #glossary("BuddyBot") autentica la connessione con Jira
+*Estensioni*
+- UC1.1, Nessun messaggio nello storico della chat;
+- UC1.2, Errore durante il recupero dello storico della chat;
+- UC1.3, Errore di connessione;
+*Inclusioni*
+- UC1.4, Visualizzazione singolo messaggio.
+*User story associata*
+- "Come utente, voglio poter vedere i messaggi delle passate interazioni con Buddybot, in modo da avere una conferma delle informazioni ricevute e poter approfondire eventuali dubbi o richiedere ulteriori dettagli."
 
-- Il sistema invia una richiesta alle #glossary("API") di #glossary("Jira") per estrarre i dati
-  - nel nostro esempio, vengono quindi estratti dati relativi alle #glossary("issue") assegnate all'utente con scadenza entro la settimana corrente.
-- #glossary("BuddyBot") elabora i dati ricevuti, genera una risposta che verrà fornita all'utente come un elenco ordinato e leggibile (linguaggio naturale).
-  - nel caso preso in esame, verrà fornito un elenco dettagliato delle issue, comprensivo di *titoli*, priorità, date di scadenza e stati.
+
+==== UC1.1, Nessun messaggio nello storico della chat
+  *Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia grafica viene aggiornata con un messaggio informativo che informa l'utente che non ci sono messaggi precedenti disponibili.
+  *Scenario principale*
+  - L'utente accede all'interfaccia di #glossary("Buddybot");
+  - La GUI cerca di recuperare i messaggi delle precedenti interazioni ma non è presente nessun messaggio nello storico della chat;
+  - L'utente viene informato che non sono presenti messaggi precedenti tramite un aggiornamento dell'interfaccia grafica.
+  *User story associata*
+  - "Quando l'utente accede a Buddybot per la prima volta, viene informato che, non essendoci interazioni pregresse, non sono disponibili messaggi nello storico".
+
+  ==== UC1.2, Errore durante il recupero dello storico della chat
+  *Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia grafica mostra un alert che informa l'utente dell'impossibilità di recuperare i messaggi precedenti a causa di un problema.
+  *Scenario principale*
+  - L'utente accede all'interfaccia di #glossary("Buddybot");
+  - La GUI cerca di recuperare i messaggi delle precedenti interazioni ma si verifica un errore durante il processo che impedisce il recupero di tali messaggi;
+  - L'utente viene informato che si è verificato un errore durante il recupero dei messaggi precedenti tramite un aggiornamento dell'interfaccia grafica.
+  *User story associata*
+  - "Come utente, voglio essere informato in modo chiaro se si verifica un errore durante il recupero dei messaggi precedenti, in modo da sapere che i dati non sono disponibili e poter agire di conseguenza senza confusione".
+
+
+  ==== UC1.3, Errore di connessione
+  *Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia grafica viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile eseguire l'operazione richiesta per la mancanza di connessione ad internet e invita a controllare tale connessione.
+
+  *Scenario principale*
+  - L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia grafica di eseguire un'operazione che richiede la connessione ad internet;
+  - La GUI cerca di eseguire la richiesta dell'utente ma non riesce a portarla a termine per la mancanza di connessione ad internet;
+  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un aggiornamento dell'interfaccia grafica.
+  *User story associata*
+  - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
+
+
+ ==== UC1.4, Visualizzazione singolo messaggio
+  #columns(2, gutter: 3cm)[
+  #box[
+    *Attori coinvolti*: #glossary("User").
+
+    *Precondizioni*
+    - L'interfaccia grafica di #glossary("Buddybot") è funzionante e pronta per l'utilizzo;
+    - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+    *Postcondizioni*
+    - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando il messaggio.
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUC_single_messaggio, width: 22em, fit: "contain"),
+    caption: "Diagramma UC1.4, Visualizzazione messaggio singolo",
+  )
+]
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza il contenuto del messaggio;
+- L'utente visualizza data e ora dell'invio del messaggio;
+- L'utente visualizza il mittente del messaggio.
 
 *Inclusioni*
-- Reperimento delle informazioni (#glossary("API"))
-- Elaborazione dei dati ricevuti (#glossary("LLM"))
+- Visualizzazione contenuto del messaggio;
+- Visualizzazione data e ora del messaggio;
+- Visualizzazione mittente del messaggio;
+
+*User story associata*
+- "Come utente voglio poter visualizzare il contenuto, la data e l'ora di invio, e il mittente di un singolo messaggio della chat in modo chiaro e comprensibile in modo da avere sempre una chiara idea del contesto e dei dettagli delle passate interazioni con #glossary("Buddybot")".
+
+
+===== UC1.4.1, Visualizzazione contenuto del messaggio
+*Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
+  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+  *Postcondizioni*
+  - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando il contenuto del messaggio.
+
+  *Scenario principale*
+  - L'utente vuole visualizzare il contenuto della chat;
+  - L'utente visualizza il contenuto del messaggio;
+  *User story associata*
+  - "Come utente, voglio poter visualizzare il contenuto di un messaggio della chat in modo da comprendere le informazioni scambiate durante le passate interazioni con Buddybot".
+
+  ===== UC1.4.2, Visualizzazione data e ora del messaggio;
+*Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
+  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+  *Postcondizioni*
+  - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando la data e l'ora del messaggio.
+
+  *Scenario principale*
+  - L'utente vuole visualizzare il contenuto della chat;
+  - L'utente visualizza la data e l'ora del messaggio.
+  *User story associata*
+  - "Come utente, voglio poter visualizzare la data e l'ora di un messaggio della chat in modo da sapere quando è stato inviato e contestualizzarlo all'interno delle mie interazioni con #glossary("Buddybot")".
+
+
+  ===== UC1.4.3, Visualizzazione mittente del messaggio
+*Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
+  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+  *Postcondizioni*
+  - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando il mittente del messaggio.
+
+  *Scenario principale*
+  - L'utente vuole visualizzare il contenuto della chat;
+  - L'utente visualizza il mittente del messaggio;
+  *User story associata*
+  - "Come utente, voglio poter visualizzare il mittente di un messaggio della chat in modo da distinguere chi ha inviato il messaggio e comprendere meglio il contesto delle mie interazioni con #glossary("Buddybot")".
+
+
+//domanda USER-GUI
+=== UC2, Domanda utente all'interfaccia grafica//todo maybe add backend as secondary actor???
+#columns(2, gutter: 3cm)[
+  #box[
+    *Attori coinvolti*: #glossary("User").
+
+    *Precondizioni*
+    - L'interfaccia grafica è pronta all'interazione con l'utente. 
+
+    *Postcondizioni*
+    - L'interfaccia grafica viene aggiornata con il contenuto, la data, l'ora e il mittente del messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
+
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUC_ask_user-gui, width: 22em, fit: "contain"),
+    caption: "Diagramma UC2, Domanda utente alla GUI",
+  )
+]
+    *Scenario principale*
+    - L'utente accede alla chat con #glossary("Buddybot") tramite l'applicazione web;
+    - L'utente scrive la propria domanda;
+    - L'utente invia il messaggio con la proprio domanda;
+    - L'interfaccia grafica invia la richiesta dell'utente al backend per generare una risposta alla domanda;
+    - L'interfaccia grafica riceve la risposta alla domanda dell'utente;
+    - L'interfaccia grafica viene aggiornata con il messaggio inviato dall'utente;
+    - L'interfaccia grafica viene aggiornata con il messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
+*Estensioni*
+- UC2.1, Errore nella generazione della risposta;
+- UC1.3, Errore di connessione;
+*Inclusioni*
+- UC1.4, Visualizzazione singolo messaggio.
+*User story associata*
+- "Come utente voglio interagire con #glossary("Buddybot") attraverso una chat per porre domande e ricevere risposte in modo rapido e intuitivo. Inoltre, desidero visualizzare tutti i dettagli di ogni messaggio, inclusi contenuto, data, ora e mittente, in modo da avere un'esperienza chiara e completa durante l'interazione."
+
+==== UC2.1, Errore nella generazione della risposta
+  *Attori coinvolti*: #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia grafica è pronta all'interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia grafica di #glossary("Buddybot") viene aggiornata mostrando il mittente del messaggio.
+
+  *Scenario principale*
+  - L'utente accede alla chat con #glossary("Buddybot") tramite l'applicazione web;
+  - L'utente scrive la propria domanda;
+  - L'utente invia il messaggio con la proprio domanda;
+  - L'interfaccia grafica invia la richiesta dell'utente al backend per generare una risposta alla domanda;
+  - Si verifica un errore durante la generazione della risposta;
+  - L'interfaccia grafica viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile generare la risposta alla sua domanda.
+  *User story associata*
+  - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se si verifica un problema durante la generazione della risposta da parte di #glossary("Buddybot"), in modo da sapere che la mia richiesta non è stata elaborata e poter eventualmente riprovare".
+
+=== UC3, Elaborazione domanda utente
+#columns(2, gutter: 3cm)[
+  #box[
+    *Attori coinvolti*:
+    - Primari:
+      - #glossary("User") .
+    - Secondari:
+      - #glossary("Jira") ;
+      - #glossary("Github") ;
+      - #glossary("Confluence") ;
+      - #glossary("LLM") . 
+
+    *Precondizioni*
+    - La GUI e il backend di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia grafica ha acquisito una domanda dall'utente.
+
+  ]
+  #colbreak()
+  #figure(
+    image(ar.diagUC_elab_domanda, width: 22em, fit: "contain"),
+    caption: "Diagramma UC3, Elaborazione domanda utente",
+  )
+]
+
+*Postcondizioni*
+- Il backend genera e restituisce una risposta accurata in linguaggio naturale alla domanda ricevuta dall'interfaccia grafica.
+- La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.
+  
+*Scenario principale*
+- L'interfaccia grafica invia al backend di #glossary("Buddybot") la domanda formulata dall'utente;
+- Il backend analizza la domanda e recupera tutti i documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
+- La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
+- La risposta generata dal #glossary("LLM") viene restituita dal backend all'interfaccia grafica;
+- La domanda dell'utente e la risposta generata vengono aggiunte allo storico della chat, rendendole disponibili per la visualizzazione successiva.
+
+*Estensioni*
+- UC3.1, Domanda fuori contesto;
+- UC3.2, Errore durante la generazione della risposta;
+*Inclusioni*
+- UC4, Domanda dell'utente che richiede l'utilizzo di informazioni da #glossary("Jira");
+- UC5, Domanda dell'utente che richiede l'utilizzo di informazioni da #glossary("GitHub");
+- UC6, Domanda dell'utente che richiede l'utilizzo di informazioni da #glossary("Confluence");
+- UC3.3, Generazione risposta in linguaggio naturale.
+
+*User story associata*
+  - "Come utente di #glossary("Buddybot"), voglio poter porre domande attraverso l'interfaccia grafica e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), così da ottenere informazioni utili e coerenti con il contesto del sistema..
+
+
+==== UC3.1, Domanda fuori contesto
+  *Attori coinvolti*:
+  - Primari:
+      - #glossary("User") .
+  - Secondari:
+     - #glossary("LLM").
+
+  *Precondizioni*
+    - La GUI e il backend di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia grafica ha acquisito una domanda dall'utente.
+
+  *Postcondizioni*
+  - Il backend genera e restituisce una risposta che informa che non è stato possibile rispondere alla domanda in quanto non il linea con il contesto di #glossary("Buddybot").
+  - La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.  
+
+  *Scenario principale*
+  - L'interfaccia grafica invia al backend di Buddybot la domanda formulata dall'utente.
+  - Il backend analizza la domanda e tenta di recuperare documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"). Tuttavia, non trova documenti correlati poiché la domanda è fuori dal contesto operativo di #glossary("Buddybot").
+  - La domanda dell'utente viene inoltrata al #glossary("LLM") per generare una risposta in linguaggio naturale che informa l'utente che la domanda non è pertinente al contesto.
+  - La risposta generata dal #glossary("LLM") viene restituita dal backend all'interfaccia grafica.
+  - La domanda e la risposta vengono archiviate nello storico della chat, rendendole disponibili per future visualizzazioni.
+  *User story associata*
+  - "Come utente di #glossary("Buddybot"), voglio ricevere una risposta chiara e in linguaggio naturale quando pongo una domanda fuori contesto, in modo da essere informato che la mia richiesta non è pertinente al sistema e capire meglio i limiti del suo ambito operativo".
+
+==== UC3.2, Errore durante la generazione della risposta
+  *Attori coinvolti*:
+  - #glossary("User") .
+
+  *Precondizioni*
+    - La GUI e il backend di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia grafica ha acquisito una domanda dall'utente. 
+
+  *Postcondizioni*
+  - Il backend ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta.
+
+  *Scenario principale*
+  - L'interfaccia grafica invia al backend di #glossary("Buddybot") la domanda formulata dall'utente.
+  - Il backend tenta di analizzare la domanda, di recuperare i documenti pertinenti e di generare una risposta in linguaggio naturale ma non ci riesce per un errore;
+  - Il backend ritorna un errore informado l'interfaccia grafica che non è stato possibile generare la risposta alla domanda richiesta.
+  *User story associata*
+  - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda, così da poter eventualmente riformulare la domanda o contattare un supporto alternativo".
+
+==== UC3.3, Generazione risposta in linguaggio naturale
+  *Attori coinvolti*:
+  - Primari:
+      - #glossary("User") .
+  - Secondari:
+     - #glossary("LLM").
+
+  *Precondizioni*
+    - La GUI e il backend di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia grafica ha acquisito una domanda dall'utente.
+
+  *Postcondizioni*
+  - Viene generata e ritornata una risposta in linguaggio naturale alla domanda presentata dall'interfaccia utente.
+
+  *Scenario principale*
+    - L'interfaccia grafica invia al backend di Buddybot la domanda formulata dall'utente.
+    - Il backend invia la domanda e i documenti rilevanti al #glossary("LLM") per generare una risposta in linguaggio naturale;
+    - Viene ritornato un messaggio di risposta in linguaggio naturale;
+  *User story associata*
+   - "Come utente voglio ricevere una risposta in linguaggio naturale alla mia domanda, così da ottenere informazioni chiare e comprensibili.".
+
+
+
+
+#pagebreak()
+=== UC2, Messaggio che richiede informazioni da Jira
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente.
+- Il sistema interpreta la domanda digitata nell'interfaccia (#glossary("GUI")) e tale richiesta  viene inviata al modulo di connessione con le #glossary("API") di #glossary("Jira") con il fine di estrarre i dati utili.
+- #glossary("LLM") elabora le informazioni ottenute per fornire all'utente una risposta chiara e comprensibile.
+
+*Inclusioni*
+- UC2.1, "Messaggio che richiede nome (titolo) di un ticket"
+- UC2.2, "Messaggio che richiede assegnatario di un ticket"
+- UC2.3, "Messaggio che richiede etichette di un ticket"
+- UC2.4, "Messaggio che richiede stato di un ticket"
+- UC2.5, "Messaggio che richiede attività principale collegata a un ticket"
+- UC2.6, "Messaggio che richiede team di appartenenza di un ticket"
+- UC2.7, "Messaggio che richiede sprint di appartenenza di un ticket"
+- UC2.8, "Messaggio che richiede #glossary("story point estimate") di un ticket"
+- UC2.9, "Messaggio che richiede il richiedente/creatore di un ticket"
+
+#pagebreak() 
+
+//pagina dedicata all'immagine vista la dimensione
+#figure(
+  image(ar.diagUC2, width: 45em, fit: "contain"),
+    caption: "Diagramma UC2, Messaggio informazioni Jira"
+)
+
+#pagebreak()
+
+==== UC2.1, Messaggio che richiede nome (titolo) di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente, con il fine di ottenere più informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente il titolo del ticket richiesto.
+
+==== UC2.2, Messaggio che richiede assegnatario di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente, con il fine di ottenere più informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente l'assegnatario del ticket richiesto.
+
+==== UC2.3, Messaggio che richiede etichette di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente, con il fine di ottenere più informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente le etichette associate al ticket richiesto.
+
+==== UC2.4, Messaggio che richiede stato di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente, con il fine di ottenere più informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verrà mostrata nell'interfaccia-chat una risposta (elaborata in linguaggio naturale) contente lo stato ("Da completare", "In corso", "Completato") del ticket richiesto.
+
+==== UC2.5, "Messaggio che richiede attività principale collegata a un ticket"
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente, con il fine di ottenere più informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Con questo #glossary("Use Case") specifico verranno mostrate nell'interfaccia-chat, attraverso una risposta in linguaggio naturale, le eventuali etichette/attività principali dello specifico ticket preso in esame.
+
+==== UC2.6, "Messaggio che richiede team di appartenenza di un ticket"
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente, con il fine di ottenere più informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. In questo caso verrà restituita una risposta contente il team al quale è associato il ticket preso in esame.
+
+==== UC2.7, Messaggio che richiede sprint di appartenenza di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente, con il fine di ottenere più informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Verrà infine ritornata nella #glossary("GUI") una risposta contenete lo Sprint di appartenenza del ticket richiesto dall'utente.
+
+==== UC2.8, Messaggio che richiede #glossary("story point estimate") di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente, con il fine di ottenere più informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Verrà generata una risposta in linguaggio naturale contenente la #glossary("story point estimate"), ossia un'unità di misura che indicizza la complessità del ticket richiesto.
+
+==== UC2.9, Messaggio che richiede il richiedente/creatore di un ticket
+*Attori coinvolti*: #glossary("GUI"), #glossary("Jira")
+
+*Precondizioni*
+- #glossary("BuddyBot") è operativo e accessibile all'utente.
+- Le #glossary("API") di #glossary("Jira") sono disponibili e correttamente configurate per garantire il recupero delle informazioni.
+
+*Postcondizioni*
+- Viene mostrata nell'interfaccia di #glossary("BuddyBot") la risposta elaborata in linguaggio naturale secondo le richieste dell'utente.
+
+*Scenario principale*
+- La #glossary("GUI") di #glossary("BuddyBot") ha acquisito la domanda posta dall'utente, con il fine di ottenere più informazioni in merito a un ticket.
+- Il sistema, dopo aver interpretato la domanda presente nella #glossary("GUI"), invia una richiesta alle #glossary("API") di #glossary("Jira") per recuperare i dettagli del ticket richiesto.
+- #glossary("LLM") elabora le informazioni ottenute. Verrà generata una risposta in linguaggio naturale contenente la persona che ha creato e richiesto il completamento dell'attività richiesta.
+
 
 #pagebreak()
 //=== UC2, Consultazione GitHub
@@ -733,6 +1214,7 @@ Per il progetto in questione, le tipologie di dati rilevanti sono:
 
   *User Story Associata*:
   - "Hey BuddyBot, qual è la data di scadenza della task con id: ... ."
+
 
 
 = Requisiti
