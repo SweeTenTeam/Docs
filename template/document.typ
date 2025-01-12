@@ -24,6 +24,7 @@
   show_images_list: false,
   show_tables_list: false,
   heading_numbers: "1.1)",
+  figure_breakable: true,
   body,
 ) = {
   set page(fill: rgb(209, 197, 174))
@@ -32,7 +33,7 @@
   set heading(numbering: heading_numbers)
   set page(numbering: "1 / 1")
   show link: underline
-  show figure: set block(breakable: true)
+  show figure: set block(breakable: figure_breakable)
 
   let date = changelog.at(1, default: none)
   let version = changelog.at(0, default: none)
@@ -920,3 +921,378 @@
     ),
   )
 }
+
+//Piano di progetto Template
+
+#let prev-orario(dati, periodo) = {
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let ruoli = ("RS", "AM", "AN", "PR", "PG", "VR","Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last())
+  
+  let header = ([],) + ruoli.map(r => [*#r*])
+  
+  let r = header + (persone).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)))).flatten() +("Totale",).map(el => [*#el*])+(dati.map(row => row.at(0)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(1)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(2)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(3)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(4)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(5)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(6)).sum(),).map(el => [*#el*])
+
+
+  
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Preventivo orario periodo #periodo*], 
+        table(
+            columns: (auto,)+(1fr,)*6+(auto,),
+            inset: 5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Periodo #periodo - Preventivo dell'impegno orario per ruolo di ciascun membro.]
+  )
+
+  v(1.5em)
+
+  dati = persone.zip(dati).map(x => x.flatten())
+  let colori =  (rgb("#e60c05"), rgb("#02de11"), rgb("#ffbb00"), rgb("#8f02fa"), rgb("#40ddf5"), rgb("#4f55f7") )
+  let colori_p = palette.new(colors: colori)
+
+  figure(
+    [
+      #align(center,
+        canvas({
+          draw.scale(1)
+          chart.columnchart(
+            dati, 
+            size:(15,7), 
+            mode: "clustered", 
+            value-key: (1,2,3,4,5,6), 
+            y-tick-step: 1, 
+            bar-style: colori_p,
+          )
+        })
+      )
+      #rect(stroke: (paint: blue, thickness: 1pt, dash: "dashed"))[
+      *Legenda*:
+      #let t = ruoli_tot.zip(colori).enumerate().map(x => x.last())
+      #let half = (t.len() + 1) / 2
+      #let t1 = t.slice(0, 3)
+      #let t2 = t.slice(3, t.len())
+
+      #stack(
+        dir: ttb, spacing: 1em,
+        stack(
+          dir: ltr, spacing: 1em,
+          ..t1.map(x => stack(
+            dir: ltr,
+            spacing: 0.3em,
+            circle(fill: x.at(1), width: .8em, height: 0.8em), " " + x.at(0)
+          ))
+        ),
+        stack(
+          dir: ltr, spacing: 1em,
+          ..t2.map(x => stack(
+            dir: ltr,
+            spacing: 0.3em,
+            circle(fill: x.at(1), width: .8em, height: 0.8em), " " + x.at(0)
+          ))
+        )
+      )
+    ]
+
+    ],
+    caption: [Periodo #periodo - Visualizzazione dell'impegno temporale di ciascun membro nei rispettivi ruoli assegnati.],
+  )
+
+  v(1.5em)
+
+  let sums = ()
+  let dati = dati.map(row => row.slice(1,7))
+  for j in range(dati.len()-1) {
+    let s = dati.map(row => row.at(j)).sum()
+    sums += ((ruoli_tot.at(j),s),)
+  }
+  figure([
+  #align(center,[
+    #canvas({
+        import draw: *
+        scale(0.5)
+        chart.piechart(
+          sums,
+          value-key: 1,
+          label-key: none,
+          radius: 5,
+          slice-style: colori_p,
+          inner-radius: 1,
+          inner-label: (content: "%", radius: 110%),
+          outer-label: (content: "")
+        )
+      })
+      #rect(stroke: (paint: blue, thickness: 1pt, dash: "dashed"))[
+      *Legenda*:
+      #let t = ruoli_tot.zip(colori).enumerate().map(x => x.last())
+      #let half = (t.len() + 1) / 2
+      #let t1 = t.slice(0, 3)
+      #let t2 = t.slice(3, t.len())
+
+      #stack(
+        dir: ttb, spacing: 1em,
+        stack(
+          dir: ltr, spacing: 1em,
+          ..t1.map(x => stack(
+            dir: ltr,
+            spacing: 0.3em,
+            circle(fill: x.at(1), width: .8em, height: 0.8em), " " + x.at(0)
+          ))
+        ),
+        stack(
+          dir: ltr, spacing: 1em,
+          ..t2.map(x => stack(
+            dir: ltr,
+            spacing: 0.3em,
+            circle(fill: x.at(1), width: .8em, height: 0.8em), " " + x.at(0)
+          ))
+        )
+      )
+    ]
+  ]
+)
+      
+],
+caption: [Periodo #periodo - Ripartizione in percentuale dei ruoli.]
+)
+
+v(1.5em)
+
+}
+
+#let prev-economico(data, periodo)={
+  let sums=((data.at(0))*30)+((data.at(1))*20)+((data.at(2))*25)+((data.at(3))*25)+((data.at(4))*15)+((data.at(5))*15)
+  let header = ("","Ore","Costo").map(r => [*#r*])
+  let r = header + ("Responsabile",).map(el => [*#el*])+(data.at(0),).map(el => [#el])+((data.at(0))*30,).map(el => [#el €])+("Amministratore",).map(el => [*#el*])+(data.at(1),).map(el => [#el])+((data.at(1))*20,).map(el => [#el €])+("Analista",).map(el => [*#el*])+(data.at(2),).map(el => [#el])+((data.at(2))*25,).map(el => [#el €])+("Progettista",).map(el => [*#el*])+(data.at(3),).map(el => [#el])+((data.at(3))*25,).map(el => [#el €])+("Programmatore",).map(el => [*#el*])+(data.at(4),).map(el => [#el])+((data.at(4))*15,).map(el => [#el €])+("Verificatore",).map(el => [*#el*])+(data.at(5),).map(el => [#el])+((data.at(5))*15,).map(el => [#el €])+("Totale",).map(el => [*#el*])+(data.map(row => row).sum(),).map(el => [*#el*])+(sums,).map(el => [*#el €*])
+
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Preventivo economico periodo #periodo*], 
+        table(
+            columns: (1fr,)*3,
+            inset:5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Periodo #periodo - Preventivo economico per ruolo.]
+  )
+  v(1.5em)
+}
+
+
+#let neg(word)= {
+  text(fill: rgb("#D2042D"))[(*+#word*)]
+}
+
+#let pos(word)= {
+  text(fill: rgb("#437c17"))[(*#word*)]
+}
+
+#let cons-orario(cons, prev, periodo) = {
+  let cons = cons.map(row => row + (row.sum(),))
+  let cons = cons + ((range(0, cons.at(0).len())).map(i => cons.map(row => row.at(i)).sum()),)
+
+  let prev = prev.map(row => row + (row.sum(),))
+  let prev = prev + ((range(0, prev.at(0).len())).map(i => prev.map(row => row.at(i)).sum()),)
+  
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let ruoli = ("RS", "AM", "AN", "PR", "PG", "VR","Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last()) +( "Totale",)
+  
+  let header = ([],) + ruoli.map(r => [*#r*])
+
+  let dati = ((([0],)*7),)*8
+  for i in range(8) {
+      for j in range(7) {
+        let diff = cons.at(i).at(j)-prev.at(i).at(j)
+        let str = str(cons.at(i).at(j))
+        if (diff < 0) {str = str + " " + pos(diff)}
+        else if (diff > 0) {str = str + " " + neg(diff)}
+        if(i==(7)){dati.at(i).at(j) = [*#str*]} else{dati.at(i).at(j) = str}
+    }
+  }
+  
+  let r = header + (persone).map(el => [*#el*]).zip(dati.map(x => x.map(y => y))).flatten() 
+
+
+  
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Consuntivo orario periodo #periodo*], 
+        table(
+            columns: (auto,)+(1fr,)*6+(auto,),
+            inset: 5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 0.86em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Periodo #periodo - Consintivo dell'impegno orario per ruolo di ciascun membro.]
+  )
+  v(1.5em)
+}
+#let cons-economico(cons, prev, periodo)={
+  cons = cons + (cons.sum(),)
+  let sums=((cons.at(0))*30,)+((cons.at(1))*20,)+((cons.at(2))*25,)+((cons.at(3))*25,)+((cons.at(4))*15,)+((cons.at(5))*15,)
+  sums += (sums.sum(),)
+  
+  prev = prev + (prev.sum(),)
+  let sums_prev=((prev.at(0))*30,)+((prev.at(1))*20,)+((prev.at(2))*25,)+((prev.at(3))*25,)+((prev.at(4))*15,)+((prev.at(5))*15,)
+  sums_prev += (sums_prev.sum(),)
+  
+  let header = ("","Ore","Costo").map(r => [*#r*])
+  let ruoli = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore", "Totale").map(el => [*#el*])
+  let r = header
+  
+  for i in range(7) {
+      r += (ruoli.at(i),)
+      let diff1 = cons.at(i)-prev.at(i)
+      let str1 = str(cons.at(i))
+      if (diff1 < 0) {str1 = str1 + " " + pos(diff1)}
+      else if (diff1 > 0) {str1 = str1 + " " + neg(diff1)}
+
+      let diff2 = sums.at(i) - sums_prev.at(i)
+      let str2 = str(sums.at(i)) + " €"
+      if (diff2 < 0) {str2 = str2 + " " + pos(str(diff2)+" €")}
+      else if (diff2 > 0) {str2 = str2 + " " + neg(str(diff2)+" €")}
+
+      if(i==cons.len()-1){r += ([*#str1*],[*#str2*],)}else{r += (str1,str2,)}
+      
+  }
+  
+
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Consuntivo economico periodo #periodo*], 
+        table(
+            columns: (1fr,)*3,
+            inset:5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Periodo #periodo - Consuntivo economico per ruolo.]
+  )
+  v(1.5em)
+}
+
+#let ore-rimaste(dati, periodo)={
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let ruoli = ("RS", "AM", "AN", "PR", "PG", "VR","Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last())
+  
+  let header = ([],) + ruoli.map(r => [*#r*])
+  
+  let r = header + (persone).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)))).flatten() +("Totale",).map(el => [*#el*])+(dati.map(row => row.at(0)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(1)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(2)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(3)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(4)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(5)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(6)).sum(),).map(el => [*#el*])
+
+
+  
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Ore rimanenti dopo periodo #periodo*], 
+        table(
+            columns: (auto,)+(1fr,)*6+(auto,),
+            inset: 5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Periodo #periodo - Ore rimaste per ruolo di ciascun membro dopo il periodo #periodo.]
+  )
+  v(1.5em)
+}
+
+#let avanzamento(percentuale_RTB, percentuale_PB, periodo) = {
+  figure(
+    [
+      \
+      #let RTB = 40
+      #let scale = 6.5
+      
+      #if(percentuale_RTB!=100){percentuale_PB=0}      
+      #let percentuale = percentuale_RTB*(RTB/100) + percentuale_PB*((100-RTB)/100)
+     
+      
+      #align(center,
+        canvas({
+          draw.set-style(
+           rect: (
+           fill: rgb(6, 189, 54),
+           stroke: none
+           )
+          )
+          draw.rect((0,0), (percentuale/scale,1), name: "progress")
+          draw.set-style(
+           rect: (
+           stroke:  (thickness:0.15em),
+           fill: none
+           )
+          )
+          draw.rect((0,0), (RTB/scale,1), name: "rtb")
+          draw.rect((0,0), (100/scale,1), name: "pb")
+          draw.content(
+           (RTB / (scale), -0.25),
+           [*`RTB`*]
+          )
+          draw.content(
+           (100 / (scale), -0.25),
+           [*`PB`*]
+          )
+        })
+      )
+    ],
+    caption: [Periodo #periodo - Punto di avanzamento raggiunto.],
+  )
+  v(1.5em)
+}
+
+#let R = (
+  P1: [#link(<RP1>)[*RP1 - Mancanza di competenze tecniche specifiche.*]],
+  P2: [#link(<RP2>)[*RP2 - Non conformità agli impegni dichiarati.*]],
+  P3: [#link(<RP3>)[*RP3 - Problemi di comunicazione e collaborazione.*]],
+  P4: [#link(<RP4>)[*RP4 - Malattia o indisponibilità.*]],
+  OI1: [#link(<ROI1>)[*ROI1 - Comunicativi e organizzativi.*]],
+  OI2: [#link(<ROI2>)[*ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.*]],
+  OE1: [#link(<ROE1>)[*ROE1 - Problemi di comunicazione.*]],
+  T1: [#link(<RT1>)[*RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.*]],
+)

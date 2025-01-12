@@ -9,6 +9,41 @@
     p.azzurro,
   ),
   changelog: (
+    "0.3.0",
+    "2024-12-26",
+    p.benedetti,
+    p.campagnaro,
+    [
+      Stesura del preventivo e consuntivo del periodo 3
+    ],
+    "0.2.1",
+    "2024-01-06",
+    p.benedetti,
+    p.campagnaro,
+    [
+      Verifica, pianificazione sprint 2
+    ],
+    "0.2.0",
+    "2024-12-26",
+    p.benedetti,
+    p.campagnaro,
+    [
+      Stesura del preventivo e consuntivo del periodo 2
+    ],
+    "0.1.0",
+    "2024-12-15",
+    p.campagnaro,
+    p.fracaro,
+    [
+      Stesura del consuntivo del periodo 1
+    ],
+    "0.0.4",
+    "2024-12-10",
+    p.campagnaro,
+    p.fracaro,
+    [
+      Stesura del preventivo del periodo 1
+    ],
     "0.0.3",
     "2024-12-04",
     p.fracaro,
@@ -33,7 +68,7 @@
   ),
   show_images_list: true,
   show_tables_list: true,
-  outline_depth: 3,
+  figure_breakable: false,
 )
 
 = *Introduzione*
@@ -119,7 +154,7 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     inset: 10pt,
     align: center,
     fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
-    [*RP1 - Mancanza di competenze tecniche specifiche.*], 
+    [*RP1 - Mancanza di competenze tecniche specifiche.*<RP1>], 
     table(
       columns: (auto, 1fr),
       inset: (5pt),
@@ -139,7 +174,7 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     inset: 10pt,
     align: center,
     fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
-    [*RP2 - Non conformità agli impegni dichiarati.*], 
+    [*RP2 - Non conformità agli impegni dichiarati.*<RP2>], 
     table(
       columns: (auto, 1fr),
       inset: (5pt),
@@ -160,7 +195,7 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     inset: 10pt,
     align: center,
     fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
-    [*RP3 - Problemi di comunicazione e collaborazione.*], 
+    [*RP3 - Problemi di comunicazione e collaborazione.*<RP3>], 
     table(
       columns: (auto, 1fr),
       inset: (5pt),
@@ -179,7 +214,7 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     inset: 10pt,
     align: center,
     fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
-    [*RP4 - Malattia o indisponibilità.*], 
+    [*RP4 - Malattia o indisponibilità.*<RP4>], 
     table(
       columns: (auto, 1fr),
       inset: (5pt),
@@ -201,7 +236,7 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     inset: 10pt,
     align: center,
     fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
-    [*ROI1 - Comunicativi e organizzativi.*], 
+    [*ROI1 - Comunicativi e organizzativi.*<ROI1>], 
     table(
       columns: (auto, 1fr),
       inset: (5pt),
@@ -221,7 +256,7 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     inset: 10pt,
     align: center,
     fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
-    [*ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.*],
+    [*ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.*<ROI2>],
     table(columns: (auto, 1fr), inset: (5pt),
     fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
     [*Descrizione*], [Metodologia inadeguata o inefficace per assegnare i ruoli e distribuire le attività.],
@@ -239,7 +274,7 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     inset: 10pt,
     align: center,
     fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
-    [*ROE1 - Problemi di comunicazione.*],
+    [*ROE1 - Problemi di comunicazione.*<ROE1>],
     table(
       columns: (auto, 1fr),
       inset: (5pt),
@@ -260,7 +295,7 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     inset: 10pt,
     align: center,
     fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
-    [*RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.*], 
+    [*RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.*<RT1>], 
     table(
       columns: (auto, 1fr),
       inset: (5pt),
@@ -378,4 +413,209 @@ Ogni fase si concentra sulla preparazione dei documenti e artefatti richiesti da
     caption:"Documenti e artefatti richiesti per le revisioni") <doc_art_req>
     ]
 
+#pagebreak()
 == *RTB*
+*Inizio*: 2024-11-12;\
+*Fine prevista*: 2025-01-13;\
+*Fine attuale*: ;\
+*Giorni di ritardo*: ;\
+
+=== *Periodo 1*
+*Inizio*: 2024-11-12;\
+*Fine prevista*: 2024-12-03;\
+*Fine attuale*: 2024-12-03;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana successiva all'aggiudicazione dell'appalto (dal 2024-11-04 al 2024-11-12), ci siamo concentrati principalmente sulla sistemazione dei documenti di candidatura e su un primo studio delle tecnologie da utilizzare, in vista del primo incontro con l’azienda #box(image(g.azzurro, width: 5em, height: auto)). Abbiamo deciso di considerare tale incontro come il vero e proprio inizio del periodo RTB, poiché tutte le attività svolte nella prima settimana possono essere classificate come attività preliminari, utili per la preparazione, ma non strettamente legate alle attività rendicontabili in termini di tempo ed economia previste dal progetto.
+
+Successivamente all’incontro con #box(image(g.azzurro, width: 5em, height: auto)), il team si dedicherà alla pianificazione e alla redazione dei documenti essenziali per il progetto, con l’obiettivo di costruire una solida base per il lavoro futuro. In questa fase iniziale verrà avviata la stesura del Piano di Progetto, dell’Analisi dei Requisiti e del Glossario, accompagnata dalla scrittura completa delle Norme di Progetto. Inoltre, il team si impegnerà nell’avvio del #glossary("Proof of Concept") (PoC) per validare le scelte tecniche e funzionali. Durante questo periodo sarà cruciale definire modalità operative chiare e condivise, per garantire una gestione delle attività produttiva ed efficiente.
+
+Obiettivi principali della fase iniziale:
+
+- *Migrazione da #glossary("LaTeX") a #glossary("Typst")*: Implementazione e automatizzazione del processo di compilazione dei documenti per migliorare l’efficienza.
+- *Introduzione al Piano di Progetto e all’Analisi dei Requisiti*: Inizio della stesura delle sezioni introduttive di questi documenti.
+- *Completamento delle Norme di Progetto*: Redazione dettagliata delle Norme, in preparazione a future revisioni e discussioni con il team e i referenti aziendali.
+- *Studio delle tecnologie e casi d’uso*: Analisi approfondita delle tecnologie individuate e dei possibili scenari applicativi, con il supporto della proponente.
+- *Definizione del “#glossary("Way of Working")” del team*: Discussioni di linee guida operative per ottimizzare la collaborazione e l’organizzazione interna.
+- *Automatizzazione del Glossario*: Creazione di un processo per collegare automaticamente, tramite link, termini e concetti fondamentali della documentazione con il loro significato.
+- *Pianificazione delle attività*: Strutturazione delle attività operative per garantire una gestione efficace del team e del progetto.
+- *Avvio del PoC*: Analisi iniziale delle tecnologie selezionate, definizione delle specifiche e primi passi verso la realizzazione del Proof of Concept.
+- *Utilizzo del #glossary("LLM") tramite API (#glossary("Groq Cloud"))*: Sperimentazione e integrazione iniziale dell’#glossary("LLM").
+- *Sviluppo di un database locale*: Creazione di un database locale per salvare e consultare lo storico delle domande effettuate dagli utenti.
+- *Visualizzazione delle risposte precedenti*: Implementazione di un sistema per tracciare e visualizzare le risposte fornite dall'#glossary("LLM").
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P1;
+- #R.P3;
+- #R.OI1;
+- #R.OI2;
+- #R.OE1;
+
+Questo perché, trovandoci allinizio del progetto, siamo ancora in una fase di organizzazione e apprendimento, con diverse incertezze da affrontare. Di conseguenza, la possibilità di incontrare alcune delle problematiche tra quelle riportate è piuttosto elevata.
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"1")
+===== Preventivo economico
+#prev-economico((11,14,13,4,5,16),"1")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Analisti e Verificatori hanno richiesto *meno* ore;
+
+===== Consuntivo orario
+#cons-orario(((0,0,3,2,3,1),(0,3,3,0,0,2),(3,3.5,0,0,0,3),(2,3.5,0,0,2,2),(2,3,0,2,0,1),(4,0,2,0,0,2),(0,1,4,0,0,4.5)),((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"1")
+
+#ore-rimaste(((9,8,8,15,21,21),(9,5,8,17,24,20),(6,4.5,11,17,24,19),(7,4.5,11,17,22,20),(7,5,11,15,24,21),(5,8,9,17,24,20),(9,7,7,17,24,17.5)),"1")
+
+===== Consuntivo economico
+#cons-economico((11,14,12,4,5,15.5),(11,14,13,4,5,16),"1")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante questo periodo sono emerse alcune delle complicazioni previste, in particolare quelle legate alla pianificazione, al coordinamento e alla comunicazione. Un esempio significativo riguarda la stesura parallela di diversi documenti senza una definizione chiara delle modalità di gestione delle #glossary("Pull Request") e delle regole stilistiche per il testo, che sarebbero dovute essere stabilite nelle Norme di Progetto. Inoltre, alcune attività, come l’identificazione e la redazione dei casi d’uso, hanno subito lievi ritardi, rendendo necessario il loro completamento nel corso dello Sprint successivo.
+
+Queste difficoltà hanno evidenziato l’importanza di una pianificazione realistica, calibrata sulla reale mole di lavoro. Il gruppo ha quindi preso atto di questa necessità, impegnandosi a porre maggiore attenzione nella pianificazione dei futuri #glossary("Sprint"). Nonostante ciò, i rischi verificatisi non hanno avuto un impatto significativo sul progetto e sono stati gestiti efficacemente attraverso un confronto costruttivo tra i membri del team.
+
+==== Retrospettiva
+Questo primo periodo di lavoro ha sottolineato l'importanza di seguire #glossary("best practice") comuni da parte di ogni membro del gruppo per tutta la durata del progetto. Per questo motivo, è stata data priorità alla stesura completa e definitiva delle Norme di Progetto, considerandole fondamentali per garantire un’organizzazione efficace.
+
+Lo studio condiviso delle tecnologie e dei casi d’uso tra i vari membri del team ha favorito un apprendimento rapido dei contenuti. Tuttavia, abbiamo deciso di investire più tempo e risorse in queste attività durante il prossimo periodo, assegnandogli più persone per approfondire tali aspetti.
+
+Inoltre, ci siamo resi conto che l’approccio migliore e più efficace prevede che il Responsabile assegni le task e organizzi il lavoro in modo che le attività siano distribuite equamente tra i membri del gruppo. Questo metodo, che adotteremo a partire dal prossimo periodo, garantirà che ciascuna task venga completata con un numero di ore congruo e nel rispetto delle scadenze, favorendo una gestione più bilanciata ed efficiente.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.317,50 €`*, risultando inferiore di *`32,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`11.422,50 €`*. 
+
+#avanzamento(25, 0, "1")
+
+#pagebreak()
+=== *Periodo 2*
+*Inizio*: 2024-12-03;\
+*Fine prevista*: 2024-12-17;\
+*Fine attuale*: 2024-12-17;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana del secondo sprint, (dal 3 dicembre 2024 al 17 dicembre 2024), il team si dedicherà sulla redazione dei documenti essenziali per il proseguimento del progetto. In particolare, i lavori sull'analisi dei requisiti, il piano di progetto e il piano di qualifica, rappresentando elementi fondamentali per garantire un avanzamento ordinato e ben strutturato delle attività.
+
+Sarà prevista inoltre la prima presentazione del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P4;
+- #R.T1;
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+===== Preventivo economico
+#prev-economico((11,14,13,4,5,16),"2")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Analisti, Programmatori e Verificatori hanno richiesto *meno* ore;
+- Progettisti hanno richiesto *più* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile. In questa fase, un lieve surplus durante la progettazione può rientrare nella normalità.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(((0,0,3,2,2,2),(0,4,2,0,0,1.5),(3,3,0,0,0,3),(2,3,0,1.5,2,2),(2,3,0,2,0,2),(4,0,3,0,0,1.5),(0,1,4,0,0,3)),((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+
+#ore-rimaste(((9,8,5,13,19,19),(9,1,6,17,24,18.5),(3,1.5,11,17,24,16),(5,1.5,11,15.5,20,18),(5,2,11,13,24,19),(1,8,6,17,24,18.5),(9,6,3,17,24,14.5)),"2")
+
+===== Consuntivo economico
+#cons-economico((11,14,12,5.5,4,15),(11,14,13,4,5,16),"2")
+
+==== Rischi occorsi, impatto e loro mitigazione
+A differenza dello #glossary("Sprint") precedente, durante il quale il rischio emerso è stato mitigato attraverso la redazione e l'analisi delle #glossary("Norme di Progetto"), in quello attuale non si sono verificati ulteriori rischi. Questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti. Inoltre, va sottolineato che i membri del gruppo stanno lavorando in modo efficace e coeso, dimostrando un'eccellente collaborazione e un impegno costante nel raggiungimento degli obiettivi prefissati.
+
+==== Retrospettiva
+Nel complesso, il lavoro è proseguito senza troppi intoppi, dimostrando una buona capacità del team di affrontare le attività previste con efficienza e coesione. Le norme di progetto adottate si sono rivelate un supporto fondamentale, fungendo da strumento efficace per garantire lo svolgimento ordinato e corretto del progetto. La loro applicazione ha contribuito a mantenere un alto livello di organizzazione, favorendo il rispetto delle tempistiche e delle modalità operative stabilite.
+
+Un momento particolarmente significativo durante questa fase è stato rappresentato dalla presentazione di una prima demo del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). Questa anteprima ha permesso di condividere una visione concreta dell'avanzamento del progetto, offrendo un'opportunità per raccogliere feedback utili e allineare le aspettative sulle prossime fasi di sviluppo.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.332,50 €`*, risultando inferiore di *`17,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista, Programmatore e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`10.090 €`*. 
+
+#avanzamento(50, 0, "2")
+
+#pagebreak()
+=== *Periodo 3*
+*Inizio*: 2024-12-17;\
+*Fine prevista*: 2024-01-25;\
+*Fine attuale*: 2024-01-25;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+//TODO
+Durante la settimana del terzo sprint, (dal 3 dicembre 2024 al 17 dicembre 2024), il team si dedicherà sulla redazione dei documenti essenziali per il proseguimento del progetto. In particolare, i lavori sull'analisi dei requisiti, il piano di progetto e il piano di qualifica, rappresentando elementi fondamentali per garantire un avanzamento ordinato e ben strutturato delle attività.
+
+Sarà prevista inoltre la prima presentazione del #glossary("Poc") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P4;
+- #R.OI1;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+//TODO
+#prev-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+===== Preventivo economico
+//TODO
+#prev-economico((11,14,13,4,5,16),"2")
+
+==== Consuntivo
+//TODO
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Analisti, Programmatori e Verificatori hanno richiesto *meno* ore;
+- Progettisti hanno richiesto *più* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile. In questa fase, un lieve surplus durante la progettazione può rientrare nella normalità.
+
+#pagebreak()
+===== Consuntivo orario
+//TODO
+#cons-orario(((0,0,3,2,2,2),(0,4,2,0,0,1.5),(3,3,0,0,0,3),(2,3,0,1.5,2,2),(2,3,0,2,0,2),(4,0,3,0,0,1.5),(0,1,4,0,0,3)),((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+
+#ore-rimaste(((9,8,5,13,19,19),(9,1,6,17,24,18.5),(3,1.5,11,17,24,16),(5,1.5,11,15.5,20,18),(5,2,11,13,24,19),(1,8,6,17,24,18.5),(9,6,3,17,24,14.5)),"2")
+
+===== Consuntivo economico
+//TODO
+#cons-economico((11,14,12,5.5,4,15),(11,14,13,4,5,16),"2")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Nella parte finale dello sprint il team ha individuato un leggero rallentamento nei documenti dell'#glossary("Analisi dei Requisiti") e del #glossary("Piano di qualifica").
+Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati in simbiosi, poiché ciascuno dipende dall'altro.
+
+==== Retrospettiva
+//TODO
+- Collo di bottiglia analisi dei rischi e piano di qualifica
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+//TODO
+Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.332,50 €`*, risultando inferiore di *`17,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista, Programmatore e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`10.090 €`*. 
+
+#avanzamento(70, 0, "3")
