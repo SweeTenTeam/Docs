@@ -4,6 +4,11 @@
   title: "Piano di Qualifica",
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
+    "0.0.2",
+    "2024-12-28",
+    (p.santi), 
+    (p.campagnaro), 
+    [Stesura sezione "Strategia di testing"],
     "0.0.1",
     "2024-12-07",
     (p.benedetti), 
@@ -223,4 +228,90 @@ Essa implica una valutazione completa del software realizzato, concentrandosi su
     [M-PRD-MD], [Module Dependency], [≤ 30%], [≤ 10%],
   ),
   caption: "Valori ideali e accettabili per ciascuna metrica relativa la manutenibilità del prodotto."
+)
+
+= Strategie di testing
+Questa sezione riassume ed elenca i test eseguiti sul prodotto, garantendo completezza, correttezza e coerenza. In questo modo si dimostra il soddisfacimento dei requisiti utente, specificati nel capitolato d'appalto, e dei requisiti definiti nel documento "Analisi dei Requisiti v. .....".
+Verranno effettuate le seguenti tipologie di test:
+- Test di *unità*: verifica il corretto funzionamento delle singole unità del sistema, considerandole indipendenti. Risultano essere test molto potenti poichè la maggior parte dei difetti vengono rilevati in questa fase.
+- Test di *integrazione*: valuta la cooperazione tra più unità per soddisfare una specifica richiesta. Viene eseguito successivamente ai test di unità.
+- Test di *sistema*: controlla il funzionamento dell'intero sistema, verificando che tutte le componenti operino correttamente insieme.
+- Test di *accettazione*: la fase finale del processo di testing. Viene accertato il raggiungimento dei requisiti utente.
+
+== Struttura tabelle
+A partire dalla sezione successiva verranno inseriti i test svolti riepilogati in una tabella. Quest'ultima sarà composta da:
+- *Codice*: un breve identificativo del test eseguito. Avranno tutti questo scheletro: #align(center)[[TIPOLOGIA]-[NUMERO]]
+  - "Tipologia" è rappresentato dalla lettera iniziale del tipo di test eseguito
+    - TU: Test di unità.
+    - TI: Test di integrazione.
+    - TS: Test di sistema.
+    - TA: Test di accettazione.
+  - "Numero": rappresenta l'identificativo numerico assegnato a ciascun test eseguito, indicandone la sequenza.
+- *Descrizione*: breve spiegazione del test effettuato
+- *Esito*: risultato del test, possono essere 3:
+  - V (VERIFICATO): test completato e andato a buon fine.
+  - NV (NON VERIFICATO): test completato ma non andato a buon fine.
+  - NE (NON ESEGUITO): non è stato predisposto alcun test per la verifica della funzionalità specifica.
+
+== Test di unità
+I test di unità sono il punto di partenza della strategia di testing. Vengono verificate singole unità di codice con l'obiettivo di verificare che ciascun modulo funzioni correttamente, in maniera tale che ogni unità produca risultati corretti in base ai dati di input inviati. 
+//DISCUTERE INTERNAMENTE COME ESEGUIRLI
+
+#figure(
+  table(
+    columns: (2cm, 12cm, 2cm),
+    [Codice], [Descrizione], [Stato],
+
+    [], [], [],
+    [], [], [],
+    [], [], [],
+  ),
+  caption: "Riepilogo TU"
+)
+
+== Test di integrazione
+I test di integrazione vengono eseguiti dopo il completamento/superamento dei test di unità. Verificano l'interazione tra componenti software integrate, rilevando difetti nelle interfacce e nei flussi di controllo.
+L'obiettivo principale di questi test è assicurare che i dati scambiati tra le componenti siano conformi alle specifiche e che i flussi di controllo funzionino regolarmente.
+
+#figure(
+  table(
+    columns: (2cm, 12cm, 2cm),
+    [Codice], [Descrizione], [Stato],
+
+    [], [], [],
+    [], [], [],
+    [], [], [],
+  ),
+  caption: "Riepilogo TI"
+)
+
+== Test di sistema
+I test di sistema vengono eseguiti dopo il completamento dei Test di integrazione e precedono il collaudo.
+Si occupano di verificare l'intero sistema come unità, valutando la conformità rispetto ai requisiti presenti nel documento "Analisi dei Requisiti". L'obiettivo è quello di identificare eventuali errori (che compromettono il corretto funzionamento del sistema) e garantire che il SW soddisfi le aspettative dell'utente.
+
+#figure(
+  table(
+    columns: (2cm, 12cm, 2cm),
+    [Codice], [Descrizione], [Stato],
+
+    [], [], [],
+    [], [], [],
+    [], [], [],
+  ),
+  caption: "Riepilogo TS"
+)
+
+== Test di accettazione (Collaudo)
+I test di accettazione corrispondono con l'ultima fase della strategia di testing, verificano e accertano il soddisfacimento dei requisiti utente (requisiti del capitolato d'appalto). Questa fase di collaudo viene effettuata alla presenza del committente. 
+
+#figure(
+  table(
+    columns: (2cm, 12cm, 2cm),
+    [Codice], [Descrizione], [Stato],
+
+    [], [], [],
+    [], [], [],
+    [], [], [],
+  ),
+  caption: "Riepilogo TA"
 )
