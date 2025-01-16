@@ -34,12 +34,12 @@ Abbiamo presentato ad #p.azzurro :
 
 
 = Sintesi dell'incontro
-- L'incontro è stato di durata contenuta con una dimostrazione live del #glossary("PoC") finale con l'estrazione di informazioni da documenti diversi e spiegazioni delle migliorie fatte per avere risposte più accurate. Inoltre il team ha chiarito dei dubbi riguardanti il retrieval dei dati e su come il sistema gestisce le domande fuori contesto o poco specifiche.
+- L'incontro è stato breve e ha incluso una dimostrazione live del #glossary("PoC") finale con l'estrazione di informazioni da documenti diversi e spiegazioni delle migliorie fatte per avere risposte più accurate. Inoltre il team ha chiarito dei dubbi riguardanti il retrieval dei dati e su come il sistema gestisce le domande fuori contesto o poco specifiche.
 
 
 = Domande effettuate e relative risposte
 == Dati richiesti
-- Il team ha chiesto se ci fossero dati specifici di cui avevano bisogno dalle diverse applicazioni, soprattutto per github che ne ha molti, e gli abbiamo consegnato una lista con i diversi dati che è possibile prendere con le API, suddivisi per casi d'uso. Ci è stato risposto che ci daranno un feedback il prima possibile togliendo o aggiungendo alla lista i dati necessari.
+- Il team ha chiesto se ci fossero dati specifici di cui avevano bisogno dalle diverse applicazioni, soprattutto per #glossary("GitHub") che ne ha molti, e gli abbiamo consegnato una lista con i diversi dati che è possibile prendere con le #glossary("API"), suddivisi per casi d'uso. Ci è stato risposto che ci daranno un feedback il prima possibile togliendo o aggiungendo alla lista i dati necessari.
 
 
 = Prossimi step
