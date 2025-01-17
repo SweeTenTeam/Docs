@@ -296,9 +296,10 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
     columns: (3cm, 10cm, 3cm),
     [Codice], [Descrizione], [Fonti],
 
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    [RQO-001], [Occorre realizzare e consegnare un documento di analisi dei requisiti con un diagramma dei casi d'uso in formato UML.], [Capitolato],
+    [RQO-002], [Occorre realizzare e consegnare della documentazione tecnica includendo descrizioni delle architetture usate, spiegazioni del funzionamento del codice e delle API usate.], [Capitolato],
+    [RQO-003], [Occorre che il codice sorgente sia presente in un singolo repository su Github accessibile all'azienda.], [Capitolato],
+    [RQO-004], [Occorre usufruire di un sistema di bug reporting per segnalare e tracciare eventuali errori o malfunzionamenti riscontrati nell'applicazione.], [Capitolato],
   ),
   caption: "Requisiti di Qualità"
 )
@@ -330,9 +331,14 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
     columns: (3cm, 10cm, 3cm),
     [Codice], [Descrizione], [Fonti],
 
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    [RVO-001], [Occorre che l'applicazione venga sviluppata suddivisa in frontend e backend], [Capitolato],
+    [RVO-002], [Occorre che vengano raccolte le informazioni usando API di terze parti da #glossary("Jira"),#glossary("Github") e #glossary("Confluence")], [Capitolato],
+    [RVO-003], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato],
+    [RVO-004], [Occorre che sia assicurata una coverage adeguata del codice, per garantire che la maggior parte delle funzionalità siano testate e prive di bug.], [Capitolato], //dovrebbe essere un numero x però per ora sta così
+    [RVD-001],[E' desiderabile usare NodeJS o NestJS],[Capitolato],
+    [RVD-002],[E' desiderabile usare Langchain],[Capitolato],
+    [RVD-003],[E' desiderabile usare OpenAI],[Capitolato],
+    [RVD-004],[E' desiderabile usare Angular],[Capitolato],
   ),
   caption: "Requisiti di Vincolo"
 )
