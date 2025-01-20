@@ -1011,9 +1011,9 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
   table(
     columns: (3cm, 10cm, 3cm),
     [Codice], [Descrizione], [Fonti],
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    [RFO-1], [Il sistema deve consentire all'utente di porre una domanda attraverso l'interfaccia utente.], [UC2],
+    [RFO-2], [Il sistema deve consentire, attraverso l'interfaccia utente, la visualizzazione di un singolo messaggio dettagliato.], [UC1.4],
+    [RFO-3], [Il sistema deve notificare eventuali errori di connessione a internet durante l'operazione, avvisando l'utente.], [UC1.3],
   ),
   caption: "Requisiti Funzionali",
 )
