@@ -7,6 +7,20 @@
     p.cardin,
   ),
   changelog: (
+    "1.0",
+    "2025-01-17",
+    (p.mahdi),
+    (p.benedetti),
+    [
+      Approvazione Documento
+    ],
+    "0.2",
+    "2025-01-16",
+    (p.mahdi),
+    (p.benedetti),
+    [
+      Lievi modifiche
+    ],
     "0.1",
     "2025-01-15",
     (p.mahdi),
