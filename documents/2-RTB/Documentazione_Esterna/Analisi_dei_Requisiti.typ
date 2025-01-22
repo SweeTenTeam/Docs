@@ -1294,6 +1294,7 @@ Si osservi che, rispetto a quanto indicato sopra, i requisiti funzionali verrann
     [*R-F-007-1*], [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a connettersi], [UC1.3],
     [*R-F-007-1*], [L'utente deve visualizzare almeno un messaggio], [UC1.4],
   ),
+  caption: "Requisiti Funzionali",
 )
 
 
