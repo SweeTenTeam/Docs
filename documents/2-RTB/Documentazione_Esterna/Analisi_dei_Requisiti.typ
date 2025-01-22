@@ -231,7 +231,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *Scenario principale*
   - L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede la connessione ad internet;
   - La user interface cerca di eseguire la richiesta dell'utente ma non riesce a portarla a termine per la mancanza di connessione ad internet;
-  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un aggiornamento dell'interfaccia utente.
+  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite0 un aggiornamento dell'interfaccia utente.
   *User story associata*
   - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
 
@@ -453,8 +453,6 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *Attori coinvolti*:
   - Primari:
       - #glossary("User") .
-  - Secondari:
-     - #glossary("LLM").
 
   *Precondizioni*
     - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
