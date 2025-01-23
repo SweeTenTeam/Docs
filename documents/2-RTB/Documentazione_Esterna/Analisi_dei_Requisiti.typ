@@ -184,9 +184,9 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 
 
 *Estensioni*
-- UC1.1, Nessun messaggio nello storico della chat;
-- UC1.2, Errore durante il recupero dello storico della chat;
-- UC1.3, Errore di connessione;
+- UC1.1, Visualizzazione errore nessun messaggio nello storico della chat;
+- UC1.2, Visualizzazione errore generale durante il recupero dello storico della chat;
+- UC1.3, Visualizzazione errore di connessione;
 - UC1.5, Visualizzazione errore backend non disponibile;
 *Inclusioni*
 - UC1.4, Visualizzazione singolo messaggio.
@@ -194,7 +194,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - "Come utente, voglio poter vedere i messaggi delle passate interazioni con Buddybot, in modo da avere una conferma delle informazioni ricevute e poter approfondire eventuali dubbi o richiedere ulteriori dettagli."
 
 
-==== UC1.1, Nessun messaggio nello storico della chat
+==== UC1.1, Visualizzazione errore nessun messaggio nello storico della chat
   *Attori coinvolti*: #glossary("User").
 
   *Precondizioni*
@@ -225,7 +225,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   - "Come utente, voglio essere informato in modo chiaro se si verifica un errore durante il recupero dei messaggi precedenti, in modo da sapere che i dati non sono disponibili e poter agire di conseguenza senza confusione".
 
 
-  ==== UC1.3, Errore di connessione
+  ==== UC1.3, Visualizzazione errore di connessione
   *Attori coinvolti*: #glossary("User").
 
   *Precondizioni*
@@ -242,7 +242,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
 
 
- ==== UC1.5, Errore backend non disponibile
+ ==== UC1.5, Visualizzazione errore backend non disponibile
   *Attori coinvolti*: 
   - Primari:
     - #glossary("User").
