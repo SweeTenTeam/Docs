@@ -21,6 +21,7 @@
   diagUC_single_messaggio:"/images/analisi-dei-requisiti/UC_view_single_mess.png",
   diagUC_ask_user-ui:"/images/analisi-dei-requisiti/UC0_ask_User-UI.png",
   diagUC_elab_domanda:"/images/analisi-dei-requisiti/UC_elab_domanda.png",
+  diacUC_inserimento_domanda:"/images/analisi-dei-requisiti/UC_inserimento_domanda.png",
 )
 
 //Norme di progetto Immagini

@@ -5,6 +5,11 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+     "0.1.0",
+    "2025-01-07",
+    (p.fracaro, p.santi, p.mahdi, p.ferazzani),
+    (p.belenkov),
+    [Rimozione UC Github, UC Jira, UC Confluence. Aggiunta precondizioni UC4, Aggiunta errori specifici a UC1, UC3, UC4. Numerazione casi d'uso corretta.],
     "0.0.9",
     "2025-01-07",
     (p.fracaro),
@@ -182,6 +187,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - UC1.1, Nessun messaggio nello storico della chat;
 - UC1.2, Errore durante il recupero dello storico della chat;
 - UC1.3, Errore di connessione;
+- UC1.5, Visualizzazione errore backend non disponibile;
 *Inclusioni*
 - UC1.4, Visualizzazione singolo messaggio.
 *User story associata*
@@ -234,6 +240,27 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite0 un aggiornamento dell'interfaccia utente.
   *User story associata*
   - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
+
+
+ ==== UC1.5, Errore backend non disponibile
+  *Attori coinvolti*: 
+  - Primari:
+    - #glossary("User").
+  - Secondari:
+    - #glossary("Backend").
+
+  *Precondizioni*
+  - L'interfaccia utente è pronta all'interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile eseguire l'operazione richiesta perchè il #glossary("backend") non è al momento disponibile.
+
+  *Scenario principale*
+  - L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede una risposta al #glossary("backend");
+  - La user interface cerca di eseguire la richiesta dell'utente ma non riesce a portarla a termine perchè il #glossary("backend") non è al momento disponibile;
+  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un aggiornamento dell'interfaccia utente.
+  *User story associata*
+  - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è il #glossary("backend") non disponibile così da poter contattare il supporto tecnico".
 
 
  ==== UC1.4, Visualizzazione singolo messaggio
@@ -314,13 +341,37 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *User story associata*
   - "Come utente, voglio poter visualizzare il mittente di un messaggio della chat in modo da distinguere chi ha inviato il messaggio e comprendere meglio il contesto delle mie interazioni con #glossary("Buddybot")".
 
+#pagebreak()
+=== UC2, Scrittura domanda in linguaggio naturale
 
+  #figure(
+    image(ar.diacUC_inserimento_domanda, width: 42em, fit: "contain"),
+    caption: "Diagramma UC2, Scrittura domanda in linguaggio naturale",
+  )
+        *Attori coinvolti*:
+    - Primari:
+      - #glossary("User") .
+
+    *Precondizioni*
+    - L'interfaccia utente è pronta all'interazione con l'utente.
+
+    *Postcondizioni*
+    - L'interfaccia utente viene aggiornata con la domanda scritta dall'utente.
+    *Scenario principale*
+    - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
+    - L'utente scrive la propria domanda nel campo di input dedicato;
+    - Il campo di input viene aggiornato con la domanda scritta dall'utente.
+
+*User story associata*
+- "Come utente, voglio poter scrivere la mia domanda in linguaggio naturale in modo da poter interagire con Buddybot in modo naturale e intuitivo."
+
+#pagebreak()
 //domanda USER-GUI
-=== UC2, Domanda utente alla User Interface//todo maybe add backend as secondary actor???
+=== UC3, Invio domanda dell'utente
 
   #figure(
     image(ar.diagUC_ask_user-ui, width: 42em, fit: "contain"),
-    caption: "Diagramma UC2, Domanda utente alla user interface",
+    caption: "Diagramma UC3, Invio domanda dell'utente",
   )
     *Attori coinvolti*:
     - Primari:
@@ -330,53 +381,80 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 
     *Precondizioni*
     - L'interfaccia utente è pronta all'interazione con l'utente. 
+    - L'utente ha scritto la propria domanda nel campo di input dedicato.
 
     *Postcondizioni*
-    - L'interfaccia utente viene aggiornata con il contenuto, la data, l'ora e il mittente del messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
+    - L'interfaccia utente viene aggiornata con il contenuto, la data, l'ora e il mittente del messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente e la domanda posta dall'utente.
 
     *Scenario principale*
-    - L'utente accede alla chat con #glossary("Buddybot") tramite l'applicazione web;
-    - L'utente scrive la propria domanda;
-    - L'utente invia il messaggio con la proprio domanda;
+    - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
     - L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
     - L'interfaccia utente riceve la risposta alla domanda dell'utente;
     - L'interfaccia utente viene aggiornata con il messaggio inviato dall'utente;
     - L'interfaccia utente viene aggiornata con il messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
 *Estensioni*
-- UC2.1, Errore nella generazione della risposta;
-- UC1.3, Errore di connessione;
+- UC1.3, Visualizzazione errore di connessione;
+- UC1.5, Visualizzazione errore backend non disponibile;
+- UC3.1, Visualizzazione errore nella generazione della risposta.
+- UC3.2, Visualizzazione errore risposta troppo lunga;
 *Inclusioni*
 - UC1.4, Visualizzazione singolo messaggio.
 *User story associata*
 - "Come utente voglio interagire con #glossary("Buddybot") attraverso una chat per porre domande e ricevere risposte in modo rapido e intuitivo. Inoltre, desidero visualizzare tutti i dettagli di ogni messaggio, inclusi contenuto, data, ora e mittente, in modo da avere un'esperienza chiara e completa durante l'interazione."
 
-==== UC2.1, Errore nella generazione della risposta
-  *Attori coinvolti*: #glossary("User").
+==== UC3.1, Visualizzazione errore nella generazione della risposta
+  *Attori coinvolti*: 
+  - Primari:
+    - #glossary("User").
+  - Secondari:
+    - #glossary("Backend").
 
   *Precondizioni*
   - L'interfaccia utente è pronta all'interazione con l'utente. 
 
   *Postcondizioni*
-  - L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il mittente del messaggio.
+  - L'interfaccia utente viene aggiornata con un messaggio di errore generico che informa l'utente che non è stato possibile generare la risposta alla sua domanda.
 
   *Scenario principale*
-  - L'utente accede alla chat con #glossary("Buddybot") tramite l'applicazione web;
-  - L'utente scrive la propria domanda;
-  - L'utente invia il messaggio con la proprio domanda;
+  - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
   - L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
   - Si verifica un errore durante la generazione della risposta;
   - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile generare la risposta alla sua domanda.
   *User story associata*
   - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se si verifica un problema durante la generazione della risposta da parte di #glossary("Buddybot"), in modo da sapere che la mia richiesta non è stata elaborata e poter eventualmente riprovare".
 
-=== UC3, Generazione risposta a domanda utente
+
+==== UC3.2, Visualizzazione errore risposta troppo lunga
+  *Attori coinvolti*: 
+  - Primari:
+    - #glossary("User").
+  - Secondari:
+    - #glossary("Backend").
+
+  *Precondizioni*
+  - L'interfaccia utente è pronta all'interazione con l'utente. 
+
+  *Postcondizioni*
+  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la risposta da generare per quella domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
+
+  *Scenario principale*
+  - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+  - L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
+  - La generazione della risposta si interrompe perchè la risposta ha superato la lunghezza massima consentita;
+  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la risposta da generare per quella domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
+  *User story associata*
+  - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se la risposta da generare per quella domanda è troppo lunga così da poter riprovare con una domanda più specifica".
+
+
+#pagebreak()
+=== UC4, Invio richiesta con domanda dell'utente
   #figure(
     image(ar.diagUC_elab_domanda, width: 42em, fit: "contain"),
-    caption: "Diagramma UC3, Generazione risposta a domanda utente",
+    caption: "Diagramma UC4, Invio richiesta con domanda dell'utente",
   )
     *Attori coinvolti*:
     - Primari:
-      - #glossary("User") .
+    - #glossary("User Interface") .
     - Secondari:
       - #glossary("Jira") ;
       - #glossary("Github") ;
@@ -386,7 +464,7 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
     *Precondizioni*
     - La UI e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
     - La User Interface ha acquisito una domanda dall'utente;
-    - Il sistema ha accesso ai seguenti dati provenienti dalle fonti #glossary("Jira"), #glossary("Github"), #glossary("Confluence"):
+    - Il #glossary("backend") ha accesso ai seguenti dati provenienti dalle fonti #glossary("Jira"), #glossary("Github"), #glossary("Confluence"):
       - #glossary("Jira"):
         - Nome (titolo) di un ticket";
         - Assegnatario di un ticket";
@@ -438,21 +516,29 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 - La UI invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente;
 - Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
 - La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
-- La risposta generata dal #glossary("LLM") viene restituita dal #glossary("backend") alla User Interface;
+- La risposta generata dal #glossary("LLM") insieme alla data e ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta viene restituita dal #glossary("backend") alla User Interface;
 - La domanda dell'utente e la risposta generata vengono aggiunte allo storico della chat, rendendole disponibili per la successiva visualizzazione.
 
 *Estensioni*
-- UC3.2, Errore durante la generazione della risposta.
+- UC4.2, Errore durante la generazione della risposta.
+- UC4.3, Errore risposta troppo lunga;
+*Inclusioni*
+- UC4.4, Richiesta della data e ora dell'ultimo aggiornamento dei dati;
 *Generalizzazioni*
-- UC3.1, Domanda fuori contesto;
+- UC4.1, Invio richiesta con domanda fuori contesto;
 
 *User story associata*
-  - "Come utente di #glossary("Buddybot"), voglio poter porre domande attraverso l'interfaccia utente e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), così da ottenere informazioni utili e coerenti con il contesto del sistema..
+  - "Come utente di #glossary("Buddybot"), voglio poter porre domande attraverso l'interfaccia utente e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), così da ottenere informazioni utili e coerenti con il contesto del sistema.Voglio inoltre poter visualizzare la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta cosi da poter sapere se i dati sono stati aggiornati recentemente o meno."
 
-  ==== UC3.1, Domanda fuori contesto
+  ==== UC4.1, Invio richiesta con domanda fuori contesto
   *Attori coinvolti*:
   - Primari:
-      - #glossary("User") .
+    - #glossary("User Interface") .
+  - Secondari:
+    - #glossary("LLM") .
+    - #glossary("Jira") .
+    - #glossary("Github") .
+    - #glossary("Confluence") .
 
   *Precondizioni*
     - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
@@ -471,9 +557,15 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   *User story associata*
   - "Come utente di #glossary("Buddybot"), voglio ricevere una risposta chiara e in linguaggio naturale quando pongo una domanda fuori contesto, in modo da essere informato che la mia richiesta non è pertinente al sistema e capire meglio i limiti del suo ambito operativo".
 
-==== UC3.2, Errore durante la generazione della risposta
+==== UC4.2, Errore durante la generazione della risposta
   *Attori coinvolti*:
-  - #glossary("User") .
+  - Primari:
+    - #glossary("User Interface") .
+  - Secondari:
+    - #glossary("LLM") .
+    - #glossary("Jira") .
+    - #glossary("Github") .
+    - #glossary("Confluence") .
 
   *Precondizioni*
     - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
@@ -484,11 +576,55 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
 
   *Scenario principale*
   - L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente.
-  - Il #glossary("backend") tenta di analizzare la domanda, di recuperare i documenti pertinenti e di generare una risposta in linguaggio naturale ma non ci riesce per un errore durante uno di questi processi;
+  - Il #glossary("backend") tenta di analizzare la domanda, di recuperare i documenti pertinenti e di generare una risposta in linguaggio naturale ma non riesce a terminare per un errore durante uno di questi processi;
   - Il #glossary("backend") ritorna un errore generico informado l'interfaccia utente che non è stato possibile generare la risposta alla domanda richiesta.
   *User story associata*
   - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda, così da poter eventualmente riformulare la domanda o contattare un supporto alternativo".
 
+
+==== UC4.3, Errore risposta troppo lunga
+  *Attori coinvolti*:
+  - Primari:
+    - #glossary("User Interface") .
+  - Secondari:
+    - #glossary("LLM") .
+    - #glossary("Jira") .
+    - #glossary("Github") .
+    - #glossary("Confluence") .
+
+  *Precondizioni*
+    - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia utente ha acquisito una domanda dall'utente. 
+
+  *Postcondizioni*
+  - Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta in quanto la risposta supererebbe la lunghezza massima consentita.
+
+  *Scenario principale*
+  - L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente.
+  - Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
+  - La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
+  - La generazione della risposta si interrompe perchè la risposta ha superato la lunghezza massima consentita;
+  - Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta in quanto la risposta supererebbe la lunghezza massima consentita.
+  *User story associata*
+  - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda perchè la risposta supererebbe la lunghezza massima consentita in modo da poter eventualmente riformulare la domanda".
+
+
+==== UC4.4, Richiesta della data e ora dell'ultimo aggiornamento dei dati
+  *Attori coinvolti*:
+  - Primari:
+    - #glossary("User Interface") .
+
+  *Precondizioni*
+    - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+    - L'interfaccia utente ha acquisito una domanda dall'utente. 
+
+  *Postcondizioni*
+  - 
+
+  *Scenario principale*
+ -
+  *User story associata*
+  - "Come utente voglio poter visualizzare la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta cosi da poter sapere se i dati sono stati aggiornati recentemente o meno".
 
 
 
