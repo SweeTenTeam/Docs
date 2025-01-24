@@ -4,6 +4,11 @@
   title: "Piano di Qualifica",
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
+    "0.0.3",
+    "2024-01-24",
+    (p.santi), 
+    (p.campagnaro), 
+    [Stesura sezione "Strategia di testing"],
     "0.0.2",
     "2024-12-28",
     (p.santi), 
@@ -291,12 +296,21 @@ Si occupano di verificare l'intero sistema come unità, valutando la conformità
 
 #figure(
   table(
-    columns: (2cm, 12cm, 2cm),
-    [Codice], [Descrizione], [Stato],
+    columns: (2cm, 10cm, 2cm, 3cm),
+    [Codice], [Descrizione], [Stato], [Requisito],
 
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    [TS-01], [Verificare che l'utente possa visualizzare correttamente lo storico della chat], [NE], [UC1], //intanto inserisco uc in attesa di capire con che codice verranno identificati i vari req.
+
+    [TS-02], [Verificare che l'utente visualizzi un messaggio nel caso in cui non ci siano messaggi nello storico], [NE], [UC1.1],
+
+    [TS-03], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non sia riuscito a recuperare correttamente lo storico], [NE], [UC1.2],
+
+    [TS-04], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non riesca a connettersi], [NE], [UC1.3],
+
+    [TS-05], [Verificare che l'utente visualizzi almeno un messaggio], [NE], [UC1.4],
+
+    [TS-06], [Verificare che, attraverso l'interfaccia utente, l'utente sia in grado di porre una domanda in linguaggio naturale], [NE], [UC2],
+    
   ),
   caption: "Riepilogo TS"
 )
