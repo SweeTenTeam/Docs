@@ -8,9 +8,9 @@
   ),
   changelog: (
     "0.1",
-    "2025-01-23",
+    "2025-01-24",
     (p.mahdi),
-    (p.belenkov),
+    (p.santi),
     "Stesura del verbale",
   ),
 )
@@ -68,13 +68,13 @@ Breve dibattito per decidere la data più conveniente per la revisione del #glos
 
     [#issue_to_link("Docs",131)], [Stesura dei Requisiti di vincolo dell' #glossary("Analisi dei requisiti")], [#p.belenkov],
 
-    [#issue_to_link("Docs",130)], [Stesura dei Requisiti di qualità dell' #glossary("Analisi dei requisiti"))], [#p.belenkov], 
+    [#issue_to_link("Docs",130)], [Stesura dei Requisiti di qualità dell' #glossary("Analisi dei requisiti")], [#p.belenkov], 
 
     [#issue_to_link("Docs",129)], [Stesura requisiti funzionali per UC3], [#p.benedetti],
 
     [#issue_to_link("Docs",128)], [Stesura requisiti funzionali per UC2], [#p.santi],
     
-    [#issue_to_link("Docs",127)], [Stesura requisiti funzionali per UC1, #p.ferazzani],
+    [#issue_to_link("Docs",127)], [Stesura requisiti funzionali per UC1], [#p.ferazzani],
 
     [#issue_to_link("Docs",126)], [Specifica dati da prendere da Github], [#p.mahdi],
 
@@ -84,7 +84,7 @@ Breve dibattito per decidere la data più conveniente per la revisione del #glos
 
     [#issue_to_link("Docs",135)], [Stesura dei requisiti per i nuovi casi d'uso], [#p.fracaro],
     
-    [#issue_to_link("Docs",136)], [Ordinare i requisiti nell'#glossary("Analisi dei Requisiti"), #p.fracaro],
+    [#issue_to_link("Docs",136)], [Ordinare i requisiti nell'#glossary("Analisi dei Requisiti")], [#p.fracaro],
 
     [#issue_to_link("Docs",137)], [Retrospettiva quarto sprint], [#p.benedetti],
 
