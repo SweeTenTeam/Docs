@@ -1224,7 +1224,8 @@ Per il progetto in questione, le tipologie di dati rilevanti sono:
 = Requisiti <requisiti>
 In questa sezione vengono esposti i requisiti esposti nel capitolato e individuati a seguito delle analisi effettuate dal gruppo e dai #glossary("casi d'uso (UC)") esaminati in precedenza. Per garantire la maggior chiarezza, i requisiti verranno identificati da un codice univoco con questa struttura:
 
-#align(center)[*`R - [Tipo] - [Numero]  - [Priorità]`*]
+#align(center)[*`R[Tipo]-[Identificativo]`*]
+
 
 Dove:
 
@@ -1236,31 +1237,28 @@ Dove:
   - *`Q`* per i requisiti di qualità;
   - *`V`* per i requisiti di vincolo.
 
-- *Numero*: rappresenta il numero progressivo del requisito;
-- *Priorità*: indica la priorità del requisito. Il team ha deciso, seguendo le Norme di Progetto, di assegnare un codice numerico per la priorità.
+- *Identificativo*: rappresenta il numero progressivo del requisito;
 
-  I codici sono i seguenti:
+Inoltre, in ogni tabella saranno indicate la descrizione del requisito in oggetto, la sua fonte (capitolato o caso d'uso) e la sua priorità.
 
-  - 1: requisito obbligatorio;
-  - 2: requisito desiderabile;
-  - 3: requisito opzionale.
+Si ricorda che come indicato nelle `Norme di Progetto`, i requisiti vengono classificati con 3 livelli di priorità:
 
-Inoltre, in ogni tabella saranno indicate la descrizione del requisito in oggetto e la sua fonte (capitolato o caso d'uso).
+- *Obbligatorio*: requisito irrinunciabile per il committente;
+- *Desiderabile*: requisito che porta valore aggiunto al prodotto ma non è strettamente necessario;
+- *Opzionale*: requisito che può essere soddisfatto o meno senza che il prodotto risulti compromesso.
 
 == Requisiti Funzionali
 I #glossary("Requisiti Funzionali") definiscono cosa il sistema deve fare, ovvero le sue funzionalità principali e i comportamenti attesi, concentrandosi quindi sulle operazioni che gli utenti/attori devono poter eseguire.
 
-Si osservi che, rispetto a quanto indicato sopra, i requisiti funzionali verranno identificati con i seguenti codici:
-- `R-F-xxx-1`: Requisito Funzionale xxx Obbligatorio
-- `R-F-yyy-2`: Requisito Funzionale yyy Desiderabile
-- `R-F-zzz-3`: Requisito Funzionale zzz Opzionale
+Si osservi che, come indicato sopra, i requisiti funzionali verranno identificati con i seguenti codici:
+
 
 #set table(
   stroke: 1pt,
   fill: (x, y) => if y == 0 {
     rgb(209, 197, 174)
   } else if calc.odd(y) {
-    luma(84.31%)
+    luma(88.1%)
   } else {
     white
   },
@@ -1279,20 +1277,36 @@ Si osservi che, rispetto a quanto indicato sopra, i requisiti funzionali verrann
 #figure(
   table(
     align: center + horizon,
-    columns: (3cm, 10cm, 3cm),
-    [Codice], [Descrizione], [Fonti],
-    [*R-F-001-1*], [L'utente deve accedere all'applicazione senza necessità di autenticazione], [Capitolato],
-    [*R-F-002-1*], [Il sistema deve reperire le informazioni da GitHub], [Capitolato],
-    [*R-F-003-1*], [Il sistema deve reperire le informazioni da Confluence], [Capitolato],
-    [*R-F-004-1*], [Il sistema deve reperire le informazioni da Jira], [Capitolato],
-    [*R-F-005-1*], [L'utente deve poter visualizzare lo storico della chat], [UC1],
-    [*R-F-005-1*], [L'utente deve visualizzare un messaggio se non ci sono messaggi nello storico], [UC1.1],
+    columns: (auto, auto, auto, auto),
+    [Codice], [Descrizione], [Fonti], [Priorità],
+    [*R-F-001-1*],
+    [L'utente deve accedere all'applicazione senza necessità di autenticazione],
+    [Capitolato],
+    [Obbligatorio],
+
+    [*R-F-002-1*], [Il sistema deve reperire le informazioni da GitHub], [Capitolato], [Obbligatorio],
+    [*R-F-003-1*], [Il sistema deve reperire le informazioni da Confluence], [Capitolato], [Obbligatorio],
+    [*R-F-004-1*], [Il sistema deve reperire le informazioni da Jira], [Capitolato], [Obbligatorio],
+    [*R-F-005-1*], [L'utente deve poter visualizzare lo storico della chat], [UC1], [Obbligatorio],
+    [*R-F-005-1*],
+    ['utente deve visualizzare un messaggio informativo che spiega che non ci sono messaggi nello storico],
+    [UC1.1],
+    [Obbligatorio],
+
     [*R-F-006-1*],
     [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a recuperare lo storico],
     [UC1.2],
+    [Obbligatorio],
 
-    [*R-F-007-1*], [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a connettersi], [UC1.3],
-    [*R-F-007-1*], [L'utente deve visualizzare almeno un messaggio], [UC1.4],
+    [*R-F-007-1*],
+    [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a connettersi],
+    [UC1.3],
+    [Obbligatorio],
+
+    [*R-F-007-1*],
+    [L'utente deve visualizzare il contenuto, la data e l'ora, il mittente del singolo messaggio.],
+    [UC1.4],
+    [Obbligatorio],
   ),
   caption: "Requisiti Funzionali",
 )
@@ -1303,16 +1317,18 @@ I #glossary("Requisiti di Qualità") riguardano *come* il sistema deve funzionar
 
 Come i requisiti funzionali, i requisiti di qualità seguono la struttura definita al #link(<requisiti>, "Capitolo 4").
 
-I requisiti di qualità verranno quindi identificati con i seguenti codici:
-- `R-Q-xxx-1`: Requisito Di Qualità xxx Obbligatorio
-- `R-Q-yyy-2`: Requisito Di Qualità yyy Desiderabile
-- `R-Q-zzz-3`: Requisito Di Qualità zzz Opzionale
 
 
 
 #set table(
   stroke: 1pt,
-  fill: (x, y) => if y == 0 { rgb(209, 197, 174) },
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
   inset: (left: 0.5em, right: 0.5em),
 )
 
@@ -1326,11 +1342,10 @@ I requisiti di qualità verranno quindi identificati con i seguenti codici:
 
 #figure(
   table(
-    columns: (3cm, 10cm, 3cm),
-    [Codice], [Descrizione], [Fonti],
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    columns: (auto, auto, auto, auto),
+    [Codice], [Descrizione], [Fonti], [Priorità],
+    [], [], [], [],
+    [], [], [], [],
   ),
   caption: "Requisiti di Qualità",
 )
@@ -1340,14 +1355,16 @@ I #glossary("Requisiti di Vincolo") definiscono i limiti tecnici e/o progettuali
 
 Anche i requisiti di vincolo seguono la struttura del #link(<requisiti>, "Capitolo 4")
 
-I requisiti di vincolo verranno quindi identificati con i seguenti codici:
-- `R-V-xxx-1`: Requisito Di Vincolo xxx Obbligatorio
-- `R-V-yyy-2`: Requisito Di Vincolo yyy Desiderabile
-- `R-V-zzz-3`: Requisito Di Vincolo zzz Opzionale
 
 #set table(
   stroke: 1pt,
-  fill: (x, y) => if y == 0 { rgb(209, 197, 174) },
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
   inset: (left: 0.5em, right: 0.5em),
 )
 
@@ -1361,11 +1378,10 @@ I requisiti di vincolo verranno quindi identificati con i seguenti codici:
 
 #figure(
   table(
-    columns: (3cm, 10cm, 3cm),
-    [Codice], [Descrizione], [Fonti],
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    columns: (auto, auto, auto, auto),
+    [Codice], [Descrizione], [Fonti], [Priorità],
+    [], [], [], [],
+    [], [], [], [],
   ),
   caption: "Requisiti di Vincolo",
 )
@@ -1375,7 +1391,13 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
 
 #set table(
   stroke: 1pt,
-  fill: (x, y) => if y == 0 { rgb(209, 197, 174) },
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
   inset: (left: 0.5em, right: 0.5em),
 )
 
@@ -1401,7 +1423,13 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
 == Riepilogo
 #set table(
   stroke: 1pt,
-  fill: (x, y) => if y == 0 { rgb(209, 197, 174) },
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
   inset: (left: 0.5em, right: 0.5em),
 )
 
@@ -1415,7 +1443,7 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
 
 #figure(
   table(
-    columns: (4cm, 3cm, 3cm, 3cm),
+    columns: (auto, auto, auto, auto),
     [Tipologia], [Obbligatorio], [Desiderabile], [Totale],
     [], [], [], [],
     [], [], [], [],
