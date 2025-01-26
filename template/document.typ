@@ -52,7 +52,7 @@
   let verifiers = keep(r_verifiers)
 
   set align(top + center)
-  image(g.logo, width: 60%)
+  image(g.logo, width: 40%)
 
   set align(center + horizon)
   gridx(
@@ -160,11 +160,13 @@
 #let tasks(t) = {
   let tasks_header = ([*ID*], [*Dettaglio*], [*Assegnatari*])
   let map_issue(r, t) = {
-    t.enumerate().map(a => if r.contains(a.first()) and type(a.last()) == array {
-      return issue_to_link(a.last().first(), a.last().last())
-    } else {
-      a.last()
-    })
+    t
+      .enumerate()
+      .map(a => if r.contains(a.first()) and type(a.last()) == array {
+        return issue_to_link(a.last().first(), a.last().last())
+      } else {
+        a.last()
+      })
   }
   let r = array.range(0, t.len(), step: tasks_header.len())
   t = tasks_header + map_issue(r, t)
@@ -198,7 +200,7 @@
 }
 
 #let risks(r) = {
-  let risks_header = (([*Descrizione*], [*Probabilità*], [*Pericolosità*], [*Rilevamento*], [*Piano di contingenza*]))
+  let risks_header = ([*Descrizione*], [*Probabilità*], [*Pericolosità*], [*Rilevamento*], [*Piano di contingenza*])
   r = risks_header.zip(r).flatten()
 
   align(
@@ -223,7 +225,7 @@
 }
 
 #let requirements(color, r) = {
-  let requirements_header = (([*ID Requisito*], [*Descrizione*], [*Fonti*]))
+  let requirements_header = ([*ID Requisito*], [*Descrizione*], [*Fonti*])
   r = requirements_header + r
 
   align(
@@ -248,7 +250,7 @@
 }
 
 #let tracking1(t) = {
-  let tracking_header = (([*ID Requisito*], [*Fonte*]))
+  let tracking_header = ([*ID Requisito*], [*Fonte*])
   t = tracking_header + t
 
   align(
@@ -273,7 +275,7 @@
 }
 
 #let tracking2(t) = {
-  let tracking_header = (([*Fonte*], [*ID Requisiti*]))
+  let tracking_header = ([*Fonte*], [*ID Requisiti*])
   t = tracking_header + t
 
   align(
@@ -298,7 +300,7 @@
 }
 
 #let improvement(color, r) = {
-  let requirements_header = (([*Fase*], [*Problema Rilevato*], [*Contromisura*]))
+  let requirements_header = ([*Fase*], [*Problema Rilevato*], [*Contromisura*])
   r = requirements_header + r
 
   align(
@@ -323,7 +325,7 @@
 }
 
 #let improvementrole(color, r) = {
-  let requirements_header = (([*Fase*], [*Ruolo*], [*Problema Rilevato*], [*Contromisura*]))
+  let requirements_header = ([*Fase*], [*Ruolo*], [*Problema Rilevato*], [*Contromisura*])
   r = requirements_header + r
 
   align(
@@ -348,7 +350,7 @@
 }
 
 #let improvementtool(color, r) = {
-  let requirements_header = (([*Fase*], [*Strumento*], [*Problema Rilevato*], [*Contromisura*]))
+  let requirements_header = ([*Fase*], [*Strumento*], [*Problema Rilevato*], [*Contromisura*])
   r = requirements_header + r
 
   align(
@@ -373,7 +375,7 @@
 }
 
 #let summary(t) = {
-  let tracking_header = (([*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*]))
+  let tracking_header = ([*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*])
   t = tracking_header + t
 
   align(
@@ -424,9 +426,10 @@
 #let consuntivo(r) = {
   let period_header = ("", "Res.", "Amm.", "Ver.", "Ana.", "Proget.", "Program.", "Totali per persona").map(r => [*#r*])
   let people = (
-    (p.amadori, p.bettin, p.bonavigo, p.bulychov, p.fabbian, p.furno, p.vedovato).map(n => n.split().last()) + (
-      "Ore totali per ruolo",
-    )
+    (p.amadori, p.bettin, p.bonavigo, p.bulychov, p.fabbian, p.furno, p.vedovato).map(n => n.split().last())
+      + (
+        "Ore totali per ruolo",
+      )
   ).map(el => [*#el*])
   r = period_header + people.zip(r).flatten()
 
@@ -520,9 +523,15 @@
     [
       #rect(stroke: (thickness: 0.7pt, dash: "dashed"))[
         Legenda:
-        #let t = roles.zip(pal_colors).enumerate().filter(x => (
-          data.map(y => y.at(x.first() + 1)).sum() > 0
-        )).map(x => x.last())
+        #let t = (
+          roles
+            .zip(pal_colors)
+            .enumerate()
+            .filter(x => (
+              data.map(y => y.at(x.first() + 1)).sum() > 0
+            ))
+            .map(x => x.last())
+        )
         #stack(
           dir: ltr,
           spacing: 0.3em,
