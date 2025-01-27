@@ -310,6 +310,19 @@ Si occupano di verificare l'intero sistema come unità, valutando la conformità
     [TS-05], [Verificare che l'utente visualizzi almeno un messaggio], [NE], [UC1.4],
 
     [TS-06], [Verificare che, attraverso l'interfaccia utente, l'utente sia in grado di porre una domanda in linguaggio naturale], [NE], [UC2],
+
+    [TS-07], [Verificare che il sistema elabori correttamente la domanda dell'utente], [NE], [UC3],
+
+    [TS-08], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta,, l'utente visualizzi un messaggio di errore], [NE], [UC3.2],
+    [TS-09], [Verificare che il sistema riesca a generare e restituire all'interfaccia la risposta alla domanda posta], [NE], [UC3.3],
+
+    [TS-10], [Verificare che il sistema riesca a reperire le informazioni da Jira], [NE], [UC4],
+
+    [TS-11], [Verificare che il sistema riesca a reperire le informazioni da GitHub], [NE], [UC5],
+
+    [TS-12], [Verificare che il sistema riesca a reperire le informazioni da Confluence], [NE], [UC6],
+    [], [], [], [],
+    [], [], [], [],
     
   ),
   caption: "Riepilogo TS"
