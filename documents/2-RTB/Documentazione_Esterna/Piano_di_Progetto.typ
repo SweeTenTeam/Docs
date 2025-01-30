@@ -427,9 +427,9 @@ Ogni fase si concentra sulla preparazione dei documenti e artefatti richiesti da
 *Giorni di ritardo*: #pos(0);\
 
 ==== Pianificazione
-Durante la settimana successiva all'aggiudicazione dell'appalto (dal 2024-11-04 al 2024-11-12), ci siamo concentrati principalmente sulla sistemazione dei documenti di candidatura e su un primo studio delle tecnologie da utilizzare, in vista del primo incontro con l’azienda #box(image(g.azzurro, width: 5em, height: auto)). Abbiamo deciso di considerare tale incontro come il vero e proprio inizio del periodo RTB, poiché tutte le attività svolte nella prima settimana possono essere classificate come attività preliminari, utili per la preparazione, ma non strettamente legate alle attività rendicontabili in termini di tempo ed economia previste dal progetto.
+Durante la settimana successiva all'aggiudicazione dell'appalto (dal 2024-11-04 al 2024-11-12), ci siamo concentrati principalmente sulla sistemazione dei documenti di candidatura e su un primo studio delle tecnologie da utilizzare, in vista del primo incontro con l'azienda #box(image(g.azzurro, width: 5em, height: auto)). Abbiamo deciso di considerare tale incontro come il vero e proprio inizio del periodo RTB, poiché tutte le attività svolte nella prima settimana possono essere classificate come attività preliminari, utili per la preparazione, ma non strettamente legate alle attività rendicontabili in termini di tempo ed economia previste dal progetto.
 
-Successivamente all’incontro con #box(image(g.azzurro, width: 5em, height: auto)), il team si dedicherà alla pianificazione e alla redazione dei documenti essenziali per il progetto, con l’obiettivo di costruire una solida base per il lavoro futuro. In questa fase iniziale verrà avviata la stesura del Piano di Progetto, dell’Analisi dei Requisiti e del Glossario, accompagnata dalla scrittura completa delle Norme di Progetto. Inoltre, il team si impegnerà nell’avvio del #glossary("Proof of Concept") (PoC) per validare le scelte tecniche e funzionali. Durante questo periodo sarà cruciale definire modalità operative chiare e condivise, per garantire una gestione delle attività produttiva ed efficiente.
+Successivamente all'incontro con #box(image(g.azzurro, width: 5em, height: auto)), il team si dedicherà alla pianificazione e alla redazione dei documenti essenziali per il progetto, con l’obiettivo di costruire una solida base per il lavoro futuro. In questa fase iniziale verrà avviata la stesura del Piano di Progetto, dell’Analisi dei Requisiti e del Glossario, accompagnata dalla scrittura completa delle Norme di Progetto. Inoltre, il team si impegnerà nell’avvio del #glossary("Proof of Concept") (PoC) per validare le scelte tecniche e funzionali. Durante questo periodo sarà cruciale definire modalità operative chiare e condivise, per garantire una gestione delle attività produttiva ed efficiente.
 
 Obiettivi principali della fase iniziale:
 
@@ -621,12 +621,9 @@ Al termine del terzo periodo è emerso un lieve scostamento tra i costi previsti
 *Fine attuale*: 2025-01-20;\
 *Giorni di ritardo*: #pos(0);\
 
-==== Pianificazione //todo
-Durante la settimana del quarto sprint, il team si concentrerà sulla continuazione dello sviluppo del #glossary("Poc"), con l'obiettivo di perfezionare le funzionalità già implementate e completare quelle attese. Parallelamente, si proseguirà con la stesura di documenti fondamentali per il progetto, l'#glossary("Analisi dei Requisiti"), il #glossary("Piano di Qualifica") e il #glossary("Piano di Progetto"), che saranno elaborati con attenzione per garantire una chiara definizione degli obiettivi.
-
-É prevista la presentazione del #glossary("Poc") a #box(image(g.azzurro, width: 5em, height: auto)). Questa avrà lo scopo di dimostrare il funzionamento del bot con  l'integrazione delle #glossary("API") di #glossary("Jira") e #glossary("Confluence").
-
-Infine, verrà effettuato un aggiornamento del #glossary("Glossario"), che sarà ampliato con nuovi termini tecnici emersi nel corso delle attività.
+==== Pianificazione
+Durante la settimana del quarto sprint, il team si dedicherà al completamento degli ultimi casi d'uso, assicurandosi che siano implementati correttamente e in linea con gli obiettivi del progetto. Parallelamente, sarà definita in modo dettagliato la documentazione relativa ai requisiti funzionali, di qualità e di vincolo.
+Inoltre, è prevista una riunione con #box(image(g.azzurro, width: 5em, height: auto)), che dovrebbe essere l'ultima nell'ambito del #glossary("RTB"). Questo incontro avrà l'obiettivo di condividere lo stato di avanzamento del #glossary("Proof of Concept"), raccogliere eventuali osservazioni finali e confermare la chiusura delle attività pianificate.
 
 ==== Rischi attesi
 I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
@@ -649,7 +646,8 @@ Tutte le attività previste e pianificate sono state completate nei termini pres
 
 Dal confronto tra preventivo e consuntivo emerge che: 
 
-- Verificatori hanno richiesto *meno* ore;
+- Amministratori hanno richiesto *più* ore;
+- Analisti hanno richiesto *più* ore;
 
 Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
 
@@ -662,14 +660,11 @@ Poiché la differenza di ore, sia in eccesso che in difetto, non è significativ
 ===== Consuntivo economico
 #cons-economico((9,10.5,13,8,6,16),(9,10,14,8,6,16),"4")
 
-==== Rischi occorsi, impatto e loro mitigazione //todo
-Nessun rischio che poteva essere atteso, si è verificato, questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti
+==== Rischi occorsi, impatto e loro mitigazione
+Durante questo periodo di sessione si è registrato un leggero rallentamento nelle attività, un aspetto prevedibile dato il contesto, ma che non ha influito negativamente sull'andamento del progetto.
 
-==== Retrospettiva //todo
-Il lavoro è avanzato in modo fluido, evidenziando la capacità del team di gestire le attività programmate con efficacia e spirito di collaborazione.
-
-Nella parte finale dello sprint il team ha individuato un leggero rallentamento nei documenti dell'#glossary("Analisi dei Requisiti") e del #glossary("Piano di qualifica").
-Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati in simbiosi, poiché ciascuno dipende dall'altro.
+==== Retrospettiva
+Nonostante il ritmo leggermente ridotto, tutte le task assegnate sono state portate a termine con successo, garantendo il rispetto della pianificazione. Inoltre, la riunione con #box(image(g.azzurro, width: 5em, height: auto)) si è svolta in modo molto positivo, confermando la buona qualità del lavoro svolto e la coerenza con gli obiettivi definiti.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
 Al termine del quarto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.335 €`*, risultando inferiore di *`15 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.362,50 €`*.
