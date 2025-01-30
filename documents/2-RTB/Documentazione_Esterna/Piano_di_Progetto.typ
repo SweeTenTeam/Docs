@@ -9,6 +9,13 @@
     p.azzurro,
   ),
   changelog: (
+    "0.4.0",
+    "2024-12-26",
+    p.benedetti,
+    p.ferazzani,
+    [
+      Stesura del preventivo e consuntivo del periodo 4
+    ],
     "0.3.0",
     "2024-12-26",
     p.benedetti,
@@ -549,8 +556,8 @@ Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti
 #pagebreak()
 === *Periodo 3*
 *Inizio*: 2024-12-17;\
-*Fine prevista*: 2024-01-25;\
-*Fine attuale*: 2024-01-25;\
+*Fine prevista*: 2025-01-06;\
+*Fine attuale*: 2025-01-06;\
 *Giorni di ritardo*: #pos(0);\
 
 ==== Pianificazione
@@ -607,3 +614,64 @@ Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati
 Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *1.347,50 €*, risultando inferiore di *`7,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *8.697,50 €*.
 
 #avanzamento(70, 0, "3")
+
+=== *Periodo 4*
+*Inizio*: 2025-01-06;\
+*Fine prevista*: 2025-01-20;\
+*Fine attuale*: 2025-01-20;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione //todo
+Durante la settimana del quarto sprint, il team si concentrerà sulla continuazione dello sviluppo del #glossary("Poc"), con l'obiettivo di perfezionare le funzionalità già implementate e completare quelle attese. Parallelamente, si proseguirà con la stesura di documenti fondamentali per il progetto, l'#glossary("Analisi dei Requisiti"), il #glossary("Piano di Qualifica") e il #glossary("Piano di Progetto"), che saranno elaborati con attenzione per garantire una chiara definizione degli obiettivi.
+
+É prevista la presentazione del #glossary("Poc") a #box(image(g.azzurro, width: 5em, height: auto)). Questa avrà lo scopo di dimostrare il funzionamento del bot con  l'integrazione delle #glossary("API") di #glossary("Jira") e #glossary("Confluence").
+
+Infine, verrà effettuato un aggiornamento del #glossary("Glossario"), che sarà ampliato con nuovi termini tecnici emersi nel corso delle attività.
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((2,2,0,2,2,1),(4,2,1,1,1,0),(0,1,4,0,1,3),(0,2,2,2,2,1),(2,3,1,1,0,2),(0,0,3,2,2,2),(0,2,2,2,1,2)),"3")
+===== Preventivo economico
+#prev-economico((8,12,13,10,9,11),"3")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Verificatori hanno richiesto *meno* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(((2,2,0,2,2,1),(4,2,1,1,1,0),(0,1,4,0,1,3),(0,2,2,2,2,0.5),(2,3,1,1,0,2),(0,0,3,2,2,2),(0,2,2,2,1,2)),((2,2,0,2,2,1),(4,2,1,1,1,0),(0,1,4,0,1,3),(0,2,2,2,2,1),(2,3,1,1,0,2),(0,0,3,2,2,2),(0,2,2,2,1,2)),"3")
+
+#ore-rimaste(((5,6,8,10,17,18),(5,0,5,14,23,18),(4,0.5,3,17,23,16),(4,-0.5,8,14,20,19),(3,2,8,12,22,17.5),(3,6,4,15,22,15.5),(9,4,1,15,23,12.5)),"3")
+
+===== Consuntivo economico
+#cons-economico((8,12,13,10,9,10.5),(8,12,13,10,9,11),"3")
+
+==== Rischi occorsi, impatto e loro mitigazione //todo
+Nessun rischio che poteva essere atteso, si è verificato, questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti
+
+==== Retrospettiva //todo
+Il lavoro è avanzato in modo fluido, evidenziando la capacità del team di gestire le attività programmate con efficacia e spirito di collaborazione.
+
+Nella parte finale dello sprint il team ha individuato un leggero rallentamento nei documenti dell'#glossary("Analisi dei Requisiti") e del #glossary("Piano di qualifica").
+Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati in simbiosi, poiché ciascuno dipende dall'altro.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *1.347,50 €*, risultando inferiore di *`7,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *8.697,50 €*.
+
+#avanzamento(90, 0, "4")
