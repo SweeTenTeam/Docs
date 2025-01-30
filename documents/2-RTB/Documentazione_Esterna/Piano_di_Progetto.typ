@@ -549,7 +549,7 @@ Nel complesso, il lavoro è proseguito senza troppi intoppi, dimostrando una buo
 Un momento particolarmente significativo durante questa fase è stato rappresentato dalla presentazione di una prima demo del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). Questa anteprima ha permesso di condividere una visione concreta dell'avanzamento del progetto, offrendo un'opportunità per raccogliere feedback utili e allineare le aspettative sulle prossime fasi di sviluppo.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *1.377,50 €*, risultando inferiore di *`12,50 €`* rispetto ai *1.390 €* inizialmente stimati nel preventivo. Il budget rimanente disponibile ammonta a *10.045 €*. 
+Al termine del secondo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.377,50 €`*, risultando inferiore di *`12,50 €`* rispetto ai *`1.390 €`* inizialmente stimati nel preventivo. Il budget rimanente disponibile ammonta a *`10.045 €`*. 
 
 #avanzamento(50, 0, "2")
 
@@ -611,7 +611,7 @@ Nella parte finale dello sprint il team ha individuato un leggero rallentamento 
 Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati in simbiosi, poiché ciascuno dipende dall'altro.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *1.347,50 €*, risultando inferiore di *`7,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *8.697,50 €*.
+Al termine del terzo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.347,50 €`*, risultando inferiore di *`7,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`8.697,50 €`*.
 
 #avanzamento(70, 0, "3")
 
@@ -640,9 +640,9 @@ I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
 
 ==== Preventivo
 ===== Preventivo orario
-#prev-orario(((2,2,0,2,2,1),(4,2,1,1,1,0),(0,1,4,0,1,3),(0,2,2,2,2,1),(2,3,1,1,0,2),(0,0,3,2,2,2),(0,2,2,2,1,2)),"3")
+#prev-orario(((0,3,2,1,1,2),(0,0,4,2,1,2),(2,3,2,0,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(3,2,0,2,0,2),(1,1,0,2,2,3)),"4")
 ===== Preventivo economico
-#prev-economico((8,12,13,10,9,11),"3")
+#prev-economico((9,10,14,8,6,16),"4")
 
 ==== Consuntivo
 Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
@@ -655,12 +655,12 @@ Poiché la differenza di ore, sia in eccesso che in difetto, non è significativ
 
 #pagebreak()
 ===== Consuntivo orario
-#cons-orario(((2,2,0,2,2,1),(4,2,1,1,1,0),(0,1,4,0,1,3),(0,2,2,2,2,0.5),(2,3,1,1,0,2),(0,0,3,2,2,2),(0,2,2,2,1,2)),((2,2,0,2,2,1),(4,2,1,1,1,0),(0,1,4,0,1,3),(0,2,2,2,2,1),(2,3,1,1,0,2),(0,0,3,2,2,2),(0,2,2,2,1,2)),"3")
+#cons-orario(((0,3,2,1,1,2),(0,0,4,2,1,2),(2,3.5,1.5,0,0,2),(2,0,1.5,0,1,4),(1,1,4,1,1,1),(3,2,0,2,0,2),(1,1,0,2,2,3)),((0,3,2,1,1,2),(0,0,4,2,1,2),(2,3,2,0,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(3,2,0,2,0,2),(1,1,0,2,2,3)),"4")
 
-#ore-rimaste(((5,6,8,10,17,18),(5,0,5,14,23,18),(4,0.5,3,17,23,16),(4,-0.5,8,14,20,19),(3,2,8,12,22,17.5),(3,6,4,15,22,15.5),(9,4,1,15,23,12.5)),"3")
+#ore-rimaste(((5,3,6,9,16,16),(5,0,1,12,22,16),(2,-3,1.5,17,23,14),(2,-0.5,6.5,14,19,15),(2,1,4,11,21,16.5),(0,4,4,13,22,13.5),(8,3,1,13,21,9.5)),"4")
 
 ===== Consuntivo economico
-#cons-economico((8,12,13,10,9,10.5),(8,12,13,10,9,11),"3")
+#cons-economico((9,10.5,13,8,6,16),(9,10,14,8,6,16),"4")
 
 ==== Rischi occorsi, impatto e loro mitigazione //todo
 Nessun rischio che poteva essere atteso, si è verificato, questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti
@@ -672,6 +672,6 @@ Nella parte finale dello sprint il team ha individuato un leggero rallentamento 
 Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati in simbiosi, poiché ciascuno dipende dall'altro.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *1.347,50 €*, risultando inferiore di *`7,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *8.697,50 €*.
+Al termine del quarto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.335 €`*, risultando inferiore di *`15 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.362,50 €`*.
 
 #avanzamento(90, 0, "4")
