@@ -507,7 +507,7 @@ Durante la settimana del secondo sprint, (dal 3 dicembre 2024 al 17 dicembre 202
 Sarà prevista inoltre la prima presentazione del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
 
 ==== Rischi attesi
-I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+I rischi ai quali ci aspe2ttiamo di incorrere in questo periodo sono i seguenti:
 
 - #R.P2;
 - #R.P4;
@@ -517,28 +517,27 @@ I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
 
 ==== Preventivo
 ===== Preventivo orario
-#prev-orario(((2,0,0,3,2,2),(0,3,2,2,0,2),(2,3,4,0,0,0),(3,3,1,1,0,1),(2,0,1,2,2,2),(2,2,2,0,0,3),(0,1,4,0,0,4)),"2")
+#prev-orario(((2,0,0,3,2,2),(0,2,1,2,1,3),(2,1,3,2,0,1),(3,1,1,1,2,1),(2,0,1,2,2,2),(2,2,2,0,0,3),(0,1,3,0,1,4)),"2")
 ===== Preventivo economico
-#prev-economico((11,12,14,8,4,14),"2")
+#prev-economico((11,7,11,10,8,16),"2")
 
 ==== Consuntivo
 Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
 
 Dal confronto tra preventivo e consuntivo emerge che: 
 
-- Analisti *più* ore;
-- Verificatori hanno richiesto *meno* ore;
+- Analisti e Verificatori hanno richiesto *meno* ore;
 
 Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
 
 #pagebreak()
 ===== Consuntivo orario
-#cons-orario(((2,0,0,3,2,2),(0,3,2,2,0,2),(2,3,4,0,0,0),(3,3,1,1,0,0.5),(2,0,2,2,2,1.5),(2,2,2,0,0,2.5),(0,1,4,0,0,3)),((2,0,0,3,2,2),(0,3,2,2,0,2),(2,3,4,0,0,0),(3,3,1,1,0,1),(2,0,1,2,2,2),(2,2,2,0,0,3),(0,1,4,0,0,4)),"2")
+#cons-orario(((2,0,0,3,2,2),(0,2,1,2,1,3),(2,1,3,2,0,1),(3,1,1,1,2,0.5),(2,0,1,2,2,1.5),(2,2,2,0,0,2.5),(0,1,2,0,1,3)),((2,0,0,3,2,2),(0,2,1,2,1,3),(2,1,3,2,0,1),(3,1,1,1,2,1),(2,0,1,2,2,2),(2,2,2,0,0,3),(0,1,3,0,1,4)),"2")
 
-#ore-rimaste(((7,8,8,12,19,19),(9,2,6,15,24,18),(4,1.5,7,17,24,19),(4,1.5,10,16,22,19.5),(5,5,9,13,22,19.5),(3,6,7,17,24,17.5),(9,6,3,17,24,14.5)),"2")
+#ore-rimaste(((7,8,8,12,19,19),(9,3,7,15,23,17),(4,3.5,8,15,24,18),(4,3.5,10,16,20,19.5),(5,5,10,13,22,19.5),(3,6,7,17,24,17.5),(9,6,5,17,23,14.5)),"2")
 
 ===== Consuntivo economico
-#cons-economico((11,12,15,8,4,11.5),(11,12,14,8,4,14),"2")
+#cons-economico((11,7,10,10,8,13.5),(11,7,11,10,8,16),"2")
 
 ==== Rischi occorsi, impatto e loro mitigazione
 A differenza dello #glossary("Sprint") precedente, durante il quale il rischio emerso è stato mitigato attraverso la redazione e l'analisi delle #glossary("Norme di Progetto"), in quello attuale non si sono verificati ulteriori rischi. Questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti. Inoltre, va sottolineato che i membri del gruppo stanno lavorando in modo efficace e coeso, dimostrando un'eccellente collaborazione e un impegno costante nel raggiungimento degli obiettivi prefissati.
@@ -549,7 +548,7 @@ Nel complesso, il lavoro è proseguito senza troppi intoppi, dimostrando una buo
 Un momento particolarmente significativo durante questa fase è stato rappresentato dalla presentazione di una prima demo del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). Questa anteprima ha permesso di condividere una visione concreta dell'avanzamento del progetto, offrendo un'opportunità per raccogliere feedback utili e allineare le aspettative sulle prossime fasi di sviluppo.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del secondo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.377,50 €`*, risultando inferiore di *`12,50 €`* rispetto ai *`1.390 €`* inizialmente stimati nel preventivo. Il budget rimanente disponibile ammonta a *`10.045 €`*. 
+Al termine del secondo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.292,50 €`*, risultando inferiore di *`62,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Il budget rimanente disponibile ammonta a *`10.130 €`*. 
 
 #avanzamento(50, 0, "2")
 
@@ -579,27 +578,27 @@ I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
 
 ==== Preventivo
 ===== Preventivo orario
-#prev-orario(((2,2,0,2,2,1),(4,2,1,1,1,0),(0,1,4,0,1,3),(0,2,2,2,2,1),(2,3,1,1,0,2),(0,0,3,2,2,2),(0,2,2,2,1,2)),"3")
+#prev-orario(((2,2,0,2,2,1),(3,1,1,1,2,1),(0,1,3,1,1,3),(0,2,2,2,2,1),(2,2,1,1,0,3),(0,0,3,2,2,2),(0,2,1,2,2,2)),"3")
 ===== Preventivo economico
-#prev-economico((8,12,13,10,9,11),"3")
+#prev-economico((7,10,11,11,11,13),"3")
 
 ==== Consuntivo
 Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
 
 Dal confronto tra preventivo e consuntivo emerge che: 
 
-- Verificatori hanno richiesto *meno* ore;
+- Analisti e Verificatori hanno richiesto *meno* ore;
 
 Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
 
 #pagebreak()
 ===== Consuntivo orario
-#cons-orario(((2,2,0,2,2,1),(4,2,1,1,1,0),(0,1,4,0,1,3),(0,2,2,2,2,0.5),(2,3,1,1,0,2),(0,0,3,2,2,2),(0,2,2,2,1,2)),((2,2,0,2,2,1),(4,2,1,1,1,0),(0,1,4,0,1,3),(0,2,2,2,2,1),(2,3,1,1,0,2),(0,0,3,2,2,2),(0,2,2,2,1,2)),"3")
+#cons-orario(((2,2,0,2,2,1),(3,1,1,1,2,1),(0,1,2,1,1,3),(0,2,2,2,2,0.5),(2,2,1,1,0,3),(0,0,3,2,2,2),(0,2,1,2,2,2)),((2,2,0,2,2,1),(3,1,1,1,2,1),(0,1,3,1,1,3),(0,2,2,2,2,1),(2,2,1,1,0,3),(0,0,3,2,2,2),(0,2,1,2,2,2)),"3")
 
-#ore-rimaste(((5,6,8,10,17,18),(5,0,5,14,23,18),(4,0.5,3,17,23,16),(4,-0.5,8,14,20,19),(3,2,8,12,22,17.5),(3,6,4,15,22,15.5),(9,4,1,15,23,12.5)),"3")
+#ore-rimaste(((5,6,8,10,17,18),(6,2,6,14,21,16),(4,2.5,6,14,23,15),(4,1.5,8,14,18,19),(3,3,9,12,22,16.5),(3,6,4,15,22,15.5),(9,4,4,15,21,12.5)),"3")
 
 ===== Consuntivo economico
-#cons-economico((8,12,13,10,9,10.5),(8,12,13,10,9,11),"3")
+#cons-economico((7,10,10,11,11,12.5),(7,10,11,11,11,13),"3")
 
 ==== Rischi occorsi, impatto e loro mitigazione
 Nessun rischio che poteva essere atteso, si è verificato, questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti
@@ -611,7 +610,7 @@ Nella parte finale dello sprint il team ha individuato un leggero rallentamento 
 Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati in simbiosi, poiché ciascuno dipende dall'altro.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del terzo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.347,50 €`*, risultando inferiore di *`7,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`8.697,50 €`*.
+Al termine del terzo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.287,50 €`*, risultando inferiore di *`32,50 €`* rispetto ai *`1.320 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`8.842,50 €`*.
 
 #avanzamento(70, 0, "3")
 
@@ -637,28 +636,27 @@ I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
 
 ==== Preventivo
 ===== Preventivo orario
-#prev-orario(((0,3,2,1,1,2),(0,0,4,2,1,2),(2,3,2,0,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(3,2,0,2,0,2),(1,1,0,2,2,3)),"4")
+#prev-orario(((0,3,2,1,1,2),(0,0,3,2,1,3),(2,2,2,1,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(2,2,0,2,1,2),(1,1,0,2,2,3)),"4")
 ===== Preventivo economico
-#prev-economico((9,10,14,8,6,16),"4")
+#prev-economico((8,9,13,9,7,17),"4")
 
 ==== Consuntivo
 Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
 
 Dal confronto tra preventivo e consuntivo emerge che: 
 
-- Amministratori hanno richiesto *più* ore;
-- Analisti hanno richiesto *più* ore;
+- Amministratori e Analisti hanno richiesto *meno* ore;
 
-Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
+Poiché la variazione di ore, sia in aumento che in diminuzione, è minima, può essere ritenuta irrilevante.
 
 #pagebreak()
 ===== Consuntivo orario
-#cons-orario(((0,3,2,1,1,2),(0,0,4,2,1,2),(2,3.5,1.5,0,0,2),(2,0,1.5,0,1,4),(1,1,4,1,1,1),(3,2,0,2,0,2),(1,1,0,2,2,3)),((0,3,2,1,1,2),(0,0,4,2,1,2),(2,3,2,0,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(3,2,0,2,0,2),(1,1,0,2,2,3)),"4")
+#cons-orario(((0,3,2,1,1,2),(0,0,3,2,1,3),(2,1,1.5,1,0,2),(2,0,1.5,0,1,4),(1,1,4,1,1,1),(2,2,0,2,1,2),(1,1,0,2,2,3)),((0,3,2,1,1,2),(0,0,3,2,1,3),(2,2,2,1,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(2,2,0,2,1,2),(1,1,0,2,2,3)),"4")
 
-#ore-rimaste(((5,3,6,9,16,16),(5,0,1,12,22,16),(2,-3,1.5,17,23,14),(2,-0.5,6.5,14,19,15),(2,1,4,11,21,16.5),(0,4,4,13,22,13.5),(8,3,1,13,21,9.5)),"4")
+#ore-rimaste(((5,3,6,9,16,16),(6,2,3,12,20,13),(2,1.5,4.5,13,23,13),(2,1.5,6.5,14,17,15),(2,2,5,11,21,15.5),(1,4,4,13,21,13.5),(8,3,4,13,19,9.5)),"4")
 
 ===== Consuntivo economico
-#cons-economico((9,10.5,13,8,6,16),(9,10,14,8,6,16),"4")
+#cons-economico((8,8,12,9,7,17),(8,9,13,9,7,17),"4")
 
 ==== Rischi occorsi, impatto e loro mitigazione
 Durante questo periodo di sessione si è registrato un leggero rallentamento nelle attività, un aspetto prevedibile dato il contesto, ma che non ha influito negativamente sull'andamento del progetto.
