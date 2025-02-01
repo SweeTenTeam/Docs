@@ -9,6 +9,13 @@
     p.azzurro,
   ),
   changelog: (
+    "0.4.0",
+    "2024-12-26",
+    p.benedetti,
+    p.ferazzani,
+    [
+      Stesura del preventivo e consuntivo del periodo 4
+    ],
     "0.3.0",
     "2024-12-26",
     p.benedetti,
@@ -420,9 +427,9 @@ Ogni fase si concentra sulla preparazione dei documenti e artefatti richiesti da
 *Giorni di ritardo*: #pos(0);\
 
 ==== Pianificazione
-Durante la settimana successiva all'aggiudicazione dell'appalto (dal 2024-11-04 al 2024-11-12), ci siamo concentrati principalmente sulla sistemazione dei documenti di candidatura e su un primo studio delle tecnologie da utilizzare, in vista del primo incontro con l’azienda #box(image(g.azzurro, width: 5em, height: auto)). Abbiamo deciso di considerare tale incontro come il vero e proprio inizio del periodo RTB, poiché tutte le attività svolte nella prima settimana possono essere classificate come attività preliminari, utili per la preparazione, ma non strettamente legate alle attività rendicontabili in termini di tempo ed economia previste dal progetto.
+Durante la settimana successiva all'aggiudicazione dell'appalto (dal 2024-11-04 al 2024-11-12), ci siamo concentrati principalmente sulla sistemazione dei documenti di candidatura e su un primo studio delle tecnologie da utilizzare, in vista del primo incontro con l'azienda #box(image(g.azzurro, width: 5em, height: auto)). Abbiamo deciso di considerare tale incontro come il vero e proprio inizio del periodo RTB, poiché tutte le attività svolte nella prima settimana possono essere classificate come attività preliminari, utili per la preparazione, ma non strettamente legate alle attività rendicontabili in termini di tempo ed economia previste dal progetto.
 
-Successivamente all’incontro con #box(image(g.azzurro, width: 5em, height: auto)), il team si dedicherà alla pianificazione e alla redazione dei documenti essenziali per il progetto, con l’obiettivo di costruire una solida base per il lavoro futuro. In questa fase iniziale verrà avviata la stesura del Piano di Progetto, dell’Analisi dei Requisiti e del Glossario, accompagnata dalla scrittura completa delle Norme di Progetto. Inoltre, il team si impegnerà nell’avvio del #glossary("Proof of Concept") (PoC) per validare le scelte tecniche e funzionali. Durante questo periodo sarà cruciale definire modalità operative chiare e condivise, per garantire una gestione delle attività produttiva ed efficiente.
+Successivamente all'incontro con #box(image(g.azzurro, width: 5em, height: auto)), il team si dedicherà alla pianificazione e alla redazione dei documenti essenziali per il progetto, con l’obiettivo di costruire una solida base per il lavoro futuro. In questa fase iniziale verrà avviata la stesura del Piano di Progetto, dell’Analisi dei Requisiti e del Glossario, accompagnata dalla scrittura completa delle Norme di Progetto. Inoltre, il team si impegnerà nell’avvio del #glossary("Proof of Concept") (PoC) per validare le scelte tecniche e funzionali. Durante questo periodo sarà cruciale definire modalità operative chiare e condivise, per garantire una gestione delle attività produttiva ed efficiente.
 
 Obiettivi principali della fase iniziale:
 
@@ -500,7 +507,7 @@ Durante la settimana del secondo sprint, (dal 3 dicembre 2024 al 17 dicembre 202
 Sarà prevista inoltre la prima presentazione del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
 
 ==== Rischi attesi
-I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+I rischi ai quali ci aspe2ttiamo di incorrere in questo periodo sono i seguenti:
 
 - #R.P2;
 - #R.P4;
@@ -510,28 +517,27 @@ I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
 
 ==== Preventivo
 ===== Preventivo orario
-#prev-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+#prev-orario(((2,0,0,3,2,2),(0,2,1,2,1,3),(2,1,3,2,0,1),(3,1,1,1,2,1),(2,0,1,2,2,2),(2,2,2,0,0,3),(0,1,3,0,1,4)),"2")
 ===== Preventivo economico
-#prev-economico((11,14,13,4,5,16),"2")
+#prev-economico((11,7,11,10,8,16),"2")
 
 ==== Consuntivo
 Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
 
 Dal confronto tra preventivo e consuntivo emerge che: 
 
-- Analisti, Programmatori e Verificatori hanno richiesto *meno* ore;
-- Progettisti hanno richiesto *più* ore;
+- Analisti e Verificatori hanno richiesto *meno* ore;
 
-Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile. In questa fase, un lieve surplus durante la progettazione può rientrare nella normalità.
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
 
 #pagebreak()
 ===== Consuntivo orario
-#cons-orario(((0,0,3,2,2,2),(0,4,2,0,0,1.5),(3,3,0,0,0,3),(2,3,0,1.5,2,2),(2,3,0,2,0,2),(4,0,3,0,0,1.5),(0,1,4,0,0,3)),((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"2")
+#cons-orario(((2,0,0,3,2,2),(0,2,1,2,1,3),(2,1,3,2,0,1),(3,1,1,1,2,0.5),(2,0,1,2,2,1.5),(2,2,2,0,0,2.5),(0,1,2,0,1,3)),((2,0,0,3,2,2),(0,2,1,2,1,3),(2,1,3,2,0,1),(3,1,1,1,2,1),(2,0,1,2,2,2),(2,2,2,0,0,3),(0,1,3,0,1,4)),"2")
 
-#ore-rimaste(((9,8,5,13,19,19),(9,1,6,17,24,18.5),(3,1.5,11,17,24,16),(5,1.5,11,15.5,20,18),(5,2,11,13,24,19),(1,8,6,17,24,18.5),(9,6,3,17,24,14.5)),"2")
+#ore-rimaste(((7,8,8,12,19,19),(9,3,7,15,23,17),(4,3.5,8,15,24,18),(4,3.5,10,16,20,19.5),(5,5,10,13,22,19.5),(3,6,7,17,24,17.5),(9,6,5,17,23,14.5)),"2")
 
 ===== Consuntivo economico
-#cons-economico((11,14,12,5.5,4,15),(11,14,13,4,5,16),"2")
+#cons-economico((11,7,10,10,8,13.5),(11,7,11,10,8,16),"2")
 
 ==== Rischi occorsi, impatto e loro mitigazione
 A differenza dello #glossary("Sprint") precedente, durante il quale il rischio emerso è stato mitigato attraverso la redazione e l'analisi delle #glossary("Norme di Progetto"), in quello attuale non si sono verificati ulteriori rischi. Questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti. Inoltre, va sottolineato che i membri del gruppo stanno lavorando in modo efficace e coeso, dimostrando un'eccellente collaborazione e un impegno costante nel raggiungimento degli obiettivi prefissati.
@@ -542,15 +548,15 @@ Nel complesso, il lavoro è proseguito senza troppi intoppi, dimostrando una buo
 Un momento particolarmente significativo durante questa fase è stato rappresentato dalla presentazione di una prima demo del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). Questa anteprima ha permesso di condividere una visione concreta dell'avanzamento del progetto, offrendo un'opportunità per raccogliere feedback utili e allineare le aspettative sulle prossime fasi di sviluppo.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.332,50 €`*, risultando inferiore di *`17,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista, Programmatore e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`10.090 €`*. 
+Al termine del secondo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.292,50 €`*, risultando inferiore di *`62,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Il budget rimanente disponibile ammonta a *`10.130 €`*. 
 
 #avanzamento(50, 0, "2")
 
 #pagebreak()
 === *Periodo 3*
 *Inizio*: 2024-12-17;\
-*Fine prevista*: 2024-01-25;\
-*Fine attuale*: 2024-01-25;\
+*Fine prevista*: 2025-01-06;\
+*Fine attuale*: 2025-01-06;\
 *Giorni di ritardo*: #pos(0);\
 
 ==== Pianificazione
@@ -572,28 +578,27 @@ I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
 
 ==== Preventivo
 ===== Preventivo orario
-#prev-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"3")
+#prev-orario(((2,2,0,2,2,1),(3,1,1,1,2,1),(0,1,3,1,1,3),(0,2,2,2,2,1),(2,2,1,1,0,3),(0,0,3,2,2,2),(0,2,1,2,2,2)),"3")
 ===== Preventivo economico
-#prev-economico((11,14,13,4,5,16),"3")
+#prev-economico((7,10,11,11,11,13),"3")
 
 ==== Consuntivo
 Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
 
 Dal confronto tra preventivo e consuntivo emerge che: 
 
-- Responsabili e Amministratori hanno richiesto *meno* ore;
-- Programmatori hanno richiesto *più* ore;
+- Analisti e Verificatori hanno richiesto *meno* ore;
 
 Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
 
 #pagebreak()
 ===== Consuntivo orario
-#cons-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,2.5,0,0,0,3),(2,3,0,0,2,2),(1.5,3,0,2,0,2),(4,0,3,0,1,2),(0,1,4,0,0,4)),((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"3")
+#cons-orario(((2,2,0,2,2,1),(3,1,1,1,2,1),(0,1,2,1,1,3),(0,2,2,2,2,0.5),(2,2,1,1,0,3),(0,0,3,2,2,2),(0,2,1,2,2,2)),((2,2,0,2,2,1),(3,1,1,1,2,1),(0,1,3,1,1,3),(0,2,2,2,2,1),(2,2,1,1,0,3),(0,0,3,2,2,2),(0,2,1,2,2,2)),"3")
 
-#ore-rimaste(((9,8,2,11,16,18),(9,-3,3,17,24,16.5),(0,-1,11,17,24,13),(3,-1.5,11,15.5,18,16),(3.5,-1,11,11,24,17),(-3,8,3,17,23,16.5),(9,5,-1,17,24,10.5)),"3")
+#ore-rimaste(((5,6,8,10,17,18),(6,2,6,14,21,16),(4,2.5,6,14,23,15),(4,1.5,8,14,18,19),(3,3,9,12,22,16.5),(3,6,4,15,22,15.5),(9,4,4,15,21,12.5)),"3")
 
 ===== Consuntivo economico
-#cons-economico((10.5,13.5,13,4,6,16),(11,14,13,4,5,16),"3")
+#cons-economico((7,10,10,11,11,12.5),(7,10,11,11,11,13),"3")
 
 ==== Rischi occorsi, impatto e loro mitigazione
 Nessun rischio che poteva essere atteso, si è verificato, questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti
@@ -605,6 +610,61 @@ Nella parte finale dello sprint il team ha individuato un leggero rallentamento 
 Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati in simbiosi, poiché ciascuno dipende dall'altro.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.340 €`*, risultando inferiore di *`10 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`8.750 €`*. 
+Al termine del terzo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.287,50 €`*, risultando inferiore di *`32,50 €`* rispetto ai *`1.320 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`8.842,50 €`*.
 
 #avanzamento(70, 0, "3")
+
+=== *Periodo 4*
+*Inizio*: 2025-01-06;\
+*Fine prevista*: 2025-01-20;\
+*Fine attuale*: 2025-01-20;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana del quarto sprint, il team si dedicherà al completamento degli ultimi casi d'uso, assicurandosi che siano implementati correttamente e in linea con gli obiettivi del progetto. Parallelamente, sarà definita in modo dettagliato la documentazione relativa ai requisiti funzionali, di qualità e di vincolo.
+Inoltre, è prevista una riunione con #box(image(g.azzurro, width: 5em, height: auto)), che dovrebbe essere l'ultima nell'ambito del #glossary("RTB"). Questo incontro avrà l'obiettivo di condividere lo stato di avanzamento del #glossary("Proof of Concept"), raccogliere eventuali osservazioni finali e confermare la chiusura delle attività pianificate.
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((0,3,2,1,1,2),(0,0,3,2,1,3),(2,2,2,1,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(2,2,0,2,1,2),(1,1,0,2,2,3)),"4")
+===== Preventivo economico
+#prev-economico((8,9,13,9,7,17),"4")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Amministratori e Analisti hanno richiesto *meno* ore;
+
+Poiché la variazione di ore, sia in aumento che in diminuzione, è minima, può essere ritenuta irrilevante.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(((0,3,2,1,1,2),(0,0,3,2,1,3),(2,1,1.5,1,0,2),(2,0,1.5,0,1,4),(1,1,4,1,1,1),(2,2,0,2,1,2),(1,1,0,2,2,3)),((0,3,2,1,1,2),(0,0,3,2,1,3),(2,2,2,1,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(2,2,0,2,1,2),(1,1,0,2,2,3)),"4")
+
+#ore-rimaste(((5,3,6,9,16,16),(6,2,3,12,20,13),(2,1.5,4.5,13,23,13),(2,1.5,6.5,14,17,15),(2,2,5,11,21,15.5),(1,4,4,13,21,13.5),(8,3,4,13,19,9.5)),"4")
+
+===== Consuntivo economico
+#cons-economico((8,8,12,9,7,17),(8,9,13,9,7,17),"4")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante questo periodo di sessione si è registrato un leggero rallentamento nelle attività, un aspetto prevedibile dato il contesto, ma che non ha influito negativamente sull'andamento del progetto.
+
+==== Retrospettiva
+Nonostante il ritmo leggermente ridotto, tutte le task assegnate sono state portate a termine con successo, garantendo il rispetto della pianificazione. Inoltre, la riunione con #box(image(g.azzurro, width: 5em, height: auto)) si è svolta in modo molto positivo, confermando la buona qualità del lavoro svolto e la coerenza con gli obiettivi definiti.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del quarto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.285 €`*, risultando inferiore di *`45 €`* rispetto ai *`1.330 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.557,50 €`*.
+
+#avanzamento(90, 0, "4")
