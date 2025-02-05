@@ -299,53 +299,54 @@ Si occupano di verificare l'intero sistema come unità, valutando la conformità
     columns: (2cm, 10cm, 2cm, 3cm),
     [Codice], [Descrizione], [Stato], [Requisito],
 
-    [TS-01], [Verificare che l'utenta riesca ad accedere all'applicazione senza autenticazione], [NE], [R-F-001-1],
+    [TS-01], [Verificare che l'utenta riesca ad accedere all'applicazione senza autenticazione], [NE], [RF-001],
 
-    [TS-02], [Verificare che il sistema riesca a reperire correttamente le informazioni da GitHub], [NE], [R-F-002-1],
+    [TS-02], [Verificare che il sistema riesca a reperire correttamente le informazioni da GitHub], [NE], [RF-002],
 
-    [TS-03], [Verificare che il sistema riesca a reperire correttamente le informazioni da Confluence], [NE], [R-F-003-1],
+    [TS-03], [Verificare che il sistema riesca a reperire correttamente le informazioni da Confluence], [NE], [RF-003],
 
-    [TS-04], [Verificare che il sistema riesca a reperire correttamente le informazioni da Jira], [NE], [R-F-004-1],
+    [TS-04], [Verificare che il sistema riesca a reperire correttamente le informazioni da Jira], [NE], [RF-004],
 
-    [TS-05], [Verificare che l'utente possa visualizzare correttamente lo storico della chat], [NE], [R-F-005-1],
+    [TS-05], [Verificare che l'utente possa visualizzare correttamente lo storico della chat], [NE], [RF-005],
 
-    [TS-06], [Verificare che l'utente visualizzi un messaggio nel caso in cui non ci siano messaggi nello storico], [NE], [R-F-006-1],
+    [TS-06], [Verificare che l'utente visualizzi un messaggio nel caso in cui non ci siano messaggi nello storico], [NE], [RF-006],
 
-    [TS-07], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non sia riuscito a recuperare correttamente lo storico], [NE], [R-F-007-1],
+    [TS-07], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non sia riuscito a recuperare correttamente lo storico], [NE], [RF-007],
 
-    [TS-08], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non riesca a connettersi], [NE], [R-F-008-1],
+    [TS-08], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non riesca a connettersi], [NE], [RF-008],
 
-    [TS-09], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il backend non risulti disponibile], [NE], [R-F-009-1],
+    [TS-09], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il backend non risulti disponibile], [NE], [RF-009],
 
-    [TS-10], [Verificare che l'utente visualizzi almeno un messaggio. Di tale messaggio deve poter visualizzare contenuto, data, orario di invio e mittente], [NE], [R-F-010-1],
+    [TS-10], [Verificare che l'utente visualizzi almeno un messaggio. Di tale messaggio deve poter visualizzare contenuto, data, orario di invio e mittente], [NE], [RF-010],
 
-    [TS-11], [Verificare che, attraverso l'interfaccia utente, l'utente sia in grado di porre una domanda in linguaggio naturale], [NE], [R-F-011-1],
+    [TS-11], [Verificare che, attraverso l'interfaccia utente, l'utente sia in grado di porre una domanda in linguaggio naturale], [NE], [RF-011],
 
-    [TS-12], [Verificare che l'utente riesca ad inviare la domanda scritta attraverso la UI al sistema], [NE], [R-F-012-1],
-    //!! 
-    [TS-], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta,, l'utente visualizzi un messaggio di errore], [NE], [UC3.2],
+    [TS-12], [Verificare che l'utente riesca ad inviare la domanda scritta attraverso la UI al sistema], [NE], [RF-012],
+    
+    [TS-13], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NE], [RF-013],
 
-    [TS-], [Verificare che il sistema riesca a generare e restituire all'interfaccia la risposta alla domanda posta], [NE], [UC3.3],
+    [TS-14], [Verificare che il sistema notifichi all'utente un messaggio di errore nel caso in cui la risposta non venga generata perché supera la lunghezza massima consentita], [NE], [RF-014],
 
-    [TS-13], [Verificare che il sistema elabori correttamente la domanda dell'utente, generando una risposta attinente e appropriata], [NE], [R-F-013-1],
+    [TS-15], [Verificare che il sistema elabori correttamente la domanda dell'utente, generando una risposta attinente e appropriata], [NE], [RF-015],
 
-    [TS-], [Verificare che il sistema riesca gestire correrttamente domande fuori contesto, generando una risposta attinente e appropriata], [NE], [R-F-013-2],
+    [TS-16], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da GitHub (nome della repository, la sua descrizione, informazioni sui ticket, commit...)], [NE], [RF-016],
 
-    [TS-], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta,, l'utente visualizzi un messaggio di errore], [NE], [R-F-013-3],
+    [TS-17], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da Confluence (id della pagina, il titolo, lo status...)], [NE], [RF-017],
 
-    [TS-], [Verificare che il sistema informi l'utente se la risposta supera la lunghezza massima consentita], [NE], [R-F-013-4],
+    [TS-18], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da Jira (nome di un ticket, il suo assegnatario, stato, ticket collegati...)], [NE], [RF-018],
 
-    [TS-], [Verificare che il sistema fornisca correttamente la data e l'orario dell'ultimo aggiornamento dei dati utilizzati], [NE], [R-F-013-5],
+    [TS-19], [Verificare che il sistema riesca gestire correttamente domande fuori contesto, generando una risposta attinente e appropriata], [NE], [RF-019],
+
+    [TS-20], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NE], [RF-020],
+
+    [TS-21], [Verificare che il sistema informi l'utente se la risposta supera la lunghezza massima consentita], [NE], [RF-021],
+
+    [TS-22], [Verificare che il sistema fornisca correttamente la data e l'orario dell'ultimo aggiornamento dei dati utilizzati], [NE], [RF-022],
 
     [], [], [], [],
 
-    [TS-], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da GitHub], [NE], [R-F-014-1],
+    [], [], [], [],
 
-    [TS-], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da Confluence], [NE], [R-F-014-2],
-
-    [TS-], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da Jira], [NE], [R-F-014-3],
-
-    
   ),
   caption: "Riepilogo TS"
 )
