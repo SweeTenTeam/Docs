@@ -6,10 +6,10 @@
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
      "0.1.0",
-    "2025-01-07",
+    "2025-02-05",
     (p.fracaro, p.santi, p.mahdi, p.ferazzani),
     (p.belenkov),
-    [Rimozione UC Github, UC Jira, UC Confluence. Aggiunta precondizioni UC4, Aggiunta errori specifici a UC1, UC3, UC4. Numerazione casi d'uso corretta.],
+    [Rimozione UC Github, UC Jira, UC Confluence. Aggiunta precondizioni UC4, Aggiunta errori specifici a UC1, UC3, UC4. Numerazione casi d'uso corretta. Aggiunta spiegazione attori secondari],
     "0.0.9",
     "2025-01-07",
     (p.fracaro),
@@ -83,7 +83,7 @@ svolgimento del progetto.\
 - *Fornire una base per la progettazione del sistema*:\
 L'Analisi dei Requisiti fornisce una base per la progettazione del sistema, in quanto definisce le funzionalità che il
 sistema dovrà offrire, permettendo così ai #glossary("programmatori") di comprendere le esigenze dei proponenti
-identificando le soluzioni che più si adeguano a tali esigenze.\ //TODO: Sistemar questa frase, troppe ripetizioni
+identificando le soluzioni che più si adeguano a tali esigenze.\
 
 - *Tracciare i requisiti del sistema*:\
 Una volta raccolte le richieste del proponente, questo documento si impone di identificare i requisiti e suddividerli in
@@ -477,28 +477,30 @@ Gli attori coinvolti nei casi d'uso sono:
     - La User Interface ha acquisito una domanda dall'utente;
     - Il #glossary("backend") ha accesso ai seguenti dati provenienti dalle fonti #glossary("Jira"), #glossary("Github"), #glossary("Confluence"):
       - #glossary("Jira"):
-        - Nome (titolo) di un ticket";
-        - Assegnatario di un ticket";
-        - Etichette di un ticket";
-        - Stato di un ticket";
-        - Attività principale collegata a un ticket";
-        - Team di appartenenza di un ticket";
-        - Sprint di appartenenza di un ticket";
-        - #glossary("Story point estimate") di un ticket";
-        - Richiedente/creatore di un ticket".
-      - #glossary("Github"):
-        - Informazioni generali sulla repository;//da specificare
-        - Stato di una determinata issue;
-        - Elenco delle issue aperte;
-        - Ultimo commit fatto da un utente;
-        - Milestones attive;
-        - Issue da completare per una milestone;
-        - Username del responsabile di una issue;
-        - File presenti in una directory;
-        - Elenco dei collaboratori nel repository;
-        - Pull request attive da chiudere;
-        - Stato dei workflow di GitHub Action.
-        //Troppo poco specifico: manca il contenuto dei files di una directory, lista di github action, elenco delle issues (solo aperte??)...
+        - Nome della repository;
+        - Descrizione della repository;
+        - Data di creazione della repository;
+        - Ultima data di aggiornamento della repository;
+        - Linguaggio principale della repository;
+        - Messaggio dell'ultimo commit;
+        - Hash dell'ultimo commit;
+        - Data e ora dell'ultimo commit;
+        - Branch associato all'ultimo commit;
+        - File modificati nell'ultimo commit;
+        - Autore dell'ultimo commit;
+        - Lista Pull request attive e chiuse;
+        - Titolo e descrizione delle Pull request;
+        - Stato delle Pull request;
+        - Assegnatario delle Pull request;
+        - Reviewers delle Pull request;
+        - Commenti e discussioni delle Pull request;
+        - File modificati nelle Pull request;
+        - Branch di origine e destinazione delle Pull request;
+        - Stato dei workflow di GitHub Action;
+        - Ultimo workflow eseguito;
+        - Log dei workflow;
+        - Trigger dei workflow;
+        - Durata dei workflow.
       - #glossary("Confluence"):
         - Id di una pagina;
         - Titolo di una pagina;
@@ -506,17 +508,20 @@ Gli attori coinvolti nei casi d'uso sono:
         - Autore di una pagina;
         - Owner di una pagina;
         - Spazio di una pagina;
-        - Body di una pagina;
-        - Id di una task;
-        - Status di una task;
-        - Creatore di una task;
-        - Assegnatario di una task;
-        - Data di scadenza di una task.
+        - Body di una pagina.
+      - #glossary("Jira"):
+        - Nome (titolo) di un ticket;
+        - Assegnatario di un ticket;
+        - Stato di un ticket;
+        - Attività principale collegata a un ticket;
+        - Sprint di appartenenza di un ticket;
+        - Story point estimate di un ticket;
+        - Richiedente/creatore di un ticket;
+        - Priorità;
+        - Data di scadenza;
+        - Commenti del ticket;
+        - Ticket collegati.
       
-
-
-
-
 
 
 *Postcondizioni*
