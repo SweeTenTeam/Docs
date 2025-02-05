@@ -5,10 +5,10 @@
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
     "0.0.3",
-    "2024-01-24",
+    "2024-02-07",
     (p.santi), 
-    (p.campagnaro), 
-    [Stesura sezione "Strategia di testing"],
+    (p.ferazzani), 
+    [Aggiunti test di sistema],
     "0.0.2",
     "2024-12-28",
     (p.santi), 
