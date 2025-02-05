@@ -129,7 +129,7 @@ Tale prodotto, in conclusione, risponde alla necessità di accedere in modo faci
 == Funzionalità del prodotto
 #glossary("BuddyBot") è un assistente virtuale progettato per garantire un accesso facile e immediato alle informazioni aziendali attraverso un'interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall'azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest'ultime e fornendo le risposte alle domande poste dall'utente.
 
-L’assistente virtuale utilizza tecnologie di Intelligenza Artificiale (nel nostro progetto verranno utilizzati #glossary("GroqCloud") e #glossary("Langchain") lato #glossary("LLM")) per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate.
+L'assistente virtuale utilizza tecnologie di Intelligenza Artificiale (nel nostro progetto verranno utilizzati #glossary("GroqCloud") e #glossary("Langchain") lato #glossary("LLM")) per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate.
 
 A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("Postgres") a un volume #glossary("Docker").
 
@@ -155,7 +155,18 @@ Gli scenari sottostanti seguono uno schema e può prevedere:
 - *User Story*: descrizione di una funzionalità del software dal punto di vista dell'utente; aiuta a comprendere le esigenze dell'utente e a definire i requisiti del sistema
 - *Generalizzazioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, esso rappresenta una variante o un'istanza di un caso d'uso più generale che descrive caratteristiche o comportamenti comuni a più scenari
 == Attori
-L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio ponendo domande all'assistente virtuale.
+Gli attori coinvolti nei casi d'uso sono:
+
+*Attori Primari*:
+- *User*: utente finale che interagisce direttamente con l'interfaccia di BuddyBot ponendo domande e ricevendo risposte
+- *User Interface*: componente del sistema che gestisce l'interazione con l'utente e la presentazione delle informazioni
+
+*Attori Secondari*:
+- *Backend*: componente del sistema che elabora le richieste, gestisce la logica di business e coordina l'interazione con le altre componenti
+- *Jira*: piattaforma esterna da cui il sistema recupera informazioni sui ticket e la gestione dei progetti
+- *GitHub*: piattaforma esterna da cui il sistema recupera informazioni sui repository e il controllo versione
+- *Confluence*: piattaforma esterna da cui il sistema recupera documentazione e informazioni aziendali
+- *LLM*: Large Language Model che elabora le domande e genera le risposte in linguaggio naturale
 
 #pagebreak()
 == Definizione casi d'uso
@@ -607,26 +618,6 @@ L'attore coinvolto nei casi d'uso è lo #glossary("User") che accede al servizio
   - Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta in quanto la risposta supererebbe la lunghezza massima consentita.
   *User story associata*
   - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda perchè la risposta supererebbe la lunghezza massima consentita in modo da poter eventualmente riformulare la domanda".
-
-
-==== UC4.4, Richiesta della data e ora dell'ultimo aggiornamento dei dati
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User Interface") .
-
-  *Precondizioni*
-    - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
-    - L'interfaccia utente ha acquisito una domanda dall'utente. 
-
-  *Postcondizioni*
-  - 
-
-  *Scenario principale*
- -
-  *User story associata*
-  - "Come utente voglio poter visualizzare la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta cosi da poter sapere se i dati sono stati aggiornati recentemente o meno".
-
-
 
 
 #pagebreak()
