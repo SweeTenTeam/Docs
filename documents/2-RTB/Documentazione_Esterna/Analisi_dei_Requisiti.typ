@@ -81,7 +81,7 @@ documenti e incontri con #box(image(g.azzurro, width: 5em, height: auto)) che av
 svolgimento del progetto.\
 
 - *Fornire una base per la progettazione del sistema*:\
-L'Analisi dei Requisiti fornisce una base per la progettazione del sistema, in quanto definisce le funzionalità che il
+L'#glossary("Analisi dei requisiti") fornisce una base per la progettazione del sistema, in quanto definisce le funzionalità che il
 sistema dovrà offrire, permettendo così ai #glossary("programmatori") di comprendere le esigenze dei proponenti
 identificando le soluzioni che più si adeguano a tali esigenze.\
 
@@ -99,8 +99,8 @@ comprenderli pienamente, allora verrà data una rappresentazione formale grafica
 #glossary("diagrammi dei casi d'uso").
 
 == Scopo del progetto
-Lo scopo del progetto è la realizzazione dei un assistente virtuale sotto forma di #glossary("chatbot") in grado di assistere gli utenti, rispondendo alle loro domande in linguaggio naturale.
-Il chatbot garantirà un accesso rapido alle informazioni interne dell'azienda, aggregando i dati provenienti dalle piattaforme #glossary("Jira"), #glossary("Github") e #glossary("Confluence") ed elaborando questi ultimi con l'uso dell'intelligenza artificiale per dare risposte chiare.
+Lo scopo del progetto è la realizzazione di un assistente virtuale sotto forma di #glossary("chatbot") in grado di assistere gli utenti, rispondendo alle loro domande in linguaggio naturale.
+Il #glossary("chatbot") garantirà un accesso rapido alle informazioni interne dell'azienda, aggregando i dati provenienti dalle piattaforme #glossary("Jira"), #glossary("Github") e #glossary("Confluence") ed elaborando questi ultimi con l'uso dell'intelligenza artificiale per dare risposte chiare.
 Questo strumento sarà utile non solo ai membri già attivi dell'azienda per tagliare i tempi lunghi di ricerca manuale di una determinata informazione, ma anche per il processo di onboarding dei nuovi arrivati rispondendo alle domande più frequenti e guidandoli nel processo di apprendimento delle risorse aziendali senza il bisogno di una figura di supporto.
 
 == Glossario
@@ -114,11 +114,10 @@ Pertanto è soggetto a un continuo miglioramento.
 
 == Riferimenti
 === Normativi
-Presentazione pdf del capitolato C9:
-https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf
+Presentazione pdf del capitolato C9: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf","C9p.pdf")
+
 === Informativi
-Slide del corso(T5):
-https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf
+Slide del corso(T5): #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf","T05.pdf")
 
 = Descrizione
 == Obiettivo del prodotto
@@ -127,11 +126,11 @@ Tale prodotto, in conclusione, risponde alla necessità di accedere in modo faci
 
 
 == Funzionalità del prodotto
-#glossary("BuddyBot") è un assistente virtuale progettato per garantire un accesso facile e immediato alle informazioni aziendali attraverso un'interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall'azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest'ultime e fornendo le risposte alle domande poste dall'utente.
+#glossary("BuddyBot") è un assistente virtuale progettato per reperire informazioni aziendali attraverso un'interfaccia semplice ed intuitiva e basata sul linguaggio naturale. Il punto cardine del progetto è il seguente: il sistema si deve connettere alle piattaforme utilizzate dall'azienda, ossia #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), estrapolando informazioni da quest'ultime e fornendo le risposte alle domande poste dall'utente.
 
-L'assistente virtuale utilizza tecnologie di Intelligenza Artificiale (nel nostro progetto verranno utilizzati #glossary("GroqCloud") e #glossary("Langchain") lato #glossary("LLM")) per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate.
+L'assistente virtuale utilizza tecnologie di Intelligenza Artificiale per interpretare le richieste degli utenti e restituire informazioni personalizzate e contestualizzate.
 
-A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste. Questa persistenza nel progetto è garantita spostando i dati dal container #glossary("Postgres") a un volume #glossary("Docker").
+A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste.
 
 == Utenti e caratteristiche
 Il prodotto si rivolge principalmente al team aziendale:
@@ -139,21 +138,23 @@ Il prodotto si rivolge principalmente al team aziendale:
 - *Sviluppatori*, che accedono a informazioni tecniche come codice e documentazione;
 - #glossary("Project Manager"), che usa #glossary("BuddyBot") per monitorare task e risorse;
 - *Nuovi membri* del team, che vengono supportati nell'#glossary("onboarding") e nella ricerca delle informazioni necessarie, facilitando la loro integrazione nell'azienda;
-- In generale, allo *staff aziendale*.
+- Membri del dipartimento delle *risorse umane*, che utilizzano #glossary("BuddyBot") per gestire le domande relative ai benefici e alle procedure di #glossary("onboarding").
+
 Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l'uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
 
 = Casi d'uso
 == Introduzione ai casi d'uso e obbiettivi
 In questa sezione vengono elencati dettagliatamente i #glossary("casi d'uso (UC)") individuati dal gruppo in seguito ad analisi e valutazioni circa le specifiche del capitolato.
 Gli scenari sottostanti seguono uno schema e può prevedere:
-- *Titolo*
-- *Attori*: il soggetto che esegue un'azione in quel contesto
-- *Precondizioni* e *Postcondizioni*: stato del sistema prima e dopo il caso d'uso
-- *Scenario principale*: descrizione dettagliata delle azioni che l'attore deve compiere per completare il caso d'uso; vengono formalizzati anche ipotesi e risultati attesi
-- *Estensioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, è possibile prevedere varianti o comportamenti alternativi che arricchiscono o modificano lo scenario principale
-- *Inclusioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, alcune funzionalità o azioni comuni appartengono a un altro caso d'uso, sempre eseguito come parte integrante dello scenario principale
-- *User Story*: descrizione di una funzionalità del software dal punto di vista dell'utente; aiuta a comprendere le esigenze dell'utente e a definire i requisiti del sistema
-- *Generalizzazioni*: relazione tra due casi d'uso; indica quella situazione in cui, prendendo in esame un caso d'uso specifico, esso rappresenta una variante o un'istanza di un caso d'uso più generale che descrive caratteristiche o comportamenti comuni a più scenari
+- *Titolo*: titolo del caso d'uso;
+- *Attori*: il soggetto che interagisce con il sistema nel contesto del caso d'uso;
+- *Precondizioni* e *Postcondizioni*: stato del sistema prima e dopo il caso d'uso;
+- *Scenario principale*: descrizione dettagliata delle azioni che l'attore deve compiere per completare il caso d'uso, vengono formalizzati anche ipotesi e risultati attesi;
+- *Estensioni*: relazione tra due casi d'uso; indica la situazione in cui un caso d'uso (estendibile) include opzionalmente un altro caso d'uso (esteso) al verificarsi di condizioni specifiche, gestendo scenari particolari senza complicare il caso principale;
+- *Inclusioni*: relazione tra due casi d'uso; indica la situazione in cui, prendendo in esame un caso d'uso specifico, alcune funzionalità o azioni comuni appartengono a un altro caso d'uso, sempre eseguito come parte integrante dello scenario principale;
+- *Generalizzazioni*: relazione tra due casi d'uso; indica la situazione in cui un caso d'uso più specifico eredita comportamenti e proprietà da un caso d'uso più generale;
+- *User Story*: descrizione di una funzionalità del software dal punto di vista dell'utente; aiuta a comprendere le esigenze dell'utente e a definire i requisiti del sistema.
+
 == Attori
 Gli attori coinvolti nei casi d'uso sono:
 
@@ -189,7 +190,7 @@ Gli attori coinvolti nei casi d'uso sono:
     - L'interfaccia utente viene aggiornata con i messaggi delle passate interazioni tra l'utente e #glossary("Buddybot").
     *Scenario principale*
     - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
-    - La UI recupera i messaggi delle precedenti interazioni;
+    - Vengono recuperati i messaggi delle precedenti interazioni;
     - Nella schermata appaiono i messaggi riguardanti le passate interazioni con #glossary("Buddybot").
   
 
@@ -206,19 +207,23 @@ Gli attori coinvolti nei casi d'uso sono:
 
 
 ==== UC1.1, Visualizzazione errore nessun messaggio nello storico della chat
-  *Attori coinvolti*: #glossary("User").
+  *Attori coinvolti*:
+  - Primari:
+    - #glossary("User").
+  - Secondari:
+    - #glossary("Backend").
 
   *Precondizioni*
   - L'interfaccia utente è pronta all'interazione con l'utente. 
 
   *Postcondizioni*
-  - L'interfaccia utente viene aggiornata con un messaggio informativo che informa l'utente che non ci sono messaggi precedenti disponibili.
+  - L'interfaccia utente viene aggiornata con un avviso che informa l'utente che non ci sono messaggi precedenti disponibili.
   *Scenario principale*
   - L'utente accede all'interfaccia di #glossary("Buddybot");
-  - La User Interface cerca di recuperare i messaggi delle precedenti interazioni ma non è presente nessun messaggio nello storico della chat;
-  - L'utente viene informato che non sono presenti messaggi precedenti tramite un aggiornamento dell'interfaccia utente.
+  - Viene tentato il recupero dei messaggi delle precedenti interazioni ma non è presente nessun messaggio nello storico della chat;
+  - L'utente viene informato che non sono presenti messaggi precedenti tramite un avviso.
   *User story associata*
-  - "Quando l'utente accede a Buddybot per la prima volta, viene informato che, non essendoci interazioni pregresse, non sono disponibili messaggi nello storico".
+  - "Quando l'utente utilizza #glossary("Buddybot") per la prima volta, viene informato che, non essendoci interazioni pregresse, non sono disponibili messaggi nello storico".
 
   ==== UC1.2, Errore durante il recupero dello storico della chat
   *Attori coinvolti*: #glossary("User").
@@ -227,13 +232,13 @@ Gli attori coinvolti nei casi d'uso sono:
   - L'interfaccia utente è pronta all'interazione con l'utente. 
 
   *Postcondizioni*
-  - L'interfaccia utente mostra un alert che informa l'utente dell'impossibilità di recuperare i messaggi precedenti a causa di un problema.
+  - L'interfaccia utente mostra un avviso che informa l'utente dell'impossibilità di recuperare i messaggi precedenti a causa di un problema.
   *Scenario principale*
   - L'utente accede all'interfaccia di #glossary("Buddybot");
-  - La user interface cerca di recuperare i messaggi delle precedenti interazioni ma si verifica un errore durante il processo che impedisce il recupero di tali messaggi;
-  - L'utente viene informato che si è verificato un errore durante il recupero dei messaggi precedenti tramite un aggiornamento dell'interfaccia utente.
+  - Viene tentato il recupero dei messaggi delle precedenti interazioni ma si verifica un errore durante il processo che impedisce il recupero di tali messaggi;
+  - L'utente viene informato che si è verificato un errore durante il recupero dei messaggi precedenti tramite un avviso.
   *User story associata*
-  - "Come utente, voglio essere informato in modo chiaro se si verifica un errore durante il recupero dei messaggi precedenti, in modo da sapere che i dati non sono disponibili e poter agire di conseguenza senza confusione".
+  - "Come utente, voglio essere informato in modo chiaro se si verifica un errore durante il recupero dei messaggi precedenti per poter agire di conseguenza senza confusione".
 
 
   ==== UC1.3, Visualizzazione errore di connessione
@@ -247,8 +252,8 @@ Gli attori coinvolti nei casi d'uso sono:
 
   *Scenario principale*
   - L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede la connessione ad internet;
-  - La user interface cerca di eseguire la richiesta dell'utente ma non riesce a portarla a termine per la mancanza di connessione ad internet;
-  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un aggiornamento dell'interfaccia utente.
+  - Viene tentata l'esecuzione della richiesta dell'utente ma non viene portata a termine per la mancanza di connessione ad internet;
+  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un avviso.
   *User story associata*
   - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
 
@@ -268,8 +273,8 @@ Gli attori coinvolti nei casi d'uso sono:
 
   *Scenario principale*
   - L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede una risposta al #glossary("backend");
-  - La user interface cerca di eseguire la richiesta dell'utente ma non riesce a portarla a termine perchè il #glossary("backend") non è al momento disponibile;
-  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un aggiornamento dell'interfaccia utente.
+  - Viene tentata l'esecuzione della richiesta dell'utente ma non viene portata a termine perchè il #glossary("backend") non è al momento disponibile;
+  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un avviso.
   *User story associata*
   - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è il #glossary("backend") non disponibile così da poter contattare il supporto tecnico".
 
@@ -421,7 +426,8 @@ Gli attori coinvolti nei casi d'uso sono:
     - #glossary("Backend").
 
   *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
+  - L'interfaccia utente è pronta all'interazione con l'utente;
+  - L'utente ha scritto la propria domanda nel campo di input dedicato.
 
   *Postcondizioni*
   - L'interfaccia utente viene aggiornata con un messaggio di errore generico che informa l'utente che non è stato possibile generare la risposta alla sua domanda.
@@ -443,7 +449,8 @@ Gli attori coinvolti nei casi d'uso sono:
     - #glossary("Backend").
 
   *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
+  - L'interfaccia utente è pronta all'interazione con l'utente;
+  - L'utente ha scritto la propria domanda nel campo di input dedicato.
 
   *Postcondizioni*
   - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la risposta da generare per quella domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
@@ -465,7 +472,7 @@ Gli attori coinvolti nei casi d'uso sono:
   )
     *Attori coinvolti*:
     - Primari:
-    - #glossary("User Interface") .
+      - #glossary("User Interface") .
     - Secondari:
       - #glossary("Jira") ;
       - #glossary("Github") ;
@@ -476,7 +483,7 @@ Gli attori coinvolti nei casi d'uso sono:
     - La UI e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
     - La User Interface ha acquisito una domanda dall'utente;
     - Il #glossary("backend") ha accesso ai seguenti dati provenienti dalle fonti #glossary("Jira"), #glossary("Github"), #glossary("Confluence"):
-      - #glossary("Jira"):
+      - #glossary("Github"):
         - Nome della repository;
         - Descrizione della repository;
         - Data di creazione della repository;
@@ -544,7 +551,7 @@ Gli attori coinvolti nei casi d'uso sono:
 - UC4.1, Invio richiesta con domanda fuori contesto;
 
 *User story associata*
-  - "Come utente di #glossary("Buddybot"), voglio poter porre domande attraverso l'interfaccia utente e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), così da ottenere informazioni utili e coerenti con il contesto del sistema.Voglio inoltre poter visualizzare la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta cosi da poter sapere se i dati sono stati aggiornati recentemente o meno."
+  - "Come utente di #glossary("Buddybot"), voglio poter porre domande attraverso l'interfaccia utente e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), così da ottenere informazioni utili e coerenti con il contesto del sistema. Voglio inoltre poter visualizzare la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta cosi da poter sapere se i dati sono stati aggiornati recentemente o meno."
 
   ==== UC4.1, Invio richiesta con domanda fuori contesto
   *Attori coinvolti*:
@@ -565,10 +572,10 @@ Gli attori coinvolti nei casi d'uso sono:
   - La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.  
 
   *Scenario principale*
-  - L'interfaccia utente invia al #glossary("backend") di Buddybot la domanda formulata dall'utente.
-  - Il #glossary("backend") analizza la domanda e tenta di recuperare documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"). Tuttavia, non trova documenti correlati poiché la domanda è fuori dal contesto operativo di #glossary("Buddybot").
-  - La domanda dell'utente viene inoltrata al #glossary("LLM") per generare una risposta in linguaggio naturale che informa l'utente che la domanda non è pertinente al contesto.
-  - La risposta generata dal #glossary("LLM") viene restituita dal #glossary("backend") all'interfaccia utente.
+  - L'interfaccia utente invia al #glossary("backend") di Buddybot la domanda formulata dall'utente;
+  - Il #glossary("backend") analizza la domanda e tenta di recuperare documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"). Tuttavia, non trova documenti correlati poiché la domanda è fuori dal contesto operativo di #glossary("Buddybot");
+  - La domanda dell'utente viene inoltrata al #glossary("LLM") per generare una risposta in linguaggio naturale che informa l'utente che la domanda non è pertinente al contesto;
+  - La risposta generata dal #glossary("LLM") viene restituita dal #glossary("backend") all'interfaccia utente;
   - La domanda e la risposta vengono archiviate nello storico della chat, rendendole disponibili per future visualizzazioni.
   *User story associata*
   - "Come utente di #glossary("Buddybot"), voglio ricevere una risposta chiara e in linguaggio naturale quando pongo una domanda fuori contesto, in modo da essere informato che la mia richiesta non è pertinente al sistema e capire meglio i limiti del suo ambito operativo".
@@ -616,7 +623,7 @@ Gli attori coinvolti nei casi d'uso sono:
   - Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta in quanto la risposta supererebbe la lunghezza massima consentita.
 
   *Scenario principale*
-  - L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente.
+  - L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente;
   - Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
   - La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
   - La generazione della risposta si interrompe perchè la risposta ha superato la lunghezza massima consentita;
