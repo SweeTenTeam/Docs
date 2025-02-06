@@ -158,19 +158,19 @@ Gli scenari sottostanti seguono uno schema e può prevedere:
 Gli attori coinvolti nei casi d'uso sono:
 
 *Attori Primari*:
-- *User*: utente finale che interagisce direttamente con l'interfaccia di BuddyBot ponendo domande e ricevendo risposte
-- *User Interface*: componente del sistema che gestisce l'interazione con l'utente e la presentazione delle informazioni
+- *User*: utente finale che interagisce direttamente con l'interfaccia di BuddyBot ponendo domande e ricevendo risposte;
+- *User Interface*: componente del sistema che gestisce l'interazione con l'utente e la presentazione delle informazioni.
 
 *Attori Secondari*:
-- *Backend*: componente del sistema che elabora le richieste, gestisce la logica di business e coordina l'interazione con le altre componenti
-- *Jira*: piattaforma esterna da cui il sistema recupera informazioni sui ticket e la gestione dei progetti
-- *GitHub*: piattaforma esterna da cui il sistema recupera informazioni sui repository e il controllo versione
-- *Confluence*: piattaforma esterna da cui il sistema recupera documentazione e informazioni aziendali
-- *LLM*: Large Language Model che elabora le domande e genera le risposte in linguaggio naturale
+- *Backend*: componente del sistema che elabora le richieste, gestisce la business logic e coordina l'interazione con le altre componenti;
+- *Jira*: piattaforma esterna da cui il sistema recupera informazioni sui ticket e la gestione dei progetti;
+- *GitHub*: piattaforma esterna da cui il sistema recupera informazioni sui repository e il controllo versione;
+- *Confluence*: piattaforma esterna da cui il sistema recupera documentazione e informazioni aziendali;
+- *LLM*: Large Language Model che elabora le domande e genera le risposte in linguaggio naturale.
 
 #pagebreak()
 == Definizione casi d'uso
-=== UC1, Visualizzazione storico chat//todo maybe add backend as secondary actor???
+=== UC1, Visualizzazione storico chat
 
   #figure(
     image(ar.diagUC_storico_chat, width: 42em, fit: "contain"),
@@ -190,7 +190,7 @@ Gli attori coinvolti nei casi d'uso sono:
     *Scenario principale*
     - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
     - La UI recupera i messaggi delle precedenti interazioni;
-    - Nella scermata appaiono i messaggi riguardanti le passate interazioni con #glossary("Buddybot").
+    - Nella schermata appaiono i messaggi riguardanti le passate interazioni con #glossary("Buddybot").
   
 
 
@@ -248,7 +248,7 @@ Gli attori coinvolti nei casi d'uso sono:
   *Scenario principale*
   - L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede la connessione ad internet;
   - La user interface cerca di eseguire la richiesta dell'utente ma non riesce a portarla a termine per la mancanza di connessione ad internet;
-  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite0 un aggiornamento dell'interfaccia utente.
+  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un aggiornamento dell'interfaccia utente.
   *User story associata*
   - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
 
@@ -530,7 +530,7 @@ Gli attori coinvolti nei casi d'uso sono:
   
 *Scenario principale*
 - La UI invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente;
-- Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
+- Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
 - La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
 - La risposta generata dal #glossary("LLM") insieme alla data e ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta viene restituita dal #glossary("backend") alla User Interface;
 - La domanda dell'utente e la risposta generata vengono aggiunte allo storico della chat, rendendole disponibili per la successiva visualizzazione.
@@ -566,7 +566,7 @@ Gli attori coinvolti nei casi d'uso sono:
 
   *Scenario principale*
   - L'interfaccia utente invia al #glossary("backend") di Buddybot la domanda formulata dall'utente.
-  - Il #glossary("backend") analizza la domanda e tenta di recuperare documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"). Tuttavia, non trova documenti correlati poiché la domanda è fuori dal contesto operativo di #glossary("Buddybot").
+  - Il #glossary("backend") analizza la domanda e tenta di recuperare documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"). Tuttavia, non trova documenti correlati poiché la domanda è fuori dal contesto operativo di #glossary("Buddybot").
   - La domanda dell'utente viene inoltrata al #glossary("LLM") per generare una risposta in linguaggio naturale che informa l'utente che la domanda non è pertinente al contesto.
   - La risposta generata dal #glossary("LLM") viene restituita dal #glossary("backend") all'interfaccia utente.
   - La domanda e la risposta vengono archiviate nello storico della chat, rendendole disponibili per future visualizzazioni.
@@ -593,7 +593,7 @@ Gli attori coinvolti nei casi d'uso sono:
   *Scenario principale*
   - L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente.
   - Il #glossary("backend") tenta di analizzare la domanda, di recuperare i documenti pertinenti e di generare una risposta in linguaggio naturale ma non riesce a terminare per un errore durante uno di questi processi;
-  - Il #glossary("backend") ritorna un errore generico informado l'interfaccia utente che non è stato possibile generare la risposta alla domanda richiesta.
+  - Il #glossary("backend") ritorna un errore generico informando l'interfaccia utente che non è stato possibile generare la risposta alla domanda richiesta.
   *User story associata*
   - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda, così da poter eventualmente riformulare la domanda o contattare un supporto alternativo".
 
@@ -617,7 +617,7 @@ Gli attori coinvolti nei casi d'uso sono:
 
   *Scenario principale*
   - L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente.
-  - Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
+  - Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
   - La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
   - La generazione della risposta si interrompe perchè la risposta ha superato la lunghezza massima consentita;
   - Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta in quanto la risposta supererebbe la lunghezza massima consentita.
