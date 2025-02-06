@@ -7,6 +7,11 @@
     p.cardin,
   ),
   changelog: (
+    "1.0",
+    "2025-02-06",
+    (p.mahdi),
+    (p.santi),
+    "Revisione verbale per RTB",
     "0.1",
     "2024-11-28",
     (p.ferazzani),
