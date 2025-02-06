@@ -8,22 +8,29 @@
     p.cardin,
   ),
   changelog: (
+    "1.0.0",
+    "2025-02-06",
+    (p.campagnaro),
+    (p.ferazzani),
+    [
+      Approvazione per RTB
+    ],
     "0.2.0",
-    "2024-12-3",
+    "2024-12-03",
     (p.campagnaro),
     (p.ferazzani),
     [
       Correzione capitolo: Processi Organizzativi
     ],
     "0.1.1",
-    "2024-12-3",
+    "2024-12-03",
     (p.campagnaro),
     (p.ferazzani),
     [
       Correzione capitolo: Processi di supporto - Gestione della configurazione - Sincronizzazione
     ],
     "0.1.0",
-    "2024-12-2",
+    "2024-12-02",
     (p.campagnaro),
     (p.ferazzani),
     [
@@ -112,7 +119,7 @@
   show_tables_list: false,
 )
 
-= Introduzione
+= *Introduzione*
 == Scopo del documento
 Il presente documento ha lo scopo di definire le linee guida operative che il gruppo adotterà per la realizzazione del progetto didattico. In questo documento sono raccolte le procedure da seguire per ogni #glossary("processo") e attività.
 Per la realizzazione di questo documento è prevista la modifica e l'aggiunta di nuove indicazioni in base alle decisioni che verranno prese dal gruppo durante lo svolgimento del progetto.
@@ -138,7 +145,7 @@ Per garantire chiarezza e coerenza nella terminologia utilizzata nei documenti, 
 === Riferimenti informativi
 - I processi di ciclo di vita del software \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf") (Ultimo accesso: 2024-11-21)
-- `Glossario v1.0.0`: \ #link("https://sweetenteam.github.io/docs/RTB/Glossario")
+- `Glossario v1.0.0`: \ #link("https://sweetenteam.github.io/docs/RTB/Documentazione_Interna/Glossario")
 - Documentazione #glossary("git"): \
   #link("https://git-scm.com/docs") (Ultimo accesso: 2024-11-21)
 - Documentazione #glossary("GitHub"): \
@@ -147,8 +154,8 @@ Per garantire chiarezza e coerenza nella terminologia utilizzata nei documenti, 
   #link("https://typst.app/docs/") (Ultimo accesso: 2024-11-21)
 
 #pagebreak()
-= Processi primari
-== Fornitura
+= *Processi primari*
+== *Fornitura*
 === Scopo
 Il processo primario di #glossary("fornitura"), definito dallo standard `ISO/IEC 12207:1995` (versione aggiornata al 2017), descrive l'insieme delle attività necessarie per sviluppare un prodotto software che soddisfi completamente i requisiti e le esigenze del #glossary("Committente"). Questo processo copre tutte le fasi, dalla formulazione della proposta fino alla consegna finale del prodotto, assicurando un percorso chiaro, strutturato, #glossary("efficiente") ed #glossary("efficace"). \
 Lo scopo di questo processo è di tracciare e descrivere le attività svolte da ogni componente del gruppo SweeTenTeam, per determinare quanto lavoro è ancora da completare oppure è stato ultimato rispetto alle richieste del #glossary("proponente").
@@ -312,7 +319,7 @@ Piattaforma online che consente agli sviluppatori di creare, salvare, gestire e 
 ==== #glossary("Typst")
 Linguaggio utilizzato per la creazione e la redazione della documentazione.
 
-== Sviluppo
+== *Sviluppo*
 === Introduzione
 Lo sviluppo, delineato dallo standard `ISO/IEC 12207:1995`, si occupa di organizzare ed eseguire le attività per garantire che il prodotto completo soddisfi i tutti requisiti descritti nel #glossary("contratto"). Questa sequenza include tutte le azioni intraprese dai membri del team, finalizzate alla realizzazione di un prodotto che rispecchi le esigenze e le specifiche definite dal #glossary("Proponente").
 
@@ -634,8 +641,8 @@ Le seguenti norme, ispirate ai principi di `Clean Code di Robert C. Martin`, dov
 
 
 #pagebreak()
-= Processi di supporto
-== Documentazione
+= *Processi di supporto*
+== *Documentazione*
 === Scopo
 La documentazione è importante nello sviluppo del #glossary("software") perché aiuta a tenere traccia di tutte le attività e le decisioni del progetto. Contiene informazioni utili e direttive per chi sviluppa, utilizza o distribuisce il #glossary("software"). È un supporto pratico per il team, che serve a organizzare meglio il lavoro in ogni fase. Aggiornandola regolarmente, rimane chiara e utile, rendendo più facile la manutenzione del progetto.
 
@@ -800,7 +807,7 @@ Per la realizzazione della documentazione sono stati scelti dal team i seguenti 
 - *#glossary("Typst")*: linguaggio utilizzato per la stesura dei documenti;
 - *#glossary("GitHub")*: piattaforma per l'hosting di codice sorgente, utilizzata per condividere file, verificarli, gestirne le versioni e automatizzare determinati processi, seguendo il principio della #glossary("Documentation as Code").
 
-== Gestione della configurazione
+== *Gestione della configurazione*
 === Descrizione e Scopo
 Il processo di gestione della configurazione si applica durante l’intero ciclo di vita di un progetto #glossary("software") e definisce regole per assicurare il monitoraggio delle modifiche apportate a documentazione e codice. Questo processo permette di accedere in qualsiasi momento allo storico delle modifiche, offrendo una visione chiara delle motivazioni alla base di ogni cambiamento e dei relativi autori, migliorando così la tracciabilità e la responsabilità all’interno del team.
 
@@ -840,7 +847,7 @@ Per entrambi i #glossary("branch"), è stata adottata una struttura chiara che s
 - *`3-PB`*: _Product Baseline_, valuta la maturità della baseline architetturale del software e la sua implementazione, con l’obiettivo di raggiungere l’*#glossary("MVP")* (Minimum Viable Product). Questa cartella contiene tutti i documenti relativi alla seconda e ultima revisione di avanzamento (*`PB`*).
 
 Queste cartelle sono organizzate nel modo seguente, (i termini in *`grassetto`* indicano il nome di una directory):
-// Da rivedere prima di approvazione
+
 - *`1-Candidatura`*:
   - *`Verbali_Esterni`*;
   - *`Verbali_Interni`*;
@@ -852,12 +859,12 @@ Queste cartelle sono organizzate nel modo seguente, (i termini in *`grassetto`* 
   - *`Documentazione_Esterna`*:
     - *`Verbali_Esterni`*;
     - `Analisi_dei_Requisiti_v1.0.0.pdf`;
-    - `Glossario_v1.0.pdf`;
     - `Piano_di_Progetto_v1.0.0.pdf`;
     - `Piano_di_Qualifica_v1.0.0.pdf`.
     
   - *`Documentazione_Interna`*:
     - *`Verbali_Interni`*;
+    - `Glossario_v1.0.pdf`;
     - `Norme_di_Progetto_v1.0.0.pdf`.
 
 - *`3-PB`*
@@ -870,12 +877,13 @@ In questa repository utilizziamo due branch principali:
 
 Le modifiche apportate in `develop` vengono generalmente integrate in `master` al termine di ogni periodo di lavoro.
 
+Per il *`POC`* è stata creata una repository dedicata, *`BuddyBot---POC`*, che contiene il codice relativo al Proof of Concept.
+/*
 La struttura della repository è organizzata come segue, con i nomi delle directory indicati in *grassetto*:
-// Da rivedere prima di approvazione
-- *`PoC`*
+*/
 
 ==== Sito Vetrina
-La repository #link("https://github.com/SweeTenTeam/SweeTenTeam.github.io","SweeTenTeam.github.io") ospita il codice del sito dedicato al progetto. Il sito ha l'obiettivo di fornire un'interfaccia veloce e intuitiva, nella quale poter visualizzare ergonomicamente e in maniera organizzata i documenti relativi al progetto stesso. Tra le funzionalità del sito, è inclusa anche la visualizzazione diretta del #link("https://sweetenteam.github.io/docs/RTB/Glossario","Glossario"), che fornisce definizioni chiare e precise dei termini rilevanti. Questa sezione aiuta a prevenire fraintendimenti o interpretazioni ambigue e permette di accedere rapidamente alle definizioni cliccando sui termini presenti nei documenti.
+La repository #link("https://github.com/SweeTenTeam/SweeTenTeam.github.io","SweeTenTeam.github.io") ospita il codice del sito dedicato al progetto. Il sito ha l'obiettivo di fornire un'interfaccia veloce e intuitiva, nella quale poter visualizzare ergonomicamente e in maniera organizzata i documenti relativi al progetto stesso. Tra le funzionalità del sito, è inclusa anche la visualizzazione diretta del #link("https://sweetenteam.github.io/docs/RTB/Documentazione_Interna/Glossario","Glossario"), che fornisce definizioni chiare e precise dei termini rilevanti. Questa sezione aiuta a prevenire fraintendimenti o interpretazioni ambigue e permette di accedere rapidamente alle definizioni cliccando sui termini presenti nei documenti.
 
 === Sincornizzazione
 La sincronizzazione avviene attraverso #glossary("repository") condivise su #glossary("GitHub"), dove ogni attività è tracciata tramite un'apposita #glossary("issue"). Per ogni documento o feature esiste un #glossary("branch") dedicato, che è stato originariamente creato a partire dal #glossary("branch") *`develop`*. Quando un membro del team inizia un nuovo task, crea un nuovo #glossary("branch") a partire dal #glossary("branch") specifico per il documento o la feature correlata al task. Tuttavia, per i _verbali_ e il _glossario_, i #glossary("branch") vengono creati direttamente a partire da *`develop`*, poiché questi documenti sono meno complessi e richiedono modifiche più leggere. Questo approccio consente di avere ambienti di lavoro indipendenti, permettendo di svolgere più attività in parallelo e ottimizzando la collaborazione all'interno del team.
@@ -886,7 +894,7 @@ La struttura dei branch descritta in precedenza si basa sulla metodologia single
 ==== Pull request
 Al termine di un'attività o di una sua parte, il membro incaricato apre una #glossary("Pull Request"), indicando il verificatore. Quest'ultimo, dopo aver convalidato le modifiche, esegue il #glossary("merge") della #glossary("Pull Request") nel #glossary("branch") specifico per il documento o la feature correlata, chiude l'#glossary("issue") associata ed elimina il branch di lavoro se non più necessario.
 
-== Verifica
+== *Verifica*
 === Scopo ed Aspettative
 La verifica nel ciclo di vita del #glossary("software") è un'attività costante che parte dalla fase di progettazione e continua fino alla manutenzione. Questo processo è fondamentale per assicurare che gli output del #glossary("software"), come codice sorgente, documentazione e test, rispettino le specifiche e gli obiettivi definiti, basandosi su principi di coerenza, completezza e accuratezza.
 
@@ -962,7 +970,7 @@ Ogni test ha anche uno *`stato`* che ne indica l'esito:
 - *`NV`*: Non Verificato (test fallito);
 - *`NI`*: Non Implementato (test non eseguito).
 
-== Validazione
+== *Validazione*
 === Scopo ed aspettative
 La validazione rappresenta una fase cruciale nello sviluppo del #glossary("software"), che si assicura che il prodotto finale sia in linea con i requisiti e le esigenze del cliente.
 
@@ -978,7 +986,7 @@ L'aspettativa finale è quella di ottenere un prodotto che soddisfi completament
 === Descrizione
 Durante la fase di validazione, faremo riferimento ai test precedentemente eseguiti durante la verifica, come indicato nelle relative sezioni delle *`Norme di Progetto`*. Il processo di validazione del prodotto si concluderà con l'esecuzione dei test di accettazione, che ne confermeranno la conformità.
 
-== Gestione della qualità
+== *Gestione della qualità*
 === Scopo
 Il processo di Gestione Della Qualità ha come obiettivo principale quello di garantire che i processi, i prodotti e gli artefatti tutti nel ciclo di vita del progetto, siano conformi ai piani specificati, allineati con i requisiti stabiliti e che, in generale, rispettino i canoni di qualità in precedenza decisi.
 
@@ -1026,8 +1034,6 @@ Ogni metrica ha:
 - un valore ammissibile (o ottimale): valore ideale che dovrebbe essere raggiunto dalla metrica;
 - descrizione: descrizione breve della metrica.
 
-//to do: ricontrollare questo paragrafo
-
 === Aspettative
 
 Il team si aspetta di rispettare in ogni momento gli standard di qualità definiti. Inoltre, il team si aspetta:
@@ -1039,10 +1045,10 @@ Il team si aspetta di rispettare in ogni momento gli standard di qualità defini
 - Soddisfazione delle richieste e aspettative del Proponente.
 
 #pagebreak()
-= Processi Organizzativi
+= *Processi Organizzativi*
 I processi organizzativi sono fondamentali per garantire il corretto svolgimento del progetto in conformità con gli standard di qualità prefissati.
 
-== Gestione dei Processi
+== *Gestione dei Processi*
 === Scopo
 Come stabilito dallo Standard `ISO/IEC 12207:1997`, il processo organizzativo di gestione dei processi ha come scopo quello di identificare le attività generali che ogni membro del team è chiamato a svolgere. È un'attività chiave per garantire il completamento del progetto in modo efficiente e in linea con gli standard di qualità già definiti e con le aspettative del Proponente.
 
@@ -1247,7 +1253,7 @@ Le modalità sono le stesse del punto precedente. Dopo che la issue viene chiusa
 
 
 
-== Infrastruttura
+== *Infrastruttura*
 
 Fanno parte dell'Infrastruttura organizzativa tutti gli strumenti che il Team utilizza per la gestione del progetto. Questi strumenti sono fondamentali per garantire la corretta riuscita del progetto e per mantenere un alto livello di efficacia ed efficienza. Tali strumenti permettono la comunicazione, il coordinamento e la pianificazione.
 
@@ -1323,7 +1329,7 @@ In un canale apposito, viene utilizzato anche per comunicazioni informali o urge
 È il servizio di posta elettronica utilizzato per le comunicazioni formali con il Proponente e i Committenti.
 
 
-== Miglioramento
+== *Miglioramento*
 
 === Scopo
 
@@ -1367,7 +1373,7 @@ Per monitorare i miglioramenti, il gruppo utilizza il seguente strumento:
 
 - #glossary("GitHub"): per la gestione del codice e delle issue, e per la creazione di #glossary("Pull Request") e #glossary("Branch"). GitHub permette un tracciamento sia temporale che qualitativo del lavoro svolto.
 
-== Formazione
+== *Formazione*
 
 === Scopo
 
@@ -1390,7 +1396,7 @@ Al fine di promuovere un ambiente di lavoro efficace ed efficiente, che garantis
 Al fine di completare questo percorso formativo, ogni membro utilizzerà tutti gli strumenti che ritiene necessari e li condividerà tramite link o file con gli altri membri del Team attraverso i canali di comunicazione interna dedicati al fine di promuovere la condivisione delle conoscenze.
 
 #pagebreak()
-= Standard `ISO/IEC 9126`
+= *Standard `ISO/IEC 9126`*
 
 Lo standard `ISO/IEC 9126` è una norma internazionale che ha contribuito a definire i parametri fondamentali per la valutazione della qualità e la validazione del software. Questo standard rappresenta un insieme di norme e linee guida dettagliate, oltre che a criteri di valutazione, per gli attributi di qualità di un prodotto software.
 Andando più nel dettaglio, questo standard individua sei categorie di attributi di qualità. Ognuna di queste categorie, è a sua volta suddivisa in sotto-categorie, che rappresentano i parametri di _*valutazione*_ e _*misurazione*_ per la qualità del software.
@@ -1474,7 +1480,7 @@ Le sotto-categorie di questo parametro sono:
 - _*Conformità alla portabilità*_: Capacità del software di aderire e rispettare nel suo ciclo di vita standard e convenzioni di portabilità.
 
 #pagebreak()
-= Metriche Di Qualità Del Processo <qualità_del_processo>
+= *Metriche Di Qualità Del Processo* <qualità_del_processo>
 
 Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"). In questo capitolo, la prima parte della struttura sarà: #align(center)[*`M-PRC-[S.I.]`*]
 
@@ -1535,7 +1541,7 @@ Le metriche seguono la struttura definita a #link(<metriche>, "questo paragrafo"
 #align($"TE" = frac(O#sub("orologio", size: 1em), O#sub("produttive", size: 1em))$, center)
 
 #pagebreak()
-= Metriche Di Qualità Del Prodotto
+= *Metriche Di Qualità Del Prodotto*
 
 Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche seguono la struttura definita al paragrafo #link(<metriche>, "'metriche'"). In questo capitolo, la prima parte della struttura sarà: #align(center)[*`M-PRD-[S.I.]`*]
 
@@ -1580,7 +1586,7 @@ Come al paragrafo #link(<qualità_del_processo>, "precedente"), le metriche segu
   - *IT*: Istruzioni Totali.
 
 #linebreak()
-- *M-PRD-FD* - Failure Density: numero di failure riscontrati durante i test. //da rivedere con il team
+- *M-PRD-FD* - Failure Density: numero di failure riscontrati durante i test.
   #align($"FD" = frac("F", "T")$, center)
   - *F*: Numero di Failure;
   - *T*: Numero di Test.
