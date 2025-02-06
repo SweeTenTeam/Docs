@@ -127,12 +127,12 @@ Tutti i membri del gruppo si impegnano a consultare regolarmente questo document
 
 == Scopo del progetto
 Il team #box(image(g.azzurro, width: 5em, height: auto)) utilizza quotidianamente diverse piattaforme per redigere documentazione e consultare informazioni essenziali per i progetti, questo può spesso comportare inefficienze.
-L'obiettivo del progetto Buddybot è lo sviluppo di una piccola piattaforma web con un’interfaccia #glossary("chat") per interagire con l’#glossary("IA") che funga da assistente virtuale.
+L'obiettivo del progetto Buddybot è lo sviluppo di una piccola piattaforma web con un'interfaccia #glossary("chat") per interagire con l'#glossary("IA") che funga da assistente virtuale.
 Questo deve essere in grado di ottenere in modo facile e veloce informazioni dalle fonti specificate e di fornirle in base alle domande poste tramite #glossary("chat") in linguaggio naturale. Tali informazioni devono essere aggregate e centralizzate da diverse fonti tra cui #glossary("GitHub"), #glossary("Confluence") e #glossary("Jira") permettendo un accesso facile
-e immediato con il fine di migliorare la produttività e dare supporto all’#glossary("OnBoarding").
+e immediato con il fine di migliorare la produttività e dare supporto all'#glossary("OnBoarding").
 
 == Glossario
-Per garantire chiarezza e coerenza nella terminologia utilizzata nei documenti, è stato deciso di creare un glossario contenente le definizioni dei termini. Questo strumento raccoglierà tutti i termini specifici del dominio d’uso, accompagnati dai rispettivi significati. L’inclusione di un termine nel glossario sarà segnalata attraverso #glossary("questo stile") dedicato.
+Per garantire chiarezza e coerenza nella terminologia utilizzata nei documenti, è stato deciso di creare un glossario contenente le definizioni dei termini. Questo strumento raccoglierà tutti i termini specifici del dominio d'uso, accompagnati dai rispettivi significati. L'inclusione di un termine nel glossario sarà segnalata attraverso #glossary("questo stile") dedicato.
 
 == Riferimenti
 === Riferimenti normativi
@@ -171,26 +171,26 @@ Queste sono le attività definite nel processo primario di #glossary("fornitura"
 - *Completamento e consegna*: una volta completato il progetto, viene consegnato al cliente il prodotto finale, secondo quanto stipulato nel contratto.
 
 === Aspettative
-Il gruppo SweeTen Team intende instaurare e mantenere uno stretto rapporto di collaborazione con l’azienda proponente #box(image(g.azzurro, width: 5em, height: auto)) e, in particolare, con le figure dei referenti: Giorgio Vallini, Martina Daniele, Mattia Gottardello e Nicola Boscaro.
+Il gruppo SweeTen Team intende instaurare e mantenere uno stretto rapporto di collaborazione con l'azienda proponente #box(image(g.azzurro, width: 5em, height: auto)) e, in particolare, con le figure dei referenti: Giorgio Vallini, Martina Daniele, Mattia Gottardello e Nicola Boscaro.
 
 Grazie ad un dialogo continuo, il gruppo intende:
 
 - Ricevere #glossary("feedback") sul lavoro svolto;
-- Verificare che i vincoli e i requisiti individuati corrispondano a quanto richiesto dal capitolato e dall’azienda proponente.
+- Verificare che i vincoli e i requisiti individuati corrispondano a quanto richiesto dal capitolato e dall'azienda proponente.
 
 
 === Rapporti con il proponente
-L’azienda #box(image(g.azzurro, width: 5em, height: auto)) ha messo a disposizione un canale di comunicazione costante e tempestivo per facilitare il dialogo con i responsabili del progetto assegnato al team. Questo canale, istituito sulla piattaforma #glossary("Discord"), consente di risolvere dubbi, ricevere consigli e gestire l’organizzazione del lavoro. Oltre a #glossary("Discord"), per delle richieste più formali è possibile contattare la Proponente anche tramite posta elettronica.
+L'azienda #box(image(g.azzurro, width: 5em, height: auto)) ha messo a disposizione un canale di comunicazione costante e tempestivo per facilitare il dialogo con i responsabili del progetto assegnato al team. Questo canale, istituito sulla piattaforma #glossary("Discord"), consente di risolvere dubbi, ricevere consigli e gestire l'organizzazione del lavoro. Oltre a #glossary("Discord"), per delle richieste più formali è possibile contattare la Proponente anche tramite posta elettronica.
 
-Inoltre, è stato concordato di organizzare regolarmente riunioni di Stato Avanzamento Lavori (#glossary("SAL")), che si tengono generalmente ogni due settimane, il martedì alle 17:00 (con eventuali modifiche di data o orario in caso di necessità). Queste riunioni coincidono con la conclusione dello Sprint corrente e l’inizio del successivo. Durante gli incontri, il team presenta il lavoro svolto nello #glossary("Sprint"), riceve feedback dall’azienda, discute eventuali problemi riscontrati e pianifica le attività per il prossimo #glossary("Sprint").
+Inoltre, è stato concordato di organizzare regolarmente riunioni di Stato Avanzamento Lavori (#glossary("SAL")), che si tengono generalmente ogni due settimane, il martedì alle 17:00 (con eventuali modifiche di data o orario in caso di necessità). Queste riunioni coincidono con la conclusione dello Sprint corrente e l'inizio del successivo. Durante gli incontri, il team presenta il lavoro svolto nello #glossary("Sprint"), riceve feedback dall'azienda, discute eventuali problemi riscontrati e pianifica le attività per il prossimo #glossary("Sprint").
 
-Per ogni colloquio con l’azienda proponente verrà redatto un resoconto sotto forma di Verbale Esterno, che riporterà nel nome e all’interno del documento la data del relativo incontro. I verbali redatti potranno essere consultati all’interno della relativa cartella presente sul #glossary("repository") #link("https://github.com/SweeTenTeam/Docs/tree/master/documents"), disponibile per ogni #glossary("baseline") del progetto.
+Per ogni colloquio con l'azienda proponente verrà redatto un resoconto sotto forma di Verbale Esterno, che riporterà nel nome e all'interno del documento la data del relativo incontro. I verbali redatti potranno essere consultati all'interno della relativa cartella presente sul #glossary("repository") #link("https://github.com/SweeTenTeam/Docs/tree/master/documents"), disponibile per ogni #glossary("baseline") del progetto.
 
 === Documentazione fornita
-In aggiunta alle attività volte alla realizzazione del progetto, vengono redatti e resi disponibili all’azienda #glossary("proponente") #box(image(g.azzurro, width: 5em, height: auto)) e ai Committenti Prof. Vardanega e Prof. Cardin i seguenti documenti:
+In aggiunta alle attività volte alla realizzazione del progetto, vengono redatti e resi disponibili all'azienda #glossary("proponente") #box(image(g.azzurro, width: 5em, height: auto)) e ai Committenti Prof. Vardanega e Prof. Cardin i seguenti documenti:
 
 ==== Valutazione dei Capitolati
-La Valutazione dei Capitolati è un documento che fornisce una panoramica dettagliata sui capitolati d’appalto presentati il 15 ottobre 2023. Per ogni progetto vengono analizzate le richieste del #glossary("proponente"), individuate le possibili soluzioni e identificate eventuali criticità.
+La Valutazione dei Capitolati è un documento che fornisce una panoramica dettagliata sui capitolati d'appalto presentati il 15 ottobre 2023. Per ogni progetto vengono analizzate le richieste del #glossary("proponente"), individuate le possibili soluzioni e identificate eventuali criticità.
 
 Ogni capitolato è stato suddiviso nelle seguenti sezioni:
 
@@ -202,9 +202,9 @@ Ogni capitolato è stato suddiviso nelle seguenti sezioni:
 - *Conclusioni*: motivazioni sulla scelta/non scelta del capitolato.
 
 ==== Dichiarazione degli Impegni
-Questo documento formalizza la volontà del gruppo di impegnarsi nella realizzazione del prodotto previsto da un capitolato specifico (nel nostro caso, #glossary("BuddyBot"), proposto dall’azienda #box(image(g.azzurro, width: 5em, height: auto))).
+Questo documento formalizza la volontà del gruppo di impegnarsi nella realizzazione del prodotto previsto da un capitolato specifico (nel nostro caso, #glossary("BuddyBot"), proposto dall'azienda #box(image(g.azzurro, width: 5em, height: auto))).
 
-Oltre a dichiarare l’impegno, il documento include:
+Oltre a dichiarare l'impegno, il documento include:
 
 - La suddivisione del monte ore complessivo e dei singoli ruoli tra i membri del gruppo;
 - La descrizione dettagliata dei ruoli e delle loro responsabilità, con riferimento alle specifiche del progetto;
@@ -212,18 +212,18 @@ Oltre a dichiarare l’impegno, il documento include:
 - La scadenza prefissata prevista per il completamento del progetto.
 
 ==== Glossario
-Il Glossario è un documento di supporto pensato per i membri del team, i committenti e l’azienda #glossary("proponente"). La sua creazione ha l’obiettivo di eliminare ambiguità o incomprensioni legate alla terminologia utilizzata nella documentazione del progetto, garantendo chiarezza e coerenza nella comunicazione.
+Il Glossario è un documento di supporto pensato per i membri del team, i committenti e l'azienda #glossary("proponente"). La sua creazione ha l'obiettivo di eliminare ambiguità o incomprensioni legate alla terminologia utilizzata nella documentazione del progetto, garantendo chiarezza e coerenza nella comunicazione.
 
 ==== Lettera di presentazione
-La Lettera di Presentazione è un documento che accompagna la documentazione e il prodotto forniti all’azienda #glossary("proponente") durante le fasi di revisione del progetto. Il suo scopo è fornire un rapido contesto sullo stato di avanzamento dei lavori (o sul loro avvio, nel caso della lettera relativa ai capitolati) e offrire una breve panoramica della documentazione prodotta fino a quel momento.
+La Lettera di Presentazione è un documento che accompagna la documentazione e il prodotto forniti all'azienda #glossary("proponente") durante le fasi di revisione del progetto. Il suo scopo è fornire un rapido contesto sullo stato di avanzamento dei lavori (o sul loro avvio, nel caso della lettera relativa ai capitolati) e offrire una breve panoramica della documentazione prodotta fino a quel momento.
 
 ==== Analisi dei Requisiti
-L’Analisi dei Requisiti è un documento che definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del proponente. Descrive in dettaglio i casi d’uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del software.
+L'Analisi dei Requisiti è un documento che definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del proponente. Descrive in dettaglio i casi d'uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del software.
 
 Contiene le seguenti informazioni:
 
 - *Descrizione del prodotto*: obiettivo finale del prodotto e le sue funzionalità principali;
-- *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati:
+- *Lista dei casi d'uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d'uso sono analizzati:
   - Scenario;
   - Attori coinvolti;
   - Azioni eseguibili.
@@ -231,7 +231,7 @@ Contiene le seguenti informazioni:
 - *Lista dei requisiti*: tutte le richieste o vincoli definiti dal proponente o dedotti dal team per la realizzazione del prodotto finale. I requisiti possono essere obbligatori, desiderabili e opzionali e verranno classificati dal gruppo a seconda della loro importanza.
 
 ==== Piano di Progetto
-Il Piano di Progetto è un documento versionato e soggetto ad approvazione, redatto e aggiornato dal Responsabile del progetto con il supporto degli Amministratori durante l’intera durata del lavoro. Il suo scopo è delineare la pianificazione e la gestione delle attività necessarie per la realizzazione del progetto.
+Il Piano di Progetto è un documento versionato e soggetto ad approvazione, redatto e aggiornato dal Responsabile del progetto con il supporto degli Amministratori durante l'intera durata del lavoro. Il suo scopo è delineare la pianificazione e la gestione delle attività necessarie per la realizzazione del progetto.
 
 Il documento include le seguenti sezioni:
 
@@ -239,8 +239,8 @@ Il documento include le seguenti sezioni:
   - *#glossary("Rischi organizzativi")*;
   - *#glossary("Rischi tecnologici")*.
 
-- *Modello di sviluppo*: descrive l’approccio metodologico e strutturato adottato dal team per sviluppare il prodotto.
-- *Pianificazione*: suddivide il progetto in periodi definiti, ciascuno corredato da eventi e attività specifiche. Per ogni periodo, il documento mostra una stima dell’impegno richiesto a ciascun membro del gruppo.
+- *Modello di sviluppo*: descrive l'approccio metodologico e strutturato adottato dal team per sviluppare il prodotto.
+- *Pianificazione*: suddivide il progetto in periodi definiti, ciascuno corredato da eventi e attività specifiche. Per ogni periodo, il documento mostra una stima dell'impegno richiesto a ciascun membro del gruppo.
 - *Preventivo*: fornisce una stima della durata di ogni periodo e il tempo necessario per completare tutte le attività previste.
 - *Consuntivo*: analizza il lavoro effettivamente svolto rispetto al preventivo, valutando lo stato di avanzamento del progetto al termine di ciascun periodo.
 
@@ -267,7 +267,7 @@ Il documento è suddiviso nelle seguenti sezioni:
 - Metriche di qualitá del prodotto.
 
 ==== Manuale Utente
-Il documento Manuale Utente serve a descrivere i requisiti minimi e le istruzioni utili all’installazione/utilizzo del prodotto finale. Descrive inoltre le funzionalità del prodotto e di come l’utente può usufruirne.
+Il documento Manuale Utente serve a descrivere i requisiti minimi e le istruzioni utili all'installazione/utilizzo del prodotto finale. Descrive inoltre le funzionalità del prodotto e di come l'utente può usufruirne.
 
 ==== Specifica Tecnica
 Il documento Specifica Tecnica ha lo scopo di descrivere e chiarire gli aspetti tecnici chiave del progetto, oltre a servire come guida per la codifica e la manutenzione del sistema. La sua finalità principale è fornire una descrizione dettagliata e approfondita dell'architettura implementativa del sistema, analizzando anche il codice e i design pattern utilizzati. Inoltre, il documento ha il compito di monitorare la copertura dei requisiti definiti nell'Analisi dei Requisiti.
@@ -278,7 +278,7 @@ La documentazione relativa alle riunioni interne avvenute tramite la piattaforma
 Lo scopo dei verbali interni è quello di fissare per iscritto:
 
 - Discussioni, proposte, dubbi ed eventuali problemi riscontrati;
-- Riassunto dell’andamento dell’ultimo periodo;
+- Riassunto dell'andamento dell'ultimo periodo;
 - Organizzazione per il prossimo periodo.
 
 ==== Verbali esterni
@@ -287,7 +287,7 @@ La documentazione relativa alle riunioni esterne avvenute tramite la piattaforma
 Lo scopo dei verbali esterni è quello di fissare per iscritto:
 
 - Discussioni, proposte, dubbi ed eventuali problemi riscontrati;
-- Resoconto del lavoro svolto durante l’ultimo Sprint con #glossary("feedback") della Proponente;
+- Resoconto del lavoro svolto durante l'ultimo Sprint con #glossary("feedback") della Proponente;
 - Organizzazione e obiettivi per il prossimo #glossary("Sprint").
 
 I verbali esterni, al contrario dei verbali interni, una volta redatti, verranno inviati telematicamente alla Proponente per una essere verificati e convalidati.
@@ -305,7 +305,7 @@ Servizio di posta elettronica utilizzato come metodo di comunicunicazione formal
 Piattaforma utilizzata dal team per effettuare videochiamate e scambiare informazioni, file, dati utili, link e appunti. #glossary("Discord"), attraverso un apposito canale, viene utilizzato anche per avere un riscontro immediato con il team di #box(image(g.azzurro, width: 5em, height: auto)).
 
 ==== #glossary("Google Meet")
-Piattaforma dove vengono svolti incontri, ogni due settimane, con l’azienda e i responsabili del progetto.
+Piattaforma dove vengono svolti incontri, ogni due settimane, con l'azienda e i responsabili del progetto.
 
 ==== #glossary("Google Calendar")
 Servizio che offre la possibilità di visualizzare le riunioni esterne e fissate dalla Proponente.
@@ -331,12 +331,12 @@ Le fasi che compongono lo sviluppo sono:
 
 === Analisi dei requisiti
 ==== Descrizione
-L’Analisi dei Requisiti definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del #glossary("proponente"). Descrive in dettaglio i casi d’uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del #glossary("software").
+L'Analisi dei Requisiti definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del #glossary("proponente"). Descrive in dettaglio i casi d'uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del #glossary("software").
 
 Contiene le seguenti informazioni:
 
 - *Descrizione del prodotto*: obiettivo finale del prodotto e le sue funzionalità principali;
-- *Lista dei casi d’uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d’uso sono analizzati:
+- *Lista dei casi d'uso*: identificazione di tutti gli scenari di utilizzo del sistema da parte degli utenti. Per ogni caso d'uso sono analizzati:
   - Scenario;
   - Attori coinvolti;
   - Azioni eseguibili.
@@ -348,44 +348,44 @@ L'analisi mira a ottenere una comprensione dettagliata delle necessità degli ut
 
 Questa fase include tre aspetti principali:
 
-- *Identificazione degli obiettivi e delle finalità del prodotto*: Definizione chiara e condivisa degli scopi e dei risultati attesi, tenendo conto delle esigenze degli utenti e delle proposte dell’azienda.
-- *Supporto alla progettazione*: Fornitura di una base chiara e strutturata che consenta ai progettisti di definire in modo efficace l’architettura e il design del sistema, facilitando il lavoro successivo.
+- *Identificazione degli obiettivi e delle finalità del prodotto*: Definizione chiara e condivisa degli scopi e dei risultati attesi, tenendo conto delle esigenze degli utenti e delle proposte dell'azienda.
+- *Supporto alla progettazione*: Fornitura di una base chiara e strutturata che consenta ai progettisti di definire in modo efficace l'architettura e il design del sistema, facilitando il lavoro successivo.
 - *Miglioramento della comunicazione*: Creazione di un linguaggio comune che agevoli il dialogo tra i fornitori e gli #glossary("stakeholders"), assicurando un allineamento completo sulle aspettative e sugli obiettivi.
 
-==== Diagrammi #glossary("UML") dei casi d’uso
-Un diagramma di caso d’uso è uno strumento grafico e intuitivo utilizzato per rappresentare in modo sintetico e comprensibile le funzionalità di un sistema e le interazioni tra gli attori e il sistema stesso. Fornisce una visione d’insieme degli scenari d’uso, descrivendo le azioni necessarie per consentire agli utenti di completare specifiche attività. Questo tipo di diagramma è particolarmente utile durante la fase di analisi e progettazione, in quanto evidenzia chiaramente i requisiti funzionali del sistema senza entrare nei dettagli implementativi.
+==== Diagrammi #glossary("UML") dei casi d'uso
+Un diagramma di caso d'uso è uno strumento grafico e intuitivo utilizzato per rappresentare in modo sintetico e comprensibile le funzionalità di un sistema e le interazioni tra gli attori e il sistema stesso. Fornisce una visione d'insieme degli scenari d'uso, descrivendo le azioni necessarie per consentire agli utenti di completare specifiche attività. Questo tipo di diagramma è particolarmente utile durante la fase di analisi e progettazione, in quanto evidenzia chiaramente i requisiti funzionali del sistema senza entrare nei dettagli implementativi.
 
 *Componenti principali*:
 
-- *Attore*: un’entità esterna (persona, organizzazione o sistema) che interagisce con il sistema per soddisfare un’esigenza.
+- *Attore*: un'entità esterna (persona, organizzazione o sistema) che interagisce con il sistema per soddisfare un'esigenza.
 
 #figure(
   image(gn.attore, height: 6em),
   caption: [Rappresentazione di un attore nel diagramma #glossary("UML").],
 )
 
-- *Caso d’uso*: una funzionalità offerta dal sistema con cui l’attore può interagire.
+- *Caso d'uso*: una funzionalità offerta dal sistema con cui l'attore può interagire.
 
 #figure(
   image(gn.caso_uso, height: 5em),
   caption: [Rappresentazione di un caso d'uso nel diagramma #glossary("UML").],
 )
 
-- *Sottocasi*: descrivono in modo più dettagliato aspetti specifici di casi d’uso generali.
+- *Sottocasi*: descrivono in modo più dettagliato aspetti specifici di casi d'uso generali.
 
 #figure(
   image(gn.sottocasi, height: 12em),
   caption: [Rappresentazione di sottocasi d'uso nel diagramma #glossary("UML").],
 )
 
-- *Sistema*: rappresenta il software o prodotto in esame. I casi d’uso sono contenuti all’interno del sistema, mentre gli attori sono posizionati all’esterno.
+- *Sistema*: rappresenta il software o prodotto in esame. I casi d'uso sono contenuti all'interno del sistema, mentre gli attori sono posizionati all'esterno.
 
 #figure(
   image(gn.sistema, height: 8em),
   caption: [Rappresentazione di un sistema nel diagramma #glossary("UML").],
 )
 
-- *Relazione attore-caso d’uso*: indica come un attore utilizza una particolare funzionalità del sistema.
+- *Relazione attore-caso d'uso*: indica come un attore utilizza una particolare funzionalità del sistema.
 
 #figure(
   image(gn.attore_caso, height: 6em),
@@ -399,30 +399,30 @@ Un diagramma di caso d’uso è uno strumento grafico e intuitivo utilizzato per
   caption: [Rappresentazione di una generalizzazione tra attori nel diagramma #glossary("UML").],
 )
 
-*Tipologie di relazioni tra casi d’uso*:
+*Tipologie di relazioni tra casi d'uso*:
 
-- *Inclusione*: un caso d’uso (includente) integra un altro caso d’uso (incluso) come parte del suo processo, evitando ridondanze.
+- *Inclusione*: un caso d'uso (includente) integra un altro caso d'uso (incluso) come parte del suo processo, evitando ridondanze.
 
 #figure(
   image(gn.inclusione, height: 12em),
   caption: [Rappresentazione di una relazione di inclusione nel diagramma #glossary("UML").],
 )
 
-- *Estensione*: un caso d’uso (estendibile) include opzionalmente un altro caso d’uso (esteso) al verificarsi di condizioni specifiche, gestendo scenari particolari senza complicare il caso principale.
+- *Estensione*: un caso d'uso (estendibile) include opzionalmente un altro caso d'uso (esteso) al verificarsi di condizioni specifiche, gestendo scenari particolari senza complicare il caso principale.
 
 #figure(
   image(gn.estensione, height: 12em),
   caption: [Rappresentazione di una relazione di estensione nel diagramma #glossary("UML").],
 )
 
-- *Generalizzazione*: un caso d’uso più specifico eredita comportamenti e proprietà da un caso d’uso più generale.
+- *Generalizzazione*: un caso d'uso più specifico eredita comportamenti e proprietà da un caso d'uso più generale.
 
 #figure(
   image(gn.generalizzazione_caso_uso, height: 12em),
   caption: [Rappresentazione di una relazione di generalizzazione nel diagramma #glossary("UML").],
 )
 
-==== Codice dei casi d’uso
+==== Codice dei casi d'uso
 A ogni caso d'uso è associato un codice univoco, strutturato nel seguente formato:
 
 #align(center)[*`UC-[X].[Y]`*]
@@ -448,9 +448,9 @@ Dove *`X`* rappresenta la tipologia di requisito e *`Y`* è un identificativo pr
 
 === Progettazione
 ==== Descrizione
-L’obiettivo della progettazione è individuare una soluzione adeguata ai requisiti definiti nell’Analisi dei Requisiti. La progettazione del prodotto, a cura dei progettisti, si articola in due fasi principali:
+L'obiettivo della progettazione è individuare una soluzione adeguata ai requisiti definiti nell'Analisi dei Requisiti. La progettazione del prodotto, a cura dei progettisti, si articola in due fasi principali:
 
-*Progettazione logica*: Questa fase riguarda la selezione delle tecnologie, dei #glossary("framework") e delle librerie da utilizzare per la realizzazione del prodotto, con l’obiettivo di garantirne l’adeguatezza attraverso il #glossary("Proof of Concept") (PoC).
+*Progettazione logica*: Questa fase riguarda la selezione delle tecnologie, dei #glossary("framework") e delle librerie da utilizzare per la realizzazione del prodotto, con l'obiettivo di garantirne l'adeguatezza attraverso il #glossary("Proof of Concept") (PoC).
 
 I principali aspetti di questa fase sono:
 
@@ -543,14 +543,14 @@ Ecco le principali:
   caption: [Rappresentazione di una dipendenza.],
 )
 
-- *Associazione*: Quando una classe contiene un riferimento ad un’altra, indicata con una linea continua. La molteplicità (quanti oggetti di una classe sono associati a un'altra) può essere espressa vicino alla freccia, e se è 1, può essere omessa.
+- *Associazione*: Quando una classe contiene un riferimento ad un'altra, indicata con una linea continua. La molteplicità (quanti oggetti di una classe sono associati a un'altra) può essere espressa vicino alla freccia, e se è 1, può essere omessa.
 
 #figure(
   image(gn.associazione, height: 6em),
   caption: [Rappresentazione di una associazione.],
 )
 
-- *Aggregazione*: Una classe è composta da un’altra, ma le classi componenti possono esistere indipendentemente. È rappresentata con una freccia con un diamante vuoto.
+- *Aggregazione*: Una classe è composta da un'altra, ma le classi componenti possono esistere indipendentemente. È rappresentata con una freccia con un diamante vuoto.
 
 #figure(
   image(gn.aggregazione, height: 6em),
@@ -571,7 +571,7 @@ Ecco le principali:
   caption: [Rappresentazione di una generalizzazione.],
 )
 
-- *Interface Realization*: Una classe concreta implementa i metodi definiti in un’interfaccia. È collegata all’interfaccia tramite una linea semplice, con l'interfaccia rappresentata da un cerchio.
+- *Interface Realization*: Una classe concreta implementa i metodi definiti in un'interfaccia. È collegata all'interfaccia tramite una linea semplice, con l'interfaccia rappresentata da un cerchio.
 
 #figure(
   image(gn.interfaccia, height: 6em),
@@ -579,13 +579,13 @@ Ecco le principali:
 )
 
 ==== Design Pattern
-Un #glossary("design pattern") è una soluzione consolidata, ampiamente riconosciuta per risolvere problemi che tendono a ripresentarsi frequentemente durante il processo di sviluppo #glossary("software"). Si tratta di un approccio testato che offre un metodo chiaro e strutturato per affrontare situazioni ricorrenti, facilmente riutilizzabile in diverse circostanze. Questi pattern derivano dall’esperienza pratica e sono progettati per aumentare l’efficienza, migliorare la qualità e favorire una maggiore manutenibilità del #glossary("software"). Ogni pattern include una descrizione approfondita del suo scopo nell’architettura, contribuendo così a comprendere il suo valore e il modo migliore per applicarlo.
+Un #glossary("design pattern") è una soluzione consolidata, ampiamente riconosciuta per risolvere problemi che tendono a ripresentarsi frequentemente durante il processo di sviluppo #glossary("software"). Si tratta di un approccio testato che offre un metodo chiaro e strutturato per affrontare situazioni ricorrenti, facilmente riutilizzabile in diverse circostanze. Questi pattern derivano dall'esperienza pratica e sono progettati per aumentare l'efficienza, migliorare la qualità e favorire una maggiore manutenibilità del #glossary("software"). Ogni pattern include una descrizione approfondita del suo scopo nell'architettura, contribuendo così a comprendere il suo valore e il modo migliore per applicarlo.
 
 ==== Test
-Il processo di test ha come scopo quello di garantire la qualità del prodotto in tutte le sue fasi, dalla progettazione e sviluppo fino alla fase finale. Durante la definizione dei test, vengono stabiliti i requisiti necessari, i casi da testare e i criteri di accettazione per convalidare il #glossary("software"). L’obiettivo primario è quello di scoprire e risolvere errori, #glossary("bug") e difetti nel #glossary("software") prima della sua distribuzione. Inoltre, il testing è essenziale per garantire che il prodotto rispetti appieno le specifiche e i requisiti definiti con il cliente.
+Il processo di test ha come scopo quello di garantire la qualità del prodotto in tutte le sue fasi, dalla progettazione e sviluppo fino alla fase finale. Durante la definizione dei test, vengono stabiliti i requisiti necessari, i casi da testare e i criteri di accettazione per convalidare il #glossary("software"). L'obiettivo primario è quello di scoprire e risolvere errori, #glossary("bug") e difetti nel #glossary("software") prima della sua distribuzione. Inoltre, il testing è essenziale per garantire che il prodotto rispetti appieno le specifiche e i requisiti definiti con il cliente.
 
 === Codifica
-L’obiettivo della codifica, che spetta ai programmatori, è tradurre le specifiche in un prodotto funzionante e utilizzabile.
+L'obiettivo della codifica, che spetta ai programmatori, è tradurre le specifiche in un prodotto funzionante e utilizzabile.
 
 Questo prodotto deve poi rispondere a vari requisiti, tra cui:
 
@@ -649,16 +649,16 @@ La documentazione è importante nello sviluppo del #glossary("software") perché
 === Ciclo di vita
 Le sette fasi principali che compongono il ciclo di vita di un documento sono:
 
-1. *Creazione o adattamento del template*: la prima fase prevede la creazione o l’adattamento di un modello per il documento corrente. Questo modello definisce struttura, formattazione e informazioni base, come titolo, autore e data.
+1. *Creazione o adattamento del template*: la prima fase prevede la creazione o l'adattamento di un modello per il documento corrente. Questo modello definisce struttura, formattazione e informazioni base, come titolo, autore e data.
 2. *Pianificazione e assegnazione delle sezioni*: in questa fase le sezioni del documento vengono pianificate e assegnate ai redattori incaricati. I redattori sono responsabili della stesura delle proprie sezioni in conformità con le norme di progetto.
 3. *Raccolta dei contenuti e preparazione della prima bozza*: i redattori raccolgono i materiali necessari e preparano una bozza iniziale del documento, che sarà la base per successive discussioni e revisioni.
 4. *Stesura delle sezioni*: i redattori completano le sezioni assegnate, rispettando il modello e le linee guida del progetto.
 5. *Verifica dei contenuti*: i redattori controllano che i contenuti delle sezioni siano coerenti con le norme di progetto e privi di errori.
-6. *Revisione*: un verificatore revisiona l’intero documento per accertarsi che non ci siano errori o mancanze.
+6. *Revisione*: un verificatore revisiona l'intero documento per accertarsi che non ci siano errori o mancanze.
 7. *Approvazione e pubblicazione*: il documento viene approvato da un responsabile e pubblicato nella sua versione definitiva.
 
 === Documentation as Code
-Per la documentazione viene adottato l’approccio #glossary("Documentation as Code"), che si basa sull’utilizzo di pratiche e strumenti tipici dello sviluppo #glossary("software") per la creazione, gestione e distribuzione dei documenti. Questo metodo offre un modello organizzato e flessibile, con i seguenti punti chiave:
+Per la documentazione viene adottato l'approccio #glossary("Documentation as Code"), che si basa sull'utilizzo di pratiche e strumenti tipici dello sviluppo #glossary("software") per la creazione, gestione e distribuzione dei documenti. Questo metodo offre un modello organizzato e flessibile, con i seguenti punti chiave:
 
 - *Automazione*: sfruttare strumenti automatizzati per generare e aggiornare i documenti.
 - *Collaborazione*: promuovere il lavoro di squadra attraverso piattaforme e strumenti condivisi.
@@ -685,7 +685,7 @@ La prima pagina funge da intestazione del documento e presenta gli elementi elen
 
 - *Logo del gruppo*: presente nel percorso `images/logos/sweetenteam.png`;
 - *Nome del documento*;
-- *Data*: la data in cui è stata approvata l’ultima versione del documento;
+- *Data*: la data in cui è stata approvata l'ultima versione del documento;
 - *Versione*: la versione corrente del documento;
 - *Email*: `sweetenteam@gmail.com`;
 - *Link al sito vetrina*: #link("https://sweetenteam.github.io");
@@ -706,7 +706,7 @@ La tabella include i seguenti campi:
 - *Dettaglio*: una breve descrizione delle modifiche effettuate.
 
 ==== Indice
-Nella pagina che segue il registro delle modifiche è presente l’*_indice_* dove vengono elencate le sezioni contenute nel documento.
+Nella pagina che segue il registro delle modifiche è presente l'*_indice_* dove vengono elencate le sezioni contenute nel documento.
 
 ==== Lista delle immagini e delle tabelle
 Nella pagina che segue l'indice, qualora nel documento siano presenti delle immagini o delle tabelle, sono presenti la *_lista delle immagini_* e la *_lista delle tabelle_* che descrivono il contenuto e la posizione nel documento di questi elementi.
@@ -726,11 +726,11 @@ Il contenuto del verbale interni è suddiviso nelle seguenti sezioni:
     
   - *Ordine del giorno*: un elenco di ciò che verrà discusso durante la riunione;
   
-- *Decisioni prese*: sezione che elenca in forma testuale le decisioni prese durante l’incontro. Alcune di queste potrebbero risultare in “attività individuate”.
-- *Prossime attività*: illustrazione dettagliata delle attività assegnate ai diversi membri del gruppo a conclusione dell’incontro. Queste informazioni, inserite in un’apposita tabella, riportano:
+- *Decisioni prese*: sezione che elenca in forma testuale le decisioni prese durante l'incontro. Alcune di queste potrebbero risultare in “attività individuate”.
+- *Prossime attività*: illustrazione dettagliata delle attività assegnate ai diversi membri del gruppo a conclusione dell'incontro. Queste informazioni, inserite in un'apposita tabella, riportano:
   - *ID*: collegamento alla relativa issue su GitHub
-  - *Descrizione*: breve spiegazione dell’attività;
-  - *Assegnatari*: i nomi degli incaricati a svolgere l’attività.
+  - *Descrizione*: breve spiegazione dell'attività;
+  - *Assegnatari*: i nomi degli incaricati a svolgere l'attività.
 
 ==== Corpo dei verbali esterni
 Il contenuto del verbale esterni è suddiviso nelle seguenti sezioni:
@@ -748,7 +748,7 @@ Il contenuto del verbale esterni è suddiviso nelle seguenti sezioni:
 - *Sintesi dell'incontro*: un elenco di ciò che verrà discusso durante la riunione;
 - *Domande effettuate e relative risposte*;
 - *Prossimi step*: prossimi incontri e attività generali su cui riflettere e organizzarsi;
-- *Decisioni prese*: sezione che elenca in forma testuale le decisioni prese durante l’incontro. Alcune di queste potrebbero risultare in “attività individuate”.
+- *Decisioni prese*: sezione che elenca in forma testuale le decisioni prese durante l'incontro. Alcune di queste potrebbero risultare in “attività individuate”.
 
 ==== Documenti del progetto
 Verranno redatti i seguenti documenti:
@@ -773,7 +773,7 @@ I documenti PDF presenti nella #link("https://github.com/SweeTenTeam/Docs","repo
 - *Verbali*: per i verbali viene utilizzata una nomenclatura del tipo: #align(center)[*`[Verbale_Interno]/[Verbale_Esterno] + _ + [Data] + _ + [Versione]`*]
 
   - *Spaziatura*: fra le parole la spaziatura verrà sostituita da un underscore, ("*`_`*");
-  - *Data*: scritta nel formato *`YYYY-MM-DD`*, dove `YYYY` indica l’anno, `MM` il mese e `DD` il giorno
+  - *Data*: scritta nel formato *`YYYY-MM-DD`*, dove `YYYY` indica l'anno, `MM` il mese e `DD` il giorno
   - *Versione*: scritta nel formato: *`v.X.Y.Z`*.
 
 - *Altri documenti*: i nomi di tutti gli altri documenti presenti nel progetto invece saranno del tipo: #align(center)[*`[Nome_del_File] + _ + [Versione]`*]
@@ -794,7 +794,7 @@ Ogni elemento dell'elenco inizia con la lettera maiuscola e termina con un punto
 ==== Formato delle date
 Per le date è stato deciso di adottare lo standard internazionale `ISO 8601`, nella forma *`YYYY-MM-DD`*, dove:
 
-- *`YYYY`*: l’anno con 4 cifre;
+- *`YYYY`*: l'anno con 4 cifre;
 - *`MM`*: il mese con 2 cifre;
 - *`DD`*: il giorno con 2 cifre.
 
@@ -809,7 +809,7 @@ Per la realizzazione della documentazione sono stati scelti dal team i seguenti 
 
 == *Gestione della configurazione*
 === Descrizione e Scopo
-Il processo di gestione della configurazione si applica durante l’intero ciclo di vita di un progetto #glossary("software") e definisce regole per assicurare il monitoraggio delle modifiche apportate a documentazione e codice. Questo processo permette di accedere in qualsiasi momento allo storico delle modifiche, offrendo una visione chiara delle motivazioni alla base di ogni cambiamento e dei relativi autori, migliorando così la tracciabilità e la responsabilità all’interno del team.
+Il processo di gestione della configurazione si applica durante l'intero ciclo di vita di un progetto #glossary("software") e definisce regole per assicurare il monitoraggio delle modifiche apportate a documentazione e codice. Questo processo permette di accedere in qualsiasi momento allo storico delle modifiche, offrendo una visione chiara delle motivazioni alla base di ogni cambiamento e dei relativi autori, migliorando così la tracciabilità e la responsabilità all'interno del team.
 
 === Versionamento
 Il versionamento consente di monitorare e documentare le modifiche apportate a un file nel tempo, permettendo di visualizzare l'evoluzione del contenuto e, se necessario, ripristinare una versione precedente.
@@ -818,9 +818,9 @@ Il team ha adottato un formato specifico per il versionamento dei documenti: *`X
 
 - *`X`*: identifica il completamento di una fase significativa del progetto. Questa versione viene definita dal responsabile durante la validazione.
 - *`Y`*: indica una versione intermedia che integra più modifiche incrementali (*`Z`*) in modo coerente. Le versioni con il formato *`X.Y.0`* sono considerate stabili, anche se non completamente definitive.
-- *`Z`*: corrisponde a modifiche incrementali minori, come l’aggiunta o l’aggiornamento di una sezione.
+- *`Z`*: corrisponde a modifiche incrementali minori, come l'aggiunta o l'aggiornamento di una sezione.
 
-Ogni modifica approvata comporta un incremento di versione, il cui impatto dipende dall’entità della modifica stessa. Inoltre, un aggiornamento di una cifra comporta l’azzeramento delle cifre a destra di essa. Per i verbali e il glossario, viene utilizzato un formato ridotto a due cifre, poiché, per i primi, il testo è generalmente breve e rapido da redigere, per il glossario, le modifiche devono sempre portare a una versione stabile.
+Ogni modifica approvata comporta un incremento di versione, il cui impatto dipende dall'entità della modifica stessa. Inoltre, un aggiornamento di una cifra comporta l'azzeramento delle cifre a destra di essa. Per i verbali e il glossario, viene utilizzato un formato ridotto a due cifre, poiché, per i primi, il testo è generalmente breve e rapido da redigere, per il glossario, le modifiche devono sempre portare a una versione stabile.
 
 === Tecnologie utilizzate
 - *Git*: strumento per il controllo di versione, utilizzato per tracciare le modifiche a documenti e codice sorgente.
@@ -828,7 +828,7 @@ Ogni modifica approvata comporta un incremento di versione, il cui impatto dipen
 
 === Repository
 ==== Lista repository
-Il team all’interno della propria #glossary("GitHub Organization") utilizza 3 repository:
+Il team all'interno della propria #glossary("GitHub Organization") utilizza 3 repository:
 
 - *`Docs`*: repository destinata alla gestione della documentazione del progetto;
 - *`BuddyBot`*: repository dedicata allo sviluppo e all'implementazione del software;
@@ -840,11 +840,11 @@ Il contenuto della repository è organizzato in due #glossary("branch") distinti
 - *`master`*: contiene i file PDF compilati.
 - *`develop`*: ospita i sorgenti #glossary("Typst"). Ogni volta che un file viene aggiunto o modificato in questo #glossary("branch"), il sistema avvia automaticamente la compilazione e carica il risultato nel branch `master`, rendendo i documenti compilati accessibili a tutti.
 
-Per entrambi i #glossary("branch"), è stata adottata una struttura chiara che separa i documenti dai file di supporto, come `LICENSE`, `README`, _actions_, _template_ e _images_. Infatti la documentazione è raccolta all’interno della cartella *`documents`*, che include i materiali relativi alle varie fasi del progetto: 
+Per entrambi i #glossary("branch"), è stata adottata una struttura chiara che separa i documenti dai file di supporto, come `LICENSE`, `README`, _actions_, _template_ e _images_. Infatti la documentazione è raccolta all'interno della cartella *`documents`*, che include i materiali relativi alle varie fasi del progetto: 
 
 - *`1-Candidatura`*: documenti relativi alla gara per l'aggiudicazione dell'appalto dei capitolati.
-- *`2-RTB`*: _Requirements and Technology Baseline_, definisce i requisiti da soddisfare in collaborazione con il proponente e giustifica la scelta di tecnologie, framework e librerie, dimostrandone l’adeguatezza e la compatibilità. Questa cartella contiene tutti i documenti relativi alla prima revisione di avanzamento (*`RTB`*).
-- *`3-PB`*: _Product Baseline_, valuta la maturità della baseline architetturale del software e la sua implementazione, con l’obiettivo di raggiungere l’*#glossary("MVP")* (Minimum Viable Product). Questa cartella contiene tutti i documenti relativi alla seconda e ultima revisione di avanzamento (*`PB`*).
+- *`2-RTB`*: _Requirements and Technology Baseline_, definisce i requisiti da soddisfare in collaborazione con il proponente e giustifica la scelta di tecnologie, framework e librerie, dimostrandone l'adeguatezza e la compatibilità. Questa cartella contiene tutti i documenti relativi alla prima revisione di avanzamento (*`RTB`*).
+- *`3-PB`*: _Product Baseline_, valuta la maturità della baseline architetturale del software e la sua implementazione, con l'obiettivo di raggiungere l'*#glossary("MVP")* (Minimum Viable Product). Questa cartella contiene tutti i documenti relativi alla seconda e ultima revisione di avanzamento (*`PB`*).
 
 Queste cartelle sono organizzate nel modo seguente, (i termini in *`grassetto`* indicano il nome di una directory):
 
@@ -910,13 +910,13 @@ Il `Piano di Qualifica` rappresenta lo strumento centrale della verifica. Esso s
 La documentazione prodotta durante la verifica non è un semplice obbligo formale, ma uno strumento chiave per assicurare trasparenza, tracciabilità e ripetibilità. Nei punti seguenti verranno illustrate le attività da considerare per rendere la verifica più efficace.
 
 === Analisi statica
-L'analisi statica è una metodologia di verifica che non richiede l'esecuzione del prodotto, ma si basa su una revisione approfondita del codice e della documentazione. Il suo scopo principale è garantire il rispetto dei requisiti, individuare eventuali errori e confermare che siano presenti tutte le caratteristiche richieste. Le due metodologie principali per condurre l’analisi statica, sono: l’#glossary("inspection") e il #glossary("walkthrough").
+L'analisi statica è una metodologia di verifica che non richiede l'esecuzione del prodotto, ma si basa su una revisione approfondita del codice e della documentazione. Il suo scopo principale è garantire il rispetto dei requisiti, individuare eventuali errori e confermare che siano presenti tutte le caratteristiche richieste. Le due metodologie principali per condurre l'analisi statica, sono: l'#glossary("inspection") e il #glossary("walkthrough").
 
 ==== Inspection
 Questa metodologia adotta un approccio strutturato per individuare potenziali difetti nel prodotto e nella documentazione. I difetti vengono inizialmente definiti e organizzati in specifiche liste di controllo, che vengono successivamente utilizzate in modo sistematico per valutare codice e documenti.
 
 ==== Walkthrough
-A differenza del metodo #glossary("inspection"), il #glossary("walkthrough") privilegia una verifica più collaborativa tra l’autore e il verificatore, ponendo maggiore enfasi su un confronto approfondito. Questo metodo non si limita a individuare problemi specifici, ma mira a garantire una correttezza complessiva, adattandosi meglio al contesto del documento o del codice analizzato. Sebbene richieda un impiego maggiore di risorse, il #glossary("walkthrough") offre un livello più elevato di accuratezza. Per questo progetto, il team ha deciso di adottare questo approccio per la revisione della documentazione. Tale scelta nasce dall'esigenza di gestire un insieme di dati variegato e complesso, dove il metodo inspection potrebbe risultare troppo rigido per garantire una valutazione completa e adeguata.
+A differenza del metodo #glossary("inspection"), il #glossary("walkthrough") privilegia una verifica più collaborativa tra l'autore e il verificatore, ponendo maggiore enfasi su un confronto approfondito. Questo metodo non si limita a individuare problemi specifici, ma mira a garantire una correttezza complessiva, adattandosi meglio al contesto del documento o del codice analizzato. Sebbene richieda un impiego maggiore di risorse, il #glossary("walkthrough") offre un livello più elevato di accuratezza. Per questo progetto, il team ha deciso di adottare questo approccio per la revisione della documentazione. Tale scelta nasce dall'esigenza di gestire un insieme di dati variegato e complesso, dove il metodo inspection potrebbe risultare troppo rigido per garantire una valutazione completa e adeguata.
 
 === Analisi dinamica
 L'analisi dinamica si focalizza sul monitoraggio del comportamento del codice durante la sua esecuzione, per individuare eventuali errori. Questo tipo di metodologia è specifica per ogni progetto, poiché le attività di verifica, tra cui i test, sono determinati dal contenuto del codice e dai requisiti specifici. I test eseguiti in questa fase permettono una valutazione oggettiva del codice e delle sue funzionalità, poiché, essendo ripetibili, forniscono gli stessi risultati ogni volta, senza influenze da fattori esterni. La progettazione e l'esecuzione dei test si basano sui principi del #glossary("Modello a V").
@@ -935,7 +935,7 @@ I #glossary("Test di integrazione") vengono definiti durante la fase di progetta
 Esistono due principali approcci per condurre i #glossary("Test di integrazione"):
 
 - *`Top-down`*: si inizia testando le componenti di sistema con maggiori dipendenze e visibilità esterna, così da rendere subito disponibili le funzionalità di alto livello. Questo approccio favorisce una verifica approfondita delle funzionalità centrali.
-- *`Bottom-up`*: si parte dalle componenti con minori dipendenze e maggiore rilevanza interna, quelle meno visibili all’utente, per testare prima i componenti più basilari e meno complessi.
+- *`Bottom-up`*: si parte dalle componenti con minori dipendenze e maggiore rilevanza interna, quelle meno visibili all'utente, per testare prima i componenti più basilari e meno complessi.
 
 ==== Test di sistema
 I #glossary("Test di sistema") vengono progettati dopo i #glossary("Test di integrazione"). Questi test sono finalizzati a garantire il corretto funzionamento complessivo del sistema, verificando che tutti i requisiti #glossary("software"), definiti nel capitolato e redatti nel documento `Analisi dei Requisiti`, siano implementati e operativi.
