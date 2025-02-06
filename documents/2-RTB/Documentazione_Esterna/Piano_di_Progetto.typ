@@ -14,7 +14,7 @@
     p.mahdi,
     p.santi,
     [
-      Stesura del preventivo e consuntivo del periodo 4
+      Stesura del preventivo e consuntivo del periodo 5
     ],
     "0.4.0",
     "2024-12-26",
