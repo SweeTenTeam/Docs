@@ -411,8 +411,9 @@ Gli attori coinvolti nei casi d'uso sono:
 *Estensioni*
 - UC1.3, Visualizzazione errore di connessione;
 - UC1.5, Visualizzazione errore backend non disponibile;
-- UC3.1, Visualizzazione errore nella generazione della risposta.
+- UC3.1, Visualizzazione errore nella generazione della risposta;
 - UC3.2, Visualizzazione errore risposta troppo lunga;
+- UC3.3, Visualizzazione errore domanda troppo lunga.
 *Inclusioni*
 - UC1.4, Visualizzazione singolo messaggio.
 *User story associata*
@@ -463,6 +464,24 @@ Gli attori coinvolti nei casi d'uso sono:
   *User story associata*
   - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se la risposta da generare per quella domanda è troppo lunga così da poter riprovare con una domanda più specifica".
 
+==== UC3.3, Visualizzazione errore domanda troppo lunga
+  *Attori coinvolti*: 
+  - Primari:
+    - #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia utente è pronta all'interazione con l'utente;
+  - L'utente ha scritto la propria domanda nel campo di input dedicato.
+
+  *Postcondizioni*
+  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
+  *Scenario principale*
+  - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+  - L'interfaccia utente controlla la lunghezza della domanda;
+  - La lunghezza della domanda supera la lunghezza massima consentita;
+  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
+  *User story associata*
+  - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se la domanda è troppo lunga così da poter riprovare con una domanda più specifica".
 
 #pagebreak()
 === UC4, Invio richiesta con domanda dell'utente
