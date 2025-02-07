@@ -721,67 +721,63 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [L'utente deve accedere all'applicazione senza necessità di autenticazione],
     [Capitolato],
     [Obbligatorio],
-
-    [*RF-002*], [Il sistema deve reperire le informazioni da GitHub], [Capitolato], [Obbligatorio],
-    [*RF-003*], [Il sistema deve reperire le informazioni da Confluence], [Capitolato], [Obbligatorio],
-    [*RF-004*], [Il sistema deve reperire le informazioni da Jira], [Capitolato], [Obbligatorio],
-    [*RF-005*], [L'utente deve poter visualizzare lo storico della chat], [UC1], [Obbligatorio],
-    [*RF-006*],
+    [*RF-002*], [L'utente deve poter visualizzare lo storico della chat], [UC1], [Obbligatorio],
+    [*RF-003*],
     [L'utente deve visualizzare un messaggio informativo che spiega che non ci sono messaggi nello storico],
     [UC1.1],
     [Obbligatorio],
 
-    [*RF-007*],
+    [*RF-004*],
     [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a recuperare lo storico],
     [UC1.2],
     [Obbligatorio],
 
-    [*RF-008*],
+    [*RF-005*],
     [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a connettersi],
     [UC1.3],
     [Obbligatorio],
 
-    [*RF-009*],
+    [*RF-006*],
     [L'utente deve visualizzare un messaggio di errore se il backend non è disponibile],
     [UC1.5],
     [Obbligatorio],
 
-    [*RF-010*],
+    [*RF-007*],
     [L'utente deve visualizzare per ogni messaggio: il contenuto, la data e ora di invio, e il mittente],
     [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3],
     [Obbligatorio],
 
-    [*RF-011*],
+    [*RF-008*],
     [L'utente deve poter scrivere una domanda in linguaggio naturale],
     [UC2],
     [Obbligatorio],
 
-    [*RF-012*],
+    [*RF-009*],
     [L'utente deve poter inviare la domanda scritta al sistema],
     [UC3],
     [Obbligatorio],
     
-    [*RF-013*],
+    [*RF-010*],
     [L'utente deve poter visualizzare un messagio di errore se si è verificato un errore generico nella generazione della risposta da parte del #glossary("backend")],
     [UC3.1],
     [Obbligatorio],
     
-    [*RF-014*],
+    [*RF-011*],
     [L'utente deve poter visualizzare un messagio di errore se la risposta non è stata generata perchè supererebbe la lunghezza massima consentita],
     [UC3.2],
     [Obbligatorio],
 
-    [*RF-015*],
+    [*RF-012*],
     [L'utente deve poter visualizzare un messagio di errore se la domanda supera la lunghezza massima consentita],
     [UC3.3],
     [Obbligatorio],
 
-    [*RF-016*],
+    [*RF-013*],
     [Il sistema deve elaborare la domanda dell'utente e generare una risposta appropriata],
     [UC4],
     [Obbligatorio],
 
-    [*RF-017*],
+    [*RF-014*],
     [Il sistema deve recuperare da GitHub le seguenti informazioni:
     - Nome della repository
     - Descrizione della repository
@@ -807,10 +803,10 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     - Log dei workflow
     - Trigger dei workflow
     - Durata dei workflow],
-    [UC4],
+    [UC4, Capitolato],
     [Obbligatorio],
 
-    [*RF-018*],
+    [*RF-015*],
     [Il sistema deve recuperare da Confluence le seguenti informazioni:
     - Id di una pagina
     - Titolo di una pagina
@@ -819,10 +815,10 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     - Owner di una pagina
     - Spazio di una pagina
     - Body di una pagina],
-    [UC4],
+    [UC4, Capitolato],
     [Obbligatorio],
 
-    [*RF-019*],
+    [*RF-016*],
     [Il sistema deve recuperare da Jira le seguenti informazioni:
     - Nome (titolo) di un ticket
     - Assegnatario di un ticket
@@ -835,27 +831,32 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     - Data di scadenza
     - Commenti del ticket
     - Ticket collegati],
-    [UC4],
+    [UC4, Capitolato],
     [Obbligatorio],
 
-    [*RF-020*],
+    [*RF-017*],
     [Il sistema deve gestire le domande fuori contesto con una risposta appropriata],
     [UC4.1],
     [Obbligatorio],
 
-    [*RF-021*],
+    [*RF-018*],
     [Il sistema deve informare l'utente in caso di errore durante la generazione della risposta],
     [UC4.2],
     [Obbligatorio],
 
-    [*RF-022*],
+    [*RF-019*],
     [Il sistema deve informare l'utente se la risposta supera la lunghezza massima consentita],
     [UC4.3],
     [Obbligatorio],
 
-    [*RF-023*],
+    [*RF-020*],
     [Il sistema deve fornire la data e l'ora dell'ultimo aggiornamento dei dati utilizzati],
     [UC4],
+    [Obbligatorio],
+
+    [*RF-021*],
+    [Il sistema deve aggiornare i dati dei documenti provenienti da GitHub, Confluence e Jira ogni 24 ore],
+    [Capitolato],
     [Obbligatorio],
 
 
@@ -974,28 +975,26 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     columns: (6cm, 6cm),
     [Fonte], [Requisito],
     [Capitolato], [RF-001],
-    [Capitolato], [RF-002],
-    [Capitolato], [RF-003],
-    [Capitolato], [RF-004],
-    [UC1], [RF-005],
-    [UC1.1], [RF-006],
-    [UC1.2], [RF-007],
-    [UC1.3], [RF-008],
-    [UC1.5], [RF-009],
-    [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3], [RF-010],
-    [UC2], [RF-011],
-    [UC3], [RF-012],
-    [UC3.1], [RF-013],
-    [UC3.2], [RF-014],
-    [UC3.3], [RF-015],
-    [UC4], [RF-016],
-    [UC4], [RF-017],
-    [UC4], [RF-018],
-    [UC4], [RF-019],
-    [UC4.1], [RF-020],
-    [UC4.2], [RF-021],
-    [UC4.3], [RF-022],
-    [UC4], [RF-023],
+    [UC1], [RF-002],
+    [UC1.1], [RF-003],
+    [UC1.2], [RF-004],
+    [UC1.3], [RF-005],
+    [UC1.5], [RF-006],
+    [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3], [RF-007],
+    [UC2], [RF-008],
+    [UC3], [RF-009],
+    [UC3.1], [RF-010],
+    [UC3.2], [RF-011],
+    [UC3.3], [RF-012],
+    [UC4], [RF-013],
+    [UC4, Capitolato], [RF-014],
+    [UC4, Capitolato], [RF-015],
+    [UC4, Capitolato], [RF-016],
+    [UC4.1], [RF-017],
+    [UC4.2], [RF-018],
+    [UC4.3], [RF-019],
+    [UC4], [RF-020],
+    [Capitolato], [RF-021],
     [Capitolato], [RQO-001],
     [Capitolato], [RQO-002],
     [Capitolato], [RQO-003],
