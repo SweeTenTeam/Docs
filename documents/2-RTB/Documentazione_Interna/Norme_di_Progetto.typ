@@ -171,7 +171,7 @@ Queste sono le attività definite nel processo primario di #glossary("fornitura"
 - *Completamento e consegna*: una volta completato il progetto, viene consegnato al cliente il prodotto finale, secondo quanto stipulato nel contratto.
 
 === Aspettative
-Il gruppo SweeTen Team intende instaurare e mantenere uno stretto rapporto di collaborazione con l'azienda proponente #box(image(g.azzurro, width: 5em, height: auto)) e, in particolare, con le figure dei referenti: Giorgio Vallini, Martina Daniele, Mattia Gottardello e Nicola Boscaro.
+Il gruppo SweeTen Team intende instaurare e mantenere uno stretto rapporto di collaborazione con l'azienda proponente #box(image(g.azzurro, width: 5em, height: auto)) e, in particolare, con le figure di riferimento: Giorgio Vallini, Martina Daniele, Mattia Gottardello e Nicola Boscaro.
 
 Grazie ad un dialogo continuo, il gruppo intende:
 
@@ -218,7 +218,7 @@ Il Glossario è un documento di supporto pensato per i membri del team, i commit
 La Lettera di Presentazione è un documento che accompagna la documentazione e il prodotto forniti all'azienda #glossary("proponente") durante le fasi di revisione del progetto. Il suo scopo è fornire un rapido contesto sullo stato di avanzamento dei lavori (o sul loro avvio, nel caso della lettera relativa ai capitolati) e offrire una breve panoramica della documentazione prodotta fino a quel momento.
 
 ==== Analisi dei Requisiti
-L'Analisi dei Requisiti è un documento che definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del proponente. Descrive in dettaglio i casi d'uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del software.
+L'#glossary("Analisi dei Requisiti") è un documento che definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del proponente. Descrive in dettaglio i casi d'uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del software.
 
 Contiene le seguenti informazioni:
 
@@ -270,7 +270,7 @@ Il documento è suddiviso nelle seguenti sezioni:
 Il documento Manuale Utente serve a descrivere i requisiti minimi e le istruzioni utili all'installazione/utilizzo del prodotto finale. Descrive inoltre le funzionalità del prodotto e di come l'utente può usufruirne.
 
 ==== Specifica Tecnica
-Il documento Specifica Tecnica ha lo scopo di descrivere e chiarire gli aspetti tecnici chiave del progetto, oltre a servire come guida per la codifica e la manutenzione del sistema. La sua finalità principale è fornire una descrizione dettagliata e approfondita dell'architettura implementativa del sistema, analizzando anche il codice e i design pattern utilizzati. Inoltre, il documento ha il compito di monitorare la copertura dei requisiti definiti nell'Analisi dei Requisiti.
+Il documento Specifica Tecnica ha lo scopo di descrivere e chiarire gli aspetti tecnici chiave del progetto, oltre a servire come guida per la codifica e la manutenzione del sistema. La sua finalità principale è fornire una descrizione dettagliata e approfondita dell'architettura implementativa del sistema, analizzando anche il codice e i design pattern utilizzati. Inoltre, il documento ha il compito di monitorare la copertura dei requisiti definiti nell'#glossary("Analisi dei Requisiti").
 
 ==== Verbali Interni
 La documentazione relativa alle riunioni interne avvenute tramite la piattaforma comunicativa #glossary("Discord") del team, viene riportata sottoforma di verbali interni.
@@ -331,7 +331,7 @@ Le fasi che compongono lo sviluppo sono:
 
 === Analisi dei requisiti
 ==== Descrizione
-L'Analisi dei Requisiti definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del #glossary("proponente"). Descrive in dettaglio i casi d'uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del #glossary("software").
+L'#glossary("Analisi dei Requisiti") definisce le funzionalità che il prodotto deve offrire e i requisiti da soddisfare affinché il #glossary("software") sviluppato risulti conforme alle richieste del #glossary("proponente"). Descrive in dettaglio i casi d'uso, i #glossary("requisiti") del progetto e le funzionalità attese per il prodotto finale, basandosi sugli obiettivi definiti. Inoltre, funge da base preliminare per la progettazione del #glossary("software").
 
 Contiene le seguenti informazioni:
 
@@ -448,7 +448,7 @@ Dove *`X`* rappresenta la tipologia di requisito e *`Y`* è un identificativo pr
 
 === Progettazione
 ==== Descrizione
-L'obiettivo della progettazione è individuare una soluzione adeguata ai requisiti definiti nell'Analisi dei Requisiti. La progettazione del prodotto, a cura dei progettisti, si articola in due fasi principali:
+L'obiettivo della progettazione è individuare una soluzione adeguata ai requisiti definiti nell'#glossary("Analisi dei Requisiti"). La progettazione del prodotto, a cura dei progettisti, si articola in due fasi principali:
 
 *Progettazione logica*: Questa fase riguarda la selezione delle tecnologie, dei #glossary("framework") e delle librerie da utilizzare per la realizzazione del prodotto, con l'obiettivo di garantirne l'adeguatezza attraverso il #glossary("Proof of Concept") (PoC).
 
@@ -938,7 +938,7 @@ Esistono due principali approcci per condurre i #glossary("Test di integrazione"
 - *`Bottom-up`*: si parte dalle componenti con minori dipendenze e maggiore rilevanza interna, quelle meno visibili all'utente, per testare prima i componenti più basilari e meno complessi.
 
 ==== Test di sistema
-I #glossary("Test di sistema") vengono progettati dopo i #glossary("Test di integrazione"). Questi test sono finalizzati a garantire il corretto funzionamento complessivo del sistema, verificando che tutti i requisiti #glossary("software"), definiti nel capitolato e redatti nel documento `Analisi dei Requisiti`, siano implementati e operativi.
+I #glossary("Test di sistema") vengono progettati dopo i #glossary("Test di integrazione"). Questi test sono finalizzati a garantire il corretto funzionamento complessivo del sistema, verificando che tutti i requisiti #glossary("software"), definiti nel capitolato e redatti nel documento #glossary("Analisi dei Requisiti"), siano implementati e operativi.
 
 ==== Controlli di regressione
 I controlli di regressione verificano che le modifiche apportate a specifiche componenti architetturali, come correzioni o espansioni, non compromettano il funzionamento dell'intero sistema. 
@@ -1115,13 +1115,13 @@ I pricipali compiti sono:
 \
 
 *Analista* \
-L'#glossary("Analista") approfondisce le richieste, tecniche e non, del #glossary("Capitolato"). E' principalmente fondamentale, e presente, nella prima fase del progetto, quando viene redatta l'analisi dei requisiti. Supervisiona la scrittura della stessa, in quanto è di vitale importanza che non vi siano errori. Avere errori nell'Analisi dei Requisiti comprometterebbe l'intero progetto.
+L'#glossary("Analista") approfondisce le richieste, tecniche e non, del #glossary("Capitolato"). E' principalmente fondamentale, e presente, nella prima fase del progetto, quando viene redatta l'#glossary("Analisi dei Requisiti"). Supervisiona la scrittura della stessa, in quanto è di vitale importanza che non vi siano errori. Avere errori nell'#glossary("Analisi dei Requisiti") comprometterebbe l'intero progetto.
 
 Ha il compito di:
 
 - Studiare il progetto e il suo contesto applicativo;
 - Raccogliere, analizzare e studiare i bisogni del cliente;
-- Scrivere l'Analisi dei Requisiti;
+- Scrivere l'#glossary("Analisi dei Requisiti");
 - Definire la complessità dei vari requisiti.
 
 *Progettista* \
