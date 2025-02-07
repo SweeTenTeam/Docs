@@ -4,7 +4,6 @@ import sys
 import argparse
 
 def get_glossary_terms(csv_path='gloss.csv'):
-    """Extract terms from the glossary CSV file."""
     terms = []
     try:
         with open(csv_path, 'r', encoding='utf-8') as file:
@@ -20,13 +19,9 @@ def get_glossary_terms(csv_path='gloss.csv'):
     except Exception as e:
         print(f"Error reading CSV file: {e}")
         return []
-    
-    print("Available glossary terms:")
-    print(terms)
     return terms
 
 def check_glossary_usage(typst_path, csv_path='gloss.csv'):
-    """Check if all glossary function calls in the Typst document use valid terms."""
     valid_terms = get_glossary_terms(csv_path)
     
     try:
