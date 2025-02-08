@@ -4,6 +4,16 @@
   title: "Piano di Qualifica",
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
+    "1.0.0",
+    "2024-02-07",
+    (p.santi), 
+    (p.benedetti), 
+    [Approvazione RTB],
+    "0.0.3",
+    "2024-02-01",
+    (p.santi), 
+    (p.benedetti), 
+    [Aggiunti test di sistema e accettazione],
     "0.0.2",
     "2024-12-28",
     (p.santi), 
@@ -46,27 +56,27 @@ La presenza di un termine nel Glossario viene segnalata direttamente nel documen
 === Informativi
 
 - ISO/EIC 9126
-#link("https://en.wikipedia.org/wiki/ISO/IEC_9126")
+#link("https://en.wikipedia.org/wiki/ISO/IEC_9126", "Standard ISO/IEC 9126")
 
 #linebreak()
 - T7 - Qualità del software
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf", "T07.pdf")
 
 #linebreak()
 - T8 - Qualità di processo
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf", "T08.pdf")
 
 #linebreak()
 - T9 - Verifica e validazione: introduzione
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf")
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf", "T09.pdf")
 
 #linebreak()
 - T10 - Verifica e validazione: analisi statica
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf")
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf", "T10.pdf")
 
 #linebreak()
 - T11 - Verifica e validazione: analisi dinamica aka testing
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf")
+#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf", "T11.pdf")
 
 = *Obiettivi di qualità*
 Ogni #glossary("processo") viene valutato mediante l'applicazione di metriche specifiche, la cui definizione è dettagliata nelle sezioni Metriche di qualità del processo e Metriche di qualità del prodotto del documento Norme di Progetto v1.0.0. Queste sezioni delineano i criteri necessari affinchè le metriche siano considerate accettabili o eccellenti.
@@ -230,88 +240,109 @@ Essa implica una valutazione completa del software realizzato, concentrandosi su
   caption: "Valori ideali e accettabili per ciascuna metrica relativa la manutenibilità del prodotto."
 )
 
-= Strategie di testing
-Questa sezione riassume ed elenca i test eseguiti sul prodotto, garantendo completezza, correttezza e coerenza. In questo modo si dimostra il soddisfacimento dei requisiti utente, specificati nel capitolato d'appalto, e dei requisiti definiti nel documento "Analisi dei Requisiti v. .....".
+= Strategie di testing 
+Questa sezione riassume ed elenca i test eseguiti sul prodotto, garantendo completezza, correttezza e coerenza. In questo modo si dimostra il soddisfacimento dei requisiti utente, specificati nel capitolato d'appalto, e dei requisiti definiti nel documento #glossary("Analisi dei Requisiti").
 Verranno effettuate le seguenti tipologie di test:
-- Test di *unità*: verifica il corretto funzionamento delle singole unità del sistema, considerandole indipendenti. Risultano essere test molto potenti poichè la maggior parte dei difetti vengono rilevati in questa fase.
-- Test di *integrazione*: valuta la cooperazione tra più unità per soddisfare una specifica richiesta. Viene eseguito successivamente ai test di unità.
-- Test di *sistema*: controlla il funzionamento dell'intero sistema, verificando che tutte le componenti operino correttamente insieme.
-- Test di *accettazione*: la fase finale del processo di testing. Viene accertato il raggiungimento dei requisiti utente.
+- Test di *unità*: sono il punto di partenza della strategia di testing. Vengono verificate singole unità di codice con l'obiettivo di verificare che ciascun modulo funzioni correttamente, in maniera tale che ogni unità produca risultati corretti in base ai dati di input inviati. 
+- Test di *integrazione*: vengono eseguiti dopo il completamento/superamento dei test di unità. Verificano l'interazione tra componenti software integrate, rilevando difetti nelle interfacce e nei flussi di controllo. L'obiettivo principale di questi test è assicurare che i dati scambiati tra le componenti siano conformi alle specifiche e che i flussi di controllo funzionino regolarmente.
+- Test di *sistema*: vengono eseguiti dopo il completamento dei Test di integrazione e precedono il collaudo. Si occupano di verificare l'intero sistema come unità, valutando la conformità rispetto ai requisiti presenti nel documento "Analisi dei Requisiti". L'obiettivo è quello di identificare eventuali errori (che compromettono il corretto funzionamento del sistema) e garantire che il SW soddisfi le aspettative dell'utente.
+- Test di *accettazione*: corrispondono con l'ultima fase della strategia di testing, verificano e accertano il soddisfacimento dei requisiti utente (requisiti del capitolato d'appalto). Questa fase di collaudo viene effettuata in presenza del committente.
 
 == Struttura tabelle
 A partire dalla sezione successiva verranno inseriti i test svolti riepilogati in una tabella. Quest'ultima sarà composta da:
 - *Codice*: un breve identificativo del test eseguito. Avranno tutti questo scheletro: #align(center)[[TIPOLOGIA]-[NUMERO]]
   - "Tipologia" è rappresentato dalla lettera iniziale del tipo di test eseguito
-    - TU: Test di unità.
-    - TI: Test di integrazione.
-    - TS: Test di sistema.
-    - TA: Test di accettazione.
+    - *TU*: Test di unità.
+    - *TI*: Test di integrazione.
+    - *TS*: Test di sistema.
+    - *TA*: Test di accettazione.
   - "Numero": rappresenta l'identificativo numerico assegnato a ciascun test eseguito, indicandone la sequenza.
 - *Descrizione*: breve spiegazione del test effettuato
 - *Esito*: risultato del test, possono essere 3:
   - V (VERIFICATO): test completato e andato a buon fine.
   - NV (NON VERIFICATO): test completato ma non andato a buon fine.
-  - NE (NON ESEGUITO): non è stato predisposto alcun test per la verifica della funzionalità specifica.
-
-== Test di unità
-I test di unità sono il punto di partenza della strategia di testing. Vengono verificate singole unità di codice con l'obiettivo di verificare che ciascun modulo funzioni correttamente, in maniera tale che ogni unità produca risultati corretti in base ai dati di input inviati. 
-//DISCUTERE INTERNAMENTE COME ESEGUIRLI
-
-#figure(
-  table(
-    columns: (2cm, 12cm, 2cm),
-    [Codice], [Descrizione], [Stato],
-
-    [], [], [],
-    [], [], [],
-    [], [], [],
-  ),
-  caption: "Riepilogo TU"
-)
-
-== Test di integrazione
-I test di integrazione vengono eseguiti dopo il completamento/superamento dei test di unità. Verificano l'interazione tra componenti software integrate, rilevando difetti nelle interfacce e nei flussi di controllo.
-L'obiettivo principale di questi test è assicurare che i dati scambiati tra le componenti siano conformi alle specifiche e che i flussi di controllo funzionino regolarmente.
-
-#figure(
-  table(
-    columns: (2cm, 12cm, 2cm),
-    [Codice], [Descrizione], [Stato],
-
-    [], [], [],
-    [], [], [],
-    [], [], [],
-  ),
-  caption: "Riepilogo TI"
-)
+  - NI (NON IMPLEMENTATO): non è stato predisposto alcun test per la verifica della funzionalità specifica.
 
 == Test di sistema
-I test di sistema vengono eseguiti dopo il completamento dei Test di integrazione e precedono il collaudo.
-Si occupano di verificare l'intero sistema come unità, valutando la conformità rispetto ai requisiti presenti nel documento "Analisi dei Requisiti". L'obiettivo è quello di identificare eventuali errori (che compromettono il corretto funzionamento del sistema) e garantire che il SW soddisfi le aspettative dell'utente.
-
 #figure(
   table(
-    columns: (2cm, 12cm, 2cm),
-    [Codice], [Descrizione], [Stato],
+    columns: (2cm, 10cm, 2cm, 3cm),
+    [Codice], [Descrizione], [Stato], [Requisito],
 
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    [TS-01], [Verificare che l'utenta riesca ad accedere all'applicazione senza autenticazione], [NI], [RF-001],
+
+    [TS-02], [Verificare che il sistema riesca a reperire correttamente le informazioni da GitHub], [NI], [RF-002],
+
+    [TS-03], [Verificare che il sistema riesca a reperire correttamente le informazioni da Confluence], [NI], [RF-003],
+
+    [TS-04], [Verificare che il sistema riesca a reperire correttamente le informazioni da Jira], [NI], [RF-004],
+
+    [TS-05], [Verificare che l'utente possa visualizzare correttamente lo storico della chat], [NI], [RF-005],
+
+    [TS-06], [Verificare che l'utente visualizzi un messaggio nel caso in cui non ci siano messaggi nello storico], [NI], [RF-006],
+
+    [TS-07], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non sia riuscito a recuperare correttamente lo storico], [NI], [RF-007],
+
+    [TS-08], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non riesca a connettersi], [NI], [RF-008],
+
+    [TS-09], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il backend non risulti disponibile], [NI], [RF-009],
+
+    [TS-10], [Verificare che l'utente possa visualizzare per ogni messaggio il suo contenuto, data, orario di invio e mittente], [NI], [RF-010],
+
+    [TS-11], [Verificare che, attraverso l'interfaccia utente, l'utente sia in grado di porre una domanda in linguaggio naturale], [NI], [RF-011],
+
+    [TS-12], [Verificare che l'utente riesca ad inviare la domanda scritta attraverso la #glossary("User Interface") al sistema], [NI], [RF-012],
+    
+    [TS-13], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NI], [RF-013],
+
+    [TS-14], [Verificare che il sistema notifichi all'utente un messaggio di errore nel caso in cui la risposta non venga generata perché supera la lunghezza massima consentita], [NI], [RF-014],
+
+    [TS-15], [Verificare che il sistema notifichi all'utente un messaggio di errore nel caso in cui la domanda superi la lunghezza massima consentita], [NI], [RF-015],
+
+    [TS-16], [Verificare che il sistema elabori correttamente la domanda dell'utente, generando una risposta attinente e appropriata], [NI], [RF-016],
+
+    [TS-17], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("GitHub") (nome della repository, la sua descrizione, informazioni sui ticket, commit...)], [NI], [RF-017],
+
+    [TS-18], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("Confluence") (id della pagina, il titolo, lo status...)], [NI], [RF-018],
+
+    [TS-19], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("Jira") (nome di un #glossary("ticket"), il suo assegnatario, stato, ticket collegati...)], [NI], [RF-019],
+
+    [TS-20], [Verificare che il sistema riesca gestire correttamente domande fuori contesto, generando una risposta attinente e appropriata], [NI], [RF-020],
+
+    [TS-21], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NI], [RF-021],
+
+    [TS-22], [Verificare che il sistema informi l'utente se la risposta supera la lunghezza massima consentita], [NI], [RF-022],
+
+    [TS-23], [Verificare che il sistema fornisca correttamente la data e l'orario dell'ultimo aggiornamento dei dati utilizzati], [NI], [RF-023],
   ),
-  caption: "Riepilogo TS"
+  caption: "Riepilogo Test di Sistema"
 )
 
-== Test di accettazione (Collaudo)
-I test di accettazione corrispondono con l'ultima fase della strategia di testing, verificano e accertano il soddisfacimento dei requisiti utente (requisiti del capitolato d'appalto). Questa fase di collaudo viene effettuata alla presenza del committente. 
+== Test di accettazione
 
 #figure(
   table(
-    columns: (2cm, 12cm, 2cm),
-    [Codice], [Descrizione], [Stato],
+    columns: (2cm, 10cm, 2cm, 3cm),
+    [Codice], [Descrizione], [Stato], [Fonte],
 
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    [TA-01], [Verificare che l'utente possa visualizzare lo storico della chat], [NI], [UC1],
+
+    [TA-02], [Verificare che per ogni messaggio l'utente possa visualizzare: contenuto, data, orario, mittente], [NI], [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3],
+
+    [TA-03], [Verificare che l'utente possa inserire ed inviare attraverso l'interfaccia utente una nuova domanda], [NI], [UC2],
+
+    [TA-04], [Verificare che la domanda scritta da un utente venga inviata correttamente al sistema attraverso la #glossary("User Interface")], [NI], [UC3],
+
+    [TA-05], [Verificare che il sistema generi una risposta appropriata dopo aver elaborato correttamente la domanda dell'utente], [NI], [UC4],
+
+    [TA-06], [Verificare che il sistema recuperi tutte le informazioni necessarie da #glossary("GitHub")], [NI], [UC4],
+
+    [TA-07], [Verificare che il sistema recuperi tutte le informazioni necessarie da #glossary("Confluence")], [NI], [UC4],
+
+    [TA-08], [Verificare che il sistema recuperi tutte le informazioni necessarie da #glossary("Jira")], [NI], [UC4],
+
+    [TA-09], [Verificare che il sistema fornisca data e orario dell'ultimo aggiornamento dei dati utilizzati], [NI], [UC4.4],
+
   ),
-  caption: "Riepilogo TA"
+  caption: "Riepilogo Test di Accettazione"
 )
