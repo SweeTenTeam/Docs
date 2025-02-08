@@ -13,7 +13,7 @@
     "2024-02-01",
     (p.santi), 
     (p.benedetti), 
-    [Aggiunti test di sistema],
+    [Aggiunti test di sistema e accettazione],
     "0.0.2",
     "2024-12-28",
     (p.santi), 
@@ -263,7 +263,7 @@ A partire dalla sezione successiva verranno inseriti i test svolti riepilogati i
   - NV (NON VERIFICATO): test completato ma non andato a buon fine.
   - NI (NON IMPLEMENTATO): non è stato predisposto alcun test per la verifica della funzionalità specifica.
 
-== Test di sistema e tracciamento
+== Test di sistema
 #figure(
   table(
     columns: (2cm, 10cm, 2cm, 3cm),
@@ -287,31 +287,62 @@ A partire dalla sezione successiva verranno inseriti i test svolti riepilogati i
 
     [TS-09], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il backend non risulti disponibile], [NI], [RF-009],
 
-    [TS-10], [Verificare che l'utente visualizzi almeno un messaggio. Di tale messaggio deve poter visualizzare contenuto, data, orario di invio e mittente], [NI], [RF-010],
+    [TS-10], [Verificare che l'utente possa visualizzare per ogni messaggio il suo contenuto, data, orario di invio e mittente], [NI], [RF-010],
 
     [TS-11], [Verificare che, attraverso l'interfaccia utente, l'utente sia in grado di porre una domanda in linguaggio naturale], [NI], [RF-011],
 
-    [TS-12], [Verificare che l'utente riesca ad inviare la domanda scritta attraverso la UI al sistema], [NI], [RF-012],
+    [TS-12], [Verificare che l'utente riesca ad inviare la domanda scritta attraverso la #glossary("User Interface") al sistema], [NI], [RF-012],
     
     [TS-13], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NI], [RF-013],
 
     [TS-14], [Verificare che il sistema notifichi all'utente un messaggio di errore nel caso in cui la risposta non venga generata perché supera la lunghezza massima consentita], [NI], [RF-014],
 
-    [TS-15], [Verificare che il sistema elabori correttamente la domanda dell'utente, generando una risposta attinente e appropriata], [NI], [RF-015],
+    [TS-15], [Verificare che il sistema notifichi all'utente un messaggio di errore nel caso in cui la domanda superi la lunghezza massima consentita], [NI], [RF-015],
 
-    [TS-16], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da GitHub (nome della repository, la sua descrizione, informazioni sui ticket, commit...)], [NI], [RF-016],
+    [TS-16], [Verificare che il sistema elabori correttamente la domanda dell'utente, generando una risposta attinente e appropriata], [NI], [RF-016],
 
-    [TS-17], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da Confluence (id della pagina, il titolo, lo status...)], [NI], [RF-017],
+    [TS-17], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("GitHub") (nome della repository, la sua descrizione, informazioni sui ticket, commit...)], [NI], [RF-017],
 
-    [TS-18], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da Jira (nome di un ticket, il suo assegnatario, stato, ticket collegati...)], [NI], [RF-018],
+    [TS-18], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("Confluence") (id della pagina, il titolo, lo status...)], [NI], [RF-018],
 
-    [TS-19], [Verificare che il sistema riesca gestire correttamente domande fuori contesto, generando una risposta attinente e appropriata], [NI], [RF-019],
+    [TS-19], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("Jira") (nome di un #glossary("ticket"), il suo assegnatario, stato, ticket collegati...)], [NI], [RF-019],
 
-    [TS-20], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NI], [RF-020],
+    [TS-20], [Verificare che il sistema riesca gestire correttamente domande fuori contesto, generando una risposta attinente e appropriata], [NI], [RF-020],
 
-    [TS-21], [Verificare che il sistema informi l'utente se la risposta supera la lunghezza massima consentita], [NI], [RF-021],
+    [TS-21], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NI], [RF-021],
 
-    [TS-22], [Verificare che il sistema fornisca correttamente la data e l'orario dell'ultimo aggiornamento dei dati utilizzati], [NI], [RF-022],
+    [TS-22], [Verificare che il sistema informi l'utente se la risposta supera la lunghezza massima consentita], [NI], [RF-022],
+
+    [TS-23], [Verificare che il sistema fornisca correttamente la data e l'orario dell'ultimo aggiornamento dei dati utilizzati], [NI], [RF-023],
   ),
   caption: "Riepilogo Test di Sistema"
+)
+
+== Test di accettazione
+
+#figure(
+  table(
+    columns: (2cm, 10cm, 2cm, 3cm),
+    [Codice], [Descrizione], [Stato], [Fonte],
+
+    [TA-01], [Verificare che l'utente possa visualizzare lo storico della chat], [NI], [UC1],
+
+    [TA-02], [Verificare che per ogni messaggio l'utente possa visualizzare: contenuto, data, orario, mittente], [NI], [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3],
+
+    [TA-03], [Verificare che l'utente possa inserire ed inviare attraverso l'interfaccia utente una nuova domanda], [NI], [UC2],
+
+    [TA-04], [Verificare che la domanda scritta da un utente venga inviata correttamente al sistema attraverso la #glossary("User Interface")], [NI], [UC3],
+
+    [TA-05], [Verificare che il sistema generi una risposta appropriata dopo aver elaborato correttamente la domanda dell'utente], [NI], [UC4],
+
+    [TA-06], [Verificare che il sistema recuperi tutte le informazioni necessarie da #glossary("GitHub")], [NI], [UC4],
+
+    [TA-07], [Verificare che il sistema recuperi tutte le informazioni necessarie da #glossary("Confluence")], [NI], [UC4],
+
+    [TA-08], [Verificare che il sistema recuperi tutte le informazioni necessarie da #glossary("Jira")], [NI], [UC4],
+
+    [TA-09], [Verificare che il sistema fornisca data e orario dell'ultimo aggiornamento dei dati utilizzati], [NI], [UC4.4],
+
+  ),
+  caption: "Riepilogo Test di Accettazione"
 )
