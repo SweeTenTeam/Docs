@@ -4,11 +4,11 @@
   title: "Piano di Qualifica",
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
-    "1.0.0",
-    "2024-02-07",
-    (p.santi), 
+    "0.1.0",
+    "2024-02-08",
+    (p.campagnaro), 
     (p.benedetti), 
-    [Approvazione RTB],
+    [Stesura sezioni "Cruscotto di valutazione della qualità" e "Valutazione per il miglioramento"],
     "0.0.3",
     "2024-02-01",
     (p.santi), 
@@ -82,7 +82,7 @@ La presenza di un termine nel Glossario viene segnalata direttamente nel documen
 Ogni #glossary("processo") viene valutato mediante l'applicazione di metriche specifiche, la cui definizione è dettagliata nelle sezioni Metriche di qualità del processo e Metriche di qualità del prodotto del documento Norme di Progetto v1.0.0. Queste sezioni delineano i criteri necessari affinchè le metriche siano considerate accettabili o eccellenti.
 
 == Qualità di #glossary("processo")
-La qualità di processo rappresenta un'esigenza primaria nello sviluppo software, poiché per ottenere un prodotto finale di alta qualità è indispensabile partire da un'applicazione rigorosa di #glossary("best practice") ben definite. Queste devono guidare tutte le attività, pratiche e metodologie adottate lungo l'intero ciclo di vita del software. La qualità di processo si fonda sull’idea che il raggiungimento di standard elevati nel prodotto dipenda da controlli regolari e dall’ottimizzazione continua dei processi che lo supportano, garantendo risultati che rispondano pienamente alle aspettative.
+La qualità di processo rappresenta un'esigenza primaria nello sviluppo software, poiché per ottenere un prodotto finale di alta qualità è indispensabile partire da un'applicazione rigorosa di #glossary("best practice") ben definite. Queste devono guidare tutte le attività, pratiche e metodologie adottate lungo l'intero ciclo di vita del software. La qualità di processo si fonda sull'idea che il raggiungimento di standard elevati nel prodotto dipenda da controlli regolari e dall'ottimizzazione continua dei processi che lo supportano, garantendo risultati che rispondano pienamente alle aspettative.
 #pagebreak()
 === Processi primari
 ==== Fornitura
@@ -240,7 +240,7 @@ Essa implica una valutazione completa del software realizzato, concentrandosi su
   caption: "Valori ideali e accettabili per ciascuna metrica relativa la manutenibilità del prodotto."
 )
 
-= Strategie di testing 
+= *Strategie di testing *
 Questa sezione riassume ed elenca i test eseguiti sul prodotto, garantendo completezza, correttezza e coerenza. In questo modo si dimostra il soddisfacimento dei requisiti utente, specificati nel capitolato d'appalto, e dei requisiti definiti nel documento #glossary("Analisi dei Requisiti").
 Verranno effettuate le seguenti tipologie di test:
 - Test di *unità*: sono il punto di partenza della strategia di testing. Vengono verificate singole unità di codice con l'obiettivo di verificare che ciascun modulo funzioni correttamente, in maniera tale che ogni unità produca risultati corretti in base ai dati di input inviati. 
@@ -346,3 +346,164 @@ A partire dalla sezione successiva verranno inseriti i test svolti riepilogati i
   ),
   caption: "Riepilogo Test di Accettazione"
 )
+#pagebreak()
+= *Cruscotto di valutazione della qualità*
+
+== *`M-PRC-EAC`* - Estimated at Completion
+#figure(image(gq.EAC, width: 100%), caption: [Proiezione della stima del costo totale nei vari periodi di progetto.])\
+
+*`RTB`*: Il grafico illustra come varia l'`EAC` (*Estimate at Completion*) in relazione ai limiti accettabili (superiore e inferiore) e al valore ottimale, rappresentato dal `BAC` (*Budget at Completion*), durante i cinque sprint del progetto. L'`EAC` rappresenta una previsione aggiornata dei costi complessivi per portare a termine il progetto, stimata sulla base dei dati raccolti durante l'esecuzione. Viene utilizzato per identificare eventuali scostamenti rispetto al `BAC`, che corrisponde al budget inizialmente pianificato per il progetto. \ 
+Osservando il grafico ne emerge che in seguito al secondo periodo del progetto l'`EAC` è sceso sotto il valore ottimale `BAC`, questo indica un'efficienza migliorata nell'uso delle risorse grazie a una riduzione dei costi ed a un'accelerazione nei tempi di completamento. Durante il terzo e quarto sprint invece si può notare un aumento dell'`EAC` a causa di difficoltà operative e tecniche che hanno richiesto al team di concentrarsi più attivamente ad attività di formazione e supporto piuttosto che all'avanzamento vero e proprio del progetto. Infine nel quinto ed ultimo periodo la stima è rimasta pressochè costante avvicinandosi al limite accettabile inferiore denotando una risoluzione efficace alle lacune riscontrate durante i periodi precedenti portando ad una gestione più rigorosa delle risorse.
+
+#pagebreak()
+
+== *`M-PRC-EV`* - Earned Value & *`M-PRC-PV`* - Planned Value
+#figure(image(gq.PV, width: 100%), caption: [Proiezione dell'EV e del PV nei vari periodi di progetto.])\
+
+*`RTB`*: Il grafico evidenzia la relazione tra il piano originale (`PV`), i progressi effettivi (`EV`) e le previsioni di costo complessive aggiornate (`EAC`), permettendo di valutare l'efficacia e l'efficienza della gestione del progetto durante i vari sprint. Osservando il grafico ne emerge una chiara corrispondenza tra la curva del Valore Guadagnato (*Earned Value*) e quella del Valore Pianificato (*Planned Value*). Questo allineamento indica che il lavoro completato è conforme alla pianificazione, suggerendo un progresso coerente e in linea con gli obiettivi del progetto.
+
+#pagebreak()
+
+== *`M-PRC-AC`* - Actual Cost & *`M-PRC-ETC`* - Estimate to Complete
+#figure(image(gq.AC, width: 100%), caption: [Proiezione dell'AC e dell'ETC nei vari periodi di progetto.])\
+
+*`RTB`*: Il grafico rappresenta l'*Estimate to Complete* (`ETC`), ovvero la stima dei costi rimanenti necessari per completare il progetto, e l'*Actual Cost* (`AC`), che indica i costi reali sostenuti per il lavoro svolto fino a quel momento. Si nota che l'`ETC` diminuisce progressivamente nel tempo, mentre l'`AC` cresce in modo proporzionale al ritmo con cui si riduce l'`ETC`.
+
+#pagebreak()
+
+== *`M-PRC-CV`* - Cost Variance & *`M-PRC-SV`* - Schedule Variance
+#figure(image(gq.CV, width: 100%), caption: [Proiezione della CV e della SV nei vari periodi di progetto.])\
+
+*`RTB`*: Il grafico evidenzia la *Cost Variance* (`CV`), rappresentante la differenza tra il valore guadagnato (`EV`) e i costi sostenuti (`AC`) in percentuale, e la *Schedule Variance* (`SV`), indicando la differenza tra il valore guadagnato (`EV`) e il valore pianificato (`PV`) in percentuale.\ Durante il primo sprint entrambi gli indicatori risultano negativi: i costi superano il valore realizzato e il progetto accumula ritardi rispetto alla pianificazione. Nel secondo sprint il Controllo dei Costi (`CV`) si attesta in positivo, segnalando una gestione più efficiente, mentre lo Scarto dei Tempi (`SV`) recupera leggermente pur rimanendo in negativo. Durante il terzo sprint lo `SV` peggiora ulteriormente, evidenziando un ritardo crescente, e sebbene il `CV` rimanga positivo, si registra una sua flessione, a indicare un incremento delle spese rispetto ai precedenti sprint. La svolta avviene nel quarto sprint, in cui entrambe le misure si avvicinano ai parametri ideali, a testimonianza di un miglioramento nella gestione sia del budget che delle tempistiche. Infine, nel quinto sprint il trend positivo si consolida: il controllo dei costi continua a rafforzarsi e, per la prima volta, il ritardo accumulato si trasforma in un avanzo temporale, indicando non solo il recupero delle criticità iniziali, ma anche un progresso oltre il piano stabilito.
+
+#pagebreak()
+
+== *`M-PRC-RSI`* - Requirements stability index
+#figure(image(gq.RSI, width: 100%), caption: [Proiezione del RSI nei vari periodi di progetto.])\
+
+*`RTB`*: Il grafico illustra la dinamica della metrica *Requirements stability index* (`RSI`), volta a valutare la stabilità dei requisiti del progetto nel corso del tempo. Emerge chiaramente una rapida crescita alla fine del secondo periodo, coincidente con l'avvio dell'analisi dei requisiti da parte del gruppo. Inoltre, si nota un ulteriore aumento alla fine del terzo periodo, indicativo di modifiche e/o aggiornamenti nell'analisi dei requisiti che sono progressivamente diminuiti. Il parametro poi è diminuito alla fine del quarto periodo per via di modifiche importanti, necessarie a raggiungere un livello di dettaglio dei requisiti ancora maggiore. Infine si nota che nel quinto ed ultimo periodo i requisiti sono migliorati fino ad arrivare ad un valore `RSI` pari al `100%`.
+
+#pagebreak()
+
+
+== *`M-PRC-GLP`* - Indice Gulpease
+#figure(image(gq.GLP, width: 100%), caption: [Proiezione dell'indice Gulpease per ogni documento (RTB) nei vari periodi di progetto.])\
+
+*`RTB`*: Dall'osservazione del grafico si evidenzia come, per la maggior parte dei documenti, l'indice tenda ad aumentare o a rimanere stabile nel tempo. L'unica eccezione è il `Piano di Progetto`, che si discosta da questa tendenza a causa delle significative modifiche apportate al suo contenuto nel corso dei periodi considerati. Va inoltre notato che l'`Analisi dei Requisiti` è l'unico documento che inizia al di sotto del limite inferiore accettabile, un fenomeno riconducibile alla natura specifica degli argomenti trattati e al linguaggio utilizzato. Nonostante ciò, tutti i documenti risultano comprensibili anche per chi possiede un livello di istruzione pari alla licenza media.
+
+#pagebreak()
+
+== *`M-PRC-CO`* - Correttezza Ortografica
+#figure(image(gq.CO, width: 100%), caption: [Proiezione della correttezza ortografica nei vari periodi di progetto.])\
+
+*`RTB`*: Dal grafico si nota un impegno costante da parte del gruppo nel mantenere i documenti privi di errori ortografici. Sebbene alcuni errori siano inevitabilmente sfuggiti, la maggior parte dei documenti è rimasta senza errori per la maggior parte del tempo, raggiungendo un livello ottimale di accuratezza nell'ultimo periodo.
+
+#pagebreak()
+
+== *`M-PRC-QMS`* - Quality Metrics Satisfied
+#figure(image(gq.QMS, width: 100%), caption: [Proiezione della percentuale di metriche di qualità soddisfatte nei vari periodi di progetto.])\
+
+*`RTB`*: Il grafico evidenzia che, nei primi periodi, alcune metriche di qualità definite dal gruppo non hanno raggiunto i valori desiderati, principalmente a causa dell'inesperienza iniziale dei membri. Tuttavia, grazie all'apprendimento dagli errori commessi, si è osservato un costante miglioramento, che ha portato a raggiungere valori accettabili e infine il livello ottimale (100%) al termine del quinto periodo. Questo risultato riflette un progresso significativo nel nostro approccio lavorativo e nei risultati qualitativi ottenuti.
+
+#pagebreak()
+
+== *`M-PRC-NCR`* - Non-Calculated Risk
+#figure(image(gq.NCR, width: 100%), caption: [Proiezione rischi non identificati nei vari periodi di progetto.])\
+
+*`RTB`*: Il grafico evidenzia come il gruppo abbia mantenuto un'ottima capacità di previsione dei rischi per l'intera durata del periodo considerato, senza che emergessero situazioni inattese. Sebbene la metrica non garantisca una futura assenza assoluta di rischi non previsti, indica che nessun rischio non anticipato si è verificato, sottolineando la precisione e l'efficacia nella gestione dei rischi da parte del gruppo.
+
+#pagebreak()
+
+== *`M-PRC-TE`* - Efficienza Temporale
+#figure(image(gq.TE, width: 100%), caption: [Proiezione dell'efficienza temporale nei vari periodi di progetto.])\
+
+*`RTB`*: Il grafico mostra l'andamento della metrica sull'efficienza temporale nel corso dei vari periodi. Nei primi due periodi, la metrica si posiziona oltre il limite superiore accettabile, per poi stabilizzarsi entro valori adeguati a partire dal terzo periodo. Questo comportamento riflette il processo di adattamento del gruppo alle nuove tecnologie, ambienti e linguaggi richiesti, oltre che alle pratiche di gestione del progetto. Nel tempo, si osserva un netto miglioramento, con una riduzione del tempo necessario per raggiungere i risultati desiderati, segno di una maggiore esperienza acquisita dai membri del gruppo.
+
+#pagebreak()
+= *Valutazione per il miglioramento*
+
+== Introduzione
+Un gruppo di progetto è in grado di completare le attività in modo efficace, garantendo standard qualitativi elevati, contenendo le spese e incrementando i profitti, purché la produttività venga posta al vertice delle priorità. In questo contesto, ci focalizziamo sul miglioramento dell'efficienza dei processi impiegati per realizzare il prodotto richiesto dal #glossary("Capitolato") C9. Considerando che questo rappresenta il primo progetto concreto affrontato dai membri del team, è plausibile che possano insorgere difficoltà legate all'organizzazione interna, al corretto adempimento dei ruoli assegnati e all'uso ottimale degli strumenti selezionati. In questa sezione, pertanto, illustreremo le principali criticità riscontrate e le contromisure adottate per mitigare o eliminare i rallentamenti derivanti.
+
+== Valutazione sui ruoli
+#figure(
+  table(
+    columns: (1fr),
+    inset: 10pt,
+    align: center+horizon,
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*Valutazione sui ruoli*],
+    table(
+      columns: (auto, 1.5fr, 2fr, 3fr),
+      align: (center+horizon,)+(center+horizon,)+(left+horizon,)+(left+horizon,),
+      inset: (5pt),
+      fill: (_, row) => if row == 0 {rgb(209, 197, 174)} else if calc.even(row) { luma(230) } else{ white },
+      [*Fase*],[*Ruolo*], [*Problema Rilevato*],[*Contromisura*],
+      [Iniziale], [Responsabile], [Difficoltà nell'assegnare compiti e monitorare l'avanzamento], [Introduzione di meeting settimanali per la definizione degli obiettivi e dei compiti assegnati],
+
+      [Iniziale], [Responsabile], [Difficoltà nell'assegnare compiti in modo equo, causando sovraccarico per alcuni e inattività per altri], [Introduzione di una valutazione preliminare del costo in termini di tempo per ogni attività, garantendo una distribuzione più bilanciata dei compiti tra i membri del gruppo],
+
+      [Iniziale], [Amministratore], [Difficoltà nell'organizzazione e nella gestione della documentazione], [Abbiamo migliorato il nostro sistema, integrando un processo strutturato per l'utilizzo delle pull request nei repository. In questo modo, la raccolta e la condivisione dei documenti sono diventate più collaborative e trasparenti, garantendo che ogni modifica venga revisionata secondo elevati standard di qualità e contribuendo a ridurre errori e incongruenze],
+
+      [Iniziale], [Analista], [Difficoltà nella definizione e tracciabilità dei requisiti], [Introduzione di un template standard per la stesura dei requisiti e di un sistema di tracciamento dei cambiamenti. Suddivisione dei casi d'uso tra i membri del gruppo per studio e discussione congiunta],
+
+      [Iniziale], [Analista,\ Programmatore], [Difficoltà nel procedere con le attività a causa di dubbi specifici e dettagliati], [Creazione di un server Discord per chiarimenti informali e immediati, riservando i problemi più importanti ai meeting ufficiali con verbale],
+
+      [Iniziale], [Programmatore], [Difficoltà nella scelta delle tecnologie e nella definizione delle interfacce], [Introduzione di una fase di formazione e di condivisione delle best practices tra i componenti del gruppo],
+    )
+  ), caption: "Valutazione sui ruoli"
+)
+
+== Valutazioni sugli strumenti utilizzati
+#figure(
+  table(
+    columns: (1fr),
+    inset: 10pt,
+    align: center+horizon,
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*Valutazioni sugli strumenti utilizzati*],
+    table(
+      columns: (auto, 1.5fr, 2fr, 3fr),
+      align: (center+horizon,)+(center+horizon,)+(left+horizon,)+(left+horizon,),
+      inset: (5pt),
+      fill: (_, row) => if row == 0 {rgb(209, 197, 174)} else if calc.even(row) { luma(230) } else{ white },
+      [*Fase*],[*Strumento*], [*Problema Rilevato*],[*Contromisura*],
+      [Iniziale], [GitHub,\ Typst,\ Fogli Google,\ Discord,...], [Nelle fasi iniziali del progetto, l'introduzione di nuove tecnologie da parte di alcuni membri del gruppo (come la scelta di Git e GitHub) ha creato disallineamenti, poiché non tutti avevano familiarità con tali strumenti], [Il gruppo ha deciso di fare una pausa per garantire che tutti i membri acquisissero una conoscenza adeguata delle tecnologie. Il Responsabile ha organizzato sessioni di formazione interna, dove i membri più esperti hanno condiviso le loro conoscenze con gli altri.],
+      [Iniziale],[GitHub], [Difficoltà nell'organizzazione e nella gestione della documentazione], [Abbiamo migliorato il nostro sistema, integrando un processo strutturato per l'utilizzo delle pull request nei repository. In questo modo, la raccolta e la condivisione dei documenti sono diventate più collaborative e trasparenti, garantendo che ogni modifica venga revisionata secondo elevati standard di qualità e contribuendo a ridurre errori e incongruenze],
+      [Iniziale], [Typst], [Necessità di un metodo per redigere documenti indipendentemente dal dispositivo, sistema operativo e conoscenze di base (LaTeX non era conosciuto da tutti)], [Abbiamo deciso di passare da LaTeX a Typst, poiché Typst offre funzionalità simili a LaTeX ma con maggiore facilità d'uso, documentazione più accessibile, compilazione più veloce e una sintassi più intuitiva],
+    )
+  ), caption: "Valutazioni sugli strumenti utilizzati"
+)
+
+#pagebreak()
+== Valutazione sull'organizzazione
+#figure(
+  table(
+    columns: (1fr),
+    inset: 10pt,
+    align: center+horizon,
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*Valutazione sull'organizzazione generale*],
+    table(
+      columns: (auto, 2fr, 3fr),
+      align: (center+horizon,)+(center+horizon,)+(left+horizon,),
+      inset: (5pt),
+      fill: (_, row) => if row == 0 {rgb(209, 197, 174)} else if calc.even(row) { luma(230) } else{ white },
+      [*Fase*], [*Problema Rilevato*],[*Contromisura*],
+      [Iniziale], [Comunicazione insufficiente tra i membri del gruppo], [Organizzazione di incontri periodici e adozione di strumenti di comunicazione quali Telegram e Discord],
+      [Iniziale], [Svolgimento asincrono delle attività], [Introduzione di un monitoraggio più frequente delle operazioni a breve termine, in collaborazione con il Responsabile],
+      [Iniziale], [Mancanza di coordinamento tra i membri del gruppo], [Assegnazione di un responsabile per ogni attività e definizione precisa dei compiti e delle relative scadenze]
+    )
+  ), caption: "Valutazione sull'organizzazione"
+)
+
+== Considerazioni finali sul miglioramento
+=== Analisi delle pratiche seguite
+Il modo migliore per garantire al team un'efficacia a lungo termine nei miglioramenti è applicare il ciclo PDCA, basandolo su obiettivi specifici di avanzamento che siano quantificabili e relativi agli aspetti dei processi più rilevanti per il progetto. 
+Questo approccio permette di introdurre miglioramenti specifici per anticipare e prevenire possibili criticità, situazioni o tendenze future, evitando interventi correttivi successivi e favorendo un processo di ottimizzazione costante. Nei primi mesi del progetto, tuttavia, il team non ha adottato questa metodologia a causa della poca esperienza, che ha portato a sottovalutarne l'importanza.
+Spesso il gruppo adottava azioni correttive in risposta agli errori riscontrati durante l'avanzamento del progetto. Queste azioni hanno il vantaggio di comportare costi inferiori in termini di risorse rispetto alle azioni proattive, ma sono spesso tardive e meno efficaci in ottica di miglioramento continuo. Pertanto, per applicare il ciclo PDCA, gli obiettivi di miglioramento devono essere selettivi per poter capire se e quando il loro scopo viene raggiunto. Inoltre, i miglioramenti devono essere scelti valutando opportunamente il rapporto costi/benefici, in modo che il piano di miglioramento continuo sia sostenibile in base alle risorse disponibili.
+
+=== Valutazioni generali sui miglioramenti conseguiti
+Sebbene il gruppo non avesse inizialmente stabilito obiettivi specifici di miglioramento, è stato possibile osservare alcuni progressi nei processi che costituiscono il nostro modo di lavorare. All'inizio del progetto, le valutazioni sul miglioramento erano piuttosto limitate, poiché il gruppo non aveva esperienza con i progetti e non era in grado di determinare se stava operando correttamente. Con il tempo, il numero di autocorrezioni è aumentato grazie a una maggiore familiarità con la gestione dei progetti, fino a ridursi significativamente quando il nostro modo di lavorare è stato ben definito e allineato con le buone pratiche che ci sono state insegnate.
+
+
