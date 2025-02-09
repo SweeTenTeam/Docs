@@ -1,16 +1,16 @@
 #import "/template/document.typ": *
 
 #show: project.with(
-  title: "Verbale interno del 2025-01-20",
+  title: "Verbale interno del 2025-02-07",
   recipients: (
     p.vardanega,
     p.cardin,
   ),
   changelog: (
     "0.1",
-    "2025-02-05",
+    "2025-02-07",
     (p.santi),
-    (p.campagnaro),
+    (p.mahdi),
     "Stesura del verbale",
   ),
 )
@@ -20,8 +20,8 @@
 == Informazioni sulla riunione
 
 - *Luogo*: Discord;
-- *Ora di inizio*: toadd;
-- *Ora di fine*: toadd;
+- *Ora di inizio*: 17:00;
+- *Ora di fine*: 19:30;
 - *Partecipanti*: #p.ferazzani, #p.santi, #p.mahdi, #p.fracaro, #p.campagnaro, #p.benedetti, #p.belenkov.
 
 == Ordine del giorno
@@ -32,7 +32,7 @@
 Durante questa riunione interna, ogni membro del gruppo ha presentato il lavoro svolto durante lo #glossary("sprint"), condividendo eventuali dubbi o difficoltà. Non sono emerse criticità significative. Le attività recenti si sono concentrate principalmente sul perfezionamento della documentazione del gruppo, con particolare attenzione ai documenti che, nei periodi precedenti, sono stati oggetto di revisioni (tra tutti, #glossary("Analisi dei Requisiti") e #glossary("Piano di Qualifica")). 
 
 = Controllo repository pre-candidatura RTB
-Prima di inviare la candidatura, il gruppo ha ritenuto necessaria una revisione completa della #glossary("repository") per individuare eventuali criticità. Si è deciso di effettuare questo controllo in modo asincrono, ad eccezione dell'#glossary("Analisi dei Requisiti"), considerata la sua importanza e il coinvolgimento di tutti i membri nella sua redazione. E' stato ritenuto necessario anche un controllo e aggiornamento del Glossario e del sito web del gruppo.
+Prima di inviare la lettera di candidatura, il gruppo ha ritenuto necessaria una revisione completa della #glossary("repository") per individuare eventuali criticità. Si è deciso di effettuare questo controllo in modo asincrono, ad eccezione dell'#glossary("Analisi dei Requisiti"), considerata la sua importanza e il coinvolgimento di tutti i membri nella sua redazione. E' stato ritenuto necessario anche un controllo e aggiornamento del Glossario e del sito web del gruppo.
 
 Sono state create delle #glossary("issue") in merito a questa revisione.
 
@@ -75,5 +75,5 @@ Sono state create delle #glossary("issue") in merito a questa revisione.
 )
 
 = Decisioni prese
-- Il gruppo invia la candidatura in data x y z.
-- Non verrà redatta la tabella delle prossime attività, dato che non ne sono previste in attesa dell'esito della candidatura RTB. 
+- Il gruppo invia la lettera di candidatura in data 2025/02/09.
+- Non viene redatta la tabella delle prossime attività, dato che non ne sono previste in attesa dell'esito della candidatura RTB.
