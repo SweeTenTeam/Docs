@@ -26,12 +26,12 @@
 
 == Ordine del giorno
 - Resoconto quinto sprint
-- Controllo repository pre-candidatura RTB
+- Revisione documentazione per RTB
 
 = Resoconto quinto sprint
-Durante questa riunione interna, ogni membro del gruppo ha presentato il lavoro svolto durante lo #glossary("sprint"), condividendo eventuali dubbi o difficoltà. Non sono emerse criticità significative. Le attività recenti si sono concentrate principalmente sul perfezionamento della documentazione del gruppo, con particolare attenzione ai documenti che, nei periodi precedenti, sono stati oggetto di revisioni (tra tutti, #glossary("Analisi dei Requisiti") e #glossary("Piano di Qualifica")). 
+Durante questa riunione interna, ogni membro del gruppo ha presentato il lavoro svolto durante lo #glossary("sprint"), condividendo eventuali dubbi o difficoltà. Non sono emerse criticità significative. Le attività recenti si sono concentrate principalmente sul perfezionamento della documentazione del gruppo, con particolare attenzione ai documenti che sono stati oggetto di revisioni nei periodi precedenti, come l'#glossary("Analisi dei Requisiti") e il #glossary("Piano di Qualifica").
 
-= Controllo repository pre-candidatura RTB
+= Revisione documentazione per RTB
 Prima di inviare la lettera di candidatura, il gruppo ha ritenuto necessaria una revisione completa della #glossary("repository") per individuare eventuali criticità. Si è deciso di effettuare questo controllo in modo asincrono, ad eccezione dell'#glossary("Analisi dei Requisiti"), considerata la sua importanza e il coinvolgimento di tutti i membri nella sua redazione. E' stato ritenuto necessario anche un controllo e aggiornamento del Glossario e del sito web del gruppo.
 
 Sono state create delle #glossary("issue") in merito a questa revisione.
@@ -76,4 +76,6 @@ Sono state create delle #glossary("issue") in merito a questa revisione.
 
 = Decisioni prese
 - Il gruppo invia la lettera di candidatura in data 2025/02/09.
-- Non viene redatta la tabella delle prossime attività, dato che non ne sono previste in attesa dell'esito della candidatura RTB.
+
+= Prossime attività
+Le prossime attività verranno assegnate da il nuovo responsabile in seguito al colloquio RTB.
