@@ -523,7 +523,7 @@ Durante la settimana del secondo sprint, (dal 3 dicembre 2024 al 17 dicembre 202
 Sarà prevista inoltre la prima presentazione del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
 
 ==== Rischi attesi
-I rischi ai quali ci aspe2ttiamo di incorrere in questo periodo sono i seguenti:
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
 
 - #R.P2;
 - #R.P4;
@@ -827,7 +827,7 @@ Durante questa fase abbiamo ultimato la redazione della documentazione iniziale 
 #let costo-totale(dati)={
   let dati = dati.map(row => row + (row.sum(),))
   let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
-  let periodo = ("Periodo1", "Periodo2", "Periodo3", "Periodo4", "Periodo5", "Totale")
+  let periodo = ("Periodo 1", "Periodo 2", "Periodo 3", "Periodo 4", "Periodo 5", "Totale")
   let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last())
   
   let header = ([*Ruolo*],) + periodo.map(r => [*#r*])
