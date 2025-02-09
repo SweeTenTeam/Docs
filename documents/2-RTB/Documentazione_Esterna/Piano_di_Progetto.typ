@@ -9,6 +9,13 @@
     p.azzurro,
   ),
   changelog: (
+    "1.0.0",
+    "2025-02-09",
+    p.campagnaro,
+    p.ferazzani,
+    [
+      Approvazione per RTB
+    ],
     "0.5.0",
     "2025-02-05",
     p.mahdi,
@@ -76,6 +83,7 @@
   show_images_list: true,
   show_tables_list: true,
   figure_breakable: false,
+  image_width: 55%,
 )
 
 = *Introduzione*
@@ -330,7 +338,7 @@ Partendo delle osservazioni fatte nella sezione 2 _Analisi dei rischi_, si è de
   columns: 2,
   align: left,
     [*Revisione*], [*Data*],
-    [#glossary("RTB") (Requirements and Technology Baseline)], [2025-01-13],
+    [#glossary("RTB") (Requirements and Technology Baseline)], [2025-02-10],
     [#glossary("PB") (Product Baseline)], [2025-03-28],
 ),caption:"Calendario di progetto") <tab_cal_prj>]
 
@@ -423,9 +431,9 @@ Ogni fase si concentra sulla preparazione dei documenti e artefatti richiesti da
 #pagebreak()
 == *RTB*
 *Inizio*: 2024-11-12;\
-*Fine prevista*: 2025-01-13;\
-*Fine attuale*: ;\
-*Giorni di ritardo*: ;\
+*Fine prevista*: 2025-02-05;\
+*Fine attuale*: 2025-02-10;\
+*Giorni di ritardo*: #neg("5");\
 
 === *Periodo 1*
 *Inizio*: 2024-11-12;\
@@ -466,6 +474,7 @@ Questo perché, trovandoci allinizio del progetto, siamo ancora in una fase di o
 ==== Preventivo
 ===== Preventivo orario
 #prev-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"1")
+#pagebreak()
 ===== Preventivo economico
 #prev-economico((11,14,13,4,5,16),"1")
 
@@ -488,7 +497,7 @@ Dal confronto tra preventivo e consuntivo emerge che:
 Durante questo periodo sono emerse alcune delle complicazioni previste, in particolare quelle legate alla pianificazione, al coordinamento e alla comunicazione. Un esempio significativo riguarda la stesura parallela di diversi documenti senza una definizione chiara delle modalità di gestione delle #glossary("Pull Request") e delle regole stilistiche per il testo, che sarebbero dovute essere stabilite nelle Norme di Progetto. Inoltre, alcune attività, come l’identificazione e la redazione dei casi d’uso, hanno subito lievi ritardi, rendendo necessario il loro completamento nel corso dello Sprint successivo.
 
 Queste difficoltà hanno evidenziato l’importanza di una pianificazione realistica, calibrata sulla reale mole di lavoro. Il gruppo ha quindi preso atto di questa necessità, impegnandosi a porre maggiore attenzione nella pianificazione dei futuri #glossary("Sprint"). Nonostante ciò, i rischi verificatisi non hanno avuto un impatto significativo sul progetto e sono stati gestiti efficacemente attraverso un confronto costruttivo tra i membri del team.
-
+#pagebreak()
 ==== Retrospettiva
 Questo primo periodo di lavoro ha sottolineato l'importanza di seguire #glossary("best practice") comuni da parte di ogni membro del gruppo per tutta la durata del progetto. Per questo motivo, è stata data priorità alla stesura completa e definitiva delle Norme di Progetto, considerandole fondamentali per garantire un’organizzazione efficace.
 
@@ -499,7 +508,7 @@ Inoltre, ci siamo resi conto che l’approccio migliore e più efficace prevede 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
 Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.317,50 €`*, risultando inferiore di *`32,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`11.422,50 €`*. 
 
-#avanzamento(25, 0, "1")
+#avanzamento(22, 0, "1")
 
 #pagebreak()
 === *Periodo 2*
@@ -557,7 +566,7 @@ Un momento particolarmente significativo durante questa fase è stato rappresent
 ==== Punto di avanzamento raggiunto e prospettive di completamento
 Al termine del secondo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.292,50 €`*, risultando inferiore di *`62,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Il budget rimanente disponibile ammonta a *`10.130 €`*. 
 
-#avanzamento(50, 0, "2")
+#avanzamento(47, 0, "2")
 
 #pagebreak()
 === *Periodo 3*
@@ -619,8 +628,9 @@ Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati
 ==== Punto di avanzamento raggiunto e prospettive di completamento
 Al termine del terzo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.287,50 €`*, risultando inferiore di *`32,50 €`* rispetto ai *`1.320 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`8.842,50 €`*.
 
-#avanzamento(70, 0, "3")
+#avanzamento(67, 0, "3")
 
+#pagebreak()
 === *Periodo 4*
 *Inizio*: 2025-01-06;\
 *Fine prevista*: 2025-01-20;\
@@ -676,12 +686,12 @@ Al termine del quarto periodo è emerso un lieve scostamento tra i costi previst
 
 #avanzamento(90, 0, "4")
 
-
+#pagebreak()
 === *Periodo 5*
 *Inizio*: 2025-01-20;\
-*Fine prevista*: 2025-02-02;\
-*Fine attuale*: 2025-02-07;\
-*Giorni di ritardo*: #pos(5);\
+*Fine prevista*: 2025-02-05;\
+*Fine attuale*: 2025-02-10;\
+*Giorni di ritardo*: #neg(5);\
 
 ==== Pianificazione
 Durante la settimana e mezza del quinto sprint, il team si dedicherà alla stesura dei vari requisiti nel file #glossary("Analisi dei Requisti"), dei test nel file #glossary("Piano di Progetto") e inoltre, saranno riletti e controllati tutti i documenti per essere portati alla versione 1.0 in vista dell'#glossary("RTB").
@@ -731,3 +741,118 @@ Nonostante il ritmo ridotto, tutte le task assegnate sono state portate a termin
 Al termine del quinto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`477,50 €`*, risultando inferiore di *`42,50 €`* rispetto ai *`520,00 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.080,00 €	`*.
 
 #avanzamento(100, 0, "5")
+
+#pagebreak()
+=== *Sommario finale*
+Dopo svariate intense settimane di lavoro, iniziato in data *`2023-11-12`*, il gruppo si ritiene pronto a
+sostenere la prima revisione del prodotto che inizierà dopo l'invio della lettera di presentazione il giorno
+*`2024-02-10`* e che prevederà un primo colloqui con il *#p.cardin* e continuerà poi con il colloquio con il *#p.vardanega*.\
+Durante questa fase abbiamo ultimato la redazione della documentazione iniziale del progetto, focalizzandoci in particolare sull'#glossary("Analisi dei Requisiti"), sulle #glossary("Norme di Progetto") e sulla realizzazione del #glossary("Proof of Concept") (*`POC`*). Inizialmente era stato ipotizzato che il tempo assegnato allo studio delle funzionalità potesse essere eccessivo, mentre il periodo dedicato allo sviluppo software risultasse insufficiente, viste le nuove tecnologie da utilizzare e la nostra esperienza limitata. Tuttavia, dopo una valutazione più approfondita, confermiamo che non sono state apportate modifiche alle ore riservate per ciascun ruolo. Di conseguenza, il preventivo complessivo, pari a *`€12.740,00`*, e la data di consegna del prodotto, fissata per il *`28 marzo 2025`*, rimangono invariati.
+
+==== Riepilogo prospetto orario
+===== Ore consumate
+#let ore-consumate-totale(dati)={
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let ruoli = ("RS", "AM", "AN", "PR", "PG", "VR","Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last())
+  
+  let header = ([],) + ruoli.map(r => [*#r*])
+  
+  let r = header + (persone).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)))).flatten() +("Totale",).map(el => [*#el*])+(dati.map(row => row.at(0)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(1)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(2)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(3)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(4)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(5)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(6)).sum(),).map(el => [*#el*])
+
+
+  
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Ore consumate durante il periodo di preparazione all'`RTB`*], 
+        table(
+            columns: (auto,)+(1fr,)*6+(auto,),
+            inset: 5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Impegno orario effettivo per ruolo di ciascun membro al termine del periodo di preparazione all'`RTB`.]
+  )
+  v(1.5em)
+}
+#ore-consumate-totale(((4,5,8,8,8,6),(3,6,8,5,4,11),(7,6.5,8,4,1,10),(7,6.5,8,3,7,7),(7,6,9,6,3,6.5),(8,5,8,4,3,9.5),(3,5,8.5,4,5,12.5)))
+
+#pagebreak()
+===== Ore rimanenti
+#let ore-rimaste-totale(dati)={
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let ruoli = ("RS", "AM", "AN", "PR", "PG", "VR","Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last())
+  
+  let header = ([],) + ruoli.map(r => [*#r*])
+  
+  let r = header + (persone).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)))).flatten() +("Totale",).map(el => [*#el*])+(dati.map(row => row.at(0)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(1)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(2)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(3)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(4)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(5)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(6)).sum(),).map(el => [*#el*])
+
+
+  
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Ore rimanenti dopo il periodo di preparazione all'`RTB`*], 
+        table(
+            columns: (auto,)+(1fr,)*6+(auto,),
+            inset: 5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Impegno orario rimanente per ruolo di ciascun membro al termine del periodo di preparazione all'`RTB`.]
+  )
+  v(1.5em)
+}
+#ore-rimaste-totale(((5,3,3,9,16,16),(6,2,3,12,20,11),(2,1.5,3,13,23,12),(2,1.5,3,14,17,15),(2,2,2,11,21,15.5),(1,3,3,13,21,12.5),(6,3,2.5,13,19,9.5)))
+==== Riepilogo prospetto economico
+===== Costi totali
+#let costo-totale(dati)={
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let periodo = ("Periodo1", "Periodo2", "Periodo3", "Periodo4", "Periodo5", "Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last())
+  
+  let header = ([*Ruolo*],) + periodo.map(r => [*#r*])
+  
+  let r = header + (ruoli_tot).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)+" €"))).flatten() +("Totale",).map(el => [*#el*])+(dati.map(row => row.at(0)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(1)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(2)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(3)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(4)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(5)).sum(),).map(el => [*#el €*])
+
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Ore rimanenti dopo il periodo di preparazione all'`RTB`*], 
+        table(
+            columns: (auto,)+(1fr,)*5+(auto,),
+            inset: 5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Aggiornamenti economici del progetto al termine del periodo di preparazione all'`RTB`.]
+  )
+  v(1.5em)
+}
+#costo-totale(((330,330,210,240,60),(280,140,200,160,20),(300,250,250,300,337.5),(100,250,275,225,0),(75,120,165,105,0),(232.5,202.5,187.5,255,60)))

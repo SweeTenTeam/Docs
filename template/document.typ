@@ -25,6 +25,7 @@
   show_tables_list: false,
   heading_numbers: "1.1)",
   figure_breakable: true,
+  image_width: 60%,
   body,
 ) = {
   set page(fill: rgb(209, 197, 174))
@@ -53,7 +54,7 @@
   let verifiers = keep(r_verifiers)
 
   set align(top + center)
-  image(g.logo, width: 60%)
+  image(g.logo, width: image_width)
 
   set align(center + horizon)
   gridx(
@@ -1246,7 +1247,7 @@ v(1.5em)
   figure(
     [
       \
-      #let RTB = 40
+      #let RTB = 45
       #let scale = 6.5
       
       #if(percentuale_RTB!=100){percentuale_PB=0}      
