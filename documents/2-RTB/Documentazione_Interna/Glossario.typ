@@ -89,7 +89,7 @@ Riferimento fisso in un progetto, come specifiche, piani o documenti, utilizzato
 
 Un insieme di metodi o approcci riconosciuti come i più efficaci e affidabili per raggiungere un obiettivo. Le best practice sono spesso basate su esperienze consolidate e standard del settore.
 
-== #LTG("Budget at Completion BaC")
+== #LTG("Budget at Completion")
 
 Costo totale pianificato di un progetto alla sua conclusione.
 

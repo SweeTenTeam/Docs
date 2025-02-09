@@ -9,7 +9,7 @@ Bad Practice,"Pratica di sviluppo o gestione software considerata inefficace o d
 Baseline,"Riferimento fisso in un progetto, come specifiche, piani o documenti, utilizzato per monitorare e confrontare i progressi."
 Best Practice,"Un insieme di metodi o approcci riconosciuti come i più efficaci e affidabili per raggiungere un obiettivo. Le best practice sono spesso basate su esperienze consolidate e standard del settore."
 Branch,"Un branch è una linea indipendente di sviluppo all'interno di un repository. Consente di creare una copia separata del codice principale (solitamente chiamato main o master) per lavorare su nuove funzionalità, correzioni di bug o esperimenti, senza modificare il codice stabile."
-Budget At Completion (BAC),"Costo totale pianificato di un progetto alla sua conclusione."
+Budget At Completion,"Costo totale pianificato di un progetto alla sua conclusione."
 Bug,"Un errore o malfunzionamento in un programma software che causa risultati imprevisti o indesiderati. I bug possono derivare da errori di programmazione, progettazione o configurazione."
 camelCase,"Uno stile di scrittura di identificatori simile a PascalCase, ma con la prima parola in lettere minuscole e le successive con iniziali maiuscole. Esempio: `myVariableName`."
 Capitolato,"Documento che contiene le specifiche e le condizioni per lo sviluppo di un progetto software. Il capitolato viene redatto dal proponente e viene presentato ai fornitori o agli sviluppatori interessati a partecipare all'appalto per la realizzazione del prodotto software."
