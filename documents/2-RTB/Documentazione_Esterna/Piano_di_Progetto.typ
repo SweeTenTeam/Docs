@@ -90,7 +90,7 @@
 == Scopo del documento
 
 Il presente documento rappresenta un elemento cardine per la pianificazione e la gestione di progetti di sviluppo software,
-con l'obiettivo di garantire il rispetto dei più elevati standard di qualità definiti dall’ingegneria del software.
+con l'obiettivo di garantire il rispetto dei più elevati standard di qualità definiti dall'ingegneria del software.
 Esso intende fornire una descrizione completa e dettagliata delle pratiche e dei metodi organizzativi e di pianificazione adottati,
 specificandone l'applicazione concreta in tutte le fasi del progetto.
 In particolare, il documento non solo funge da guida interna per il team di sviluppo, offrendo un supporto strutturato per la retrospettiva
@@ -444,19 +444,19 @@ Ogni fase si concentra sulla preparazione dei documenti e artefatti richiesti da
 ==== Pianificazione
 Durante la settimana successiva all'aggiudicazione dell'appalto (dal 2024-11-04 al 2024-11-12), ci siamo concentrati principalmente sulla sistemazione dei documenti di candidatura e su un primo studio delle tecnologie da utilizzare, in vista del primo incontro con l'azienda #box(image(g.azzurro, width: 5em, height: auto)). Abbiamo deciso di considerare tale incontro come il vero e proprio inizio del periodo RTB, poiché tutte le attività svolte nella prima settimana possono essere classificate come attività preliminari, utili per la preparazione, ma non strettamente legate alle attività rendicontabili in termini di tempo ed economia previste dal progetto.
 
-Successivamente all'incontro con #box(image(g.azzurro, width: 5em, height: auto)), il team si dedicherà alla pianificazione e alla redazione dei documenti essenziali per il progetto, con l’obiettivo di costruire una solida base per il lavoro futuro. In questa fase iniziale verrà avviata la stesura del Piano di Progetto, dell’Analisi dei Requisiti e del Glossario, accompagnata dalla scrittura completa delle Norme di Progetto. Inoltre, il team si impegnerà nell’avvio del #glossary("Proof of Concept") (PoC) per validare le scelte tecniche e funzionali. Durante questo periodo sarà cruciale definire modalità operative chiare e condivise, per garantire una gestione delle attività produttiva ed efficiente.
+Successivamente all'incontro con #box(image(g.azzurro, width: 5em, height: auto)), il team si dedicherà alla pianificazione e alla redazione dei documenti essenziali per il progetto, con l'obiettivo di costruire una solida base per il lavoro futuro. In questa fase iniziale verrà avviata la stesura del Piano di Progetto, dell'Analisi dei Requisiti e del Glossario, accompagnata dalla scrittura completa delle Norme di Progetto. Inoltre, il team si impegnerà nell'avvio del #glossary("Proof of Concept") (PoC) per validare le scelte tecniche e funzionali. Durante questo periodo sarà cruciale definire modalità operative chiare e condivise, per garantire una gestione delle attività produttiva ed efficiente.
 
 Obiettivi principali della fase iniziale:
 
-- *Migrazione da #glossary("LaTeX") a #glossary("Typst")*: Implementazione e automatizzazione del processo di compilazione dei documenti per migliorare l’efficienza.
-- *Introduzione al Piano di Progetto e all’Analisi dei Requisiti*: Inizio della stesura delle sezioni introduttive di questi documenti.
+- *Migrazione da #glossary("LaTeX") a #glossary("Typst")*: Implementazione e automatizzazione del processo di compilazione dei documenti per migliorare l'efficienza.
+- *Introduzione al Piano di Progetto e all'Analisi dei Requisiti*: Inizio della stesura delle sezioni introduttive di questi documenti.
 - *Completamento delle Norme di Progetto*: Redazione dettagliata delle Norme, in preparazione a future revisioni e discussioni con il team e i referenti aziendali.
-- *Studio delle tecnologie e casi d’uso*: Analisi approfondita delle tecnologie individuate e dei possibili scenari applicativi, con il supporto della proponente.
-- *Definizione del “#glossary("Way of Working")” del team*: Discussioni di linee guida operative per ottimizzare la collaborazione e l’organizzazione interna.
+- *Studio delle tecnologie e casi d'uso*: Analisi approfondita delle tecnologie individuate e dei possibili scenari applicativi, con il supporto della proponente.
+- *Definizione del “#glossary("Way of Working")” del team*: Discussioni di linee guida operative per ottimizzare la collaborazione e l'organizzazione interna.
 - *Automatizzazione del Glossario*: Creazione di un processo per collegare automaticamente, tramite link, termini e concetti fondamentali della documentazione con il loro significato.
 - *Pianificazione delle attività*: Strutturazione delle attività operative per garantire una gestione efficace del team e del progetto.
 - *Avvio del PoC*: Analisi iniziale delle tecnologie selezionate, definizione delle specifiche e primi passi verso la realizzazione del Proof of Concept.
-- *Utilizzo del #glossary("LLM") tramite API (#glossary("Groq Cloud"))*: Sperimentazione e integrazione iniziale dell’#glossary("LLM").
+- *Utilizzo del #glossary("LLM") tramite API (#glossary("Groq Cloud"))*: Sperimentazione e integrazione iniziale dell'#glossary("LLM").
 - *Sviluppo di un database locale*: Creazione di un database locale per salvare e consultare lo storico delle domande effettuate dagli utenti.
 - *Visualizzazione delle risposte precedenti*: Implementazione di un sistema per tracciare e visualizzare le risposte fornite dall'#glossary("LLM").
 
@@ -494,16 +494,16 @@ Dal confronto tra preventivo e consuntivo emerge che:
 #cons-economico((11,14,12,4,5,15.5),(11,14,13,4,5,16),"1")
 
 ==== Rischi occorsi, impatto e loro mitigazione
-Durante questo periodo sono emerse alcune delle complicazioni previste, in particolare quelle legate alla pianificazione, al coordinamento e alla comunicazione. Un esempio significativo riguarda la stesura parallela di diversi documenti senza una definizione chiara delle modalità di gestione delle #glossary("Pull Request") e delle regole stilistiche per il testo, che sarebbero dovute essere stabilite nelle Norme di Progetto. Inoltre, alcune attività, come l’identificazione e la redazione dei casi d’uso, hanno subito lievi ritardi, rendendo necessario il loro completamento nel corso dello Sprint successivo.
+Durante questo periodo sono emerse alcune delle complicazioni previste, in particolare quelle legate alla pianificazione, al coordinamento e alla comunicazione. Un esempio significativo riguarda la stesura parallela di diversi documenti senza una definizione chiara delle modalità di gestione delle #glossary("Pull Request") e delle regole stilistiche per il testo, che sarebbero dovute essere stabilite nelle Norme di Progetto. Inoltre, alcune attività, come l'identificazione e la redazione dei casi d'uso, hanno subito lievi ritardi, rendendo necessario il loro completamento nel corso dello Sprint successivo.
 
-Queste difficoltà hanno evidenziato l’importanza di una pianificazione realistica, calibrata sulla reale mole di lavoro. Il gruppo ha quindi preso atto di questa necessità, impegnandosi a porre maggiore attenzione nella pianificazione dei futuri #glossary("Sprint"). Nonostante ciò, i rischi verificatisi non hanno avuto un impatto significativo sul progetto e sono stati gestiti efficacemente attraverso un confronto costruttivo tra i membri del team.
+Queste difficoltà hanno evidenziato l'importanza di una pianificazione realistica, calibrata sulla reale mole di lavoro. Il gruppo ha quindi preso atto di questa necessità, impegnandosi a porre maggiore attenzione nella pianificazione dei futuri #glossary("Sprint"). Nonostante ciò, i rischi verificatisi non hanno avuto un impatto significativo sul progetto e sono stati gestiti efficacemente attraverso un confronto costruttivo tra i membri del team.
 #pagebreak()
 ==== Retrospettiva
-Questo primo periodo di lavoro ha sottolineato l'importanza di seguire #glossary("best practice") comuni da parte di ogni membro del gruppo per tutta la durata del progetto. Per questo motivo, è stata data priorità alla stesura completa e definitiva delle Norme di Progetto, considerandole fondamentali per garantire un’organizzazione efficace.
+Questo primo periodo di lavoro ha sottolineato l'importanza di seguire #glossary("best practice") comuni da parte di ogni membro del gruppo per tutta la durata del progetto. Per questo motivo, è stata data priorità alla stesura completa e definitiva delle Norme di Progetto, considerandole fondamentali per garantire un'organizzazione efficace.
 
-Lo studio condiviso delle tecnologie e dei casi d’uso tra i vari membri del team ha favorito un apprendimento rapido dei contenuti. Tuttavia, abbiamo deciso di investire più tempo e risorse in queste attività durante il prossimo periodo, assegnandogli più persone per approfondire tali aspetti.
+Lo studio condiviso delle tecnologie e dei casi d'uso tra i vari membri del team ha favorito un apprendimento rapido dei contenuti. Tuttavia, abbiamo deciso di investire più tempo e risorse in queste attività durante il prossimo periodo, assegnandogli più persone per approfondire tali aspetti.
 
-Inoltre, ci siamo resi conto che l’approccio migliore e più efficace prevede che il Responsabile assegni le task e organizzi il lavoro in modo che le attività siano distribuite equamente tra i membri del gruppo. Questo metodo, che adotteremo a partire dal prossimo periodo, garantirà che ciascuna task venga completata con un numero di ore congruo e nel rispetto delle scadenze, favorendo una gestione più bilanciata ed efficiente.
+Inoltre, ci siamo resi conto che l'approccio migliore e più efficace prevede che il Responsabile assegni le task e organizzi il lavoro in modo che le attività siano distribuite equamente tra i membri del gruppo. Questo metodo, che adotteremo a partire dal prossimo periodo, garantirà che ciascuna task venga completata con un numero di ore congruo e nel rispetto delle scadenze, favorendo una gestione più bilanciata ed efficiente.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
 Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.317,50 €`*, risultando inferiore di *`32,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`11.422,50 €`*. 
