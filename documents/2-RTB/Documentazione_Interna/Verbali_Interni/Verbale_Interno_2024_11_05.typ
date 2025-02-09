@@ -2,8 +2,22 @@
 
 #show: project.with(
   title: "Verbale interno del 2024-11-05",
-  recipients: (p.vardanega, p.cardin,),
-  changelog: ("0.1", "2024-11-05", (p.mahdi), (p.belenkov), "Stesura del verbale",),
+  recipients: (
+    p.vardanega,
+    p.cardin,
+  ),
+  changelog: (
+    "1.0",
+    "2025-02-06",
+    (p.mahdi),
+    (p.santi),
+    "Revisione verbale per RTB",
+    "0.1",
+    "2024-11-05",
+    (p.mahdi),
+    (p.belenkov),
+    [Stesura del verbale],
+  ),
 )
 
 = Contenuti del verbale

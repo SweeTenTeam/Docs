@@ -7,7 +7,16 @@
     p.cardin,
   ),
   changelog: (
-    "0.1", "2024-11-18", (p.ferazzani), (p.fracaro), "Stesura del verbale",
+    "1.0",
+    "2025-02-06",
+    (p.mahdi),
+    (p.santi),
+    "Revisione verbale per RTB",
+    "0.1",
+    "2024-11-18",
+    (p.ferazzani),
+    (p.fracaro),
+    "Stesura del verbale",
   ),
 )
 
