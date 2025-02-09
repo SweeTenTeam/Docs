@@ -7,6 +7,11 @@
     p.cardin,
   ),
   changelog: (
+    "0.3",
+    "2024-12-09",
+    p.ferazzani,
+    p.belenkov,
+    [Aggiunte nuove voci al glossario],
     "0.2",
     "2024-11-25",
     p.ferazzani,
@@ -53,7 +58,7 @@ L'#glossary("analisi dei requisiti") è una fase fondamentale nello sviluppo del
 
 == #LTG("Analista")
 
-Figura professionale con competenze avanzate riguardo l’attività di analisi dei requisiti ed il dominio applicativo del
+Figura professionale con competenze avanzate riguardo l'attività di analisi dei requisiti ed il dominio applicativo del
 problema. Il suo ruolo è quello di identificare, documentare e comprendere a fondo le esigenze e le specifiche del
 progetto, traducendole in requisiti chiari e dettagliati. Si occupa di: analizzare il contesto di riferimento, definire
 il problema in esame e stabilire gli obiettivi da raggiungere; comprendere il problema e definire la complessità e i requisiti, redigere il documento Analisi dei requisiti; studiare i bisogni espliciti ed impliciti.
@@ -72,9 +77,25 @@ Documenti, diagrammi, codici o output creati durante lo sviluppo software, utili
 
 = #LTG("B")
 
+== #LTG("Bad Practice")
+
+Pratica di sviluppo o gestione software considerata inefficace o dannosa per la qualità del prodotto.
+
 == #LTG("Baseline")
 
 Riferimento fisso in un progetto, come specifiche, piani o documenti, utilizzato per monitorare e confrontare i progressi.
+
+== #LTG("Best Practice")
+
+Un insieme di metodi o approcci riconosciuti come i più efficaci e affidabili per raggiungere un obiettivo. Le best practice sono spesso basate su esperienze consolidate e standard del settore.
+
+== #LTG("Budget at Completion BaC")
+
+Costo totale pianificato di un progetto alla sua conclusione.
+
+== #LTG("Bug")
+
+Un errore o malfunzionamento in un programma software che causa risultati imprevisti o indesiderati. I bug possono derivare da errori di programmazione, progettazione o configurazione.
 
 == #LTG("Branch")
 
@@ -85,11 +106,19 @@ esperimenti, senza modificare il codice stabile.
 
 = #LTG("C")
 
+== #LTG("camelCase")
+
+Uno stile di scrittura di identificatori simile a PascalCase, ma con la prima parola in lettere minuscole e le successive con iniziali maiuscole. Esempio: `myVariableName`.
+
 == #LTG("Capitolato")
 
 Documento che contiene le specifiche e le condizioni per lo sviluppo di un progetto software. II capitolato viene
 redatto dal proponente e viene presentato ai fornitori o agli sviluppatori interessati a partecipare all'appalto per la
 realizzazione del prodotto software.
+
+== #LTG("Chat")
+
+Sistema di comunicazione testuale in tempo reale tra utenti.
 
 == #LTG("Chatbot")
 
@@ -107,6 +136,18 @@ sviluppo. Il committente definisce i requisiti e le specifiche del progetto e va
 == #LTG("Confluence")
 
 Confluence è uno strumento collaborativo di gestione della conoscenza e documentazione, sviluppato da Atlassian, progettato per aiutare i team a creare, organizzare e condividere contenuti in un'unica piattaforma centralizzata.
+
+== #LTG("Content Switch")
+
+Un cambiamento dinamico e fluido del contenuto visualizzato in una pagina web o interfaccia, spesso senza ricaricare la pagina. Implementato comunemente con tecnologie come JavaScript e framework come React.
+
+== #LTG("Context Switch")
+
+Processo con cui il gruppo sostituisce un membro impossibilitato a svolgere una precisa task, con un altro membro del team, in modo da garantire la continuità del lavoro.
+
+== #LTG("Contratto")
+
+Un accordo formale tra due o più parti che stabilisce obblighi, diritti e responsabilità reciproche, solitamente in forma scritta e legalmente vincolante. In ambito software, un contratto può riguardare la fornitura di servizi, lo sviluppo di un progetto o l'uso di un prodotto.
 
 == #LTG("Cruscotto")
 
@@ -127,12 +168,14 @@ rapido ed efficace per valutare lo stato del progetto, identificare eventuali pr
 
 Un database vettoriale è progettato per archiviare e gestire dati sotto forma di vettori, che sono rappresentazioni numeriche di informazioni come testo, immagini o audio. Questi database sono ottimizzati per eseguire ricerche di similarità su grandi insiemi di dati, ad esempio per trovare elementi simili in base al loro contesto o contenuto. Sono comunemente usati in applicazioni di machine learning, AI e ricerca semantica.
 
-
-
 == #LTG("Dev team")
 
 In Scrum, il Development Team si riferisce all'insieme dei membri che svolge un ruolo nello sviluppo e nel supporto del
 prodotto e può includere ricercatori, architetti, designer, programmatori, e molti altri.
+
+== #LTG("Design Pattern")
+
+Soluzioni riutilizzabili a problemi ricorrenti nella progettazione del software. I design pattern offrono linee guida per scrivere codice più efficiente, leggibile e mantenibile. Esempi includono Singleton, Factory e Observer.
 
 == #LTG("Diagramma dei casi d'uso")
 
@@ -140,9 +183,17 @@ Un diagramma di casi d'uso è uno strumento grafico utilizzato nella modellazion
 rappresentare le interazioni tra gli attori (utenti o sistemi esterni) e un sistema software. Serve a descrivere le
 funzionalità del sistema dal punto di vista dell'utente e a documentare i requisiti funzionali in modo chiaro e visivo.
 
+== #LTG("Discord")
+
+Piattaforma di comunicazione VoIP e messaggistica istantanea con supporto per server, canali e integrazioni.
+
 == #LTG("Docker")
 
 Docker è una piattaforma che consente di creare, distribuire ed eseguire applicazioni in container. Un container è un ambiente isolato che include tutto il necessario per eseguire un'applicazione, come il codice, le librerie e le dipendenze. Docker facilita il deployment, garantendo che le applicazioni funzionino in modo coerente su diverse piattaforme e infrastrutture.
+
+== #LTG("Documentation as code")
+
+Un approccio alla documentazione che tratta i documenti come codice sorgente, archiviandoli in repository versionati, usando strumenti di automazione per la generazione e manutenzione. Favorisce l'allineamento continuo con il codice.
 
 
 
@@ -157,13 +208,25 @@ Docker è una piattaforma che consente di creare, distribuire ed eseguire applic
 
 Una feature è una caratteristica o una funzionalità specifica di un software o applicazione progettata per soddisfare un bisogno o offrire un vantaggio agli utenti. Una feature può essere un'azione che l'utente può eseguire, un comportamento del sistema o un miglioramento che aggiunge valore al software.
 
+== #LTG("Feature Branch")
+
+Branch di sviluppo dedicato a una nuova funzionalità, creato per isolare le modifiche prima dell’integrazione nel branch principale.
+
 == #LTG("Feedback")
 
 Informazioni o commenti ricevuti su un prodotto, processo o servizio, usati per apportare miglioramenti.
 
-// == #LTG("Fornitura")
+== #LTG("Framework")
 
-// Consegna o disponibilità di risorse, materiali o servizi necessari per completare un progetto.
+Una struttura riutilizzabile e predefinita di codice che fornisce un insieme di strumenti, regole e librerie per sviluppare applicazioni software. I framework riducono il lavoro manuale, offrono standardizzazione e accelerano lo sviluppo.
+
+== #LTG("Fogli Google")
+
+Applicazione web per la creazione e gestione di fogli di calcolo in cloud, parte della suite Google Workspace.
+
+== #LTG("Fornitura")
+
+Processo di consegna di beni o servizi secondo specifiche contrattuali.
 
 #pagebreak()
 
@@ -179,11 +242,27 @@ GitHub è una piattaforma di sviluppo collaborativo basata su Git, un sistema di
 ampiamente utilizzato da sviluppatori di software e team di sviluppo per gestire progetti, tenere traccia delle
 modifiche al codice sorgente, coordinare il lavoro tra i membri del team e facilitare la collaborazione su larga scala.
 
+== #LTG("GitHub Organization")
+
+Struttura su GitHub che consente la gestione collaborativa di repository e permessi per team di sviluppo.
+
 == #LTG("Glossario")
 
 Elenco strutturato di termini tecnici o specializzati, ognuno corredato dalla propria definizione o spiegazione. Questo
 strumento aiuta a migliorare la comunicazione tra le varie parti coinvolte in un progetto, riducendo le ambiguità e
 garantendo una comprensione condivisa dei termini utilizzati in un determinato contesto.
+
+== #LTG("Gmail")
+
+Servizio di posta elettronica di Google basato su cloud.
+
+== #LTG("Google Calendar")
+
+Servizio di gestione e condivisione di eventi e appuntamenti in cloud.
+
+== #LTG("Google Meet")
+
+Piattaforma di videoconferenza di Google, integrata con Google Workspace.
 
 == #LTG("GUI (Graphical User Interface)")
 
@@ -197,6 +276,14 @@ utilizzare solo comandi testuali o linee di comando.
 #pagebreak()
 
 = #LTG("I")
+
+== #LTG("IA")
+
+sistema artificiale (tipicamente un sistema informatico) che simula una generica forma di intelligenza.
+
+== #LTG("Inspection")
+
+Una tecnica formale di revisione del software in cui un team analizza codice o documentazione per identificare errori o incongruenze rispetto agli standard. L'ispezione include solitamente un moderatore, lettori e un protocollo definito.
 
 == #LTG("Issue")
 
@@ -264,6 +351,10 @@ Un LLM (large language model) è un modello di intelligenza artificiale basato s
 
 Documento che spiega agli utenti finali come utilizzare il software, spesso includendo istruzioni dettagliate e risoluzioni comuni ai problemi.
 
+== #LTG("Merge")
+
+Operazione di unione di due branch in un repository Git, combinando le modifiche apportate in entrambi i branch in uno solo.
+
 == #LTG("Milestone")
 
 Le Milestone sono strumenti utilizzati nella gestione dei progetti per segnare punti specifici lungo la timeline di un
@@ -271,11 +362,17 @@ progetto. Questi punti possono segnalare ancore come una data di inizio e di fin
 revisione. In molti casi, le milestone, non incidono sulla durata del progetto ma si concentrano invece sui principali
 punti di avanzamento che devono essere raggiunti per ottenere il successo.
 
-== #LTG("Minimum Viable Product (MVP)")
+== #LTG("Minimum Viable Product")
 
 È una versione semplificata di un prodotto software che include solo le funzionalità essenziali per soddisfare i bisogni
 dei primi utenti. L'obiettivo principale di un MVP è testare e validare l'idea di base del prodotto, raccogliere
 feedback dagli utenti e ridurre al minimo il tempo e le risorse necessarie per il suo sviluppo.
+
+== #LTG("Modello a V")
+
+Un modello di sviluppo software che rappresenta visivamente il ciclo di vita di un progetto, enfatizzando la relazione tra le fasi di sviluppo e quelle di testing. La "V" simboleggia la verifica durante lo sviluppo e la validazione nella fase di testing.
+
+
 
 #pagebreak()
 
@@ -301,6 +398,10 @@ Processo per integrare nuovi membri in un team o progetto, fornendo loro le info
 
 = #LTG("P")
 
+== #LTG("PascalCase")
+
+Uno stile di scrittura di identificatori in cui ogni parola inizia con una lettera maiuscola e non ci sono spazi o separatori. Esempio: `VariableName`.
+
 == #LTG("Piano Di Progetto")
 
 Documento formale che delinea in dettaglio la pianificazione, l'esecuzione, il monitoraggio e il controllo di tutte le
@@ -317,7 +418,7 @@ valutazione e dei criteri di accettazione del prodotto finale. L'obiettivo princ
 che il prodotto soddisfi gli standard di qualità prefissati e che il processo di sviluppo segua procedure coerenti ed
 efficaci.
 
-== #LTG("Postgres")
+== #LTG("PostgreSQL")
 
 Postgres è un sistema di gestione di database relazionale open-source, noto per la sua affidabilità, flessibilità e conformità agli standard SQL. Supporta funzionalità avanzate come transazioni complesse, estensioni personalizzabili, gestione di grandi volumi di dati e supporto per tipi di dati avanzati. È largamente utilizzato in applicazioni web, analisi dei dati e gestione delle informazioni.
 
@@ -332,7 +433,7 @@ devono essere fatte a un prodotto software. Il Product Backlog è dinamico e pu�
 per riflettere le esigenze e le priorità del progetto. È gestito dal Product Owner e utilizzato dal team di sviluppo per
 pianificare e organizzare il lavoro da svolgere.
 
-== #LTG("Product Baseline (PB)")
+== #LTG("Product Baseline")
 
 Fase di progetto durante la quale il focus si sposta dall'analisi dei requisiti e dalla progettazione concettuale
 all'implementazione e alla costruzione effettiva del prodotto software. Le attività principali comprendono la scrittura
@@ -354,6 +455,18 @@ l'architettura del prodotto secondo specifiche tecniche dettagliate; prendere de
 soddisfino i criteri di affidabilità, efficienza, sostenibilità e conformità ai requisiti; redige la Specifica
 Architetturale e la parte pragmatica del Piano di Qualifica.
 
+== #LTG("Project")
+
+Iniziativa temporanea con obiettivi specifici, risorse definite e una data di completamento.
+
+== #LTG("Project Board")
+
+Strumento visivo per la gestione del flusso di lavoro e il monitoraggio dell’avanzamento di un progetto.
+
+== #LTG("Project Manager")
+
+Figura responsabile della pianificazione, esecuzione e monitoraggio di un progetto, garantendone il successo in termini di obiettivi, tempi e budget.
+
 == #LTG("Proponente")
 
 Il proponente è la persona o l'organizzazione che presenta un capitolato d'appalto per la realizzazione di un progetto
@@ -363,12 +476,12 @@ sviluppatori interessati a partecipare all'appalto.
 == #LTG("Programmatore")
 
 Il programmatore è la figura professionale incaricata della scrittura del codice software. Il suo compito primario è
-implementare il codice conformemente alle specifiche fornite dall’analista e all’architettura definita dal progettista.
+implementare il codice conformemente alle specifiche fornite dall'analista e all'architettura definita dal progettista.
 In particolare, il programmatore: scrive codice manutenibile in conformità con le Specifiche Tecniche; codifica le varie
-componenti dell’architettura seguendo quanto ideato dai progettisti; realizza gli strumenti per verificare e validare il
+componenti dell'architettura seguendo quanto ideato dai progettisti; realizza gli strumenti per verificare e validare il
 codice; redige il Manuale Utente.
 
-== #LTG("Proof Of Concept (PoC)")
+== #LTG("Proof Of Concept")
 
 Dimostrazione pratica per verificare la fattibilità o la validità di un'idea, di un concetto o di un progetto specifico.
 Nel contesto dello sviluppo software, un PoC consiste nella creazione di una versione semplificata di un'applicazione
@@ -404,6 +517,25 @@ monitorare le modifiche nel tempo. I repository sono usati per gestire il ciclo 
 facilitando la collaborazione tra sviluppatori e il versionamento del codice. I repository possono essere locali (sul
 proprio computer) o remoti (su piattaforme come GitHub, GitLab, Bitbucket).
 
+== #LTG("Requisiti")
+
+Specifiche dettagliate che descrivono ciò che un sistema o un prodotto deve fare (requisiti funzionali) o le qualità che deve avere (requisiti non funzionali). Possono essere raccolti tramite interviste, analisi e documentazione, e sono fondamentali per la progettazione e lo sviluppo.
+
+== #LTG("Requisiti di Qualità")
+
+Criteri relativi alle prestazioni, usabilità, sicurezza e manutenibilità del software.
+
+== #LTG("Requisiti di Vincolo")
+
+Specificano le condizioni e i limiti che il sistema deve rispettare, come vincoli di budget, tecnologici o legali.
+
+
+== #LTG("Requisiti Funzionali")
+
+Specificano cosa deve fare un sistema software per soddisfare le esigenze dell’utente.
+
+
+
 == #LTG("RTB")
 
 Fase iniziale e fondamentale del processo di sviluppo di un software. In questa fase, l'obiettivo principale è stabilire
@@ -414,7 +546,7 @@ definizione della baseline di progetto.
 == #LTG("Responsabile")
 
 Figura fondamentale che coordina il gruppo, funge da punto di riferimento per il committente e per il team, svolgendo
-il ruolo di mediatore tra le due parti. In particolare si occupa di: gestire le relazioni con l’esterno; pianificare le
+il ruolo di mediatore tra le due parti. In particolare si occupa di: gestire le relazioni con l'esterno; pianificare le
 attività (quali svolgere, data di inizio e fine, assegnazione delle priorità), valutare i rischi associati alle decisioni da prendere, controllare i progressi del progetto, gestire le risorse umane e approvare la documentazione.
 
 == #LTG("Rischi organizzativi")
@@ -446,11 +578,23 @@ Il ruolo di uno Scrum Master è quello di utilizzare la gestione agile dei proge
 membri del team. Poiché gli Scrum Master possono lavorare in diversi contesti, i compiti e le responsabilità possono
 variare.
 
+== #LTG("Software")
+
+Insieme di programmi, dati e istruzioni che consentono a un computer di eseguire specifiche operazioni.
+
+== #LTG("Specifica Tecnica")
+
+Un documento che descrive dettagliatamente come un sistema o un componente software deve essere costruito. Include requisiti funzionali, architettura, interfacce e altre informazioni necessarie per lo sviluppo.
+
 == #LTG("Sprint")
 
 Gli sprint sono periodi di tempo che vanno da una settimana a un mese, durante i quali il Product Owner, lo Scrum Master
 e il Development Team lavorano per completare una specifica aggiunta al prodotto. Durante uno sprint, si lavora per
 creare nuove funzionalità basate sulle user stories e sul backlog.
+
+== #LTG("Sprint Review")
+
+Un evento Scrum che si tiene alla fine di uno sprint, in cui il team presenta gli incrementi di prodotto completati agli stakeholder per ricevere feedback e verificare che siano in linea con gli obiettivi.
 
 == #LTG("Stakeholder")
 
@@ -476,7 +620,7 @@ Telegram è un'applicazione di messaggistica istantanea e di comunicazione basat
 
 == #LTG("Test di Accettazione")
 
-Verifica finale condotta dall'utente o dal cliente per assicurarsi che il prodotto soddisfi le loro aspettative e sia pronto per l’uso.
+Verifica finale condotta dall'utente o dal cliente per assicurarsi che il prodotto soddisfi le loro aspettative e sia pronto per l'uso.
 
 == #LTG("Test di Integrazione")
 
@@ -484,7 +628,7 @@ Test che verificano l'interazione tra diverse unità o moduli di codice per gara
 
 == #LTG("Test di Sistema")
 
-Valutazione dell’intero sistema software per verificare che soddisfi i requisiti specificati.
+Valutazione dell'intero sistema software per verificare che soddisfi i requisiti specificati.
 
 == #LTG("Test di Unità")
 
@@ -503,6 +647,10 @@ la descrizione del problema o della richiesta, lo stato attuale (ad esempio, "ap
 l'assegnazione a una persona o team responsabile, e altre informazioni utili per risolvere la questione. I sistemi di
 ticketing sono comunemente usati nei progetti di software, nei servizi di supporto e nei flussi di lavoro aziendali.
 
+== #LTG("Tracciamento")
+
+Processo di monitoraggio e registrazione delle attività di sviluppo, modifiche ai requisiti o avanzamento di un progetto.
+
 == #LTG("Typst")
 
 Typst è un linguaggio di markup e un sistema di composizione tipografica moderno e innovativo, progettato per creare
@@ -515,6 +663,18 @@ l'integrazione di elementi grafici, come immagini e tabelle, e offre un'esperien
 #pagebreak()
 
 = #LTG("U")
+
+== #LTG("UML")
+
+Un linguaggio di modellazione standardizzato utilizzato per visualizzare, specificare, costruire e documentare i sistemi software. Include diagrammi strutturali (es. diagrammi di classi) e comportamentali (es. diagrammi di sequenza).
+
+== #LTG("User")
+
+Entità (persona o sistema) che interagisce con un software o servizio digitale.
+
+== #LTG("User Experience (UX)")
+
+Insieme delle percezioni e risposte di un utente durante l'interazione con un sistema o prodotto software.
 
 == #LTG("User Story")
 
@@ -534,7 +694,7 @@ La verifica è il processo volto ad accertare che un prodotto software, un modul
 
 == #LTG("Verificatore")
 
-La principale responsabilità del verificatore consiste nell’ispezionare il lavoro svolto da altri membri del team per
+La principale responsabilità del verificatore consiste nell'ispezionare il lavoro svolto da altri membri del team per
 assicurare la qualità del prodotto e la conformità alle attese prefissate. Stabilisce se il lavoro è stato svolto
 correttamente sulla base delle proprie competenze tecniche, esperienza e conoscenza delle norme. In particolare il
 verificatore si occupa di: verificare che il lavoro svolto sia conforme alle Norme di Progetto; verificare che il lavoro
@@ -545,6 +705,10 @@ prodotto.
 #pagebreak()
 
 = #LTG("W")
+
+== #LTG("Walkthrough")
+
+Una revisione informale di codice, documentazione o requisiti, guidata dall'autore, con lo scopo di ottenere feedback iniziale. I walkthrough sono meno strutturati rispetto alle inspection.
 
 == #LTG("Way of Working (WoW)")
 
@@ -563,6 +727,10 @@ informazioni, i compiti e le risorse vengono gestiti all'interno di un sistema o
 essere manuale o automatizzato e viene utilizzato per ottimizzare, monitorare e controllare i processi aziendali,
 facilitando la cooperazione tra diversi attori o strumenti. I workflow sono fondamentali per la gestione di progetti,
 l'automazione dei processi aziendali e per garantire l'efficienza e la coerenza nelle operazioni quotidiane.
+
+== #LTG("Workshop")
+
+Un evento collaborativo in cui un gruppo di persone si riunisce per affrontare e risolvere problemi specifici, acquisire conoscenze o creare risultati condivisi. Spesso utilizzato nella raccolta dei requisiti o nel brainstorming.
 
 #pagebreak()
 

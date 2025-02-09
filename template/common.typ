@@ -13,6 +13,13 @@
   unipd: "/images/logos/Universita_Padova_transparent.png",
 )
 
+//Diagrammi UML per doc AdR
+#let ar = (
+  diagUC1: "/images/analisi-dei-requisiti/UCJira.png",
+  diagUC2: "/images/analisi-dei-requisiti/UCGitHub.png",
+  diagUC3: "/images/analisi-dei-requisiti/UCConfluence.png",
+)
+
 //Norme di progetto Immagini
 #let gn = (
   attore: "/images/norme/attore.png",
@@ -35,6 +42,7 @@
   board: "/images/norme/board.png",
   road: "/images/norme/roadmap.png",
 )
+
 
 //team members
 #let p = (
