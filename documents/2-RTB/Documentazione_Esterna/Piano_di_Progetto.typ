@@ -9,6 +9,13 @@
     p.azzurro,
   ),
   changelog: (
+    "0.5.0",
+    "2025-02-05",
+    p.mahdi,
+    p.santi,
+    [
+      Stesura del preventivo e consuntivo del periodo 5
+    ],
     "0.4.0",
     "2024-12-26",
     p.benedetti,
@@ -668,3 +675,59 @@ Nonostante il ritmo leggermente ridotto, tutte le task assegnate sono state port
 Al termine del quarto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.285 €`*, risultando inferiore di *`45 €`* rispetto ai *`1.330 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.557,50 €`*.
 
 #avanzamento(90, 0, "4")
+
+
+=== *Periodo 5*
+*Inizio*: 2025-01-20;\
+*Fine prevista*: 2025-02-02;\
+*Fine attuale*: 2025-02-07;\
+*Giorni di ritardo*: #pos(5);\
+
+==== Pianificazione
+Durante la settimana e mezza del quinto sprint, il team si dedicherà alla stesura dei vari requisiti nel file #glossary("Analisi dei Requisti"), dei test nel file #glossary("Piano di Progetto") e inoltre, saranno riletti e controllati tutti i documenti per essere portati alla versione 1.0 in vista dell'#glossary("RTB").
+Inoltre, è prevista, ma non confermata, una riunione con #box(image(g.azzurro, width: 5em, height: auto)) per discutere dell'#glossary("MVP").
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((0,0,3,0,0,0),(0,0,0,0,0,2),(0,0,1.5,0,0,2),(0,0,3.5,0,0,0),(0,0,3,0,0,0),(0,2,1,0,0,1.5),(2,0,1.5,0,0,0)),"5")
+===== Preventivo economico
+#prev-economico((2,2,13.5,0,0,5.5),"5") 
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. La riunione con l'azienda è stata spostata di una settimana perchè si è ritenuto più opportuno aspettare una revisione #glossary("RTB") positiva prima di procedere con la seconda fase. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Amministratore e Verificatore hanno richiesto *meno* ore;
+
+Poiché la variazione di ore, sia in aumento che in diminuzione, è minima, può essere ritenuta irrilevante.
+
+#pagebreak()
+===== Consuntivo orario 
+#cons-orario(((0,0,3,0,0,0),(0,0,0,0,0,2),(0,0,1.5,0,0,1),(0,0,3.5,0,0,0),(0,0,3,0,0,0),(0,1,1,0,0,1),(2,0,1.5,0,0,0)),((0,0,3,0,0,0),(0,0,0,0,0,2),(0,0,1.5,0,0,2),(0,0,3.5,0,0,0),(0,0,3,0,0,0),(0,2,1,0,0,1.5),(2,0,1.5,0,0,0)),"5")
+
+#ore-rimaste(((5,3,3,9,16,16),(6,2,3,12,20,11),(2,1.5,3,13,23,12),(2,1.5,3,14,17,15),(2,2,2,11,21,15.5),(1,3,3,13,21,12.5),(6,3,2.5,13,19,9.5)),"5")
+
+===== Consuntivo economico
+#cons-economico((2,1,13.5,0,0,4),(2,2,13.5,0,0,5.5),"5")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante lo svolgimento di questo sprint i membri del gruppo hanno concordato una settimana di pausa ma, nonostante ciò, tutte le attività sono state completate.
+
+==== Retrospettiva
+Nonostante il ritmo ridotto, tutte le task assegnate sono state portate a termine con successo.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del quinto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`477,50 €`*, risultando inferiore di *`42,50 €`* rispetto ai *`520,00 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.080,00 €	`*.
+
+#avanzamento(100, 0, "5")
