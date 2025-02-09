@@ -2,14 +2,14 @@
 
 
 #show: project.with(
-  title: "Norme Di Progetto",
+  title: "Lettera di Presentazione",
   recipients: (
     p.vardanega,
     p.cardin,
   ),
   changelog: (
-    "0.1",
-    "2025-02-09",
+    none,
+    "2025-02-10",
     p.ferazzani,
     p.campagnaro,
     [
