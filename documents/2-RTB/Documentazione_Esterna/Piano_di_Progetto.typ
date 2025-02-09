@@ -708,7 +708,7 @@ Tutte le attività previste e pianificate sono state completate nei termini pres
 
 Dal confronto tra preventivo e consuntivo emerge che: 
 
-- Amministratore e Verificatore *meno* ore;
+- Amministratore e Verificatore hanno richiesto *meno* ore;
 
 Poiché la variazione di ore, sia in aumento che in diminuzione, è minima, può essere ritenuta irrilevante.
 
@@ -722,7 +722,7 @@ Poiché la variazione di ore, sia in aumento che in diminuzione, è minima, può
 #cons-economico((2,1,13.5,0,0,4),(2,2,13.5,0,0,5.5),"5")
 
 ==== Rischi occorsi, impatto e loro mitigazione
-Non ostante il periodo di "pausa" di una settimana concordata tra i membri per prepararsi all'esame scritto, tutte le attività sono state completate.
+Durante lo svolgimento di questo sprint i membri del gruppo hanno concordato una settimana di pausa ma, nonostante ciò, tutte le attività sono state completate.
 
 ==== Retrospettiva
 Nonostante il ritmo ridotto, tutte le task assegnate sono state portate a termine con successo.
