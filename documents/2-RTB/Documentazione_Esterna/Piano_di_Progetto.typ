@@ -9,6 +9,55 @@
     p.azzurro,
   ),
   changelog: (
+    "1.0.0",
+    "2025-02-09",
+    p.campagnaro,
+    p.ferazzani,
+    [
+      Approvazione per RTB
+    ],
+    "0.5.0",
+    "2025-02-05",
+    p.mahdi,
+    p.santi,
+    [
+      Stesura del preventivo e consuntivo del periodo 5
+    ],
+    "0.4.0",
+    "2024-12-26",
+    p.benedetti,
+    p.ferazzani,
+    [
+      Stesura del preventivo e consuntivo del periodo 4
+    ],
+    "0.3.0",
+    "2024-12-26",
+    p.benedetti,
+    p.campagnaro,
+    [
+      Stesura del preventivo e consuntivo del periodo 3
+    ],
+    "0.2.0",
+    "2024-12-26",
+    p.benedetti,
+    p.campagnaro,
+    [
+      Stesura del preventivo e consuntivo del periodo 2
+    ],
+    "0.1.0",
+    "2024-12-15",
+    p.campagnaro,
+    p.fracaro,
+    [
+      Stesura del consuntivo del periodo 1
+    ],
+    "0.0.4",
+    "2024-12-10",
+    p.campagnaro,
+    p.fracaro,
+    [
+      Stesura del preventivo del periodo 1
+    ],
     "0.0.3",
     "2024-12-04",
     p.fracaro,
@@ -33,14 +82,15 @@
   ),
   show_images_list: true,
   show_tables_list: true,
-  outline_depth: 3,
+  figure_breakable: false,
+  image_width: 55%,
 )
 
 = *Introduzione*
 == Scopo del documento
 
 Il presente documento rappresenta un elemento cardine per la pianificazione e la gestione di progetti di sviluppo software,
-con l'obiettivo di garantire il rispetto dei più elevati standard di qualità definiti dall’ingegneria del software.
+con l'obiettivo di garantire il rispetto dei più elevati standard di qualità definiti dall'ingegneria del software.
 Esso intende fornire una descrizione completa e dettagliata delle pratiche e dei metodi organizzativi e di pianificazione adottati,
 specificandone l'applicazione concreta in tutte le fasi del progetto.
 In particolare, il documento non solo funge da guida interna per il team di sviluppo, offrendo un supporto strutturato per la retrospettiva
@@ -118,8 +168,16 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: 1fr,
     inset: 10pt,
     align: center,
+<<<<<<< HEAD
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RP1 - Mancanza di competenze tecniche specifiche.*<RP1>], 
+||||||| 5d4f41e
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RP1 - Mancanza di competenze tecniche specifiche.*], 
+=======
     fill: (_, row) => if calc.odd(row) { white } else { rgb(209, 197, 174) },
     [*RP1 - Mancanza di competenze tecniche specifiche.*],
+>>>>>>> develop
     table(
       columns: (auto, 1fr),
       inset: 5pt,
@@ -144,8 +202,16 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: 1fr,
     inset: 10pt,
     align: center,
+<<<<<<< HEAD
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RP2 - Non conformità agli impegni dichiarati.*<RP2>], 
+||||||| 5d4f41e
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RP2 - Non conformità agli impegni dichiarati.*], 
+=======
     fill: (_, row) => if calc.odd(row) { white } else { rgb(209, 197, 174) },
     [*RP2 - Non conformità agli impegni dichiarati.*],
+>>>>>>> develop
     table(
       columns: (auto, 1fr),
       inset: 5pt,
@@ -169,8 +235,16 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: 1fr,
     inset: 10pt,
     align: center,
+<<<<<<< HEAD
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RP3 - Problemi di comunicazione e collaborazione.*<RP3>], 
+||||||| 5d4f41e
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RP3 - Problemi di comunicazione e collaborazione.*], 
+=======
     fill: (_, row) => if calc.odd(row) { white } else { rgb(209, 197, 174) },
     [*RP3 - Problemi di comunicazione e collaborazione.*],
+>>>>>>> develop
     table(
       columns: (auto, 1fr),
       inset: 5pt,
@@ -194,8 +268,16 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: 1fr,
     inset: 10pt,
     align: center,
+<<<<<<< HEAD
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RP4 - Malattia o indisponibilità.*<RP4>], 
+||||||| 5d4f41e
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RP4 - Malattia o indisponibilità.*], 
+=======
     fill: (_, row) => if calc.odd(row) { white } else { rgb(209, 197, 174) },
     [*RP4 - Malattia o indisponibilità.*],
+>>>>>>> develop
     table(
       columns: (auto, 1fr),
       inset: 5pt,
@@ -221,8 +303,16 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: 1fr,
     inset: 10pt,
     align: center,
+<<<<<<< HEAD
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*ROI1 - Comunicativi e organizzativi.*<ROI1>], 
+||||||| 5d4f41e
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*ROI1 - Comunicativi e organizzativi.*], 
+=======
     fill: (_, row) => if calc.odd(row) { white } else { rgb(209, 197, 174) },
     [*ROI1 - Comunicativi e organizzativi.*],
+>>>>>>> develop
     table(
       columns: (auto, 1fr),
       inset: 5pt,
@@ -246,6 +336,29 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: 1fr,
     inset: 10pt,
     align: center,
+<<<<<<< HEAD
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.*<ROI2>],
+    table(columns: (auto, 1fr), inset: (5pt),
+    fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+    [*Descrizione*], [Metodologia inadeguata o inefficace per assegnare i ruoli e distribuire le attività.],
+    [*Grado di rischio*], [3],
+    [*Pericolosità*], [Alta],
+    [*Precauzioni*], [Adottare in anticipo una metodologia consolidata nel settore, con evidenze di successo.],
+    [*Piano di contingenza*], [Rivedere e ridistribuire i compiti in base alle necessità.],)
+  ), caption: "ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team."
+||||||| 5d4f41e
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.*],
+    table(columns: (auto, 1fr), inset: (5pt),
+    fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+    [*Descrizione*], [Metodologia inadeguata o inefficace per assegnare i ruoli e distribuire le attività.],
+    [*Grado di rischio*], [3],
+    [*Pericolosità*], [Alta],
+    [*Precauzioni*], [Adottare in anticipo una metodologia consolidata nel settore, con evidenze di successo.],
+    [*Piano di contingenza*], [Rivedere e ridistribuire i compiti in base alle necessità.],)
+  ), caption: "ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team."
+=======
     fill: (_, row) => if calc.odd(row) { white } else { rgb(209, 197, 174) },
     [*ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.*],
     table(
@@ -260,6 +373,7 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     )
   ),
   caption: "ROI2 - Definizione insufficiente dei ruoli e delle responsabilità nel team.",
+>>>>>>> develop
 )
 #pagebreak()
 === Esterni
@@ -268,8 +382,16 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: 1fr,
     inset: 10pt,
     align: center,
+<<<<<<< HEAD
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*ROE1 - Problemi di comunicazione.*<ROE1>],
+||||||| 5d4f41e
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*ROE1 - Problemi di comunicazione.*],
+=======
     fill: (_, row) => if calc.odd(row) { white } else { rgb(209, 197, 174) },
     [*ROE1 - Problemi di comunicazione.*],
+>>>>>>> develop
     table(
       columns: (auto, 1fr),
       inset: 5pt,
@@ -293,8 +415,16 @@ In sintesi, questa sezione si propone di prevenire e mitigare eventuali ostacoli
     columns: 1fr,
     inset: 10pt,
     align: center,
+<<<<<<< HEAD
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.*<RT1>], 
+||||||| 5d4f41e
+    fill: (_, row) => if calc.odd(row) { white } else {rgb(209, 197, 174)},
+    [*RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.*], 
+=======
     fill: (_, row) => if calc.odd(row) { white } else { rgb(209, 197, 174) },
     [*RT1 - Aggiornamenti o modifiche agli strumenti e tecnologie in uso.*],
+>>>>>>> develop
     table(
       columns: (auto, 1fr),
       inset: 5pt,
@@ -325,6 +455,21 @@ Partendo delle osservazioni fatte nella sezione 2 _Analisi dei rischi_, si è de
 #align(center)[
   #figure(
     table(
+<<<<<<< HEAD
+  columns: 2,
+  align: left,
+    [*Revisione*], [*Data*],
+    [#glossary("RTB") (Requirements and Technology Baseline)], [2025-02-10],
+    [#glossary("PB") (Product Baseline)], [2025-03-28],
+),caption:"Calendario di progetto") <tab_cal_prj>]
+||||||| 5d4f41e
+  columns: 2,
+  align: left,
+    [*Revisione*], [*Data*],
+    [#glossary("RTB") (Requirements and Technology Baseline)], [2025-01-13],
+    [#glossary("PB") (Product Baseline)], [2025-03-28],
+),caption:"Calendario di progetto") <tab_cal_prj>]
+=======
       columns: 2,
       align: left,
       [*Revisione*], [*Data*],
@@ -333,6 +478,7 @@ Partendo delle osservazioni fatte nella sezione 2 _Analisi dei rischi_, si è de
     ),
     caption: "Calendario di progetto",
   ) <tab_cal_prj>]
+>>>>>>> develop
 
 #pagebreak()
 = *Stima costi realizzazione*
@@ -434,4 +580,431 @@ Ogni fase si concentra sulla preparazione dei documenti e artefatti richiesti da
   ) <doc_art_req>
 ]
 
+#pagebreak()
 == *RTB*
+*Inizio*: 2024-11-12;\
+*Fine prevista*: 2025-02-05;\
+*Fine attuale*: 2025-02-10;\
+*Giorni di ritardo*: #neg("5");\
+
+=== *Periodo 1*
+*Inizio*: 2024-11-12;\
+*Fine prevista*: 2024-12-03;\
+*Fine attuale*: 2024-12-03;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana successiva all'aggiudicazione dell'appalto (dal 2024-11-04 al 2024-11-12), ci siamo concentrati principalmente sulla sistemazione dei documenti di candidatura e su un primo studio delle tecnologie da utilizzare, in vista del primo incontro con l'azienda #box(image(g.azzurro, width: 5em, height: auto)). Abbiamo deciso di considerare tale incontro come il vero e proprio inizio del periodo RTB, poiché tutte le attività svolte nella prima settimana possono essere classificate come attività preliminari, utili per la preparazione, ma non strettamente legate alle attività rendicontabili in termini di tempo ed economia previste dal progetto.
+
+Successivamente all'incontro con #box(image(g.azzurro, width: 5em, height: auto)), il team si dedicherà alla pianificazione e alla redazione dei documenti essenziali per il progetto, con l'obiettivo di costruire una solida base per il lavoro futuro. In questa fase iniziale verrà avviata la stesura del Piano di Progetto, dell'Analisi dei Requisiti e del Glossario, accompagnata dalla scrittura completa delle Norme di Progetto. Inoltre, il team si impegnerà nell'avvio del #glossary("Proof of Concept") (PoC) per validare le scelte tecniche e funzionali. Durante questo periodo sarà cruciale definire modalità operative chiare e condivise, per garantire una gestione delle attività produttiva ed efficiente.
+
+Obiettivi principali della fase iniziale:
+
+- *Migrazione da #glossary("LaTeX") a #glossary("Typst")*: Implementazione e automatizzazione del processo di compilazione dei documenti per migliorare l'efficienza.
+- *Introduzione al Piano di Progetto e all'Analisi dei Requisiti*: Inizio della stesura delle sezioni introduttive di questi documenti.
+- *Completamento delle Norme di Progetto*: Redazione dettagliata delle Norme, in preparazione a future revisioni e discussioni con il team e i referenti aziendali.
+- *Studio delle tecnologie e casi d'uso*: Analisi approfondita delle tecnologie individuate e dei possibili scenari applicativi, con il supporto della proponente.
+- *Definizione del “#glossary("Way of Working")” del team*: Discussioni di linee guida operative per ottimizzare la collaborazione e l'organizzazione interna.
+- *Automatizzazione del Glossario*: Creazione di un processo per collegare automaticamente, tramite link, termini e concetti fondamentali della documentazione con il loro significato.
+- *Pianificazione delle attività*: Strutturazione delle attività operative per garantire una gestione efficace del team e del progetto.
+- *Avvio del PoC*: Analisi iniziale delle tecnologie selezionate, definizione delle specifiche e primi passi verso la realizzazione del Proof of Concept.
+- *Utilizzo del #glossary("LLM") tramite API (#glossary("Groq Cloud"))*: Sperimentazione e integrazione iniziale dell'#glossary("LLM").
+- *Sviluppo di un database locale*: Creazione di un database locale per salvare e consultare lo storico delle domande effettuate dagli utenti.
+- *Visualizzazione delle risposte precedenti*: Implementazione di un sistema per tracciare e visualizzare le risposte fornite dall'#glossary("LLM").
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P1;
+- #R.P3;
+- #R.OI1;
+- #R.OI2;
+- #R.OE1;
+
+Questo perché, trovandoci allinizio del progetto, siamo ancora in una fase di organizzazione e apprendimento, con diverse incertezze da affrontare. Di conseguenza, la possibilità di incontrare alcune delle problematiche tra quelle riportate è piuttosto elevata.
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"1")
+#pagebreak()
+===== Preventivo economico
+#prev-economico((11,14,13,4,5,16),"1")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Analisti e Verificatori hanno richiesto *meno* ore;
+
+===== Consuntivo orario
+#cons-orario(((0,0,3,2,3,1),(0,3,3,0,0,2),(3,3.5,0,0,0,3),(2,3.5,0,0,2,2),(2,3,0,2,0,1),(4,0,2,0,0,2),(0,1,4,0,0,4.5)),((0,0,3,2,3,1),(0,4,3,0,0,2),(3,3,0,0,0,3),(2,3,0,0,2,2),(2,3,0,2,0,2),(4,0,3,0,0,2),(0,1,4,0,0,4)),"1")
+
+#ore-rimaste(((9,8,8,15,21,21),(9,5,8,17,24,20),(6,4.5,11,17,24,19),(7,4.5,11,17,22,20),(7,5,11,15,24,21),(5,8,9,17,24,20),(9,7,7,17,24,17.5)),"1")
+
+===== Consuntivo economico
+#cons-economico((11,14,12,4,5,15.5),(11,14,13,4,5,16),"1")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante questo periodo sono emerse alcune delle complicazioni previste, in particolare quelle legate alla pianificazione, al coordinamento e alla comunicazione. Un esempio significativo riguarda la stesura parallela di diversi documenti senza una definizione chiara delle modalità di gestione delle #glossary("Pull Request") e delle regole stilistiche per il testo, che sarebbero dovute essere stabilite nelle Norme di Progetto. Inoltre, alcune attività, come l'identificazione e la redazione dei casi d'uso, hanno subito lievi ritardi, rendendo necessario il loro completamento nel corso dello Sprint successivo.
+
+Queste difficoltà hanno evidenziato l'importanza di una pianificazione realistica, calibrata sulla reale mole di lavoro. Il gruppo ha quindi preso atto di questa necessità, impegnandosi a porre maggiore attenzione nella pianificazione dei futuri #glossary("Sprint"). Nonostante ciò, i rischi verificatisi non hanno avuto un impatto significativo sul progetto e sono stati gestiti efficacemente attraverso un confronto costruttivo tra i membri del team.
+#pagebreak()
+==== Retrospettiva
+Questo primo periodo di lavoro ha sottolineato l'importanza di seguire #glossary("best practice") comuni da parte di ogni membro del gruppo per tutta la durata del progetto. Per questo motivo, è stata data priorità alla stesura completa e definitiva delle Norme di Progetto, considerandole fondamentali per garantire un'organizzazione efficace.
+
+Lo studio condiviso delle tecnologie e dei casi d'uso tra i vari membri del team ha favorito un apprendimento rapido dei contenuti. Tuttavia, abbiamo deciso di investire più tempo e risorse in queste attività durante il prossimo periodo, assegnandogli più persone per approfondire tali aspetti.
+
+Inoltre, ci siamo resi conto che l'approccio migliore e più efficace prevede che il Responsabile assegni le task e organizzi il lavoro in modo che le attività siano distribuite equamente tra i membri del gruppo. Questo metodo, che adotteremo a partire dal prossimo periodo, garantirà che ciascuna task venga completata con un numero di ore congruo e nel rispetto delle scadenze, favorendo una gestione più bilanciata ed efficiente.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del primo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.317,50 €`*, risultando inferiore di *`32,50 €`* rispetto ai *`1.350 €`* inizialmente stimati nel preventivo. Questo risparmio è attribuibile allo svolgimento di un minor numero di ore di Analista e Verificatore. Di conseguenza, il budget rimanente disponibile ammonta a *`11.422,50 €`*. 
+
+#avanzamento(22, 0, "1")
+
+#pagebreak()
+=== *Periodo 2*
+*Inizio*: 2024-12-03;\
+*Fine prevista*: 2024-12-17;\
+*Fine attuale*: 2024-12-17;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana del secondo sprint, (dal 3 dicembre 2024 al 17 dicembre 2024), il team si dedicherà sulla redazione dei documenti essenziali per il proseguimento del progetto. In particolare, i lavori sull'analisi dei requisiti, il piano di progetto e il piano di qualifica, rappresentando elementi fondamentali per garantire un avanzamento ordinato e ben strutturato delle attività.
+
+Sarà prevista inoltre la prima presentazione del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). L'obiettivo è quello di mostrare il funzionamento del bot con una sua prima integrazione delle #glossary("API") di #glossary("GitHub").
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P4;
+- #R.T1;
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((2,0,0,3,2,2),(0,2,1,2,1,3),(2,1,3,2,0,1),(3,1,1,1,2,1),(2,0,1,2,2,2),(2,2,2,0,0,3),(0,1,3,0,1,4)),"2")
+===== Preventivo economico
+#prev-economico((11,7,11,10,8,16),"2")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Analisti e Verificatori hanno richiesto *meno* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(((2,0,0,3,2,2),(0,2,1,2,1,3),(2,1,3,2,0,1),(3,1,1,1,2,0.5),(2,0,1,2,2,1.5),(2,2,2,0,0,2.5),(0,1,2,0,1,3)),((2,0,0,3,2,2),(0,2,1,2,1,3),(2,1,3,2,0,1),(3,1,1,1,2,1),(2,0,1,2,2,2),(2,2,2,0,0,3),(0,1,3,0,1,4)),"2")
+
+#ore-rimaste(((7,8,8,12,19,19),(9,3,7,15,23,17),(4,3.5,8,15,24,18),(4,3.5,10,16,20,19.5),(5,5,10,13,22,19.5),(3,6,7,17,24,17.5),(9,6,5,17,23,14.5)),"2")
+
+===== Consuntivo economico
+#cons-economico((11,7,10,10,8,13.5),(11,7,11,10,8,16),"2")
+
+==== Rischi occorsi, impatto e loro mitigazione
+A differenza dello #glossary("Sprint") precedente, durante il quale il rischio emerso è stato mitigato attraverso la redazione e l'analisi delle #glossary("Norme di Progetto"), in quello attuale non si sono verificati ulteriori rischi. Questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti. Inoltre, va sottolineato che i membri del gruppo stanno lavorando in modo efficace e coeso, dimostrando un'eccellente collaborazione e un impegno costante nel raggiungimento degli obiettivi prefissati.
+
+==== Retrospettiva
+Nel complesso, il lavoro è proseguito senza troppi intoppi, dimostrando una buona capacità del team di affrontare le attività previste con efficienza e coesione. Le norme di progetto adottate si sono rivelate un supporto fondamentale, fungendo da strumento efficace per garantire lo svolgimento ordinato e corretto del progetto. La loro applicazione ha contribuito a mantenere un alto livello di organizzazione, favorendo il rispetto delle tempistiche e delle modalità operative stabilite.
+
+Un momento particolarmente significativo durante questa fase è stato rappresentato dalla presentazione di una prima demo del #glossary("Proof of Concept") a #box(image(g.azzurro, width: 5em, height: auto)). Questa anteprima ha permesso di condividere una visione concreta dell'avanzamento del progetto, offrendo un'opportunità per raccogliere feedback utili e allineare le aspettative sulle prossime fasi di sviluppo.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del secondo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.292,50 €`*, risultando inferiore di *`62,50 €`* rispetto ai *`1.355 €`* inizialmente stimati nel preventivo. Il budget rimanente disponibile ammonta a *`10.130 €`*. 
+
+#avanzamento(47, 0, "2")
+
+#pagebreak()
+=== *Periodo 3*
+*Inizio*: 2024-12-17;\
+*Fine prevista*: 2025-01-06;\
+*Fine attuale*: 2025-01-06;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana del terzo sprint, il team si concentrerà sulla continuazione dello sviluppo del #glossary("Poc"), con l'obiettivo di perfezionare le funzionalità già implementate e completare quelle attese. Parallelamente, si proseguirà con la stesura di documenti fondamentali per il progetto, l'#glossary("Analisi dei Requisiti"), il #glossary("Piano di Qualifica") e il #glossary("Piano di Progetto"), che saranno elaborati con attenzione per garantire una chiara definizione degli obiettivi.
+
+É prevista la presentazione del #glossary("Poc") a #box(image(g.azzurro, width: 5em, height: auto)). Questa avrà lo scopo di dimostrare il funzionamento del bot con  l'integrazione delle #glossary("API") di #glossary("Jira") e #glossary("Confluence").
+
+Infine, verrà effettuato un aggiornamento del #glossary("Glossario"), che sarà ampliato con nuovi termini tecnici emersi nel corso delle attività.
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P4;
+- #R.OI1;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((2,2,0,2,2,1),(3,1,1,1,2,1),(0,1,3,1,1,3),(0,2,2,2,2,1),(2,2,1,1,0,3),(0,0,3,2,2,2),(0,2,1,2,2,2)),"3")
+===== Preventivo economico
+#prev-economico((7,10,11,11,11,13),"3")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Analisti e Verificatori hanno richiesto *meno* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(((2,2,0,2,2,1),(3,1,1,1,2,1),(0,1,2,1,1,3),(0,2,2,2,2,0.5),(2,2,1,1,0,3),(0,0,3,2,2,2),(0,2,1,2,2,2)),((2,2,0,2,2,1),(3,1,1,1,2,1),(0,1,3,1,1,3),(0,2,2,2,2,1),(2,2,1,1,0,3),(0,0,3,2,2,2),(0,2,1,2,2,2)),"3")
+
+#ore-rimaste(((5,6,8,10,17,18),(6,2,6,14,21,16),(4,2.5,6,14,23,15),(4,1.5,8,14,18,19),(3,3,9,12,22,16.5),(3,6,4,15,22,15.5),(9,4,4,15,21,12.5)),"3")
+
+===== Consuntivo economico
+#cons-economico((7,10,10,11,11,12.5),(7,10,11,11,11,13),"3")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Nessun rischio che poteva essere atteso, si è verificato, questo andamento positivo è indicativo del buon progresso del progetto, che procede secondo i piani stabiliti
+
+==== Retrospettiva
+Il lavoro è avanzato in modo fluido, evidenziando la capacità del team di gestire le attività programmate con efficacia e spirito di collaborazione.
+
+Nella parte finale dello sprint il team ha individuato un leggero rallentamento nei documenti dell'#glossary("Analisi dei Requisiti") e del #glossary("Piano di qualifica").
+Siamo infatti arrivati in una fase dove i due documenti devono essere sviluppati in simbiosi, poiché ciascuno dipende dall'altro.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del terzo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.287,50 €`*, risultando inferiore di *`32,50 €`* rispetto ai *`1.320 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`8.842,50 €`*.
+
+#avanzamento(67, 0, "3")
+
+#pagebreak()
+=== *Periodo 4*
+*Inizio*: 2025-01-06;\
+*Fine prevista*: 2025-01-20;\
+*Fine attuale*: 2025-01-20;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana del quarto sprint, il team si dedicherà al completamento degli ultimi casi d'uso, assicurandosi che siano implementati correttamente e in linea con gli obiettivi del progetto. Parallelamente, sarà definita in modo dettagliato la documentazione relativa ai requisiti funzionali, di qualità e di vincolo.
+Inoltre, è prevista una riunione con #box(image(g.azzurro, width: 5em, height: auto)), che dovrebbe essere l'ultima nell'ambito del #glossary("RTB"). Questo incontro avrà l'obiettivo di condividere lo stato di avanzamento del #glossary("Proof of Concept"), raccogliere eventuali osservazioni finali e confermare la chiusura delle attività pianificate.
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((0,3,2,1,1,2),(0,0,3,2,1,3),(2,2,2,1,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(2,2,0,2,1,2),(1,1,0,2,2,3)),"4")
+===== Preventivo economico
+#prev-economico((8,9,13,9,7,17),"4")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Amministratori e Analisti hanno richiesto *meno* ore;
+
+Poiché la variazione di ore, sia in aumento che in diminuzione, è minima, può essere ritenuta irrilevante.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(((0,3,2,1,1,2),(0,0,3,2,1,3),(2,1,1.5,1,0,2),(2,0,1.5,0,1,4),(1,1,4,1,1,1),(2,2,0,2,1,2),(1,1,0,2,2,3)),((0,3,2,1,1,2),(0,0,3,2,1,3),(2,2,2,1,0,2),(2,0,2,0,1,4),(1,1,4,1,1,1),(2,2,0,2,1,2),(1,1,0,2,2,3)),"4")
+
+#ore-rimaste(((5,3,6,9,16,16),(6,2,3,12,20,13),(2,1.5,4.5,13,23,13),(2,1.5,6.5,14,17,15),(2,2,5,11,21,15.5),(1,4,4,13,21,13.5),(8,3,4,13,19,9.5)),"4")
+
+===== Consuntivo economico
+#cons-economico((8,8,12,9,7,17),(8,9,13,9,7,17),"4")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante questo periodo di sessione si è registrato un leggero rallentamento nelle attività, un aspetto prevedibile dato il contesto, ma che non ha influito negativamente sull'andamento del progetto.
+
+==== Retrospettiva
+Nonostante il ritmo leggermente ridotto, tutte le task assegnate sono state portate a termine con successo, garantendo il rispetto della pianificazione. Inoltre, la riunione con #box(image(g.azzurro, width: 5em, height: auto)) si è svolta in modo molto positivo, confermando la buona qualità del lavoro svolto e la coerenza con gli obiettivi definiti.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del quarto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.285 €`*, risultando inferiore di *`45 €`* rispetto ai *`1.330 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.557,50 €`*.
+
+#avanzamento(90, 0, "4")
+
+#pagebreak()
+=== *Periodo 5*
+*Inizio*: 2025-01-20;\
+*Fine prevista*: 2025-02-05;\
+*Fine attuale*: 2025-02-10;\
+*Giorni di ritardo*: #neg(5);\
+
+==== Pianificazione
+Durante la settimana e mezza del quinto sprint, il team si dedicherà alla stesura dei vari requisiti nel file #glossary("Analisi dei Requisti"), dei test nel file #glossary("Piano di Progetto") e inoltre, saranno riletti e controllati tutti i documenti per essere portati alla versione 1.0 in vista dell'#glossary("RTB").
+Inoltre, è prevista, ma non confermata, una riunione con #box(image(g.azzurro, width: 5em, height: auto)) per discutere dell'#glossary("MVP").
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(((0,0,3,0,0,0),(0,0,0,0,0,2),(0,0,1.5,0,0,2),(0,0,3.5,0,0,0),(0,0,3,0,0,0),(0,2,1,0,0,1.5),(2,0,1.5,0,0,0)),"5")
+===== Preventivo economico
+#prev-economico((2,2,13.5,0,0,5.5),"5") 
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti. La riunione con l'azienda è stata spostata di una settimana perchè si è ritenuto più opportuno aspettare una revisione #glossary("RTB") positiva prima di procedere con la seconda fase. 
+
+Dal confronto tra preventivo e consuntivo emerge che: 
+
+- Amministratore e Verificatore hanno richiesto *meno* ore;
+
+Poiché la variazione di ore, sia in aumento che in diminuzione, è minima, può essere ritenuta irrilevante.
+
+#pagebreak()
+===== Consuntivo orario 
+#cons-orario(((0,0,3,0,0,0),(0,0,0,0,0,2),(0,0,1.5,0,0,1),(0,0,3.5,0,0,0),(0,0,3,0,0,0),(0,1,1,0,0,1),(2,0,1.5,0,0,0)),((0,0,3,0,0,0),(0,0,0,0,0,2),(0,0,1.5,0,0,2),(0,0,3.5,0,0,0),(0,0,3,0,0,0),(0,2,1,0,0,1.5),(2,0,1.5,0,0,0)),"5")
+
+#ore-rimaste(((5,3,3,9,16,16),(6,2,3,12,20,11),(2,1.5,3,13,23,12),(2,1.5,3,14,17,15),(2,2,2,11,21,15.5),(1,3,3,13,21,12.5),(6,3,2.5,13,19,9.5)),"5")
+
+===== Consuntivo economico
+#cons-economico((2,1,13.5,0,0,4),(2,2,13.5,0,0,5.5),"5")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante lo svolgimento di questo sprint i membri del gruppo hanno concordato una settimana di pausa ma, nonostante ciò, tutte le attività sono state completate.
+
+==== Retrospettiva
+Nonostante il ritmo ridotto, tutte le task assegnate sono state portate a termine con successo.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del quinto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`477,50 €`*, risultando inferiore di *`42,50 €`* rispetto ai *`520,00 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.080,00 €	`*.
+
+#avanzamento(100, 0, "5")
+
+#pagebreak()
+=== *Sommario finale*
+Dopo svariate intense settimane di lavoro, iniziato in data *`2023-11-12`*, il gruppo si ritiene pronto a
+sostenere la prima revisione del prodotto che inizierà dopo l'invio della lettera di presentazione il giorno
+*`2024-02-10`* e che prevederà un primo colloqui con il *#p.cardin* e continuerà poi con il colloquio con il *#p.vardanega*.\
+Durante questa fase abbiamo ultimato la redazione della documentazione iniziale del progetto, focalizzandoci in particolare sull'#glossary("Analisi dei Requisiti"), sulle #glossary("Norme di Progetto") e sulla realizzazione del #glossary("Proof of Concept") (*`POC`*). Inizialmente era stato ipotizzato che il tempo assegnato allo studio delle funzionalità potesse essere eccessivo, mentre il periodo dedicato allo sviluppo software risultasse insufficiente, viste le nuove tecnologie da utilizzare e la nostra esperienza limitata. Tuttavia, dopo una valutazione più approfondita, confermiamo che non sono state apportate modifiche alle ore riservate per ciascun ruolo. Di conseguenza, il preventivo complessivo, pari a *`€12.740,00`*, e la data di consegna del prodotto, fissata per il *`28 marzo 2025`*, rimangono invariati.
+
+==== Riepilogo prospetto orario
+===== Ore consumate
+#let ore-consumate-totale(dati)={
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let ruoli = ("RS", "AM", "AN", "PR", "PG", "VR","Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last())
+  
+  let header = ([],) + ruoli.map(r => [*#r*])
+  
+  let r = header + (persone).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)))).flatten() +("Totale",).map(el => [*#el*])+(dati.map(row => row.at(0)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(1)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(2)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(3)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(4)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(5)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(6)).sum(),).map(el => [*#el*])
+
+
+  
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Ore consumate durante il periodo di preparazione all'`RTB`*], 
+        table(
+            columns: (auto,)+(1fr,)*6+(auto,),
+            inset: 5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Impegno orario effettivo per ruolo di ciascun membro al termine del periodo di preparazione all'`RTB`.]
+  )
+  v(1.5em)
+}
+#ore-consumate-totale(((4,5,8,8,8,6),(3,6,8,5,4,11),(7,6.5,8,4,1,10),(7,6.5,8,3,7,7),(7,6,9,6,3,6.5),(8,5,8,4,3,9.5),(3,5,8.5,4,5,12.5)))
+
+#pagebreak()
+===== Ore rimanenti
+#let ore-rimaste-totale(dati)={
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let ruoli = ("RS", "AM", "AN", "PR", "PG", "VR","Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last())
+  
+  let header = ([],) + ruoli.map(r => [*#r*])
+  
+  let r = header + (persone).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)))).flatten() +("Totale",).map(el => [*#el*])+(dati.map(row => row.at(0)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(1)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(2)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(3)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(4)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(5)).sum(),).map(el => [*#el*])+(dati.map(row => row.at(6)).sum(),).map(el => [*#el*])
+
+
+  
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Ore rimanenti dopo il periodo di preparazione all'`RTB`*], 
+        table(
+            columns: (auto,)+(1fr,)*6+(auto,),
+            inset: 5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Impegno orario rimanente per ruolo di ciascun membro al termine del periodo di preparazione all'`RTB`.]
+  )
+  v(1.5em)
+}
+#ore-rimaste-totale(((5,3,3,9,16,16),(6,2,3,12,20,11),(2,1.5,3,13,23,12),(2,1.5,3,14,17,15),(2,2,2,11,21,15.5),(1,3,3,13,21,12.5),(6,3,2.5,13,19,9.5)))
+==== Riepilogo prospetto economico
+===== Costi totali
+#let costo-totale(dati)={
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let periodo = ("Periodo 1", "Periodo 2", "Periodo 3", "Periodo 4", "Periodo 5", "Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n.split().last())
+  
+  let header = ([*Ruolo*],) + periodo.map(r => [*#r*])
+  
+  let r = header + (ruoli_tot).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)+" €"))).flatten() +("Totale",).map(el => [*#el*])+(dati.map(row => row.at(0)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(1)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(2)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(3)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(4)).sum(),).map(el => [*#el €*])+(dati.map(row => row.at(5)).sum(),).map(el => [*#el €*])
+
+  figure(
+    align(center,
+      table(
+        columns: (1fr),
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row!=0 { white } else {rgb(209, 197, 174)},
+        [*Ore rimanenti dopo il periodo di preparazione all'`RTB`*], 
+        table(
+            columns: (auto,)+(1fr,)*5+(auto,),
+            inset: 5pt,
+            align: center,
+            fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+            ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)],)
+          )
+      )
+    ),
+    caption: [Aggiornamenti economici del progetto al termine del periodo di preparazione all'`RTB`.]
+  )
+  v(1.5em)
+}
+#costo-totale(((330,330,210,240,60),(280,140,200,160,20),(300,250,250,300,337.5),(100,250,275,225,0),(75,120,165,105,0),(232.5,202.5,187.5,255,60)))
