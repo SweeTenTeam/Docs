@@ -7,6 +7,11 @@
     p.cardin,
   ),
   changelog: (
+    "1.0",
+    "2025-02-09",
+    (p.mahdi),
+    (p.santi),
+    "Revisione verbale per RTB",
     "0.1",
     "2025-02-07",
     (p.santi),
@@ -78,4 +83,4 @@ Sono state create delle #glossary("issue") in merito a questa revisione.
 - Il gruppo invia la lettera di candidatura in data 2025/02/09.
 
 = Prossime attività
-Le prossime attività verranno assegnate da il nuovo responsabile in seguito al colloquio RTB.
+Le prossime attività verranno assegnate dal nuovo responsabile in seguito al colloquio RTB.
