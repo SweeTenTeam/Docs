@@ -4,6 +4,11 @@
   title: "Piano di Qualifica",
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
+    "0.0.3",
+    "2024-02-01",
+    (p.santi), 
+    (p.campagnaro), 
+    [Approvazione per RTB],
     "0.1.0",
     "2024-02-08",
     (p.campagnaro), 
@@ -271,49 +276,45 @@ A partire dalla sezione successiva verranno inseriti i test svolti riepilogati i
 
     [TS-01], [Verificare che l'utenta riesca ad accedere all'applicazione senza autenticazione], [NI], [RF-001],
 
-    [TS-02], [Verificare che il sistema riesca a reperire correttamente le informazioni da GitHub], [NI], [RF-002],
+    [TS-02], [Verificare che l'utente possa visualizzare correttamente lo storico della chat], [NI], [RF-002],
 
-    [TS-03], [Verificare che il sistema riesca a reperire correttamente le informazioni da Confluence], [NI], [RF-003],
+    [TS-03], [Verificare che l'utente visualizzi un messaggio nel caso in cui non ci siano messaggi nello storico], [NI], [RF-003],
 
-    [TS-04], [Verificare che il sistema riesca a reperire correttamente le informazioni da Jira], [NI], [RF-004],
+    [TS-04], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non sia riuscito a recuperare correttamente lo storico], [NI], [RF-004],
 
-    [TS-05], [Verificare che l'utente possa visualizzare correttamente lo storico della chat], [NI], [RF-005],
+    [TS-05], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non riesca a connettersi], [NI], [RF-005],
 
-    [TS-06], [Verificare che l'utente visualizzi un messaggio nel caso in cui non ci siano messaggi nello storico], [NI], [RF-006],
+    [TS-06], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il backend non risulti disponibile], [NI], [RF-006],
 
-    [TS-07], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non sia riuscito a recuperare correttamente lo storico], [NI], [RF-007],
+    [TS-07], [Verificare che l'utente possa visualizzare per ogni messaggio il suo contenuto, data, orario di invio e mittente], [NI], [RF-007],
 
-    [TS-08], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il sistema non riesca a connettersi], [NI], [RF-008],
+    [TS-08], [Verificare che, attraverso l'interfaccia utente, l'utente sia in grado di porre una domanda in linguaggio naturale], [NI], [RF-008],
 
-    [TS-09], [Verificare che l'utente visualizzi un messaggio di errore nel caso in cui il backend non risulti disponibile], [NI], [RF-009],
-
-    [TS-10], [Verificare che l'utente possa visualizzare per ogni messaggio il suo contenuto, data, orario di invio e mittente], [NI], [RF-010],
-
-    [TS-11], [Verificare che, attraverso l'interfaccia utente, l'utente sia in grado di porre una domanda in linguaggio naturale], [NI], [RF-011],
-
-    [TS-12], [Verificare che l'utente riesca ad inviare la domanda scritta attraverso la #glossary("User Interface") al sistema], [NI], [RF-012],
+    [TS-09], [Verificare che l'utente riesca ad inviare la domanda scritta attraverso la #glossary("User Interface") al sistema], [NI], [RF-009],
     
-    [TS-13], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NI], [RF-013],
+    [TS-10], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NI], [RF-010],
 
-    [TS-14], [Verificare che il sistema notifichi all'utente un messaggio di errore nel caso in cui la risposta non venga generata perché supera la lunghezza massima consentita], [NI], [RF-014],
+    [TS-11], [Verificare che il sistema notifichi all'utente un messaggio di errore nel caso in cui la risposta non venga generata perché supera la lunghezza massima consentita], [NI], [RF-011],
 
-    [TS-15], [Verificare che il sistema notifichi all'utente un messaggio di errore nel caso in cui la domanda superi la lunghezza massima consentita], [NI], [RF-015],
+    [TS-12], [Verificare che il sistema notifichi all'utente un messaggio di errore nel caso in cui la domanda superi la lunghezza massima consentita], [NI], [RF-012],
 
-    [TS-16], [Verificare che il sistema elabori correttamente la domanda dell'utente, generando una risposta attinente e appropriata], [NI], [RF-016],
+    [TS-13], [Verificare che il sistema elabori correttamente la domanda dell'utente, generando una risposta attinente e appropriata], [NI], [RF-013],
 
-    [TS-17], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("GitHub") (nome della repository, la sua descrizione, informazioni sui ticket, commit...)], [NI], [RF-017],
+    [TS-14], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("GitHub") (nome della repository, la sua descrizione, informazioni sui ticket, commit...)], [NI], [RF-014],
 
-    [TS-18], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("Confluence") (id della pagina, il titolo, lo status...)], [NI], [RF-018],
+    [TS-15], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("Confluence") (id della pagina, il titolo, lo status...)], [NI], [RF-015],
 
-    [TS-19], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("Jira") (nome di un #glossary("ticket"), il suo assegnatario, stato, ticket collegati...)], [NI], [RF-019],
+    [TS-16], [Verificare che il sistema riesca a reperire tutte le informazioni necessarie da #glossary("Jira") (nome di un #glossary("ticket"), il suo assegnatario, stato, ticket collegati...)], [NI], [RF-016],
 
-    [TS-20], [Verificare che il sistema riesca gestire correttamente domande fuori contesto, generando una risposta attinente e appropriata], [NI], [RF-020],
+    [TS-17], [Verificare che il sistema riesca gestire correttamente domande fuori contesto, generando una risposta attinente e appropriata], [NI], [RF-017],
 
-    [TS-21], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NI], [RF-021],
+    [TS-18], [Verificare che, nel caso in cui ci sia stato un errore durante la generazione della risposta, l'utente visualizzi un messaggio di errore], [NI], [RF-018],
 
-    [TS-22], [Verificare che il sistema informi l'utente se la risposta supera la lunghezza massima consentita], [NI], [RF-022],
+    [TS-19], [Verificare che il sistema informi l'utente se la risposta supera la lunghezza massima consentita], [NI], [RF-019],
 
-    [TS-23], [Verificare che il sistema fornisca correttamente la data e l'orario dell'ultimo aggiornamento dei dati utilizzati], [NI], [RF-023],
+    [TS-20], [Verificare che il sistema fornisca correttamente la data e l'orario dell'ultimo aggiornamento dei dati utilizzati], [NI], [RF-020],
+
+    [TS-21], [Verificare che ogni 24 ore il sistema aggiorni i dati contenuti nei documenti provenienti da GitHub, Confluence e Jira], [NI], [RF-021],
   ),
   caption: "Riepilogo Test di Sistema"
 )
