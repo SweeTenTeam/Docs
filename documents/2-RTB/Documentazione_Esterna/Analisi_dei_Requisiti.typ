@@ -5,6 +5,12 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "1.0.0",
+    "2025-02-10",
+    (p.fracaro),
+    (p.santi),
+    [Approvazione per RTB con formattazione pagine],
+
     "0.2.0",
     "2025-02-07",
     (p.belenkov,p.benedetti, p.santi,p.ferazzani, p.fracaro),
@@ -101,13 +107,14 @@ la presenza di errori e correggendoli una volta identificati.\
 Ciò permette di accertare che il prodotto finale corrisponda alle aspettative del proponente.\
 
 Una volta che i requisiti del sistema saranno stati definiti in maniera chiara in modo tale da permettere al lettore di
-comprenderli pienamente, allora verrà data una rappresentazione formale grafica del software attraverso l'utilizzo di
-#glossary("diagrammi dei casi d'uso").
+comprenderli pienamente, allora verrà data una rappresentazione formale grafica del software attraverso l'utilizzo di #glossary("diagrammi dei casi d'uso").
 
 == Scopo del progetto
 Lo scopo del progetto è la realizzazione di un assistente virtuale sotto forma di #glossary("chatbot") in grado di assistere gli utenti, rispondendo alle loro domande in linguaggio naturale.
 Il #glossary("chatbot") garantirà un accesso rapido alle informazioni interne dell'azienda, aggregando i dati provenienti dalle piattaforme #glossary("Jira"), #glossary("Github") e #glossary("Confluence") ed elaborando questi ultimi con l'uso dell'intelligenza artificiale per dare risposte chiare.
 Questo strumento sarà utile non solo ai membri già attivi dell'azienda per tagliare i tempi lunghi di ricerca manuale di una determinata informazione, ma anche per il processo di onboarding dei nuovi arrivati rispondendo alle domande più frequenti e guidandoli nel processo di apprendimento delle risorse aziendali senza il bisogno di una figura di supporto.
+
+#pagebreak()
 
 == Glossario
 Al fine di evitare eventuali equivoci o incomprensioni , si è deciso di adottare un Glossario presente come file e nella pagina web, in cui vengono riportate tutte le definizioni delle parole ambigue utilizzate nei documenti di questo progetto.
@@ -125,6 +132,8 @@ Presentazione pdf del capitolato C9: #link("https://www.math.unipd.it/~tullio/IS
 === Informativi
 Slide del corso(T5): #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf","T05.pdf")
 
+#pagebreak()
+
 = Descrizione
 == Obiettivo del prodotto
 Questo progetto consiste nella creazione di un #glossary("chatbot") #glossary("text-to-text") per l'azienda #box(image(g.azzurro, width: 5em, height: auto)), che centralizza le informazioni relative all'azienda provenienti da diverse piattaforme e, con l'uso di un #glossary("LLM"), le elabora per creare delle risposte in linguaggio naturale. BuddyBot sarà in grado di rispondere a domande che variano dalla data di un determinato incontro fissato su #glossary("Jira"), a cosa è cambiato in un determinato commit su #glossary("Github") e a richieste specifiche su documenti presenti in #glossary("Confluence"). Inoltre aiuterà i nuovi membri a navigare tra tra le risorse aziendali, rispondendo alle domande frequenti.
@@ -138,6 +147,7 @@ L'assistente virtuale utilizza tecnologie di Intelligenza Artificiale per interp
 
 A seguire, #glossary("BuddyBot") garantisce anche la persistenza dei dati, ossia domande e risposte, con il fine di mantenere lo storico della chat agevolando il recupero di informazioni già richieste.
 
+
 == Utenti e caratteristiche
 Il prodotto si rivolge principalmente al team aziendale:
 
@@ -148,6 +158,7 @@ Il prodotto si rivolge principalmente al team aziendale:
 
 Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l'uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
 
+#pagebreak()
 = Casi d'uso
 == Introduzione ai casi d'uso e obbiettivi
 In questa sezione vengono elencati dettagliatamente i #glossary("casi d'uso (UC)") individuati dal gruppo in seguito ad analisi e valutazioni circa le specifiche del capitolato.
@@ -248,7 +259,9 @@ Gli attori coinvolti nei casi d'uso sono:
 
 
   ==== UC1.3, Visualizzazione errore di connessione
-  *Attori coinvolti*: #glossary("User").
+  *Attori coinvolti*:
+  - Primari:
+    - #glossary("User").
 
   *Precondizioni*
   - L'interfaccia utente è pronta all'interazione con l'utente. 
@@ -290,7 +303,10 @@ Gli attori coinvolti nei casi d'uso sono:
     image(ar.diagUC_single_messaggio, width: 42em, fit: "contain"),
     caption: "Diagramma UC1.4, Visualizzazione messaggio singolo",
   )
-    *Attori coinvolti*: #glossary("User").
+    *Attori coinvolti*:
+    - Primari:
+      - #glossary("User").
+
 
     *Precondizioni*
     - La UI di #glossary("Buddybot") è funzionante e pronta per l'utilizzo;
@@ -315,7 +331,10 @@ Gli attori coinvolti nei casi d'uso sono:
 
 
 ===== UC1.4.1, Visualizzazione contenuto del messaggio
-*Attori coinvolti*: #glossary("User").
+*Attori coinvolti*: 
+- Primari:
+  - #glossary("User").
+
 
   *Precondizioni*
   - L'interfaccia utente è pronta all'interazione con l'utente. 
@@ -331,7 +350,9 @@ Gli attori coinvolti nei casi d'uso sono:
   - "Come utente, voglio poter visualizzare il contenuto di un messaggio della chat in modo da comprendere le informazioni scambiate durante le passate interazioni con Buddybot".
 
   ===== UC1.4.2, Visualizzazione data e ora del messaggio;
-*Attori coinvolti*: #glossary("User").
+*Attori coinvolti*: 
+  - Primari:
+    - #glossary("User").
 
   *Precondizioni*
   - L'interfaccia utente è pronta all'interazione con l'utente. 
@@ -348,7 +369,9 @@ Gli attori coinvolti nei casi d'uso sono:
 
 
   ===== UC1.4.3, Visualizzazione mittente del messaggio
-*Attori coinvolti*: #glossary("User").
+  *Attori coinvolti*:
+  - Primari:
+    - #glossary("User").
 
   *Precondizioni*
   - L'interfaccia utente è pronta all'interazione con l'utente. 
@@ -639,6 +662,8 @@ Gli attori coinvolti nei casi d'uso sono:
     - #glossary("Jira") .
     - #glossary("Github") .
     - #glossary("Confluence") .
+    
+  #pagebreak()
 
   *Precondizioni*
     - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
