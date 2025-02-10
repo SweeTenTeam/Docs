@@ -4,8 +4,8 @@
   title: "Piano di Qualifica",
   recipients: (p.vardanega, p.cardin, p.azzurro,),
   changelog: (
-    "0.0.3",
-    "2024-02-01",
+    "1.0.0",
+    "2024-02-10",
     (p.santi), 
     (p.campagnaro), 
     [Approvazione per RTB],
