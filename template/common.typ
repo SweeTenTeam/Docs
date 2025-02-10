@@ -15,9 +15,13 @@
 
 //Diagrammi UML per doc AdR
 #let ar = (
-  diagUC1: "/images/analisi-dei-requisiti/UCJira.png",
-  diagUC2: "/images/analisi-dei-requisiti/UCGitHub.png",
+  diagUC2: "/images/analisi-dei-requisiti/UC2_InfoJira.png",
   diagUC3: "/images/analisi-dei-requisiti/UCConfluence.png",
+  diagUC_storico_chat:"/images/analisi-dei-requisiti/UCStoricoChat.png",
+  diagUC_single_messaggio:"/images/analisi-dei-requisiti/UC_view_single_mess.png",
+  diagUC_ask_user-ui:"/images/analisi-dei-requisiti/UC0_ask_User-UI.png",
+  diagUC_elab_domanda:"/images/analisi-dei-requisiti/UC_elab_domanda.png",
+  diacUC_inserimento_domanda:"/images/analisi-dei-requisiti/UC_inserimento_domanda.png",
 )
 
 //Norme di progetto Immagini
@@ -31,14 +35,12 @@
   inclusione: "/images/norme/inclusione.png",
   estensione: "/images/norme/estensione.png",
   generalizzazione_caso_uso: "/images/norme/generalizzazione_caso_uso.png",
-
   dipendenza: "/images/norme/dipendenza.png",
   associazione: "/images/norme/associazione.png",
   aggregazione: "/images/norme/aggregazione.png",
   composizione: "/images/norme/composizione.png",
   generalizzazione_classe: "/images/norme/generalizzazione_classe.png",
   interfaccia: "/images/norme/interfaccia.png",
-  
   board: "/images/norme/board.png",
   road: "/images/norme/roadmap.png",
 )
