@@ -10,7 +10,6 @@
     (p.fracaro),
     (p.santi),
     [Approvazione per RTB con formattazione pagine],
-
     "0.2.0",
     "2025-02-07",
     (p.belenkov,p.benedetti, p.santi,p.ferazzani, p.fracaro),
