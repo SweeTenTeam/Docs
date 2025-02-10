@@ -5,6 +5,11 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.2.0",
+    "2025-02-07",
+    (p.belenkov,p.benedetti, p.santi,p.ferazzani, p.fracaro),
+    (p.campagnaro),
+    [Inseriti requisiti funzionali, di qualità, di vincolo e completato sezioni tracciamento e riepilogo],
      "0.1.0",
     "2025-02-05",
     (p.fracaro, p.santi, p.mahdi, p.ferazzani),
@@ -59,6 +64,7 @@
   ),
   show_images_list: true,
   show_tables_list: true,
+  image_width: 45%,
 )
 
 = *Introduzione*
@@ -654,27 +660,50 @@ Gli attori coinvolti nei casi d'uso sono:
 #pagebreak()
 
 
-= Requisiti
-In questa sezione vengono esposti i requisiti individuati in seguito alle analisi effettuate dal gruppo e dai #glossary("casi d'uso (UC)") esaminati in precedenza. Per garantire maggiore chiarezza, i vari requisiti verranno identificati da codici univoci a seconda della loro natura e dall'obbligatorietà o meno...
+= Requisiti <requisiti>
+In questa sezione vengono esposti i requisiti esposti nel capitolato e individuati a seguito delle analisi effettuate dal gruppo e dai #glossary("casi d'uso (UC)") esaminati in precedenza. Per garantire la maggior chiarezza, i requisiti verranno identificati da un codice univoco con questa struttura:
 
-Come anticipato, i requisiti possono appartenere a tre categorie differenti:
-- funzionali
-- di qualità
-- di vincolo
+#align(center)[*`R[Tipo]-[Identificativo]`*]
 
+
+Dove:
+
+- *Tipo*: indica il tipo di requisito, che può essere funzionale, di qualità o di vincolo.
+
+  I tipi sono indicati da una sigla:
+
+  - *`F`* per i requisiti funzionali;
+  - *`Q`* per i requisiti di qualità;
+  - *`V`* per i requisiti di vincolo.
+
+- *Identificativo*: rappresenta il numero progressivo del requisito;
+
+Inoltre, in ogni tabella saranno indicate la descrizione del requisito in oggetto, la sua fonte (capitolato o caso d'uso) e la sua priorità.
+
+Si ricorda che come indicato nelle `Norme di Progetto`, i requisiti vengono classificati con 3 livelli di priorità:
+
+- *Obbligatorio*: requisito irrinunciabile per il committente;
+- *Desiderabile*: requisito che porta valore aggiunto al prodotto ma non è strettamente necessario;
+- *Opzionale*: requisito che può essere soddisfatto o meno senza che il prodotto risulti compromesso.
 
 == Requisiti Funzionali
 I #glossary("Requisiti Funzionali") definiscono cosa il sistema deve fare, ovvero le sue funzionalità principali e i comportamenti attesi, concentrandosi quindi sulle operazioni che gli utenti/attori devono poter eseguire.
 
-Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
-- RFO-x: Requisito Funzionale Obbligatorio numero "x"
-- RFD-x: Requisito Funzionale Desiderabile numero "x"
+Si osservi che, come indicato sopra, i requisiti funzionali verranno identificati con i seguenti codici:
+
 
 #set table(
   stroke: 1pt,
-  fill: (x, y) => if y == 0 { rgb(209, 197, 174) },
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
   inset: (left: 0.5em, right: 0.5em),
 )
+
 
 #show table.cell: it => {
   if it.y == 0 {
@@ -686,11 +715,152 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
 
 #figure(
   table(
-    columns: (3cm, 10cm, 3cm),
-    [Codice], [Descrizione], [Fonti],
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    align: center + horizon,
+    columns: (auto, auto, auto, auto),
+    [Codice], [Descrizione], [Fonti], [Priorità],
+    [*RF-001*],
+    [L'utente deve accedere all'applicazione senza necessità di autenticazione],
+    [Capitolato],
+    [Obbligatorio],
+    [*RF-002*], [L'utente deve poter visualizzare lo storico della chat], [UC1], [Obbligatorio],
+    [*RF-003*],
+    [L'utente deve visualizzare un messaggio informativo che spiega che non ci sono messaggi nello storico],
+    [UC1.1],
+    [Obbligatorio],
+
+    [*RF-004*],
+    [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a recuperare lo storico],
+    [UC1.2],
+    [Obbligatorio],
+
+    [*RF-005*],
+    [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a connettersi],
+    [UC1.3],
+    [Obbligatorio],
+
+    [*RF-006*],
+    [L'utente deve visualizzare un messaggio di errore se il backend non è disponibile],
+    [UC1.5],
+    [Obbligatorio],
+
+    [*RF-007*],
+    [L'utente deve visualizzare per ogni messaggio: il contenuto, la data e ora di invio, e il mittente],
+    [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3],
+    [Obbligatorio],
+
+    [*RF-008*],
+    [L'utente deve poter scrivere una domanda in linguaggio naturale],
+    [UC2],
+    [Obbligatorio],
+
+    [*RF-009*],
+    [L'utente deve poter inviare la domanda scritta al sistema],
+    [UC3],
+    [Obbligatorio],
+    
+    [*RF-010*],
+    [L'utente deve poter visualizzare un messagio di errore se si è verificato un errore generico nella generazione della risposta da parte del #glossary("backend")],
+    [UC3.1],
+    [Obbligatorio],
+    
+    [*RF-011*],
+    [L'utente deve poter visualizzare un messagio di errore se la risposta non è stata generata perchè supera la lunghezza massima consentita],
+    [UC3.2],
+    [Obbligatorio],
+
+    [*RF-012*],
+    [L'utente deve poter visualizzare un messagio di errore se la domanda supera la lunghezza massima consentita],
+    [UC3.3],
+    [Obbligatorio],
+
+    [*RF-013*],
+    [Il sistema deve elaborare la domanda dell'utente e generare una risposta appropriata],
+    [UC4],
+    [Obbligatorio],
+
+    [*RF-014*],
+    [Il sistema deve recuperare da GitHub le seguenti informazioni:
+    - Nome della repository
+    - Descrizione della repository
+    - Data di creazione della repository
+    - Ultima data di aggiornamento della repository
+    - Linguaggio principale della repository
+    - Messaggio dell'ultimo commit
+    - Hash dell'ultimo commit
+    - Data e ora dell'ultimo commit
+    - Branch associato all'ultimo commit
+    - File modificati nell'ultimo commit
+    - Autore dell'ultimo commit
+    - Lista delle Pull request attive e chiuse
+    - Titolo e descrizione delle Pull request
+    - Stato delle Pull request
+    - Assegnatario delle Pull request
+    - Reviewers delle Pull request
+    - Commenti e discussioni delle Pull request
+    - File modificati nelle Pull request
+    - Branch di origine e destinazione delle Pull request
+    - Stato dei workflow delle GitHub Action
+    - Ultimo workflow eseguito
+    - Log dei workflow
+    - Trigger dei workflow
+    - Durata dei workflow],
+    [UC4, Capitolato],
+    [Obbligatorio],
+
+    [*RF-015*],
+    [Il sistema deve recuperare da Confluence le seguenti informazioni:
+    - Id di una pagina
+    - Titolo di una pagina
+    - Status di una pagina
+    - Autore di una pagina
+    - Owner di una pagina
+    - Spazio di una pagina
+    - Body di una pagina],
+    [UC4, Capitolato],
+    [Obbligatorio],
+
+    [*RF-016*],
+    [Il sistema deve recuperare da Jira le seguenti informazioni:
+    - Nome (titolo) di un ticket
+    - Assegnatario di un ticket
+    - Stato di un ticket
+    - Attività principale collegata a un ticket
+    - Sprint di appartenenza di un ticket
+    - Story point estimate di un ticket
+    - Richiedente/creatore di un ticket
+    - Priorità
+    - Data di scadenza
+    - Commenti del ticket
+    - Ticket collegati],
+    [UC4, Capitolato],
+    [Obbligatorio],
+
+    [*RF-017*],
+    [Il sistema deve gestire le domande fuori contesto con una risposta appropriata],
+    [UC4.1],
+    [Obbligatorio],
+
+    [*RF-018*],
+    [Il sistema deve informare l'utente in caso di errore durante la generazione della risposta],
+    [UC4.2],
+    [Obbligatorio],
+
+    [*RF-019*],
+    [Il sistema deve informare l'utente se la risposta supera la lunghezza massima consentita],
+    [UC4.3],
+    [Obbligatorio],
+
+    [*RF-020*],
+    [Il sistema deve fornire la data e l'ora dell'ultimo aggiornamento dei dati utilizzati],
+    [UC4],
+    [Obbligatorio],
+
+    [*RF-021*],
+    [Il sistema deve aggiornare i dati dei documenti provenienti da GitHub, Confluence e Jira ogni 24 ore],
+    [Capitolato],
+    [Obbligatorio],
+
+
   ),
   caption: "Requisiti Funzionali",
 )
@@ -699,13 +869,20 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
 == Requisiti di Qualità
 I #glossary("Requisiti di Qualità") riguardano *come* il sistema deve funzionare, definendo quindi caratteristiche cruciali per garantire un ottima "#glossary("User Experience")", soddisfacendo le sue esigenze.
 
-Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
-- RQO-x: Requisito di Qualità Obbligatorio numero "x"
-- RQD-x: Requisito di Qualità Desiderabile numero "x"
+Come i requisiti funzionali, i requisiti di qualità seguono la struttura definita al #link(<requisiti>, "Capitolo 4").
+
+
+
 
 #set table(
   stroke: 1pt,
-  fill: (x, y) => if y == 0 { rgb(209, 197, 174) },
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
   inset: (left: 0.5em, right: 0.5em),
 )
 
@@ -719,11 +896,12 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
 
 #figure(
   table(
-    columns: (3cm, 10cm, 3cm),
-    [Codice], [Descrizione], [Fonti],
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    columns: (auto, auto, auto, auto),
+    [Codice], [Descrizione], [Fonti], [Priorità],
+    [RQO-001], [Occorre realizzare e consegnare un documento di analisi dei requisiti con un diagramma dei casi d'uso in formato UML.], [Capitolato], [Obbligatorio],
+    [RQO-002], [Occorre realizzare e consegnare della documentazione tecnica includendo descrizioni delle architetture usate, spiegazioni del funzionamento del codice e delle API usate.], [Capitolato], [Obbligatorio],
+    [RQO-003], [Occorre che il codice sorgente sia presente in un singolo repository su Github accessibile all'azienda.], [Capitolato], [Obbligatorio],
+    [RQO-004], [Occorre usufruire di un sistema di bug reporting per segnalare e tracciare eventuali errori o malfunzionamenti riscontrati nell'applicazione.], [Capitolato], [Obbligatorio],
   ),
   caption: "Requisiti di Qualità",
 )
@@ -731,13 +909,18 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
 == Requisiti di Vincolo
 I #glossary("Requisiti di Vincolo") definiscono i limiti tecnici e/o progettuali entro i quali il sistema deve essere sviluppato.
 
-Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
-- RVO-x: Requisito di Vincolo Obbligatorio numero "x"
-- RVD-x: Requisito di Vincolo Desiderabile numero "x"
+Anche i requisiti di vincolo seguono la struttura del #link(<requisiti>, "Capitolo 4")
+
 
 #set table(
   stroke: 1pt,
-  fill: (x, y) => if y == 0 { rgb(209, 197, 174) },
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
   inset: (left: 0.5em, right: 0.5em),
 )
 
@@ -751,11 +934,16 @@ Si osservi che, per tali requisiti, verranno inseriti i seguenti codici:
 
 #figure(
   table(
-    columns: (3cm, 10cm, 3cm),
-    [Codice], [Descrizione], [Fonti],
-    [], [], [],
-    [], [], [],
-    [], [], [],
+    columns: (auto, auto, auto, auto),
+    [Codice], [Descrizione], [Fonti], [Priorità],
+    [RVO-001], [Occorre che l'applicazione venga sviluppata suddividendola in frontend e backend], [Capitolato], [Obbligatorio],
+    [RVO-002], [Occorre che vengano raccolte le informazioni da #glossary("Jira"),#glossary("Github") e #glossary("Confluence") usando API di terze parti], [Capitolato],[Obbligatorio],
+    [RVO-003], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato],[Obbligatorio],
+    [RVO-004], [Occorre che sia assicurata una coverage adeguata del codice, per garantire che la maggior parte delle funzionalità siano testate e prive di bug.], [Capitolato],[Obbligatorio],
+    [RVD-001],[E' desiderabile usare NodeJS o NestJS],[Capitolato],[Desiderabile],
+    [RVD-002],[E' desiderabile usare Langchain],[Capitolato],[Desiderabile],
+    [RVD-003],[E' desiderabile usare OpenAI],[Capitolato],[Desiderabile],
+    [RVD-004],[E' desiderabile usare Angular],[Capitolato],[Desiderabile],
   ),
   caption: "Requisiti di Vincolo",
 )
@@ -765,7 +953,13 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
 
 #set table(
   stroke: 1pt,
-  fill: (x, y) => if y == 0 { rgb(209, 197, 174) },
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
   inset: (left: 0.5em, right: 0.5em),
 )
 
@@ -781,9 +975,39 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
   table(
     columns: (6cm, 6cm),
     [Fonte], [Requisito],
-    [], [],
-    [], [],
-    [], [],
+    [Capitolato], [RF-001],
+    [UC1], [RF-002],
+    [UC1.1], [RF-003],
+    [UC1.2], [RF-004],
+    [UC1.3], [RF-005],
+    [UC1.5], [RF-006],
+    [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3], [RF-007],
+    [UC2], [RF-008],
+    [UC3], [RF-009],
+    [UC3.1], [RF-010],
+    [UC3.2], [RF-011],
+    [UC3.3], [RF-012],
+    [UC4], [RF-013],
+    [UC4, Capitolato], [RF-014],
+    [UC4, Capitolato], [RF-015],
+    [UC4, Capitolato], [RF-016],
+    [UC4.1], [RF-017],
+    [UC4.2], [RF-018],
+    [UC4.3], [RF-019],
+    [UC4], [RF-020],
+    [Capitolato], [RF-021],
+    [Capitolato], [RQO-001],
+    [Capitolato], [RQO-002],
+    [Capitolato], [RQO-003],
+    [Capitolato], [RQO-004],
+    [Capitolato], [RVO-001],
+    [Capitolato], [RVO-002],
+    [Capitolato], [RVO-003],
+    [Capitolato], [RVO-004],
+    [Capitolato], [RVD-001],
+    [Capitolato], [RVD-002],
+    [Capitolato], [RVD-003],
+    [Capitolato], [RVD-004],
   ),
   caption: "Tracciamento",
 )
@@ -791,7 +1015,13 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
 == Riepilogo
 #set table(
   stroke: 1pt,
-  fill: (x, y) => if y == 0 { rgb(209, 197, 174) },
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
   inset: (left: 0.5em, right: 0.5em),
 )
 
@@ -805,12 +1035,12 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
 
 #figure(
   table(
-    columns: (4cm, 3cm, 3cm, 3cm),
+    columns: (auto, auto, auto, auto),
     [Tipologia], [Obbligatorio], [Desiderabile], [Totale],
-    [], [], [], [],
-    [], [], [], [],
-    [], [], [], [],
+    [Funtionali], [23], [0], [23],
+    [Qualità], [5], [0], [5],
+    [Vincolo], [4], [4], [8],
   ),
   caption: "Riepilogo",
 )
-Il totale dei Requisiti è: //somma della colonna "totale" della tabella di cui sopra
+Il totale dei Requisiti è: 36.

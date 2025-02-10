@@ -24,6 +24,7 @@
   show_images_list: false,
   show_tables_list: false,
   heading_numbers: "1.1)",
+  image_width: 60%,
   body,
 ) = {
   set page(fill: rgb(209, 197, 174))
@@ -52,7 +53,7 @@
   let verifiers = keep(r_verifiers)
 
   set align(top + center)
-  image(g.logo, width: 60%)
+  image(g.logo, width: image_width)
 
   set align(center + horizon)
   gridx(
