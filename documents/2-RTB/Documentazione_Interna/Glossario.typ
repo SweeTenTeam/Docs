@@ -7,6 +7,11 @@
     p.cardin,
   ),
   changelog: (
+    "1.0",
+    "2025-02-09",
+    p.ferazzani,
+    p.mahdi,
+    [Approvazione per RTB],
     "0.3",
     "2024-12-09",
     p.ferazzani,
@@ -73,7 +78,7 @@ Documenti, diagrammi, codici o output creati durante lo sviluppo software, utili
 
 
 
-#pagebreak()
+
 
 = #LTG("B")
 
@@ -89,6 +94,10 @@ Riferimento fisso in un progetto, come specifiche, piani o documenti, utilizzato
 
 Un insieme di metodi o approcci riconosciuti come i più efficaci e affidabili per raggiungere un obiettivo. Le best practice sono spesso basate su esperienze consolidate e standard del settore.
 
+== #LTG("BuddyBot")
+
+Assistente virtuale in forma di chatbot capace di reperire informazioni da diverse fonti (GitHub, Confluence e Jira) e di fornire supporto e assistenza ai membri del team.
+
 == #LTG("Budget at Completion")
 
 Costo totale pianificato di un progetto alla sua conclusione.
@@ -102,7 +111,6 @@ Un errore o malfunzionamento in un programma software che causa risultati imprev
 Un branch è una linea indipendente di sviluppo all'interno di un repository. Consente di creare una copia separata del
 codice principale (solitamente chiamato main o master) per lavorare su nuove funzionalità, correzioni di bug o
 esperimenti, senza modificare il codice stabile.
-#pagebreak()
 
 = #LTG("C")
 
@@ -160,7 +168,6 @@ della qualità del software. Questo cruscotto di solito raccoglie dati da varie 
 versionamento del codice, strumenti di test automatizzati, sistemi di monitoraggio delle prestazioni e altri strumenti
 di analisi. Il suo obiettivo principale è quello di fornire agli sviluppatori, ai tester e ai responsabili un modo
 rapido ed efficace per valutare lo stato del progetto, identificare eventuali problemi o anomalie e prendere decisioni basate sui dati per migliorare la qualità del software.
-#pagebreak()
 
 = #LTG("D")
 
@@ -197,10 +204,10 @@ Un approccio alla documentazione che tratta i documenti come codice sorgente, ar
 
 
 
-#pagebreak()
+
 
 = #LTG("E")
-#pagebreak()
+
 
 = #LTG("F")
 
@@ -210,7 +217,7 @@ Una feature è una caratteristica o una funzionalità specifica di un software o
 
 == #LTG("Feature Branch")
 
-Branch di sviluppo dedicato a una nuova funzionalità, creato per isolare le modifiche prima dell’integrazione nel branch principale.
+Branch di sviluppo dedicato a una nuova funzionalità, creato per isolare le modifiche prima dell'integrazione nel branch principale.
 
 == #LTG("Feedback")
 
@@ -228,7 +235,6 @@ Applicazione web per la creazione e gestione di fogli di calcolo in cloud, parte
 
 Processo di consegna di beni o servizi secondo specifiche contrattuali.
 
-#pagebreak()
 
 = #LTG("G")
 
@@ -264,22 +270,26 @@ Servizio di gestione e condivisione di eventi e appuntamenti in cloud.
 
 Piattaforma di videoconferenza di Google, integrata con Google Workspace.
 
+== #LTG("GroqCloud")
+
+Piattaforma AI basata su hardware specializzato (LPU) per inferenza ad alte prestazioni, supporta modelli LLM e integrazione con strumenti AI per elaborazione in tempo reale.
+
 == #LTG("GUI (Graphical User Interface)")
 
 Una GUI (acronimo di Graphical User Interface, in italiano Interfaccia Grafica Utente) è un'interfaccia che consente
 agli utenti di interagire con un sistema informatico o un software attraverso elementi visivi e grafici, anziché
 utilizzare solo comandi testuali o linee di comando.
 
-#pagebreak()
+
 
 = #LTG("H")
-#pagebreak()
+
 
 = #LTG("I")
 
 == #LTG("IA")
 
-sistema artificiale (tipicamente un sistema informatico) che simula una generica forma di intelligenza.
+Sistema artificiale (tipicamente un sistema informatico) che simula una generica forma di intelligenza.
 
 == #LTG("Inspection")
 
@@ -295,7 +305,7 @@ Strumento per registrare, monitorare e gestire problemi, richieste di migliorame
 
 
 
-#pagebreak()
+
 
 = #LTG("J")
 
@@ -305,7 +315,7 @@ Jira è uno strumento software sviluppato da Atlassian, utilizzato per la gestio
 raggio dei problemi e il controllo dello sviluppo agile. È particolarmente popolare tra i team di sviluppo
 software, specie grazie al servizio di ticketing che offre, ma è anche ampiamente utilizzato in altri ambiti aziendali.
 
-#pagebreak()
+
 
 = #LTG("K")
 
@@ -316,7 +326,6 @@ di un progetto o di un processo rispetto agli obiettivi prefissati. I KPI fornis
 valutare il successo di un'attività, identificare le aree di miglioramento e prendere decisioni informate per
 ottimizzare le prestazioni.
 
-#pagebreak()
 
 = #LTG("L")
 
@@ -343,7 +352,7 @@ Un LLM (large language model) è un modello di intelligenza artificiale basato s
 
 
 
-#pagebreak()
+
 
 = #LTG("M")
 
@@ -374,8 +383,6 @@ Un modello di sviluppo software che rappresenta visivamente il ciclo di vita di 
 
 
 
-#pagebreak()
-
 = #LTG("N")
 
 == #LTG("Norme di Progetto")
@@ -384,7 +391,7 @@ Regole e linee guida stabilite all'interno di un progetto per garantire coerenza
 Definiscono standard e procedure, come documentazione, gestione delle versioni e criteri di codifica, per assicurare
 uniformità nell'approccio e nel risultato finale.
 
-#pagebreak()
+
 
 = #LTG("O")
 
@@ -394,7 +401,7 @@ Processo per integrare nuovi membri in un team o progetto, fornendo loro le info
 
 
 
-#pagebreak()
+
 
 = #LTG("P")
 
@@ -461,7 +468,7 @@ Iniziativa temporanea con obiettivi specifici, risorse definite e una data di co
 
 == #LTG("Project Board")
 
-Strumento visivo per la gestione del flusso di lavoro e il monitoraggio dell’avanzamento di un progetto.
+Strumento visivo per la gestione del flusso di lavoro e il monitoraggio dell'avanzamento di un progetto.
 
 == #LTG("Project Manager")
 
@@ -494,7 +501,7 @@ repository, tipicamente su piattaforme di versionamento del codice come GitHub, 
 altri membri del team o ai manutentori del progetto di revisionare il codice proposto prima che venga integrato nel ramo
 principale (di solito chiamato main o master).
 
-#pagebreak()
+
 
 = #LTG("Q")
 
@@ -504,7 +511,7 @@ Qdrant è un motore di database vettoriale open-source progettato per memorizzar
 
 
 
-#pagebreak()
+
 
 = #LTG("R")
 
@@ -532,8 +539,14 @@ Specificano le condizioni e i limiti che il sistema deve rispettare, come vincol
 
 == #LTG("Requisiti Funzionali")
 
-Specificano cosa deve fare un sistema software per soddisfare le esigenze dell’utente.
+Specificano cosa deve fare un sistema software per soddisfare le esigenze dell'utente.
 
+
+== #LTG("Responsabile")
+
+Figura fondamentale che coordina il gruppo, funge da punto di riferimento per il committente e per il team, svolgendo
+il ruolo di mediatore tra le due parti. In particolare si occupa di: gestire le relazioni con l'esterno; pianificare le
+attività (quali svolgere, data di inizio e fine, assegnazione delle priorità), valutare i rischi associati alle decisioni da prendere, controllare i progressi del progetto, gestire le risorse umane e approvare la documentazione.
 
 
 == #LTG("RTB")
@@ -543,12 +556,6 @@ e comprendere i requisiti del sistema e definire la base tecnologica sulla quale
 principali attività di questa fase sono: l'analisi dei requisiti, la definizione della baseline tecnologica e la
 definizione della baseline di progetto.
 
-== #LTG("Responsabile")
-
-Figura fondamentale che coordina il gruppo, funge da punto di riferimento per il committente e per il team, svolgendo
-il ruolo di mediatore tra le due parti. In particolare si occupa di: gestire le relazioni con l'esterno; pianificare le
-attività (quali svolgere, data di inizio e fine, assegnazione delle priorità), valutare i rischi associati alle decisioni da prendere, controllare i progressi del progetto, gestire le risorse umane e approvare la documentazione.
-
 == #LTG("Rischi organizzativi")
 
 Problemi legati alla gestione, alla pianificazione o alla comunicazione che possono influire sul successo di un progetto.
@@ -557,14 +564,10 @@ Problemi legati alla gestione, alla pianificazione o alla comunicazione che poss
 
 Problemi legati a una o più tecnologie utilizzate, come software obsoleti, bug critici o incompatibilità.
 
-#pagebreak()
+
 
 = #LTG("S")
 
-== #LTG("Stato Avanzamento Lavori (SAL)")
-
-Nell'ambito del project management, è una riunione periodica (o attività di confronto analoga) che viene stabilita per
-garantire e verificare l'avanzamento di un progetto rispetto agli obiettivi prestabiliti.
 
 == #LTG("Scrum")
 
@@ -596,6 +599,11 @@ creare nuove funzionalità basate sulle user stories e sul backlog.
 
 Un evento Scrum che si tiene alla fine di uno sprint, in cui il team presenta gli incrementi di prodotto completati agli stakeholder per ricevere feedback e verificare che siano in linea con gli obiettivi.
 
+== #LTG("Stato Avanzamento Lavori (SAL)")
+
+Nell'ambito del project management, è una riunione periodica (o attività di confronto analoga) che viene stabilita per
+garantire e verificare l'avanzamento di un progetto rispetto agli obiettivi prestabiliti.
+
 == #LTG("Stakeholder")
 
 Gli stakeholder sono le persone o le organizzazioni coinvolte o interessate a un progetto o a un'organizzazione. Gli
@@ -603,7 +611,7 @@ stakeholder possono includere clienti, utenti finali, fornitori, dipendenti, inv
 organizzazioni non governative e altri soggetti che possono influenzare o essere influenzati dalle decisioni e dalle
 azioni di un'organizzazione.
 
-#pagebreak()
+
 
 = #LTG("T")
 
@@ -660,7 +668,7 @@ tipografico professionale. È particolarmente utile per gli utenti che cercano u
 rinunciare alla qualità tipografica e alla potenza nella gestione dei documenti complessi. Typst supporta anche
 l'integrazione di elementi grafici, come immagini e tabelle, e offre un'esperienza di compilazione veloce e fluida.
 
-#pagebreak()
+
 
 = #LTG("U")
 
@@ -680,7 +688,7 @@ Insieme delle percezioni e risposte di un utente durante l'interazione con un si
 
 Una user story è una descrizione informale, in linguaggio naturale, delle caratteristiche di un sistema software.
 
-#pagebreak()
+
 
 = #LTG("V")
 
@@ -702,7 +710,7 @@ svolto sia conforme alle Specifiche Tecniche; ricercare ed in caso segnalare eve
 retrospettiva del Piano di Qualifica, descrivendo le verifiche e le prove effettuate durante il processo di sviluppo del
 prodotto.
 
-#pagebreak()
+
 
 = #LTG("W")
 
@@ -732,12 +740,12 @@ l'automazione dei processi aziendali e per garantire l'efficienza e la coerenza 
 
 Un evento collaborativo in cui un gruppo di persone si riunisce per affrontare e risolvere problemi specifici, acquisire conoscenze o creare risultati condivisi. Spesso utilizzato nella raccolta dei requisiti o nel brainstorming.
 
-#pagebreak()
+
 
 = X
-#pagebreak()
+
 
 = Y
-#pagebreak()
+
 
 = Z
