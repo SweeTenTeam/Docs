@@ -45,6 +45,20 @@
   road: "/images/norme/roadmap.png",
 )
 
+//Piano di qualifica
+#let gq = (
+  AC: "/images/PdQ/AC.svg",
+  CO: "/images/PdQ/CO.svg",
+  NCR: "/images/PdQ/NCR.svg",
+  EAC: "/images/PdQ/EAC.svg",
+  QMS: "/images/PdQ/QMS.svg",
+  TE: "/images/PdQ/TE.svg",
+  RSI: "/images/PdQ/RSI.svg",
+  GLP: "/images/PdQ/GLP.svg",
+  CV: "/images/PdQ/CV.svg",
+  PV: "/images/PdQ/PV.svg",
+)
+
 
 //team members
 #let p = (
