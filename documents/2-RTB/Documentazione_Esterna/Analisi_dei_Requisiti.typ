@@ -763,7 +763,7 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Obbligatorio],
     
     [*RF-011*],
-    [L'utente deve poter visualizzare un messagio di errore se la risposta non è stata generata perchè supererebbe la lunghezza massima consentita],
+    [L'utente deve poter visualizzare un messagio di errore se la risposta non è stata generata perchè supera la lunghezza massima consentita],
     [UC3.2],
     [Obbligatorio],
 
@@ -790,7 +790,7 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     - Branch associato all'ultimo commit
     - File modificati nell'ultimo commit
     - Autore dell'ultimo commit
-    - Lista Pull request attive e chiuse
+    - Lista delle Pull request attive e chiuse
     - Titolo e descrizione delle Pull request
     - Stato delle Pull request
     - Assegnatario delle Pull request
@@ -798,7 +798,7 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     - Commenti e discussioni delle Pull request
     - File modificati nelle Pull request
     - Branch di origine e destinazione delle Pull request
-    - Stato dei workflow di GitHub Action
+    - Stato dei workflow delle GitHub Action
     - Ultimo workflow eseguito
     - Log dei workflow
     - Trigger dei workflow
@@ -935,8 +935,8 @@ Anche i requisiti di vincolo seguono la struttura del #link(<requisiti>, "Capito
   table(
     columns: (auto, auto, auto, auto),
     [Codice], [Descrizione], [Fonti], [Priorità],
-    [RVO-001], [Occorre che l'applicazione venga sviluppata suddivisa in frontend e backend], [Capitolato], [Obbligatorio],
-    [RVO-002], [Occorre che vengano raccolte le informazioni usando API di terze parti da #glossary("Jira"),#glossary("Github") e #glossary("Confluence")], [Capitolato],[Obbligatorio],
+    [RVO-001], [Occorre che l'applicazione venga sviluppata suddividendola in frontend e backend], [Capitolato], [Obbligatorio],
+    [RVO-002], [Occorre che vengano raccolte le informazioni da #glossary("Jira"),#glossary("Github") e #glossary("Confluence") usando API di terze parti], [Capitolato],[Obbligatorio],
     [RVO-003], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato],[Obbligatorio],
     [RVO-004], [Occorre che sia assicurata una coverage adeguata del codice, per garantire che la maggior parte delle funzionalità siano testate e prive di bug.], [Capitolato],[Obbligatorio],
     [RVD-001],[E' desiderabile usare NodeJS o NestJS],[Capitolato],[Desiderabile],
