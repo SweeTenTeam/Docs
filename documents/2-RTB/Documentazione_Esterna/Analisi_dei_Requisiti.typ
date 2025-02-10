@@ -5,7 +5,7 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
-    "0.1.1",
+    "0.2.0",
     "2025-02-07",
     (p.belenkov,p.benedetti, p.santi,p.ferazzani, p.fracaro),
     (p.campagnaro),
@@ -64,6 +64,7 @@
   ),
   show_images_list: true,
   show_tables_list: true,
+  image_width: 45%,
 )
 
 = *Introduzione*
