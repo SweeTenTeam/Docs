@@ -1162,7 +1162,7 @@ Durante questa fase abbiamo ultimato la redazione della documentazione iniziale 
         inset: 7pt,
         align: center,
         fill: (_, row) => if row != 0 { white } else { rgb(209, 197, 174) },
-        [*Ore rimanenti dopo il periodo di preparazione all'`RTB`*],
+        [*Costi totali dopo il periodo di preparazione all'`RTB`*],
         table(
           columns: (auto,) + (1fr,) * 5 + (auto,),
           inset: 5pt,
