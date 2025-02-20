@@ -53,4 +53,4 @@ Abbiamo presentato ad #p.azzurro :
 
 
 = Decisioni prese
-- Spostamento del prossimo incontro al giorno 2 Gennaio 2025 dalle ore 16:00 alle ore 17:00;
+- Spostamento del prossimo incontro al giorno 2 Gennaio 2025 dalle ore 16:00 alle ore 17:00.

@@ -64,4 +64,4 @@ Abbiamo presentato ad #p.azzurro :
 
 
 = Decisioni prese
-- Date le vacanze, e i conseguenti adattamenti sulla data d'incontro, ci è stato confermato che non sarà necessario l'incontro programmato per il 2025-01-07
+- Date le vacanze, e i conseguenti adattamenti sulla data d'incontro, ci è stato confermato che non sarà necessario l'incontro programmato per il 2025-01-07.

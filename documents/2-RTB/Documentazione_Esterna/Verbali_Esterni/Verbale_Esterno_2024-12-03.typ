@@ -48,7 +48,7 @@ Abbiamo presentato ad #p.azzurro :
 
 = Domande effettuate e relative risposte
 == Casi d'uso
-- Il team ha domandato se l'azienda aveva dei casi d'uso specifici oltre a quelli messi come esempio nella presentazione del capitolato. Ci è stato risposto che quelli sono solo di esempio ma gli altri saranno basati sulle funzionalità richieste e quelle che decideremo di implementare.
+- Il team ha domandato se l'azienda avesse dei casi d'uso specifici oltre a quelli messi come esempio nella presentazione del capitolato. Ci è stato risposto che quelli sono solo di esempio ma gli altri saranno basati sulle funzionalità richieste e quelle che decideremo di implementare.
 == Aggiornamento database
 - Il team ha chiesto se il database vettoriale andasse aggiornato con una frequanza precisa o ad ogni nuova interazione. Ci è sato risposto che possiamo aggiornarlo manualmente per il #glossary("PoC") e poi per il #glossary("MVP") decidere una frequenza di aggiornamento il più frequente possibile ma che non sovraccarichi il sistema.
 
