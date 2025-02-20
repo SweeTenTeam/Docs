@@ -8,7 +8,7 @@
   ),
   changelog: (
     "1.0",
-    "2024-01-06",
+    "2025-01-06",
     (p.benedetti),
     (p.belenkov),
     [
@@ -38,13 +38,13 @@
 - *Ora di inizio*: 16:00;
 - *Ora di fine*: 16:20;
 - *Partecipanti*: #p.belenkov, #p.santi, #p.mahdi, #p.fracaro, #p.benedetti, #p.campagnaro, #p.ferazzani.
-- *Partecipanti Esterni*: Martina Daniele, Nicola Boscaro. 
+- *Partecipanti Esterni*: Martina Daniele, Nicola Boscaro.
 
 == Ordine del giorno
 Abbiamo presentato ad #p.azzurro :
 - Il resoconto del lavoro svolto durante il terzo sprint;
 - Una demo live del #glossary("PoC"), mostrando l'integrazione delle #glossary("API") di #glossary("Jira") e #glossary("Confluence");
-- Le attività e gli obiettivi del prossimo sprint; 
+- Le attività e gli obiettivi del prossimo sprint;
 - Dubbio riguardante i casi d'uso.
 
 
@@ -54,7 +54,7 @@ Abbiamo presentato ad #p.azzurro :
 
 = Domande effettuate e relative risposte
 == Casi d'uso
-- Il team ha domandato quanto bisognasse essere specifici, entrando nei dettagli, per quanto riguarda le eccezioni nei casi d'uso, per eventuali errori che si possono verificare all'interno del database vettoriale ad esempio. La risposta è stata di fornire all'utente una risposta di errore, ma di rimanere generici senza andare nello specifico. 
+- Il team ha domandato quanto bisognasse essere specifici, entrando nei dettagli, per quanto riguarda le eccezioni nei casi d'uso, per eventuali errori che si possono verificare all'interno del database vettoriale ad esempio. La risposta è stata di fornire all'utente una risposta di errore, ma di rimanere generici senza andare nello specifico.
 
 
 

@@ -8,7 +8,7 @@
   ),
   changelog: (
     "1.0",
-    "2024-01-06",
+    "2025-01-06",
     (p.benedetti),
     (p.belenkov),
     [
@@ -31,7 +31,7 @@
 - *Ora di inizio*: 17:00;
 - *Ora di fine*: 17:30;
 - *Partecipanti*: #p.belenkov, #p.santi, #p.mahdi, #p.fracaro, #p.benedetti, #p.campagnaro, #p.ferazzani.
-- *Partecipanti Esterni*: Martina Daniele, Nicola Boscaro. 
+- *Partecipanti Esterni*: Martina Daniele, Nicola Boscaro.
 
 == Ordine del giorno
 Abbiamo presentato ad #p.azzurro :

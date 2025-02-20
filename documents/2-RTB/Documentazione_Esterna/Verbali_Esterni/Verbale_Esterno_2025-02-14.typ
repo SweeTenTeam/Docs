@@ -8,6 +8,13 @@
   ),
   show_images_list: true,
   changelog: (
+    "1.0",
+    "2025-02-14",
+    (p.ferazzani),
+    (p.mahdi),
+    [
+      Approvazione Documento
+    ],
     "0.1",
     "2025-02-14",
     (p.ferazzani),

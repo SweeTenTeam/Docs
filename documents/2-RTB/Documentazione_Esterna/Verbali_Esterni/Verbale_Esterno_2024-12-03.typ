@@ -8,7 +8,7 @@
   ),
   changelog: (
     "1.0",
-    "2024-01-06",
+    "2025-01-06",
     (p.benedetti),
     (p.belenkov),
     [
@@ -31,13 +31,13 @@
 - *Ora di inizio*: 17:00;
 - *Ora di fine*: 17:30;
 - *Partecipanti*: #p.belenkov, #p.santi, #p.mahdi, #p.fracaro, #p.benedetti, #p.campagnaro, #p.ferazzani.
-- *Partecipanti Esterni*: Martina Daniele, Nicola Boscaro. 
+- *Partecipanti Esterni*: Martina Daniele, Nicola Boscaro.
 
 == Ordine del giorno
 Abbiamo presentato ad #p.azzurro :
 - Il resoconto del lavoro svolto durante il primo sprint;
 - Una demo live del #glossary("PoC");
-- Le attività e gli obiettivi del prossimo sprint; 
+- Le attività e gli obiettivi del prossimo sprint;
 - Dubbi su alcune parti del progetto.
 
 
@@ -59,4 +59,4 @@ Abbiamo presentato ad #p.azzurro :
 
 
 = Decisioni prese
-- Ci siamo accordati con il proponente per fare una review dei casi d'uso una volta ultimati. 
+- Ci siamo accordati con il proponente per fare una review dei casi d'uso una volta ultimati.
