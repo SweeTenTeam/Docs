@@ -12,7 +12,7 @@
     (p.benedetti),
     (p.belenkov),
     [
-      Approvazione Documento
+      Approvazione Documento //RTB
     ],
     "0.1",
     "2024-12-23",
