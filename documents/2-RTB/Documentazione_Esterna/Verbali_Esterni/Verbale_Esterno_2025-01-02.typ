@@ -1,7 +1,7 @@
 #import "/template/document.typ": *
 
 #show: project.with(
-  title: "Verbale Esterno del 2024-01-02",
+  title: "Verbale Esterno del 2025-01-02",
   recipients: (
     p.vardanega,
     p.cardin,
@@ -15,14 +15,14 @@
       Approvazione Documento //RTB
     ],
     "0.2",
-    "2024-01-06",
+    "2025-01-06",
     (p.benedetti),
     (p.belenkov),
     [
       Verificato, lievi correzioni
     ],
     "0.1",
-    "2024-01-04",
+    "2025-01-04",
     (p.benedetti),
     (p.belenkov),
     [
