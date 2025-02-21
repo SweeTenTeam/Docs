@@ -1,7 +1,7 @@
 #import "/template/document.typ": *
 
 #show: project.with(
-  title: "Verbale Esterno del 2025-01-14",
+  title: "Verbale Esterno del 2025-02-14",
   recipients: (
     p.vardanega,
     p.cardin,
