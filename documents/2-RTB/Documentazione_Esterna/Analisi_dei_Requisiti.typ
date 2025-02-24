@@ -931,7 +931,7 @@ Come i requisiti funzionali, i requisiti di qualità seguono la struttura defini
     columns: (auto, auto, auto, auto),
     [Codice], [Descrizione], [Fonti], [Priorità],
     [RQO-001], [Occorre realizzare e consegnare un documento di analisi dei requisiti con un diagramma dei casi d'uso in formato UML.], [Capitolato], [Obbligatorio],
-    [RQO-002], [Occorre realizzare e consegnare della documentazione tecnica includendo descrizioni delle architetture usate, spiegazioni del funzionamento del codice e delle API usate.], [Capitolato], [Obbligatorio],
+    [RQO-002], [Occorre realizzare e consegnare un documento denominato "Specifica Tecnica" che fornisce una visione dettagliata sulla architettura del sistema, i design pattern utilizzati, le tecnologie adottate e le scelte progettuali effettuate.], [Capitolato], [Obbligatorio],
     [RQO-003], [Occorre che il codice sorgente sia presente in un singolo repository su Github accessibile all'azienda.], [Capitolato], [Obbligatorio],
     [RQO-004], [Occorre usufruire di un sistema di bug reporting per segnalare e tracciare eventuali errori o malfunzionamenti riscontrati nell'applicazione.], [Capitolato], [Obbligatorio],
     [RQO-005], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato], [Obbligatorio],
