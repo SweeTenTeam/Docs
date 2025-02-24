@@ -116,7 +116,7 @@ Questo strumento sarà utile non solo ai membri già attivi dell'azienda per tag
 #pagebreak()
 
 == Glossario
-Al fine di evitare eventuali equivoci o incomprensioni , si è deciso di adottare un Glossario presente come file e nella pagina web, in cui vengono riportate tutte le definizioni delle parole ambigue utilizzate nei documenti di questo progetto.
+Al fine di evitare eventuali equivoci o incomprensioni , si è deciso di adottare un Glossario presente come file e nella pagina web (nella sua versione attuale #d.vGlossario), in cui vengono riportate tutte le definizioni delle parole ambigue utilizzate nei documenti di questo progetto.
 Nel documento verranno riportati tutti i termini definiti nel loro ambiente di utilizzo con la descrizione del loro significato.
 I termini presenti nel glossario sono evidenziati e hanno una piccola 'G' alla fine.
 
@@ -126,10 +126,18 @@ Pertanto è soggetto a un continuo miglioramento.
 
 == Riferimenti
 === Normativi
-Presentazione pdf del capitolato C9: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf","C9p.pdf")
+Presentazione pdf del capitolato C9: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf","C9p.pdf") (_versione disponibile al 2025-03-20_)
+
+Norme di Progetto: #link(d.NdP, "Norme_di_Progetto_v1.0.0.pdf")
+
+Piano di Qualifica: #link(d.PdQ, "Piano_di_Qualifica_v1.0.0.pdf")
 
 === Informativi
-Slide del corso(T5): #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf","T05.pdf")
+Slide del corso(T5): #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf","T05.pdf") (_versione disponibile al 2025-03-20_)
+
+Diagarmmi dei Casi d'Uso: #link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf", "Diagrammi Use Case.pdf") (_versione disponibile al 2025-03-20_)
+
+Glossario: #link(d.Glossario,"Glossario_v1.0")
 
 #pagebreak()
 

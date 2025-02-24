@@ -79,3 +79,11 @@
   cardin: "Prof. Riccardo Cardin",
   blank: "",
 )
+
+//docs
+#let d = (
+  vGlossario: "v1.0",
+  PdQ: "https://sweetenteam.github.io/pdf/documentazione_esterna/rtb/Piano_di_Qualifica_v1.0.0.pdf",
+  NdP: "https://sweetenteam.github.io/pdf/documentazione_interna/rtb/Norme_di_Progetto_v1.0.0.pdf",
+  Glossario: "https://sweetenteam.github.io/docs/RTB/Glossario",
+)
