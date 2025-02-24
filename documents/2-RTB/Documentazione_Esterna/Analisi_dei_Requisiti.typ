@@ -926,6 +926,8 @@ Come i requisiti funzionali, i requisiti di qualità seguono la struttura defini
     [RQO-002], [Occorre realizzare e consegnare della documentazione tecnica includendo descrizioni delle architetture usate, spiegazioni del funzionamento del codice e delle API usate.], [Capitolato], [Obbligatorio],
     [RQO-003], [Occorre che il codice sorgente sia presente in un singolo repository su Github accessibile all'azienda.], [Capitolato], [Obbligatorio],
     [RQO-004], [Occorre usufruire di un sistema di bug reporting per segnalare e tracciare eventuali errori o malfunzionamenti riscontrati nell'applicazione.], [Capitolato], [Obbligatorio],
+    [RQO-005], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato], [Obbligatorio],
+    [RQO-006], [Occorre che sia assicurata una coverage di almeno 80% del codice, per garantire che la maggior parte delle funzionalità siano testate e prive di bug.], [Capitolato], [Obbligatorio], // da rivedere la percentuale con tullio
   ),
   caption: "Requisiti di Qualità",
 )
@@ -961,13 +963,10 @@ Anche i requisiti di vincolo seguono la struttura del #link(<requisiti>, "Capito
     columns: (auto, auto, auto, auto),
     [Codice], [Descrizione], [Fonti], [Priorità],
     [RVO-001], [Occorre che l'applicazione venga sviluppata suddividendola in frontend e backend], [Capitolato], [Obbligatorio],
-    [RVO-002], [Occorre che vengano raccolte le informazioni da #glossary("Jira"),#glossary("Github") e #glossary("Confluence") usando API di terze parti], [Capitolato],[Obbligatorio],
-    [RVO-003], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato],[Obbligatorio],
-    [RVO-004], [Occorre che sia assicurata una coverage adeguata del codice, per garantire che la maggior parte delle funzionalità siano testate e prive di bug.], [Capitolato],[Obbligatorio],
-    [RVD-001],[E' desiderabile usare NodeJS o NestJS],[Capitolato],[Desiderabile],
-    [RVD-002],[E' desiderabile usare Langchain],[Capitolato],[Desiderabile],
-    [RVD-003],[E' desiderabile usare OpenAI],[Capitolato],[Desiderabile],
-    [RVD-004],[E' desiderabile usare Angular],[Capitolato],[Desiderabile],
+    [RVD-001],[Occorre usare NestJS],[Capitolato],[Desiderabile],
+    [RVD-002],[Occorre usare Langchain],[Capitolato],[Desiderabile],
+    [RVD-003],[Occorre usare OpenAI],[Capitolato],[Desiderabile],
+    [RVD-004],[Occorre usare Angular],[Capitolato],[Desiderabile],
   ),
   caption: "Requisiti di Vincolo",
 )
