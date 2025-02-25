@@ -24,6 +24,27 @@
   diacUC_inserimento_domanda: "/images/analisi-dei-requisiti/UC_inserimento_domanda.png",
 )
 
+// tecnologie per AdR
+
+#let tc = (
+  docker: "/images/analisi-dei-requisiti/docker.png",
+  groq: "/images/analisi-dei-requisiti/groq.png",
+  lc: "/images/analisi-dei-requisiti/langchain.png",
+  node: "/images/analisi-dei-requisiti/node.png",
+  react: "/images/analisi-dei-requisiti/react.png",
+  nest: "/images/analisi-dei-requisiti/nest.png",
+  nomic: "/images/analisi-dei-requisiti/nomic.png",
+  postgres: "/images/analisi-dei-requisiti/postgres.png",
+  qdrant: "/images/analisi-dei-requisiti/qdrant.png",
+  ts: "/images/analisi-dei-requisiti/ts.png",
+  jira: "/images/analisi-dei-requisiti/jira.png",
+  confluence: "/images/analisi-dei-requisiti/confl.png",
+  ok: "/images/analisi-dei-requisiti/ok.png",
+  css: "/images/analisi-dei-requisiti/css.png",
+  next: "/images/analisi-dei-requisiti/next.png",
+  tlw: "/images/analisi-dei-requisiti/tailwind.png",
+)
+
 //Norme di progetto Immagini
 #let gn = (
   attore: "/images/norme/attore.png",
