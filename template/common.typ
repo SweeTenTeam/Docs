@@ -43,6 +43,7 @@
   css: "/images/analisi-dei-requisiti/css.png",
   next: "/images/analisi-dei-requisiti/next.png",
   tlw: "/images/analisi-dei-requisiti/tailwind.png",
+  reactq: "/images/analisi-dei-requisiti/reactq.png",
 )
 
 //Norme di progetto Immagini
