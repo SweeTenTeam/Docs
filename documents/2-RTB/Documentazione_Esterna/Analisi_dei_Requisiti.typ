@@ -328,35 +328,68 @@ Gli attori coinvolti nei casi d'uso sono:
 - L'utente vuole visualizzare il contenuto della chat;
 - L'utente visualizza il messaggio della passata interazione con #glossary("Buddybot").
 
-*Inclusioni*
-- Visualizzazione contenuto del messaggio;
-- Visualizzazione data e ora del messaggio;
-- Visualizzazione mittente del messaggio;
+
+// *Inclusioni*
+// - UC1.4.5, Visualizzazione contenuto del messaggio;
+// - UC1.4.4, Visualizzazione data e ora del messaggio;
+// - UC1.4.3, Visualizzazione ultimo aggiornamento dati per risposta.
+
+*Generalizzazioni*
+- UC1.4.1, Visualizzazione messaggio da chatbot;
+- UC1.4.2, Visualizzazione messaggio da utente.
 
 *User story associata*
-- "Come utente voglio poter visualizzare il contenuto, la data e l'ora di invio, e il mittente di un singolo messaggio della chat in modo chiaro e comprensibile in modo da avere sempre una chiara idea del contesto e dei dettagli delle passate interazioni con #glossary("Buddybot")".
+- "Come utente voglio poter visualizzare un singolo messaggio della chat in modo chiaro e comprensibile in modo da avere sempre una chiara idea del contesto e dei dettagli delle passate interazioni con #glossary("Buddybot")".
 
-
-===== UC1.4.1, Visualizzazione contenuto del messaggio
-*Attori coinvolti*: 
-- Primari:
-  - #glossary("User").
-
+  ===== UC1.4.1, Visualizzazione messaggio da chatbot
+  *Attori coinvolti*:
+  - Primari:
+    - #glossary("User").
 
   *Precondizioni*
   - L'interfaccia utente è pronta all'interazione con l'utente. 
-  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+  - Esiste almeno un messaggio di risposta di #glossary("Buddybot") proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
   *Postcondizioni*
-  - L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il contenuto del messaggio.
+  - L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il messaggio inviato da #glossary("Buddybot").
 
   *Scenario principale*
   - L'utente vuole visualizzare il contenuto della chat;
-  - L'utente visualizza il contenuto del messaggio;
-  *User story associata*
-  - "Come utente, voglio poter visualizzare il contenuto di un messaggio della chat in modo da comprendere le informazioni scambiate durante le passate interazioni con Buddybot".
+  - L'utente visualizza il messaggio inviato da #glossary("Buddybot") nella parte sinistra dell'interfaccia utente e con lo sfondo del messaggio di colore bianco;
 
-  ===== UC1.4.2, Visualizzazione data e ora del messaggio;
+  *Inclusioni*
+- UC1.4.5, Visualizzazione contenuto del messaggio;
+- UC1.4.4, Visualizzazione data e ora del messaggio;
+- UC1.4.3, Visualizzazione ultimo aggiornamento dati per risposta.
+
+*User story associata*
+  - "Come utente, desidero che i messaggi inviati da BuddyBot siano visivamente distinti da quelli inviati dagli utenti, in modo da poter identificare rapidamente l'origine di ciascun messaggio e mantenere una chiara comprensione del flusso conversazionale durante le interazioni con #glossary("Buddybot")".
+
+
+===== UC1.4.2, Visualizzazione messaggio da utente
+*Attori coinvolti*
+- Primari:
+  - #glossary("User").
+
+*Precondizioni*
+  - L'interfaccia utente è pronta all'interazione con l'utente.
+  - Esiste almeno un messaggio inviato dall'utente in una passata interazione con #glossary("Buddybot")
+
+*Postcondizioni*
+  - L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il messaggio inviato dall'utente.
+
+*Scenario principale*
+  - L'utente vuole visualizzare il contenuto della chat;
+  - L'utente visualizza il messaggio inviato da sé stesso nella parte destra dell'Interfaccia utente e con lo sfondo del messaggio di colore blu;
+
+*Inclusioni*
+  - UC1.4.5, Visualizzazione contenuto del messaggio;
+  - UC1.4.4, Visualizzazione data e ora del messaggio.
+
+*User story associata*
+  - "Come utente, desidero che i messaggi inviati da me siano visivamente distinti da quelli inviati da BuddyBot, in modo da poter identificare rapidamente l'origine di ciascun messaggio e mantenere una chiara comprensione del flusso conversazionale durante le interazioni con #glossary("Buddybot")".
+
+  ===== UC1.4.4, Visualizzazione data e ora del messaggio;
 *Attori coinvolti*: 
   - Primari:
     - #glossary("User").
@@ -375,7 +408,7 @@ Gli attori coinvolti nei casi d'uso sono:
   - "Come utente, voglio poter visualizzare la data e l'ora di un messaggio della chat in modo da sapere quando è stato inviato e contestualizzarlo all'interno delle mie interazioni con #glossary("Buddybot")".
 
 
-  ===== UC1.4.3, Visualizzazione mittente del messaggio
+  ===== UC1.4.3, Visualizzazione data e ora ultimo aggiornamento dati risposta
   *Attori coinvolti*:
   - Primari:
     - #glossary("User").
@@ -385,13 +418,13 @@ Gli attori coinvolti nei casi d'uso sono:
   - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
   *Postcondizioni*
-  - L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il mittente del messaggio.
+  - L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per generare la risposta.
 
   *Scenario principale*
   - L'utente vuole visualizzare il contenuto della chat;
-  - L'utente visualizza il mittente del messaggio;
+  - L'utente visualizza la data e l'ora dell'ultimo aggiornamento dei dati usati per generare la risposta;
   *User story associata*
-  - "Come utente, voglio poter visualizzare il mittente di un messaggio della chat in modo da distinguere chi ha inviato il messaggio e comprendere meglio il contesto delle mie interazioni con #glossary("Buddybot")".
+  - "Come utente, voglio poter visualizzare quando è avvenuto l'ultimo aggiornamento dei dati utilizzati per generare la risposta così da essere sicuro che la risposta ricevuta sia accurata".
 
 #pagebreak()
 === UC2, Scrittura domanda in linguaggio naturale
