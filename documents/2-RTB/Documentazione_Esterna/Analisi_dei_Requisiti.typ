@@ -124,6 +124,30 @@ I termini presenti nel glossario sono evidenziati e hanno una piccola 'G' alla f
 Questo documento è stato sviluppato in modo graduale e progressivo, con l'obiettivo di facilitare eventuali modifiche future in base alle necessità concordate tra il gruppo di progetto e l'azienda committente.
 Pertanto è soggetto a un continuo miglioramento.
 
+== Tecnologie utilizzate
+Backend - frontend
+
+In particolare, per quel che riguarda la parte 'back-end' sono state utilizzate le seguenti tecnologie:
+- Typescript
+//#figure(image(tc.ts, ))
+- LangchainJS
+- Node.js
+- Express.js
+- Nest.js
+- GroqCloud
+- Nomic
+- Qdrant 
+- PostgresSQL
+- Librerie API Atlassian
+- Docker
+
+Successivamente, per la parte 'front-end' sono state utilizzate le seguenti tecnologie:
+- React 
+- Axios / ReactQuery
+- Fastify 
+- Cron
+
+
 == Riferimenti
 === Normativi
 Presentazione pdf del capitolato C9: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf","C9p.pdf") (_versione disponibile al 2025-03-20_)
