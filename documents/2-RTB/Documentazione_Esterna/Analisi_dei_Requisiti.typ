@@ -631,44 +631,13 @@ Gli attori coinvolti nei casi d'uso sono:
 - La domanda dell'utente e la risposta generata vengono aggiunte allo storico della chat, rendendole disponibili per la successiva visualizzazione.
 
 *Estensioni*
-- UC4.2, Errore durante la generazione della risposta.
-- UC4.3, Errore risposta troppo lunga;
-*Inclusioni*
-- UC4.4, Richiesta della data e ora dell'ultimo aggiornamento dei dati;
-*Generalizzazioni*
-- UC4.1, Invio richiesta con domanda fuori contesto;
+- UC4.1, Errore durante la generazione della risposta.
+- UC4.2, Errore risposta troppo lunga;
 
 *User story associata*
   - "Come utente di #glossary("Buddybot"), voglio poter porre domande attraverso l'interfaccia utente e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), così da ottenere informazioni utili e coerenti con il contesto del sistema. Voglio inoltre poter visualizzare la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta cosi da poter sapere se i dati sono stati aggiornati recentemente o meno."
 
-  ==== UC4.1, Invio richiesta con domanda fuori contesto
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User Interface") .
-  - Secondari:
-    - #glossary("LLM") .
-    - #glossary("Jira") .
-    - #glossary("Github") .
-    - #glossary("Confluence") .
-
-  *Precondizioni*
-    - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
-    - L'interfaccia utente ha acquisito una domanda dall'utente.
-
-  *Postcondizioni*
-  - Il #glossary("backend") genera e restituisce una risposta che informa che non è stato possibile rispondere alla domanda in quanto non il linea con il contesto di #glossary("Buddybot").
-  - La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.  
-
-  *Scenario principale*
-  - L'interfaccia utente invia al #glossary("backend") di Buddybot la domanda formulata dall'utente;
-  - Il #glossary("backend") analizza la domanda e tenta di recuperare documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"). Tuttavia, non trova documenti correlati poiché la domanda è fuori dal contesto operativo di #glossary("Buddybot");
-  - La domanda dell'utente viene inoltrata al #glossary("LLM") per generare una risposta in linguaggio naturale che informa l'utente che la domanda non è pertinente al contesto;
-  - La risposta generata dal #glossary("LLM") viene restituita dal #glossary("backend") all'interfaccia utente;
-  - La domanda e la risposta vengono archiviate nello storico della chat, rendendole disponibili per future visualizzazioni.
-  *User story associata*
-  - "Come utente di #glossary("Buddybot"), voglio ricevere una risposta chiara e in linguaggio naturale quando pongo una domanda fuori contesto, in modo da essere informato che la mia richiesta non è pertinente al sistema e capire meglio i limiti del suo ambito operativo".
-
-==== UC4.2, Errore durante la generazione della risposta
+==== UC4.1, Errore durante la generazione della risposta
   *Attori coinvolti*:
   - Primari:
     - #glossary("User Interface") .
@@ -693,7 +662,7 @@ Gli attori coinvolti nei casi d'uso sono:
   - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda, così da poter eventualmente riformulare la domanda o contattare un supporto alternativo".
 
 
-==== UC4.3, Errore risposta troppo lunga
+==== UC4.2, Errore risposta troppo lunga
   *Attori coinvolti*:
   - Primari:
     - #glossary("User Interface") .
@@ -703,7 +672,6 @@ Gli attori coinvolti nei casi d'uso sono:
     - #glossary("Github") .
     - #glossary("Confluence") .
     
-  #pagebreak()
 
   *Precondizioni*
     - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
