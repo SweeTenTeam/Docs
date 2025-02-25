@@ -756,8 +756,107 @@ Gli attori coinvolti nei casi d'uso sono:
   *User story associata*
   - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda perchè la risposta supererebbe la lunghezza massima consentita in modo da poter eventualmente riformulare la domanda".
 
+#pagebreak()
+=== UC5, Modifica domanda
+
+  #figure(
+    image(ar.diagUC_modifica_domanda, width: 32em, fit: "contain"),
+    caption: "Diagramma UC5, Modifica domanda",
+  )
+        *Attori coinvolti*:
+    - Primari:
+      - #glossary("User") .
+
+    *Precondizioni*
+    - L'interfaccia utente è pronta all'interazione con l'utente;
+    - L'utente ha già fatto una domanda, quindi c'è almeno un messaggio.
+
+    *Postcondizioni*
+    - L'interfaccia utente viene aggiornata con la nuova domanda scritta dall'utente.
+    *Scenario principale*
+    - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
+    - L'utente scrive la propria domanda nel campo di input dedicato;
+    - L'utente si accorge di un errore o vuole modificare la domanda;
+    - L'utente schiaccia sull'icona di modifica e modifica la domanda;
+    - La vecchia domanda viene sostituita con quella nuova.
+
+*User story associata*
+- "Come utente, voglio modificare la mia domanda per renderla più chiara o correggere un errore dopo averla  mandata."
 
 #pagebreak()
+
+#pagebreak()
+=== UC6, visualizzazione UI
+
+  #figure(
+    image(ar.diagUC_seleziona_mod, width: 32em, fit: "contain"),
+    caption: "Diagramma UC6, visualizzazione UI",
+  )
+  *Attori coinvolti*:
+    - Primari:
+      - #glossary("User").
+
+
+    *Precondizioni*
+    - La UI di #glossary("Buddybot") è funzionante e pronta per l'utilizzo;
+    
+    *Postcondizioni*
+    - Lo user visualizza la UI e tutte le funzionalità sono pronte all'uso.
+
+*Scenario principale*
+- L'utente vuole visualizzare la UI di #glossary("Buddybot") e usare le sue funzionalità;
+- L'utente visualizza la UI di #glossary("Buddybot") e puù usare tutte le sue funzionalità.
+
+*Generalizzazioni*
+- UC6.1, visualizzazione UI modalità chiara;
+- UC6.2, visualizzazione UI modalità scura.
+
+*User story associata*
+- "Come utente voglio poter visualizzare e usare la UI di #glossary("Buddybot")".
+
+===== UC6.1, Visualizzazione UI in modalità chiara
+  *Attori coinvolti*:
+  - Primari:
+    - #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia utente è pronta all'interazione con l'utente. 
+  - La UI è in modalità scura.
+
+  *Postcondizioni*
+  - L'interfaccia utente di #glossary("Buddybot") è visualizzata in modalità chiara.
+
+  *Scenario principale*
+  - L'utente vuole visualizzare la UI in modalità chiara;
+  - L'utente usa il tasto per cambiare la modalità;
+  - La UI passa in modalità chiara.
+
+*User story associata*
+  - "Come utente, desidero visualizzare la UI in modalità chiara anziché scura".
+
+
+  ===== UC6.2, Visualizzazione UI in modalità scura
+  *Attori coinvolti*:
+  - Primari:
+    - #glossary("User").
+
+  *Precondizioni*
+  - L'interfaccia utente è pronta all'interazione con l'utente. 
+  - La UI è in modalità chiara.
+
+  *Postcondizioni*
+  - L'interfaccia utente di #glossary("Buddybot") è visualizzata in modalità scura.
+
+  *Scenario principale*
+  - L'utente vuole visualizzare la UI in modalità scura;
+  - L'utente usa il tasto per cambiare la modalità;
+  - La UI passa in modalità scura.
+
+*User story associata*
+  - "Come utente, desidero visualizzare la UI in modalità scura anziché chiara".
+
+#pagebreak()
+
 
 
 = Requisiti <requisiti>
