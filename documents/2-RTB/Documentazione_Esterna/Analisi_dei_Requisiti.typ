@@ -452,7 +452,7 @@ Gli attori coinvolti nei casi d'uso sono:
 
 #pagebreak()
 //domanda USER-GUI
-=== UC3, Invio domanda dell'utente
+=== UC3, Visualizzazione risposta generata
 
   #figure(
     image(ar.diagUC_ask_user-ui, width: 42em, fit: "contain"),
@@ -483,8 +483,9 @@ Gli attori coinvolti nei casi d'uso sono:
 - UC3.1, Visualizzazione errore nella generazione della risposta;
 - UC3.2, Visualizzazione errore risposta troppo lunga;
 - UC3.3, Visualizzazione errore domanda troppo lunga.
-*Inclusioni*
-- UC1.4, Visualizzazione singolo messaggio.
+*Generalizzazioni*
+- UC3.4, Visualizzazione risposta a domanda fuori contesto
+- UC3.5, Visualizzazione risposta a domanda richiedente documenti non disponibili
 *User story associata*
 - "Come utente voglio interagire con #glossary("Buddybot") attraverso una chat per porre domande e ricevere risposte in modo rapido e intuitivo. Inoltre, desidero visualizzare tutti i dettagli di ogni messaggio, inclusi contenuto, data, ora e mittente, in modo da avere un'esperienza chiara e completa durante l'interazione."
 
@@ -552,6 +553,48 @@ Gli attori coinvolti nei casi d'uso sono:
   *User story associata*
   - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se la domanda è troppo lunga così da poter riprovare con una domanda più specifica".
 
+==== UC3.4, Visualizzazione risposta a domanda fuori contesto
+  *Attori coinvolti*: 
+  - Primari:
+    - #glossary("User").
+  - Secondari:
+    - #glossary("Backend").
+
+  *Precondizioni*
+  - L'interfaccia utente è pronta all'interazione con l'utente;
+  - L'utente ha scritto la propria domanda nel campo di input dedicato.
+  *Postcondizioni*
+  - L'interfaccia utente viene aggiornata con la domanda dell'utente e con un messaggio che indica che la domanda è al di fuori delle competenze di #glossary("BuddyBot").
+  *Scenario principale*
+  - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+  - L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
+  - L'interfaccia utente riceve la risposta alla domanda dell'utente;
+  - L'interfaccia utente viene aggiornata con il messaggio inviato dall'utente;
+  - L'interfaccia utente viene aggiornata con un messaggio di risposta di #glossary("BuddyBot") che spiega che non è stato possibile rispondere adeguatamente alla domanda, poiché riguarda temi fuori dalle sue competenze.
+  *User story associata*
+  - "Come utente, voglio che l'interfaccia utente mostri un messaggio di risposta quando la mia domanda riguarda temi fuori dalle competenze di #glossary("BuddyBot"), in modo da essere informato che non è stato possibile ottenere una risposta adeguata."
+
+==== UC3.5, Visualizzazione risposta a domanda richiedente documenti non disponibili
+  *Attori coinvolti*: 
+  - Primari:
+    - #glossary("User").
+  - Secondari:
+    - #glossary("Backend").
+
+  *Precondizioni*
+  - L'interfaccia utente è pronta all'interazione con l'utente;
+  - L'utente ha scritto la propria domanda nel campo di input dedicato.
+  *Postcondizioni*
+  - L'interfaccia utente viene aggiornata con la domanda dell'utente e con un messaggio di risposta di #glossary("BuddyBot"), che spiega che la domanda riguarda dati presenti in documenti non ancora disponibili.
+  *Scenario principale*
+  - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+  - L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
+  - L'interfaccia utente riceve la risposta alla domanda dell'utente;
+  - L'interfaccia utente viene aggiornata con il messaggio inviato dall'utente;
+  - L'interfaccia utente viene aggiornata con un messaggio di risposta di #glossary("BuddyBot") che spiega che non è stato possibile rispondere adeguatamente alla domanda, poiché riguarda dati presenti in documenti non ancora disponibili.
+  *User story associata*
+  - "Come utente, voglio che l'interfaccia utente mostri un messaggio di risposta quando la mia domanda riguarda dati presenti in documenti non ancora disponibili, in modo da essere informato che la risposta non può essere fornita al momento."
+  
 #pagebreak()
 === UC4, Invio richiesta con domanda dell'utente
   #figure(
