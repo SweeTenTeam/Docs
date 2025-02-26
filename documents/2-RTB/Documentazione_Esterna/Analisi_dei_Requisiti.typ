@@ -168,8 +168,6 @@ Per ciò che concerne il `back-end` sono state utilizzate le seguenti tecnologie
 Successivamente, per la parte `front-end` sono state utilizzati i seguenti linguaggi e framework:
 - React: libreria Javascript (o Typescript) per la creazione di interfacce utente;
 #figure(image(tc.react, width: 5em, height: auto), caption: "Logo di React")
-- Typescript: linguaggio di programmazione basato su Javascript ma con sintassi più chiara e tipizzazione statica;
-#figure(image(tc.ts, width: 5em, height: auto), caption: "Logo di Typescript")
 - Tailwind CSS: framework CSS per la creazione di interfacce utente;
 #figure(image(tc.tlw, width: 5em, height: auto), caption: "Logo di Tailwind CSS")
 - ReactQuery: libreria per la gestione dello stato e delle richieste di dati in React.
