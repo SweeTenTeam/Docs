@@ -25,6 +25,8 @@
   diagUC_UI-icone-doc: "/images/analisi-dei-requisiti/UC_Icon-UI_Docs.png",
   diagUC_modifica_domanda:"/images/analisi-dei-requisiti/UC_modifica_domanda.png",
   diagUC_seleziona_mod: "/images/analisi-dei-requisiti/UC_seleziona_mod.png",
+  diagUC_chatbot_mess: "/images/analisi-dei-requisiti/UC_mess_chat.png",
+  diagUC_user_mess: "/images/analisi-dei-requisiti/UC_user_mess.png",
 )
 
 // tecnologie per AdR
