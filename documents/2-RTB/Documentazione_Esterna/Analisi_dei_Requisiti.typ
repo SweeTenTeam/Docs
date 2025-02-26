@@ -877,7 +877,7 @@ Gli attori coinvolti nei casi d'uso sono:
 
 #pagebreak()
 
-=== UC6, visualizzazione UI
+=== UC6, Visualizzazione UI
 
 #figure(
   image(ar.diagUC_seleziona_mod, width: 32em, fit: "contain"),
@@ -1271,25 +1271,21 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Verbale interno],
     [Obbligatorio],
 
-    [*RF-xx*],
-    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso a una risorsa esterna, aprendo la pagina web associata in una nuova finestra o scheda del browser.],
-    [UC7],
-    [Opzionale],
+    [*RF-030*], [L'utente deve poter modificare una domanda già inviata], [UC5], [Opzionale],
 
-    [*RF-xx*],
-    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Jira],
-    [UC7.1],
-    [Opzionale],
+    [*RF-031*], [L'utente deve poter selezionare il tema chiaro o scuro per visualizzare l'interfaccia utente], [UC6, UC6.1, UC6.2], [Opzionale],
 
-    [*RF-xx*],
-    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di GitHub],
-    [UC7.2],
-    [Opzionale],
+    [*RF-032*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso a una risorsa esterna, aprendo la pagina web associata in una nuova finestra o scheda del browser.], [UC7], [Opzionale],
 
-    [*RF-xx*],
-    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence],
-    [UC7.3],
-    [Opzionale],
+    [*RF-033*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Jira], [UC7.1], [Opzionale],
+
+    [*RF-034*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di GitHub], [UC7.2], [Opzionale],
+
+    [*RF-035*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence], [UC7.3], [Opzionale],
   ),
   caption: "Requisiti Funzionali",
 )
@@ -1446,6 +1442,12 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [Capitolato], [RF-027],
     [Verbale interno], [RF-028],
     [Verbale interno], [RF-029],
+    [UC5], [RF-030],
+    [UC6, UC6.1, UC6.2], [RF-031],
+    [UC7], [RF-032],
+    [UC7.1], [RF-033],
+    [UC7.2], [RF-034],
+    [UC7.3], [RF-035],
     [Capitolato], [RQ-001],
     [Capitolato], [RQ-002],
     [Capitolato], [RQ-003],
@@ -1490,12 +1492,12 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
 
 #figure(
   table(
-    columns: (auto, auto, auto, auto),
-    [Tipologia], [Obbligatorio], [Desiderabile], [Totale],
-    [Funtionali], [23], [0], [23],
-    [Qualità], [5], [0], [5],
-    [Vincolo], [4], [4], [8],
+    columns: (auto, auto, auto, auto, auto),
+    [Tipologia], [Obbligatorio], [Desiderabile], [Opzionale], [Totale],
+    [Funzionali], [29], [0], [6], [35],
+    [Qualità], [6], [0], [0], [6],
+    [Vincolo], [3], [4], [0], [7],
   ),
   caption: "Riepilogo",
 )
-Il totale dei Requisiti è: 36.
+Il totale dei Requisiti è: 48.
