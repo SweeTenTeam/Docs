@@ -1122,7 +1122,7 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Obbligatorio],
 
     [*RF-002*],
-    [Il sistema dove poter salvare le domande dell'utente e le risposte generate in un sistema di archiviazione persistente],
+    [Il sistema deve archiviare in modo persistente le domande degli utenti e le risposte generate],
     [UC1],
     [Obbligatorio],
 
