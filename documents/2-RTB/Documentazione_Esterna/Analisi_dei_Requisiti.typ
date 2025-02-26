@@ -5,7 +5,7 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
-    "1.0.1",
+    "1.1.0",
     "2025-02-20",
     (p.belenkov, p.fracaro, p.ferazzani, p.santi),
     (p.mahdi),
