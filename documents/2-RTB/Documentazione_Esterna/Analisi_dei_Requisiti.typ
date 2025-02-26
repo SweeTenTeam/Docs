@@ -436,6 +436,24 @@ Gli attori coinvolti nei casi d'uso sono:
 
 #pagebreak()
 
+===== UC1.4.5, Visualizzazione contenuto del messaggio
+*Attori coinvolti*: 
+- Primari:
+  - #glossary("User").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente. 
+- Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il contenuto del messaggio.
+
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza il contenuto del messaggio;
+*User story associata*
+- "Come utente, voglio poter visualizzare il contenuto di un messaggio della chat in modo da comprendere le informazioni scambiate durante le passate interazioni con Buddybot".
+
 ===== UC1.4.4, Visualizzazione data e ora del messaggio;
 *Attori coinvolti*:
 - Primari:
@@ -516,6 +534,8 @@ Gli attori coinvolti nei casi d'uso sono:
 *User story associata*
 - "Come utente, voglio poter visualizzare uno snippet di codice che #glossary("BuddyBot") inserisce all'interno di un suo messaggio".
 
+#pagebreak()
+
 ===== UC1.4.2, Visualizzazione messaggio da utente
 #figure(
   image(ar.diagUC_user_mess, width: 35em, fit: "contain"),
@@ -543,6 +563,8 @@ Gli attori coinvolti nei casi d'uso sono:
 *User story associata*
 - "Come utente, desidero che i messaggi inviati da me siano visivamente distinti da quelli inviati da BuddyBot, in modo da poter identificare rapidamente l'origine di ciascun messaggio e mantenere una chiara comprensione del flusso conversazionale durante le interazioni con #glossary("Buddybot")".
 
+#pagebreak()
+
 === UC2, Scrittura domanda in linguaggio naturale
 
 #figure(
@@ -565,6 +587,8 @@ Gli attori coinvolti nei casi d'uso sono:
 
 *User story associata*
 - "Come utente, voglio poter scrivere la mia domanda in linguaggio naturale in modo da poter interagire con Buddybot in modo naturale e intuitivo."
+
+#pagebreak()
 
 === UC3, Visualizzazione risposta generata
 
@@ -818,6 +842,7 @@ Gli attori coinvolti nei casi d'uso sono:
 *User story associata*
 - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda, così da poter eventualmente riformulare la domanda o contattare un supporto alternativo".
 
+#pagebreak()
 
 ==== UC4.2, Errore risposta troppo lunga
 *Attori coinvolti*:
