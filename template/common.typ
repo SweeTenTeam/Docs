@@ -22,6 +22,33 @@
   diagUC_ask_user-ui: "/images/analisi-dei-requisiti/UC0_ask_User-UI.png",
   diagUC_elab_domanda: "/images/analisi-dei-requisiti/UC_elab_domanda.png",
   diacUC_inserimento_domanda: "/images/analisi-dei-requisiti/UC_inserimento_domanda.png",
+  diagUC_UI-icone-doc: "/images/analisi-dei-requisiti/UC_Icon-UI_Docs.png",
+  diagUC_modifica_domanda:"/images/analisi-dei-requisiti/UC_modifica_domanda.png",
+  diagUC_seleziona_mod: "/images/analisi-dei-requisiti/UC_seleziona_mod.png",
+  diagUC_chatbot_mess: "/images/analisi-dei-requisiti/UC_mess_chat.png",
+  diagUC_user_mess: "/images/analisi-dei-requisiti/UC_user_mess.png",
+)
+
+// tecnologie per AdR
+
+#let tc = (
+  docker: "/images/analisi-dei-requisiti/docker.png",
+  groq: "/images/analisi-dei-requisiti/groq.png",
+  lc: "/images/analisi-dei-requisiti/langchain.png",
+  node: "/images/analisi-dei-requisiti/node.png",
+  react: "/images/analisi-dei-requisiti/react.png",
+  nest: "/images/analisi-dei-requisiti/nest.png",
+  nomic: "/images/analisi-dei-requisiti/nomic.png",
+  postgres: "/images/analisi-dei-requisiti/postgres.png",
+  qdrant: "/images/analisi-dei-requisiti/qdrant.png",
+  ts: "/images/analisi-dei-requisiti/ts.png",
+  jira: "/images/analisi-dei-requisiti/jira.png",
+  confluence: "/images/analisi-dei-requisiti/confl.png",
+  ok: "/images/analisi-dei-requisiti/ok.png",
+  css: "/images/analisi-dei-requisiti/css.png",
+  next: "/images/analisi-dei-requisiti/next.png",
+  tlw: "/images/analisi-dei-requisiti/tailwind.png",
+  reactq: "/images/analisi-dei-requisiti/reactq.png",
 )
 
 //Norme di progetto Immagini
@@ -78,4 +105,12 @@
   vardanega: "Prof. Tullio Vardanega",
   cardin: "Prof. Riccardo Cardin",
   blank: "",
+)
+
+//docs
+#let d = (
+  vGlossario: "v1.0",
+  PdQ: "https://sweetenteam.github.io/pdf/documentazione_esterna/rtb/Piano_di_Qualifica_v1.0.0.pdf",
+  NdP: "https://sweetenteam.github.io/pdf/documentazione_interna/rtb/Norme_di_Progetto_v1.0.0.pdf",
+  Glossario: "https://sweetenteam.github.io/docs/RTB/Glossario",
 )

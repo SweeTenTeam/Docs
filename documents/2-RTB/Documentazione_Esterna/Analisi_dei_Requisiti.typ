@@ -5,6 +5,13 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "1.1.0",
+    "2025-02-20",
+    (p.belenkov, p.fracaro, p.ferazzani, p.santi),
+    (p.mahdi),
+    [
+      Apportate modifiche richieste in RTB
+    ],
     "1.0.0",
     "2025-02-10",
     (p.fracaro),
@@ -12,10 +19,10 @@
     [Approvazione per RTB con formattazione pagine],
     "0.2.0",
     "2025-02-07",
-    (p.belenkov,p.benedetti, p.santi,p.ferazzani, p.fracaro),
+    (p.belenkov, p.benedetti, p.santi, p.ferazzani, p.fracaro),
     (p.campagnaro),
     [Inseriti requisiti funzionali, di qualità, di vincolo e completato sezioni tracciamento e riepilogo],
-     "0.1.0",
+    "0.1.0",
     "2025-02-05",
     (p.fracaro, p.santi, p.mahdi, p.ferazzani),
     (p.belenkov),
@@ -35,7 +42,6 @@
     (p.santi),
     (p.fracaro),
     "Sistemati UC Jira, aggiunto diagramma",
-
     "0.0.6",
     "2024-12-10",
     (p.ferazzani),
@@ -75,35 +81,35 @@
 = *Introduzione*
 == Scopo del documento
 L'#glossary("Analisi dei requisiti") è un documento fondamentale per tutti i progetti di sviluppo software che vogliono
-creare un prodotto a regola d'arte.\
+creare un prodotto a regola d'arte.
 
 Lo scopo di questo documento è di definire le funzionalità che il sistema sarà in grado di offrire, ossia i requisiti
-obbligatori e opzionali che dovranno essere soddisfatti al fine di realizzare le richieste fatte dal #glossary("proponente").\
+obbligatori e opzionali che dovranno essere soddisfatti al fine di realizzare le richieste fatte dal #glossary("proponente").
 
 Il documento non si pone come una soluzione tecnica al problema, quanto più una definizione chiara e concisa di esso e
-di come possa essere risolto.\
+di come possa essere risolto.
 
-In particolare, le finalità di questo documento possono essere descritte nei seguenti punti:\
+In particolare, le finalità di questo documento possono essere descritte nei seguenti punti:
 
-- *Definire le esigenze del proponente*:\
+- *Definire le esigenze del proponente*:
 Questo documento si basa principalmente sulle richieste del proponente, ossia le idee che quest'ultimo ha riguardo a
 come dovrebbe essere il software che verrà sviluppato dal nostro team. Tali idee verranno raccolte tramite i vari
 documenti e incontri con #box(image(g.azzurro, width: 5em, height: auto)) che avverranno lungo il percorso dello
-svolgimento del progetto.\
+svolgimento del progetto.
 
-- *Fornire una base per la progettazione del sistema*:\
+- *Fornire una base per la progettazione del sistema*:
 L'#glossary("Analisi dei requisiti") fornisce una base per la progettazione del sistema, in quanto definisce le funzionalità che il
 sistema dovrà offrire, permettendo così ai #glossary("programmatori") di comprendere le esigenze dei proponenti
-identificando le soluzioni che più si adeguano a tali esigenze.\
+identificando le soluzioni che più si adeguano a tali esigenze.
 
-- *Tracciare i requisiti del sistema*:\
+- *Tracciare i requisiti del sistema*:
 Una volta raccolte le richieste del proponente, questo documento si impone di identificare i requisiti e suddividerli in
-requisiti funzionali e non funzionali.\
+requisiti funzionali e non funzionali.
 
-- *Verificare e validare i requisiti*:\
+- *Verificare e validare i requisiti*:
 Questo processo garantisce che le attività siano svolte seguendo il #glossary("Way of Working") del gruppo, controllando
-la presenza di errori e correggendoli una volta identificati.\
-Ciò permette di accertare che il prodotto finale corrisponda alle aspettative del proponente.\
+la presenza di errori e correggendoli una volta identificati.
+Ciò permette di accertare che il prodotto finale corrisponda alle aspettative del proponente.
 
 Una volta che i requisiti del sistema saranno stati definiti in maniera chiara in modo tale da permettere al lettore di
 comprenderli pienamente, allora verrà data una rappresentazione formale grafica del software attraverso l'utilizzo di #glossary("diagrammi dei casi d'uso").
@@ -116,7 +122,7 @@ Questo strumento sarà utile non solo ai membri già attivi dell'azienda per tag
 #pagebreak()
 
 == Glossario
-Al fine di evitare eventuali equivoci o incomprensioni , si è deciso di adottare un Glossario presente come file e nella pagina web, in cui vengono riportate tutte le definizioni delle parole ambigue utilizzate nei documenti di questo progetto.
+Al fine di evitare eventuali equivoci o incomprensioni , si è deciso di adottare un Glossario presente come file e nella pagina web (nella sua versione attuale #d.vGlossario), in cui vengono riportate tutte le definizioni delle parole ambigue utilizzate nei documenti di questo progetto.
 Nel documento verranno riportati tutti i termini definiti nel loro ambiente di utilizzo con la descrizione del loro significato.
 I termini presenti nel glossario sono evidenziati e hanno una piccola 'G' alla fine.
 
@@ -124,14 +130,84 @@ I termini presenti nel glossario sono evidenziati e hanno una piccola 'G' alla f
 Questo documento è stato sviluppato in modo graduale e progressivo, con l'obiettivo di facilitare eventuali modifiche future in base alle necessità concordate tra il gruppo di progetto e l'azienda committente.
 Pertanto è soggetto a un continuo miglioramento.
 
+== Tecnologie utilizzate
+Il progetto richiede l'utilizzo di svariate e diverse tecnologie, sia per la parte `back-end` che per la parte `front-end`. Queste devono essere scelte in base alle esigenze del progetto e alle richieste del proponente oltre che tenendo conto del grado di qualità che il progetto, e di conseguenza poi il prodotto, dovrà avere.
+\
+\
+
+Come linguaggio di programmazione il team si avvale di Typescript, basato su Javascript ma con sintassi più chiara e tipizzazione statica. Questo linguaggio verrà utilizzato sia nella parte di `back-end` che di `front-end`. Questa scelta è stata ponderata in quanto ci permette di avere meno differenze possibili tra l'implementazione delle due parti del nostro sistema.
+#figure(image(tc.ts, width: 5em, height: auto), caption: "Logo di Typescript")
+
+\
+\
+
+Per ciò che concerne il `back-end` sono state utilizzate le seguenti tecnologie:
+- Langchain: framework per lo sviluppo di applicazioni supportate da #glossary("LLM");
+#figure(image(tc.lc, width: 5em, height: auto), caption: "Logo di Langchain")
+- Node.js: ambiente di runtime per eseguire codice Javascript;
+#figure(image(tc.node, width: 5em, height: auto), caption: "Logo di Node.js")
+- Nest.js: framework per la creazione di applicazioni server-side efficienti e scalabili. L'utilizzo di NestJs permette al team di implementare vari design pattern utili per lo sviluppo;
+#figure(image(tc.nest, width: 5em, height: auto), caption: "Logo di Nest.js")
+- GroqCloud: Piattaforma AI basata su hardware specializzato (LPU) per inferenza ad alte prestazioni, supporta modelli LLM e integrazione con strumenti AI per elaborazione in tempo reale.
+#figure(image(tc.groq, width: 5em, height: auto), caption: "Logo di GroqCloud")
+- Nomic: Servizio che mette a disposizione un modello di AI che permette l'embedding del testo;
+#figure(image(tc.nomic, width: 5em, height: auto), caption: "Logo di Nomic")
+- Qdrant: motore di ricerca e analisi di dati non strutturati, supporta l'indicizzazione e la ricerca di dati in tempo reale;
+#figure(image(tc.qdrant, width: 5em, height: auto), caption: "Logo di Qdrant")
+- PostgresSQL: sistema di gestione di database relazionali;
+#figure(image(tc.postgres, width: 5em, height: auto), caption: "Logo di PostgresSQL")
+- Octokit: toolkit per l'interazione con l'API di GitHub;
+#figure(image(tc.ok, width: 6em, height: auto), caption: "Logo di Octokit")
+- JiraJs: toolkit per l'interazione con l'API di Jira;
+#figure(image(tc.jira, width: 5em, height: auto), caption: "Logo di JiraJs")
+- ConfluenceJs: toolkit per l'interazione con l'API di Confluence;
+#figure(image(tc.confluence, width: 5em, height: auto), caption: "Logo di ConfluenceJs")
+- Docker: piattaforma per lo sviluppo, il deploy e l'esecuzione di applicazioni in container;
+#figure(image(tc.docker, width: 5em, height: auto), caption: "Logo di Docker")
+
+Successivamente, per la parte `front-end` sono state utilizzati i seguenti linguaggi e framework:
+- React: libreria Javascript (o Typescript) per la creazione di interfacce utente;
+#figure(image(tc.react, width: 5em, height: auto), caption: "Logo di React")
+- Tailwind CSS: framework CSS per la creazione di interfacce utente;
+#figure(image(tc.tlw, width: 5em, height: auto), caption: "Logo di Tailwind CSS")
+- ReactQuery: libreria per la gestione dello stato e delle richieste di dati in React.
+#figure(image(tc.reactq, width: 6em, height: auto), caption: "Logo di ReactQuery")
+- NextJs: framework React per la creazione di applicazioni web;
+#figure(image(tc.next, width: 5em, height: auto), caption: "Logo di Next.js")
+
 == Riferimenti
 === Normativi
-Presentazione pdf del capitolato C9: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf","C9p.pdf")
+Presentazione pdf del capitolato C9: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf","C9p.pdf") (_versione disponibile al 2025-03-20_)
+
+Norme di Progetto: #link(d.NdP, "Norme_di_Progetto_v1.0.0.pdf")
+
+Piano di Qualifica: #link(d.PdQ, "Piano_di_Qualifica_v1.0.0.pdf")
 
 === Informativi
-Slide del corso(T5): #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf","T05.pdf")
+Slide del corso(T5): #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf","T05.pdf") (_versione disponibile al 2025-03-20_)
 
-#pagebreak()
+Diagarmmi dei Casi d'Uso: #link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf", "Diagrammi Use Case.pdf") (_versione disponibile al 2025-03-20_)
+
+Glossario: #link(d.Glossario,"Glossario_v1.0")
+
+=== Tecnologici:
+- #link("https://www.typescriptlang.org/", "Typescript");
+- #link("https://langchain.io/", "Langchain");
+- #link("https://nodejs.org/", "Node.js");
+- #link("https://nestjs.com/", "Nest.js");
+- #link("https://groq.com/", "GroqCloud");
+- #link("https://www.qdrant.io/", "Qdrant");
+- #link("https://www.postgresql.org/", "PostgresSQL");
+- #link("https://octokit.github.io/rest.js/v18", "Octokit");
+- #link("https://mrrefactoring.github.io/jira.js/", "JiraJs");
+- #link("https://mrrefactoring.github.io/confluence.js/", "ConfluenceJs");
+- #link("https://www.docker.com/", "Docker");
+- #link("https://reactjs.org/", "React");
+- #link("https://react-query.tanstack.com/", "ReactQuery");
+- #link("https://tailwindcss.com/", "Tailwind CSS");
+- #link("https://nextjs.org/", "Next.js");
+
+
 
 = Descrizione
 == Obiettivo del prodotto
@@ -157,7 +233,7 @@ Il prodotto si rivolge principalmente al team aziendale:
 
 Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l'uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
 
-#pagebreak()
+
 = Casi d'uso
 == Introduzione ai casi d'uso e obbiettivi
 In questa sezione vengono elencati dettagliatamente i #glossary("casi d'uso (UC)") individuati dal gruppo in seguito ad analisi e valutazioni circa le specifiche del capitolato.
@@ -189,26 +265,26 @@ Gli attori coinvolti nei casi d'uso sono:
 == Definizione casi d'uso
 === UC1, Visualizzazione storico chat
 
-  #figure(
-    image(ar.diagUC_storico_chat, width: 42em, fit: "contain"),
-    caption: "Diagramma UC1, visualizzazione storico chat",
-  )
-        *Attori coinvolti*:
-    - Primari:
-      - #glossary("User") .
-    - Secondari:
-      - #glossary("Backend").
+#figure(
+  image(ar.diagUC_storico_chat, width: 42em, fit: "contain"),
+  caption: "Diagramma UC1, visualizzazione storico chat",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User") .
+- Secondari:
+  - #glossary("Backend").
 
-    *Precondizioni*
-    - L'interfaccia utente è pronta all'interazione con l'utente. 
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
 
-    *Postcondizioni*
-    - L'interfaccia utente viene aggiornata con i messaggi delle passate interazioni tra l'utente e #glossary("Buddybot").
-    *Scenario principale*
-    - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
-    - Vengono recuperati i messaggi delle precedenti interazioni;
-    - Nella schermata appaiono i messaggi riguardanti le passate interazioni con #glossary("Buddybot").
-  
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con i messaggi delle passate interazioni tra l'utente e #glossary("Buddybot").
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
+- Vengono recuperati i messaggi delle precedenti interazioni;
+- Nella schermata appaiono i messaggi riguardanti le passate interazioni con #glossary("Buddybot").
+
 
 
 *Estensioni*
@@ -223,365 +299,511 @@ Gli attori coinvolti nei casi d'uso sono:
 
 
 ==== UC1.1, Visualizzazione errore nessun messaggio nello storico della chat
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User").
-  - Secondari:
-    - #glossary("Backend").
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+- Secondari:
+  - #glossary("Backend").
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
 
-  *Postcondizioni*
-  - L'interfaccia utente viene aggiornata con un avviso che informa l'utente che non ci sono messaggi precedenti disponibili.
-  *Scenario principale*
-  - L'utente accede all'interfaccia di #glossary("Buddybot");
-  - Viene tentato il recupero dei messaggi delle precedenti interazioni ma non è presente nessun messaggio nello storico della chat;
-  - L'utente viene informato che non sono presenti messaggi precedenti tramite un avviso.
-  *User story associata*
-  - "Quando l'utente utilizza #glossary("Buddybot") per la prima volta, viene informato che, non essendoci interazioni pregresse, non sono disponibili messaggi nello storico".
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con un avviso che informa l'utente che non ci sono messaggi precedenti disponibili.
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("Buddybot");
+- Viene tentato il recupero dei messaggi delle precedenti interazioni ma non è presente nessun messaggio nello storico della chat;
+- L'utente viene informato che non sono presenti messaggi precedenti tramite un avviso.
+*User story associata*
+- "Quando l'utente utilizza #glossary("Buddybot") per la prima volta, viene informato che, non essendoci interazioni pregresse, non sono disponibili messaggi nello storico".
 
-  ==== UC1.2, Errore durante il recupero dello storico della chat
-  *Attori coinvolti*: #glossary("User").
+==== UC1.2, Errore durante il recupero dello storico della chat
+*Attori coinvolti*: #glossary("User").
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
 
-  *Postcondizioni*
-  - L'interfaccia utente mostra un avviso che informa l'utente dell'impossibilità di recuperare i messaggi precedenti a causa di un problema.
-  *Scenario principale*
-  - L'utente accede all'interfaccia di #glossary("Buddybot");
-  - Viene tentato il recupero dei messaggi delle precedenti interazioni ma si verifica un errore durante il processo che impedisce il recupero di tali messaggi;
-  - L'utente viene informato che si è verificato un errore durante il recupero dei messaggi precedenti tramite un avviso.
-  *User story associata*
-  - "Come utente, voglio essere informato in modo chiaro se si verifica un errore durante il recupero dei messaggi precedenti per poter agire di conseguenza senza confusione".
-
-
-  ==== UC1.3, Visualizzazione errore di connessione
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User").
-
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
-
-  *Postcondizioni*
-  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile eseguire l'operazione richiesta per la mancanza di connessione ad internet e invita a controllare tale connessione.
-
-  *Scenario principale*
-  - L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede la connessione ad internet;
-  - Viene tentata l'esecuzione della richiesta dell'utente ma non viene portata a termine per la mancanza di connessione ad internet;
-  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un avviso.
-  *User story associata*
-  - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
+*Postcondizioni*
+- L'interfaccia utente mostra un avviso che informa l'utente dell'impossibilità di recuperare i messaggi precedenti a causa di un problema.
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("Buddybot");
+- Viene tentato il recupero dei messaggi delle precedenti interazioni ma si verifica un errore durante il processo che impedisce il recupero di tali messaggi;
+- L'utente viene informato che si è verificato un errore durante il recupero dei messaggi precedenti tramite un avviso.
+*User story associata*
+- "Come utente, voglio essere informato in modo chiaro se si verifica un errore durante il recupero dei messaggi precedenti per poter agire di conseguenza senza confusione".
 
 
- ==== UC1.5, Visualizzazione errore backend non disponibile
-  *Attori coinvolti*: 
-  - Primari:
-    - #glossary("User").
-  - Secondari:
-    - #glossary("Backend").
+==== UC1.3, Visualizzazione errore di connessione
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
 
-  *Postcondizioni*
-  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile eseguire l'operazione richiesta perchè il #glossary("backend") non è al momento disponibile.
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile eseguire l'operazione richiesta per la mancanza di connessione ad internet e invita a controllare tale connessione.
 
-  *Scenario principale*
-  - L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede una risposta al #glossary("backend");
-  - Viene tentata l'esecuzione della richiesta dell'utente ma non viene portata a termine perchè il #glossary("backend") non è al momento disponibile;
-  - L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un avviso.
-  *User story associata*
-  - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è il #glossary("backend") non disponibile così da poter contattare il supporto tecnico".
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede la connessione ad internet;
+- Viene tentata l'esecuzione della richiesta dell'utente ma non viene portata a termine per la mancanza di connessione ad internet;
+- L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un avviso.
+*User story associata*
+- "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
 
 
- ==== UC1.4, Visualizzazione singolo messaggio
-   #figure(
-    image(ar.diagUC_single_messaggio, width: 42em, fit: "contain"),
-    caption: "Diagramma UC1.4, Visualizzazione messaggio singolo",
-  )
-    *Attori coinvolti*:
-    - Primari:
-      - #glossary("User").
+==== UC1.5, Visualizzazione errore backend non disponibile
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+- Secondari:
+  - #glossary("Backend").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile eseguire l'operazione richiesta perchè il #glossary("backend") non è al momento disponibile.
+
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede una risposta al #glossary("backend");
+- Viene tentata l'esecuzione della richiesta dell'utente ma non viene portata a termine perchè il #glossary("backend") non è al momento disponibile;
+- L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un avviso.
+*User story associata*
+- "Come utente, voglio essere informato se il motivo del fallimento della richiesta è il #glossary("backend") non disponibile così da poter contattare il supporto tecnico".
 
 
-    *Precondizioni*
-    - La UI di #glossary("Buddybot") è funzionante e pronta per l'utilizzo;
-    - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+==== UC1.4, Visualizzazione singolo messaggio
+#figure(
+  image(ar.diagUC_single_messaggio, width: 42em, fit: "contain"),
+  caption: "Diagramma UC1.4, Visualizzazione messaggio singolo",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
 
-    *Postcondizioni*
-    - La user interface di #glossary("Buddybot") viene aggiornata mostrando il messaggio.
 
+*Precondizioni*
+- La UI di #glossary("Buddybot") è funzionante e pronta per l'utilizzo;
+- Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
+*Postcondizioni*
+- La user interface di #glossary("Buddybot") viene aggiornata mostrando il messaggio.
 
 *Scenario principale*
 - L'utente vuole visualizzare il contenuto della chat;
 - L'utente visualizza il messaggio della passata interazione con #glossary("Buddybot").
 
-*Inclusioni*
-- Visualizzazione contenuto del messaggio;
-- Visualizzazione data e ora del messaggio;
-- Visualizzazione mittente del messaggio;
+*Generalizzazioni*
+- UC1.4.1, Visualizzazione messaggio da chatbot;
+- UC1.4.2, Visualizzazione messaggio da utente.
 
 *User story associata*
-- "Come utente voglio poter visualizzare il contenuto, la data e l'ora di invio, e il mittente di un singolo messaggio della chat in modo chiaro e comprensibile in modo da avere sempre una chiara idea del contesto e dei dettagli delle passate interazioni con #glossary("Buddybot")".
+- "Come utente voglio poter visualizzare un singolo messaggio della chat in modo chiaro e comprensibile in modo da avere sempre una chiara idea del contesto e dei dettagli delle passate interazioni con #glossary("Buddybot")".
 
+#pagebreak()
 
-===== UC1.4.1, Visualizzazione contenuto del messaggio
+===== UC1.4.1, Visualizzazione messaggio da chatbot
+#figure(
+  image(ar.diagUC_chatbot_mess, width: 42em, fit: "contain"),
+  caption: "Diagramma UC1.4.1, Visualizzazione messaggio chatbot",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- Esiste almeno un messaggio di risposta di #glossary("Buddybot") proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il messaggio inviato da #glossary("Buddybot").
+
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza il messaggio inviato da #glossary("Buddybot") nella parte sinistra dell'interfaccia utente e con lo sfondo del messaggio di colore bianco;
+
+*Inclusioni*
+- UC1.4.5, Visualizzazione contenuto del messaggio;
+- UC1.4.4, Visualizzazione data e ora del messaggio;
+- UC1.4.3, Visualizzazione ultimo aggiornamento dati per risposta;
+
+*Generalizzazioni*
+- UC1.4.6, Visualizzazione messaggio con snippet code.
+
+*User story associata*
+- "Come utente, desidero che i messaggi inviati da BuddyBot siano visivamente distinti da quelli inviati dagli utenti, in modo da poter identificare rapidamente l'origine di ciascun messaggio e mantenere una chiara comprensione del flusso conversazionale durante le interazioni con #glossary("Buddybot")".
+
+#pagebreak()
+
+===== UC1.4.5, Visualizzazione contenuto del messaggio
 *Attori coinvolti*: 
 - Primari:
   - #glossary("User").
 
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente. 
+- Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
-  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il contenuto del messaggio.
 
-  *Postcondizioni*
-  - L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il contenuto del messaggio.
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza il contenuto del messaggio;
+*User story associata*
+- "Come utente, voglio poter visualizzare il contenuto di un messaggio della chat in modo da comprendere le informazioni scambiate durante le passate interazioni con Buddybot".
 
-  *Scenario principale*
-  - L'utente vuole visualizzare il contenuto della chat;
-  - L'utente visualizza il contenuto del messaggio;
-  *User story associata*
-  - "Come utente, voglio poter visualizzare il contenuto di un messaggio della chat in modo da comprendere le informazioni scambiate durante le passate interazioni con Buddybot".
+===== UC1.4.4, Visualizzazione data e ora del messaggio;
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
 
-  ===== UC1.4.2, Visualizzazione data e ora del messaggio;
-*Attori coinvolti*: 
-  - Primari:
-    - #glossary("User").
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
-  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando la data e l'ora del messaggio.
 
-  *Postcondizioni*
-  - L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando la data e l'ora del messaggio.
-
-  *Scenario principale*
-  - L'utente vuole visualizzare il contenuto della chat;
-  - L'utente visualizza la data e l'ora del messaggio.
-  *User story associata*
-  - "Come utente, voglio poter visualizzare la data e l'ora di un messaggio della chat in modo da sapere quando è stato inviato e contestualizzarlo all'interno delle mie interazioni con #glossary("Buddybot")".
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza la data e l'ora del messaggio.
+*User story associata*
+- "Come utente, voglio poter visualizzare la data e l'ora di un messaggio della chat in modo da sapere quando è stato inviato e contestualizzarlo all'interno delle mie interazioni con #glossary("Buddybot")".
 
 
-  ===== UC1.4.3, Visualizzazione mittente del messaggio
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User").
+===== UC1.4.3, Visualizzazione data e ora ultimo aggiornamento dati risposta
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
-  - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
-  *Postcondizioni*
-  - L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il mittente del messaggio.
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per generare la risposta.
 
-  *Scenario principale*
-  - L'utente vuole visualizzare il contenuto della chat;
-  - L'utente visualizza il mittente del messaggio;
-  *User story associata*
-  - "Come utente, voglio poter visualizzare il mittente di un messaggio della chat in modo da distinguere chi ha inviato il messaggio e comprendere meglio il contesto delle mie interazioni con #glossary("Buddybot")".
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza la data e l'ora dell'ultimo aggiornamento dei dati usati per generare la risposta;
+
+*User story associata*
+- "Come utente, voglio poter visualizzare quando è avvenuto l'ultimo aggiornamento dei dati utilizzati per generare la risposta così da essere sicuro che la risposta ricevuta sia accurata".
+
+
+===== UC1.4.6, Visualizzazione messaggio con snippet code
+*Attori coinvolti*
+- Primari:
+  - #glossary("User").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- Esiste almeno un messaggio di risposta di #glossary("Buddybot") proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il messaggio inviato da #glossary("Buddybot") al cui interno è presente almeno uno snippet code.
+
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza il messaggio inviato da #glossary("Buddybot") in cui è presente uno snippet code.
+
+*Inclusioni*
+- UC1.4.7, Visualizzazione snippet di codice.
+
+*User story associata*
+- "Come utente, nei messaggi inviati da #glossary("BuddyBot") vorrei vedere con un formato differente gli eventuali snippet di codice."
+
+===== UC1.4.7, Visualizzazione snippet di codice
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
+
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando lo snippet di codice del messaggio.
+
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza lo snippet di codice del messaggio.
+
+*User story associata*
+- "Come utente, voglio poter visualizzare uno snippet di codice che #glossary("BuddyBot") inserisce all'interno di un suo messaggio".
 
 #pagebreak()
+
+===== UC1.4.2, Visualizzazione messaggio da utente
+#figure(
+  image(ar.diagUC_user_mess, width: 35em, fit: "contain"),
+  caption: "Diagramma UC1.4.2, Visualizzazione messaggio user",
+)
+*Attori coinvolti*
+- Primari:
+  - #glossary("User").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- Esiste almeno un messaggio inviato dall'utente in una passata interazione con #glossary("Buddybot")
+
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il messaggio inviato dall'utente.
+
+*Scenario principale*
+- L'utente vuole visualizzare il contenuto della chat;
+- L'utente visualizza il messaggio inviato da sé stesso nella parte destra dell'Interfaccia utente e con lo sfondo del messaggio di colore blu;
+
+*Inclusioni*
+- UC1.4.5, Visualizzazione contenuto del messaggio;
+- UC1.4.4, Visualizzazione data e ora del messaggio.
+
+*User story associata*
+- "Come utente, desidero che i messaggi inviati da me siano visivamente distinti da quelli inviati da BuddyBot, in modo da poter identificare rapidamente l'origine di ciascun messaggio e mantenere una chiara comprensione del flusso conversazionale durante le interazioni con #glossary("Buddybot")".
+
+#pagebreak()
+
 === UC2, Scrittura domanda in linguaggio naturale
 
-  #figure(
-    image(ar.diacUC_inserimento_domanda, width: 42em, fit: "contain"),
-    caption: "Diagramma UC2, Scrittura domanda in linguaggio naturale",
-  )
-        *Attori coinvolti*:
-    - Primari:
-      - #glossary("User") .
+#figure(
+  image(ar.diacUC_inserimento_domanda, width: 42em, fit: "contain"),
+  caption: "Diagramma UC2, Scrittura domanda in linguaggio naturale",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User") .
 
-    *Precondizioni*
-    - L'interfaccia utente è pronta all'interazione con l'utente.
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
 
-    *Postcondizioni*
-    - L'interfaccia utente viene aggiornata con la domanda scritta dall'utente.
-    *Scenario principale*
-    - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
-    - L'utente scrive la propria domanda nel campo di input dedicato;
-    - Il campo di input viene aggiornato con la domanda scritta dall'utente.
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con la domanda scritta dall'utente.
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
+- L'utente scrive la propria domanda nel campo di input dedicato;
+- Il campo di input viene aggiornato con la domanda scritta dall'utente.
 
 *User story associata*
 - "Come utente, voglio poter scrivere la mia domanda in linguaggio naturale in modo da poter interagire con Buddybot in modo naturale e intuitivo."
 
 #pagebreak()
-//domanda USER-GUI
-=== UC3, Invio domanda dell'utente
 
-  #figure(
-    image(ar.diagUC_ask_user-ui, width: 42em, fit: "contain"),
-    caption: "Diagramma UC3, Invio domanda dell'utente",
-  )
-    *Attori coinvolti*:
-    - Primari:
-      - #glossary("User") .
-    - Secondari:
-      - #glossary("Backend").
+=== UC3, Visualizzazione risposta generata
 
-    *Precondizioni*
-    - L'interfaccia utente è pronta all'interazione con l'utente. 
-    - L'utente ha scritto la propria domanda nel campo di input dedicato.
+#figure(
+  image(ar.diagUC_ask_user-ui, width: 42em, fit: "contain"),
+  caption: "Diagramma UC3, Invio domanda dell'utente",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User") .
+- Secondari:
+  - #glossary("Backend").
 
-    *Postcondizioni*
-    - L'interfaccia utente viene aggiornata con il contenuto, la data, l'ora e il mittente del messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente e la domanda posta dall'utente.
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- L'utente ha scritto la propria domanda nel campo di input dedicato.
 
-    *Scenario principale*
-    - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
-    - L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
-    - L'interfaccia utente riceve la risposta alla domanda dell'utente;
-    - L'interfaccia utente viene aggiornata con il messaggio inviato dall'utente;
-    - L'interfaccia utente viene aggiornata con il messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con il contenuto, la data, l'ora e il mittente del messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente e la domanda posta dall'utente.
+
+*Scenario principale*
+- L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+- L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
+- L'interfaccia utente riceve la risposta alla domanda dell'utente;
+- L'interfaccia utente viene aggiornata con il messaggio inviato dall'utente;
+- L'interfaccia utente viene aggiornata con il messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
 *Estensioni*
 - UC1.3, Visualizzazione errore di connessione;
 - UC1.5, Visualizzazione errore backend non disponibile;
 - UC3.1, Visualizzazione errore nella generazione della risposta;
 - UC3.2, Visualizzazione errore risposta troppo lunga;
 - UC3.3, Visualizzazione errore domanda troppo lunga.
-*Inclusioni*
-- UC1.4, Visualizzazione singolo messaggio.
+*Generalizzazioni*
+- UC3.4, Visualizzazione risposta a domanda fuori contesto
+- UC3.5, Visualizzazione risposta a domanda richiedente documenti non disponibili
 *User story associata*
 - "Come utente voglio interagire con #glossary("Buddybot") attraverso una chat per porre domande e ricevere risposte in modo rapido e intuitivo. Inoltre, desidero visualizzare tutti i dettagli di ogni messaggio, inclusi contenuto, data, ora e mittente, in modo da avere un'esperienza chiara e completa durante l'interazione."
 
 ==== UC3.1, Visualizzazione errore nella generazione della risposta
-  *Attori coinvolti*: 
-  - Primari:
-    - #glossary("User").
-  - Secondari:
-    - #glossary("Backend").
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+- Secondari:
+  - #glossary("Backend").
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente;
-  - L'utente ha scritto la propria domanda nel campo di input dedicato.
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente;
+- L'utente ha scritto la propria domanda nel campo di input dedicato.
 
-  *Postcondizioni*
-  - L'interfaccia utente viene aggiornata con un messaggio di errore generico che informa l'utente che non è stato possibile generare la risposta alla sua domanda.
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con un messaggio di errore generico che informa l'utente che non è stato possibile generare la risposta alla sua domanda.
 
-  *Scenario principale*
-  - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
-  - L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
-  - Si verifica un errore durante la generazione della risposta;
-  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile generare la risposta alla sua domanda.
-  *User story associata*
-  - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se si verifica un problema durante la generazione della risposta da parte di #glossary("Buddybot"), in modo da sapere che la mia richiesta non è stata elaborata e poter eventualmente riprovare".
+*Scenario principale*
+- L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+- L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
+- Si verifica un errore durante la generazione della risposta;
+- L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile generare la risposta alla sua domanda.
+*User story associata*
+- "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se si verifica un problema durante la generazione della risposta da parte di #glossary("Buddybot"), in modo da sapere che la mia richiesta non è stata elaborata e poter eventualmente riprovare".
 
 
 ==== UC3.2, Visualizzazione errore risposta troppo lunga
-  *Attori coinvolti*: 
-  - Primari:
-    - #glossary("User").
-  - Secondari:
-    - #glossary("Backend").
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+- Secondari:
+  - #glossary("Backend").
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente;
-  - L'utente ha scritto la propria domanda nel campo di input dedicato.
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente;
+- L'utente ha scritto la propria domanda nel campo di input dedicato.
 
-  *Postcondizioni*
-  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la risposta da generare per quella domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la risposta da generare per quella domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
 
-  *Scenario principale*
-  - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
-  - L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
-  - La generazione della risposta si interrompe perchè la risposta ha superato la lunghezza massima consentita;
-  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la risposta da generare per quella domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
-  *User story associata*
-  - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se la risposta da generare per quella domanda è troppo lunga così da poter riprovare con una domanda più specifica".
+*Scenario principale*
+- L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+- L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
+- La generazione della risposta si interrompe perchè la risposta ha superato la lunghezza massima consentita;
+- L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la risposta da generare per quella domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
+*User story associata*
+- "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se la risposta da generare per quella domanda è troppo lunga così da poter riprovare con una domanda più specifica".
 
 ==== UC3.3, Visualizzazione errore domanda troppo lunga
-  *Attori coinvolti*: 
-  - Primari:
-    - #glossary("User").
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente;
-  - L'utente ha scritto la propria domanda nel campo di input dedicato.
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente;
+- L'utente ha scritto la propria domanda nel campo di input dedicato.
 
-  *Postcondizioni*
-  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
-  *Scenario principale*
-  - L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
-  - L'interfaccia utente controlla la lunghezza della domanda;
-  - La lunghezza della domanda supera la lunghezza massima consentita;
-  - L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
-  *User story associata*
-  - "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se la domanda è troppo lunga così da poter riprovare con una domanda più specifica".
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
+*Scenario principale*
+- L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+- L'interfaccia utente controlla la lunghezza della domanda;
+- La lunghezza della domanda supera la lunghezza massima consentita;
+- L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che la domanda è troppo lunga e quindi di riprovare con una domanda più specifica.
+*User story associata*
+- "Come utente voglio essere informato tramite un messaggio di errore chiaro e comprensibile se la domanda è troppo lunga così da poter riprovare con una domanda più specifica".
 
-#pagebreak()
+==== UC3.4, Visualizzazione risposta a domanda fuori contesto
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+- Secondari:
+  - #glossary("Backend").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente;
+- L'utente ha scritto la propria domanda nel campo di input dedicato.
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con la domanda dell'utente e con un messaggio che indica che la domanda è al di fuori delle competenze di #glossary("BuddyBot").
+*Scenario principale*
+- L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+- L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
+- L'interfaccia utente riceve la risposta alla domanda dell'utente;
+- L'interfaccia utente viene aggiornata con il messaggio inviato dall'utente;
+- L'interfaccia utente viene aggiornata con un messaggio di risposta di #glossary("BuddyBot") che spiega che non è stato possibile rispondere adeguatamente alla domanda, poiché riguarda temi fuori dalle sue competenze.
+*User story associata*
+- "Come utente, voglio che l'interfaccia utente mostri un messaggio di risposta quando la mia domanda riguarda temi fuori dalle competenze di #glossary("BuddyBot"), in modo da essere informato che non è stato possibile ottenere una risposta adeguata."
+
+==== UC3.5, Visualizzazione risposta a domanda richiedente documenti non disponibili
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+- Secondari:
+  - #glossary("Backend").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente;
+- L'utente ha scritto la propria domanda nel campo di input dedicato.
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con la domanda dell'utente e con un messaggio di risposta di #glossary("BuddyBot"), che spiega che la domanda riguarda dati presenti in documenti non ancora disponibili.
+*Scenario principale*
+- L'utente dopo aver scritto la propria domanda, preme il tasto di invio;
+- L'interfaccia utente invia la richiesta dell'utente al #glossary("backend") per generare una risposta alla domanda;
+- L'interfaccia utente riceve la risposta alla domanda dell'utente;
+- L'interfaccia utente viene aggiornata con il messaggio inviato dall'utente;
+- L'interfaccia utente viene aggiornata con un messaggio di risposta di #glossary("BuddyBot") che spiega che non è stato possibile rispondere adeguatamente alla domanda, poiché riguarda dati presenti in documenti non ancora disponibili.
+*User story associata*
+- "Come utente, voglio che l'interfaccia utente mostri un messaggio di risposta quando la mia domanda riguarda dati presenti in documenti non ancora disponibili, in modo da essere informato che la risposta non può essere fornita al momento."
+
+
 === UC4, Invio richiesta con domanda dell'utente
-  #figure(
-    image(ar.diagUC_elab_domanda, width: 42em, fit: "contain"),
-    caption: "Diagramma UC4, Invio richiesta con domanda dell'utente",
-  )
-    *Attori coinvolti*:
-    - Primari:
-      - #glossary("User Interface") .
-    - Secondari:
-      - #glossary("Jira") ;
-      - #glossary("Github") ;
-      - #glossary("Confluence") ;
-      - #glossary("LLM") . 
+#figure(
+  image(ar.diagUC_elab_domanda, width: 42em, fit: "contain"),
+  caption: "Diagramma UC4, Invio richiesta con domanda dell'utente",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User Interface") .
+- Secondari:
+  - #glossary("Jira") ;
+  - #glossary("Github") ;
+  - #glossary("Confluence") ;
+  - #glossary("LLM") .
 
-    *Precondizioni*
-    - La UI e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
-    - La User Interface ha acquisito una domanda dall'utente;
-    - Il #glossary("backend") ha accesso ai seguenti dati provenienti dalle fonti #glossary("Jira"), #glossary("Github"), #glossary("Confluence"):
-      - #glossary("Github"):
-        - Nome della repository;
-        - Descrizione della repository;
-        - Data di creazione della repository;
-        - Ultima data di aggiornamento della repository;
-        - Linguaggio principale della repository;
-        - Messaggio dell'ultimo commit;
-        - Hash dell'ultimo commit;
-        - Data e ora dell'ultimo commit;
-        - Branch associato all'ultimo commit;
-        - File modificati nell'ultimo commit;
-        - Autore dell'ultimo commit;
-        - Lista Pull request attive e chiuse;
-        - Titolo e descrizione delle Pull request;
-        - Stato delle Pull request;
-        - Assegnatario delle Pull request;
-        - Reviewers delle Pull request;
-        - Commenti e discussioni delle Pull request;
-        - File modificati nelle Pull request;
-        - Branch di origine e destinazione delle Pull request;
-        - Stato dei workflow di GitHub Action;
-        - Ultimo workflow eseguito;
-        - Log dei workflow;
-        - Trigger dei workflow;
-        - Durata dei workflow.
-      - #glossary("Confluence"):
-        - Id di una pagina;
-        - Titolo di una pagina;
-        - Status di una pagina;
-        - Autore di una pagina;
-        - Owner di una pagina;
-        - Spazio di una pagina;
-        - Body di una pagina.
-      - #glossary("Jira"):
-        - Nome (titolo) di un ticket;
-        - Assegnatario di un ticket;
-        - Stato di un ticket;
-        - Attività principale collegata a un ticket;
-        - Sprint di appartenenza di un ticket;
-        - Story point estimate di un ticket;
-        - Richiedente/creatore di un ticket;
-        - Priorità;
-        - Data di scadenza;
-        - Commenti del ticket;
-        - Ticket collegati.
-      
+*Precondizioni*
+- La UI e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+- La User Interface ha acquisito una domanda dall'utente;
+- Il #glossary("backend") ha accesso ai seguenti dati provenienti dalle fonti #glossary("Jira"), #glossary("Github"), #glossary("Confluence"):
+  - #glossary("Github"):
+    - Nome della repository;
+    - Descrizione della repository;
+    - Data di creazione della repository;
+    - Ultima data di aggiornamento della repository;
+    - Linguaggio principale della repository;
+    - Messaggio dell'ultimo commit;
+    - Hash dell'ultimo commit;
+    - Data e ora dell'ultimo commit;
+    - Branch associato all'ultimo commit;
+    - File modificati nell'ultimo commit;
+    - Autore dell'ultimo commit;
+    - Lista Pull request attive e chiuse;
+    - Titolo e descrizione delle Pull request;
+    - Stato delle Pull request;
+    - Assegnatario delle Pull request;
+    - Reviewers delle Pull request;
+    - Commenti e discussioni delle Pull request;
+    - File modificati nelle Pull request;
+    - Branch di origine e destinazione delle Pull request;
+    - Stato dei workflow di GitHub Action;
+    - Ultimo workflow eseguito;
+    - Log dei workflow;
+    - Trigger dei workflow;
+    - Durata dei workflow.
+  - #glossary("Confluence"):
+    - Id di una pagina;
+    - Titolo di una pagina;
+    - Status di una pagina;
+    - Autore di una pagina;
+    - Owner di una pagina;
+    - Spazio di una pagina;
+    - Body di una pagina.
+  - #glossary("Jira"):
+    - Nome (titolo) di un ticket;
+    - Assegnatario di un ticket;
+    - Stato di un ticket;
+    - Attività principale collegata a un ticket;
+    - Sprint di appartenenza di un ticket;
+    - Story point estimate di un ticket;
+    - Richiedente/creatore di un ticket;
+    - Priorità;
+    - Data di scadenza;
+    - Commenti del ticket;
+    - Ticket collegati.
+
 
 
 *Postcondizioni*
 - Il #glossary("backend") genera e restituisce una risposta accurata in linguaggio naturale alla domanda ricevuta dall'interfaccia utente.
 - La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.
-  
+
 *Scenario principale*
 - La UI invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente;
 - Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
@@ -590,96 +812,248 @@ Gli attori coinvolti nei casi d'uso sono:
 - La domanda dell'utente e la risposta generata vengono aggiunte allo storico della chat, rendendole disponibili per la successiva visualizzazione.
 
 *Estensioni*
-- UC4.2, Errore durante la generazione della risposta.
-- UC4.3, Errore risposta troppo lunga;
-*Inclusioni*
-- UC4.4, Richiesta della data e ora dell'ultimo aggiornamento dei dati;
-*Generalizzazioni*
-- UC4.1, Invio richiesta con domanda fuori contesto;
+- UC4.1, Errore durante la generazione della risposta.
+- UC4.2, Errore risposta troppo lunga;
 
 *User story associata*
-  - "Come utente di #glossary("Buddybot"), voglio poter porre domande attraverso l'interfaccia utente e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), così da ottenere informazioni utili e coerenti con il contesto del sistema. Voglio inoltre poter visualizzare la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta cosi da poter sapere se i dati sono stati aggiornati recentemente o meno."
+- "Come utente di #glossary("Buddybot"), voglio poter porre domande attraverso l'interfaccia utente e ricevere risposte accurate in linguaggio naturale, basate sui documenti rilevanti recuperati da #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), così da ottenere informazioni utili e coerenti con il contesto del sistema. Voglio inoltre poter visualizzare la data e l'ora dell'ultimo aggiornamento dei dati utilizzati per la generazione della risposta cosi da poter sapere se i dati sono stati aggiornati recentemente o meno."
 
-  ==== UC4.1, Invio richiesta con domanda fuori contesto
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User Interface") .
-  - Secondari:
-    - #glossary("LLM") .
-    - #glossary("Jira") .
-    - #glossary("Github") .
-    - #glossary("Confluence") .
+==== UC4.1, Errore durante la generazione della risposta
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User Interface") .
+- Secondari:
+  - #glossary("LLM") .
+  - #glossary("Jira") .
+  - #glossary("Github") .
+  - #glossary("Confluence") .
 
-  *Precondizioni*
-    - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
-    - L'interfaccia utente ha acquisito una domanda dall'utente.
+*Precondizioni*
+- La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+- L'interfaccia utente ha acquisito una domanda dall'utente.
 
-  *Postcondizioni*
-  - Il #glossary("backend") genera e restituisce una risposta che informa che non è stato possibile rispondere alla domanda in quanto non il linea con il contesto di #glossary("Buddybot").
-  - La domanda dell'utente e la relativa risposta vengono salvate nello storico della chat per future consultazioni.  
+*Postcondizioni*
+- Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta.
 
-  *Scenario principale*
-  - L'interfaccia utente invia al #glossary("backend") di Buddybot la domanda formulata dall'utente;
-  - Il #glossary("backend") analizza la domanda e tenta di recuperare documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"). Tuttavia, non trova documenti correlati poiché la domanda è fuori dal contesto operativo di #glossary("Buddybot");
-  - La domanda dell'utente viene inoltrata al #glossary("LLM") per generare una risposta in linguaggio naturale che informa l'utente che la domanda non è pertinente al contesto;
-  - La risposta generata dal #glossary("LLM") viene restituita dal #glossary("backend") all'interfaccia utente;
-  - La domanda e la risposta vengono archiviate nello storico della chat, rendendole disponibili per future visualizzazioni.
-  *User story associata*
-  - "Come utente di #glossary("Buddybot"), voglio ricevere una risposta chiara e in linguaggio naturale quando pongo una domanda fuori contesto, in modo da essere informato che la mia richiesta non è pertinente al sistema e capire meglio i limiti del suo ambito operativo".
+*Scenario principale*
+- L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente.
+- Il #glossary("backend") tenta di analizzare la domanda, di recuperare i documenti pertinenti e di generare una risposta in linguaggio naturale ma non riesce a terminare per un errore durante uno di questi processi;
+- Il #glossary("backend") ritorna un errore generico informando l'interfaccia utente che non è stato possibile generare la risposta alla domanda richiesta.
+*User story associata*
+- "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda, così da poter eventualmente riformulare la domanda o contattare un supporto alternativo".
 
-==== UC4.2, Errore durante la generazione della risposta
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User Interface") .
-  - Secondari:
-    - #glossary("LLM") .
-    - #glossary("Jira") .
-    - #glossary("Github") .
-    - #glossary("Confluence") .
+#pagebreak()
 
-  *Precondizioni*
-    - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
-    - L'interfaccia utente ha acquisito una domanda dall'utente. 
-
-  *Postcondizioni*
-  - Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta.
-
-  *Scenario principale*
-  - L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente.
-  - Il #glossary("backend") tenta di analizzare la domanda, di recuperare i documenti pertinenti e di generare una risposta in linguaggio naturale ma non riesce a terminare per un errore durante uno di questi processi;
-  - Il #glossary("backend") ritorna un errore generico informando l'interfaccia utente che non è stato possibile generare la risposta alla domanda richiesta.
-  *User story associata*
-  - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda, così da poter eventualmente riformulare la domanda o contattare un supporto alternativo".
+==== UC4.2, Errore risposta troppo lunga
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User Interface") .
+- Secondari:
+  - #glossary("LLM") .
+  - #glossary("Jira") .
+  - #glossary("Github") .
+  - #glossary("Confluence") .
 
 
-==== UC4.3, Errore risposta troppo lunga
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User Interface") .
-  - Secondari:
-    - #glossary("LLM") .
-    - #glossary("Jira") .
-    - #glossary("Github") .
-    - #glossary("Confluence") .
-    
-  #pagebreak()
+*Precondizioni*
+- La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
+- L'interfaccia utente ha acquisito una domanda dall'utente.
 
-  *Precondizioni*
-    - La user interface e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
-    - L'interfaccia utente ha acquisito una domanda dall'utente. 
+*Postcondizioni*
+- Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta in quanto la risposta supererebbe la lunghezza massima consentita.
 
-  *Postcondizioni*
-  - Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta in quanto la risposta supererebbe la lunghezza massima consentita.
+*Scenario principale*
+- L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente;
+- Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
+- La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
+- La generazione della risposta si interrompe perchè la risposta ha superato la lunghezza massima consentita;
+- Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta in quanto la risposta supererebbe la lunghezza massima consentita.
+*User story associata*
+- "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda perchè la risposta supererebbe la lunghezza massima consentita in modo da poter eventualmente riformulare la domanda".
 
-  *Scenario principale*
-  - L'interfaccia utente invia al #glossary("backend") di #glossary("Buddybot") la domanda formulata dall'utente;
-  - Il #glossary("backend") analizza la domanda e recupera tutti i documenti rilevanti di #glossary("Jira"), #glossary("GitHub") e #glossary("Confluence"), necessari per elaborare una risposta accurata;
-  - La domanda dell'utente, insieme ai documenti recuperati, viene inviata al #glossary("LLM") per la generazione della risposta in linguaggio naturale;
-  - La generazione della risposta si interrompe perchè la risposta ha superato la lunghezza massima consentita;
-  - Il #glossary("backend") ritorna un errore informando che non è stato possibile generare la risposta alla domanda richiesta in quanto la risposta supererebbe la lunghezza massima consentita.
-  *User story associata*
-  - "Come utente voglio essere informato in modo chiaro e immediato nel caso in cui BuddyBot non riesca a generare una risposta alla mia domanda perchè la risposta supererebbe la lunghezza massima consentita in modo da poter eventualmente riformulare la domanda".
+#pagebreak()
+=== UC5, Modifica domanda
 
+#figure(
+  image(ar.diagUC_modifica_domanda, width: 32em, fit: "contain"),
+  caption: "Diagramma UC5, Modifica domanda",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User") .
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente;
+- L'utente ha già fatto una domanda, quindi c'è almeno un messaggio.
+
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con la nuova domanda scritta dall'utente.
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
+- L'utente scrive la propria domanda nel campo di input dedicato;
+- L'utente si accorge di un errore o vuole modificare la domanda;
+- L'utente schiaccia sull'icona di modifica e modifica la domanda;
+- La vecchia domanda viene sostituita con quella nuova.
+
+*User story associata*
+- "Come utente, voglio modificare la mia domanda per renderla più chiara o correggere un errore dopo averla mandata."
+
+#pagebreak()
+
+=== UC6, Visualizzazione UI
+
+#figure(
+  image(ar.diagUC_seleziona_mod, width: 32em, fit: "contain"),
+  caption: "Diagramma UC6, visualizzazione UI",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+
+
+*Precondizioni*
+- La UI di #glossary("Buddybot") è funzionante e pronta per l'utilizzo;
+
+*Postcondizioni*
+- Lo user visualizza la UI e tutte le funzionalità sono pronte all'uso.
+
+*Scenario principale*
+- L'utente vuole visualizzare la UI di #glossary("Buddybot") e usare le sue funzionalità;
+- L'utente visualizza la UI di #glossary("Buddybot") e puù usare tutte le sue funzionalità.
+
+*Generalizzazioni*
+- UC6.1, visualizzazione UI modalità chiara;
+- UC6.2, visualizzazione UI modalità scura.
+
+*User story associata*
+- "Come utente voglio poter visualizzare e usare la UI di #glossary("Buddybot")".
+
+===== UC6.1, Visualizzazione UI in modalità chiara
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La UI è in modalità scura.
+
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") è visualizzata in modalità chiara.
+
+*Scenario principale*
+- L'utente vuole visualizzare la UI in modalità chiara;
+- L'utente usa il tasto per cambiare la modalità;
+- La UI passa in modalità chiara.
+
+*User story associata*
+- "Come utente, desidero visualizzare la UI in modalità chiara anziché scura".
+
+
+===== UC6.2, Visualizzazione UI in modalità scura
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La UI è in modalità chiara.
+
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") è visualizzata in modalità scura.
+
+*Scenario principale*
+- L'utente vuole visualizzare la UI in modalità scura;
+- L'utente usa il tasto per cambiare la modalità;
+- La UI passa in modalità scura.
+
+*User story associata*
+- "Come utente, desidero visualizzare la UI in modalità scura anziché chiara".
+
+
+=== UC7, Visualizzazione link - icona
+
+#figure(
+  image(ar.diagUC_UI-icone-doc, width: 42em, fit: "contain"),
+  caption: "Diagramma UC7, Visualizzazione link - icone",
+)
+*Attori coinvolti*
+- Utente
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La connessione a internet dev'essere attiva e funzionante.
+
+*Postcondizioni*
+- L'utente viene reindirizzato a una nuova pagina web corrispondente al link associato all'icona selezionata, aperta in una nuova finestra o scheda del browser.
+
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("BuddyBot")
+- Il sistema mostra una o più icone che fungono da link verso risorse esterne
+- L'utente individua e clicca sull'icona desiderata
+- L'utente viene reindirizzato su un'altra pagina web associata all'icona
+
+*User story associata*
+- "Come utente, voglio poter visualizzare e cliccare su icone che fungono da link verso risorse esterne in maniera tale da poter essere reindirizzato alla pagina web associata in una nuova finestra o scheda del browser."
+
+==== UC7.1, Visualizzazione link - icona Jira
+*Attori coinvolti*
+- Utente
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La connessione a internet dev'essere attiva e funzionante.
+
+*Postcondizioni*
+- La pagina web della documentazione di #glossary("Jira") associata all'icona è aperta in una nuova finestra o scheda del browser.
+
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("BuddyBot")
+- Il sistema mostra l'icona relativa alla documentazione di Jira
+- L'utente posiziona il cursore su tale icona e la clicca
+- L'utente viene reindirizzato alla pagina web di documentazione associata all'icona di #glossary("Jira"), aperta in una nuova finestra o scheda del browser.
+
+*User story associata*
+- "Come utente, voglio cliccare sull'icona di Jira presente nell'interfaccia del #glossary("chatbot") per aprire la documentazione in una nuova scheda o finestra, così da poter consultare facilmente le informazioni necessarie."
+
+==== UC7.2, Visualizzazione link - icona GitHub
+*Attori coinvolti*
+- Utente
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La connessione a internet dev'essere attiva e funzionante.
+
+*Postcondizioni*
+- La pagina web della documentazione di #glossary("GitHub") associata all'icona è aperta in una nuova finestra o scheda del browser.
+
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("BuddyBot")
+- Il sistema mostra l'icona relativa alla documentazione di GitHub
+- L'utente posiziona il cursore su tale icona e la clicca
+- L'utente viene reindirizzato alla pagina web di documentazione associata all'icona di #glossary("GitHub"), aperta in una nuova finestra o scheda del browser.
+
+*User story associata*
+- "Come utente, voglio cliccare sull'icona di GitHub presente nell'interfaccia del #glossary("chatbot") per aprire la documentazione in una nuova scheda o finestra, così da poter consultare facilmente le informazioni necessarie."
+
+==== UC7.3, Visualizzazione link - icona Confluence
+*Attori coinvolti*
+- Utente
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La connessione a internet dev'essere attiva e funzionante.
+
+*Postcondizioni*
+- La pagina web della documentazione di #glossary("Confluence") associata all'icona è aperta in una nuova finestra o scheda del browser.
+
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("BuddyBot")
+- Il sistema mostra l'icona relativa alla documentazione di Confluence
+- L'utente posiziona il cursore su tale icona e la clicca
+- L'utente viene reindirizzato alla pagina web di documentazione associata all'icona di #glossary("Confluence"), aperta in una nuova finestra o scheda del browser.
+
+*User story associata*
+- "Come utente, voglio cliccare sull'icona di Confluence presente nell'interfaccia del #glossary("chatbot") per aprire la documentazione in una nuova scheda o finestra, così da poter consultare facilmente le informazioni necessarie."
 
 #pagebreak()
 
@@ -746,145 +1120,195 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [L'utente deve accedere all'applicazione senza necessità di autenticazione],
     [Capitolato],
     [Obbligatorio],
-    [*RF-002*], [L'utente deve poter visualizzare lo storico della chat], [UC1], [Obbligatorio],
+
+    [*RF-002*],
+    [Il sistema deve archiviare in modo persistente le domande degli utenti e le risposte generate],
+    [UC1],
+    [Obbligatorio],
+
     [*RF-003*],
+    [L'utente deve poter visualizzare lo storico della chat in ordine cronologico inverso (dal più recente al più vecchio).],
+    [UC1],
+    [Obbligatorio],
+
+    [*RF-004*],
     [L'utente deve visualizzare un messaggio informativo che spiega che non ci sono messaggi nello storico],
     [UC1.1],
     [Obbligatorio],
 
-    [*RF-004*],
+    [*RF-005*],
     [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a recuperare lo storico],
     [UC1.2],
     [Obbligatorio],
 
-    [*RF-005*],
+    [*RF-006*],
     [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a connettersi],
     [UC1.3],
     [Obbligatorio],
 
-    [*RF-006*],
+    [*RF-007*],
     [L'utente deve visualizzare un messaggio di errore se il backend non è disponibile],
     [UC1.5],
     [Obbligatorio],
 
-    [*RF-007*],
-    [L'utente deve visualizzare per ogni messaggio: il contenuto, la data e ora di invio, e il mittente],
-    [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3],
-    [Obbligatorio],
-
     [*RF-008*],
-    [L'utente deve poter scrivere una domanda in linguaggio naturale],
-    [UC2],
+    [L'utente deve visualizzare per ogni messaggio: il contenuto, la data e ora di invio],
+    [UC1.4, UC1.4.4, UC1.4.5],
     [Obbligatorio],
 
     [*RF-009*],
-    [L'utente deve poter inviare la domanda scritta al sistema],
-    [UC3],
+    [L'utente deve visualizzare lo sfondo di un messaggio inviato da un utente di colore blu],
+    [UC1.4.1],
     [Obbligatorio],
-    
+
     [*RF-010*],
-    [L'utente deve poter visualizzare un messagio di errore se si è verificato un errore generico nella generazione della risposta da parte del #glossary("backend")],
-    [UC3.1],
+    [L'utente deve visualizzare lo sfondo di un messaggio inviato da #glossary("Buddybot") di colore bianco],
+    [UC1.4.2],
     [Obbligatorio],
-    
+
     [*RF-011*],
-    [L'utente deve poter visualizzare un messagio di errore se la risposta non è stata generata perchè supera la lunghezza massima consentita],
-    [UC3.2],
+    [L'utente deve visualizzare per ogni messaggio inviato da #glossary("Buddybot") la data e l'ora dell'ultimo aggiornamento dei dati usati per generare la risposta],
+    [UC1.4.3],
     [Obbligatorio],
 
-    [*RF-012*],
-    [L'utente deve poter visualizzare un messagio di errore se la domanda supera la lunghezza massima consentita],
-    [UC3.3],
-    [Obbligatorio],
-
-    [*RF-013*],
-    [Il sistema deve elaborare la domanda dell'utente e generare una risposta appropriata],
-    [UC4],
-    [Obbligatorio],
-
-    [*RF-014*],
-    [Il sistema deve recuperare da GitHub le seguenti informazioni:
-    - Nome della repository
-    - Descrizione della repository
-    - Data di creazione della repository
-    - Ultima data di aggiornamento della repository
-    - Linguaggio principale della repository
-    - Messaggio dell'ultimo commit
-    - Hash dell'ultimo commit
-    - Data e ora dell'ultimo commit
-    - Branch associato all'ultimo commit
-    - File modificati nell'ultimo commit
-    - Autore dell'ultimo commit
-    - Lista delle Pull request attive e chiuse
-    - Titolo e descrizione delle Pull request
-    - Stato delle Pull request
-    - Assegnatario delle Pull request
-    - Reviewers delle Pull request
-    - Commenti e discussioni delle Pull request
-    - File modificati nelle Pull request
-    - Branch di origine e destinazione delle Pull request
-    - Stato dei workflow delle GitHub Action
-    - Ultimo workflow eseguito
-    - Log dei workflow
-    - Trigger dei workflow
-    - Durata dei workflow],
-    [UC4, Capitolato],
-    [Obbligatorio],
-
+    [*RF-012*], [L'utente deve poter scrivere una domanda in linguaggio naturale], [UC2], [Obbligatorio],
+    [*RF-013*], [L'utente deve poter inviare la domanda scritta al sistema], [UC3], [Obbligatorio],
+    [*RF-014*], [L'utente deve poter visualizzare la risposta generata da #glossary("Buddybot")], [UC3], [Obbligatorio],
     [*RF-015*],
-    [Il sistema deve recuperare da Confluence le seguenti informazioni:
-    - Id di una pagina
-    - Titolo di una pagina
-    - Status di una pagina
-    - Autore di una pagina
-    - Owner di una pagina
-    - Spazio di una pagina
-    - Body di una pagina],
-    [UC4, Capitolato],
+    [L'utente deve essere informato se la domanda che ha posto non rientra nelle competenze specifiche del sistema tramite una risposta generata da #glossary("Buddybot")],
+    [UC3.4],
     [Obbligatorio],
 
     [*RF-016*],
-    [Il sistema deve recuperare da Jira le seguenti informazioni:
-    - Nome (titolo) di un ticket
-    - Assegnatario di un ticket
-    - Stato di un ticket
-    - Attività principale collegata a un ticket
-    - Sprint di appartenenza di un ticket
-    - Story point estimate di un ticket
-    - Richiedente/creatore di un ticket
-    - Priorità
-    - Data di scadenza
-    - Commenti del ticket
-    - Ticket collegati],
-    [UC4, Capitolato],
+    [L'utente deve essere informato se i documenti richiesti nella domanda non sono disponibili all'interno del sistema tramite una risposta generata da #glossary("Buddybot")],
+    [UC3.5],
     [Obbligatorio],
 
     [*RF-017*],
-    [Il sistema deve gestire le domande fuori contesto con una risposta appropriata],
-    [UC4.1],
+    [L'utente deve poter visualizzare un messaggio di errore se si è verificato un errore generico nella generazione della risposta da parte del #glossary("backend")],
+    [UC3.1],
     [Obbligatorio],
 
     [*RF-018*],
-    [Il sistema deve informare l'utente in caso di errore durante la generazione della risposta],
-    [UC4.2],
+    [L'utente deve poter visualizzare un messaggio di errore se la risposta non è stata generata perchè supera la lunghezza massima consentita],
+    [UC3.2],
     [Obbligatorio],
 
     [*RF-019*],
-    [Il sistema deve informare l'utente se la risposta supera la lunghezza massima consentita],
-    [UC4.3],
+    [L'utente deve poter visualizzare un messaggio di errore se la domanda supera la lunghezza massima consentita],
+    [UC3.3],
     [Obbligatorio],
 
     [*RF-020*],
-    [Il sistema deve fornire la data e l'ora dell'ultimo aggiornamento dei dati utilizzati],
+    [Il sistema deve generare una risposta appropriata alla domanda posta dell'utente],
     [UC4],
     [Obbligatorio],
 
     [*RF-021*],
+    [Il sistema deve recuperare da GitHub le seguenti informazioni:
+      - Nome della repository
+      - Descrizione della repository
+      - Data di creazione della repository
+      - Ultima data di aggiornamento della repository
+      - Linguaggio principale della repository
+      - Messaggio dell'ultimo commit
+      - Hash dell'ultimo commit
+      - Data e ora dell'ultimo commit
+      - Branch associato all'ultimo commit
+      - File modificati nell'ultimo commit
+      - Autore dell'ultimo commit
+      - Lista delle Pull request attive e chiuse
+      - Titolo e descrizione delle Pull request
+      - Stato delle Pull request
+      - Assegnatario delle Pull request
+      - Reviewers delle Pull request
+      - Commenti e discussioni delle Pull request
+      - File modificati nelle Pull request
+      - Branch di origine e destinazione delle Pull request
+      - Stato dei workflow delle GitHub Action
+      - Ultimo workflow eseguito
+      - Log dei workflow
+      - Trigger dei workflow
+      - Durata dei workflow
+    ],
+    [UC4, Capitolato],
+    [Obbligatorio],
+
+    [*RF-022*],
+    [Il sistema deve recuperare da Confluence le seguenti informazioni:
+      - Id di una pagina
+      - Titolo di una pagina
+      - Status di una pagina
+      - Autore di una pagina
+      - Owner di una pagina
+      - Spazio di una pagina
+      - Body di una pagina
+    ],
+    [UC4, Capitolato],
+    [Obbligatorio],
+
+    [*RF-023*],
+    [Il sistema deve recuperare da Jira le seguenti informazioni:
+      - Nome (titolo) di un ticket
+      - Assegnatario di un ticket
+      - Stato di un ticket
+      - Attività principale collegata a un ticket
+      - Sprint di appartenenza di un ticket
+      - Story point estimate di un ticket
+      - Richiedente/creatore di un ticket
+      - Priorità
+      - Data di scadenza
+      - Commenti del ticket
+      - Ticket collegati
+    ],
+    [UC4, Capitolato],
+    [Obbligatorio],
+
+    [*RF-024*],
+    [Il sistema deve informare l'utente in caso di errore durante la generazione della risposta],
+    [UC4.1],
+    [Obbligatorio],
+
+    [*RF-025*],
+    [Il sistema deve informare l'utente se la risposta supera la lunghezza massima consentita],
+    [UC4.2],
+    [Obbligatorio],
+
+    [*RF-026*],
+    [Il sistema deve fornire la data e l'ora dell'ultimo aggiornamento dei dati utilizzati],
+    [UC4],
+    [Obbligatorio],
+
+    [*RF-027*],
     [Il sistema deve aggiornare i dati dei documenti provenienti da GitHub, Confluence e Jira ogni 24 ore],
     [Capitolato],
     [Obbligatorio],
 
+    [*RF-028*],
+    [Il sistema deve salvare i dati provenienti dalle fonti (Githbu, Jira, Confluence) in un database vettoriale],
+    [Verbale interno],
+    [Obbligatorio],
 
+    [*RF-029*],
+    [Il sistema deve convertire i dati provenienti dalle fonti (Githbu, Jira, Confluence) da forma testuale a forma vettoriale],
+    [Verbale interno],
+    [Obbligatorio],
+
+    [*RF-030*], [L'utente deve poter modificare una domanda già inviata], [UC5], [Opzionale],
+
+    [*RF-031*], [L'utente deve poter selezionare il tema chiaro o scuro per visualizzare l'interfaccia utente], [UC6, UC6.1, UC6.2], [Opzionale],
+
+    [*RF-032*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso a una risorsa esterna, aprendo la pagina web associata in una nuova finestra o scheda del browser.], [UC7], [Opzionale],
+
+    [*RF-033*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Jira], [UC7.1], [Opzionale],
+
+    [*RF-034*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di GitHub], [UC7.2], [Opzionale],
+
+    [*RF-035*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence], [UC7.3], [Opzionale],
   ),
   caption: "Requisiti Funzionali",
 )
@@ -922,10 +1346,12 @@ Come i requisiti funzionali, i requisiti di qualità seguono la struttura defini
   table(
     columns: (auto, auto, auto, auto),
     [Codice], [Descrizione], [Fonti], [Priorità],
-    [RQO-001], [Occorre realizzare e consegnare un documento di analisi dei requisiti con un diagramma dei casi d'uso in formato UML.], [Capitolato], [Obbligatorio],
-    [RQO-002], [Occorre realizzare e consegnare della documentazione tecnica includendo descrizioni delle architetture usate, spiegazioni del funzionamento del codice e delle API usate.], [Capitolato], [Obbligatorio],
-    [RQO-003], [Occorre che il codice sorgente sia presente in un singolo repository su Github accessibile all'azienda.], [Capitolato], [Obbligatorio],
-    [RQO-004], [Occorre usufruire di un sistema di bug reporting per segnalare e tracciare eventuali errori o malfunzionamenti riscontrati nell'applicazione.], [Capitolato], [Obbligatorio],
+    [RQ-001], [Occorre realizzare e consegnare un documento di analisi dei requisiti con un diagramma dei casi d'uso in formato UML.], [Capitolato], [Obbligatorio],
+    [RQ-002], [Occorre realizzare e consegnare un documento denominato "Specifica Tecnica" che fornisce una visione dettagliata riguardante l'architettura del sistema, i design pattern utilizzati, le tecnologie adottate e le scelte progettuali effettuate.], [Capitolato], [Obbligatorio],
+    [RQ-003], [Occorre che il codice sorgente sia presente in un singolo repository su Github accessibile all'azienda.], [Capitolato], [Obbligatorio],
+    [RQ-004], [Occorre usufruire di un sistema di bug reporting per segnalare e tracciare eventuali errori o malfunzionamenti riscontrati nell'applicazione.], [Capitolato], [Obbligatorio],
+    [RQ-005], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato], [Obbligatorio],
+    [RQ-006], [Occorre che sia assicurata una coverage di almeno 80% del codice, per garantire che la maggior parte delle funzionalità siano testate e prive di bug.], [Capitolato], [Obbligatorio], // da rivedere la percentuale con tullio
   ),
   caption: "Requisiti di Qualità",
 )
@@ -960,14 +1386,25 @@ Anche i requisiti di vincolo seguono la struttura del #link(<requisiti>, "Capito
   table(
     columns: (auto, auto, auto, auto),
     [Codice], [Descrizione], [Fonti], [Priorità],
-    [RVO-001], [Occorre che l'applicazione venga sviluppata suddividendola in frontend e backend], [Capitolato], [Obbligatorio],
-    [RVO-002], [Occorre che vengano raccolte le informazioni da #glossary("Jira"),#glossary("Github") e #glossary("Confluence") usando API di terze parti], [Capitolato],[Obbligatorio],
-    [RVO-003], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato],[Obbligatorio],
-    [RVO-004], [Occorre che sia assicurata una coverage adeguata del codice, per garantire che la maggior parte delle funzionalità siano testate e prive di bug.], [Capitolato],[Obbligatorio],
-    [RVD-001],[E' desiderabile usare NodeJS o NestJS],[Capitolato],[Desiderabile],
-    [RVD-002],[E' desiderabile usare Langchain],[Capitolato],[Desiderabile],
-    [RVD-003],[E' desiderabile usare OpenAI],[Capitolato],[Desiderabile],
-    [RVD-004],[E' desiderabile usare Angular],[Capitolato],[Desiderabile],
+    [RV-001],
+    [Occorre che l'applicazione venga sviluppata suddividendola in frontend e backend],
+    [Capitolato],
+    [Obbligatorio],
+
+    [RV-002],
+    [Occorre che l'applicazione sia compatibile con la versione 135.0 di Firefox, che è l'ultima disponibile al momento della stesura di questo documento, e che quindi sia accessibile da ogni sistema operativo che supporta Firefox],
+    [Verbale interno],
+    [Obbligatorio],
+
+    [RV-003],
+    [Occorre che l'applicazione sia compatibile con la versione 134.0.6998.23 di Google Chrome, che è l'ultima disponibile al momento della stesura di questo documento, e che quindi sia accessibile da ogni sistema operativo che supporta Chrome],
+    [Verbale interno],
+    [Obbligatorio],
+
+    [RV-004], [Occorre usare NestJS], [Capitolato], [Desiderabile],
+    [RV-005], [Occorre usare Langchain], [Capitolato], [Desiderabile],
+    [RV-006], [Occorre usare OpenAI], [Capitolato], [Desiderabile],
+    [RV-007], [Occorre usare Angular], [Capitolato], [Desiderabile],
   ),
   caption: "Requisiti di Vincolo",
 )
@@ -1001,37 +1438,56 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [Fonte], [Requisito],
     [Capitolato], [RF-001],
     [UC1], [RF-002],
-    [UC1.1], [RF-003],
-    [UC1.2], [RF-004],
-    [UC1.3], [RF-005],
-    [UC1.5], [RF-006],
-    [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3], [RF-007],
-    [UC2], [RF-008],
-    [UC3], [RF-009],
-    [UC3.1], [RF-010],
-    [UC3.2], [RF-011],
-    [UC3.3], [RF-012],
-    [UC4], [RF-013],
-    [UC4, Capitolato], [RF-014],
-    [UC4, Capitolato], [RF-015],
-    [UC4, Capitolato], [RF-016],
-    [UC4.1], [RF-017],
-    [UC4.2], [RF-018],
-    [UC4.3], [RF-019],
+    [UC1], [RF-003],
+    [UC1.1], [RF-004],
+    [UC1.2], [RF-005],
+    [UC1.3], [RF-006],
+    [UC1.5], [RF-007],
+    [UC1.4, UC1.4.4, UC1.4.5], [RF-008],
+    [UC1.4.1], [RF-009],
+    [UC1.4.2], [RF-010],
+    [UC1.4.3], [RF-011],
+    [UC2], [RF-012],
+    [UC3], [RF-013],
+    [UC3], [RF-014],
+    [UC3.4], [RF-015],
+    [UC3.5], [RF-016],
+    [UC3.1], [RF-017],
+    [UC3.2], [RF-018],
+    [UC3.3], [RF-019],
     [UC4], [RF-020],
-    [Capitolato], [RF-021],
-    [Capitolato], [RQO-001],
-    [Capitolato], [RQO-002],
-    [Capitolato], [RQO-003],
-    [Capitolato], [RQO-004],
-    [Capitolato], [RVO-001],
-    [Capitolato], [RVO-002],
-    [Capitolato], [RVO-003],
-    [Capitolato], [RVO-004],
-    [Capitolato], [RVD-001],
-    [Capitolato], [RVD-002],
-    [Capitolato], [RVD-003],
-    [Capitolato], [RVD-004],
+    [UC4, Capitolato], [RF-021],
+    [UC4, Capitolato], [RF-022],
+    [UC4, Capitolato], [RF-023],
+    [UC4.1], [RF-024],
+    [UC4.2], [RF-025],
+    [UC4], [RF-026],
+    [Capitolato], [RF-027],
+    [Verbale interno], [RF-028],
+    [Verbale interno], [RF-029],
+    [UC5], [RF-030],
+    [UC6, UC6.1, UC6.2], [RF-031],
+    [UC7], [RF-032],
+    [UC7.1], [RF-033],
+    [UC7.2], [RF-034],
+    [UC7.3], [RF-035],
+    [Capitolato], [RQ-001],
+    [Capitolato], [RQ-002],
+    [Capitolato], [RQ-003],
+    [Capitolato], [RQ-004],
+    [Capitolato], [RQ-005],
+    [Capitolato], [RQ-006],
+    [Capitolato], [RV-001],
+    [Capitolato], [RV-002],
+    [Capitolato], [RV-003],
+    [Capitolato], [RV-004],
+    [Capitolato], [RV-001],
+    [Capitolato], [RV-002],
+    [Capitolato], [RV-003],
+    [Capitolato], [RV-004],
+    [Capitolato], [RV-005],
+    [Capitolato], [RV-006],
+    [Capitolato], [RV-007],
   ),
   caption: "Tracciamento",
 )
@@ -1059,12 +1515,12 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
 
 #figure(
   table(
-    columns: (auto, auto, auto, auto),
-    [Tipologia], [Obbligatorio], [Desiderabile], [Totale],
-    [Funtionali], [23], [0], [23],
-    [Qualità], [5], [0], [5],
-    [Vincolo], [4], [4], [8],
+    columns: (auto, auto, auto, auto, auto),
+    [Tipologia], [Obbligatorio], [Desiderabile], [Opzionale], [Totale],
+    [Funzionali], [29], [0], [6], [35],
+    [Qualità], [6], [0], [0], [6],
+    [Vincolo], [3], [4], [0], [7],
   ),
   caption: "Riepilogo",
 )
-Il totale dei Requisiti è: 36.
+Il totale dei Requisiti è: 48.
