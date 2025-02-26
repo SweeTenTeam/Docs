@@ -1524,3 +1524,4 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
   caption: "Riepilogo",
 )
 Il totale dei Requisiti è: 48.
+
