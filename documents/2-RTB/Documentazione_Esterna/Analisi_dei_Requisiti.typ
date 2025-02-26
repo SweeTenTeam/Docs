@@ -81,35 +81,35 @@
 = *Introduzione*
 == Scopo del documento
 L'#glossary("Analisi dei requisiti") è un documento fondamentale per tutti i progetti di sviluppo software che vogliono
-creare un prodotto a regola d'arte.\
+creare un prodotto a regola d'arte.
 
 Lo scopo di questo documento è di definire le funzionalità che il sistema sarà in grado di offrire, ossia i requisiti
-obbligatori e opzionali che dovranno essere soddisfatti al fine di realizzare le richieste fatte dal #glossary("proponente").\
+obbligatori e opzionali che dovranno essere soddisfatti al fine di realizzare le richieste fatte dal #glossary("proponente").
 
 Il documento non si pone come una soluzione tecnica al problema, quanto più una definizione chiara e concisa di esso e
-di come possa essere risolto.\
+di come possa essere risolto.
 
-In particolare, le finalità di questo documento possono essere descritte nei seguenti punti:\
+In particolare, le finalità di questo documento possono essere descritte nei seguenti punti:
 
-- *Definire le esigenze del proponente*:\
+- *Definire le esigenze del proponente*:
 Questo documento si basa principalmente sulle richieste del proponente, ossia le idee che quest'ultimo ha riguardo a
 come dovrebbe essere il software che verrà sviluppato dal nostro team. Tali idee verranno raccolte tramite i vari
 documenti e incontri con #box(image(g.azzurro, width: 5em, height: auto)) che avverranno lungo il percorso dello
-svolgimento del progetto.\
+svolgimento del progetto.
 
-- *Fornire una base per la progettazione del sistema*:\
+- *Fornire una base per la progettazione del sistema*:
 L'#glossary("Analisi dei requisiti") fornisce una base per la progettazione del sistema, in quanto definisce le funzionalità che il
 sistema dovrà offrire, permettendo così ai #glossary("programmatori") di comprendere le esigenze dei proponenti
-identificando le soluzioni che più si adeguano a tali esigenze.\
+identificando le soluzioni che più si adeguano a tali esigenze.
 
-- *Tracciare i requisiti del sistema*:\
+- *Tracciare i requisiti del sistema*:
 Una volta raccolte le richieste del proponente, questo documento si impone di identificare i requisiti e suddividerli in
-requisiti funzionali e non funzionali.\
+requisiti funzionali e non funzionali.
 
-- *Verificare e validare i requisiti*:\
+- *Verificare e validare i requisiti*:
 Questo processo garantisce che le attività siano svolte seguendo il #glossary("Way of Working") del gruppo, controllando
-la presenza di errori e correggendoli una volta identificati.\
-Ciò permette di accertare che il prodotto finale corrisponda alle aspettative del proponente.\
+la presenza di errori e correggendoli una volta identificati.
+Ciò permette di accertare che il prodotto finale corrisponda alle aspettative del proponente.
 
 Una volta che i requisiti del sistema saranno stati definiti in maniera chiara in modo tale da permettere al lettore di
 comprenderli pienamente, allora verrà data una rappresentazione formale grafica del software attraverso l'utilizzo di #glossary("diagrammi dei casi d'uso").
@@ -132,10 +132,16 @@ Pertanto è soggetto a un continuo miglioramento.
 
 == Tecnologie utilizzate
 Il progetto richiede l'utilizzo di svariate e diverse tecnologie, sia per la parte `back-end` che per la parte `front-end`. Queste devono essere scelte in base alle esigenze del progetto e alle richieste del proponente oltre che tenendo conto del grado di qualità che il progetto, e di conseguenza poi il prodotto, dovrà avere.
+\
+\
+
+Come linguaggio di programmazione il team si avvale di Typescript, basato su Javascript ma con sintassi più chiara e tipizzazione statica. Questo linguaggio verrà utilizzato sia nella parte di `back-end` che di `front-end`. Questa scelta è stata ponderata in quanto ci permette di avere meno differenze possibili tra l'implementazione delle due parti del nostro sistema.
+#figure(image(tc.ts, width: 5em, height: auto), caption: "Logo di Typescript")
+
+\
+\
 
 Per ciò che concerne il `back-end` sono state utilizzate le seguenti tecnologie:
-- Typescript: linguaggio di programmazione basato su Javascript ma con sintassi più chiara e tipizzazione statica;
-#figure(image(tc.ts, width: 5em, height: auto), caption: "Logo di Typescript")
 - Langchain: framework per lo sviluppo di applicazioni supportate da #glossary("LLM");
 #figure(image(tc.lc, width: 5em, height: auto), caption: "Logo di Langchain")
 - Node.js: ambiente di runtime per eseguire codice Javascript;
@@ -144,7 +150,8 @@ Per ciò che concerne il `back-end` sono state utilizzate le seguenti tecnologie
 #figure(image(tc.nest, width: 5em, height: auto), caption: "Logo di Nest.js")
 - GroqCloud: Piattaforma AI basata su hardware specializzato (LPU) per inferenza ad alte prestazioni, supporta modelli LLM e integrazione con strumenti AI per elaborazione in tempo reale.
 #figure(image(tc.groq, width: 5em, height: auto), caption: "Logo di GroqCloud")
-// - Nomic:
+- Nomic: Servizio che mette a disposizione un modello di AI che permette l'embedding del testo;
+#figure(image(tc.nomic, width: 5em, height: auto), caption: "Logo di Nomic")
 - Qdrant: motore di ricerca e analisi di dati non strutturati, supporta l'indicizzazione e la ricerca di dati in tempo reale;
 #figure(image(tc.qdrant, width: 5em, height: auto), caption: "Logo di Qdrant")
 - PostgresSQL: sistema di gestione di database relazionali;
@@ -163,11 +170,12 @@ Successivamente, per la parte `front-end` sono state utilizzati i seguenti lingu
 #figure(image(tc.react, width: 5em, height: auto), caption: "Logo di React")
 - Typescript: linguaggio di programmazione basato su Javascript ma con sintassi più chiara e tipizzazione statica;
 #figure(image(tc.ts, width: 5em, height: auto), caption: "Logo di Typescript")
-- CSS: linguaggio di stile per la presentazione di pagine web;
-#figure(image(tc.css, width: 5em, height: auto), caption: "Logo di CSS")
+- Tailwind CSS: framework CSS per la creazione di interfacce utente;
+#figure(image(tc.tlw, width: 5em, height: auto), caption: "Logo di Tailwind CSS")
 - ReactQuery: libreria per la gestione dello stato e delle richieste di dati in React.
 #figure(image(tc.reactq, width: 6em, height: auto), caption: "Logo di ReactQuery")
-
+- NextJs: framework React per la creazione di applicazioni web;
+#figure(image(tc.next, width: 5em, height: auto), caption: "Logo di Next.js")
 
 == Riferimenti
 === Normativi
@@ -194,13 +202,13 @@ Glossario: #link(d.Glossario,"Glossario_v1.0")
 - #link("https://www.postgresql.org/", "PostgresSQL");
 - #link("https://octokit.github.io/rest.js/v18", "Octokit");
 - #link("https://mrrefactoring.github.io/jira.js/", "JiraJs");
-// - #link("https://confluencejs.com/", "ConfluenceJs");
+- #link("https://mrrefactoring.github.io/confluence.js/", "ConfluenceJs");
 - #link("https://www.docker.com/", "Docker");
 - #link("https://reactjs.org/", "React");
 - #link("https://react-query.tanstack.com/", "ReactQuery");
-- #link("https://www.w3.org/Style/CSS/Overview.en.html", "CSS");
-// - #link("https://tailwindcss.com/","Tailwind CSS");
-// - #link("https://nextjs.org/","Next.js");
+- #link("https://tailwindcss.com/", "Tailwind CSS");
+- #link("https://nextjs.org/", "Next.js");
+
 
 
 = Descrizione
@@ -227,7 +235,7 @@ Il prodotto si rivolge principalmente al team aziendale:
 
 Questa sezione mette in luce il ruolo centrale che BuddyBot può avere poiché, come spiegato in precedenza, centralizza le informazioni e semplifica i processi aziendali attraverso l'uso di IA, aumentando efficienza e produttività per tutti gli utenti coinvolti e diminuendo perdite di tempo.
 
-#pagebreak()
+
 = Casi d'uso
 == Introduzione ai casi d'uso e obbiettivi
 In questa sezione vengono elencati dettagliatamente i #glossary("casi d'uso (UC)") individuati dal gruppo in seguito ad analisi e valutazioni circa le specifiche del capitolato.
@@ -657,7 +665,7 @@ Gli attori coinvolti nei casi d'uso sono:
 *User story associata*
 - "Come utente, voglio che l'interfaccia utente mostri un messaggio di risposta quando la mia domanda riguarda dati presenti in documenti non ancora disponibili, in modo da essere informato che la risposta non può essere fornita al momento."
 
-#pagebreak()
+
 === UC4, Invio richiesta con domanda dell'utente
 #figure(
   image(ar.diagUC_elab_domanda, width: 42em, fit: "contain"),
