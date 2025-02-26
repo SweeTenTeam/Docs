@@ -5,13 +5,13 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
-    // "1.0.1",
-    // "2025-02-20",
-    // (p.belenkov, p.fracaro, p.ferazzani, p.santi),
-    // (p.mahdi, p.campagnaro, p.benedetti),
-    // [
-    //   Apportate modifiche richieste in RTB
-    // ],
+    "1.0.1",
+    "2025-02-20",
+    (p.belenkov, p.fracaro, p.ferazzani, p.santi),
+    (p.mahdi),
+    [
+      Apportate modifiche richieste in RTB
+    ],
     "1.0.0",
     "2025-02-10",
     (p.fracaro),
