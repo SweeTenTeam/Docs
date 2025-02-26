@@ -851,48 +851,48 @@ Gli attori coinvolti nei casi d'uso sono:
 #pagebreak()
 === UC5, Modifica domanda
 
-  #figure(
-    image(ar.diagUC_modifica_domanda, width: 32em, fit: "contain"),
-    caption: "Diagramma UC5, Modifica domanda",
-  )
-        *Attori coinvolti*:
-    - Primari:
-      - #glossary("User") .
+#figure(
+  image(ar.diagUC_modifica_domanda, width: 32em, fit: "contain"),
+  caption: "Diagramma UC5, Modifica domanda",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User") .
 
-    *Precondizioni*
-    - L'interfaccia utente è pronta all'interazione con l'utente;
-    - L'utente ha già fatto una domanda, quindi c'è almeno un messaggio.
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente;
+- L'utente ha già fatto una domanda, quindi c'è almeno un messaggio.
 
-    *Postcondizioni*
-    - L'interfaccia utente viene aggiornata con la nuova domanda scritta dall'utente.
-    *Scenario principale*
-    - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
-    - L'utente scrive la propria domanda nel campo di input dedicato;
-    - L'utente si accorge di un errore o vuole modificare la domanda;
-    - L'utente schiaccia sull'icona di modifica e modifica la domanda;
-    - La vecchia domanda viene sostituita con quella nuova.
+*Postcondizioni*
+- L'interfaccia utente viene aggiornata con la nuova domanda scritta dall'utente.
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
+- L'utente scrive la propria domanda nel campo di input dedicato;
+- L'utente si accorge di un errore o vuole modificare la domanda;
+- L'utente schiaccia sull'icona di modifica e modifica la domanda;
+- La vecchia domanda viene sostituita con quella nuova.
 
 *User story associata*
-- "Come utente, voglio modificare la mia domanda per renderla più chiara o correggere un errore dopo averla  mandata."
+- "Come utente, voglio modificare la mia domanda per renderla più chiara o correggere un errore dopo averla mandata."
 
 #pagebreak()
 
 === UC6, visualizzazione UI
 
-  #figure(
-    image(ar.diagUC_seleziona_mod, width: 32em, fit: "contain"),
-    caption: "Diagramma UC6, visualizzazione UI",
-  )
-  *Attori coinvolti*:
-    - Primari:
-      - #glossary("User").
+#figure(
+  image(ar.diagUC_seleziona_mod, width: 32em, fit: "contain"),
+  caption: "Diagramma UC6, visualizzazione UI",
+)
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
 
 
-    *Precondizioni*
-    - La UI di #glossary("Buddybot") è funzionante e pronta per l'utilizzo;
-    
-    *Postcondizioni*
-    - Lo user visualizza la UI e tutte le funzionalità sono pronte all'uso.
+*Precondizioni*
+- La UI di #glossary("Buddybot") è funzionante e pronta per l'utilizzo;
+
+*Postcondizioni*
+- Lo user visualizza la UI e tutte le funzionalità sono pronte all'uso.
 
 *Scenario principale*
 - L'utente vuole visualizzare la UI di #glossary("Buddybot") e usare le sue funzionalità;
@@ -906,48 +906,48 @@ Gli attori coinvolti nei casi d'uso sono:
 - "Come utente voglio poter visualizzare e usare la UI di #glossary("Buddybot")".
 
 ===== UC6.1, Visualizzazione UI in modalità chiara
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User").
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
 
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
-  - La UI è in modalità scura.
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La UI è in modalità scura.
 
-  *Postcondizioni*
-  - L'interfaccia utente di #glossary("Buddybot") è visualizzata in modalità chiara.
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") è visualizzata in modalità chiara.
 
-  *Scenario principale*
-  - L'utente vuole visualizzare la UI in modalità chiara;
-  - L'utente usa il tasto per cambiare la modalità;
-  - La UI passa in modalità chiara.
-
-*User story associata*
-  - "Come utente, desidero visualizzare la UI in modalità chiara anziché scura".
-
-
-  ===== UC6.2, Visualizzazione UI in modalità scura
-  *Attori coinvolti*:
-  - Primari:
-    - #glossary("User").
-
-  *Precondizioni*
-  - L'interfaccia utente è pronta all'interazione con l'utente. 
-  - La UI è in modalità chiara.
-
-  *Postcondizioni*
-  - L'interfaccia utente di #glossary("Buddybot") è visualizzata in modalità scura.
-
-  *Scenario principale*
-  - L'utente vuole visualizzare la UI in modalità scura;
-  - L'utente usa il tasto per cambiare la modalità;
-  - La UI passa in modalità scura.
+*Scenario principale*
+- L'utente vuole visualizzare la UI in modalità chiara;
+- L'utente usa il tasto per cambiare la modalità;
+- La UI passa in modalità chiara.
 
 *User story associata*
-  - "Come utente, desidero visualizzare la UI in modalità scura anziché chiara".
+- "Come utente, desidero visualizzare la UI in modalità chiara anziché scura".
 
 
-=== UC7, Visualizzazione link - icona 
+===== UC6.2, Visualizzazione UI in modalità scura
+*Attori coinvolti*:
+- Primari:
+  - #glossary("User").
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La UI è in modalità chiara.
+
+*Postcondizioni*
+- L'interfaccia utente di #glossary("Buddybot") è visualizzata in modalità scura.
+
+*Scenario principale*
+- L'utente vuole visualizzare la UI in modalità scura;
+- L'utente usa il tasto per cambiare la modalità;
+- La UI passa in modalità scura.
+
+*User story associata*
+- "Come utente, desidero visualizzare la UI in modalità scura anziché chiara".
+
+
+=== UC7, Visualizzazione link - icona
 
 #figure(
   image(ar.diagUC_UI-icone-doc, width: 42em, fit: "contain"),
@@ -957,7 +957,7 @@ Gli attori coinvolti nei casi d'uso sono:
 - Utente
 
 *Precondizioni*
-- L'interfaccia utente è pronta all'interazione con l'utente. 
+- L'interfaccia utente è pronta all'interazione con l'utente.
 - La connessione a internet dev'essere attiva e funzionante.
 
 *Postcondizioni*
@@ -977,7 +977,7 @@ Gli attori coinvolti nei casi d'uso sono:
 - Utente
 
 *Precondizioni*
-- L'interfaccia utente è pronta all'interazione con l'utente. 
+- L'interfaccia utente è pronta all'interazione con l'utente.
 - La connessione a internet dev'essere attiva e funzionante.
 
 *Postcondizioni*
@@ -1098,55 +1098,90 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Capitolato],
     [Obbligatorio],
 
-    [*RF-002*], [L'utente deve poter visualizzare lo storico della chat], [UC1], [Obbligatorio],
+    [*RF-002*],
+    [Il sistema dove poter salvare le domande dell'utente e le risposte generate in un sistema di archiviazione persistente],
+    [UC1],
+    [Obbligatorio],
+
     [*RF-003*],
+    [L'utente deve poter visualizzare lo storico della chat in ordine cronologico inverso (dal più recente al più vecchio).],
+    [UC1],
+    [Obbligatorio],
+
+    [*RF-004*],
     [L'utente deve visualizzare un messaggio informativo che spiega che non ci sono messaggi nello storico],
     [UC1.1],
     [Obbligatorio],
 
-    [*RF-004*],
+    [*RF-005*],
     [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a recuperare lo storico],
     [UC1.2],
     [Obbligatorio],
 
-    [*RF-005*],
+    [*RF-006*],
     [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a connettersi],
     [UC1.3],
     [Obbligatorio],
 
-    [*RF-006*],
+    [*RF-007*],
     [L'utente deve visualizzare un messaggio di errore se il backend non è disponibile],
     [UC1.5],
     [Obbligatorio],
 
-    [*RF-007*],
-    [L'utente deve visualizzare per ogni messaggio: il contenuto, la data e ora di invio, e il mittente],
-    [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3],
+    [*RF-008*],
+    [L'utente deve visualizzare per ogni messaggio: il contenuto, la data e ora di invio],
+    [UC1.4, UC1.4.4, UC1.4.5],
     [Obbligatorio],
 
-    [*RF-008*], [L'utente deve poter scrivere una domanda in linguaggio naturale], [UC2], [Obbligatorio],
-    [*RF-009*], [L'utente deve poter inviare la domanda scritta al sistema], [UC3], [Obbligatorio],
+    [*RF-009*],
+    [L'utente deve visualizzare lo sfondo di un messaggio inviato da un utente di colore blu],
+    [UC1.4.1],
+    [Obbligatorio],
+
     [*RF-010*],
+    [L'utente deve visualizzare lo sfondo di un messaggio inviato da #glossary("Buddybot") di colore bianco],
+    [UC1.4.2],
+    [Obbligatorio],
+
+    [*RF-011*],
+    [L'utente deve visualizzare per ogni messaggio inviato da #glossary("Buddybot") la data e l'ora dell'ultimo aggiornamento dei dati usati per generare la risposta],
+    [UC1.4.3],
+    [Obbligatorio],
+
+    [*RF-012*], [L'utente deve poter scrivere una domanda in linguaggio naturale], [UC2], [Obbligatorio],
+    [*RF-013*], [L'utente deve poter inviare la domanda scritta al sistema], [UC3], [Obbligatorio],
+    [*RF-014*], [L'utente deve poter visualizzare la risposta generata da #glossary("Buddybot")], [UC3], [Obbligatorio],
+    [*RF-015*],
+    [L'utente deve essere informato se la domanda che ha posto non rientra nelle competenze specifiche del sistema tramite una risposta generata da #glossary("Buddybot")],
+    [UC3.4],
+    [Obbligatorio],
+
+    [*RF-016*],
+    [L'utente deve essere informato se i documenti richiesti nella domanda non sono disponibili all'interno del sistema tramite una risposta generata da #glossary("Buddybot")],
+    [UC3.5],
+    [Obbligatorio],
+
+    [*RF-017*],
     [L'utente deve poter visualizzare un messagio di errore se si è verificato un errore generico nella generazione della risposta da parte del #glossary("backend")],
     [UC3.1],
     [Obbligatorio],
 
-    [*RF-011*],
+    [*RF-018*],
     [L'utente deve poter visualizzare un messagio di errore se la risposta non è stata generata perchè supera la lunghezza massima consentita],
     [UC3.2],
     [Obbligatorio],
 
-    [*RF-012*],
+    [*RF-019*],
     [L'utente deve poter visualizzare un messagio di errore se la domanda supera la lunghezza massima consentita],
     [UC3.3],
     [Obbligatorio],
 
-    [*RF-013*],
-    [Il sistema deve elaborare la domanda dell'utente e generare una risposta appropriata],
+    [*RF-020*],
+    [Il sistema deve generare una risposta appropriata alla domanda posta dell'utente],
     [UC4],
     [Obbligatorio],
 
-    [*RF-014*],
+    [*RF-021*],
     [Il sistema deve recuperare da GitHub le seguenti informazioni:
       - Nome della repository
       - Descrizione della repository
@@ -1176,7 +1211,7 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [UC4, Capitolato],
     [Obbligatorio],
 
-    [*RF-015*],
+    [*RF-022*],
     [Il sistema deve recuperare da Confluence le seguenti informazioni:
       - Id di una pagina
       - Titolo di una pagina
@@ -1189,7 +1224,7 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [UC4, Capitolato],
     [Obbligatorio],
 
-    [*RF-016*],
+    [*RF-023*],
     [Il sistema deve recuperare da Jira le seguenti informazioni:
       - Nome (titolo) di un ticket
       - Assegnatario di un ticket
@@ -1206,38 +1241,55 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [UC4, Capitolato],
     [Obbligatorio],
 
-    [*RF-017*],
-    [Il sistema deve gestire le domande fuori contesto con una risposta appropriata],
+    [*RF-024*],
+    [Il sistema deve informare l'utente in caso di errore durante la generazione della risposta],
     [UC4.1],
     [Obbligatorio],
 
-    [*RF-018*],
-    [Il sistema deve informare l'utente in caso di errore durante la generazione della risposta],
+    [*RF-025*],
+    [Il sistema deve informare l'utente se la risposta supera la lunghezza massima consentita],
     [UC4.2],
     [Obbligatorio],
 
-    [*RF-019*],
-    [Il sistema deve informare l'utente se la risposta supera la lunghezza massima consentita],
-    [UC4.3],
-    [Obbligatorio],
-
-    [*RF-020*],
+    [*RF-026*],
     [Il sistema deve fornire la data e l'ora dell'ultimo aggiornamento dei dati utilizzati],
     [UC4],
     [Obbligatorio],
 
-    [*RF-021*],
+    [*RF-027*],
     [Il sistema deve aggiornare i dati dei documenti provenienti da GitHub, Confluence e Jira ogni 24 ore],
     [Capitolato],
     [Obbligatorio],
 
-    [*RF-xx*], [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso a una risorsa esterna, aprendo la pagina web associata in una nuova finestra o scheda del browser.], [UC7], [Opzionale],
+    [*RF-028*],
+    [Il sistema deve salvare i dati provenienti dalle fonti (Githbu, Jira, Confluence) in un database vettoriale],
+    [Verbale interno],
+    [Obbligatorio],
 
-    [*RF-xx*], [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Jira], [UC7.1], [Opzionale],
+    [*RF-029*],
+    [Il sistema deve convertire i dati provenienti dalle fonti (Githbu, Jira, Confluence) da forma testuale a forma vettoriale],
+    [Verbale interno],
+    [Obbligatorio],
 
-    [*RF-xx*], [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di GitHub], [UC7.2], [Opzionale],
+    [*RF-xx*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso a una risorsa esterna, aprendo la pagina web associata in una nuova finestra o scheda del browser.],
+    [UC7],
+    [Opzionale],
 
-    [*RF-xx*], [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence], [UC7.3], [Opzionale],
+    [*RF-xx*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Jira],
+    [UC7.1],
+    [Opzionale],
+
+    [*RF-xx*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di GitHub],
+    [UC7.2],
+    [Opzionale],
+
+    [*RF-xx*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence],
+    [UC7.3],
+    [Opzionale],
   ),
   caption: "Requisiti Funzionali",
 )
@@ -1275,12 +1327,12 @@ Come i requisiti funzionali, i requisiti di qualità seguono la struttura defini
   table(
     columns: (auto, auto, auto, auto),
     [Codice], [Descrizione], [Fonti], [Priorità],
-    [RQO-001], [Occorre realizzare e consegnare un documento di analisi dei requisiti con un diagramma dei casi d'uso in formato UML.], [Capitolato], [Obbligatorio],
-    [RQO-002], [Occorre realizzare e consegnare un documento denominato "Specifica Tecnica" che fornisce una visione dettagliata sulla architettura del sistema, i design pattern utilizzati, le tecnologie adottate e le scelte progettuali effettuate.], [Capitolato], [Obbligatorio],
-    [RQO-003], [Occorre che il codice sorgente sia presente in un singolo repository su Github accessibile all'azienda.], [Capitolato], [Obbligatorio],
-    [RQO-004], [Occorre usufruire di un sistema di bug reporting per segnalare e tracciare eventuali errori o malfunzionamenti riscontrati nell'applicazione.], [Capitolato], [Obbligatorio],
-    [RQO-005], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato], [Obbligatorio],
-    [RQO-006], [Occorre che sia assicurata una coverage di almeno 80% del codice, per garantire che la maggior parte delle funzionalità siano testate e prive di bug.], [Capitolato], [Obbligatorio], // da rivedere la percentuale con tullio
+    [RQ-001], [Occorre realizzare e consegnare un documento di analisi dei requisiti con un diagramma dei casi d'uso in formato UML.], [Capitolato], [Obbligatorio],
+    [RQ-002], [Occorre realizzare e consegnare un documento denominato "Specifica Tecnica" che fornisce una visione dettagliata sulla architettura del sistema, i design pattern utilizzati, le tecnologie adottate e le scelte progettuali effettuate.], [Capitolato], [Obbligatorio],
+    [RQ-003], [Occorre che il codice sorgente sia presente in un singolo repository su Github accessibile all'azienda.], [Capitolato], [Obbligatorio],
+    [RQ-004], [Occorre usufruire di un sistema di bug reporting per segnalare e tracciare eventuali errori o malfunzionamenti riscontrati nell'applicazione.], [Capitolato], [Obbligatorio],
+    [RQ-005], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato], [Obbligatorio],
+    [RQ-006], [Occorre che sia assicurata una coverage di almeno 80% del codice, per garantire che la maggior parte delle funzionalità siano testate e prive di bug.], [Capitolato], [Obbligatorio], // da rivedere la percentuale con tullio
   ),
   caption: "Requisiti di Qualità",
 )
@@ -1315,14 +1367,25 @@ Anche i requisiti di vincolo seguono la struttura del #link(<requisiti>, "Capito
   table(
     columns: (auto, auto, auto, auto),
     [Codice], [Descrizione], [Fonti], [Priorità],
-    [RVO-001], [Occorre che l'applicazione venga sviluppata suddividendola in frontend e backend], [Capitolato], [Obbligatorio],
-    [RVO-002], [Occorre che l'applicazione sia compatibile con la versione 135.0 di Firefox, che è l'ultima disponibile al momento della stesura di questo documento, e che quindi sia accessibile da ogni sistema operativo che supporta Firefox], [Capitolato], [Obbligatorio],
-    [RVO-003], [Occorre che l'applicazione sia compatibile con la versione 134.0.6998.23 di Google Chrome, che è l'ultima disponibile al momento della stesura di questo documento, e che quindi sia accessibile da ogni sistema operativo che supporta Chrome], [Capitolato], [Obbligatorio],
-    //[RVO-004], [Occorre che l'applicazione sia compatibile con la versione 22H2 di Windows 10, che è l'ultima disponibile al momento della stesura di questo documento], [Capitolato], [Obbligatorio],
-    [RVD-001], [Occorre usare NestJS], [Capitolato], [Desiderabile],
-    [RVD-002], [Occorre usare Langchain], [Capitolato], [Desiderabile],
-    [RVD-003], [Occorre usare OpenAI], [Capitolato], [Desiderabile],
-    [RVD-004], [Occorre usare Angular], [Capitolato], [Desiderabile],
+    [RV-001],
+    [Occorre che l'applicazione venga sviluppata suddividendola in frontend e backend],
+    [Capitolato],
+    [Obbligatorio],
+
+    [RV-002],
+    [Occorre che l'applicazione sia compatibile con la versione 135.0 di Firefox, che è l'ultima disponibile al momento della stesura di questo documento, e che quindi sia accessibile da ogni sistema operativo che supporta Firefox],
+    [Verbale interno],
+    [Obbligatorio],
+
+    [RV-003],
+    [Occorre che l'applicazione sia compatibile con la versione 134.0.6998.23 di Google Chrome, che è l'ultima disponibile al momento della stesura di questo documento, e che quindi sia accessibile da ogni sistema operativo che supporta Chrome],
+    [Verbale interno],
+    [Obbligatorio],
+
+    [RV-004], [Occorre usare NestJS], [Capitolato], [Desiderabile],
+    [RV-005], [Occorre usare Langchain], [Capitolato], [Desiderabile],
+    [RV-006], [Occorre usare OpenAI], [Capitolato], [Desiderabile],
+    [RV-007], [Occorre usare Angular], [Capitolato], [Desiderabile],
   ),
   caption: "Requisiti di Vincolo",
 )
@@ -1356,37 +1419,50 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [Fonte], [Requisito],
     [Capitolato], [RF-001],
     [UC1], [RF-002],
-    [UC1.1], [RF-003],
-    [UC1.2], [RF-004],
-    [UC1.3], [RF-005],
-    [UC1.5], [RF-006],
-    [UC1.4, UC1.4.1, UC1.4.2, UC1.4.3], [RF-007],
-    [UC2], [RF-008],
-    [UC3], [RF-009],
-    [UC3.1], [RF-010],
-    [UC3.2], [RF-011],
-    [UC3.3], [RF-012],
-    [UC4], [RF-013],
-    [UC4, Capitolato], [RF-014],
-    [UC4, Capitolato], [RF-015],
-    [UC4, Capitolato], [RF-016],
-    [UC4.1], [RF-017],
-    [UC4.2], [RF-018],
-    [UC4.3], [RF-019],
+    [UC1], [RF-003],
+    [UC1.1], [RF-004],
+    [UC1.2], [RF-005],
+    [UC1.3], [RF-006],
+    [UC1.5], [RF-007],
+    [UC1.4, UC1.4.4, UC1.4.5], [RF-008],
+    [UC1.4.1], [RF-009],
+    [UC1.4.2], [RF-010],
+    [UC1.4.3], [RF-011],
+    [UC2], [RF-012],
+    [UC3], [RF-013],
+    [UC3], [RF-014],
+    [UC3.4], [RF-015],
+    [UC3.5], [RF-016],
+    [UC3.1], [RF-017],
+    [UC3.2], [RF-018],
+    [UC3.3], [RF-019],
     [UC4], [RF-020],
-    [Capitolato], [RF-021],
-    [Capitolato], [RQO-001],
-    [Capitolato], [RQO-002],
-    [Capitolato], [RQO-003],
-    [Capitolato], [RQO-004],
-    [Capitolato], [RVO-001],
-    [Capitolato], [RVO-002],
-    [Capitolato], [RVO-003],
-    [Capitolato], [RVO-004],
-    [Capitolato], [RVD-001],
-    [Capitolato], [RVD-002],
-    [Capitolato], [RVD-003],
-    [Capitolato], [RVD-004],
+    [UC4, Capitolato], [RF-021],
+    [UC4, Capitolato], [RF-022],
+    [UC4, Capitolato], [RF-023],
+    [UC4.1], [RF-024],
+    [UC4.2], [RF-025],
+    [UC4], [RF-026],
+    [Capitolato], [RF-027],
+    [Verbale interno], [RF-028],
+    [Verbale interno], [RF-029],
+    [Capitolato], [RQ-001],
+    [Capitolato], [RQ-002],
+    [Capitolato], [RQ-003],
+    [Capitolato], [RQ-004],
+    [Capitolato], [RQ-005],
+    [Capitolato], [RQ-006],
+    [Capitolato], [RV-001],
+    [Capitolato], [RV-002],
+    [Capitolato], [RV-003],
+    [Capitolato], [RV-004],
+    [Capitolato], [RV-001],
+    [Capitolato], [RV-002],
+    [Capitolato], [RV-003],
+    [Capitolato], [RV-004],
+    [Capitolato], [RV-005],
+    [Capitolato], [RV-006],
+    [Capitolato], [RV-007],
   ),
   caption: "Tracciamento",
 )
