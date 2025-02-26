@@ -22,6 +22,7 @@
   diagUC_ask_user-ui: "/images/analisi-dei-requisiti/UC0_ask_User-UI.png",
   diagUC_elab_domanda: "/images/analisi-dei-requisiti/UC_elab_domanda.png",
   diacUC_inserimento_domanda: "/images/analisi-dei-requisiti/UC_inserimento_domanda.png",
+  diagUC_UI-icone-doc: "/images/analisi-dei-requisiti/UC_Icon-UI_Docs.png",
 )
 
 // tecnologie per AdR
