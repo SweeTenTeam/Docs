@@ -903,6 +903,92 @@ Gli attori coinvolti nei casi d'uso sono:
 
 #pagebreak()
 
+=== UC7, Visualizzazione link - icona 
+
+#figure(
+  image(ar.diagUC_UI-icone-doc, width: 42em, fit: "contain"),
+  caption: "Diagramma UC7, Visualizzazione link - icone",
+)
+*Attori coinvolti*
+- Utente
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente. 
+- La connessione a internet dev'essere attiva e funzionante.
+
+*Postcondizioni*
+- L'utente viene reindirizzato a una nuova pagina web corrispondente al link associato all'icona selezionata, aperta in una nuova finestra o scheda del browser.
+
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("BuddyBot")
+- Il sistema mostra una o più icone che fungono da link verso risorse esterne
+- L'utente individua e clicca sull'icona desiderata
+- L'utente viene reindirizzato su un'altra pagina web associata all'icona
+
+*User story associata*
+- "Come utente, voglio poter visualizzare e cliccare su icone che fungono da link verso risorse esterne in maniera tale da poter essere reindirizzato alla pagina web associata in una nuova finestra o scheda del browser."
+
+==== UC7.1, Visualizzazione link - icona Jira
+*Attori coinvolti*
+- Utente
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente. 
+- La connessione a internet dev'essere attiva e funzionante.
+
+*Postcondizioni*
+- La pagina web della documentazione di #glossary("Jira") associata all'icona è aperta in una nuova finestra o scheda del browser.
+
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("BuddyBot")
+- Il sistema mostra l'icona relativa alla documentazione di Jira
+- L'utente posiziona il cursore su tale icona e la clicca
+- L'utente viene reindirizzato alla pagina web di documentazione associata all'icona di #glossary("Jira"), aperta in una nuova finestra o scheda del browser.
+
+*User story associata*
+- "Come utente, voglio cliccare sull'icona di Jira presente nell'interfaccia del #glossary("chatbot") per aprire la documentazione in una nuova scheda o finestra, così da poter consultare facilmente le informazioni necessarie."
+
+==== UC7.2, Visualizzazione link - icona GitHub
+*Attori coinvolti*
+- Utente
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La connessione a internet dev'essere attiva e funzionante.
+
+*Postcondizioni*
+- La pagina web della documentazione di #glossary("GitHub") associata all'icona è aperta in una nuova finestra o scheda del browser.
+
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("BuddyBot")
+- Il sistema mostra l'icona relativa alla documentazione di GitHub
+- L'utente posiziona il cursore su tale icona e la clicca
+- L'utente viene reindirizzato alla pagina web di documentazione associata all'icona di #glossary("GitHub"), aperta in una nuova finestra o scheda del browser.
+
+*User story associata*
+- "Come utente, voglio cliccare sull'icona di GitHub presente nell'interfaccia del #glossary("chatbot") per aprire la documentazione in una nuova scheda o finestra, così da poter consultare facilmente le informazioni necessarie."
+
+==== UC7.3, Visualizzazione link - icona Confluence
+*Attori coinvolti*
+- Utente
+
+*Precondizioni*
+- L'interfaccia utente è pronta all'interazione con l'utente.
+- La connessione a internet dev'essere attiva e funzionante.
+
+*Postcondizioni*
+- La pagina web della documentazione di #glossary("Confluence") associata all'icona è aperta in una nuova finestra o scheda del browser.
+
+*Scenario principale*
+- L'utente accede all'interfaccia di #glossary("BuddyBot")
+- Il sistema mostra l'icona relativa alla documentazione di Confluence
+- L'utente posiziona il cursore su tale icona e la clicca
+- L'utente viene reindirizzato alla pagina web di documentazione associata all'icona di #glossary("Confluence"), aperta in una nuova finestra o scheda del browser.
+
+*User story associata*
+- "Come utente, voglio cliccare sull'icona di Confluence presente nell'interfaccia del #glossary("chatbot") per aprire la documentazione in una nuova scheda o finestra, così da poter consultare facilmente le informazioni necessarie."
+
+#pagebreak()
 
 
 = Requisiti <requisiti>
@@ -1100,6 +1186,14 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Il sistema deve aggiornare i dati dei documenti provenienti da GitHub, Confluence e Jira ogni 24 ore],
     [Capitolato],
     [Obbligatorio],
+
+    [*RF-xx*], [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso a una risorsa esterna, aprendo la pagina web associata in una nuova finestra o scheda del browser.], [UC7], [Opzionale],
+
+    [*RF-xx*], [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Jira], [UC7.1], [Opzionale],
+
+    [*RF-xx*], [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di GitHub], [UC7.2], [Opzionale],
+
+    [*RF-xx*], [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence], [UC7.3], [Opzionale],
   ),
   caption: "Requisiti Funzionali",
 )
