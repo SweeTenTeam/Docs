@@ -1185,17 +1185,17 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Obbligatorio],
 
     [*RF-017*],
-    [L'utente deve poter visualizzare un messagio di errore se si è verificato un errore generico nella generazione della risposta da parte del #glossary("backend")],
+    [L'utente deve poter visualizzare un messaggio di errore se si è verificato un errore generico nella generazione della risposta da parte del #glossary("backend")],
     [UC3.1],
     [Obbligatorio],
 
     [*RF-018*],
-    [L'utente deve poter visualizzare un messagio di errore se la risposta non è stata generata perchè supera la lunghezza massima consentita],
+    [L'utente deve poter visualizzare un messaggio di errore se la risposta non è stata generata perchè supera la lunghezza massima consentita],
     [UC3.2],
     [Obbligatorio],
 
     [*RF-019*],
-    [L'utente deve poter visualizzare un messagio di errore se la domanda supera la lunghezza massima consentita],
+    [L'utente deve poter visualizzare un messaggio di errore se la domanda supera la lunghezza massima consentita],
     [UC3.3],
     [Obbligatorio],
 
@@ -1347,7 +1347,7 @@ Come i requisiti funzionali, i requisiti di qualità seguono la struttura defini
     columns: (auto, auto, auto, auto),
     [Codice], [Descrizione], [Fonti], [Priorità],
     [RQ-001], [Occorre realizzare e consegnare un documento di analisi dei requisiti con un diagramma dei casi d'uso in formato UML.], [Capitolato], [Obbligatorio],
-    [RQ-002], [Occorre realizzare e consegnare un documento denominato "Specifica Tecnica" che fornisce una visione dettagliata sulla architettura del sistema, i design pattern utilizzati, le tecnologie adottate e le scelte progettuali effettuate.], [Capitolato], [Obbligatorio],
+    [RQ-002], [Occorre realizzare e consegnare un documento denominato "Specifica Tecnica" che fornisce una visione dettagliata riguardante l'architettura del sistema, i design pattern utilizzati, le tecnologie adottate e le scelte progettuali effettuate.], [Capitolato], [Obbligatorio],
     [RQ-003], [Occorre che il codice sorgente sia presente in un singolo repository su Github accessibile all'azienda.], [Capitolato], [Obbligatorio],
     [RQ-004], [Occorre usufruire di un sistema di bug reporting per segnalare e tracciare eventuali errori o malfunzionamenti riscontrati nell'applicazione.], [Capitolato], [Obbligatorio],
     [RQ-005], [Occorre che venga creata una suite di test automatizzati per garantire il corretto funzionamento del codice], [Capitolato], [Obbligatorio],
