@@ -1,4 +1,4 @@
-#import "@preview/tablex:0.0.8": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
+#import "@preview/tablex:0.0.9": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
 #import "@preview/codelst:2.0.1": sourcecode
 #import "@preview/cetz:0.2.0": *
 //variables for cover
@@ -10,6 +10,7 @@
   docs: "docs",
   logo: "/images/logos/sweetenteam.png",
   azzurro: "/images/logos/AzzurroDigitale-logo.png",
+  buddy: "/images/logos/buddy.png",
   unipd: "/images/logos/Universita_Padova_transparent.png",
 )
 
@@ -23,7 +24,7 @@
   diagUC_elab_domanda: "/images/analisi-dei-requisiti/UC_elab_domanda.png",
   diacUC_inserimento_domanda: "/images/analisi-dei-requisiti/UC_inserimento_domanda.png",
   diagUC_UI-icone-doc: "/images/analisi-dei-requisiti/UC_Icon-UI_Docs.png",
-  diagUC_modifica_domanda:"/images/analisi-dei-requisiti/UC_modifica_domanda.png",
+  diagUC_modifica_domanda: "/images/analisi-dei-requisiti/UC_modifica_domanda.png",
   diagUC_seleziona_mod: "/images/analisi-dei-requisiti/UC_seleziona_mod.png",
   diagUC_chatbot_mess: "/images/analisi-dei-requisiti/UC_mess_chat.png",
   diagUC_user_mess: "/images/analisi-dei-requisiti/UC_user_mess.png",
@@ -109,6 +110,7 @@
 
 //docs
 #let d = (
+  AdR: "https://sweetenteam.github.io/pdf/documentazione_esterna/rtb/Analisi_dei_Requisiti_v1.1.0.pdf",
   vGlossario: "v1.0",
   PdQ: "https://sweetenteam.github.io/pdf/documentazione_esterna/rtb/Piano_di_Qualifica_v1.0.0.pdf",
   NdP: "https://sweetenteam.github.io/pdf/documentazione_interna/rtb/Norme_di_Progetto_v1.0.0.pdf",
