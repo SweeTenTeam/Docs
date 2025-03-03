@@ -65,7 +65,7 @@ Per evitare ambiguità e incomprensione riguardanti la terminologia tecnica util
 
 === Riferimenti Tecnici
 
-- Dpocumentazione ufficiale Typescript: #link("https://www.typescriptlang.org/", "Typescript");
+- Documentazione ufficiale Typescript: #link("https://www.typescriptlang.org/", "Typescript");
 - Documentazione ufficiale Langchain: #link("https://langchain.io/", "Langchain");
 - Documentazione ufficiale NodeJs: #link("https://nodejs.org/", "Node.js");
 - Documentazione ufficiale NestJs: #link("https://nestjs.com/", "Nest.js");
