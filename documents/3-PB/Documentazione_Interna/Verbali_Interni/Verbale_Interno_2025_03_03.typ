@@ -10,7 +10,7 @@
     "0.1",
     "2025-03-08",
     (p.belenkov),
-    (p.blank),
+    (p.mahdi),
     "Stesura del verbale",
   ),
 )
