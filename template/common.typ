@@ -1,4 +1,4 @@
-#import "@preview/tablex:0.0.8": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
+#import "@preview/tablex:0.0.9": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
 #import "@preview/codelst:2.0.1": sourcecode
 #import "@preview/cetz:0.2.0": *
 //variables for cover
