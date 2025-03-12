@@ -7,6 +7,13 @@
     p.cardin,
   ),
   changelog: (
+    "1.0",
+    "2025-03-12",
+    (p.campagnaro),
+    (p.fracaro),
+    [
+      Approvazione Documento
+    ],
     "0.1",
     "2025-03-12",
     (p.campagnaro),
