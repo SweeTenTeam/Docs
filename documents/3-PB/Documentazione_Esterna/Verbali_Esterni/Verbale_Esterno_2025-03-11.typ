@@ -25,7 +25,7 @@
 - *Ora di inizio*: 17:00;
 - *Ora di fine*: 17:40;
 - *Partecipanti*: #p.belenkov, #p.benedetti, #p.campagnaro, #p.ferazzani, #p.fracaro, #p.mahdi, #p.santi.
-- *Partecipanti Esterni*: Nicola Boscaro, Martina Daniele.
+- *Partecipanti Esterni*: Nicola Boscaro.
 
 == Ordine del giorno
 
