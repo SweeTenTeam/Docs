@@ -1,7 +1,7 @@
 #import "/template/document.typ": *
 
 #show: project.with(
-  title: "Verbale interno del 2025-02-07",
+  title: "Verbale interno del 2025-02-24",
   recipients: (
     p.vardanega,
     p.cardin,
