@@ -41,7 +41,7 @@ Il team ha presentato a #p.azzurro:
 - Presentazione della pianificazione per il prossimo periodo.
 
 = Sintesi dell'incontro
-Durante l'incontro, il team ha affrontato diversi aspetti fondamentali del progetto. È stata presentata l'architettura aggiornata dell’#glossary("MVP"), integrando le scelte effettuate nel periodo precedente, insieme alla prima implementazione e alla struttura del #glossary("frontend"). Inoltre, sono stati illustrati nel dettaglio i microservizi progettati: *`Storico Chat`*, *`API Gateway`*, *`DB Vettoriale`* e *`Fetch Informazioni`*.
+Durante l'incontro, il team ha affrontato diversi aspetti fondamentali del progetto. È stata presentata l'architettura aggiornata dell'#glossary("MVP"), integrando le scelte effettuate nel periodo precedente, insieme alla prima implementazione e alla struttura del #glossary("frontend"). Inoltre, sono stati illustrati nel dettaglio i microservizi progettati: *`Storico Chat`*, *`API Gateway`*, *`DB Vettoriale`* e *`Fetch Informazioni`*.
 
 Durante la discussione, sono stati posti alcuni quesiti relativi alle scelte progettuali, ai quali sono seguiti chiarimenti e riscontri che hanno confermato la solidità delle decisioni adottate. Il confronto ha permesso di approfondire diversi aspetti del lavoro svolto, offrendo spunti utili per eventuali miglioramenti. Infine, è stata presentata la pianificazione per il prossimo periodo, con una chiara definizione delle attività future e degli obiettivi da raggiungere.
 
