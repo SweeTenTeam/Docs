@@ -170,4 +170,29 @@ Next.js è un framework per la creazione di applicazioni web in React. Il team h
 = Analisi
 // TO BE REVIEWED
 
+= Architectura di sistema
+//aggiungere microservizi
+
+
+== Architettura frontend
+Per la parte di frontend, il team ha utilizzato #glossary("Next.Js"), framework basato su React, per la creazione di pagine web. Next.Js è stato scelto per la sua facilità d'uso e per la sua scalabilità. Inoltre, il team ha utilizzato #glossary("TailwindCSS") per la creazione di interfacce utente. TailwindCSS è stato scelto per la sua facilità d'uso e per la sua documentazione dettagliata, oltre che per la semplificazione della specificità di CSS base.
+
+La scelta di tali tecnologie ha portato il team ad uno sviluppo a componenti del frontend. Saranno questi poi a comporre la struttura della web app. L'approccio a componenti, tipico di React, permette una maggiore modularità e scalabilità del codice, oltre che ad una maggiore facilità di manutenzione, evitando di avere tutto il codice in una singola pagina.
+
+BuddyBot è una #glossary("SPA"), ovvero una Single Page Application, che permette di avere una sola pagina web che viene caricata una sola volta e che viene aggiornata dinamicamente senza dover ricaricare la pagina. Questo permette di avere una maggiore velocità di caricamento e di navigazione all'interno della web app. Inoltre, essendo un ChatBot, non vi era la necessità di avere più di una pagina, anche se il team ha previsto la possibilità di aggiungere nuove pagine in futuro.
+
+Come detta lo standard di `Next.JS`, la pagina principale è `page.tsx`, che contiene la struttura base della web app. All'interno di questa pagina, vengono poi importati i vari componenti che compongono la web app. I componenti principali sono:
+
+- `Header.tsx`;
+- `Navbar.tsx`; //inserire foto navbar
+- `Switch.tsx`; //inserire foto swtich
+- `ChatWindow.tsx`; //inserire foto chatwindow
+- `InputForm.tsx`; //inserire foto chatqa
+- `Chat.tsx`; //inserire foto chat
+- `ChatQA.tsx`; //inserire foto chatqa
+- `Bubble.tsx`; //inserire foto bubble
+- `LoadChat.tsx`; //inserire foto
+- `LoadMessage.tsx`; //inserire foto
+- `ErrorAlert.tsx`; //inserire foto
+
 
