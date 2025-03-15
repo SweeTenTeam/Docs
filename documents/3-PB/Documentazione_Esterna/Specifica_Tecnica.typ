@@ -4,6 +4,13 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.0.2",
+    "2025-03-15",
+    (p.ferazzani),
+    (p.blank),
+    [
+      Aggiunta sezione "Architettura frontend"
+    ],
     "0.0.1",
     "2025-02-27",
     (p.ferazzani),
