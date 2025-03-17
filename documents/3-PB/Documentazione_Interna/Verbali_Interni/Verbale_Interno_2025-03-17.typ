@@ -10,7 +10,7 @@
     "0.1",
     "2025-03-17",
     (p.benedetti),
-    (p.campagnaro),
+    (p.belenkov),
     "Stesura del verbale",
   ),
 )
