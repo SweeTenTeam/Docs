@@ -7,6 +7,13 @@
     p.cardin,
   ),
   changelog: (
+    "0.2",
+    "2025-03-19",
+    (p.benedetti),
+    (p.belenkov),
+    [
+      Lievi modifiche
+    ],
     "0.1",
     "2025-03-19",
     (p.benedetti),
@@ -32,9 +39,8 @@
 Il team ha presentato a #p.azzurro:
 
 - Progettazione nel dettaglio del microservizio *`Chatbot`*;
-- Una demo dell'implementazione del microservizio riguardante il #glossary("frontend");
+- Una demo dell'implementazione del #glossary("frontend");
 - Una demo dell'implementazione del microservizio riguardante lo *`storico della chat`*;
-- Una demo dell'implementazione del microservizio riguardante il *`fetch delle informazioni`*;
 - Una demo dell'implementazione del microservizio riguardante il *`DB Vettoriale`*;
 - Presentazione della pianificazione delle attività per il prossimo periodo.
 
