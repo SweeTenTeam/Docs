@@ -7,8 +7,8 @@
     p.cardin,
   ),
   changelog: (
-    "0.3",
-    "2025-03-25",
+    "1.0",
+    "2025-03-19",
     (p.benedetti),
     (p.belenkov),
     [
