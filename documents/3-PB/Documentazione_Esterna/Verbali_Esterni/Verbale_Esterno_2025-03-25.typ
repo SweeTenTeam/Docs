@@ -21,23 +21,23 @@
 
 == Informazioni sulla riunione
 
-Luogo: Riunione su Google Meet;
+- Luogo: Riunione su Google Meet;
 
-Ora di inizio: 17:00;
+- Ora di inizio: 17:00;
 
-Ora di fine: 17:10;
+- Ora di fine: 17:10;
 
-Partecipanti: #p.belenkov, #p.benedetti, #p.ferazzani, #p.fracaro, #p.mahdi.
+- Partecipanti: #p.belenkov, #p.benedetti, #p.ferazzani, #p.fracaro, #p.mahdi.
 
-Partecipanti Esterni: Nicola Boscaro, Martina Daniele.
+- Partecipanti Esterni: Nicola Boscaro, Martina Daniele.
 
 == Ordine del giorno
 
 Il team ha presentato a #p.azzurro:
 
-Elenco delle attività svolte in questo periodo,
+- Elenco delle attività svolte in questo periodo,
 
-Presentazione della pianificazione delle attività per il prossimo periodo.
+- Pianificazione per il prossimo periodo.
 
 == Sintesi dell'incontro
 
@@ -45,14 +45,14 @@ L'incontro è stato breve. Il team ha presentato le attività svolte e quelle da
 
 == Prossimi step
 
-Unione dei microservizi,
+- Unione dei microservizi,
 
-Fare i test di sistema,
+- Fare i test di sistema,
 
-Continuare la documentazione mancante.
+- Continuare la documentazione mancante.
 
 == Decisioni prese
 
-Aggiunta di altri due incontri settimanali,
+- Aggiunta di altri due incontri settimanali,
 
-Aggiunta del paragrafo sui #glossary("webhook") nel documento #glossary("Specifica tecnica").
+- Aggiunta del paragrafo sui #glossary("webhook") nel documento #glossary("Specifica tecnica").
