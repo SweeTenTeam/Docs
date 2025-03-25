@@ -7,6 +7,13 @@
     p.cardin,
   ),
   changelog: (
+    "0.3",
+    "2025-03-25",
+    (p.benedetti),
+    (p.belenkov),
+    [
+      Approvazione Documento
+    ],
     "0.2",
     "2025-03-19",
     (p.benedetti),
