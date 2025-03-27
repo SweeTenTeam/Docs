@@ -7,6 +7,20 @@
     p.cardin,
   ),
   changelog: (
+    "1.0",
+    "2025-03-27",
+    (p.mahdi),
+    (p.fracaro),
+    [
+      Approvazione Documento
+    ],
+    "0.2",
+    "2025-03-27",
+    (p.mahdi),
+    (p.fracaro),
+    [
+      Piccole modifiche 
+    ],
     "0.1",
     "2025-03-25",
     (p.mahdi),
@@ -41,7 +55,7 @@ Il team ha presentato a #p.azzurro:
 
 == Sintesi dell'incontro
 
-L'incontro è stato breve. Il team ha presentato le attività svolte e quelle da svolgere nel prossimo periodo. È stato fatto notare dai membri dell'azienda che gli incontri settimanali pianificati sono terminati e che si doveva capire se fosse necessario organizzarne altri. Il team ha domandato se fosse necessario includere una sezione sui #glossary("webhook") nella documentazione tecnica.
+L'incontro è stato breve. Il team ha presentato le attività svolte e quelle da svolgere nel prossimo periodo. È stato fatto notare dai membri dell'azienda che gli incontri settimanali pianificati sono terminati e che si doveva capire se fosse necessario organizzarne altri. Il team ha domandato se fosse necessario includere una sezione sui #glossary("webhook") nella documentazione tecnica, anche se non sarà possibile la loro implementazione concreta nell'MVP.
 
 == Prossimi step
 
@@ -53,6 +67,6 @@ L'incontro è stato breve. Il team ha presentato le attività svolte e quelle da
 
 == Decisioni prese
 
-- Aggiunta di altri due incontri settimanali,
+- Aggiunta di altri due incontri settimanali per i martedì 01/04/2025 e 08/04/2025,
 
 - Aggiunta del paragrafo sui #glossary("webhook") nel documento #glossary("Specifica tecnica").
