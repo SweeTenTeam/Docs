@@ -1023,8 +1023,8 @@ Al termine del quinto periodo è emerso un lieve scostamento tra i costi previst
 *Giorni di ritardo*: #neg(0);\
 
 ==== Pianificazione
-Durante le due settimane del sesto sprint, il team si dedicherà al completamento e controllo dei vari file in preparazione alla revisione #glossary("RTB"),  inoltre, saranno fatte le presentazioni per gli incontri con i professori per la revisione #glossary("RTB").
-Inoltre, la riunione prevista con #box(image(g.azzurro, width: 5em, height: auto)) per discutere dell'#glossary("MVP") è stata spostata all'utimo giorno dello sprint per avere l'esisto delle revisionie e preparare una presentazione per l'#glossary("MVP").
+Durante le due settimane del sesto #glossary("sprint"), il team si dedicherà al completamento e controllo dei vari file in preparazione alla revisione #glossary("RTB") e saranno fatte le presentazioni per gli incontri con i professori per la revisione #glossary("RTB").
+Inoltre, la riunione prevista con #box(image(g.azzurro, width: 5em, height: auto)) per discutere dell'#glossary("MVP") è stata spostata all'utimo giorno dello sprint per avere l'esisto delle revisionie e preparare una presentazione sull'architettura scelta per l'#glossary("MVP").
 
 ==== Rischi attesi
 I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
