@@ -636,7 +636,11 @@ Il `Reducer` e gli `Adapters` invece:
 
 Questi file sono utilizzati per gestire la logica della chat e per adattare i dati ricevuti dalle API in modo che possano essere utilizzati all'interno della web app.
 
-//Spiegazione flow ChatWindow -> Chat -> ChatQA -> Bubble
+#figure(
+  image(spc.uml, width: 100%, height: auto),
+  caption: "Diagramma UML dell'architettura di frontend",
+)
+
 
 
 
