@@ -36,7 +36,7 @@ Durante questa riunione interna, ogni membro del gruppo ha condiviso il lavoro s
 Il team ha discusso una scelta fatta durante la progettazione riguardante l'uso degli UUID per identificare le #glossary("Chat") nel database e la possibilità di modificare questa scelta usando un id incrementale per semplificare le operazioni di estrazione e salvataggio delle #glossary("Chat"). Per questioni di sicurezza esposte da un membro del gruppo è stato deciso di tenere gli UUID.
 
 = Discussione tecnica sullo scheduler per il fetch.
-Dialogo aperto tra i membri del gruppo su dove fosse più convegniente posizionare lo scheduler per il fetch delle informazioni, tenendo conto del fatto che la date dell'ultimo fetch deve essere salvata da qualche parte e aggiunta alla risposta del #glossary("Chatbot"). Nonostante ci siano state proposte convincenti è stato deciso di riparlarne all'incontro successivo e di concentrarsi su compiti più importanti, in quanto questa scelta non causa grandi modifiche alla progettazione o al codice già scritto.
+Dialogo aperto tra i membri del gruppo su dove fosse più conveniente posizionare lo scheduler per il fetch delle informazioni, tenendo conto del fatto che la date dell'ultimo fetch deve essere salvata da qualche parte e aggiunta alla risposta del #glossary("Chatbot"). Nonostante ci siano state proposte convincenti è stato deciso di riparlarne all'incontro successivo e di concentrarsi su compiti più importanti, in quanto questa scelta non causa grandi modifiche alla progettazione o al codice già scritto.
 
 = Decisioni prese
 - Tenere UUID per questioni di sicurezza;
