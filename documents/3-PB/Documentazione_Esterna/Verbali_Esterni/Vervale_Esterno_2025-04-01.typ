@@ -8,9 +8,9 @@
   ),
   changelog: (
     "0.1",
-    "2025-04-01",
+    "2025-04-02",
     (p.santi),
-    (p.fracaro),
+    (p.ferazzani),
     [
       Stesura verbale
     ],
