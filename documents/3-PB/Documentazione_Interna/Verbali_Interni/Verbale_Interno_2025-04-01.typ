@@ -1,16 +1,16 @@
 #import "/template/document.typ": *
 
 #show: project.with(
-  title: "Verbale interno del 2025-03-17",
+  title: "Verbale interno del 2025-04-01",
   recipients: (
     p.vardanega,
     p.cardin,
   ),
   changelog: (
     "0.1",
-    "2025-04-01",
+    "2025-04-02",
     (p.santi),
-    (p.belenkov),
+    (p.ferazzani),
     "Stesura del verbale",
   ),
 )
@@ -31,7 +31,7 @@
 = Analisi di avanzamento MVP, unione Microservizi
 La riunione si è aperta con la presentazione del ChatBot: per la prima volta, l'intero gruppo ha potuto osservare sincronamente un prodotto in gran parte funzionante, avviando così una discussione sui possibili interventi migliorativi. Sono emersi diversi spunti di riflessione e confronto, in particolare riguardo a:
 - una gestione degli errori corretta e soddisfacente (#glossary("Error Handling"))
-- l'implementazione di uno scheduler per il #glossary("Retrival periodico")
+- l'implementazione di uno scheduler per il #glossary("Retrieval periodico")
   - conseguente display nella #glossary("UI") dell'ultimo aggiornamento delle informazioni
 Questa analisi si è conclusa con la risoluzione di alcuni piccoli errori, sfruttando le competenze di ogni membro del team e il momento sincrono per collaborare in modo efficace.
 
