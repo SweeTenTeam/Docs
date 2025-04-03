@@ -178,7 +178,7 @@ Next.js è un framework per la creazione di applicazioni web in React. Il team h
 
 == Approccio alla Progettazione
 
-La progettazione dell'architettura di sistema di _BuddyBot_ è stata condotta secondo un approccio _top-down_, come indicato nelle Norme di Progetto. Questo metodo ha permesso di definire inizialmente i macro-componenti del sistema, garantendo una visione chiara e coerente sin dalle prime fasi. Successivamente, si è passati a un raffinamento progressivo delle specifiche dei singoli moduli e componenti, assicurando che ciascuno fosse progettato in modo modulare e scalabile. Tale approccio ha facilitato la suddivisione delle responsabilità tra i membri del team, migliorando la tracciabilità delle decisioni progettuali.
+La progettazione dell'architettura di sistema di _BuddyBot_ è stata condotta secondo un approccio _top-down_. Questo metodo ha permesso di definire inizialmente i macro-componenti del sistema, garantendo una visione chiara e coerente sin dalle prime fasi. Successivamente, si è passati a un raffinamento progressivo delle specifiche dei singoli moduli e componenti, assicurando che ciascuno fosse progettato in modo modulare e scalabile. Tale approccio ha facilitato la suddivisione delle responsabilità tra i membri del team, migliorando la tracciabilità delle decisioni progettuali.
 
 == Contenitori e Deploy con Docker
 
