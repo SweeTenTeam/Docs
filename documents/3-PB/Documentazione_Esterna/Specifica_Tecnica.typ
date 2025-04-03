@@ -4,6 +4,13 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+        "0.0.3",
+    "2025-04-03",
+    (p.fracaro),
+    (p.benedetti),
+    [
+      Sezione architettura di sistema
+    ],
     "0.0.1",
     "2025-02-27",
     (p.ferazzani),
@@ -167,7 +174,91 @@ TailwindCSS è un framework CSS utilizzato per la creazione di interfacce utente
 Next.js è un framework per la creazione di applicazioni web in React. Il team ha scelto di utilizzare Next.js per i metodi nativi a disposizione per le richieste alle API e per utilizzare una tecnologia più nuova rispetto al resto.
 #figure(image(tc.next, width: 5em, height: auto), caption: "Logo di Next.js")
 
-= Analisi
-// TO BE REVIEWED
+= Architettura di Sistema
+
+== Approccio alla Progettazione
+
+La progettazione dell'architettura di sistema di _BuddyBot_ è stata condotta secondo un approccio _top-down_, come indicato nelle Norme di Progetto. Questo metodo ha permesso di definire inizialmente i macro-componenti del sistema, garantendo una visione chiara e coerente sin dalle prime fasi. Successivamente, si è passati a un raffinamento progressivo delle specifiche dei singoli moduli e componenti, assicurando che ciascuno fosse progettato in modo modulare e scalabile. Tale approccio ha facilitato la suddivisione delle responsabilità tra i membri del team, migliorando la tracciabilità delle decisioni progettuali.
+
+== Contenitori e Deploy con Docker
+
+Per garantire portabilità e facilitare il deploy, è stato adottato Docker e Docker Compose, con un container per ogni servizio e per le risorse di supporto.
+
+L'utilizzo di Docker porta molti vantaggi, tra cui:
+
+- *Isolamento dei servizi*: Ogni microservizio gira in un ambiente indipendente, evitando conflitti tra dipendenze.
+- *Portabilità*: Il sistema può essere eseguito su qualsiasi piattaforma senza configurazioni complesse.
+- *Facilità di scalabilità*: Può essere facilmente distribuito su più istanze per gestire carichi elevati.
+- *Coerenza ambientale*: Assicura che gli ambienti di sviluppo, test e produzione siano identici, riducendo i problemi legati a differenze di configurazione.
+
+_Docker Compose_ viene utilizzato per orchestrare e avviare automaticamente i container, garantendo l'interconnessione tra i microservizi e i database senza necessità di configurazioni manuali complesse.
 
 
+== Strutturazione Generale del Sistema
+
+Il sistema è stato suddiviso in due macro-componenti principali:
+
+- *Frontend*: Interfaccia utente per l'interazione con BuddyBot.
+- *Backend*: Gestione della logica applicativa e delle fonti dati, esposto tramite API REST.
+
+Questa suddivisione consente di ottenere diversi benefici:
+
+- Indipendenza tra frontend e backend: Gli aggiornamenti possono avvenire separatamente, evitando impatti sull'intero sistema.
+- Possibilità di supportare frontend multipli: L'uso di _API REST_ consente l'integrazione di differenti interfacce utente, come web app, mobile app e desktop app (anche se attualmente non implementato, questa architettura lo renderebbe facilmente realizzabile in futuro).
+- Scalabilità e manutenibilità migliorate: Il backend può evolvere indipendentemente dall'interfaccia utente, permettendo di migliorare le prestazioni senza dover aggiornare ogni client.
+
+== Architettura del frontend
+ [inserire qui la sezione scritta da Orlando]
+
+
+== Architettura del Backend
+=== Architettura di Deployment
+
+Il backend è strutturato secondo un'architettura a _microservizi_, dove ogni servizio è responsabile di una specifica funzionalità del sistema. Questo approccio ha permesso di ottenere un sistema più modulare e scalabile, pur affrontando alcune sfide specifiche.
+
+==== Vantaggi dell'architettura a microservizi
+
+- Scalabilità orizzontale: I microservizi possono essere replicati per gestire carichi di lavoro elevati.
+- Indipendenza di deploy: Ogni servizio può essere aggiornato, riavviato o sostituito senza impattare il resto del sistema.
+- Manutenibilità e modularità: Separare le funzionalità in microservizi facilita la gestione del codice e l'aggiunta di nuove feature.
+- Tecnologie eterogenee: Ogni microservizio può essere sviluppato con la tecnologia più adatta senza vincoli imposti da un monolite.
+
+==== Svantaggi
+
+- Overhead di gestione: A differenza di un'architettura monolitica, i microservizi richiedono una gestione più complessa, sia in fase di sviluppo che di deploy.
+- Comunicazione tra servizi: Per garantire un'integrazione efficiente, è stato necessario implementare un sistema di messaggistica asincrono, come _RabbitMQ_, per la comunicazione tra microservizi.
+
+==== Microservizi Identificati
+
+Il backend è suddiviso in quattro microservizi principali:
+
+- *API Gateway*: Instrada le richieste tra frontend e microservizi interni, gestisce il bilanciamento del carico e pianifica il recupero delle informazioni dalle fonti.
+- *Chatbot*: Genera risposte basandosi sulle richieste ricevute e sulle informazioni contestuali fornite dal database vettoriale.
+- *Storico*: Salva e recupera le domande e le risposte dal database relazionale (_PostgreSQL_) per mantenere uno storico delle conversazioni.
+- *Information Vector DB*: Recupera informazioni dalle fonti, effettua embedding in forma vettoriale e le memorizza nel database vettoriale (_Qdrant_), fornendo dati contestuali al chatbot.
+
+=== Architettura logica
+
+Il sistema è progettato seguendo l'*architettura esagonale*, un modello architetturale che crea una separazione netta tra la business logic dell'applicazione e il mondo esterno, garantendo indipendenza da tecnologie specifiche e maggiore manutenibilità.
+
+==== Struttura dell'architettura esagonale
+
+*Logica di business* rappresenta il nucleo dell'applicazione, contenente il dominio e le regole di business. È completamente indipendente da implementazioni tecnologiche specifiche, garantendo massima portabilità e riutilizzabilità.
+
+*Porte* definiscono i punti di interazione tra il nucleo e il mondo esterno:
+- *Porte in Entrata (Use Case)*: Permettono ai componenti esterni di invocare il nucleo, fornendo un accesso strutturato e proteggendo la logica di dominio da implementazioni specifiche.
+- *Porte in Uscita*: Consentono al nucleo di accedere a funzionalità esterne (database, servizi di terze parti) mantenendo l'astrazione tecnologica.
+
+*Services* implementano le porte in entrata e fanno parte della business logic. Si concentrano esclusivamente sulla logica di dominio, rimanendo indipendenti da aspetti tecnologici specifici.
+
+*Adapters* costituiscono il livello più esterno dell'applicazione e si dividono in:
+- *Adapters in Entrata (Controller)*: Gestiscono e convertono le richieste provenienti dall'esterno verso il core.
+- *Adapters in Uscita*: Gestiscono la comunicazione dal core verso servizi e tecnologie esterne.
+
+==== Vantaggi
+
+Questa architettura garantisce:
+
+- *Flessibilità*: L'applicazione rimane indipendente dalle tecnologie esterne, facilitando modifiche e aggiornamenti senza impattare la logica di business.
+- *Testabilità*: La logica di business può essere testata in isolamento, semplificando lo sviluppo test-driven.
+- *Resilienza*: Il sistema diventa più resistente ai cambiamenti tecnologici, permettendo di sostituire componenti esterni senza modificare il nucleo applicativo.
