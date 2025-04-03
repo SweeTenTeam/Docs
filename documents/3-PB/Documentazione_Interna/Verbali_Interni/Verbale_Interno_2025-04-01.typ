@@ -29,7 +29,7 @@
 - Discussione aggiornamenti Documentazione - Specifica Tecnica;
 
 = Analisi di avanzamento MVP, unione Microservizi
-La riunione si è aperta con la presentazione del ChatBot: per la prima volta, l'intero gruppo ha potuto osservare sincronamente un prodotto in gran parte funzionante, avviando così una discussione sui possibili interventi migliorativi. Sono emersi diversi spunti di riflessione e confronto, in particolare riguardo a:
+La riunione si è aperta con la presentazione del ChatBot con tutti i microservizi integrati: per la prima volta, l'intero gruppo ha potuto osservare sincronamente un prodotto in gran parte funzionante, avviando così una discussione sui possibili interventi migliorativi. Sono emersi diversi spunti di riflessione e confronto, in particolare riguardo a:
 - una gestione degli errori corretta e soddisfacente (#glossary("Error Handling"))
 - l'implementazione di uno scheduler per il #glossary("Retrieval periodico")
   - conseguente display nella #glossary("UI") dell'ultimo aggiornamento delle informazioni
