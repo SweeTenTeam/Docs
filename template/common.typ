@@ -62,7 +62,7 @@
   chat: "/images/specifica-tecnica/chatWindow.png",
   bubble: "/images/specifica-tecnica/bubble.png",
   input: "/images/specifica-tecnica/inputForm.png",
-  uml: "/images/specifica-tecnica/uml.jpg",
+  uml: "/images/specifica-tecnica/uml.png",
 )
 
 //Norme di progetto Immagini

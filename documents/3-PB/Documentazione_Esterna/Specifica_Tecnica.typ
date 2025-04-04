@@ -1,4 +1,5 @@
 #import "/template/document.typ": *
+#import "@preview/codelst:2.0.2": sourcecode
 
 #show: project.with(
   title: "Specifica Tecnica",
@@ -206,11 +207,11 @@ ESLint è uno strumento di analisi statica del codice per identificare e segnala
 
 // = Analisi
 // // TO BE REVIEWED
-
+#pagebreak()
 = Architectura di sistema
 //aggiungere microservizi
 
-
+#pagebreak()
 == Architettura frontend
 Per la parte di frontend, il team ha utilizzato #glossary("Next.Js"), framework basato su React, per la creazione di pagine web. Next.Js è stato scelto per la sua facilità d'uso e per la sua scalabilità. Inoltre, il team ha utilizzato #glossary("TailwindCSS") per la creazione di interfacce utente. TailwindCSS è stato scelto per la sua facilità d'uso e per la sua documentazione dettagliata, oltre che per la semplificazione della specificità di CSS base.
 
@@ -218,35 +219,42 @@ La scelta di tali tecnologie ha portato il team ad uno sviluppo a componenti del
 
 BuddyBot è una #glossary("SPA"), ovvero una Single Page Application, che permette di avere una sola pagina web che viene caricata una sola volta e che viene aggiornata dinamicamente senza dover ricaricare la pagina. Questo permette di avere una maggiore velocità di caricamento e di navigazione all'interno della web app. Inoltre, essendo un ChatBot, non vi era la necessità di avere più di una pagina, anche se il team ha previsto la possibilità di aggiungere nuove pagine in futuro.
 
+#set page(flipped: true)
+== Diagramma delle classi
+\
+\
+
+#figure(image(spc.uml, width:118%, height: auto), caption: [UML frontend])
+#pagebreak()
+#set page(flipped: false)
+
+== Architettura nel dettaglio
+=== Componenti
 Come detta lo standard di `Next.JS`, la pagina principale è `page.tsx`, che contiene la struttura base della web app. All'interno di questa pagina, vengono poi importati i vari componenti che compongono la web app. I componenti principali sono:
 
-- `Header.tsx`;
+- *`Header.tsx`* è progettato per mostrare il logo e il nome dell’applicazione in modo ben visibile in cima alla pagina, contribuendo immediatamente a definire l’identità visiva della web app.
   #figure(
     image(spc.header, width: 100%, height: auto),
     caption: "Header della pagina in dark mode",
   )
-- `Navbar.tsx`;
+  \
+- *`Navbar.tsx`* gestisce la navigazione; anche se BuddyBot è una Single Page Application, la navbar offre all’utente la possibilità di accedere rapidamente ad altri siti web utili.
   #figure(
     image(spc.navbar, width: 100%, height: auto),
     caption: "Navbar della pagina in dark mode",
   )
-//inserire foto navbar
-- `ChatWindow.tsx`;
+  \
+- *`ChatWindow.tsx`* integra due componenti distinti: il componente *`Chat.tsx`* per visualizzare lo storico della conversazione e l’*`InputForm.tsx`* per l’inserimento dei messaggi, creando così un’unica area interattiva per gestire la chat.
   #figure(
     image(spc.chat, width: 100%, height: auto),
-    caption: "ChatWindow della pagina in dark mode",
-  ) //inserire foto chatwindow
-- `InputForm.tsx`;
-  #figure(
-    image(spc.input, width: 100%, height: auto),
-    caption: "InputForm della pagina in dark mode",
-  ) //inserire foto inputform
-- `Bubble.tsx`;
+    caption: "ChatWindow della pagina in dark modse",
+  ) 
+- *`Chat.tsx`* si occupa di mostrare l’intera conversazione tra utente e chatbot. Al suo interno, ogni scambio è rappresentato da un componente *`ChatQA.tsx`*, che racchiude due *`Bubble.tsx`*: una per il messaggio dell’utente e una per la risposta generata dal chatbot.
   #figure(
     image(spc.bubble, width: 100%, height: auto),
-    caption: "Bubble della pagina in dark mode",
-  ) //inserire foto bubble
-
+    caption: "Chat della pagina in dark mode",
+  )
+\
 Ci sono inoltre altre componenti, utilizzate a supporto dei componenti principali. Questi sono inclusi nella cartella denimoinata `ui`.
 Queste componenti sono:
 
@@ -256,391 +264,415 @@ Queste componenti sono:
 - `ErrorAlert.tsx`;
 - `InfoAlert.tsx`;
 - `MarkDown.tsx`;
-
-*Architettura in dettaglio*
-
-//TO BE REVIEWED
-
+- `Avatar.tsx`;
+- `MessageAvatar.tsx`;
+\
+=== Struttura dei dati
 Per sviluppare al meglio e più dettagliatamente il team ha definito dei tipi, che gestiscono diversi aspetti della web app. Questi tipi sono definiti all'interno della cartella `types` e sono:
 
-- ```tsx //Action.ts -> action che l'app può fare
-    import { Message } from "@/types/Message";
-  import { QuestionAnswer } from "./QuestionAnswer";
+- *`Action.ts`* \ Definisce le possibili azioni che la chat può eseguire (es. caricamento della cronologia, aggiunta di messaggi, gestione degli errori). #sourcecode[```tsx
+import { Message } from "@/types/Message";
+import { QuestionAnswer } from "./QuestionAnswer";
 
-  export type ChatAction =
-    | { type: "LOAD_HISTORY_START" }
-    | { type: "LOAD_HISTORY_SUCCESS"; payload: QuestionAnswer[], hasMore: boolean }
-    | { type: "LOAD_HISTORY_ERROR" }
-    | { type: "ADD_MESSAGE_START"; id: string, question: Message }
-    | { type: "ADD_MESSAGE_SUCCESS"; id: string, answer: Message, newid: string }
-    | { type: "ADD_MESSAGE_ERROR"; id: string }
-    | { type: "SCROLL_DOWN" };
-  ```
-- ```tsx //ChatContext.ts -> contesto della chat
-  import { createContext } from "react";
-  import { ChatAction } from "./Action";
-  import { ChatState } from "./ChatState";
+export type ChatAction =
+  | { type: "LOAD_HISTORY_START" }
+  | { type: "LOAD_HISTORY_SUCCESS"; payload: QuestionAnswer[], hasMore: boolean }
+  | { type: "LOAD_HISTORY_ERROR", error: number }
+  | { type: "ADD_MESSAGE_START"; id: string, question: Message }
+  | { type: "ADD_MESSAGE_SUCCESS"; id: string, answer: Message, newid: string, lastUpdated: string }
+  | { type: "ADD_MESSAGE_ERROR"; id: string, error: number }
+  | { type: "SCROLL_DOWN" };
+  ```]
 
-  export interface ChatContext {
-    state: ChatState;
-    dispatch: React.Dispatch<ChatAction>;
-    loadHistory: () => Promise<void>;
-    sendMessage: (text: string) => Promise<void>;
+- *`ChatContext.ts`* \ Definisce il contesto della chat, includendo lo stato, il dispatch e le funzioni per il caricamento della cronologia e l'invio dei messaggi. #sourcecode[```tsx
+import { createContext } from "react";
+import { ChatAction } from "./Action";
+import { ChatState } from "./ChatState";
+
+export interface ChatContext {
+  state: ChatState;
+  dispatch: React.Dispatch<ChatAction>;
+  loadHistory: () => Promise<void>;
+  sendMessage: (text: string) => Promise<void>;
+}
+
+export const ChatContext = createContext<ChatContext | undefined>(undefined);
+  ```]
+
+- *`ChatProviderProps.ts`* \ Specifica le proprietà richieste al provider della chat, inclusa la dipendenza dall'adapter. #sourcecode[```tsx
+import { Target } from "@/adapters/Target";
+import { ReactNode } from "react";
+
+export interface ChatProviderProps {
+    children: ReactNode;
+    adapter: Target;
+}
+  ```]
+
+- *`ChatState.ts`* \ Descrive lo stato della chat e definisce lo stato iniziale. #sourcecode[```tsx
+import { QuestionAnswer } from "./QuestionAnswer";
+
+export interface ChatState {
+  messages: QuestionAnswer[];
+  loadingHistory: boolean;
+  errorHistory: number;
+  hasMore: boolean;
+  hasToScroll: boolean;
+}
+
+export const initialState: ChatState = {
+  messages: [],
+  loadingHistory: true,
+  errorHistory: 0,
+  hasMore: false,
+  hasToScroll: false,
+};
+
+  ```]
+
+- *`CustomError.ts`* \ Definisce un errore personalizzato con un codice e dettagli opzionali, migliorando la gestione e il tracciamento degli errori. #sourcecode[```tsx
+  export class CustomError extends Error {
+    public code: number;
+    public details?: any;
+
+    constructor(code: number, message: string, details?: any) {
+        super(message);
+        this.code = code;
+        this.details = details;
+        Object.setPrototypeOf(this, CustomError.prototype);
+    }
   }
+  ```]
 
-  export const ChatContext = createContext<ChatContext | undefined>(undefined);
-  ```
-- ```tsx //ChatProviderProps.ts -> props del provider della chat
-    import { Target } from "@/adapters/Target";
-  import { ReactNode } from "react";
-
-  export interface ChatProviderProps {
-      children: ReactNode;
-      adapter: Target;
-  }
-  ```
-- ```tsx //ChatState.ts -> stato della chat
-  import { QuestionAnswer } from "./QuestionAnswer";
-
-  export interface ChatState {
-    messages: QuestionAnswer[];
-    loadingHistory: boolean;
-    errorHistory: boolean;
-    hasMore: boolean;
-    hasToScroll: boolean;
-  }
-
-  export const initialState: ChatState = {
-    messages: [],
-    loadingHistory: true,
-    errorHistory: false,
-    hasMore: false,
-    hasToScroll: false,
-  };
-  ```
-- ```tsx //Message.ts -> messaggio
+- *`Message.ts`* \ Rappresenta un singolo messaggio con il contenuto e il timestamp. #sourcecode[```tsx
   export interface Message {
-      content: string;
-      timestamp: number;
+    content: string;
+    timestamp: string;
   }
-  ```
-- ```tsx //QuestionAnswer.ts -> domanda e risposta
-  import { Message } from "./Message";
+  ```]
 
-  export interface QuestionAnswer {
-      id: string;
-      question: Message;
-      answer: Message;
-      error: boolean;
-      loading: boolean;
-  }
-  ```
+- *`QuestionAnswer.ts`* \ Modella la struttura per una domanda e la sua risposta, includendo flag per errori e stato di caricamento #sourcecode[```tsx
+import { Message } from "./Message";
 
-Il frontend di BuddyBot inoltre utilizza dei `Reducers, Adapters` e `Providers` di modo che tutte le logiche siano disponibili e separate.
-Di seguito una breve spiegazione di come sono implementati nei componenti principali:
+export interface QuestionAnswer {
+    id: string;
+    question: Message;
+    answer: Message;
+    error: number;
+    loading: boolean;
+    lastUpdated: string;
+}
+  ```]
+  \
+=== Gestione dello stato e del tema
 
-- ```tsx //ThemeProvider.tsx = provider per il tema della pagina
+Il frontend di BuddyBot inoltre utilizza un `Reducer` e due `Providers` che sono utilizzati per separare la logica e gestire lo stato in modo efficiente.
 
-  "use client";
+- Il *`ThemeProvider`* gestisce il tema visivo dell'applicazione, permettendo di applicare facilmente modalità chiare o scure (dark/light mode). Utilizzando il contesto di next-themes, consente a tutti i componenti dell'app di accedere e aggiornare dinamicamente il tema senza dover modificare manualmente ogni singolo elemento, migliorando l'esperienza utente e semplificando la gestione del design. Questo provider viene utilizzato all'interno del file `layout.tsx`. #sourcecode[```tsx
+"use client";
 
-  import React from "react";
-  import { ThemeProvider as NextThemesProvider, ThemeProviderProps } from "next-themes";
+import React from "react";
+import { ThemeProvider as NextThemesProvider, ThemeProviderProps } from "next-themes";
 
-  export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-      return (
-          <NextThemesProvider {...props}>
-              {children}
-          </NextThemesProvider>
-      );
-  }
-  ```
-- ```tsx //ChatProvider.tsx = provider per la chat
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+    return (
+        <NextThemesProvider {...props}>
+            {children}
+        </NextThemesProvider>
+    );
+}
+  ```]
 
-    import React from "react";
-    import { useContext, useReducer, useEffect } from "react";
-    import { chatReducer } from "@/reducers/chatReducer";
-    import { initialState } from "@/types/ChatState";
-    import { Message } from "@/types/Message";
-    import { QuestionAnswer } from "@/types/QuestionAnswer";
-    import { generateId } from "@/utils/generateId";
-    import { ChatContext } from "@/types/ChatContext";
-    import { ChatProviderProps } from "@/types/ChatProviderProps";
+- Il *`ChatProvider`* è un provider che incapsula lo stato e le funzioni per gestire la chat, come il caricamento della cronologia e l'invio di messaggi. Utilizza il `useReducer` per gestire lo stato della chat, che include i messaggi, lo stato di caricamento, e gli errori. Ogni azione (come l'aggiunta di un messaggio o il caricamento della cronologia) è gestita tramite un tipo di azione definito nel reducer, che aggiorna lo stato in base al tipo di azione ricevuta. Questo provider viene utilizzato all'interno del file `ChatWindow.tsx`. #sourcecode[```tsx
+import React from "react";
+import { useContext, useReducer, useEffect } from "react";
+import { chatReducer } from "@/reducers/chatReducer";
+import { initialState } from "@/types/ChatState";
+import { Message } from "@/types/Message";
+import { QuestionAnswer } from "@/types/QuestionAnswer";
+import { generateId } from "@/utils/generateId";
+import { ChatContext } from "@/types/ChatContext";
+import { ChatProviderProps } from "@/types/ChatProviderProps";
+import { CustomError } from "@/types/CustomError";
 
-    export const ChatProvider = ({ children, adapter }: ChatProviderProps) => {
-      const [state, dispatch] = useReducer(chatReducer, initialState);
+export const ChatProvider = ({ children, adapter }: ChatProviderProps) => {
+  const [state, dispatch] = useReducer(chatReducer, initialState);
 
-      const loadHistory = async (): Promise<void> => {
-        dispatch({ type: "LOAD_HISTORY_START" });
-        try {
-          if (state.messages.length === 0) {
-            const olderMessages: QuestionAnswer[] = await adapter.requestHistory("", 10);
-            dispatch({ type: "LOAD_HISTORY_SUCCESS", payload: olderMessages, hasMore: !(olderMessages.length < 10) });
-            dispatch({ type: "SCROLL_DOWN" });
-          }
-          else {
-            const olderMessages: QuestionAnswer[] = await adapter.requestHistory(state.messages[0].id, 10);
-            dispatch({ type: "LOAD_HISTORY_SUCCESS", payload: olderMessages, hasMore: !(olderMessages.length < 10) });
+  const loadHistory = async (): Promise<void> => {
+    dispatch({ type: "LOAD_HISTORY_START" });
+    try {
+      if (state.messages.length === 0) {
+        const olderMessages: QuestionAnswer[] = await adapter.requestHistory("", 10);
+        for (let i = 0; i < olderMessages.length; i++) {
+          if (olderMessages[i].answer.content.length > 100000) {
+            olderMessages[i].error = 1;
           }
         }
-        catch (error) {
-          dispatch({ type: "LOAD_HISTORY_ERROR" });
-        }
-      };
+        dispatch({ type: "LOAD_HISTORY_SUCCESS", payload: olderMessages, hasMore: !(olderMessages.length < 10) });
 
-      const sendMessage = async (text: string) => {
-        const id = generateId();
-        const newMessage: Message = {
-          content: text,
-          timestamp: Date.now(),
-        };
-        dispatch({ type: "ADD_MESSAGE_START", id: id, question: newMessage });
         dispatch({ type: "SCROLL_DOWN" });
-        try {
-          const botResponse: { answer: Message, id: string } = await adapter.requestAnswer(newMessage);
-          dispatch({ type: "ADD_MESSAGE_SUCCESS", id: id, answer: botResponse.answer, newid: botResponse.id });
-        }
-        catch (error) {
-          dispatch({ type: "ADD_MESSAGE_ERROR", id: id });
-        }
-      };
-
-      useEffect(() => {
-        loadHistory();
-      }, []);
-
-      return (
-        <ChatContext.Provider value={{ state, dispatch, loadHistory, sendMessage }}>
-          {children}
-        </ChatContext.Provider>
-      );
-    };
-
-    // Hook per usare il contesto
-    export const useChat = () => {
-      const context = useContext(ChatContext);
-      if (!context) {
-        throw new Error("useChat must be used within a ChatProvider");
       }
-      return context;
-    };
-
-  ```
-
-Questi provider vengono utilizzati, rispettivamente, all'interno dei file `layout.tsx` e `chatWindow.tsx` per gestire il tema della pagina e la chat stessa.
-
-Il `Reducer` e gli `Adapters` invece:
-
-- ```tsx //ChatReducer.ts
-  import { Message } from "@/types/Message";
-  import { ChatState } from "@/types/ChatState";
-  import { ChatAction } from "@/types/Action";
-
-  export const chatReducer = (state: ChatState, action: ChatAction): ChatState => {
-    switch (action.type) {
-      case "LOAD_HISTORY_START":
-        return {
-          ...state,
-          loadingHistory: true,
-          errorHistory: false,
-          hasMore: false,
-        };
-      case "LOAD_HISTORY_SUCCESS":
-        return {
-          ...state,
-          messages: [...action.payload, ...state.messages],
-          loadingHistory: false,
-          errorHistory: false,
-          hasMore: action.hasMore,
-        };
-      case "LOAD_HISTORY_ERROR":
-        return {
-          ...state,
-          loadingHistory: false,
-          errorHistory: true,
-          hasMore: false,
-        };
-      case "ADD_MESSAGE_START":
-        return {
-          ...state,
-          messages: [...state.messages, { id: action.id, question: action.question, answer: {} as Message, error: false, loading: true }],
-        };
-      case "ADD_MESSAGE_SUCCESS":
-        const updatedMessagesSuccess = state.messages.map((msg) => {
-          if (msg.id === action.id) {
-            return {
-              ...msg,
-              id: action.newid,
-              answer: action.answer,
-              loading: false,
-              error: false,
-            };
-          }
-          return msg;
-        });
-        return {
-          ...state,
-          messages: updatedMessagesSuccess,
-        };
-      case "ADD_MESSAGE_ERROR":
-        const updatedMessagesError = state.messages.map((msg) => {
-          if (msg.id === action.id) {
-            return {
-              ...msg,
-              loading: false,
-              error: true,
-            };
-          }
-          return msg;
-        });
-        return {
-          ...state,
-          messages: updatedMessagesError,
-        };
-      case "SCROLL_DOWN":
-      return {
-        ...state,
-        hasToScroll: !state.hasToScroll,
-      };
-      default:
-        return state;
+      else {
+        const olderMessages: QuestionAnswer[] = await adapter.requestHistory(state.messages[0].id, 10);
+        dispatch({ type: "LOAD_HISTORY_SUCCESS", payload: olderMessages, hasMore: !(olderMessages.length < 10) });
+      }
+    }
+    catch (error) {
+      if (error instanceof CustomError) dispatch({ type: "LOAD_HISTORY_ERROR", error: error.code });
+      else dispatch({ type: "LOAD_HISTORY_ERROR", error: 500 });
     }
   };
-  ```
-- ```tsx //adapter.ts
-    import { QuestionAnswer } from "@/types/QuestionAnswer";
-  import { Message } from "@/types/Message";
-  import { Target } from "./Target";
-  import { AdapterFacade } from "./AdapterFacade";
-  import { generateId } from "@/utils/generateId";
 
-  export class Adapter implements Target {
-      private adapterFacade: AdapterFacade;
+  const sendMessage = async (text: string) => {
+    const id = generateId();
+    const newMessage: Message = {
+      content: text,
+      timestamp: new Date().toISOString(),
+    };
 
-      constructor() {
-          this.adapterFacade = new AdapterFacade();
-      }
+    dispatch({ type: "ADD_MESSAGE_START", id: id, question: newMessage });
+    dispatch({ type: "SCROLL_DOWN" });
+    try {
+      const botResponse: { answer: Message, id: string, lastUpdated: string } = await adapter.requestAnswer(newMessage);
+      if (botResponse.answer.content.length > 100000) dispatch({ type: "ADD_MESSAGE_ERROR", id: id, error: 1 });
+      else dispatch({ type: "ADD_MESSAGE_SUCCESS", id: id, answer: botResponse.answer, newid: botResponse.id, lastUpdated: botResponse.lastUpdated });
 
-      async requestHistory(id: string, offset: number): Promise<QuestionAnswer[]> {
-          try {
-              const jsonResponse = await this.adapterFacade.fetchHistory(id, offset);
-              return this.adaptQuestionAnswerArray(jsonResponse);
-          } catch (error) {
-              throw new Error("Error fetching history");
-          }
-      }
-      async requestAnswer(question: Message): Promise<{ answer: Message; id: string; }> {
-          try {
-              const answer = await this.adapterFacade.fetchQuestion(this.adaptMessageToJSON(question));
-              return {
-                  answer: this.adaptMessage(answer.answer),
-                  id: answer.id
-              };
-          } catch (error) {
-              throw new Error("Error fetching history");
-          }
-      }
+    }
+    catch (error) {
+      if (error instanceof CustomError) dispatch({ type: "ADD_MESSAGE_ERROR", id: id, error: error.code });
+      else dispatch({ type: "ADD_MESSAGE_ERROR", id: id, error: 501 });
+    }
+  };
 
-      private adaptMessage(data: any): Message {
-          return {
-              content: data.content,
-              timestamp: data.timestamp,
-          };
-      };
+  useEffect(() => {
+    loadHistory();
+  }, []);
 
-      private adaptQuestionAnswer(data: any): QuestionAnswer {
-          return {
-              id: data.id || generateId(),
-              question: this.adaptMessage(data.question),
-              answer: this.adaptMessage(data.answer),
-              error: data.error || false,
-              loading: data.loading || false,
-          };
-      };
+  return (
+    <ChatContext.Provider value={{ state, dispatch, loadHistory, sendMessage }}>
+      {children}
+    </ChatContext.Provider>
+  );
+};
 
-      private adaptQuestionAnswerArray(dataArray: any[]): QuestionAnswer[] {
-          return dataArray.map(data => this.adaptQuestionAnswer(data));
-      };
-
-      private adaptMessageToJSON(question: Message): any {
-          return {
-              question: question.content,
-              timestamp: question.timestamp,
-          };
-      };
+// Hook per usare il contesto
+export const useChat = () => {
+  const context = useContext(ChatContext);
+  if (!context) {
+    throw new Error("useChat must be used within a ChatProvider");
   }
-  ```
-- ```tsx //AdapterFacade.ts
-    import historyData from "@/json/history.json";
-  import historyData1 from "@/json/history1.json";
-  import { generateId } from "@/utils/generateId";
+  return context;
+};
+  ```]
+- Il *`chatReducer`* gestisce lo stato della chat, aggiornandolo in base alle azioni ricevute, come il caricamento della cronologia o l'aggiunta di nuovi messaggi. La sua struttura modulare e centralizzata consente una gestione più chiara e prevedibile dello stato, migliorando la manutenibilità e la scalabilità dell'applicazione. Separando la logica di aggiornamento dello stato dalla UI, il reducer facilita l'implementazione di nuove funzionalità senza compromettere la coerenza del sistema, rendendo l'app più facilmente estensibile e mantenibile nel tempo. #sourcecode[```tsx
+import { Message } from "@/types/Message";
+import { ChatState } from "@/types/ChatState";
+import { ChatAction } from "@/types/Action";
 
-  export class AdapterFacade {
-      async fetchHistory(id: string, offset: number): Promise<any[]> {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 3000);
-          if (id === "") return historyData1;
-          else if (id == "240") return historyData;
-          return [];
-
-          try {
-              const response = await fetch(`https://api.example.com/history`, {
-                  method: "POST",
-                  headers: {
-                      "Content-Type": "application/json",
-                      // Eventuali header necessari
-                  },
-                  body: JSON.stringify({ id, offset }),
-                  signal: controller.signal,
-              });
-              clearTimeout(timeoutId);
-              if (!response.ok) throw new Error("Error fetching history");
-              return await response.json();
-          } catch (error) {
-              throw new Error("Error fetching history");
-          }
-      }
-
-      async fetchQuestion(data: any): Promise<any> {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 3000);
-          return { answer: { content: data.question, timestamp: data.timestamp }, id: generateId() };
-
-          try {
-              const response = await fetch(`https://api.example.com/send`, {
-                  method: "POST",
-                  headers: {
-                      "Content-Type": "application/json",
-                      // Eventuali header necessari
-                  },
-                  body: JSON.stringify(data),
-                  signal: controller.signal,
-              });
-              clearTimeout(timeoutId);
-              if (!response.ok) throw new Error("Error sending message");
-              return await response.json();
-          } catch (error) {
-              throw new Error("Error sending message");
-          }
-      }
+export const chatReducer = (state: ChatState, action: ChatAction): ChatState => {
+  switch (action.type) {
+    case "LOAD_HISTORY_START":
+      return { 
+        ...state, 
+        loadingHistory: true,
+        errorHistory: 0,
+        hasMore: false,
+      };
+    case "LOAD_HISTORY_SUCCESS":
+      return {
+        ...state,
+        messages: [...action.payload, ...state.messages],
+        loadingHistory: false,
+        errorHistory: 0,
+        hasMore: action.hasMore,
+      };
+    case "LOAD_HISTORY_ERROR":
+      return {
+        ...state,
+        loadingHistory: false,
+        errorHistory: action.error,
+        hasMore: false,
+      };
+    case "ADD_MESSAGE_START":
+      return { 
+        ...state, 
+        messages: [...state.messages, { id: action.id, question: action.question, answer: {} as Message, error: 0, loading: true, lastUpdated: new Date().toISOString() }],
+      };
+    case "ADD_MESSAGE_SUCCESS":
+      const updatedMessagesSuccess = state.messages.map((msg) => {
+        if (msg.id === action.id) {
+          return {
+            ...msg,
+            id: action.newid,
+            answer: action.answer,
+            loading: false,
+            error: 0,
+            lastUpdated: action.lastUpdated,
+          };
+        }
+        return msg;
+      });
+      return { 
+        ...state, 
+        messages: updatedMessagesSuccess,
+      };
+    case "ADD_MESSAGE_ERROR":
+      const updatedMessagesError = state.messages.map((msg) => {
+        if (msg.id === action.id) {
+          return {
+            ...msg,
+            loading: false,
+            error: action.error,
+          };
+        }
+        return msg;
+      });
+      return { 
+        ...state, 
+        messages: updatedMessagesError,
+      };
+    case "SCROLL_DOWN":
+    return {
+      ...state,
+      hasToScroll: !state.hasToScroll,
+    };
+    default:
+      return state;
   }
-  ```
-- ```tsx //Target.ts
-   import { QuestionAnswer } from "@/types/QuestionAnswer";
-  import { Message } from "@/types/Message";
+};
+  ```]
 
-  export interface Target {
-    requestHistory(id: string, offset: number): Promise<QuestionAnswer[]>;
-    requestAnswer(question: Message): Promise<{answer: Message, id: string}>;
-  }
-  ```
+=== Gestione e adattamento dei dati per la chat
+Nel frontend di BuddyBot viene utilizzato il design pattern `Adapter` per gestire la comunicazione con le API e adattare i dati in un formato utilizzabile dall'applicazione.
 
-Questi file sono utilizzati per gestire la logica della chat e per adattare i dati ricevuti dalle API in modo che possano essere utilizzati all'interno della web app.
+- Il *`Adapter.ts`* implementa il pattern `Adapter`, che si occupa di adattare i dati ricevuti dalle API al formato richiesto dall'applicazione. Gestisce le richieste per la cronologia della chat e per ottenere le risposte alle domande, restituendo i dati come oggetti compatibili con il modello dell'app, come QuestionAnswer e Message. Le funzioni `requestHistory` e `requestAnswer` si occupano rispettivamente di recuperare la cronologia e le risposte, mentre i metodi privati all'interno dell'adapter trasformano i dati ricevuti in un formato che l'app può utilizzare facilmente. #sourcecode[```tsx
+import { QuestionAnswer } from "@/types/QuestionAnswer";
+import { Message } from "@/types/Message";
+import { Target } from "./Target";
+import { Adaptee } from "./Adaptee";
+import { generateId } from "@/utils/generateId";
+import { CustomError } from "@/types/CustomError";
 
-#figure(
-  image(spc.uml, width: 100%, height: auto),
-  caption: "Diagramma UML dell'architettura di frontend",
-)
+export class Adapter implements Target {
+    private adaptee: Adaptee;
 
+    constructor() {
+        this.adaptee = new Adaptee();
+    }
+
+    async requestHistory(id: string, offset: number): Promise<QuestionAnswer[]> {
+        try {
+            const jsonResponse = await this.adaptee.fetchHistory(id, offset);
+            return this.adaptQuestionAnswerArray(jsonResponse);
+        } catch (error) {
+            if (error instanceof CustomError) throw error;
+            throw new CustomError(500, "SERVER", "Errore interno del server");
+        }
+    }
+    async requestAnswer(question: Message): Promise<{ answer: Message; id: string; lastUpdated: string }> {
+        try {
+            const answer = await this.adaptee.fetchQuestion(this.adaptMessageToJSON(question));
+            return {
+                answer: this.adaptMessage(answer.answer),
+                id: answer.id,
+                lastUpdated: answer.lastUpdated,
+            };
+        } catch (error) {
+            if (error instanceof CustomError) throw error;
+            throw new CustomError(501, "SERVER", "Errore interno del server");
+        }
+    }
+
+    private adaptMessage(data: any): Message {
+        return {
+            content: data.content,
+            timestamp: data.timestamp,
+        };
+    };
+
+    private adaptQuestionAnswer(data: any): QuestionAnswer {
+        return {
+            id: data.id || generateId(),
+            question: this.adaptMessage(data.question),
+            answer: this.adaptMessage(data.answer),
+            error: 0,
+            loading: false,
+            lastUpdated: data.lastUpdated,
+        };
+    };
+
+    private adaptQuestionAnswerArray(dataArray: any[]): QuestionAnswer[] {
+        return dataArray.map(data => this.adaptQuestionAnswer(data));
+    };
+
+    private adaptMessageToJSON(question: Message): any {
+        return {
+            text: question.content,
+            date: question.timestamp,
+        };
+    };
+}
+  ```]
+
+- Il *`Adaptee.ts`* Nasconde la complessità delle chiamate di rete e fornisce metodi semplificati per ottenere la cronologia della chat e risposte alle domande, gestendo internamente i dettagli delle comunicazioni con con l'API Gateway. #sourcecode[```tsx
+import { CustomError } from "@/types/CustomError";
+
+export class Adaptee {
+    async fetchHistory(id: string, offset: number): Promise<any[]> {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 25000);
+
+        try {
+            const response = await fetch(`http://${process.env.API_GATEWAY ?? 'localhost'}/api/get-storico?id=${id}&num=${offset}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                signal: controller.signal,
+            });
+            clearTimeout(timeoutId);
+            if (response.status >= 500) throw new CustomError(500, "SERVER", "Errore interno del server");
+            if (response.status >= 400) throw new CustomError(400, "CONNESSIONE", "Errore interno del server");
+            if (!response.ok) throw new CustomError(500, "SERVER", "Errore interno del server");
+            return await response.json();
+        } catch (error) {
+            clearTimeout(timeoutId);
+            if (error instanceof DOMException && error.name === "AbortError") throw new CustomError(408, "TIMEOUT", "Timeout della richiesta");
+            if (error instanceof TypeError && error.message === "Failed to fetch") throw new CustomError(400, "CONNESSIONE", "Errore di connessione");
+            if (error instanceof CustomError) throw error;
+            throw new CustomError(500, "SERVER", "Errore interno del server");
+        }
+    }
+
+    async fetchQuestion(data: any): Promise<any> {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 20000);
+
+        try {
+            const response = await fetch(`http://${process.env.API_GATEWAY ?? 'localhost'}/api/get-risposta`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+                signal: controller.signal,
+            });
+            clearTimeout(timeoutId);
+            if (response.status >= 500) throw new CustomError(501, "SERVER", "Errore interno del server");
+            if (response.status >= 400) throw new CustomError(401, "CONNESSIONE", "Errore interno del server");
+            if (!response.ok) throw new CustomError(501, "SERVER", "Errore interno del server");
+            return await response.json();
+        } catch (error) {
+            clearTimeout(timeoutId);
+            if (error instanceof DOMException && error.name === "AbortError") throw new CustomError(409, "TIMEOUT", "Timeout della richiesta");
+            if (error instanceof TypeError && error.message === "Failed to fetch") throw new CustomError(401, "CONNESSIONE", "Errore di connessione");
+            if (error instanceof CustomError) throw error;
+            throw new CustomError(501, "SERVER", "Errore interno del server");
+        }
+    }
+}
+  ```]
+#pagebreak()
 
 
 
