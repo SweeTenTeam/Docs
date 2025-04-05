@@ -15,7 +15,7 @@
     "0.0.2",
     "2025-03-15",
     (p.ferazzani),
-    (p.blank),
+    (p.campagnaro),
     [
       Aggiunta sezione "Architettura frontend"
     ],
