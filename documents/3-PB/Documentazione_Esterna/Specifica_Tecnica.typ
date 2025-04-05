@@ -167,7 +167,364 @@ TailwindCSS è un framework CSS utilizzato per la creazione di interfacce utente
 Next.js è un framework per la creazione di applicazioni web in React. Il team ha scelto di utilizzare Next.js per i metodi nativi a disposizione per le richieste alle API e per utilizzare una tecnologia più nuova rispetto al resto.
 #figure(image(tc.next, width: 5em, height: auto), caption: "Logo di Next.js")
 
-= Analisi
+//= Analisi
 // TO BE REVIEWED
 
+= Architettura di sistema
 
+=== Github
+
+==== FetchGithubDTO
+Classe che viene ricevuta in input dall'`InformationController`, contiene una lista di `RepoDTO`, spiegati in seguito, e la data dall'ultima raccolta di informazioni.
+
+```typescript
+export class FetchGithubDto {
+  constructor (
+    public readonly repoDTOList: RepoGithubDTO[],
+    public readonly lastUpdate?: Date
+  ){}
+}
+```
+==== RepoDTO
+Classe che contiene le informazioni necessarie a identificare univocamente la risorsa di cui vogliamo raccogliere le informazioni, ossia:
+- a chi appartiene il repository su #glossary("Github")
+- il nome del repository
+- il branch del repository
+```ts
+export class RepoGithubDTO{
+  constructor(
+    public readonly owner: string,
+    public readonly repoName: string,
+    public readonly branch_name: string
+  ){}
+}
+```
+
+==== GithubCmd
+Questa classe rappresenta il Command che riceve la business logic, contiene una lista di `RepoCmd`, che contiene gli stessi campi di `RepoDTO`, e lo stesso 'lastUpdate' ricevuto nel `FetchGithubDto`
+
+```ts
+export class GithubCmd {
+  constructor(
+    public readonly repoCmdList:RepoCmd[],
+    public readonly lastUpdate?:Date
+  ){}  
+}
+```
+
+==== RepoCmd
+Questa classe è la classe `RepoDTO` adattata alla business logic.
+
+```ts
+export class RepoCmd{
+  constructor (
+    public readonly owner: string,
+    public readonly repoName: string,
+    public readonly branch_name: string
+  ){}
+}
+```
+
+==== Commit
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere dei commit di una determinata repository.
+
+```ts
+export class Commit{
+    constructor(
+        private repoName: string,
+        private ownerRepository: string,
+        private branch: string,
+        private hash: string,
+        private message: string,
+        private dateOfCommit: string,
+        private modifiedFiles: string[],
+        private author: string,
+    ) {}
+    
+    toStringifiedJson(): string {
+        return JSON.stringify(this);
+    }
+
+    getMetadata(): Metadata {
+      return new Metadata(Origin.GITHUB, Type.COMMIT, this.hash);
+    }
+}
+``` 
+
+==== File
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere dei files di un determinato branch in una determinata repository.
+
+```ts
+export class File{
+    constructor(
+        private path: string,
+        private sha: string,
+        private repositoryName: string,
+        private branchName: string,
+        private content: string
+    ) {}
+    
+    toStringifiedJson(): string {
+        return JSON.stringify(this);
+    }
+
+    getMetadata(): Metadata {
+      return new Metadata(Origin.GITHUB, Type.FILE, this.sha);
+    }
+}
+```
+==== PullRequest
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere delle pull requests in una determinata repository.
+
+```ts
+export class PullRequest{
+    constructor(
+        private id: number,
+        private pull_number: number,
+        private title: string,
+        private description: string,
+        private status: string,
+        private assignees: string[],
+        private reviewers: string[],
+        private comments: CommentPR[],
+        private modifiedFiles: string[],
+        private fromBranch: string,
+        private toBranch: string,
+        private repository_name: string,
+    ) {}
+    
+    toStringifiedJson(): string {
+        return JSON.stringify(this);
+    }
+
+    getMetadata(): Metadata {
+      return new Metadata(Origin.GITHUB, Type.PULLREQUEST, this.id.toString());
+    }
+}
+```
+
+==== CommentPR
+Questa classe è oggetto della business logic, è contenuta all'interno di `PullRequest` in quanto si occupa di contenere al suo interno le informazioni riguardanti un determinato commento di review su una `PullRequest`.
+
+```ts
+export class CommentPR{
+    constructor(
+        private authorName: string,
+        private content: string,
+        private date: Date
+    ){}
+
+    getAuthorName(): string {
+        return this.authorName;
+    }
+
+    getContent(): string {
+        return this.content;
+    }
+
+    getDate(): Date {
+        return this.date;
+    }
+}
+```
+
+==== Repository
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere di una determinata repository.
+
+```ts
+export class Repository {
+    constructor(
+    private id: number,
+    private name: string,
+    private createdAt: string,
+    private lastUpdate: string,
+    private mainLanguage: string,
+  ) {}
+  
+  toStringifiedJson(): string {
+    return JSON.stringify(this);
+  }
+  
+  getMetadata(): Metadata {
+    return new Metadata(Origin.GITHUB, Type.REPOSITORY, this.id.toString());
+  }
+}
+```
+
+==== Workflow
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere dei workflow in una determinata repository.
+
+```ts
+export class Workflow{
+  constructor(
+    private id: number,
+    private name: string,
+    private state: string,
+    private repository_name: string,
+  ) {}
+
+  toStringifiedJson(): string {
+    return JSON.stringify(this);
+  }
+
+  getMetadata(): Metadata {
+    return new Metadata(Origin.GITHUB, Type.WORKFLOW, this.id.toString());
+  }
+}
+```
+
+==== WorkflowRun
+Questa classe è oggetto della business logic, è contenuta all'interno di `Workflow` in quanto si occupa di contenere al suo interno le informazioni riguardanti una determinata run di un `Workflow`.
+
+```ts
+export class WorkflowRun {
+  constructor(
+    private readonly id: number,
+    private readonly status: string,
+    private readonly duration_seconds: number,
+    private log: string,
+    private trigger: string,
+    private workflow_id: number,
+    private workflow_name: string
+  ) {}
+
+  toStringifiedJson(): string {
+    return JSON.stringify(this);
+  }
+
+   getMetadata(): Metadata {
+    return new Metadata(Origin.GITHUB, Type.WORKFLOW_RUN, this.id.toString());
+  }
+} 
+```
+==== GithubUseCase
+Interfaccia che si comporta da porta d'ingresso alla business logic, offre il metodo `fetchAndStoreInfo`, che prende in input il `GithubCmd` ricevuto dal controller.
+
+```ts
+export interface GithubUseCase {
+    fetchAndStoreGithubInfo(req: GithubCmd): Promise<boolean>;
+}
+```
+==== GithubService
+La classe principale della business logic, che implementa `GithubUseCase` citato precedentemente. Si occupa di recuperare tutte le informazioni descritte nell'#glossary("Analisi dei Requisiti") e di salvarle nel database vettoriale.
+
+==== GithubCommitAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchCommitInfo` che riceve in input `GithubCmd` e ritorna in output una lista di `Commit`.
+
+```ts
+export interface GithubCommitAPIPort {
+    fetchGithubCommitsInfo(req: GithubCmd): Promise<Commit[]>
+}
+```
+
+==== GithubFileAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchGithubFilesInfo` che riceve in input `FileCmd` e ritorna in output una lista di `Commit`.
+
+```ts
+export interface GithubFilesAPIPort {
+    fetchGithubFilesInfo(req: FileCmd[]): Promise<File[]>
+}
+```
+==== GithubPullRequestAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchGithubPullRequestsInfo` che riceve in input `GithubCmd` e ritorna in output una lista di `PullRequest`.
+
+```ts
+export interface GithubPullRequestsAPIPort {
+    fetchGithubPullRequestsInfo(req: GithubCmd): Promise<PullRequest[]>
+}
+```
+==== GithubRepositoryAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchGithubRepositoryInfo` che riceve in input `GithubCmd` e ritorna in output una lista di `Repository`.
+
+```ts
+export interface GithubRepositoryAPIPort {
+    fetchGithubRepositoryInfo(req: GithubCmd): Promise<Repository[]>
+}
+```
+==== GithubWorkflowAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre i metodi: 
+- `fetchGithubWorkflowInfo` che riceve in input `GithubCmd` e ritorna in output una lista di `Workflow`.
+- `fetchGithubWorkflowRuns` che riceve in input `WorkflowRunCmd` e ritorna in output una lista di `WorkflowRun`.
+
+```ts
+export interface GithubWorkflowsAPIPort {
+    fetchGithubWorkflowInfo(req: GithubCmd): Promise<Workflow[]>
+    fetchGithubWorkflowRuns(req: WorkflowRunCmd): Promise<WorkflowRun[]>
+}
+```
+==== GithubAPIAdapter
+Questa classe implementa:
+- `GithubCommitAPIPort`
+- `GithubFileAPIPort`
+- `GithubPullRequestAPIPort`
+- `GithubRepositoryAPIPort`
+- `GithubWorkflowAPIPort`
+ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `GithubAPIFacade`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic.
+
+==== GithubAPIFacade
+Questa è la classe che si occupa di interfacciarsi direttamente con le API di Github. Esegue richieste tramite il client offerto da `octo-kit` e ritorna JSON con i dati 'grezzi'.
+
+==== GithubStoreInfoPort
+Questa è l'interfaccia che funge da porta d'uscita (outbound port) al fine di salvare i `GithubInfo` nel database vettoriale, offre il metodo `storeGithubInfo` che riceve in input una lista di `GithubInfo`.
+
+```typescript
+export interface GithubStoreInfoPort {
+    storeGithubInfo(req: GithubInfo): Promise<boolean>
+}
+```
+
+==== GithubStoreInfoAdapter
+Questa classe implementa `GithubStoreInfoPort`, si occupa di trasformare i `GithubInfo` in `Information` per poter essere usati dal `qdrant-information-repository` ed essere salvati sul database vettoriale.
+
+=== Confluence
+
+==== ConfluenceUseCase
+Interfaccia che si comporta da porta d'ingresso alla business logic, offre il metodo `fetchAndStoreDocument`, che prende in input il `ConfluenceCmd` ricevuto dal controller.
+
+```typescript
+export interface ConfluenceUseCase {
+  fetchAndStoreConfluenceInfo(req: ConfluenceCmd): Promise<boolean>;
+}
+```
+
+==== ConfluenceService
+La classe principale della business logic, che implementa `ConfluenceUseCase` citato precedentemente. Si occupa di recuperare i documenti creati e modificati entro una certa data, presente all'interno di `ConfluenceCmd`.
+
+```typescript
+export class ConfluenceService implements ConfluenceUseCase {
+  constructor(
+    @Inject(CONFLUENCE_API_PORT) private readonly confluenceAPIAdapter: ConfluenceAPIPort,
+    @Inject(CONFLUENCE_STORE_INFO_PORT) private readonly confluenceStoreAdapter: ConfluenceStoreInfoPort
+  ) {}
+
+  async fetchAndStoreConfluenceInfo(req: ConfluenceCmd): Promise<boolean> {
+    const documents = await this.confluenceAPIAdapter.fetchDocuments(req);
+    return await this.confluenceStoreAdapter.storeDocuments(documents);;
+  }
+}
+```
+
+==== ConfluenceDocument
+Classe del domain, definisce le informazioni che vengono raccolte e viene usato come oggetto della business logic.
+
+==== ConfluenceAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchDocuments` che riceve in input `ConfluenceCmd` e ritorna in output una lista di ConfluenceDocument.
+
+
+==== ConfluenceAPIAdapter
+Questa classe implementa `ConfluenceAPIPort`, ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `ConfluenceAPIFacade`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic di `ConfluenceDocument`.
+
+==== ConfluenceAPIFacade
+Questa è la classe che si occupa di interfacciarsi direttamente con le API di Confluence. Esegue richieste tramite il client offerto da `confluence.js` e ritorna JSON con i dati 'grezzi'.
+
+==== ConfluenceStorePort
+Questa è l'interfaccia che funge da porta d'uscita (outbound port) al fine di salvare i `ConfluenceDocument` nel database vettoriale, offre il metodo `storeDocuments` che riceve in input una lista di `ConfluenceDocument`.
+
+```typescript
+export interface ConfluenceStoreInfoPort {
+  storeDocuments(req: ConfluenceDocument[]): Promise<boolean>;
+}
+```
+
+==== ConfluenceStoreAdapter
+Questa classe implementa `ConfluenceStorePort`, si occupa di trasformare i `ConfluenceDocument` in `Information` per poter essere usati dal `qdrant-information-repository` ed essere salvati sul database vettoriale.
