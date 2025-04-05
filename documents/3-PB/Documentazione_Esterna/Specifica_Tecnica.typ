@@ -8,7 +8,7 @@
     "0.0.3",
     "2025-03-27",
     (p.ferazzani),
-    (p.blank),
+    (p.campagnaro),
     [
       Aggiunte tecnologie di testing e miglioramenti generali
     ],
