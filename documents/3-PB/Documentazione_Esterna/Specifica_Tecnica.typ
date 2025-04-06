@@ -171,3 +171,293 @@ Next.js è un framework per la creazione di applicazioni web in React. Il team h
 // TO BE REVIEWED
 
 
+=== Microservizio Storico Chat
+#figure(
+  image(spc.prog_history, width: 46em), caption: "Progettazione del Microservizio Storico Chat"
+)
+Il microservizio dello Storico riveste un ruolo fondamentale per il corretto funzionamento di #glossary("BuddyBot"): esso si occupa della gestione delle interazioni con il database relazionale #glossary("PostgreSQL"), prelevando e inserendo dati relativi alle conversazioni in modo affidabile.
+Come per gli altri microservizi, anche questo è stato progettato secondo i principi dell'architettura esagonale, al fine di garantire una netta separazione tra la logica di business e i dettagli di implementazione tecnologica.
+In particolare, l'interazione con PostgreSQL è delegata a un repository dedicato (`ChatRepository`), che utilizza #glossary("TypeORM") per l'accesso e la gestione delle entità persistite.
+La logica applicativa, invece, accede ai dati attraverso alle Port & Adapter di output, fungendo da mediatori con il repository.
+Questo approccio consente di mantenere l'"application" completamente agnostica rispetto alla tecnologia di persistenza, favorendo una maggiore manutenibilità, testabilità e flessibilità.
+
+==== Tre diversi casi d'uso
+Questo microservizio è stato progettato per l'esecuzione di 3 principali operazioni.
+- *Recupero dello Storico della Chat*
+  - L'obiettivo è quello di recuperare dal database una specifica quantità di messaggi richiesti
+- *Inserimento di nuovi messaggi* 
+  - L'obiettivo è quello di inserire nuovi messaggi presenti nella #glossary("UI") nel database, in maniera tale da permettere successivi recuperi
+- *Inserimento dell'ultima data di recupero informazioni* (#glossary("Retrieval Periodico"))
+  - Il sistema esegue un recupero periodico dei dati provenienti da #glossary("Jira"), #glossary("GitHub"), #glossary("Confluence"). In questo microservizio si vuole memorizzare l'ultima data di recupero nel database (sovrascrivendo quella precedente se presente), cosi da poterla restituire insieme ai dati della chat.
+
+Nelle prossime sezioni verranno riepilogati i 3 flussi per le rispettive operazioni.
+
+===== Recupero dello Storico della Chat
+
+- *`FetchRequestDTO`*: rappresenta il Data Transfer Object utilizzato per ricevere la richiesta di recupero dello storico. Contiene due parametri, ovvero:
+  - ID: identificativo che rappresenta l'ultima Chat (coppia di messaggi) precedentemente caricata. Questo valore viene utilizzato come punto di riferimento cronologico per effettuare il fetch dei messaggi successivi, seguendo un ordinamento decrescente (dal più recente al meno recente);
+  - numChat: quantità delle chat che si vogliono recuperare nella medesima operazione.
+  Il DTO in questo caso è essenziale per permettere un corretto traferimento dei dati tra microservizi e livelli differenti
+
+- *`FetchHistoryController`*: corrisponde al consumer, rimane in ascolto nella coda 'fetch_queue' e in ricezione ottiene un messaggio contenente una richiesta presente in un oggetto DTO - `FetchRequestDTO`. Il controller si occupa di trasformare il DTO in un oggetto `FetchHistoryCmd`, delegando l'elaborazione allo _UseCase_ (interface) e alla sua corrispettiva implementazione, ossia al _Service_. 
+
+- *`FetchHistoryCmd`*: command object creato a partire dal DTO, formalizza e incapsula i parametri effettivi della richiesta. Utile a separare i dati provenienti dall'esterno dal formato atteso dalla logica di business, garantendo isolamento tra livelli. I parametri presenti all'interno di tale richiesta sono sempre 'ID' e 'numChat', citati e spiegati in precedenza per il `FetchRequestDTO`.
+
+- *`FetchHistoryUseCase`*: interfaccia che rappresenta la porta di ingresso della logica applicativa per il recupero dello storico. Utile per garantire disaccopiamento tra _Controller_ e _Service_. Nel metodo esposto per il recupero viene passsato `FetchHistoryCmd` come input, mentre in output si ritorna l'oggetto di dominio, ossia `Chat`.
+
+- *`FetchHistoryService`*: implementazione concreta dell'interfaccia precedente, è la classe principale della business logic. Non interagisce direttamente con il database, il suo ruolo è quello di orchestrare il recupero dello storico rispettando la business logic.
+
+- *`FetchHistoryPort`*: questa interfaccia rappresenta la porta di uscita (output port) dal punto di vista della logica applicativa. Astrae il meccanismo con cui vengono recuperati i dati dal livello di persistenza.
+
+- *`FetchHistoryAdapter`*: implementazione concreta dell'interfaccia spiegata in precedenza, funge da punto di collegamento tra logica applicativa al sistema di persistenza ma non accede al database. Il suo compito è quello di ricevere i dati persistiti (`ChatEntity`), traformali in dati di dominio (`Chat`) e restituirli al _Service_.
+
+- *`ChatRepository`*: È la componente incaricata dell'accesso diretto a PostgreSQL, utilizzando #glossary("TypeORM") per la gestione delle entità e delle query. Fornisce il metodo fetchStoricoChat, che implementa la logica di recupero dei messaggi in due scenari distinti:
+  - nel caso di primo accesso a BuddyBot (quando non è fornito un id), vengono recuperate le conversazioni più recenti, ordinate per data in modo decrescente;
+  - nei casi successivi, viene prima identificata la chat corrispondente all'id fornito e, a partire dalla sua data, vengono recuperate le conversazioni precedenti.
+  A seguire, viene inserito il metodo "fetchStoricoChat()" presente in questa classe.
+  ```ts
+  ...
+  export class ChatRepository {
+    constructor(
+      @InjectRepository(ChatEntity) //tabella db della chat
+      private readonly chatRepo: Repository<ChatEntity>,
+
+      @InjectRepository(LastUpdateEntity) //tabella db con unico record data ultimo retrieval info
+      private readonly lastUpdateRepo: Repository<LastUpdateEntity>,
+    ) {}
+
+
+    async fetchStoricoChat(lastChatId: string, numChat?: number): Promise<ChatEntity[]> {
+    try {
+      const take = numChat ? numChat : 5;
+
+      //caso senza ID (quindi primo accesso)
+      if (!lastChatId) {
+        const lastChats = await this.chatRepo.find({
+          order: { answerDate: 'DESC' },
+          take,
+        });
+        return lastChats.slice().reverse()
+      }
+
+      //caso con ID, trovo chat corrispondente e prendo le precedenti (ragionando in ordine cronologico)
+      const lastChat = await this.chatRepo.findOne({
+        where: { id: lastChatId },
+      });
+
+      if (!lastChat) {
+        throw new Error('Last chat ID not found');
+      }
+
+      const previousChats = await this.chatRepo.find({
+        where: {
+          answerDate: LessThan(lastChat.answerDate),
+        },
+        order: { answerDate: 'DESC' },
+        take: take,
+      });
+      const combo = previousChats.slice().reverse()
+      return combo;
+
+    } catch (error) {
+      console.error('Error during History-fetch:', error);
+      throw new Error('Error during History-fetch');
+    }
+    ...
+  }
+  ```
+- *`Chat`*: rappresenta l'entità di dominio; una singola Chat rappresenta una *coppia di messaggi*, ossia include una domanda e la rispettiva risposta. La conversazione con #glossary("BuddyBot"), quindi, si compone di coppie di Chats. 
+  - ```ts
+  export class Chat {
+    constructor(
+      public readonly id: string,
+      public readonly question: Message,
+      public readonly answer: Message,
+      public readonly lastFetch: string
+    ) {}
+  }
+  ```
+- *`ChatDTO`*: data transfer object di uscita, costruito dal controller a partire dagli oggetti Chat. 
+
+- *`Message`*: rappresenta l'entità di dominio che incapsula le informazioni relative a un singolo messaggio all'interno di una `Chat`.
+  - ```ts
+  export class MessageDTO { 
+  constructor(
+    public readonly content: string,
+    public readonly timestamp: string,
+  ) {}
+}
+  ```
+- *`MessageDTO`*: data transfer object utilizzato per esporre i singoli messaggi all'esterno.
+
+- *`ChatEntity`*: rappresenta la mappatura dell'entità "Chat" nel database PostgreSQL, gestita tramite #glossary("TypeORM"). E' associata a una tabella generata automaticamente e viene utilizzata per persistere ogni conversazione tra l'utente e BuddyBot. I principali campi della classe sono:
+  - id: chiave primaria generata in formato UUID;
+  - question: il contenuto testuale della domanda posta dall'utente;
+  - questionDate: timestamp associato alla domanda. Il valore di questo campo viene esplicitamente passato tramite la richiesta di inserimento e conservato cosi com'è nel database;
+  - answer: il contenuto testuale della risposta generata;
+  - answerDate: a differenza della _questionDate_, è un timestamp generato automaticamente al momento dell’inserimento nel database. È gestito da TypeORM tramite il decoratore \@CreateDateColumn, che assegna il valore corrente (now) senza necessità di specificarlo a livello applicativo.
+  - lastFetch: rappresenta la data dell'ultimo "#glossary("Retrieval Periodico")" eseguito, dando all'utilizzatore la possibilità di capire quanto recenti (o meno) sono i dati elaborati dal chatbot.
+  ```ts
+  import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+
+  @Entity()
+  export class ChatEntity {
+      @PrimaryGeneratedColumn('uuid') //primaryKey
+      id: string;
+
+      @Column()
+      question: string;
+
+      @CreateDateColumn({ type: 'timestamptz' })
+      questionDate: Date;
+
+      @Column()
+      answer: string;
+
+      @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
+      answerDate: Date = new Date();
+
+      @Column()
+      lastFetch: string;
+  }
+  ```
+
+
+===== Inserimento di nuovi messaggi
+
+- *`InsertRequestDTO`*: rappresenta il Data Transfer Object utilizzato per ricevere la richiesta di inserimento nel database di una nuova Chat (coppia di messaggi). Contiene tre parametri, ovvero:
+  - question: una stringa contenente la domanda posta;
+  - timestamp: una stringa contenente la data+orario dell'invio delladomanda
+    - si osservi che viene passata solamente quella domanda poiché quella della risposta viene decretata una volta l'inserimento in database;
+  - answer: una stringa contenente la risposta generata dal chatbot.
+  Il DTO in questo caso è essenziale per permettere un corretto traferimento dei dati tra microservizi e livelli differenti.
+
+- *`InsertChatController`*: corrisponde al consumer, rimane in ascolto nella coda 'chat_message' e in ricezione ottiene un messaggio contenente una richiesta presente in un oggetto DTO - `InsertRequestDTO`. Il controller si occupa di trasformare il DTO in un oggetto `InsertChatCmd`, delegando l'elaborazione allo _UseCase_ (interface) e alla sua corrispettiva implementazione, ossia al _Service_. 
+
+- *`InsertChatCmd`*: command object creato a partire dal DTO, formalizza e incapsula i parametri effettivi della richiesta. Utile a separare i dati provenienti dall'esterno dal formato atteso dalla logica di business, garantendo isolamento tra livelli. I parametri presenti all'interno di tale richiesta rimangono i medesimi citati e spiegati in precedenza per il `InsertRequestDTO`.
+
+- *`InsertChatUseCase`*: interfaccia che rappresenta la porta di ingresso della logica applicativa per l'inserimento in database di una nuova `Chat`. Utile per garantire disaccopiamento tra _Controller_ e _Service_.
+
+- *`InsertChatService`*: implementazione concreta dell'interfaccia precedente, è la classe principale della business logic. Non interagisce direttamente con il database, il suo ruolo è quello di *orchestrare* un corretto inserimento di una `Chat` in database rispettando la business logic.
+
+- *`InsertChatPort`*: questa interfaccia rappresenta la porta di uscita (output port) dal punto di vista della logica applicativa. Astrae il meccanismo mediante il quale viene eseguito il processo di inserimento dati nel database.
+
+- *`InsertChatAdapter`*: implementazione concreta dell'interfaccia spiegata in precedenza, funge da punto di collegamento tra logica applicativa al sistema di persistenza ma non accede al database. Il suo compito è quello di ricevere i dati inseriti nel database (`ChatEntity`), traformali in dati di dominio (`Chat`) e restituirli al _Service_.
+
+- *`ChatRepository`*: componente incaricata dell'accesso diretto a PostgreSQL, utilizzando #glossary("TypeORM") per la gestione delle entità e delle query. Fornisce il metodo insertStoricoChat(), che ha il compito di persistere una nuova conversazione nel database. Prima di creare la nuova entità, viene effettuata una lettura dal repository `lastUpdateRepo`, per recuperare il valore corrente dell'ultima data di aggiornamento, _lastFetch_, utilizzato poi per popolare il medesimo della nuova conversazione.
+
+  A seguire, viene inserito il metodo "insertStoricoChat()" presente in questa classe.
+  ```ts
+  ...
+  export class ChatRepository {
+    constructor(
+      @InjectRepository(ChatEntity) //tabella db della chat
+      private readonly chatRepo: Repository<ChatEntity>,
+
+      @InjectRepository(LastUpdateEntity) //tabella db con unico record data ultimo retrieval info
+      private readonly lastUpdateRepo: Repository<LastUpdateEntity>,
+    ) {}
+
+
+    async insertChat(question: string, answer: string, date: Date): Promise<ChatEntity> {
+      const lastUpdate = await this.lastUpdateRepo.findOne({ where: { id: 1 } });
+
+      if (!lastUpdate) {
+        throw new Error('LastUpdate entry not found');
+      }
+
+      const newChat: ChatEntity = this.chatRepo.create({
+        question,
+        questionDate: date,
+        answer,
+        lastFetch: lastUpdate.lastFetch.toISOString()
+      });
+
+      await this.chatRepo.save(newChat);
+
+      return newChat;
+    }
+    ...
+  }
+  ```
+
+- *`Chat`*: rappresenta l'entità di dominio; una singola Chat rappresenta una *coppia di messaggi*, ossia include una domanda e la rispettiva risposta. La conversazione con #glossary("BuddyBot"), quindi, si compone di coppie di Chats. 
+
+- *`ChatDTO`*: data transfer object di uscita, costruito dal controller a partire dagli oggetti `Chat`. 
+
+- *`Message`*: rappresenta l'entità di dominio che incapsula le informazioni relative a un singolo messaggio all'interno di una `Chat`.
+
+- *`MessageDTO`*: data transfer object utilizzato per esporre i singoli messaggi all'esterno.
+
+- *`ChatEntity`*: rappresenta la mappatura dell'entità "Chat" nel database PostgreSQL, gestita tramite #glossary("TypeORM"). E' associata a una tabella generata automaticamente e viene utilizzata per persistere ogni conversazione tra l'utente e BuddyBot. I suoi campi sono stati citati e spiegati nella sezione precedente durante la spiegazione della medesima classe.
+
+- *`LastUpdateEntity`*: rappresenta l'entità incaricata di tracciare la data dell'ultimo #glossary("Retrieval periodico") effettuato, ovvero l'ultimo momento in cui è stato eseguito un fetch globale delle informazioni. Nel database, la tabella _last_update_ ospita un unico record persistente, contenente esclusivamente la data di aggiornamento più recente. ```ts
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+
+@Entity('last_update')
+export class LastUpdateEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({type: 'timestamp' })
+  lastFetch: Date;
+}
+
+```
+
+===== Inserimento dell'ultima data di recupero informazioni
+
+- *`LastUpdateDTO`*: data transfer object utilizzato per rappresentare il payload della richiesta in arrivo. Contiene un unico campo lastFetch, espresso come stringa, che rappresenta la data da registrare come ultimo fetch delle informazioni.
+
+- *`InsertLastUpdateController`*: punto di ingresso del microservizio per la richiesta di aggiornamento del dato relativo all'ultimo retrieval. Il consumer (ossia tale controller) resta in ascolto di nuovi messaggi sulla coda 'lastFetch_queue' ed espone un metodo insertLastRetrieval() che riceve come input un `LastUpdateDTO`, che trasformerà poi in un command object (Cmd).
+
+- *`LastUpdateCmd`*: si tratta del command object utilizzato per incapsulare e strutturare il dato passato dal DTO, prima di invocare lo _UseCase_. Questo passaggio consente di isolare il formato esterno (DTO) dalla logica interna, mantenendo un'interfaccia pulita verso il dominio applicativo.
+
+- *`InsertLastUpdateUseCase`*: interfaccia che rappresenta la porta di ingresso della logica applicativa per l'inserimento in database di una nuova "data di ultimo aggiornamento". Utile per garantire disaccopiamento tra _Controller_ e _Service_.
+
+- *`InsertLastUpdateService`*: implementazione concreta dell'interfaccia precedente, è la classe principale della business logic. Non interagisce direttamente con il database, il suo ruolo è quello di *orchestrare* un corretto inserimento della data ottenuta in database rispettando la business logic.
+
+- *`InsertLastUpdatePort`*: questa interfaccia rappresenta la porta di uscita (output port) dal punto di vista della logica applicativa. Astrae il meccanismo mediante il quale viene eseguito il processo di inserimento del dato in questione nel database.
+
+- *`InsertChatAdapter`*: implementazione concreta dell'interfaccia spiegata in precedenza, funge da punto di collegamento tra logica applicativa al sistema di persistenza, richiamando il metodo richiesto ma non accedendo al database.
+
+- *`ChatRepository`*: componente incaricata dell'accesso diretto a PostgreSQL, utilizzando #glossary("TypeORM") per la gestione delle entità e delle query. In questo contesto, espone il metodo insertLastRetrieval(), che si occupa di aggiornare il valore della data di ultimo accesso nel record persistito della tabella last_update. Si individua il record con id = 1 (ossia unico record presente nella tabella) aggiornando il campo lastFetch con il dato nuovo da inserire.
+
+  A seguire, viene inserito il metodo "insertLastRetrieval()" presente in questa classe.
+  ```ts
+  ...
+  export class ChatRepository {
+    constructor(
+      @InjectRepository(ChatEntity) //tabella db della chat
+      private readonly chatRepo: Repository<ChatEntity>,
+
+      @InjectRepository(LastUpdateEntity) //tabella db con unico record data ultimo retrieval info
+      private readonly lastUpdateRepo: Repository<LastUpdateEntity>,
+    ) {}
+
+
+    async insertLastRetrieval(date: string): Promise<boolean> {
+      const parsedDate = new Date(date);
+
+      //id sempre 1
+      const existing = await this.lastUpdateRepo.findOne({ where: { id: 1 } });
+
+      if (existing) {
+        existing.lastFetch = parsedDate;
+        await this.lastUpdateRepo.save(existing);
+      } else {
+        const newEntry = this.lastUpdateRepo.create({
+          id: 1,
+          lastFetch: parsedDate,
+        });
+        await this.lastUpdateRepo.save(newEntry);
+      }
+
+      return true;
+    }
+    ...
+  }
+  ```
+
+- *`LastUpdateEntity`*: rappresenta l'entità incaricata di tracciare la data dell'ultimo #glossary("Retrieval periodico") effettuato, ovvero l'ultimo momento in cui è stato eseguito un fetch globale delle informazioni. Nel database, la tabella _last_update_ ospita un unico record persistente, contenente esclusivamente la data di aggiornamento più recente.
+

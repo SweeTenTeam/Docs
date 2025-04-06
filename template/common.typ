@@ -52,6 +52,10 @@
   reactq: "/images/analisi-dei-requisiti/reactq.png",
 )
 
+#let spc = (
+  prog_history: "/images/specifica-tecnica/prog_HistoryMicroserv.png"
+)
+
 //Norme di progetto Immagini
 #let gn = (
   attore: "/images/norme/attore.png",
