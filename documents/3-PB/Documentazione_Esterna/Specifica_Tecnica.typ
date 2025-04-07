@@ -167,7 +167,114 @@ TailwindCSS è un framework CSS utilizzato per la creazione di interfacce utente
 Next.js è un framework per la creazione di applicazioni web in React. Il team ha scelto di utilizzare Next.js per i metodi nativi a disposizione per le richieste alle API e per utilizzare una tecnologia più nuova rispetto al resto.
 #figure(image(tc.next, width: 5em, height: auto), caption: "Logo di Next.js")
 
-= Analisi
-// TO BE REVIEWED
 
 
+= Progettazione di dettaglio
+
+== Microservizio Informazioni
+Il microservizio descritto in questa sezione ha l'obiettivo di gestire l'interazione tra il sistema e tre fonti esterne — *Jira*, *Confluence* e *GitHub* — da cui recupera informazioni rilevanti che vengono poi archiviate in un database vettoriale. Oltre alla fase di fetch e persistenza dei dati, il microservizio espone anche una funzionalità di retrieval, ossia il recupero delle informazioni più pertinenti in base alla domanda posta dall'utente. Tale retrieval è supportato da una ricerca semantica sul database vettoriale, finalizzata a fornire il contesto utile alla generazione della risposta da parte del modello linguistico.
+
+Le funzionalità principali del microservizio si articolano in quattro casi d'uso distinti:
+- Fetch e memorizzazione dei dati da *Jira*
+- Fetch e memorizzazione dei dati da *Confluence*
+- Fetch e memorizzazione dei dati da *GitHub*
+- Retrieval delle informazioni rilevanti a partire da una domanda utente
+
+Tutte le richieste verso il microservizio vengono ricevute in modalità asincrona tramite *RabbitMQ*, che funge da message broker tra questo componente e il gateway API. Ogni messaggio ricevuto attiva il caso d'uso corrispondente, il quale viene gestito secondo un'architettura esagonale, che garantisce una netta separazione tra la logica di dominio, i servizi applicativi e gli adattatori per l'integrazione con le fonti esterne e il sistema di storage.
+
+
+=== Fetch e Store dei ticket di Jira
+
+Il diagramma seguente illustra le classi coinvolte nel caso d'uso "Fetch e Store dei ticket di Jira". L'architettura adottata è quella esagonale, che distingue chiaramente tra il nucleo dell'applicazione, le porte e gli adattatori per l'interazione con sistemi esterni, e il livello applicativo che gestisce la logica specifica del caso d'uso.
+
+#figure(
+  image(st.diag_fetch_jira, width: 40em, fit: "contain"),
+  caption: "Diagramma UC6, visualizzazione UI",
+)
+
+==== Componenti Principali
+
+===== JiraFetchAndStoreController
+
+Il *JiraFetchAndStoreController* funge da punto di ingresso per l'operazione di recupero e memorizzazione dei ticket da Jira. Questo controller riceve le richieste dall'esterno, le valida e le instrada verso il caso d'uso appropriato, garantendo che la logica di presentazione rimanga separata dalla logica di business.
+
+===== JiraUseCase
+
+Il *JiraUseCase* rappresenta l'interfaccia che definisce il contratto per la logica di recupero e memorizzazione dei ticket da Jira. Esso stabilisce i metodi che l'implementazione concreta deve fornire, garantendo un'astrazione chiara tra la definizione del comportamento e la sua effettiva implementazione.
+
+===== JiraService
+
+Il *JiraService* è l'implementazione concreta del *JiraUseCase*. Si occupa di coordinare il recupero dei ticket da Jira tramite il *JiraAPIPort*, elaborare i dati ottenuti e infine memorizzarli utilizzando il *StoreJiraPort*. Questo servizio incapsula la logica principale del caso d'uso e garantisce che le operazioni siano eseguite correttamente, gestendo eventuali errori o anomalie durante il processo.
+
+===== JiraAPIPort
+
+Il *JiraAPIPort* definisce un'interfaccia che astrae le operazioni necessarie per interagire con l'API di Jira. Questa porta stabilisce un contratto chiaro su come il nucleo dell'applicazione può richiedere dati da Jira, senza dipendere da dettagli specifici dell'implementazione dell'API esterna.
+
+===== JiraAPIAdapter
+
+Implementando il *JiraAPIPort*, il *JiraAPIAdapter* gestisce la comunicazione effettiva con l'API di Jira. Si occupa di tradurre le richieste dal formato interno dell'applicazione al formato richiesto da Jira e viceversa, elaborando le risposte ricevute per renderle utilizzabili dal nucleo dell'applicazione.
+
+===== Ticket
+
+La classe *Ticket* rappresenta un ticket di Jira all'interno del dominio dell'applicazione. Contiene attributi come l'identificativo, il titolo, l'assegnatario e lo stato, fornendo una rappresentazione strutturata dei dati essenziali di un ticket.
+
+===== JiraComment
+
+Associata alla classe *Ticket*, la classe *JiraComment* modella i commenti relativi a un ticket. Ogni commento include dettagli come l'autore, il contenuto e la data di creazione, permettendo una gestione completa delle informazioni correlate ai ticket.
+
+===== StoreJiraPort
+
+Il *StoreJiraPort* definisce l'interfaccia per la memorizzazione dei ticket recuperati. Questa porta consente al nucleo dell'applicazione di salvare i dati senza preoccuparsi dei dettagli specifici del sistema di storage sottostante.
+
+===== StoreJiraAdapter
+
+Implementando il *StoreJiraPort*, lo *StoreJiraAdapter* si occupa della persistenza dei ticket nel sistema di storage scelto, come un database vettoriale. Gestisce la trasformazione dei dati nel formato appropriato e l'interazione con il meccanismo di storage per garantire che le informazioni siano salvate correttamente.
+
+===== Metadata
+
+La classe *Metadata* contiene informazioni supplementari relative ai ticket, come la fonte dei dati o la data di recupero. Questi metadati sono utili per tracciare l'origine e il contesto delle informazioni memorizzate.
+
+===== Information
+
+Infine, la classe *Information* combina un *Ticket* con i relativi *Metadata*, creando un'entità completa che rappresenta sia i dati principali che le informazioni contestuali. Questa classe è utilizzata durante il processo di memorizzazione per garantire che sia i ticket che i loro metadati siano salvati insieme in modo coerente.
+
+
+=== Retrieval delle Informazioni
+
+Il caso d’uso di retrieval delle informazioni consente di recuperare dati rilevanti dal database vettoriale sulla base di una query fornita dall’utente. Questo processo è essenziale per arricchire il contesto della richiesta e migliorare l’accuratezza delle risposte generate dal sistema.
+
+==== *Retrieval Controller*
+
+Il *Retrieval Controller* rappresenta il punto di ingresso delle richieste di retrieval. Espone un’operazione che riceve un oggetto *RetrievalInfoDTO*, contenente la query dell’utente, e restituisce un oggetto *InformationDTO*, che incapsula il contenuto informativo e i relativi metadati.
+
+#figure(
+  image(st.diag_retr_info, width: 40em, fit: "contain"),
+  caption: "Diagramma UC6, visualizzazione UI",
+)
+
+
+==== *RetrievalInfoUseCase*
+
+Il *RetrievalInfoUseCase* gestisce la logica applicativa del retrieval. Riceve un comando *RetrieveCmd*, che trasporta la query dell’utente, e invoca il *RetrievalInfoService* per ottenere le informazioni pertinenti. Questo livello garantisce l’applicazione delle regole di business e la separazione tra interfaccia e implementazione.
+
+==== *RetrievalInfoService*
+
+Il *RetrievalInfoService* rappresenta l’implementazione concreta della logica di retrieval. Implementa l’interfaccia *RetrievalInfoPort*, interagendo con gli adattatori per recuperare le informazioni dal database vettoriale. Questo componente si occupa di elaborare i risultati, garantendo che le informazioni restituite siano coerenti e strutturate.
+
+==== *RetrievalInfoPort*
+
+L’interfaccia *RetrievalInfoPort* definisce il contratto per il retrieval delle informazioni. Attraverso questa porta, il sistema applicativo si disaccoppia dal livello di persistenza, garantendo flessibilità nell’integrazione con diverse tecnologie di storage.
+
+==== *RetrievalInfoAdapter*
+
+Il *RetrievalInfoAdapter* è il componente responsabile dell’interazione diretta con il database vettoriale. Implementa *RetrievalInfoPort* e traduce i comandi ricevuti in operazioni di interrogazione sul repository.
+
+==== *qdrant-information-repository*
+
+Il *qdrant-information-repository* è il modulo che gestisce la persistenza e il recupero delle informazioni. Offre due operazioni principali: 
+- *storeInformation*, per salvare nuovi dati nel database vettoriale.
+- *retrieveRelevantInfo*, per eseguire la ricerca semantica e restituire le informazioni più pertinenti alla query fornita.
+
+==== *Modello dei Dati*
+
+Il retrieval delle informazioni si basa su una rappresentazione strutturata dei dati. Ogni informazione è modellata come un’istanza della classe *Information*, che include un contenuto testuale e un oggetto *Metadata* associato. La persistenza è garantita da *InformationEntity* e *MetadataEntity*, che rappresentano le controparti del dominio nel livello di storage.

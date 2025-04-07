@@ -92,6 +92,10 @@
   MI: "/images/verbali/Message.png",
 )
 
+#let st = (
+diag_fetch_jira: "/images/specifica-tecnica/fetch_store_jira.png",
+diag_retr_info: "/images/specifica-tecnica/retr_info.png"
+)
 
 //team members
 #let p = (
