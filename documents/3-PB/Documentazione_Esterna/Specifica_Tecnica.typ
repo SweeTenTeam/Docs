@@ -237,6 +237,29 @@ Il backend è suddiviso in quattro microservizi principali:
 - *Storico*: Salva e recupera le domande e le risposte dal database relazionale (_PostgreSQL_) per mantenere uno storico delle conversazioni.
 - *Information Vector DB*: Recupera informazioni dalle fonti, effettua embedding in forma vettoriale e le memorizza nel database vettoriale (_Qdrant_), fornendo dati contestuali al chatbot.
 
+==== Comunicazione tra Microservizi: RabbitMQ
+
+Nell'architettura a microservizi di #glossary("BuddyBot"), la comunicazione efficiente tra componenti è garantita da un sistema di messaggistica asincrona basato su RabbitMQ.
+
+
+L'adozione di RabbitMQ offre benefici fondamentali:
+
+- *Flessibilità temporale:* Determina quando un microservizio elabora una richiesta, eliminando blocchi nell'esecuzione.
+- *Scalabilità orizzontale:* I messaggi vengono distribuiti in code ed elaborati in parallelo.
+- *Resilienza avanzata:* I messaggi persistono nelle code quando i servizi destinatari sono temporaneamente non disponibili.
+- *Disaccoppiamento:* Riduce le dipendenze dirette tra microservizi, semplificando la manutenzione.
+
+===== Pattern e implementazione
+
+Il sistema utilizza principalmente il pattern *RPC asincrono (Request/Response)* per le comunicazioni tra i microservizi, sfruttando l'integrazione tra NestJS e RabbitMQ:
+
+- NestJS gestisce automaticamente gli identificativi di correlazione tra richieste e risposte.
+- Il framework `@nestjs/microservices` fornisce astrazioni per configurare microservizi basati su code.
+- Ogni microservizio implementa:
+    - Listener dedicati che si connettono a specifiche code RabbitMQ.
+    - Handler che associano pattern predefiniti alle funzioni di business logic.
+    - Client per pubblicare messaggi in modo asincrono.
+
 === Architettura logica
 
 Il sistema è progettato seguendo l'*architettura esagonale*, un modello architetturale che crea una separazione netta tra la business logic dell'applicazione e il mondo esterno, garantendo indipendenza da tecnologie specifiche e maggiore manutenibilità.
@@ -262,3 +285,13 @@ Questa architettura garantisce:
 - *Flessibilità*: L'applicazione rimane indipendente dalle tecnologie esterne, facilitando modifiche e aggiornamenti senza impattare la logica di business.
 - *Testabilità*: La logica di business può essere testata in isolamento, semplificando lo sviluppo test-driven.
 - *Resilienza*: Il sistema diventa più resistente ai cambiamenti tecnologici, permettendo di sostituire componenti esterni senza modificare il nucleo applicativo.
+
+=== Design pattern utilizzati
+
+==== Dependency Injection
+
+Uno degli aspetti fondamentali dell'implementazione del backend è stato l'uso del pattern di *Dependency Injection*, nativamente supportato da NestJS. Questo approccio ha permesso di ridurre l'accoppiamento tra i componenti, semplificando la testabilità e la manutenzione del sistema spostando all'esterno della classi la risoluzione delle dipendenze.
+
+NestJS adotta un *container per le dipendenze* che consente di dichiarare i provider una sola volta e iniettarli ovunque siano richiesti tramite il costruttore delle classi. Ogni modulo dell'applicazione può registrare provider, che vengono poi risolti automaticamente dal framework quando una classe dichiara di averne bisogno.
+
+
