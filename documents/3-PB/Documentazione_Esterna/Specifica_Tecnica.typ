@@ -194,22 +194,22 @@ Nelle prossime sezioni verranno riepilogati i 3 flussi per le rispettive operazi
 
 ===== Recupero dello Storico della Chat
 
-- *`FetchRequestDTO`*: rappresenta il Data Transfer Object utilizzato per ricevere la richiesta di recupero dello storico. Contiene due parametri, ovvero:
-  - ID: identificativo che rappresenta l'ultima Chat (coppia di messaggi) precedentemente caricata. Questo valore viene utilizzato come punto di riferimento cronologico per effettuare il fetch dei messaggi successivi, seguendo un ordinamento decrescente (dal più recente al meno recente);
+- *`FetchRequestDTO`*: rappresenta il Data Transfer Object utilizzato per contenere la richiesta di recupero dello storico. Include due parametri, ovvero:
+  - ID: identificativo che rappresenta l'ultima `Chat` (coppia di messaggi, come verrà spiegato nella specifica classe) precedentemente caricata. Questo valore viene utilizzato come punto di riferimento cronologico per effettuare il fetch dei messaggi successivi, seguendo un ordinamento decrescente (dal più recente al meno recente);
   - numChat: quantità delle chat che si vogliono recuperare nella medesima operazione.
-  Il DTO in questo caso è essenziale per permettere un corretto traferimento dei dati tra microservizi e livelli differenti
+  Il DTO in questo caso è essenziale per permettere un corretto traferimento dei dati tra microservizi e livelli differenti.
 
-- *`FetchHistoryController`*: corrisponde al consumer, rimane in ascolto nella coda 'fetch_queue' e in ricezione ottiene un messaggio contenente una richiesta presente in un oggetto DTO - `FetchRequestDTO`. Il controller si occupa di trasformare il DTO in un oggetto `FetchHistoryCmd`, delegando l'elaborazione allo _UseCase_ (interface) e alla sua corrispettiva implementazione, ossia al _Service_. 
+- *`FetchHistoryController`*: corrisponde al consumer, rimane in ascolto nella coda 'fetch_queue' e in ricezione ottiene un messaggio contenente una richiesta presente in un oggetto DTO - `FetchRequestDTO`. Il controller si occupa di trasformare il DTO in un oggetto `FetchHistoryCmd`, delegando l'elaborazione allo _UseCase_ (interface) e alla sua corrispettiva implementazione, ossia al _Service_. Una volta che quest'ultimo tornerà l'oggetto di dominio, il controller lo convertirà nuovamente in ChatDTO affinchè vengano rispettati i principi del modello esagonale.
 
 - *`FetchHistoryCmd`*: command object creato a partire dal DTO, formalizza e incapsula i parametri effettivi della richiesta. Utile a separare i dati provenienti dall'esterno dal formato atteso dalla logica di business, garantendo isolamento tra livelli. I parametri presenti all'interno di tale richiesta sono sempre 'ID' e 'numChat', citati e spiegati in precedenza per il `FetchRequestDTO`.
 
 - *`FetchHistoryUseCase`*: interfaccia che rappresenta la porta di ingresso della logica applicativa per il recupero dello storico. Utile per garantire disaccopiamento tra _Controller_ e _Service_. Nel metodo esposto per il recupero viene passsato `FetchHistoryCmd` come input, mentre in output si ritorna l'oggetto di dominio, ossia `Chat`.
 
-- *`FetchHistoryService`*: implementazione concreta dell'interfaccia precedente, è la classe principale della business logic. Non interagisce direttamente con il database, il suo ruolo è quello di orchestrare il recupero dello storico rispettando la business logic.
+- *`FetchHistoryService`*: implementazione concreta dell'interfaccia precedente, è la classe principale della business logic. Non interagisce direttamente con il database, il suo ruolo è quello di *orchestrare* il recupero dello storico rispettando la business logic.
 
 - *`FetchHistoryPort`*: questa interfaccia rappresenta la porta di uscita (output port) dal punto di vista della logica applicativa. Astrae il meccanismo con cui vengono recuperati i dati dal livello di persistenza.
 
-- *`FetchHistoryAdapter`*: implementazione concreta dell'interfaccia spiegata in precedenza, funge da punto di collegamento tra logica applicativa al sistema di persistenza ma non accede al database. Il suo compito è quello di ricevere i dati persistiti (`ChatEntity`), traformali in dati di dominio (`Chat`) e restituirli al _Service_.
+- *`FetchHistoryAdapter`*: implementazione concreta dell'interfaccia spiegata in precedenza, funge da punto di collegamento tra logica applicativa al sistema di persistenza ma non accede al database. Il suo primo compito è quello di formalizzare la richiesta ricevuta (`FetchHistoryCmd`) in un formato adatto al repository, estraendo e passando in modo esplicito i parametri (id, numChat) necessari alla query. Dopodichè riceve i dati persistiti (`ChatEntity`), li trasforma in dati di dominio (`Chat`) e li restituisce al _Service_.
 
 - *`ChatRepository`*: È la componente incaricata dell'accesso diretto a PostgreSQL, utilizzando #glossary("TypeORM") per la gestione delle entità e delle query. Fornisce il metodo fetchStoricoChat, che implementa la logica di recupero dei messaggi in due scenari distinti:
   - nel caso di primo accesso a BuddyBot (quando non è fornito un id), vengono recuperate le conversazioni più recenti, ordinate per data in modo decrescente;
@@ -266,7 +266,7 @@ Nelle prossime sezioni verranno riepilogati i 3 flussi per le rispettive operazi
     ...
   }
   ```
-- *`Chat`*: rappresenta l'entità di dominio; una singola Chat rappresenta una *coppia di messaggi*, ossia include una domanda e la rispettiva risposta. La conversazione con #glossary("BuddyBot"), quindi, si compone di coppie di Chats. 
+- *`Chat`*: rappresenta l'entità di dominio; una singola Chat rappresenta una *coppia di messaggi*, ossia include una domanda e la rispettiva risposta. La conversazione con #glossary("BuddyBot"), quindi, si compone di Chats. 
   - ```ts
   export class Chat {
     constructor(
@@ -295,7 +295,7 @@ Nelle prossime sezioni verranno riepilogati i 3 flussi per le rispettive operazi
   - question: il contenuto testuale della domanda posta dall'utente;
   - questionDate: timestamp associato alla domanda. Il valore di questo campo viene esplicitamente passato tramite la richiesta di inserimento e conservato cosi com'è nel database;
   - answer: il contenuto testuale della risposta generata;
-  - answerDate: a differenza della _questionDate_, è un timestamp generato automaticamente al momento dell’inserimento nel database. È gestito da TypeORM tramite il decoratore \@CreateDateColumn, che assegna il valore corrente (now) senza necessità di specificarlo a livello applicativo.
+  - answerDate: a differenza della _questionDate_, è un timestamp generato automaticamente al momento dell'inserimento nel database. È gestito da TypeORM tramite il decoratore \@CreateDateColumn, che assegna il valore corrente (now) senza necessità di specificarlo a livello applicativo.
   - lastFetch: rappresenta la data dell'ultimo "#glossary("Retrieval Periodico")" eseguito, dando all'utilizzatore la possibilità di capire quanto recenti (o meno) sono i dati elaborati dal chatbot.
   ```ts
   import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
@@ -308,7 +308,7 @@ Nelle prossime sezioni verranno riepilogati i 3 flussi per le rispettive operazi
       @Column()
       question: string;
 
-      @CreateDateColumn({ type: 'timestamptz' })
+      @Column({ type: 'timestamptz' })
       questionDate: Date;
 
       @Column()
@@ -325,14 +325,14 @@ Nelle prossime sezioni verranno riepilogati i 3 flussi per le rispettive operazi
 
 ===== Inserimento di nuovi messaggi
 
-- *`InsertRequestDTO`*: rappresenta il Data Transfer Object utilizzato per ricevere la richiesta di inserimento nel database di una nuova Chat (coppia di messaggi). Contiene tre parametri, ovvero:
+- *`InsertRequestDTO`*: rappresenta il Data Transfer Object utilizzato per contenere la richiesta di inserimento nel database di una nuova Chat (coppia di messaggi). Include tre parametri, ovvero:
   - question: una stringa contenente la domanda posta;
-  - timestamp: una stringa contenente la data+orario dell'invio delladomanda
-    - si osservi che viene passata solamente quella domanda poiché quella della risposta viene decretata una volta l'inserimento in database;
+  - timestamp: una stringa contenente la data+orario dell'invio della domanda
+    - si osservi che viene passata solamente quella domanda poiché quella della risposta viene decretata una volta avvenuto l'inserimento in database;
   - answer: una stringa contenente la risposta generata dal chatbot.
   Il DTO in questo caso è essenziale per permettere un corretto traferimento dei dati tra microservizi e livelli differenti.
 
-- *`InsertChatController`*: corrisponde al consumer, rimane in ascolto nella coda 'chat_message' e in ricezione ottiene un messaggio contenente una richiesta presente in un oggetto DTO - `InsertRequestDTO`. Il controller si occupa di trasformare il DTO in un oggetto `InsertChatCmd`, delegando l'elaborazione allo _UseCase_ (interface) e alla sua corrispettiva implementazione, ossia al _Service_. 
+- *`InsertChatController`*: corrisponde al consumer, rimane in ascolto nella coda 'chat_message' e in ricezione ottiene un messaggio contenente una richiesta presente in un oggetto DTO - `InsertRequestDTO`. Il controller si occupa di trasformare il DTO in un oggetto `InsertChatCmd`, delegando l'elaborazione allo _UseCase_ (interface) e alla sua corrispettiva implementazione, ossia al _Service_. Una volta che quest'ultimo tornerà l'oggetto di dominio, il controller lo convertirà nuovamente in ChatDTO affinchè vengano rispettati i principi del modello esagonale.
 
 - *`InsertChatCmd`*: command object creato a partire dal DTO, formalizza e incapsula i parametri effettivi della richiesta. Utile a separare i dati provenienti dall'esterno dal formato atteso dalla logica di business, garantendo isolamento tra livelli. I parametri presenti all'interno di tale richiesta rimangono i medesimi citati e spiegati in precedenza per il `InsertRequestDTO`.
 
@@ -342,9 +342,9 @@ Nelle prossime sezioni verranno riepilogati i 3 flussi per le rispettive operazi
 
 - *`InsertChatPort`*: questa interfaccia rappresenta la porta di uscita (output port) dal punto di vista della logica applicativa. Astrae il meccanismo mediante il quale viene eseguito il processo di inserimento dati nel database.
 
-- *`InsertChatAdapter`*: implementazione concreta dell'interfaccia spiegata in precedenza, funge da punto di collegamento tra logica applicativa al sistema di persistenza ma non accede al database. Il suo compito è quello di ricevere i dati inseriti nel database (`ChatEntity`), traformali in dati di dominio (`Chat`) e restituirli al _Service_.
+- *`InsertChatAdapter`*: implementazione concreta dell'interfaccia spiegata in precedenza, funge da punto di collegamento tra logica applicativa al sistema di persistenza ma non accede al database. Il suo primo compito è quello di formalizzare la richiesta ricevuta (`FetchHistoryCmd`) in un formato adatto al repository, estraendo e passando in modo esplicito i parametri (id, numChat) necessari alla query. Dopodichè riceve i dati persistiti (`ChatEntity`), li trasforma in dati di dominio (`Chat`) e li restituisce al _Service_.
 
-- *`ChatRepository`*: componente incaricata dell'accesso diretto a PostgreSQL, utilizzando #glossary("TypeORM") per la gestione delle entità e delle query. Fornisce il metodo insertStoricoChat(), che ha il compito di persistere una nuova conversazione nel database. Prima di creare la nuova entità, viene effettuata una lettura dal repository `lastUpdateRepo`, per recuperare il valore corrente dell'ultima data di aggiornamento, _lastFetch_, utilizzato poi per popolare il medesimo della nuova conversazione.
+- *`ChatRepository`*: componente incaricata dell'accesso diretto a PostgreSQL, utilizzando #glossary("TypeORM") per la gestione delle entità e delle query. Fornisce il metodo insertStoricoChat(), che ha il compito di persistere una nuova conversazione nel database. Prima di creare la nuova entità, viene effettuata una lettura dal repository `lastUpdateRepo`, per recuperare il valore corrente dell'ultima data di aggiornamento, _lastFetch_, utilizzato poi per popolare il medesimo campo della nuova conversazione (domanda-risposta).
 
   A seguire, viene inserito il metodo "insertStoricoChat()" presente in questa classe.
   ```ts
@@ -381,7 +381,7 @@ Nelle prossime sezioni verranno riepilogati i 3 flussi per le rispettive operazi
   }
   ```
 
-- *`Chat`*: rappresenta l'entità di dominio; una singola Chat rappresenta una *coppia di messaggi*, ossia include una domanda e la rispettiva risposta. La conversazione con #glossary("BuddyBot"), quindi, si compone di coppie di Chats. 
+- *`Chat`*: rappresenta l'entità di dominio; una singola Chat rappresenta una *coppia di messaggi*, ossia include una domanda e la rispettiva risposta. La conversazione con #glossary("BuddyBot"), quindi, si compone di Chats. 
 
 - *`ChatDTO`*: data transfer object di uscita, costruito dal controller a partire dagli oggetti `Chat`. 
 
@@ -409,7 +409,7 @@ export class LastUpdateEntity {
 
 - *`LastUpdateDTO`*: data transfer object utilizzato per rappresentare il payload della richiesta in arrivo. Contiene un unico campo lastFetch, espresso come stringa, che rappresenta la data da registrare come ultimo fetch delle informazioni.
 
-- *`InsertLastUpdateController`*: punto di ingresso del microservizio per la richiesta di aggiornamento del dato relativo all'ultimo retrieval. Il consumer (ossia tale controller) resta in ascolto di nuovi messaggi sulla coda 'lastFetch_queue' ed espone un metodo insertLastRetrieval() che riceve come input un `LastUpdateDTO`, che trasformerà poi in un command object (Cmd).
+- *`InsertLastUpdateController`*: punto di ingresso del microservizio per la richiesta di aggiornamento del dato relativo all'ultimo retrieval. Il consumer (ossia tale controller) resta in ascolto di nuovi messaggi sulla coda 'lastFetch_queue' ed espone un metodo insertLastRetrieval() che riceve come input un `LastUpdateDTO`, che trasformerà poi in un command object (Cmd). Ritornerà infine un boolean per rappresentare l'esito dell'operazione.
 
 - *`LastUpdateCmd`*: si tratta del command object utilizzato per incapsulare e strutturare il dato passato dal DTO, prima di invocare lo _UseCase_. Questo passaggio consente di isolare il formato esterno (DTO) dalla logica interna, mantenendo un'interfaccia pulita verso il dominio applicativo.
 
