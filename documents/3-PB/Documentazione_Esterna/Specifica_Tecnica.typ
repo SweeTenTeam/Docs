@@ -5,6 +5,13 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.0.x",
+    "2025-04-08",
+    (p.benedetti),
+    (p.fracaro),
+    [
+      Aggiunta sezione microservizio ChatBot
+    ],
     "0.0.3",
     "2025-03-27",
     (p.ferazzani),
@@ -676,6 +683,7 @@ export class Adaptee {
 
 
 = Microservizio Chatbot
+#figure(image(spc.chatUml, width:118%, height: auto), caption: [UML ChatBot])
 
 Il microservizio Chatbot rappresenta una componente cruciale all'interno dell'architettura di #glossary("BuddyBot"), essendo responsabile dell'elaborazione delle domande degli utenti e della generazione di risposte pertinenti. Questo microservizio è progettato secondo i principi dell'architettura esagonale garantendo una netta separazione tra la logica di business e i dettagli implementativi.
 
