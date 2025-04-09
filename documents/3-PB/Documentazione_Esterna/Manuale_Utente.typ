@@ -11,7 +11,7 @@
     "0.0.1",
     "2025-03-10",
     p.ferazzani,
-    p.campagnaro,
+    p.mahdi,
     [
       Prima stesura del documento
     ],
