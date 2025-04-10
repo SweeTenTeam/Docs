@@ -1111,6 +1111,9 @@ Al termine del sesto periodo è emerso che non ci sono stati eccessi o difetti s
 #avanzamento(100, 5, "6")
 
 #pagebreak()
+
+== PB
+
 === *Periodo 7*
 *Inizio*: 2025-03-04;\
 *Fine prevista*: 2025-03-10;\
@@ -1118,7 +1121,7 @@ Al termine del sesto periodo è emerso che non ci sono stati eccessi o difetti s
 *Giorni di ritardo*: #neg(0);\
 
 ==== Pianificazione
-Durante la settimane del settimo sprint, il team si dedicherà alla progettazione di dettaglio dei vari microservizi presentati all'azienda nell'incontro di fine #glossary("Sprint") precedente.
+Durante la settimana del settimo sprint, il team si dedicherà alla progettazione di dettaglio dei vari microservizi presentati all'azienda nell'incontro di fine #glossary("Sprint") precedente.
 Inoltre, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare la progettazione dei vari microservizi.
 
 ==== Rischi attesi
@@ -1213,7 +1216,7 @@ Al termine del settimo periodo è emerso che non ci sono stati eccessi o difetti
 *Giorni di ritardo*: #neg(0);\
 
 ==== Pianificazione
-Durante la settimane del ottavo sprint, il team inizierà la modellazione dei vari microservizi dopo aver mostrato ad #box(image(g.azzurro, width: 5em, height: auto)) le progettazioni fatte nel periodo precedente, .
+Durante la settimane del ottavo sprint, il team inzierà con l'implementazione dei vari microservizi dopo che sono state approvate dall'azienda le decisioni prese in fase di progettazione.
 Inoltre, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare i primi microservizi implementati.
 
 ==== Rischi attesi
@@ -1307,8 +1310,8 @@ Al termine del settimo periodo è emerso che non ci sono stati eccessi o difetti
 *Giorni di ritardo*: #neg(0);\
 
 ==== Pianificazione
-Durante la settimane del ottavo sprint, il team si dedicherà alla modellazione del microservizio di "chatbot" dopo aver mostrato la sua progettazione ad #box(image(g.azzurro, width: 5em, height: auto)) nel incontro di fine #glossary("Sprint") precedente, inoltre verranno portati avanti gli altri microservizi con i rispettivi test.
-Inoltre, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare gli avanzamenti fatti ed esporre alcune problematiche.
+Durante la settimana dell’ottavo sprint, il team si concentrerà sull'implementazione del microservizio 'chatbot', dopo averne presentato la progettazione a #box(image(g.azzurro, width: 5em, height: auto)) nell’incontro di fine #glossary('Sprint') precedente. Parallelamente, proseguiranno le attività di sviluppo e test degli altri microservizi.
+Infine, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare gli avanzamenti fatti ed esporre alcune problematiche.
 
 ==== Rischi attesi
 I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
@@ -1338,7 +1341,7 @@ I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
 #prev-economico((7,3,3,12.5,52,15),"9")
 
 ==== Consuntivo
-Tutte le attività previste e pianificate sono state completate nei termini prestabiliti, mancano solo alcuni microservizi da testare in vita della loro integrazione, prevista per il prossimo periodo.
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti, mancano solo alcuni microservizi da testare in vista della loro integrazione, prevista per il prossimo periodo.
 
 Dal confronto tra preventivo e consuntivo emerge che:
 
