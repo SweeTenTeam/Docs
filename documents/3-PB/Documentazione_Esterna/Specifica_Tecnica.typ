@@ -185,7 +185,7 @@ In particolare, l'interazione con PostgreSQL è delegata a un repository dedicat
 La logica applicativa, invece, accede ai dati attraverso alle Port & Adapter di output, fungendo da mediatori con il repository.
 Questo approccio consente di mantenere l'"application" completamente agnostica rispetto alla tecnologia di persistenza, favorendo una maggiore manutenibilità, testabilità e flessibilità.
 
-==== Tre diversi casi d'uso
+==== Quattro casi d'uso
 Questo microservizio è stato progettato per l'esecuzione di 4 principali operazioni.
 - *Recupero dello Storico della Chat*
   - L'obiettivo è quello di recuperare dal database una specifica quantità di messaggi richiesti
