@@ -7,9 +7,9 @@
         "0.0.3",
     "2025-04-03",
     (p.fracaro),
-    (p.benedetti),
+    (p.santi),
     [
-      Sezione architettura di sistema
+      Sezione architettura di sistema e introduzione backend
     ],
     "0.0.1",
     "2025-02-27",
