@@ -1310,7 +1310,7 @@ Al termine del settimo periodo è emerso che non ci sono stati eccessi o difetti
 *Giorni di ritardo*: #neg(0);\
 
 ==== Pianificazione
-Durante la settimana dell’ottavo sprint, il team si concentrerà sull'implementazione del microservizio 'chatbot', dopo averne presentato la progettazione a #box(image(g.azzurro, width: 5em, height: auto)) nell’incontro di fine #glossary('Sprint') precedente. Parallelamente, proseguiranno le attività di sviluppo e test degli altri microservizi.
+Durante la settimana dell’ottavo sprint, il team si concentrerà sull'implementazione del microservizio 'chatbot', dopo averne presentato la progettazione a #box(image(g.azzurro, width: 5em, height: auto)) nell’incontro di fine #glossary("Sprint") precedente. Parallelamente, proseguiranno le attività di sviluppo e test degli altri microservizi.
 Infine, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare gli avanzamenti fatti ed esporre alcune problematiche.
 
 ==== Rischi attesi
