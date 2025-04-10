@@ -461,7 +461,7 @@ Questa classe implementa:
 - `GithubWorkflowAPIPort`
 ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `GithubAPIFacade`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic.
 
-==== GithubAPIFacade
+==== GithubAPIRepository
 Questa è la classe che si occupa di interfacciarsi direttamente con le API di Github. Esegue richieste tramite il client offerto da `octo-kit` e ritorna JSON con i dati 'grezzi'.
 
 ==== GithubStoreInfoPort
@@ -514,7 +514,7 @@ Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo
 ==== ConfluenceAPIAdapter
 Questa classe implementa `ConfluenceAPIPort`, ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `ConfluenceAPIFacade`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic di `ConfluenceDocument`.
 
-==== ConfluenceAPIFacade
+==== ConfluenceAPIRepository
 Questa è la classe che si occupa di interfacciarsi direttamente con le API di Confluence. Esegue richieste tramite il client offerto da `confluence.js` e ritorna JSON con i dati 'grezzi'.
 
 ==== ConfluenceStorePort
