@@ -50,6 +50,19 @@
   next: "/images/analisi-dei-requisiti/next.png",
   tlw: "/images/analisi-dei-requisiti/tailwind.png",
   reactq: "/images/analisi-dei-requisiti/reactq.png",
+  jest: "/images/analisi-dei-requisiti/jest.png",
+  esl: "/images/analisi-dei-requisiti/esl.png",
+  shad: "/images/analisi-dei-requisiti/shad.png",
+  lucide: "/images/analisi-dei-requisiti/lucide.jpg",
+)
+
+#let spc = (
+  header: "/images/specifica-tecnica/header.png",
+  navbar: "/images/specifica-tecnica/navbar.png",
+  chat: "/images/specifica-tecnica/chatWindow.png",
+  bubble: "/images/specifica-tecnica/bubble.png",
+  input: "/images/specifica-tecnica/inputForm.png",
+  uml: "/images/specifica-tecnica/uml.png",
 )
 
 #let spc = (
@@ -109,7 +122,7 @@
   santi: "Andrea Santi",
   vardanega: "Prof. Tullio Vardanega",
   cardin: "Prof. Riccardo Cardin",
-  blank: "",
+  blank: "blank",
 )
 
 //docs
