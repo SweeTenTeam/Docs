@@ -758,7 +758,7 @@ Gli attori coinvolti nei casi d'uso sono:
 - "Come utente, voglio che l'interfaccia utente mostri un messaggio di risposta quando la mia domanda riguarda dati presenti in documenti non ancora disponibili, in modo da essere informato che la risposta non può essere fornita al momento."
 
 
-==== UC3.6, Visualizzazione caricamento del messaggio
+==== UC3.6, Visualizzazione caricamento della risposta
 *Attori coinvolti:*
 - Primari:
   - User
