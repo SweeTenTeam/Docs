@@ -39,7 +39,7 @@ La riunione è iniziata con una breve presentazione dello stato attuale del Chat
 - Ogni quanto fare il retrieval delle informazioni;
 - La possibilità di inserire una data di default in modo che il sistema faccia un retrieval anche al primo avvio e non solo periodicamente;
 
-Per quanto riguarda il primo punto, si è discusso di come un retrieval ogni 10 o 20 minuti, permetta di avere sempre informazioni aggiornate, ma risulti anche problematico in qualche caso specifico. In particolare, questa scelta è problematica nel momento in cui un fetch impieghi più minuti di quelli che ci sono tra un fetch e un altro causa mole dei dati. In questo caso, il primo fetch non completato verrebbe interrotto dal secondo in fase di inizio.
+Per quanto riguarda il primo punto, si è discusso di come un sistema di retrieval ogni 10 o 20 minuti consenta di mantenere le informazioni costantemente aggiornate, ma possa anche presentare criticità in alcuni casi specifici. In particolare, questa scelta diventa problematica quando un'operazione di fetch richiede più tempo dell’intervallo tra due fetch consecutivi, a causa dell’elevata mole di dati. In tal caso, il secondo fetch rischierebbe di sovrapporsi al primo, che non si è ancora concluso, interrompendone l’esecuzione.
 
 Per il secondo punto invece, si è discusso di come sia necessario implementare un retrieval al primo avvio del sistema, in modo da poter usufruire del sistema fin da subito.
 
