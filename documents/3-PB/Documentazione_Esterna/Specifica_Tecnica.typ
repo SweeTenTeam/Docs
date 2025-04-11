@@ -5,6 +5,13 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.0.7",
+    "2025-04-10",
+    (p.benedetti),
+    (p.fracaro),
+    [
+      Stesura tracciamento stato requisiti
+    ],
     "0.0.6",
     "2025-04-10",
     (p.santi),
