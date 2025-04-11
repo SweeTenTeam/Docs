@@ -6,13 +6,20 @@
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
 
-    "0.0.5",
+    "0.0.6",
     "2025-04-10",
     (p.santi),
     (p.mahdi),
     [
       Stesura microservizio denominato "Storico"
     ],
+    "0.0.5",
+    "2025-04-08",
+    (p.benedetti),
+    (p.fracaro),
+    [
+      Aggiunta sezione microservizio ChatBot
+      ],
     "0.0.4",
     "2025-04-03",
     (p.fracaro),
@@ -808,6 +815,343 @@ export class Adaptee {
   ```]
 #pagebreak()
 
+
+= Microservizio Chatbot
+#figure(image(spc.chatUml, width:118%, height: auto), caption: [UML ChatBot])
+
+Il microservizio Chatbot rappresenta una componente cruciale all'interno dell'architettura di #glossary("BuddyBot"), essendo responsabile dell'elaborazione delle domande degli utenti e della generazione di risposte pertinenti. Questo microservizio è progettato secondo i principi dell'architettura esagonale garantendo una netta separazione tra la logica di business e i dettagli implementativi.
+
+La sua funzione principale è quella di ricevere una domanda dall'utente, arricchirla con informazioni contestuali recuperate dal microservizio Informazioni, e utilizzare queste informazioni per generare una risposta accurata e rilevante attraverso un modello di linguaggio esterno (LLM).
+
+== Architettura e Componenti
+
+L'architettura del microservizio è strutturata in diversi layer, ciascuno con responsabilità ben definite:
+
+=== Domain Layer
+Il Domain Layer contiene le entità core e i value objects che rappresentano i concetti fondamentali del dominio, indipendenti da qualsiasi tecnologia specifica:
+
+- *Entità*:
+  - `Chat`: Rappresenta una conversazione completa con domanda e risposta
+  - `Information`: Contiene informazioni contestuali recuperate dal database vettoriale
+  - `Metadata`: Mantiene i metadati associati alle informazioni (origine, tipo, ID)
+
+- *Value Objects*:
+  - `ReqAnswerCmd`: Command object che incapsula la richiesta dell'utente
+
+=== Application Layer
+L'Application Layer coordina il flusso di dati e implementa i casi d'uso dell'applicazione, orchestrando il lavoro delle entità del dominio:
+
+- *Use Cases (Interfaces)*:
+  - `ElaborazioneUseCase`: Definisce il contratto per l'elaborazione delle domande e la generazione di risposte
+
+- *Ports (Interfaces)*:
+  - `LLMPort`: Interfaccia che definisce le operazioni per interagire con modelli di linguaggio esterni
+  - `VectorDbPort`: Interfaccia che definisce le operazioni per recuperare informazioni dal database vettoriale
+
+- *Services*:
+  - `ElaborazioneService`: Implementazione concreta di `ElaborazioneUseCase` che coordina l'interazione tra il recupero delle informazioni contestuali e la generazione delle risposte attraverso il modello di linguaggio
+
+Questo layer implementa la logica applicativa senza dipendere direttamente da meccanismi specifici di persistenza o comunicazione, utilizzando le interfacce (ports) per interagire con il mondo esterno.
+
+=== Adapters Layer
+L'Adapters Layer traduce le interazioni tra il core dell'applicazione e il mondo esterno, gestendo le conversioni di formato e protocollo:
+
+- *Adapters In*:
+  - `ChatController`: Riceve le richieste tramite RabbitMQ, le converte in command objects (`ReqAnswerCmd`) e le passa al caso d'uso appropriato (`ElaborazioneUseCase`)
+
+- *Adapters Out*:
+  - `GroqAdapter`: Implementa `LLMPort` per interagire con il modello di linguaggio #glossary("Groq"), convertendo i formati di dominio in richieste API specifiche
+  - `VectorDbAdapter`: Implementa `VectorDbPort` per comunicare con il microservizio DB Vettoriale, gestendo la serializzazione e deserializzazione dei messaggi RabbitMQ
+
+- *Data Transfer Objects (DTOs)*:
+  - `ReqAnswerDTO`: Oggetto di trasferimento dati per ricevere le richieste in ingresso dal client
+  - `ChatDTO`: Oggetto di trasferimento dati per le risposte (definito ma non utilizzato nell'implementazione attuale)
+
+Gli adapter isolano il core dell'applicazione dai dettagli di implementazione delle tecnologie esterne, consentendo di sostituire facilmente tali tecnologie senza modificare la logica di business.
+
+=== Infrastructure Layer
+L'Infrastructure Layer fornisce implementazioni concrete per servizi esterni, configurazioni e meccanismi di comunicazione:
+
+- *Clients*:
+  - `VectorDbClient`: Client che gestisce la comunicazione con il microservizio DB Vettoriale tramite RabbitMQ, incapsulando i dettagli di connessione e serializzazione
+  - `ChatGroq`: Client di terze parti per l'interazione con l'API di #glossary("Groq"), configurato per utilizzare il modello di linguaggio "qwen-2.5-32b"
+
+- *Configuration*:
+  - `ConfigModule`: Modulo di NestJS che gestisce il caricamento e l'accesso alle variabili d'ambiente
+  - `AppModule`: Modulo principale dell'applicazione che configura le dipendenze, i provider e i controller
+
+- *Communication*:
+  - `rabbitMQConfig`: Configurazione per la connessione a RabbitMQ, definendo code e opzioni
+
+Questo layer si concentra esclusivamente sui dettagli tecnici e sulle implementazioni specifiche delle tecnologie, mantenendo queste preoccupazioni separate dalla logica di business.
+
+== Flusso Principale di Elaborazione
+
+Il flusso principale per la generazione di una risposta segue questi passaggi:
+
+1. *Ricezione della richiesta*
+   - Un messaggio contenente la domanda dell'utente viene ricevuto tramite RabbitMQ
+   - Il `ChatController` gestisce il messaggio e crea un comando `ReqAnswerCmd`
+
+2. *Ricerca di informazioni contestuali*
+   - Il servizio `ElaborazioneService` utilizza `VectorDbPort` per cercare informazioni rilevanti nel #glossary("database vettoriale")
+   - La richiesta viene inoltrata al microservizio Informazioni tramite RabbitMQ
+
+3. *Generazione della risposta*
+   - Le informazioni contestuali recuperate vengono combinate con la domanda originale
+   - Il servizio utilizza `LLMPort` per interagire con un modello di linguaggio (#glossary("Groq"))
+   - La risposta generata viene formattata come oggetto `Chat`
+#pagebreak()
+4. *Restituzione della risposta*
+   - Il risultato viene restituito al chiamante (API Gateway)
+
+=== Componenti Principali
+
+==== Controllers
+
+- *ChatController*: Punto di ingresso per le richieste RabbitMQ. Gestisce il pattern di messaggistica "get-answer" e converte i dati di richiesta (`ReqAnswerDTO`) in comandi di dominio (`ReqAnswerCmd`).
+
+==== Use Cases e Ports
+
+- *ElaborazioneUseCase*: Interfaccia che definisce il contratto per il caso d'uso principale di generazione di risposte.
+- *LLMPort*: Interfaccia che definisce il contratto per l'interazione con modelli di linguaggio.
+- *VectorDbPort*: Interfaccia che definisce il contratto per l'interazione con il #glossary("database vettoriale").
+
+==== Services
+
+- *ElaborazioneService*: Implementazione principale del caso d'uso di elaborazione delle domande. Gestisce il flusso complessivo dell'elaborazione della richiesta:
+  1. Ricerca di informazioni contestuali rilevanti tramite `VectorDbPort`
+  2. Invio della domanda e del contesto al modello di linguaggio tramite `LLMPort`
+  3. Restituzione della risposta generata
+
+#sourcecode[```typescript
+@Injectable()
+export class ElaborazioneService implements ElaborazioneUseCase {
+  constructor(
+    @Inject(LLM_PORT)
+    private readonly llmPort: LLMPort,
+    @Inject(VECTOR_DB_PORT)
+    private readonly vectorDbPort: VectorDbPort,
+  ) {}
+
+  async getAnswer(req: ReqAnswerCmd): Promise<Chat> {
+      // 1. Ricerca del contesto rilevante nel database vettoriale tramite RabbitMQ
+      const relevantContext = await this.vectorDbPort.searchVectorDb(req);
+      console.log(`Retrieved ${relevantContext.length} relevant documents: `);
+      
+      // 2. Genera la risposta utilizzando l'LLM con il contesto recuperato
+      const chat = await this.llmPort.generateAnswer(req, relevantContext);
+      
+      return chat;
+  }
+}
+```]
+#pagebreak()
+==== Adapters
+
+- *GroqAdapter*: Implementa `LLMPort` per interagire con il modello di linguaggio #glossary("Groq"). Utilizza #glossary("LangChain") per gestire i prompt e il parsing delle risposte.
+
+#sourcecode[```typescript
+@Injectable()
+export class GroqAdapter implements LLMPort {
+  constructor(private readonly groq: ChatGroq) {
+    
+  }
+
+  async generateAnswer(req: ReqAnswerCmd, info: Information[]): Promise<Chat> {
+    const prompt = PromptTemplate.fromTemplate(`Answer the question based only on the following context: {context} Question: {question}`);
+    const ragChain = await createStuffDocumentsChain({
+        llm: this.groq,
+        prompt,
+        outputParser: new StringOutputParser(),
+    });
+    const documents: Document[] = [];
+    for(const information of info){
+      documents.push({
+        pageContent: information.content, 
+        metadata: {
+          'origin': information.metadata.origin,
+          'type': information.metadata.type,
+          'originId': information.metadata.originID
+        }
+      });
+    }
+    const response = await ragChain.invoke({
+      question: req.getText(), 
+      context: documents
+    });
+    return new Chat(req.getText(), response);
+  }
+}
+```]
+
+#pagebreak()
+
+- *VectorDbAdapter*: Implementa `VectorDbPort` per interagire con il microservizio DB Vettoriale tramite RabbitMQ.
+
+#sourcecode[```typescript
+@Injectable()
+export class VectorDbAdapter implements VectorDbPort {
+    constructor(private client: VectorDbClient) {}
+    
+    async searchVectorDb(req: ReqAnswerCmd): Promise<Information[]> {
+        let result: Information[] = [];
+        const res = await this.client.sendMessage("retrieve.information", {query: req.getText()});
+        
+        for(const r of JSON.parse(JSON.stringify(res))) {
+            let i = new Information(
+                r.content, 
+                new Metadata(r.metadata.origin, r.metadata.type, r.metadata.originID)
+            );
+            result.push(i);
+        }
+        
+        return result;
+    }
+}
+```]
+
+==== Entità e Value Objects
+
+- *Chat*: Rappresenta una conversazione completa, contenente sia la domanda che la risposta.
+
+#sourcecode[```typescript
+export class Chat {
+  private question: string;
+  private answer: string;
+
+  constructor(question: string, answer: string) {
+    this.question = question;
+    this.answer = answer;
+  }
+
+  getQuestion(): string {
+    return this.question;
+  }
+
+  getAnswer(): string {
+    return this.answer;
+  }
+}
+```]
+#pagebreak()
+
+- *Information*: Rappresenta le informazioni contestuali recuperate dal #glossary("database vettoriale").
+
+#sourcecode[```typescript
+export class Information {
+  constructor(
+    public readonly content: string,
+    public readonly metadata: Metadata,
+  ){}
+
+  getContent(): string {
+    return this.content;
+  }
+
+  getMetadata(): Metadata {
+    return this.metadata;
+  }
+}
+```]
+
+- *Metadata*: Contiene metadati associati alle informazioni contestuali.
+
+#sourcecode[```typescript
+export class Metadata {
+  constructor(
+    public readonly origin: string,
+    public readonly type: string,
+    public readonly originID: string,
+  ) {}
+
+  getOrigin(): string {
+    return this.origin;
+  }
+
+  getType(): string {
+    return this.type;
+  }
+
+  getOriginID(): string {
+    return this.originID;
+  }
+}
+```]
+
+== Integrazione con LangChain e Groq
+
+Il microservizio utilizza #glossary("LangChain") come framework per semplificare l'interazione con i modelli di linguaggio. In particolare:
+
+1. *Costruzione dei Prompt*: Utilizza `PromptTemplate` per strutturare i prompt con un formato coerente.
+2. *Catene di Elaborazione*: Utilizza `createStuffDocumentsChain` per combinare documenti di contesto con la domanda dell'utente.
+3. *Parsing delle Risposte*: Utilizza `StringOutputParser` per estrarre il testo dalla risposta del modello.
+
+Per l'integrazione con il modello #glossary("Groq"), il servizio utilizza il modello "qwen-2.5-32b" con i seguenti parametri:
+- Limite di token: 6000
+- Numero massimo di tentativi: 2
+
+#pagebreak()
+
+#sourcecode[```typescript
+{
+  provide: ChatGroq,
+  useFactory: () => {
+    return new ChatGroq({
+      apiKey: process.env.GROQ_API_KEY,
+      model: "qwen-2.5-32b",
+      maxTokens: 6000,
+      maxRetries: 2,
+    });
+  },
+}
+```]
+
+== Comunicazione con Altri Microservizi
+
+La comunicazione con altri microservizi avviene principalmente tramite RabbitMQ:
+
+1. *Ricezione di Richieste dall'API Gateway*:
+   - Coda: "chatbot-queue"
+   - Pattern di messaggistica: "get-answer"
+   - Payload: `ReqAnswerDTO` contenente il testo della domanda e il timestamp
+
+2. *Invio di Richieste al DB Vettoriale*:
+   - Coda: "information-queue"
+   - Pattern di messaggistica: "retrieve.information"
+   - Payload: Oggetto contenente la query da cercare
+
+La configurazione RabbitMQ è definita nel file `main.ts`:
+
+#sourcecode[```typescript
+const app = await NestFactory.createMicroservice<MicroserviceOptions>(
+  AppModule,
+  {
+    transport: Transport.RMQ,
+    options: {
+      urls: [process.env.RABBITMQ_URL || 'amqp://rabbitmq'],
+      queue: 'chatbot-queue',
+      queueOptions: {
+        durable: true,
+      },
+    },
+  },
+);
+```]
+
+#pagebreak()
+== Configurazione e Ambiente
+
+Il microservizio utilizza variabili d'ambiente per gestire le configurazioni:
+
+- `RABBITMQ_URL`: URL del server RabbitMQ (default: #raw("amqp://rabbitmq"))
+- `GROQ_API_KEY`: Chiave API per l'accesso al servizio Groq
+
+La configurazione dell'ambiente è gestita tramite il modulo `ConfigModule` di NestJS, che carica automaticamente le variabili d'ambiente all'avvio dell'applicazione.
+
+== Conclusione
+
+Il microservizio Chatbot rappresenta il cuore intelligente di #glossary("BuddyBot"), responsabile della generazione di risposte accurate e contestualmente rilevanti. La sua architettura esagonale garantisce una chiara separazione delle responsabilità, facilitando la manutenzione e l'evoluzione del sistema nel tempo. L'integrazione con #glossary("LangChain") e #glossary("Groq") fornisce capacità avanzate di elaborazione del linguaggio naturale, mentre la comunicazione tramite RabbitMQ assicura un'integrazione efficiente con gli altri componenti del sistema.
 
 #set page(flipped: true)
 === Microservizio Storico Chat
