@@ -4,6 +4,13 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.0.x",
+    "2025-04-10",
+    (p.santi),
+    (p.mahdi),
+    [
+      Stesura microservizio denominato "Storico"
+    ],
     "0.0.1",
     "2025-02-27",
     (p.ferazzani),
