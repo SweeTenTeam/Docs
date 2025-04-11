@@ -190,7 +190,7 @@ Il microservizio si articola in quattro casi d'uso fondamentali:
 - Recupero e memorizzazione dei dati da *GitHub*;
 - Recupero di informazioni rilevanti basato sulle query utente.
 
-Tutte le richieste vengono ricevute in modalità asincrona tramite *RabbitMQ*, che opera come message broker tra questo componente e il gateway API. Ogni messaggio attiva il caso d'uso corrispondente, gestito secondo un'architettura esagonale che garantisce una netta separazione tra logica di dominio, servizi applicativi e adattatori per l'integrazione con fonti esterne e sistema di storage.
+Tutte le richieste vengono ricevute in modalità asincrona tramite *RabbitMQ*, che opera come message broker. Ogni messaggio attiva il caso d'uso corrispondente, gestito secondo un'architettura esagonale che garantisce una netta separazione tra logica di dominio, servizi applicativi e adattatori per l'integrazione con fonti esterne e sistema di storage.
 
 
 === Classi condivise
@@ -204,12 +204,12 @@ Questa classe gestisce la persistenza e il retrieval delle informazioni nel data
 - `storeInformation(info: Information): Result`
 
   Questo metodo gestisce il salvataggio di nuove informazioni nel database vettoriale attraverso i seguenti passaggi:
-  1. Estrazione dei metadati dall'oggetto Information
-  2. Verifica dell'esistenza di vettori precedenti con lo stesso identificativo
-  3. Rimozione di eventuali vettori esistenti utilizzando i Metadata per garantire la consistenza
-  4. Suddivisione del documento in segmenti più piccoli (chunking) se la dimensione supera la soglia massima per un embedding efficace
-  5. Generazione degli embedding per ogni segmento attraverso il model provider
-  6. Salvataggio dei vettori risultanti nel Vector Store di LangChain
+  1. Estrazione dei metadati dall'oggetto Information;
+  2. Verifica dell'esistenza di vettori precedenti con lo stesso identificativo;
+  3. Rimozione di eventuali vettori esistenti utilizzando i Metadata per garantire la consistenza; 
+  4. Suddivisione del documento in segmenti più piccoli (chunking) se la dimensione supera la soglia massima per un embedding efficace;
+  5. Generazione degli embedding per ogni segmento attraverso il model provider gestito da LangChain;
+  6. Salvataggio dei vettori risultanti nel database vettoriale attraverso l'uso Vector Store di LangChain.
 
   Il processo di chunking è particolarmente importante per gestire documenti di grandi dimensioni, assicurando che ogni segmento possa essere correttamente vettorializzato mantenendo al contempo la coerenza semantica.
 
@@ -239,8 +239,6 @@ Entità di repository per *Information*, agisce come DTO per la persistenza.
 
 Entità di repository per *Metadata*, essenziale per l'identificazione e gestione dei vettori.
 
-Cruciale per identificare, raggruppare ed eliminare vettori, garantendo l'integrità referenziale nel database vettoriale.
-
 ==== Result
 Classe di supporto che fornisce un meccanismo standardizzato per rappresentare l'esito di operazioni di recupero e salvataggio dati. Permette di distinguere tra successo e fallimento, e in caso di errore, di fornire una descrizione dettagliata.
 
@@ -256,7 +254,7 @@ Il seguente diagramma illustra le classi coinvolte nel caso d'uso "Recupero e me
 
 ===== JiraFetchAndStoreController
 
-Punto d'ingresso per l'operazione di recupero e memorizzazione dei ticket da Jira. Riceve le richieste esterne, le convalida e le indirizza verso il caso d'uso appropriato. Il controller accetta in input un `WorkspaceJiraDTO` contenente tutte le informazioni necessarie, inclusa la data dell'ultimo aggiornamento per ottimizzare l'efficienza del recupero dati.
+Punto d'ingresso per l'operazione di recupero e memorizzazione dei ticket da Jira. Riceve le richieste esterne, le convalida e le indirizza verso il caso d'uso appropriato. Il controller accetta in input un `FetchJiraDTO` contenente tutte le informazioni necessarie, inclusa la data dell'ultimo aggiornamento per ottimizzare l'efficienza del recupero dati.
 
 ===== JiraUseCase
 
@@ -283,11 +281,11 @@ Modella i commenti associati a un ticket, includendo dettagli come autore, conte
 
 ===== JiraAPIPort
 
-Interfaccia che astrae le operazioni di interazione con l'API Jira, definendo un contratto chiaro indipendente dai dettagli implementativi. Espone il metodo `WorkspaceTickets(req: FetchJiraCmd): Ticket*` che restituisce un array di ticket creati o modificati dalla data specificata nel comando.
+Interfaccia che astrae le operazioni di interazione con l'API Jira, definendo un contratto chiaro indipendente dai dettagli implementativi. Espone il metodo `FetchTickets(req: FetchJiraCmd): Ticket*` che restituisce un array di ticket creati o modificati dalla data specificata nel comando.
 
 ===== JiraAPIAdapter
 
-Implementa *JiraAPIPort* gestendo la comunicazione effettiva con l'API Jira tramite *JiraAPIFacade*. Traduce le risposte API nel formato interno richiesto dall'applicazione.
+Implementa *JiraAPIPort* gestendo la comunicazione effettiva con l'API Jira tramite *JiraAPIRepository*. Traduce le risposte API nel formato interno richiesto dall'applicazione.
 
 ===== JiraAPIRepository
 Classe che funge da intermediario per interagire direttamente con le API di Jira. Al momento della sua creazione, richiede l'iniezione di un client autenticato per stabilire la connessione con Jira.  Espone un metodo `fetchRecentIssues(daysBack: number, boardId: number): Json*` in cui entrambi i parametri sono opzionali:
@@ -309,7 +307,7 @@ Implementa *StoreJiraPort* gestendo la persistenza dei ticket nel database vetto
 
 === Recupero di informazioni rilevanti basato sulle query utente
 
-Il seguente diagramma illustra le classi coinvolte nel caso d'uso "Recupero delle informazioni", evidenziando l'architettura esagonale adottata: 
+Il seguente diagramma illustra le classi coinvolte nel caso d'uso "Recupero delle informazioni rilevanti basato sulle query utente", evidenziando l'architettura esagonale adottata: 
 #figure(
   image(st.diag_retr_info, width: 42em, fit: "contain"),
   caption: "Diagramma delle classi per il caso d'uso di recupero di informazioni rilevanti basato sulle query utente",
@@ -330,15 +328,7 @@ Implementazione concreta di RetrievalInfoUseCase, si occupa della logica princip
 
 ===== RetrieveCmd
 
-Oggetto del dominio che incapsula la richiesta dell'utente, contenente il campo query. Utilizzato internamente per mantenere la coerenza del linguaggio di dominio tra i livelli.
-
-===== Information
-
-Entità che rappresenta l'informazione recuperata. Contiene il contenuto testuale (content) e i metadati associati (metadata), modellati tramite l'oggetto Metadata.
-
-===== Metadata
-
-Classe che descrive i metadati associati all'informazione.
+Oggetto di dominio che incapsula la richiesta dell'utente, contenente il campo query. Utilizzato internamente per mantenere la coerenza del linguaggio di dominio tra i livelli.
 
 ===== RetrievalInfoPort
 
