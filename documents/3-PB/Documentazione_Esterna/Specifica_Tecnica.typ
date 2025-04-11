@@ -192,7 +192,7 @@ Questo microservizio è stato progettato per l'esecuzione di 4 principali operaz
 - *Inserimento di nuovi messaggi* 
   - L'obiettivo è quello di inserire nuovi messaggi presenti nella #glossary("UI") nel database, in maniera tale da permettere successivi recuperi
 - *Inserimento dell'ultima data di recupero informazioni* (#glossary("Retrieval Periodico"))
-  - Il sistema esegue un recupero periodico dei dati provenienti da #glossary("Jira"), #glossary("GitHub"), #glossary("Confluence"). In questo microservizio si vuole memorizzare l'ultima data di recupero nel database (sovrascrivendo quella precedente se presente), cosi da poterla restituire insieme ai dati della chat.
+  - Il sistema esegue un recupero periodico dei dati provenienti da #glossary("Jira"), #glossary("GitHub"), #glossary("Confluence"). In questo microservizio si vuole memorizzare l'ultima data di recupero nel database (sovrascrivendo quella precedente se presente), così da poterla restituire insieme ai dati della chat.
 - *Ottenimento della data di ultimo recupero / aggiornamento informazioni*
   - L'obiettivo è quello di recuperare correttamente nella tabella dedicata l'unico record presente rappresentante la data in cui è stato eseguito l'ultimo #glossary("Retrieval Periodico").
 
@@ -203,7 +203,7 @@ Nelle prossime sezioni verranno riepilogati i 4 flussi per le rispettive operazi
 - *`FetchRequestDTO`*: rappresenta il Data Transfer Object utilizzato per contenere la richiesta di recupero dello storico. Include due parametri, ovvero:
   - ID: identificativo che rappresenta l'ultima `Chat` (coppia di messaggi, come verrà spiegato nella specifica classe) precedentemente caricata. Questo valore viene utilizzato come punto di riferimento cronologico per effettuare il fetch dei messaggi successivi, seguendo un ordinamento decrescente (dal più recente al meno recente);
   - numChat: quantità delle chat che si vogliono recuperare nella medesima operazione.
-  Il DTO in questo caso è essenziale per permettere un corretto traferimento dei dati tra microservizi e livelli differenti.
+  Il DTO in questo caso è essenziale per permettere un corretto trasferimento dei dati tra microservizi e livelli differenti.
 
 - *`FetchHistoryController`*: corrisponde al consumer, rimane in ascolto nella coda 'fetch_queue' e in ricezione ottiene un messaggio contenente una richiesta presente in un oggetto DTO - `FetchRequestDTO`. Il controller si occupa di trasformare il DTO in un oggetto `FetchHistoryCmd`, delegando l'elaborazione allo _UseCase_ (interface) e alla sua corrispettiva implementazione, ossia al _Service_. Una volta che quest'ultimo tornerà l'oggetto di dominio, il controller lo convertirà nuovamente in ChatDTO affinchè vengano rispettati i principi del modello esagonale.
 
@@ -300,7 +300,7 @@ Nelle prossime sezioni verranno riepilogati i 4 flussi per le rispettive operazi
 - *`ChatEntity`*: rappresenta la mappatura dell'entità "Chat" nel database PostgreSQL, gestita tramite #glossary("TypeORM"). E' associata a una tabella generata automaticamente e viene utilizzata per persistere ogni conversazione tra l'utente e BuddyBot. I principali campi della classe sono:
   - id: chiave primaria generata in formato UUID;
   - question: il contenuto testuale della domanda posta dall'utente;
-  - questionDate: timestamp associato alla domanda. Il valore di questo campo viene esplicitamente passato tramite la richiesta di inserimento e conservato cosi com'è nel database;
+  - questionDate: timestamp associato alla domanda. Il valore di questo campo viene esplicitamente passato tramite la richiesta di inserimento e conservato così com'è nel database;
   - answer: il contenuto testuale della risposta generata;
   - answerDate: a differenza della _questionDate_, è un timestamp generato automaticamente al momento dell'inserimento nel database. È gestito da TypeORM tramite il decoratore \@CreateDateColumn, che assegna il valore corrente (now) senza necessità di specificarlo a livello applicativo.
   - lastFetch: rappresenta la data dell'ultimo "#glossary("Retrieval Periodico")" eseguito, dando all'utilizzatore la possibilità di capire quanto recenti (o meno) sono i dati elaborati dal chatbot.
