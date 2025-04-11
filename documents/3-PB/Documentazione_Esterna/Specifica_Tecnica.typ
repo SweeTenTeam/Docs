@@ -1738,7 +1738,16 @@ export class LastUpdateEntity {
   ),
   caption: "Stato Requisiti Funzionali",
 )
+#pagebreak()
 == Grafici riassuntivi
-#figure(image("../../../images/specifica-tecnica/reqObbligatori.png", width:60%),
-  caption: [Stato dei requisiti obbligatori funzionali]
+#figure(image("../../../images/specifica-tecnica/reqObbligatori.png", width:70%),
+  caption: [Stato dei requisiti funzionali obbligatori]
+)
+#linebreak()
+#figure(image("../../../images/specifica-tecnica/reqOpzionali.png", width:63%),
+  caption: [Stato dei requisiti funzionali opzionali]
+)
+#linebreak()
+#figure(image("../../../images/specifica-tecnica/reqDesiderabili.png", width:83%),
+  caption: [Stato dei requisiti funzionali desiderabili]
 )
