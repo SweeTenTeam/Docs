@@ -1485,3 +1485,256 @@ export class LastUpdateEntity {
 - *`LastUpdate`*: rappresenta l'entità di dominio, contiene un solo campo lastFetch, espresso come stringa, che identifica il momento in cui è stato eseguito l'ultimo fetch periodico delle informazioni.
 
 - *`LastUpdateEntity`*: rappresenta l'entità incaricata di tracciare la data dell'ultimo #glossary("Retrieval periodico") effettuato, ovvero l'ultimo momento in cui è stato eseguito un fetch globale delle informazioni. Nel database, la tabella _last_update_ ospita un unico record persistente, contenente esclusivamente la data di aggiornamento più recente.
+
+= Tracciamento requisiti
+== Requisiti funzionalità
+#set table(
+  stroke: 1pt,
+  fill: (x, y) => if y == 0 {
+    rgb(209, 197, 174)
+  } else if calc.odd(y) {
+    luma(88.1%)
+  } else {
+    white
+  },
+  inset: (left: 0.5em, right: 0.5em),
+)
+
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it))
+  } else {
+    it
+  }
+}
+
+#figure(
+  table(
+    align: center + horizon,
+    columns: (auto, auto, auto),
+    [Codice], [Descrizione], [Stato],
+    [*RF-001*],
+    [L'utente deve accedere all'applicazione senza necessità di autenticazione],
+    [Soddisfatto],
+
+    [*RF-002*],
+    [Il sistema deve archiviare in modo persistente le domande degli utenti e le risposte generate],
+    [Soddisfatto],
+
+    [*RF-003*],
+    [L'utente deve poter visualizzare lo storico della chat in ordine cronologico inverso (dal più recente al più vecchio).],
+    [Soddisfatto],
+
+    [*RF-004*],
+    [L'utente deve visualizzare un messaggio informativo che spiega che non ci sono messaggi nello storico],
+    [Soddisfatto],
+
+    [*RF-005*],
+    [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a recuperare lo storico],
+    [Soddisfatto],
+
+    [*RF-006*],
+    [L'utente deve visualizzare un messaggio di errore se la richiesta non è stata completata a causa di un timeout],
+    [Soddisfatto],
+
+    [*RF-007*],
+    [L'utente deve visualizzare un messaggio di errore se il backend non è disponibile],
+    [Soddisfatto],
+
+    [*RF-008*],
+    [L'utente deve visualizzare per ogni messaggio: il contenuto, la data e ora di invio],
+    [Soddisfatto],
+
+    [*RF-009*],
+    [L'utente deve visualizzare lo sfondo di un messaggio inviato da un utente di colore grigio],
+    [Soddisfatto],
+
+    [*RF-010*],
+    [L'utente deve visualizzare lo sfondo di un messaggio inviato da #glossary("Buddybot") di colore blu],
+    [Soddisfatto],
+
+    [*RF-011*],
+    [L'utente deve visualizzare per ogni messaggio inviato da #glossary("Buddybot") la data e l'ora dell'ultimo aggiornamento dei dati usati per generare la risposta],
+    [Soddisfatto],
+
+    [*RF-012*], [L'utente deve poter scrivere una domanda in linguaggio naturale], [Soddisfatto],
+    [*RF-013*], [L'utente deve poter inviare la domanda scritta al sistema], [Soddisfatto],
+    [*RF-014*], [L'utente deve poter visualizzare la risposta generata da #glossary("Buddybot")], [Soddisfatto],
+    [*RF-015*],
+    [L'utente deve essere informato se la domanda che ha posto non rientra nelle competenze specifiche del sistema tramite una risposta generata da #glossary("Buddybot")],
+    [Soddisfatto],
+
+    [*RF-016*],
+    [L'utente deve essere informato se i documenti richiesti nella domanda non sono disponibili all'interno del sistema tramite una risposta generata da #glossary("Buddybot")],
+    [Soddisfatto],
+
+    [*RF-017*],
+    [L'utente deve poter visualizzare un messaggio di errore se si è verificato un errore generico nella generazione della risposta da parte del #glossary("backend")],
+    [Soddisfatto],
+
+    [*RF-018*],
+    [L'utente deve poter visualizzare un messaggio di errore se la risposta non è stata generata perchè supera la lunghezza massima consentita],
+    [Soddisfatto],
+
+    [*RF-019*],
+    [L'utente deve poter visualizzare un messaggio di errore se la domanda supera la lunghezza massima consentita],
+    [Soddisfatto],
+
+    [*RF-020*],
+    [Il sistema deve generare una risposta appropriata alla domanda posta dell'utente],
+    [Soddisfatto],
+
+    [*RF-021*],
+    [Il sistema deve recuperare da GitHub le seguenti informazioni:
+
+    Per ogni repository:
+    - Nome della repository
+    - Id della repository
+    - Descrizione della repository
+    - Data di creazione della repository
+    - Ultima data di aggiornamento della repository
+    - Linguaggio principale della repository
+
+    Per ogni commit:
+    - Hash del commit
+    - Messaggio del commit
+    - Data e ora dell'ultimo commit
+    - Branch associato al commit
+    - File modificati nel commit
+    - Autore dell'ultimo commit
+    - Nome della repository di appartenenza del commit
+    - Nome del branch di appartenenza del commit
+
+    Per ogni pull request:
+    - Id della pull request
+    - Titolo della pull request
+    - Descrizione della pull request
+    - Stato della pull request
+    - Assegnatario della pull request
+    - Reviewers della pull request
+    - Commenti della pull request
+    - File modificati nella pull request
+    - Branch di origine della pull request
+    - Branch di destinazione della pull request
+    - Nome repository di appartenenza
+
+    Per ogni workflow:
+    - Id del workflow
+    - Nome del workflow
+    - Stato del workflow
+    - Nome repository di appartenenza
+    - Lista delle run per il workflow
+
+    Per ogni workflow run:
+    - Id della run
+    - Stato della run
+    - Durata in secondi della run
+    - Link del log della run
+    - Trigger della run
+    - Id del workflow di appartenenza
+    - Nome del workflow di appartenenza
+
+    Per ogni file:
+    - Path del file
+    - SHA del file
+    - Nome repository di appartenenza
+    - Nome branch di appartenenza
+    - Contenuto del file
+    ],
+    [Soddisfatto],
+
+    [*RF-022*],
+    [Il sistema deve recuperare da Confluence le seguenti informazioni:
+      - Id di una pagina
+      - Titolo di una pagina
+      - Stato di una pagina
+      - Autore di una pagina
+      - Owner di una pagina
+      - Spazio di una pagina
+      - Contenuto di una pagina
+    ],
+    [Soddisfatto],
+
+    [*RF-023*],
+    [Il sistema deve recuperare da Jira le seguenti informazioni:
+     - Id di un ticket
+     - Titolo di un ticket
+    - Descrizione di un ticket
+    - Assegnatario di un ticket
+    - Stato di un ticket
+    - Sprint di appartenenza di un ticket
+    - Story point estimate di un ticket
+    - Creatore di un ticket
+    - Priorità
+    - Data di scadenza
+    - Ticket collegati
+    - Commenti del ticket
+
+    Per ogni commento del ticket:
+    - Autore del commento
+    - Data di creazione
+    - Contenuto del commento
+    ],
+    [Soddisfatto],
+
+    [*RF-024*],
+    [Il sistema deve informare l'utente in caso di errore durante la generazione della risposta],
+    [Soddisfatto],
+
+    [*RF-025*],
+    [Il sistema deve informare l'utente se la risposta supera la lunghezza massima consentita],
+    [Soddisfatto],
+
+    [*RF-026*],
+    [Il sistema deve fornire la data e l'ora dell'ultimo aggiornamento dei dati utilizzati],
+    [Soddisfatto],
+
+    [*RF-027*],
+    [Il sistema deve aggiornare i dati dei documenti provenienti da GitHub, Confluence e Jira ogni 24 ore],
+    [Soddisfatto],
+
+    [*RF-028*],
+    [Il sistema deve salvare i dati provenienti dalle fonti (Githbu, Jira, Confluence) in un database vettoriale],
+    [Soddisfatto],
+
+    [*RF-029*],
+    [Il sistema deve convertire i dati provenienti dalle fonti (Githbu, Jira, Confluence) da forma testuale a forma vettoriale],
+    [Soddisfatto],
+
+    [*RF-030*], [L'utente deve poter modificare una domanda già inviata], [Non soddisfatto],
+
+    [*RF-031*], [L'utente deve poter selezionare il tema chiaro o scuro per visualizzare l'interfaccia utente], [Soddisfatto],
+
+    [*RF-032*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso a una risorsa esterna, aprendo la pagina web associata in una nuova finestra o scheda del browser.], [Soddisfatto],
+
+    [*RF-033*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Jira], [Soddisfatto],
+
+    [*RF-034*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di GitHub], [Soddisfatto],
+
+    [*RF-035*],
+    [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence], [Soddisfatto],
+
+    [*RF-036*],
+    [Il sistema deve visualizzare un'animazione di caricamento circolare durante il recupero dello storico della chat], [Soddisfatto],
+
+    [*RF-037*],
+    [Il sistema deve visualizzare un'animazione di caricamento composta da tre puntini, durante l'elaborazione della risposta da parte del backend], [Soddisfatto],
+
+    [*RF-038*],
+    [Il sistema deve visualizzare un pulsante "Load More" nella parte superiore della chat, che consenta all'utente di caricare 10 messaggi precedenti non ancora visualizzati], [Soddisfatto],
+
+    [*RF-039*],
+    [L'utente deve visualizzare il contenuto del messaggio in formato markdown], [Soddisfatto],
+
+    [*RF-040*],
+    [L'utente deve poteer incollare nell'input di testo il contenuto copiato in precedenza], [Soddisfatto],
+
+    [*RF-041*],
+    [L'interfaccia utente deve scrollare verso il basso mostrando l'ultimo messaggio inviato ogni volta che l'utente invia un nuovo messaggio], [Soddisfatto],
+  ),
+  caption: "Stato Requisiti Funzionali",
+)
