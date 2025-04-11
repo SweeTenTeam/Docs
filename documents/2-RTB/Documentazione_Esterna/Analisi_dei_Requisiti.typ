@@ -372,23 +372,6 @@ Gli attori coinvolti nei casi d'uso sono:
 *User story associata*
 - "Come utente, voglio essere informato se il motivo del fallimento della richiesta è il #glossary("backend") non disponibile così da poter contattare il supporto tecnico".
 
-==== UC1.6, Visualizzazione caricamento dello Storico della chat
-*Attori coinvolti:*
-- Primari:
-  - User
-
-*Precondizioni*
-- L'interfaccia utente è pronta all'interazione con l'utente.
-
-*Postcondizioni*
-- Nella #glossary("UI") viene visualizzata un'animazione di caricamento circolare (loading), a indicare che il sistema sta recuperando lo storico della chat.
-
-*Scenario principale*
-- L'utente accede a BuddyBot e viene inviata al backend la richiesta di recupero storico chat.
-- Mentre è in corso tutta la procedura legata al recupero dei messaggi fino alla apparizione a video, compare a schermo un'animazione di caricamento circolare.
-
-*User story associata*
-- "Come utente, voglio vedere un'animazione di caricamento mentre attendo le interazioni passate, in modo da avere un feedback visivo che mi confermi che il sistema sta elaborando la richiesta."
 
 ==== UC1.4, Visualizzazione singolo messaggio
 #figure(
@@ -751,26 +734,6 @@ Gli attori coinvolti nei casi d'uso sono:
 - "Come utente, voglio che l'interfaccia utente mostri un messaggio di risposta quando la mia domanda riguarda dati presenti in documenti non ancora disponibili, in modo da essere informato che la risposta non può essere fornita al momento."
 
 
-==== UC3.6, Visualizzazione caricamento del messaggio
-*Attori coinvolti:*
-- Primari:
-  - User
-
-*Precondizioni*
-- L'interfaccia utente è pronta all'interazione con l'utente
-- L'utente invia un messaggio
-- La risposta deve ancora essere visualizzata a schemro
-
-*Postcondizioni*
-- Nella #glossary("UI") viene visualizzata un'animazione di caricamento composta da tre puntini, indicativa dell'elaborazione in corso.
-
-*Scenario principale*
-- L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede una risposta al #glossary("backend");
-- Mentre è in corso tutta la procedura legata all'elaborazione della risposta fino alla sua apparizione a video, compaiono a schermo tre puntini di caricamento.
-
-*User story associata*
-- "Come utente, voglio vedere un'animazione di caricamento mentre attendo la risposta, in modo da avere un feedback visivo che mi confermi che il sistema sta elaborando la mia richiesta."
-
 === UC4, Invio richiesta con domanda dell'utente
 #figure(
   image(ar.diagUC_elab_domanda, width: 42em, fit: "contain"),
@@ -1092,32 +1055,6 @@ Gli attori coinvolti nei casi d'uso sono:
 *User story associata*
 - "Come utente, voglio cliccare sull'icona di Confluence presente nell'interfaccia del #glossary("chatbot") per aprire la documentazione in una nuova scheda o finestra, così da poter consultare facilmente le informazioni necessarie."
 
-=== UC8, Visualizzazione bottone "Load More"
-
-#figure(
-  image(ar.diagUC_load_more, width: 22em, fit: "contain"),
-  caption: "Diagramma UC8, Visualizzazione bottone Load More",
-)
-
-*Attori coinvolti*
-- #glossary("User")
-
-*Precondizioni*
-- L'interfaccia utente è pronta all'interazione con l'utente.
-- L'utente deve avere già avuto delle interazioni pregresse con BuddyBot
-
-*Postcondizioni*
-- L'utente clicca il pulsante per caricare 10 nuovi messaggi che non erano stati ancora visualizzati nella chat
-
-*Scenario principale*
-- L'utente accede all'interfaccia di chat con BuddyBot.
-- Vengono caricati e recuperati dei messaggi legati a passate interazioni con BuddyBot
-- Nella parte superiore della chat, dopo avert trascorso tutti i messaggi gia caricati, compare un pulsante di "Load More" per caricare altre interazioni passate
-- L'utente clicca sul bottone e vengono caricati nuove 10 interazioni avute con BuddyBot seguendo l'ordine cronologico
-
-*User story associata*
-- "Come utente, voglio poter cliccare su un pulsante “Load More” per caricare messaggi più vecchi, in modo da poter consultare facilmente lo storico delle conversazioni passate."
-
 #pagebreak()
 
 
@@ -1372,15 +1309,6 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
 
     [*RF-035*],
     [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence], [UC7.3], [Opzionale],
-
-    [*RF-036*],
-    [Il sistema deve visualizzare un’animazione di caricamento circolare durante il recupero dello storico della chat], [UC1.6], [Opzionale],
-
-    [*RF-037*],
-    [Il sistema deve visualizzare un’animazione di caricamento composta da tre puntini, durante l’elaborazione della risposta da parte del backend], [UC3.6], [Opzionale],
-
-    [*RF-038*],
-    [Il sistema deve visualizzare un pulsante “Load More” nella parte superiore della chat, che consenta all’utente di caricare 10 messaggi precedenti non ancora visualizzati], [UC8], [Opzionale],
   ),
   caption: "Requisiti Funzionali",
 )
@@ -1515,7 +1443,6 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [UC1.2], [RF-005],
     [UC1.3], [RF-006],
     [UC1.5], [RF-007],
-    [UC1.6], [RF-036],
     [UC1.4, UC1.4.4, UC1.4.5], [RF-008],
     [UC1.4.1], [RF-009],
     [UC1.4.2], [RF-010],
@@ -1525,7 +1452,6 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [UC3], [RF-014],
     [UC3.4], [RF-015],
     [UC3.5], [RF-016],
-    [UC3.6], [RF-037],
     [UC3.1], [RF-017],
     [UC3.2], [RF-018],
     [UC3.3], [RF-019],
@@ -1545,7 +1471,6 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [UC7.1], [RF-033],
     [UC7.2], [RF-034],
     [UC7.3], [RF-035],
-    [UC8], [RF-038],
     [Capitolato], [RQ-001],
     [Capitolato], [RQ-002],
     [Capitolato], [RQ-003],
