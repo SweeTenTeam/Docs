@@ -1487,7 +1487,7 @@ export class LastUpdateEntity {
 - *`LastUpdateEntity`*: rappresenta l'entità incaricata di tracciare la data dell'ultimo #glossary("Retrieval periodico") effettuato, ovvero l'ultimo momento in cui è stato eseguito un fetch globale delle informazioni. Nel database, la tabella _last_update_ ospita un unico record persistente, contenente esclusivamente la data di aggiornamento più recente.
 
 = Tracciamento requisiti
-== Requisiti funzionalità
+== Stato dei requisiti funzionali
 #set table(
   stroke: 1pt,
   fill: (x, y) => if y == 0 {
@@ -1737,4 +1737,8 @@ export class LastUpdateEntity {
     [L'interfaccia utente deve scrollare verso il basso mostrando l'ultimo messaggio inviato ogni volta che l'utente invia un nuovo messaggio], [Soddisfatto],
   ),
   caption: "Stato Requisiti Funzionali",
+)
+== Grafici riassuntivi
+#figure(image("../../../images/specifica-tecnica/reqObbligatori.png", width:60%),
+  caption: [Stato dei requisiti obbligatori funzionali]
 )
