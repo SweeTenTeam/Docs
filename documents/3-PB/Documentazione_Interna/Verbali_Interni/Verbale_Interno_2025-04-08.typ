@@ -56,6 +56,7 @@ Mentre i documenti da aggiornare sono:
 - Piano di Progetto;
 - Piano di Qualifica;
 - Analisi dei Requisiti;
+- Specifica Tecnica.
 
 = Aggiornamento Sito Vetrina e Glossario
 
