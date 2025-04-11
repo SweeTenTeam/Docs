@@ -64,11 +64,9 @@
   input: "/images/specifica-tecnica/inputForm.png",
   uml: "/images/specifica-tecnica/uml.png",
   chatUml: "/images/specifica-tecnica/chatBotUML.png",
-)
-
-#let spc = (
   prog_history: "/images/specifica-tecnica/prog_HistoryMicroserv.png"
 )
+
 
 //Norme di progetto Immagini
 #let gn = (

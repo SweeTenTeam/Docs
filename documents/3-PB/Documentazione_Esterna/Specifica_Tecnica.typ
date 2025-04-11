@@ -5,7 +5,6 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
-
     "0.0.6",
     "2025-04-10",
     (p.santi),
@@ -360,8 +359,8 @@ Uno degli aspetti fondamentali dell'implementazione del backend è stato l'uso d
 NestJS adotta un *container per le dipendenze* che consente di dichiarare i provider una sola volta e iniettarli ovunque siano richiesti tramite il costruttore delle classi. Ogni modulo dell'applicazione può registrare provider, che vengono poi risolti automaticamente dal framework quando una classe dichiara di averne bisogno.
 
 = Progettazione di dettaglio
+== Progettazione frontend
 #set page(flipped: true)
-== Diagramma delle classi
 \
 \
 
