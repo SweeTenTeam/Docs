@@ -27,7 +27,7 @@
 
 - Ora di fine: 17:15;
 
-- Partecipanti: #p.belenkov, #p.benedetti, #p.ferazzani, #p.fracaro, #p.mahdi, #p.campagnaro.
+- Partecipanti: #p.belenkov, #p.benedetti, #p.ferazzani, #p.fracaro, #p.mahdi, #p.campagnaro, #p.santi.
 
 - Partecipanti Esterni: Mattia Gottardello, Martina Daniele.
 
