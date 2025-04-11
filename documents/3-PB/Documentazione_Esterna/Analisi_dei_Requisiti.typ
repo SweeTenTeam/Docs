@@ -5,6 +5,13 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "1.1.2",
+    "2025-04-11",
+    (p.fracaro),
+    (p.santi),
+    [
+      Aggiornamento documento per la fase PB, UC1.3, UC4.
+    ],
     "1.1.1",
     "2025-04-10",
     (p.santi),
@@ -297,7 +304,7 @@ Gli attori coinvolti nei casi d'uso sono:
 *Estensioni*
 - UC1.1, Visualizzazione errore nessun messaggio nello storico della chat;
 - UC1.2, Visualizzazione errore generale durante il recupero dello storico della chat;
-- UC1.3, Visualizzazione errore di connessione;
+- UC1.3, Visualizzazione errore di timeout;
 - UC1.5, Visualizzazione errore backend non disponibile;
 *Inclusioni*
 - UC1.4, Visualizzazione singolo messaggio.
@@ -340,7 +347,7 @@ Gli attori coinvolti nei casi d'uso sono:
 - "Come utente, voglio essere informato in modo chiaro se si verifica un errore durante il recupero dei messaggi precedenti per poter agire di conseguenza senza confusione".
 
 
-==== UC1.3, Visualizzazione errore di connessione
+==== UC1.3, Visualizzazione errore di timeout
 *Attori coinvolti*:
 - Primari:
   - #glossary("User").
@@ -349,14 +356,15 @@ Gli attori coinvolti nei casi d'uso sono:
 - L'interfaccia utente è pronta all'interazione con l'utente.
 
 *Postcondizioni*
-- L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente che non è stato possibile eseguire l'operazione richiesta per la mancanza di connessione ad internet e invita a controllare tale connessione.
+- L'interfaccia utente viene aggiornata con un messaggio di errore che informa l'utente del fallimento dell'operazione a causa di un timeout della richiesta.
 
 *Scenario principale*
-- L'utente accede all'interfaccia di #glossary("Buddybot") e chiede all'interfaccia utente di eseguire un'operazione che richiede la connessione ad internet;
-- Viene tentata l'esecuzione della richiesta dell'utente ma non viene portata a termine per la mancanza di connessione ad internet;
-- L'utente viene informato che si è verificato un errore durante l'esecuzione della richiesta tramite un avviso.
+- L'utente accede all'interfaccia di #glossary("Buddybot") e richiede l'esecuzione di un'operazione che coinvolge una comunicazione esterna;
+- Il sistema tenta di eseguire la richiesta, ma non riesce a completarla entro il tempo massimo previsto;
+- L'utente viene informato del fallimento dell'operazione tramite un messaggio di errore che segnala un timeout.
+
 *User story associata*
-- "Come utente, voglio essere informato se il motivo del fallimento della richiesta è la mancanza di connessione ad internet così da poter provvedere alla risoluzione del problema".
+- "Come utente, voglio essere informato se il motivo del fallimento della richiesta è un timeout, così da poter decidere se riprovare o attendere".
 
 
 ==== UC1.5, Visualizzazione errore backend non disponibile
@@ -445,7 +453,7 @@ Gli attori coinvolti nei casi d'uso sono:
 
 *Scenario principale*
 - L'utente vuole visualizzare il contenuto della chat;
-- L'utente visualizza il messaggio inviato da #glossary("Buddybot") nella parte sinistra dell'interfaccia utente e con lo sfondo del messaggio di colore bianco;
+- L'utente visualizza il messaggio inviato da #glossary("Buddybot") nella parte sinistra dell'interfaccia utente e con lo sfondo del messaggio di colore blu;
 
 *Inclusioni*
 - UC1.4.5, Visualizzazione contenuto del messaggio;
@@ -470,7 +478,7 @@ Gli attori coinvolti nei casi d'uso sono:
 - Esiste almeno un messaggio proveniente da una passata interazione tra l'utente e #glossary("Buddybot")
 
 *Postcondizioni*
-- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il contenuto del messaggio.
+- L'interfaccia utente di #glossary("Buddybot") viene aggiornata mostrando il contenuto del messaggio in formato markdown.
 
 *Scenario principale*
 - L'utente vuole visualizzare il contenuto della chat;
@@ -578,7 +586,7 @@ Gli attori coinvolti nei casi d'uso sono:
 
 *Scenario principale*
 - L'utente vuole visualizzare il contenuto della chat;
-- L'utente visualizza il messaggio inviato da sé stesso nella parte destra dell'Interfaccia utente e con lo sfondo del messaggio di colore blu;
+- L'utente visualizza il messaggio inviato da sé stesso nella parte destra dell'Interfaccia utente e con lo sfondo del messaggio di colore grigio.
 
 *Inclusioni*
 - UC1.4.5, Visualizzazione contenuto del messaggio;
@@ -606,7 +614,7 @@ Gli attori coinvolti nei casi d'uso sono:
 - L'interfaccia utente viene aggiornata con la domanda scritta dall'utente.
 *Scenario principale*
 - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
-- L'utente scrive la propria domanda nel campo di input dedicato;
+- L'utente scrive la propria domanda nel campo di input dedicato con l'opzione di incollare il contenuto copiato in precedenza;
 - Il campo di input viene aggiornato con la domanda scritta dall'utente.
 
 *User story associata*
@@ -640,7 +648,7 @@ Gli attori coinvolti nei casi d'uso sono:
 - L'interfaccia utente viene aggiornata con il messaggio inviato dall'utente;
 - L'interfaccia utente viene aggiornata con il messaggio di risposta di #glossary("Buddybot") alla domanda dell'utente.
 *Estensioni*
-- UC1.3, Visualizzazione errore di connessione;
+- UC1.3, Visualizzazione errore di timeout;
 - UC1.5, Visualizzazione errore backend non disponibile;
 - UC3.1, Visualizzazione errore nella generazione della risposta;
 - UC3.2, Visualizzazione errore risposta troppo lunga;
@@ -796,31 +804,63 @@ Gli attori coinvolti nei casi d'uso sono:
 - La UI e il #glossary("backend") di #glossary("Buddybot") comunicano correttamente tramite una connessione stabile e funzionante;
 - La User Interface ha acquisito una domanda dall'utente;
 - Il #glossary("backend") ha accesso ai seguenti dati provenienti dalle fonti #glossary("Jira"), #glossary("Github"), #glossary("Confluence"):
+
   - #glossary("Github"):
+
+    Per ogni repository:
     - Nome della repository;
+    - Id della repository;
     - Descrizione della repository;
     - Data di creazione della repository;
     - Ultima data di aggiornamento della repository;
-    - Linguaggio principale della repository;
-    - Messaggio dell'ultimo commit;
-    - Hash dell'ultimo commit;
+    - Linguaggio principale della repository.
+
+    Per ogni commit:
+    - Hash del commit;
+    - Messaggio del commit;
     - Data e ora dell'ultimo commit;
-    - Branch associato all'ultimo commit;
-    - File modificati nell'ultimo commit;
+    - Branch associato al commit;
+    - File modificati nel commit;
     - Autore dell'ultimo commit;
-    - Lista Pull request attive e chiuse;
-    - Titolo e descrizione delle Pull request;
-    - Stato delle Pull request;
-    - Assegnatario delle Pull request;
-    - Reviewers delle Pull request;
-    - Commenti e discussioni delle Pull request;
-    - File modificati nelle Pull request;
-    - Branch di origine e destinazione delle Pull request;
-    - Stato dei workflow di GitHub Action;
-    - Ultimo workflow eseguito;
-    - Log dei workflow;
-    - Trigger dei workflow;
-    - Durata dei workflow.
+    - Nome della repository di appartenenza del commit;
+    - Nome del branch di appartenenza del commit.
+
+    Per ogni pull request:
+    - Id della pull request;
+    - Titolo della pull request;
+    - Descrizione della pull request;
+    - Stato della pull request;
+    - Assegnatario della pull request;
+    - Reviewers della pull request;
+    - Commenti della pull request;
+    - File modificati nella pull request;
+    - Branch di origine della pull request;
+    - Branch di destinazione della pull request;
+    - Nome repository di appartenenza.
+
+    Per ogni workflow:
+    - Id del workflow;
+    - Nome del workflow;
+    - Stato del workflow;
+    - Nome repository di appartenenza;
+    - Lista delle run per il workflow.
+
+    Per ogni workflow run:
+    - Id della run; 
+    - Stato della run;
+    - Durata in secondi della run;
+    - Link del log della run;
+    - Trigger della run;
+    - Id del workflow di appartenenza;
+    - Nome del workflow di appartenenza.
+
+    Per ogni file:
+    - Path del file;
+    - SHA del file;
+    - Nome repository di appartenenza;
+    - Nome branch di appartenenza;
+    - Contenuto del file.
+
   - #glossary("Confluence"):
     - Id di una pagina;
     - Titolo di una pagina;
@@ -828,20 +868,26 @@ Gli attori coinvolti nei casi d'uso sono:
     - Autore di una pagina;
     - Owner di una pagina;
     - Spazio di una pagina;
-    - Body di una pagina.
+    - Contenuto di una pagina.
+
   - #glossary("Jira"):
-    - Nome (titolo) di un ticket;
+    - Id di un ticket;
+    - Titolo di un ticket;
+    - Descrizione di un ticket;
     - Assegnatario di un ticket;
     - Stato di un ticket;
-    - Attività principale collegata a un ticket;
     - Sprint di appartenenza di un ticket;
     - Story point estimate di un ticket;
-    - Richiedente/creatore di un ticket;
+    - Creatore di un ticket;
     - Priorità;
     - Data di scadenza;
-    - Commenti del ticket;
-    - Ticket collegati.
+    - Ticket collegati;
+    - Commenti del ticket.
 
+    Per ogni commento del ticket:
+    - Autore del commento;
+    - Data di creazione;
+    - Contenuto del commento.
 
 
 *Postcondizioni*
@@ -1212,7 +1258,7 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Obbligatorio],
 
     [*RF-006*],
-    [L'utente deve visualizzare un messaggio di errore se il sistema non riesce a connettersi],
+    [L'utente deve visualizzare un messaggio di errore se la richiesta non è stata completata a causa di un timeout],
     [UC1.3],
     [Obbligatorio],
 
@@ -1227,12 +1273,12 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Obbligatorio],
 
     [*RF-009*],
-    [L'utente deve visualizzare lo sfondo di un messaggio inviato da un utente di colore blu],
+    [L'utente deve visualizzare lo sfondo di un messaggio inviato da un utente di colore grigio],
     [UC1.4.1],
     [Obbligatorio],
 
     [*RF-010*],
-    [L'utente deve visualizzare lo sfondo di un messaggio inviato da #glossary("Buddybot") di colore bianco],
+    [L'utente deve visualizzare lo sfondo di un messaggio inviato da #glossary("Buddybot") di colore blu],
     [UC1.4.2],
     [Obbligatorio],
 
@@ -1276,30 +1322,60 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
 
     [*RF-021*],
     [Il sistema deve recuperare da GitHub le seguenti informazioni:
-      - Nome della repository
-      - Descrizione della repository
-      - Data di creazione della repository
-      - Ultima data di aggiornamento della repository
-      - Linguaggio principale della repository
-      - Messaggio dell'ultimo commit
-      - Hash dell'ultimo commit
-      - Data e ora dell'ultimo commit
-      - Branch associato all'ultimo commit
-      - File modificati nell'ultimo commit
-      - Autore dell'ultimo commit
-      - Lista delle Pull request attive e chiuse
-      - Titolo e descrizione delle Pull request
-      - Stato delle Pull request
-      - Assegnatario delle Pull request
-      - Reviewers delle Pull request
-      - Commenti e discussioni delle Pull request
-      - File modificati nelle Pull request
-      - Branch di origine e destinazione delle Pull request
-      - Stato dei workflow delle GitHub Action
-      - Ultimo workflow eseguito
-      - Log dei workflow
-      - Trigger dei workflow
-      - Durata dei workflow
+
+    Per ogni repository:
+    - Nome della repository
+    - Id della repository
+    - Descrizione della repository
+    - Data di creazione della repository
+    - Ultima data di aggiornamento della repository
+    - Linguaggio principale della repository
+
+    Per ogni commit:
+    - Hash del commit
+    - Messaggio del commit
+    - Data e ora dell'ultimo commit
+    - Branch associato al commit
+    - File modificati nel commit
+    - Autore dell'ultimo commit
+    - Nome della repository di appartenenza del commit
+    - Nome del branch di appartenenza del commit
+
+    Per ogni pull request:
+    - Id della pull request
+    - Titolo della pull request
+    - Descrizione della pull request
+    - Stato della pull request
+    - Assegnatario della pull request
+    - Reviewers della pull request
+    - Commenti della pull request
+    - File modificati nella pull request
+    - Branch di origine della pull request
+    - Branch di destinazione della pull request
+    - Nome repository di appartenenza
+
+    Per ogni workflow:
+    - Id del workflow
+    - Nome del workflow
+    - Stato del workflow
+    - Nome repository di appartenenza
+    - Lista delle run per il workflow
+
+    Per ogni workflow run:
+    - Id della run
+    - Stato della run
+    - Durata in secondi della run
+    - Link del log della run
+    - Trigger della run
+    - Id del workflow di appartenenza
+    - Nome del workflow di appartenenza
+
+    Per ogni file:
+    - Path del file
+    - SHA del file
+    - Nome repository di appartenenza
+    - Nome branch di appartenenza
+    - Contenuto del file
     ],
     [UC4, Capitolato],
     [Obbligatorio],
@@ -1308,28 +1384,34 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Il sistema deve recuperare da Confluence le seguenti informazioni:
       - Id di una pagina
       - Titolo di una pagina
-      - Status di una pagina
+      - Stato di una pagina
       - Autore di una pagina
       - Owner di una pagina
       - Spazio di una pagina
-      - Body di una pagina
+      - Contenuto di una pagina
     ],
     [UC4, Capitolato],
     [Obbligatorio],
 
     [*RF-023*],
     [Il sistema deve recuperare da Jira le seguenti informazioni:
-      - Nome (titolo) di un ticket
-      - Assegnatario di un ticket
-      - Stato di un ticket
-      - Attività principale collegata a un ticket
-      - Sprint di appartenenza di un ticket
-      - Story point estimate di un ticket
-      - Richiedente/creatore di un ticket
-      - Priorità
-      - Data di scadenza
-      - Commenti del ticket
-      - Ticket collegati
+     - Id di un ticket
+     - Titolo di un ticket
+    - Descrizione di un ticket
+    - Assegnatario di un ticket
+    - Stato di un ticket
+    - Sprint di appartenenza di un ticket
+    - Story point estimate di un ticket
+    - Creatore di un ticket
+    - Priorità
+    - Data di scadenza
+    - Ticket collegati
+    - Commenti del ticket
+
+    Per ogni commento del ticket:
+    - Autore del commento
+    - Data di creazione
+    - Contenuto del commento
     ],
     [UC4, Capitolato],
     [Obbligatorio],
@@ -1381,13 +1463,22 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence], [UC7.3], [Opzionale],
 
     [*RF-036*],
-    [Il sistema deve visualizzare un’animazione di caricamento circolare durante il recupero dello storico della chat], [UC1.6], [Opzionale],
+    [Il sistema deve visualizzare un'animazione di caricamento circolare durante il recupero dello storico della chat], [UC1.6], [Opzionale],
 
     [*RF-037*],
-    [Il sistema deve visualizzare un’animazione di caricamento composta da tre puntini, durante l’elaborazione della risposta da parte del backend], [UC3.6], [Opzionale],
+    [Il sistema deve visualizzare un'animazione di caricamento composta da tre puntini, durante l'elaborazione della risposta da parte del backend], [UC3.6], [Opzionale],
 
     [*RF-038*],
-    [Il sistema deve visualizzare un pulsante “Load More” nella parte superiore della chat, che consenta all’utente di caricare 10 messaggi precedenti non ancora visualizzati], [UC8], [Opzionale],
+    [Il sistema deve visualizzare un pulsante “Load More” nella parte superiore della chat, che consenta all'utente di caricare 10 messaggi precedenti non ancora visualizzati], [UC8], [Opzionale],
+
+    [*RF-039*],
+    [L'utente deve visualizzare il contenuto del messaggio in formato markdown], [UC1.4.5], [Desiderabile],
+
+    [*RF-040*],
+    [L'utente deve poteer incollare nell'input di testo il contenuto copiato in precedenza], [UC2], [Desiderabile],
+
+    [*RF-041*],
+    [L'interfaccia utente deve scrollare verso il basso mostrando l'ultimo messaggio inviato ogni volta che l'utente invia un nuovo messaggio], [Verbale interno], [Opzionale],
   ),
   caption: "Requisiti Funzionali",
 )
@@ -1527,7 +1618,9 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [UC1.4.1], [RF-009],
     [UC1.4.2], [RF-010],
     [UC1.4.3], [RF-011],
+    [UC1.4.5], [RF-039],
     [UC2], [RF-012],
+    [UC2], [RF-040],
     [UC3], [RF-013],
     [UC3], [RF-014],
     [UC3.4], [RF-015],
@@ -1553,6 +1646,7 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [UC7.2], [RF-034],
     [UC7.3], [RF-035],
     [UC8], [RF-038],
+    [Verbale interno], [RF-041],
     [Capitolato], [RQ-001],
     [Capitolato], [RQ-002],
     [Capitolato], [RQ-003],
@@ -1599,11 +1693,11 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
   table(
     columns: (auto, auto, auto, auto, auto),
     [Tipologia], [Obbligatorio], [Desiderabile], [Opzionale], [Totale],
-    [Funzionali], [29], [0], [9], [38],
+    [Funzionali], [29], [2], [10], [41],
     [Qualità], [6], [0], [0], [6],
     [Vincolo], [3], [4], [0], [7],
   ),
   caption: "Riepilogo",
 )
-Il totale dei Requisiti è: 51
+Il totale dei Requisiti è: 56
 
