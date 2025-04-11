@@ -42,7 +42,9 @@ La riunione è iniziata con una breve presentazione dello stato attuale del Chat
 Per quanto riguarda il primo punto, si è discusso di come un sistema di retrieval ogni 10 o 20 minuti consenta di mantenere le informazioni costantemente aggiornate, ma possa anche presentare criticità in alcuni casi specifici. In particolare, questa scelta diventa problematica quando un'operazione di fetch richiede più tempo dell’intervallo tra due fetch consecutivi, a causa dell’elevata mole di dati. In tal caso, il secondo fetch rischierebbe di sovrapporsi al primo, che non si è ancora concluso, interrompendone l’esecuzione.
 
 Per il secondo punto, si è sottolineata la necessità di effettuare un retrieval all’avvio del sistema, così da renderlo immediatamente operativo.
+
 = Discussione sugli aggiornamenti della Documentazione
+
 Il gruppo ha successivamente proseguito il confronto, facendo il punto della situazione riguardo la documentazione in generale e gli aggiornamenti da apportare. Particolare attenzione è stata rivolta al manuale utente, discutendo su come dovrebbe essere strutturato e redatto, includendo possibili sezioni e sottosezioni. Inoltre, il team ha discusso sull'importanza di finire in tempi ridotti il resto della documentazione, in modo da non dover ritardare ulteriormente la data di consegna del progetto.
 
 In particolare, i documenti da scrivere sono:
