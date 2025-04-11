@@ -687,15 +687,22 @@ export class Adaptee {
 
 Il microservizio Chatbot rappresenta una componente cruciale all'interno dell'architettura di #glossary("BuddyBot"), essendo responsabile dell'elaborazione delle domande degli utenti e della generazione di risposte pertinenti. Questo microservizio è progettato secondo i principi dell'architettura esagonale garantendo una netta separazione tra la logica di business e i dettagli implementativi.
 
-La sua funzione principale è quella di ricevere una domanda dall'utente, arricchirla con informazioni contestuali recuperate dal microservizio DB Vettoriale, e utilizzare queste informazioni per generare una risposta accurata e rilevante attraverso un modello di linguaggio esterno (LLM).
+La sua funzione principale è quella di ricevere una domanda dall'utente, arricchirla con informazioni contestuali recuperate dal microservizio Informazioni, e utilizzare queste informazioni per generare una risposta accurata e rilevante attraverso un modello di linguaggio esterno (LLM).
 
 == Architettura e Componenti
 
 L'architettura del microservizio è strutturata in diversi layer, ciascuno con responsabilità ben definite:
 
 === Domain Layer
-- Definisce le entità di business core e i value objects
-- Contiene la logica di dominio indipendente dalle tecnologie
+Il Domain Layer contiene le entità core e i value objects che rappresentano i concetti fondamentali del dominio, indipendenti da qualsiasi tecnologia specifica:
+
+- *Entità*:
+  - `Chat`: Rappresenta una conversazione completa con domanda e risposta
+  - `Information`: Contiene informazioni contestuali recuperate dal database vettoriale
+  - `Metadata`: Mantiene i metadati associati alle informazioni (origine, tipo, ID)
+
+- *Value Objects*:
+  - `ReqAnswerCmd`: Command object che incapsula la richiesta dell'utente
 
 === Application Layer
 - Implementa i casi d'uso dell'applicazione
@@ -719,7 +726,7 @@ Il flusso principale per la generazione di una risposta segue questi passaggi:
 
 2. *Ricerca di informazioni contestuali*
    - Il servizio `ElaborazioneService` utilizza `VectorDbPort` per cercare informazioni rilevanti nel #glossary("database vettoriale")
-   - La richiesta viene inoltrata al microservizio DB Vettoriale tramite RabbitMQ
+   - La richiesta viene inoltrata al microservizio Informazioni tramite RabbitMQ
 
 3. *Generazione della risposta*
    - Le informazioni contestuali recuperate vengono combinate con la domanda originale
@@ -962,16 +969,6 @@ const app = await NestFactory.createMicroservice<MicroserviceOptions>(
   },
 );
 ```]
-
-== Gestione degli Errori e Logging
-
-Il microservizio implementa un sistema di logging per tracciare il flusso di esecuzione e gestire eventuali errori. In particolare:
-
-- Si registrano i documenti rilevanti recuperati dal #glossary("database vettoriale")
-- Si registrano eventuali errori durante l'elaborazione delle richieste
-- Si forniscono informazioni dettagliate sul processo di generazione delle risposte
-
-Questo approccio permette di monitorare efficacemente il comportamento del sistema e facilitare la diagnosi di eventuali problemi.
 
 #pagebreak()
 == Configurazione e Ambiente
