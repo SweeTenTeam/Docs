@@ -5,6 +5,13 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+        "0.0.4",
+    "2025-04-03",
+    (p.fracaro),
+    (p.santi),
+    [
+      Sezione architettura di sistema e introduzione backend
+    ],
     "0.0.3",
     "2025-03-27",
     (p.ferazzani),
@@ -212,13 +219,132 @@ ESLint è uno strumento di analisi statica del codice per identificare e segnala
 //aggiungere microservizi
 
 #pagebreak()
-== Architettura frontend
+
+= Architettura di Sistema
+
+== Approccio alla Progettazione
+
+La progettazione dell'architettura di sistema di _BuddyBot_ è stata condotta secondo un approccio _top-down_. Questo metodo ha permesso di definire inizialmente i macro-componenti del sistema, garantendo una visione chiara e coerente sin dalle prime fasi. Successivamente, si è passati a un raffinamento progressivo delle specifiche dei singoli moduli e componenti, assicurando che ciascuno fosse progettato in modo modulare e scalabile. Tale approccio ha facilitato la suddivisione delle responsabilità tra i membri del team, migliorando la tracciabilità delle decisioni progettuali.
+
+== Contenitori e Deploy con Docker
+
+Per garantire portabilità e facilitare il deploy, è stato adottato Docker e Docker Compose, con un container per ogni servizio e per le risorse di supporto.
+
+L'utilizzo di Docker porta molti vantaggi, tra cui:
+
+- *Isolamento dei servizi*: Ogni microservizio gira in un ambiente indipendente, evitando conflitti tra dipendenze.
+- *Portabilità*: Il sistema può essere eseguito su qualsiasi piattaforma senza configurazioni complesse.
+- *Facilità di scalabilità*: Può essere facilmente distribuito su più istanze per gestire carichi elevati.
+- *Coerenza ambientale*: Assicura che gli ambienti di sviluppo, test e produzione siano identici, riducendo i problemi legati a differenze di configurazione.
+
+_Docker Compose_ viene utilizzato per orchestrare e avviare automaticamente i container, garantendo l'interconnessione tra i microservizi e i database senza necessità di configurazioni manuali complesse.
+
+
+== Strutturazione Generale del Sistema
+
+Il sistema è stato suddiviso in due macro-componenti principali:
+
+- *Frontend*: Interfaccia utente per l'interazione con BuddyBot.
+- *Backend*: Gestione della logica applicativa e delle fonti dati, esposto tramite API REST.
+
+Questa suddivisione consente di ottenere diversi benefici:
+
+- Indipendenza tra frontend e backend: Gli aggiornamenti possono avvenire separatamente, evitando impatti sull'intero sistema.
+- Possibilità di supportare frontend multipli: L'uso di _API REST_ consente l'integrazione di differenti interfacce utente, come web app, mobile app e desktop app (anche se attualmente non implementato, questa architettura lo renderebbe facilmente realizzabile in futuro).
+- Scalabilità e manutenibilità migliorate: Il backend può evolvere indipendentemente dall'interfaccia utente, permettendo di migliorare le prestazioni senza dover aggiornare ogni client.
+
+== Architettura del frontend
 Per la parte di frontend, il team ha utilizzato #glossary("Next.Js"), framework basato su React, per la creazione di pagine web. Next.Js è stato scelto per la sua facilità d'uso e per la sua scalabilità. Inoltre, il team ha utilizzato #glossary("TailwindCSS") per la creazione di interfacce utente. TailwindCSS è stato scelto per la sua facilità d'uso e per la sua documentazione dettagliata, oltre che per la semplificazione della specificità di CSS base.
 
 La scelta di tali tecnologie ha portato il team ad uno sviluppo a componenti del frontend. Saranno questi poi a comporre la struttura della web app. L'approccio a componenti, tipico di React, permette una maggiore modularità e scalabilità del codice, oltre che ad una maggiore facilità di manutenzione, evitando di avere tutto il codice in una singola pagina.
 
 BuddyBot è una #glossary("SPA"), ovvero una Single Page Application, che permette di avere una sola pagina web che viene caricata una sola volta e che viene aggiornata dinamicamente senza dover ricaricare la pagina. Questo permette di avere una maggiore velocità di caricamento e di navigazione all'interno della web app. Inoltre, essendo un ChatBot, non vi era la necessità di avere più di una pagina, anche se il team ha previsto la possibilità di aggiungere nuove pagine in futuro.
 
+
+== Architettura del Backend
+=== Architettura di Deployment
+
+Il backend è strutturato secondo un'architettura a _microservizi_, dove ogni servizio è responsabile di una specifica funzionalità del sistema. Questo approccio ha permesso di ottenere un sistema più modulare e scalabile, pur affrontando alcune sfide specifiche.
+
+==== Vantaggi dell'architettura a microservizi
+
+- Scalabilità orizzontale: I microservizi possono essere replicati per gestire carichi di lavoro elevati.
+- Indipendenza di deploy: Ogni servizio può essere aggiornato, riavviato o sostituito senza impattare il resto del sistema.
+- Manutenibilità e modularità: Separare le funzionalità in microservizi facilita la gestione del codice e l'aggiunta di nuove feature.
+- Tecnologie eterogenee: Ogni microservizio può essere sviluppato con la tecnologia più adatta senza vincoli imposti da un monolite.
+
+==== Svantaggi
+
+- Overhead di gestione: A differenza di un'architettura monolitica, i microservizi richiedono una gestione più complessa, sia in fase di sviluppo che di deploy.
+- Comunicazione tra servizi: Per garantire un'integrazione efficiente, è stato necessario implementare un sistema di messaggistica asincrono, come _RabbitMQ_, per la comunicazione tra microservizi.
+
+==== Microservizi Identificati
+
+Il backend è suddiviso in quattro microservizi principali:
+
+- *API Gateway*: Instrada le richieste tra frontend e microservizi interni, gestisce il bilanciamento del carico e pianifica il recupero delle informazioni dalle fonti.
+- *Chatbot*: Genera risposte basandosi sulle richieste ricevute e sulle informazioni contestuali fornite dal database vettoriale.
+- *Storico*: Salva e recupera le domande e le risposte dal database relazionale (_PostgreSQL_) per mantenere uno storico delle conversazioni.
+- *Information Vector DB*: Recupera informazioni dalle fonti, effettua embedding in forma vettoriale e le memorizza nel database vettoriale (_Qdrant_), fornendo dati contestuali al chatbot.
+
+==== Comunicazione tra Microservizi: RabbitMQ
+
+Nell'architettura a microservizi di #glossary("BuddyBot"), la comunicazione efficiente tra componenti è garantita da un sistema di messaggistica asincrona basato su RabbitMQ.
+
+
+L'adozione di RabbitMQ offre benefici fondamentali:
+
+- *Flessibilità temporale:* Determina quando un microservizio elabora una richiesta, eliminando blocchi nell'esecuzione.
+- *Scalabilità orizzontale:* I messaggi vengono distribuiti in code ed elaborati in parallelo.
+- *Resilienza avanzata:* I messaggi persistono nelle code quando i servizi destinatari sono temporaneamente non disponibili.
+- *Disaccoppiamento:* Riduce le dipendenze dirette tra microservizi, semplificando la manutenzione.
+
+===== Pattern e implementazione
+
+Il sistema utilizza principalmente il pattern *RPC asincrono (Request/Response)* per le comunicazioni tra i microservizi, sfruttando l'integrazione tra NestJS e RabbitMQ:
+
+- NestJS gestisce automaticamente gli identificativi di correlazione tra richieste e risposte.
+- Il framework `@nestjs/microservices` fornisce astrazioni per configurare microservizi basati su code.
+- Ogni microservizio implementa:
+    - Listener dedicati che si connettono a specifiche code RabbitMQ.
+    - Handler che associano pattern predefiniti alle funzioni di business logic.
+    - Client per pubblicare messaggi in modo asincrono.
+
+=== Architettura logica
+
+Il sistema è progettato seguendo l'*architettura esagonale*, un modello architetturale che crea una separazione netta tra la business logic dell'applicazione e il mondo esterno, garantendo indipendenza da tecnologie specifiche e maggiore manutenibilità.
+
+==== Struttura dell'architettura esagonale
+
+*Logica di business* rappresenta il nucleo dell'applicazione, contenente il dominio e le regole di business. È completamente indipendente da implementazioni tecnologiche specifiche, garantendo massima portabilità e riutilizzabilità.
+
+*Porte* definiscono i punti di interazione tra il nucleo e il mondo esterno:
+- *Porte in Entrata (Use Case)*: Permettono ai componenti esterni di invocare il nucleo, fornendo un accesso strutturato e proteggendo la logica di dominio da implementazioni specifiche.
+- *Porte in Uscita*: Consentono al nucleo di accedere a funzionalità esterne (database, servizi di terze parti) mantenendo l'astrazione tecnologica.
+
+*Services* implementano le porte in entrata e fanno parte della business logic. Si concentrano esclusivamente sulla logica di dominio, rimanendo indipendenti da aspetti tecnologici specifici.
+
+*Adapters* costituiscono il livello più esterno dell'applicazione e si dividono in:
+- *Adapters in Entrata (Controller)*: Gestiscono e convertono le richieste provenienti dall'esterno verso il core.
+- *Adapters in Uscita*: Gestiscono la comunicazione dal core verso servizi e tecnologie esterne.
+
+==== Vantaggi
+
+Questa architettura garantisce:
+
+- *Flessibilità*: L'applicazione rimane indipendente dalle tecnologie esterne, facilitando modifiche e aggiornamenti senza impattare la logica di business.
+- *Testabilità*: La logica di business può essere testata in isolamento, semplificando lo sviluppo test-driven.
+- *Resilienza*: Il sistema diventa più resistente ai cambiamenti tecnologici, permettendo di sostituire componenti esterni senza modificare il nucleo applicativo.
+
+=== Design pattern utilizzati
+
+==== Dependency Injection
+
+Uno degli aspetti fondamentali dell'implementazione del backend è stato l'uso del pattern di *Dependency Injection*, nativamente supportato da NestJS. Questo approccio ha permesso di ridurre l'accoppiamento tra i componenti, semplificando la testabilità e la manutenzione del sistema spostando all'esterno della classi la risoluzione delle dipendenze.
+
+NestJS adotta un *container per le dipendenze* che consente di dichiarare i provider una sola volta e iniettarli ovunque siano richiesti tramite il costruttore delle classi. Ogni modulo dell'applicazione può registrare provider, che vengono poi risolti automaticamente dal framework quando una classe dichiara di averne bisogno.
+
+= Progettazione di dettaglio
 #set page(flipped: true)
 == Diagramma delle classi
 \
