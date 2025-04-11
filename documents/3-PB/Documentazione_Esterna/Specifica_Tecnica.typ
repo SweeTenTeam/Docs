@@ -705,16 +705,51 @@ Il Domain Layer contiene le entità core e i value objects che rappresentano i c
   - `ReqAnswerCmd`: Command object che incapsula la richiesta dell'utente
 
 === Application Layer
-- Implementa i casi d'uso dell'applicazione
-- Coordina il flusso di dati tra il domain layer e gli adapters
+L'Application Layer coordina il flusso di dati e implementa i casi d'uso dell'applicazione, orchestrando il lavoro delle entità del dominio:
+
+- *Use Cases (Interfaces)*:
+  - `ElaborazioneUseCase`: Definisce il contratto per l'elaborazione delle domande e la generazione di risposte
+
+- *Ports (Interfaces)*:
+  - `LLMPort`: Interfaccia che definisce le operazioni per interagire con modelli di linguaggio esterni
+  - `VectorDbPort`: Interfaccia che definisce le operazioni per recuperare informazioni dal database vettoriale
+
+- *Services*:
+  - `ElaborazioneService`: Implementazione concreta di `ElaborazioneUseCase` che coordina l'interazione tra il recupero delle informazioni contestuali e la generazione delle risposte attraverso il modello di linguaggio
+
+Questo layer implementa la logica applicativa senza dipendere direttamente da meccanismi specifici di persistenza o comunicazione, utilizzando le interfacce (ports) per interagire con il mondo esterno.
 
 === Adapters Layer
-- *Adapters In*: gestiscono le richieste in ingresso e trasformano i dati esterni in un formato comprensibile per il domain layer
-- *Adapters Out*: gestiscono la comunicazione con servizi esterni e convertono i dati interni nel formato richiesto da tali servizi
+L'Adapters Layer traduce le interazioni tra il core dell'applicazione e il mondo esterno, gestendo le conversioni di formato e protocollo:
+
+- *Adapters In*:
+  - `ChatController`: Riceve le richieste tramite RabbitMQ, le converte in command objects (`ReqAnswerCmd`) e le passa al caso d'uso appropriato (`ElaborazioneUseCase`)
+
+- *Adapters Out*:
+  - `GroqAdapter`: Implementa `LLMPort` per interagire con il modello di linguaggio #glossary("Groq"), convertendo i formati di dominio in richieste API specifiche
+  - `VectorDbAdapter`: Implementa `VectorDbPort` per comunicare con il microservizio DB Vettoriale, gestendo la serializzazione e deserializzazione dei messaggi RabbitMQ
+
+- *Data Transfer Objects (DTOs)*:
+  - `ReqAnswerDTO`: Oggetto di trasferimento dati per ricevere le richieste in ingresso dal client
+  - `ChatDTO`: Oggetto di trasferimento dati per le risposte (definito ma non utilizzato nell'implementazione attuale)
+
+Gli adapter isolano il core dell'applicazione dai dettagli di implementazione delle tecnologie esterne, consentendo di sostituire facilmente tali tecnologie senza modificare la logica di business.
 
 === Infrastructure Layer
-- Fornisce implementazioni concrete delle interfacce definite negli adapters
-- Gestisce dettagli tecnologici come connessioni a database, comunicazione di rete, ecc.
+L'Infrastructure Layer fornisce implementazioni concrete per servizi esterni, configurazioni e meccanismi di comunicazione:
+
+- *Clients*:
+  - `VectorDbClient`: Client che gestisce la comunicazione con il microservizio DB Vettoriale tramite RabbitMQ, incapsulando i dettagli di connessione e serializzazione
+  - `ChatGroq`: Client di terze parti per l'interazione con l'API di #glossary("Groq"), configurato per utilizzare il modello di linguaggio "qwen-2.5-32b"
+
+- *Configuration*:
+  - `ConfigModule`: Modulo di NestJS che gestisce il caricamento e l'accesso alle variabili d'ambiente
+  - `AppModule`: Modulo principale dell'applicazione che configura le dipendenze, i provider e i controller
+
+- *Communication*:
+  - `rabbitMQConfig`: Configurazione per la connessione a RabbitMQ, definendo code e opzioni
+
+Questo layer si concentra esclusivamente sui dettagli tecnici e sulle implementazioni specifiche delle tecnologie, mantenendo queste preoccupazioni separate dalla logica di business.
 
 == Flusso Principale di Elaborazione
 
