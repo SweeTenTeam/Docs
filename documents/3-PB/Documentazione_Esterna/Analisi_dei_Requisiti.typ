@@ -614,7 +614,7 @@ Gli attori coinvolti nei casi d'uso sono:
 - L'interfaccia utente viene aggiornata con la domanda scritta dall'utente.
 *Scenario principale*
 - L'utente accede all'interfaccia di #glossary("Buddybot") tramite l'applicazione web;
-- L'utente scrive la propria domanda nel campo di input dedicato con l'opzione di incollare il contenuto salvato in precedenza;
+- L'utente scrive la propria domanda nel campo di input dedicato con l'opzione di incollare il contenuto copiato in precedenza;
 - Il campo di input viene aggiornato con la domanda scritta dall'utente.
 
 *User story associata*
@@ -1463,13 +1463,13 @@ Si osservi che, come indicato sopra, i requisiti funzionali verranno identificat
     [Il sistema deve visualizzare un'icona identificativa (cliccabile ed interattiva) per l'accesso al sito-documentazione di Confluence], [UC7.3], [Opzionale],
 
     [*RF-036*],
-    [Il sistema deve visualizzare un’animazione di caricamento circolare durante il recupero dello storico della chat], [UC1.6], [Opzionale],
+    [Il sistema deve visualizzare un'animazione di caricamento circolare durante il recupero dello storico della chat], [UC1.6], [Opzionale],
 
     [*RF-037*],
-    [Il sistema deve visualizzare un’animazione di caricamento composta da tre puntini, durante l’elaborazione della risposta da parte del backend], [UC3.6], [Opzionale],
+    [Il sistema deve visualizzare un'animazione di caricamento composta da tre puntini, durante l'elaborazione della risposta da parte del backend], [UC3.6], [Opzionale],
 
     [*RF-038*],
-    [Il sistema deve visualizzare un pulsante “Load More” nella parte superiore della chat, che consenta all’utente di caricare 10 messaggi precedenti non ancora visualizzati], [UC8], [Opzionale],
+    [Il sistema deve visualizzare un pulsante “Load More” nella parte superiore della chat, che consenta all'utente di caricare 10 messaggi precedenti non ancora visualizzati], [UC8], [Opzionale],
 
     [*RF-039*],
     [L'utente deve visualizzare il contenuto del messaggio in formato markdown], [UC1.4.5], [Desiderabile],
@@ -1618,7 +1618,9 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [UC1.4.1], [RF-009],
     [UC1.4.2], [RF-010],
     [UC1.4.3], [RF-011],
+    [UC1.4.5], [RF-039],
     [UC2], [RF-012],
+    [UC2], [RF-040],
     [UC3], [RF-013],
     [UC3], [RF-014],
     [UC3.4], [RF-015],
@@ -1644,6 +1646,7 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
     [UC7.2], [RF-034],
     [UC7.3], [RF-035],
     [UC8], [RF-038],
+    [Verbale interno], [RF-041],
     [Capitolato], [RQ-001],
     [Capitolato], [RQ-002],
     [Capitolato], [RQ-003],
@@ -1690,11 +1693,11 @@ Il #glossary("Tracciamento") è il processo che mira a collegare ogni requisito 
   table(
     columns: (auto, auto, auto, auto, auto),
     [Tipologia], [Obbligatorio], [Desiderabile], [Opzionale], [Totale],
-    [Funzionali], [29], [0], [9], [38],
+    [Funzionali], [29], [2], [10], [41],
     [Qualità], [6], [0], [0], [6],
     [Vincolo], [3], [4], [0], [7],
   ),
   caption: "Riepilogo",
 )
-Il totale dei Requisiti è: 51
+Il totale dei Requisiti è: 56
 
