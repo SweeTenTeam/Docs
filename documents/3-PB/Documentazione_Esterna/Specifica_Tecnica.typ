@@ -248,8 +248,8 @@ Classe di supporto che fornisce un meccanismo standardizzato per rappresentare l
 
 Il seguente diagramma illustra le classi coinvolte nel caso d'uso "Recupero e memorizzazione dei ticket di Jira", evidenziando l'architettura esagonale adottata:
 #figure(
-  image(st.diag_fetch_jira, width: 40em, fit: "contain"),
-  caption: "Diagramma UC6, visualizzazione UI",
+  image(st.diag_fetch_jira, width: 42em, fit: "contain"),
+  caption: "Diagramma delle classi per il caso d'uso di recupero e memorizzazione dei ticket di Jira",
 )
 
 ==== Componenti Principali
@@ -289,7 +289,7 @@ Interfaccia che astrae le operazioni di interazione con l'API Jira, definendo un
 
 Implementa *JiraAPIPort* gestendo la comunicazione effettiva con l'API Jira tramite *JiraAPIFacade*. Traduce le risposte API nel formato interno richiesto dall'applicazione.
 
-===== JiraAPIFacade
+===== JiraAPIRepository
 Classe che funge da intermediario per interagire direttamente con le API di Jira. Al momento della sua creazione, richiede l'iniezione di un client autenticato per stabilire la connessione con Jira.  Espone un metodo `fetchRecentIssues(daysBack: number, boardId: number): Json*` in cui entrambi i parametri sono opzionali:
 - *daysBack*: Specifica il numero di giorni nel passato per cui recuperare le issue. Se omesso, vengono restituite tutte le issue accessibili all'account;
 - *boardId*: Limita la ricerca alle issue associate a una specifica board. Se omesso, vengono recuperate le issue da tutte le board accessibili.
@@ -311,8 +311,8 @@ Implementa *StoreJiraPort* gestendo la persistenza dei ticket nel database vetto
 
 Il seguente diagramma illustra le classi coinvolte nel caso d'uso "Recupero delle informazioni", evidenziando l'architettura esagonale adottata: 
 #figure(
-  image(st.diag_retr_info, width: 40em, fit: "contain"),
-  caption: "Diagramma UC6, visualizzazione UI",
+  image(st.diag_retr_info, width: 42em, fit: "contain"),
+  caption: "Diagramma delle classi per il caso d'uso di recupero di informazioni rilevanti basato sulle query utente",
 )
 ==== Componenti Principali
 
