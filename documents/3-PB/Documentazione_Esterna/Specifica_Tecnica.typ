@@ -8,9 +8,9 @@
     "0.0.7",
     "2025-04-10",
     (p.benedetti),
-    (p.fracaro),
+    (p.mahdi),
     [
-      Stesura tracciamento stato requisiti
+      Stesura tracciamento stato requisiti funzionali
     ],
     "0.0.6",
     "2025-04-10",
