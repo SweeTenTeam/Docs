@@ -11,6 +11,13 @@
     [
       Prima stesura documento
     ],
+    "0.0.*",
+    "2025-02-27",
+    (p.santi),
+    (p.mahdi),
+    [
+      Stesura sezione microservizio Api-Gateway
+    ],
   ),
   show_images_list: true,
 )
@@ -171,3 +178,217 @@ Next.js è un framework per la creazione di applicazioni web in React. Il team h
 // TO BE REVIEWED
 
 
+
+=== Microservizio Api-Gateway
+
+
+
+Il microservizio *API Gateway* svolge un ruolo cruciale nell'architettura di #glossary("BuddyBot"), fungendo da punto di ingresso centralizzato per tutte le richieste provenienti dal frontend e indirizzandole verso i microservizi appropriati. Questo componente garantisce il routing delle richieste e la gestione delle risposte.
+
+Come per gli altri microservizi, anche l'API Gateway è stato progettato secondo i principi dell'architettura esagonale, al fine di garantire una netta separazione tra la logica di business e le applicazioni esterne. L'obiettivo è quello di mantenere il sistema flessibile, testabile e facilmente manutenibile.
+
+In particolare, l'API Gateway interagisce con i microservizi tramite porte e adattatori dedicati, utilizzando API REST per comunicare con il #glossary ("front-end") e  RabbitMQ per messaggistica con gli alri microservizi . Questo approccio consente di mantenere l'API Gateway completamente agnostico rispetto ai dettagli di implementazione dei microservizi, favorendo una maggiore scalabilità nel futuro.
+
+Compiti dell'API-gateway:
+- comunicazione attraverso API REST con il front-end (`@Get('get-storico')` e  `@Post('get-risposta')`);
+- instradamento delle richieste v microservizi appropriati ( 'Storico" e "ChatBot") e recupero delle risposte:
+- risposta usecase;
+- storico usecase;
+- scheduling del fetch delle informazioni nel microservizio  "Information".
+
+
+== Risposta Use-Case:
+
+L'Endpoint 'get-risposta' riceve dal frontend una richiesta `@Post('get-risposta')` contenente "(text)" corpo e "(date)"data della domanda,
+
+```ts
+  async getRisposta(@Body('text') text: string, @Body('timestamp') timestamp: string): Promise<ChatDTO>   
+  ```
+
+all'interno di un 
+
+```ts
+export class ReqAnswerDTO {
+    constructor(
+      public readonly text: string,
+      public readonly date: string
+    ) {}
+  }
+  ```
+  
+e si aspetta di ritornare un ogetto "ChatDTO" contenente la risposta dalla domanda  posta.
+
+```ts
+import { MessageDto } from "./message.dto";
+export class ChatDTO {
+  constructor(
+    public readonly id: string,
+    public readonly question: MessageDto,
+    public readonly answer: MessageDto,
+    public readonly lastUpdate: string,
+  ) {}
+}
+//USE//
+export class MessageDto {
+  constructor(
+    public readonly content: string,
+    public readonly timestamp: string,
+  ) {}
+}
+  ```
+
+Prima però la richiesta viene mandata al microservizio di "Chatbot" che restituisce una risposta
+
+```ts
+export class ProvChat {
+  constructor(
+    public readonly question: string,
+    public readonly answer: string,
+    public readonly timestamp: string,
+  ) {}
+}
+  ```
+
+contenente la domanda fatta e la risposta che è stata generata.
+
+Prima di essere passata verso al front-end, "ProvChat" viene mandata verso il microservizio di "Storico"
+
+```ts
+postStorico(chat: ProvChat): Promise<Chat>;
+  ```
+
+, il quale assegna un UUID alla nuova #glossary ("Chat"), oltre alla data del #glossary ("Fetch"), in 'lastUpdate' a cui appartengono le informazioni con cui è statat generata. Lo "Storico" ritorna un oggetto "Chat" completo che quindi viene passato, attraverso l' #glossary("Endpoint") al front-end per essere visualizzato.
+
+
+
+== Storico Use-Case:
+
+Usato per caricare le chat salvate nel database del microservizio "Storico" nel front-end.
+L'End-point 'get-storico' riceve una richiesta all'interno di 
+
+```ts
+  export class RequestChatDTO {
+  constructor(
+    public readonly id: string,
+    public readonly numChat: number
+  ) {}
+}
+  ```
+
+con ("id") UUID dell'ultima chat visualizzabile nell'interfaccia grafica front-end e un ("numChat"), numero delle chat(domanda + risposta) antecedenti a questa da caricare insieme.
+
+```ts
+ async getStorico(@Query('id') id?: string,@Query('num') numChat?: number): Promise<ChatDTO[]>
+  ```
+
+e restituisce al front-end un array di "Chat" invece che una sola. Se il sistema è stato appena avviato, viene mandata una richiesta con id ='  ' e num = 1 che restituisce l'ultima chat in ordine cronologico salvata nel database.
+
+Le "Chat" recuperate con 
+
+```ts
+ getStorico(req: RequestChatCMD): Promise<Chat[]>;
+  ```
+
+vengono mandate al front-end con questo formato #glossary ("Json")
+
+```json
+.
+.
+[
+      {
+        "id": "ID DELLA CHAT",
+        "question": {
+          "content": "Domanda"
+          "timestamp": "DATA DOMANDA"
+        },
+        "answer": {
+          "content": "Risposta",
+          "timestamp": "DATA RISPOSTA"
+        }
+      }
+]
+.
+.
+  ```
+
+dove vengono suddivise e visualizzate in ordine cronologico .
+
+
+== Scheduling del Fetch:
+Inoltre Api-Gateway si occupa anche dello scheduling del fetch delle informazioni nel microservizio di "Information" e del passaggio della data in cui viene effettuato al microservizio di "Storico" con
+
+```ts
+postUpdate(LastFetch:string): Promise<Boolean>;
+  ```
+per essere salvata e poi fornita all'utente all'interno della #glossary ("Chat") che riceve . 
+
+
+Per gestire lo scheduling viene usato `@Cron` della libreria  `@nestjs/schedule`. Oltre alla data vengono  passati anche una serie di oggetti che contengono dati sulle repository che vengono usati dal microservizio di "Information" per fare il fetch delle informazioni.
+ ```ts
+  ...
+  
+export class TasksService {
+  private readonly logger = new Logger(TasksService.name);
+
+  constructor(
+    @Inject('InfoPort') private readonly infoPort: InfoPort,
+    @Inject('StoricoPort') private readonly storicoPort: StoricoPort,
+  ) {}
+
+  @Cron('0 */5 * * * *')
+  async handleCron() {
+    const DataFetch = new Date();
+    this.logger.debug(`Every 5 minuti: ${DataFetch}`);
+    const boardId = 1;
+    const jiraCmd = new FetchJiraCMD(boardId, DataFetch);
+    const confCmd = new FetchConfluenceCMD(DataFetch);
+    const owner = process.env.GITHUB_OWNER || 'SweeTenTeam';
+    const repoName = process.env.GITHUB_REPO || 'BuddyBot';
+    const branch = process.env.GITHUB_BRANCH || 'develop';
+    const repoCMD = new RepoGithubCMD(owner, repoName, branch);
+    const githubCmd = new FetchGithubCMD([repoCMD], DataFetch);
+    const resultFetchJira = await this.infoPort.fetchUpdateJira(jiraCmd);
+    const resultFetchConf = await this.infoPort.fetchUpdateConf(confCmd);
+    const resultFetchGithub = await this.infoPort.fetchUpdateGithub(githubCmd);
+
+    if (resultFetchJira && resultFetchGithub && resultFetchConf){
+      console.log(`Fetch informazioni in information service successo`);
+      const result = await this.storicoPort.postUpdate(DataFetch.toString())
+      console.log(`Data fetch salvata?:`, result);
+    }else{
+      console.log(`Fetch informazioni in information service fallito`);
+    }
+  }
+}
+  ```
+
+Come *'FetchGithubCMD'* che contiene  le informazioni della repo a cui fare riferimento, questi sono salvati in un file .env per essere facilmente modificabili.
+
+ ```ts
+import { RepoGithubCMD } from "./RepoGithubCMD.js";
+export class FetchGithubCMD {
+    constructor (
+        public readonly repoDTOList: RepoGithubCMD[],
+        public readonly lastUpdate: Date
+    ){}
+}
+//CHE USA
+export class RepoGithubCMD{
+    constructor(
+        public readonly owner: string,
+        public readonly repoName: string,
+        public readonly branch_name: string
+    ){}
+}
+  ```
+  
+  Sono state messe 3 diverse funzioni di fetch , una per ogni fonte, per rendere il codice facilmente espandibile in futuro, nel caso si vogliano aggiungere nuovi fonti basterà aggiungere la loro funzione e creare il loro oggetto con i dati necessari. Ma anche nel caso si voglia dare tempi di scheduling differenti ad ogni fonte o salvare nel database date di scheduling diverse per ognuna.
+  
+ ```ts
+export interface InfoPort {
+  fetchUpdateGithub(req: FetchGithubCMD): Promise<Boolean>;
+  fetchUpdateJira(req: FetchJiraCMD): Promise<Boolean>;
+  fetchUpdateConf(req: FetchConfluenceCMD): Promise<Boolean>;
+}
+  ```
+  
