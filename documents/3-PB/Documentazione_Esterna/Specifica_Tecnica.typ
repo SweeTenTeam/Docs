@@ -174,6 +174,16 @@ Next.js è un framework per la creazione di applicazioni web in React. Il team h
 
 === Github
 
+#figure(
+    image(spc.github_fetch, width: 100%, height: auto),
+    caption: "Diagramma UML di dettaglio riguardo alla raccolta delle informazioni di Github",
+) 
+
+#figure(
+    image(spc.github_store, width: 100%, height: auto),
+    caption: "Diagramma UML di dettaglio riguardo al salvataggio delle informazioni di Github",
+) 
+
 ==== FetchGithubDTO
 Classe che viene ricevuta in input dall'`InformationController`, contiene una lista di `RepoDTO`, spiegati in seguito, e la data dall'ultima raccolta di informazioni.
 
@@ -478,12 +488,20 @@ Questa classe implementa `GithubStoreInfoPort`, si occupa di trasformare i `Gith
 
 === Confluence
 
+#figure(
+    image(spc.confluence, width: 100%, height: auto),
+    caption: "Diagramma UML di dettaglio riguardo a Confluence",
+) 
+
+==== ConfluenceController
+Controller che resta in attesa di messaggi sulla coda `information-queue`, al fine di portare a termine le operazioni di raccolta e salvataggio delle informazioni ottenute da Confluence. Ritorna come output un oggetto `ResultDTO`.
+
 ==== ConfluenceUseCase
-Interfaccia che si comporta da porta d'ingresso alla business logic, offre il metodo `fetchAndStoreDocument`, che prende in input il `ConfluenceCmd` ricevuto dal controller.
+Interfaccia che si comporta da porta d'ingresso alla business logic, offre il metodo `fetchAndStoreDocument`, che prende in input il `ConfluenceCmd` ricevuto dal controller e ritorna come output un oggetto `Result`.
 
 ```typescript
 export interface ConfluenceUseCase {
-  fetchAndStoreConfluenceInfo(req: ConfluenceCmd): Promise<boolean>;
+  fetchAndStoreConfluenceInfo(req: ConfluenceCmd): Promise<Result>;
 }
 ```
 
@@ -497,7 +515,7 @@ export class ConfluenceService implements ConfluenceUseCase {
     @Inject(CONFLUENCE_STORE_INFO_PORT) private readonly confluenceStoreAdapter: ConfluenceStoreInfoPort
   ) {}
 
-  async fetchAndStoreConfluenceInfo(req: ConfluenceCmd): Promise<boolean> {
+  async fetchAndStoreConfluenceInfo(req: ConfluenceCmd): Promise<Result> {
     const documents = await this.confluenceAPIAdapter.fetchDocuments(req);
     return await this.confluenceStoreAdapter.storeDocuments(documents);;
   }
@@ -522,7 +540,7 @@ Questa è l'interfaccia che funge da porta d'uscita (outbound port) al fine di s
 
 ```typescript
 export interface ConfluenceStoreInfoPort {
-  storeDocuments(req: ConfluenceDocument[]): Promise<boolean>;
+  storeDocuments(req: ConfluenceDocument[]): Promise<Result>;
 }
 ```
 

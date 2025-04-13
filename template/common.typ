@@ -87,6 +87,12 @@
   PV: "/images/PdQ/PV.svg",
 )
 
+#let spc = (
+  confluence: "/images/specifica-tecnica/confluence.png",
+  github_fetch: "/images/specifica-tecnica/github_fetch.png",
+  github_store: "/images/specifica-tecnica/github_store.png",
+)
+
 // Immagini per i verbali
 #let vb = (
   MI: "/images/verbali/Message.png",
