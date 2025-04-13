@@ -92,6 +92,9 @@
   MI: "/images/verbali/Message.png",
 )
 
+#let st = (
+diag_api_gateway: "/images/specifica-tecnica/api-gateway.png",
+)
 
 //team members
 #let p = (
