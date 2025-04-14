@@ -160,20 +160,20 @@ In questo paragrafo verrà spiegato come installare il prodotto sulla propria ma
       ```],
     caption: "Installazione di Git su Windows",
   )
-- Node.js: un ambiente di esecuzione JavaScript, che permette di eseguire codice JavaScript al di fuori del browser. È possibile installarlo con il comando:
-  #figure(
-    sourcecode[```bash
-      brew install node
-      ```],
-    caption: "Installazione di Node.js su macOS e Linux",
-  ) oppure
-  #figure(
-    sourcecode[```bash
-      choco install nodejs
-      ```],
-    caption: "Installazione di Node.js su Windows",
-  )
-- #glossary("npm"): un gestore di pacchetti per Node.js, che permette di installare facilmente librerie e dipendenze. È incluso nell'installazione di Node.js, quindi non è necessario installarlo separatamente.
+// - Node.js: un ambiente di esecuzione JavaScript, che permette di eseguire codice JavaScript al di fuori del browser. È possibile installarlo con il comando:
+//   #figure(
+//     sourcecode[```bash
+//       brew install node
+//       ```],
+//     caption: "Installazione di Node.js su macOS e Linux",
+//   ) oppure
+//   #figure(
+//     sourcecode[```bash
+//       choco install nodejs
+//       ```],
+//     caption: "Installazione di Node.js su Windows",
+//   )
+// - #glossary("npm"): un gestore di pacchetti per Node.js, che permette di installare facilmente librerie e dipendenze. È incluso nell'installazione di Node.js, quindi non è necessario installarlo separatamente.
 
 == Creazione delle API Key
 Per utilizzare il prodotto, è necessario creare delle API Key per i servizi esterni utilizzati dal chatbot. Le API Key sono delle chiavi univoche che permettono di autenticarsi e accedere ai servizi esterni. Per creare l'Api key, è necessario creare un account per ogni servizio, e navigare nella pagina dedicata alle API Key nelle impostazioni dell'account. Di seguito sono riportati i link per creare le API Key per i servizi esterni utilizzati dal chatbot:
@@ -183,7 +183,6 @@ Per utilizzare il prodotto, è necessario creare delle API Key per i servizi est
 - https://www.atlassian.com/software/jira
 - https://www.atlassian.com/software/confluence
 - https://github.com/settings/tokens
-
 
 
 == Installazione del prodotto
@@ -212,18 +211,29 @@ Per installare il prodotto, è necessario eseguire i seguenti comandi:
     caption: "Navigazione nella cartella del progetto",
   )
 
-+ Creare i file `.env` a partire dai file `.env.example` presenti nella cartella del progetto. Per farlo, è possibile eseguire il comando:
++ A partire dai file `.env.example` presenti nella cartella del progetto, è necessario creare i file `.env`. I file `.env` contengono le variabili di ambiente necessarie per il corretto funzionamento del prodotto. Per farlo è possibile eseguire il comando:
+#figure(
+  sourcecode[```bash
+    cp .env.example .env
+    ```],
+  caption: "Creazione dei file .env",
+)
+Una volta fatto, basta inserire le API Key create in precedenza nei file `.env` e il prodotto sarà pronto per essere utilizzato.
+Questo passaggio va ripetuto per ogni microservizio del prodotto.
+
++ Impostare la repositorye la branch da tracciare nel file `.env` del microservizio `apiGateway`;
+
++ Far partire il container di Docker con il seguente comando se è la prima volta:
   #figure(
     sourcecode[```bash
-      cp .env.example .env
+      docker-compose up --build
       ```],
-    caption: "Creazione dei file .env e docker-compose.yml",
+    caption: "Build e Avvio del container di Docker",
   )
-+ Modificare i file `.env` con le API Key create in precedenza. Per farlo, è possibile utilizzare un editor di testo a piacere (ad esempio, Visual Studio Code, Atom, Sublime Text, ecc.) e aprire i file `.env` appena creatu presenti nella cartella del progetto. All'interno dei file, è necessario sostituire i valori delle variabili con le API Key create in precedenza.
-+ Far partire il container di Docker con il comando:
+  In caso contrario, è possibile eseguire il comando:
   #figure(
     sourcecode[```bash
-      docker-compose up -d
+      docker-compose up
       ```],
     caption: "Avvio del container di Docker",
   )
