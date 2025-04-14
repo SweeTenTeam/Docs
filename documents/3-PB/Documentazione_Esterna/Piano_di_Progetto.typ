@@ -9,12 +9,54 @@
     p.azzurro,
   ),
   changelog: (
-    "1.1.0",
+    "2.0.0",
+    "2025-04-15",
+    p.campagnaro,
+    (p.ferazzani),
+    [
+      Approvazione per PB
+    ],
+    "1.6.0",
+    "2025-04-14",
+    p.campagnaro,
+    (p.ferazzani),
+    [
+      Stesura del sommario finale
+    ],
+    "1.5.0",
+    "2025-04-14",
+    p.campagnaro,
+    (p.ferazzani),
+    [
+      Stesura del preventivo e consuntivo del periodo 10
+    ],
+    "1.4.0",
     "2025-03-28",
     p.mahdi,
     (p.santi, p.benedetti),
     [
-      Stesura del preventivo e consuntivo del periodo 6, 7, 8 e 9
+      Stesura del preventivo e consuntivo del periodo 9
+    ],
+    "1.3.0",
+    "2025-03-21",
+    p.mahdi,
+    (p.santi, p.benedetti),
+    [
+      Stesura del preventivo e consuntivo del periodo 8
+    ],
+    "1.2.0",
+    "2025-03-14",
+    p.mahdi,
+    (p.santi, p.benedetti),
+    [
+      Stesura del preventivo e consuntivo del periodo 7
+    ],
+    "1.1.0",
+    "2025-03-07",
+    p.mahdi,
+    (p.santi, p.benedetti),
+    [
+      Stesura del preventivo e consuntivo del periodo 6
     ],
     "1.0.0",
     "2025-02-09",
@@ -134,14 +176,17 @@ La presenza di un termine all'interno del Glossario è evidenziata dal #glossary
 == Riferimenti
 === Riferimenti normativi
 - Piano di progetto v.1.0.0
-- Capitolato C9: BuddyBot#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9.pdf
-- Regolamento progetto didattico#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf
+- Documentazione e presentazione del capitolato d'appalto C9: BuddyBot \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9.pdf") (Ultimo accesso: 2025-04-10) \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf") (Ultimo accesso: 2025-04-10)
+- Regolamento del progetto didattico: \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf") (Ultimo accesso: 2025-04-10)
 
 === Riferimenti informativi
-- T2 - Processi di ciclo di vita del software#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
+- I processi di ciclo di vita del software \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf") (Ultimo accesso: 2025-04-10)
 
-- T4 - Gestione di progetto#linebreak()https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf
-- Glossario#linebreak()https://sweetenteam.github.io/docs/RTB/Glossario
+- T4 - Gestione di progetto \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf") (Ultimo accesso: 2025-04-10)
+- `Glossario v2.0.0`: \ #link("https://sweetenteam.github.io/docs/PB/Documentazione_Interna/Glossario") (Ultimo accesso: 2025-04-14)
 
 #pagebreak()
 = *Analisi dei rischi*
@@ -1011,393 +1056,11 @@ Durante lo svolgimento di questo sprint i membri del gruppo hanno concordato una
 Nonostante il ritmo ridotto, tutte le task assegnate sono state portate a termine con successo.
 
 ==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del quinto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`477,50 €`*, risultando inferiore di *`42,50 €`* rispetto ai *`520,00 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.080,00 €	`*.
+Al termine del quinto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`477,50 €`*, risultando inferiore di *`42,50 €`* rispetto ai *`520,00 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`7.080,00 €`*.
 
 #avanzamento(100, 0, "5")
-
 #pagebreak()
-=== *Periodo 6*
-*Inizio*: 2025-02-17;\
-*Fine prevista*: 2025-03-04;\
-*Fine attuale*: 2025-03-04;\
-*Giorni di ritardo*: #neg(0);\
-
-==== Pianificazione
-Durante le due settimane del sesto #glossary("sprint"), il team si dedicherà al completamento e controllo dei vari file in preparazione alla revisione #glossary("RTB") e saranno fatte le presentazioni per gli incontri con i professori per la revisione #glossary("RTB").
-Inoltre, la riunione prevista con #box(image(g.azzurro, width: 5em, height: auto)) per discutere dell'#glossary("MVP") è stata spostata all'utimo giorno dello sprint per avere l'esisto delle revisionie e preparare una presentazione sull'architettura scelta per l'#glossary("MVP").
-
-==== Rischi attesi
-I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
-
-- #R.P2;
-- #R.P3;
-- #R.P4;
-
-
-#pagebreak()
-
-==== Preventivo
-===== Preventivo orario
-#prev-orario(
-  (
-    (0,0,2,4,0,1),
-    (0,1,3,2,0,2),
-    (0,0.5,2,3,0,2),
-    (2,0,2,2,0,2),
-    (1,1,0,3,0,2),
-    (0,1,2,3,2,0),
-    (3,1,2,2,0,0),
-  ),
-  "6",
-)
-===== Preventivo economico
-#prev-economico((6,4.5,13,19,2,9),"6"	)
-
-==== Consuntivo
-Tutte le attività previste e pianificate sono state completate nei termini prestabiliti.
-
-Dal confronto tra preventivo e consuntivo emerge che:
-
-- Non ci sono state variazioni tra quanto stabilito e fatto, quindi non ci sono variazioni nei costi.
-
-#pagebreak()
-===== Consuntivo orario
-#cons-orario(
-  (
-    (0,0,2,4,0,1),
-    (0,1,3,2,0,2),
-    (0,0.5,2,3,0,2),
-    (2,0,2,2,0,2),
-    (1,1,0,3,0,2),
-    (0,1,2,3,2,0),
-    (3,1,2,2,0,0)
-    ),
-    (
-    (0,0,2,4,0,1),
-    (0,1,3,2,0,2),
-    (0,0.5,2,3,0,2),
-    (2,0,2,2,0,2),
-    (1,1,0,3,0,2),
-    (0,1,2,3,2,0),
-    (3,1,2,2,0,0)
-  ),"6",
-)
-
-#ore-rimaste(
-  (
-    (5,3,1,5,16,15),
-    (6,1,0,10,20,9),
-    (2,1,1,10,23,10),
-    (0,1.5,1,12,17,13),
-    (1,1,2,8,21,13.5),
-    (1,2,1,10,19,12.5),
-    (3,2,0.5,11,19,9.5)
-  ),
-  "6",
-)
-
-===== Consuntivo economico
-#cons-economico((6,4.5,13,19,2,9),(6,4.5,13,19,2,9),"6"	)
-
-==== Rischi occorsi, impatto e loro mitigazione
-Durante lo svolgimento di questo sprint ci sono stati momenti di pausa in attesa degli esiti delle revisioni #glossary("RTB") che sono stati sfruttati per organizzare il periodo di sviluppo dell'#glossary("MVP").
-
-==== Retrospettiva
-Nonostante il ritmo ridotto, tutte le task assegnate sono state portate a termine con successo.
-
-==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del sesto periodo è emerso che non ci sono stati eccessi o difetti su quanto prestabilito, il budget rimanente disponibile ammonta a *`5,845.00 €	`*.
-
-#avanzamento(100, 5, "6")
-
-#pagebreak()
-
-== PB
-
-=== *Periodo 7*
-*Inizio*: 2025-03-04;\
-*Fine prevista*: 2025-03-10;\
-*Fine attuale*: 2025-03-10;\
-*Giorni di ritardo*: #neg(0);\
-
-==== Pianificazione
-Durante la settimana del settimo sprint, il team si dedicherà alla progettazione di dettaglio dei vari microservizi presentati all'azienda nell'incontro di fine #glossary("Sprint") precedente.
-Inoltre, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare la progettazione dei vari microservizi.
-
-==== Rischi attesi
-I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
-
-- #R.P1;
-- #R.P2;
-- #R.P3;
-- #R.P4;
-
-
-#pagebreak()
-
-==== Preventivo
-===== Preventivo orario
-#prev-orario(
-  (
-    (5,0,0.5,1,0,0),
-    (0,0,0,4,2,2),
-    (0,0,0,6,2,1),
-    (0,0,0,6,0,1.5),
-    (0,0,1,7,0,0),
-    (0,1,0,5.5,0,2),
-    (0,1,0,6,1.5,0)
-  ),
-"7",
-)
-===== Preventivo economico
-#prev-economico((5,2,1.5,35.5,5.5,6.5),"7")
-
-==== Consuntivo
-Tutte le attività previste e pianificate sono state completate nei termini prestabiliti.
-
-Dal confronto tra preventivo e consuntivo emerge che:
-
-- Non ci sono state variazioni tra quanto stabilito e fatto, quindi non ci sono variazioni nei costi.
-
-#pagebreak()
-===== Consuntivo orario
-#cons-orario(
-  (
-    (5,0,0.5,1,0,0),
-    (0,0,0,4,2,2),
-    (0,0,0,6,2,1),
-    (0,0,0,6,0,1.5),
-    (0,0,1,7,0,0),
-    (0,1,0,5.5,0,2),
-    (0,1,0,6,1.5,0)
-  ),
-  (
-    (5,0,0.5,1,0,0),
-    (0,0,0,4,2,2),
-    (0,0,0,6,2,1),
-    (0,0,0,6,0,1.5),
-    (0,0,1,7,0,0),
-    (0,1,0,5.5,0,2),
-    (0,1,0,6,1.5,0)
-),"7"
-)
-
-#ore-rimaste(
-  (
-    (0,3,0.5,4,16,15),
-    (6,1,0,6,18,7),
-    (2,1,1,4,21,9),
-    (0,1.5,1,6,17,11.5),
-    (1,1,1,1,21,13.5),
-    (1,1,1,4.5,19,10.5),
-    (3,1,0.5,5,17.5,9.5)  
-  ),"7"	,
-)
-
-===== Consuntivo economico
-#cons-economico((5,2,1.5,35.5,5.5,6.5),(5,2,1.5,35.5,5.5,6.5),"7"		)
-
-==== Rischi occorsi, impatto e loro mitigazione
-Durante lo svolgimento di questo sprint non sono state riscontrate difficoltà.
-
-==== Retrospettiva
-Tutte le task assegnate sono state portate a termine con successo.
-
-==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del settimo periodo è emerso che non ci sono stati eccessi o difetti su quanto prestabilito nel preventivo di *`1,295.00 €`*, il budget rimanente disponibile ammonta a *`4,550.00 €`*.
-
-#avanzamento(100, 15, "7")
-
-#pagebreak()
-=== *Periodo 8*
-*Inizio*: 2025-03-10;\
-*Fine prevista*: 2025-03-17;\
-*Fine attuale*: 2025-03-17;\
-*Giorni di ritardo*: #neg(0);\
-
-==== Pianificazione
-Durante la settimane del ottavo sprint, il team inzierà con l'implementazione dei vari microservizi dopo che sono state approvate dall'azienda le decisioni prese in fase di progettazione.
-Inoltre, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare i primi microservizi implementati.
-
-==== Rischi attesi
-I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
-
-- #R.P1;
-- #R.P2;
-- #R.P3;
-- #R.P4;
-
-
-#pagebreak()
-
-==== Preventivo
-===== Preventivo orario
-#prev-orario(
-  (
-    (0,0,0,1,4,2.5),
-    (0,0,0,5,2,1),
-    (2,0,0,2,5,0),
-    (0,0,0,3,5,0),
-    (1,0,0,0,6,2),
-    (0,0,0,2,5,2),
-    (0,0,0,3,6,1) 
-  ),"8",
-)
-===== Preventivo economico
-#prev-economico((3,0,0,16,33,8.5),"8"	)
-
-==== Consuntivo
-Tutte le attività previste e pianificate sono state completate nei termini prestabiliti, tranne per la progettazione e implementazione del microservizio nominato "chatbot" che è stato spostato al periodo successivo.
-
-Dal confronto tra preventivo e consuntivo emerge che:
-
-- Non ci sono state variazioni tra quanto stabilito e fatto, quindi non ci sono variazioni nei costi tra preventivo e consuntivo.
-
-#pagebreak()
-===== Consuntivo orario
-#cons-orario(
-  (
-    (0,0,0,1,4,2.5),
-    (0,0,0,5,2,1),
-    (2,0,0,2,5,0),
-    (0,0,0,3,5,0),
-    (1,0,0,0,6,2),
-    (0,0,0,2,5,2),
-    (0,0,0,3,6,1)
-  ),
-  (
-    (0,0,0,1,4,2.5),
-    (0,0,0,5,2,1),
-    (2,0,0,2,5,0),
-    (0,0,0,3,5,0),
-    (1,0,0,0,6,2),
-    (0,0,0,2,5,2),
-    (0,0,0,3,6,1)
-  ),"8"
-)
-
-#ore-rimaste(
- (
-    (0,3,0.5,3,12,12.5),
-    (6,1,0,1,16,6),
-    (0,1,1,2,16,9),
-    (0,1.5,1,3,12,11.5),
-    (0,1,1,1,15,11.5),
-    (1,1,1,2.5,14,8.5),
-    (3,1,0.5,2,11.5,8.5)
- ),"8",
-)
-
-===== Consuntivo economico
-#cons-economico((3,0,0,16,33,8.5),(3,0,0,16,33,8.5),"8"	)
-
-==== Rischi occorsi, impatto e loro mitigazione
-Durante lo svolgimento di questo sprint sono state riscontrate difficoltà riguardanti l'uso di nuove tecnologie durante la modellazione dei microservizi.
-
-==== Retrospettiva
-Quasi tutte le task assegnate sono state portate a termine con successo o con solo qualche miglioramento da fare.
-
-==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del settimo periodo è emerso che non ci sono stati eccessi o difetti su quanto prestabilito nel preventivo di *`1,112.50 €`*, il budget rimanente disponibile ammonta a *`3,437.50 €`*.
-
-#avanzamento(100, 50, "8")
-
-#pagebreak()
-=== *Periodo 9*
-*Inizio*: 2025-03-17;\
-*Fine prevista*: 2025-03-24;\
-*Fine attuale*: 2025-03-24;\
-*Giorni di ritardo*: #neg(0);\
-
-==== Pianificazione
-Durante la settimana dell’ottavo sprint, il team si concentrerà sull'implementazione del microservizio 'chatbot', dopo averne presentato la progettazione a #box(image(g.azzurro, width: 5em, height: auto)) nell’incontro di fine #glossary("Sprint") precedente. Parallelamente, proseguiranno le attività di sviluppo e test degli altri microservizi.
-Infine, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare gli avanzamenti fatti ed esporre alcune problematiche.
-
-==== Rischi attesi
-I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
-
-- #R.P1;
-- #R.P2;
-- #R.P3;
-- #R.P4;
-
-
-#pagebreak()
-
-==== Preventivo
-===== Preventivo orario
-#prev-orario(
-  (
-    (0,2,0,3,3,4),
-    (6,0,0,1,7,0),
-    (0,0,0.5,2,9,2),
-    (0,0,1,2,8,3),
-    (0,0,1,0,9,4.5),
-    (1,1,0,2.5,8,0),
-    (0,0,0.5,2,8,1.5)
-  ),"9"
-)
-===== Preventivo economico
-#prev-economico((7,3,3,12.5,52,15),"9")
-
-==== Consuntivo
-Tutte le attività previste e pianificate sono state completate nei termini prestabiliti, mancano solo alcuni microservizi da testare in vista della loro integrazione, prevista per il prossimo periodo.
-
-Dal confronto tra preventivo e consuntivo emerge che:
-
-- Non ci sono state variazioni tra quanto stabilito e fatto, per cui non ci sono variazioni tra preventivo e consuntivo.
-
-#pagebreak()
-===== Consuntivo orario
-#cons-orario(
-  (
-    (0,2,0,3,3,4),
-    (6,0,0,1,7,0),
-    (0,0,0.5,2,9,2),
-    (0,0,1,2,8,3),
-    (0,0,1,0,9,4.5),
-    (1,1,0,2.5,8,0),
-    (0,0,0.5,2,8,1.5)
-  ),
-  (
-    (0,2,0,3,3,4),
-    (6,0,0,1,7,0),
-    (0,0,0.5,2,9,2),
-    (0,0,1,2,8,3),
-    (0,0,1,0,9,4.5),
-    (1,1,0,2.5,8,0),
-    (0,0,0.5,2,8,1.5)
-  ),"9"
-)
-
-#ore-rimaste(
- (
-    (0,1,0.5,0,9,8.5),
-    (0,1,0,0,9,6),
-    (0,1,0.5,0,7,7),
-    (0,1.5,0,1,4,8.5),
-    (0,1,0,1,6,7),
-    (0,0,1,0,6,8.5),
-    (3,1,0,0,3.5,7)
-  ),"9"	,
-)
-
-===== Consuntivo economico
-#cons-economico((7,3,3,12.5,52,15),(7,3,3,12.5,52,15),"9")
-
-==== Rischi occorsi, impatto e loro mitigazione
-Durante lo svolgimento di questo sprint sono state riscontrate difficoltà riguardanti l'uso di nuove tecnologie durante la codifica e il test dei singoli microservizi.
-
-==== Retrospettiva
-Quasi tutte le task assegnate sono state portate a termine con successo o con solo qualche miglioramento da fare.
-
-==== Punto di avanzamento raggiunto e prospettive di completamento
-Al termine del settimo periodo è emerso che non ci sono stati eccessi o difetti nel consuntivo su quanto prestabilito nel preventivo di *`1,662.50 €`*, il budget rimanente disponibile ammonta a *`1,775.00 €`*.
-
-#avanzamento(100, 66, "8")
-
-#pagebreak()
-=== *Sommario finale*
+=== *Sommario finale (RTB)*
 Dopo svariate intense settimane di lavoro, iniziato in data *`2023-11-12`*, il gruppo si ritiene pronto a
 sostenere la prima revisione del prodotto che inizierà dopo l'invio della lettera di presentazione il giorno
 *`2024-02-10`* e che prevederà un primo colloqui con il *#p.cardin* e continuerà poi con il colloquio con il *#p.vardanega*.\
@@ -1572,3 +1235,532 @@ Durante questa fase abbiamo ultimato la redazione della documentazione iniziale 
   (75, 120, 165, 105, 0),
   (232.5, 202.5, 187.5, 255, 60),
 ))
+
+#pagebreak()
+== *PB*
+*Inizio*: 2025-02-17;\
+*Fine prevista*: 2025-04-11;\
+*Fine attuale*: 2025-04-15;\
+*Giorni di ritardo*: #neg("4");\
+
+=== *Periodo 6*
+*Inizio*: 2025-02-17;\
+*Fine prevista*: 2025-03-04;\
+*Fine attuale*: 2025-03-04;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante le due settimane del sesto #glossary("sprint"), il team si dedicherà al completamento e controllo dei vari file in preparazione alla revisione #glossary("RTB") e saranno fatte le presentazioni per gli incontri con i professori per la revisione #glossary("RTB").
+Inoltre, la riunione prevista con #box(image(g.azzurro, width: 5em, height: auto)) per discutere dell'#glossary("MVP") è stata spostata all'utimo giorno dello sprint per avere l'esisto delle revisionie e preparare una presentazione sull'architettura scelta per l'#glossary("MVP").
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(
+  ((0,0,2,2,0,1),(0,1,3,2,0,2),(0,0.5,2,3,0,2),(4,0,2,2,0,2),(1,1,0,3,0,2),(0,1,2,3,2,0),(3,1,2,2,0,0)),"6"	
+)
+===== Preventivo economico
+#prev-economico((8,4.5,13,17,2,9),"6")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti.
+
+Dal confronto tra preventivo e consuntivo emerge che:
+
+- Responsabili hanno richiesto *meno* ore;
+- Progettisti hanno richiesto *più* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(
+  ((0,0,2,4,0,1),(0,1,3,2,0,2),(0,0.5,2,3,0,2),(2,0,2,2,0,2),(1,1,0,3,0,2),(0,1,2,3,2,0),(3,1,2,2,0,0)),((0,0,2,2,0,1),(0,1,3,2,0,2),(0,0.5,2,3,0,2),(4,0,2,2,0,2),(1,1,0,3,0,2),(0,1,2,3,2,0),(3,1,2,2,0,0)),"6"
+)
+
+#ore-rimaste(
+  ((5,3,1,5,16,15),(6,1,0,10,20,9),(2,1,1,10,23,10),(0,1.5,1,12,17,13),(1,1,2,8,21,13.5),(1,2,1,10,19,12.5),(3,2,0.5,11,19,9.5)),"6"
+)
+
+===== Consuntivo economico
+#cons-economico((6,4.5,13,19,2,9),(8,4.5,13,17,2,9),"6")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante lo svolgimento di questo sprint ci sono stati momenti di pausa in attesa degli esiti delle revisioni #glossary("RTB") che sono stati sfruttati per organizzare il periodo di sviluppo dell'#glossary("MVP").
+
+==== Retrospettiva
+Nonostante il ritmo ridotto, tutte le task assegnate sono state portate a termine con successo.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del sesto periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.235,00 €`*, risultando inferiore di *`10,00 €`* rispetto ai *`1.245,00 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`5.845,00 €	`*.
+
+#avanzamento(100, 14.55, "6")
+
+#pagebreak()
+=== *Periodo 7*
+*Inizio*: 2025-03-04;\
+*Fine prevista*: 2025-03-10;\
+*Fine attuale*: 2025-03-10;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana del settimo sprint, il team si dedicherà alla progettazione di dettaglio dei vari microservizi presentati all'azienda nell'incontro di fine #glossary("Sprint") precedente.
+Inoltre, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare la progettazione dei vari microservizi.
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P1;
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(
+  ((6,0,0.5,1,0,0),(0,0,0,4,2,2),(0,0,0,6,2,1),(0,0,0,6,0,1.5),(0,0,1,7,0,0),(0,1,0,5.5,0,2),(0,1,0,6,1.5,0)),"7"	
+)
+===== Preventivo economico
+#prev-economico((6,2,1.5,35.5,5.5,6.5),"7")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti.
+
+Dal confronto tra preventivo e consuntivo emerge che:
+
+- Responsabile ha richiesto *meno* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(
+  ((5,0,0.5,1,0,0),(0,0,0,4,2,2),(0,0,0,6,2,1),(0,0,0,6,0,1.5),(0,0,1,7,0,0),(0,1,0,5.5,0,2),(0,1,0,6,1.5,0)),((6,0,0.5,1,0,0),(0,0,0,4,2,2),(0,0,0,6,2,1),(0,0,0,6,0,1.5),(0,0,1,7,0,0),(0,1,0,5.5,0,2),(0,1,0,6,1.5,0)),"7"	
+)
+
+#ore-rimaste(
+  ((0,3,0.5,4,16,15),(6,1,0,6,18,7),(2,1,1,4,21,9),(0,1.5,1,6,17,11.5),(1,1,1,1,21,13.5),(1,1,1,4.5,19,10.5),(3,1,0.5,5,17.5,9.5)),"7"
+)
+
+===== Consuntivo economico
+#cons-economico((5,2,1.5,35.5,5.5,6.5),(6,2,1.5,35.5,5.5,6.5),"7")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante lo svolgimento di questo sprint non sono state riscontrate difficoltà.
+
+==== Retrospettiva
+Tutte le task assegnate sono state portate a termine con successo.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del settimo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.295,00 €`*, risultando inferiore di *`30,00 €`* rispetto ai *`1.325,00 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`4.550,00 €	`*.
+
+#avanzamento(100, 34.55, "7")
+
+#pagebreak()
+=== *Periodo 8*
+*Inizio*: 2025-03-10;\
+*Fine prevista*: 2025-03-17;\
+*Fine attuale*: 2025-03-17;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana dell'ottavo sprint, il team inzierà con l'implementazione dei vari microservizi dopo che sono state approvate dall'azienda le decisioni prese in fase di progettazione.
+Inoltre, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare i primi microservizi implementati.
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P1;
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(
+  ((0,0,0,1,6,2.5),(0,0,0,5,2,3),(2,0,0,2,5,0),(0,0,0,3,5,0),(1,0,0,0,6,2),(0,0,0,2,5,2),(0,0,0,3,6,1)),"8"	
+)
+===== Preventivo economico
+#prev-economico((3,0,0,16,35,10.5),"8")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti, tranne per la progettazione e implementazione del microservizio nominato "chatbot" che è stato spostato al periodo successivo.
+
+Dal confronto tra preventivo e consuntivo emerge che:
+
+- Verificatori hanno richiesto *meno* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(
+  ((0,0,0,1,6,2.5),(0,0,0,5,2,1),(2,0,0,2,5,0),(0,0,0,3,5,0),(1,0,0,0,6,2),(0,0,0,2,5,2),(0,0,0,3,6,1)),((0,0,0,1,6,2.5),(0,0,0,5,2,3),(2,0,0,2,5,0),(0,0,0,3,5,0),(1,0,0,0,6,2),(0,0,0,2,5,2),(0,0,0,3,6,1)),"8"	
+)
+
+#ore-rimaste(
+ ((0,3,0.5,3,10,12.5),(6,1,0,1,16,6),(0,1,1,2,16,9),(0,1.5,1,3,12,11.5),(0,1,1,1,15,11.5),(1,1,1,2.5,14,8.5),(3,1,0.5,2,11.5,8.5)),"8"
+)
+
+===== Consuntivo economico
+#cons-economico((3,0,0,16,35,8.5),(3,0,0,16,35,10.5),"8")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante lo svolgimento di questo sprint sono state riscontrate difficoltà riguardanti l'uso di nuove tecnologie durante la modellazione dei microservizi.
+
+==== Retrospettiva
+Quasi tutte le task assegnate sono state portate a termine con successo o con solo qualche miglioramento da fare.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine dell'ottavo periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.142,50 €`*, risultando inferiore di *`30,00 €`* rispetto ai *`1.172,50 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`3.407,50 €	`*.
+
+#avanzamento(100, 52.72, "8")
+
+#pagebreak()
+=== *Periodo 9*
+*Inizio*: 2025-03-17;\
+*Fine prevista*: 2025-03-24;\
+*Fine attuale*: 2025-03-24;\
+*Giorni di ritardo*: #pos(0);\
+
+==== Pianificazione
+Durante la settimana del nono sprint, il team si concentrerà sull'implementazione del microservizio 'chatbot', dopo averne presentato la progettazione a #box(image(g.azzurro, width: 5em, height: auto)) nell’incontro di fine #glossary("Sprint") precedente. Parallelamente, proseguiranno le attività di sviluppo e test degli altri microservizi.
+Infine, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare gli avanzamenti fatti ed esporre alcune problematiche.
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P1;
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(
+  ((0,2,0,3,5,4),(6,0,0,1,7,0),(0,0,0.5,2,9,2),(0,0,1,2,8,3),(0,0,1,0,9,4.5),(1,3,0,2.5,8,0),(0,0,0.5,2,8,1.5)),"9"	
+)
+===== Preventivo economico
+#prev-economico((7,5,3,12.5,54,15),"9")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti, mancano solo alcuni microservizi da testare in vista della loro integrazione, prevista per il prossimo periodo.
+
+Dal confronto tra preventivo e consuntivo emerge che:
+
+- Amministratori hanno richiesto *meno* ore;
+
+Poiché la differenza di ore, sia in eccesso che in difetto, non è significativa, può essere considerata trascurabile.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(
+  ((0,2,0,3,5,4),(6,0,0,1,7,0),(0,0,0.5,2,9,2),(0,0,1,2,8,3),(0,0,1,0,9,4.5),(1,1,0,2.5,8,0),(0,0,0.5,2,8,1.5)),((0,2,0,3,5,4),(6,0,0,1,7,0),(0,0,0.5,2,9,2),(0,0,1,2,8,3),(0,0,1,0,9,4.5),(1,3,0,2.5,8,0),(0,0,0.5,2,8,1.5)),"9"
+)
+
+#ore-rimaste(
+ ((0,1,0.5,0,5,8.5),(0,1,0,0,9,6),(0,1,0.5,0,7,7),(0,1.5,0,1,4,8.5),(0,1,0,1,6,7),(0,0,1,0,6,8.5),(3,1,0,0,3.5,7)),"9"
+)
+
+===== Consuntivo economico
+#cons-economico((7,3,3,12.5,54,15),(7,5,3,12.5,54,15),"9")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante lo svolgimento di questo sprint sono state riscontrate difficoltà riguardanti l'uso di nuove tecnologie durante la codifica e il test dei singoli microservizi.
+
+==== Retrospettiva
+Quasi tutte le task assegnate sono state portate a termine con successo o con solo qualche miglioramento da fare.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine del nono periodo è emerso un lieve scostamento tra i costi previsti e quelli effettivi. In particolare, il consuntivo registra una spesa totale di *`1.692,50 €`*, risultando inferiore di *`40,00 €`* rispetto ai *`1.732,50 €`* inizialmente stimati nel preventivo. Di conseguenza, il budget rimanente disponibile ammonta a *`1.715,00 €	`*.
+
+
+#avanzamento(100, 78.18, "9")
+
+#pagebreak()
+=== *Periodo 10*
+*Inizio*: 2025-03-24;\
+*Fine prevista*: 2025-04-11;\
+*Fine attuale*: 2025-04-15;\
+*Giorni di ritardo*: #neg(4);\
+
+==== Pianificazione
+Durante le ultime settimana del decimo #glossary("sprint"), il team si dedicherà all'ultimazione dei microservizi, apportando alcune modifiche necessarie per garantire una corretta integrazione tra di essi. Inoltre, saranno completati i test sui microservizi e verrà preparata la presentazione dell'#glossary("MVP") all'azienda #box(image(g.azzurro, width: 5em, height: auto)). Parallelamente, il team si occuperà della stesura della documentazione rimanente, tra cui il manuale utente e le specifiche tecniche, oltre a revisionare e sistemare la documentazione già esistente per garantire la conclusione del progetto.
+
+==== Rischi attesi
+I rischi ai quali ci aspettiamo di incorrere in questo periodo sono i seguenti:
+
+- #R.P1;
+- #R.P2;
+- #R.P3;
+- #R.P4;
+
+#pagebreak()
+
+==== Preventivo
+===== Preventivo orario
+#prev-orario(
+  ((0,0,0.5,1,5,8.5),(0,1,0,0,8,7),(0,1,0.5,0,7,7),(0,1.5,0,1,4,8.5),(0,2,0,0,6,7),(0,0,1,0,6,8.5),(3,1,0,0,4.5,6)),"10"
+)
+===== Preventivo economico
+#prev-economico((3,6.5,2,2,40.5,52.5),"10")
+
+==== Consuntivo
+Tutte le attività previste e pianificate sono state completate nei termini prestabiliti.
+
+Dal confronto tra preventivo e consuntivo emerge che:
+
+- Non ci sono state variazioni tra quanto stabilito e fatto, per cui non ci sono variazioni tra preventivo e consuntivo.
+
+#pagebreak()
+===== Consuntivo orario
+#cons-orario(
+  ((0,0,0.5,1,5,8.5),(0,0,0,0,8,7),(0,2,0.5,0,7,7),(0,1.5,0,1,5,8.5),(0,2,0,0,6,7),(0,0,1,0,5,8.5),(3,1,0,0,4.5,6)),((0,0,0.5,1,5,8.5),(0,1,0,0,8,7),(0,1,0.5,0,7,7),(0,1.5,0,1,4,8.5),(0,2,0,0,6,7),(0,0,1,0,6,8.5),(3,1,0,0,4.5,6)),"10"
+)
+
+#ore-rimaste(
+ ((0,1,0,-1,0,0),(0,1,0,0,1,-1),(0,-1,0,0,0,0),(0,0,0,0,-1,0),(0,-1,0,1,0,0),(0,0,0,0,1,0),(0,0,0,0,-1,1)),"10"
+)
+
+===== Consuntivo economico
+#cons-economico((3,6.5,2,2,40.5,52.5),(3,6.5,2,2,40.5,52.5),"10")
+
+==== Rischi occorsi, impatto e loro mitigazione
+Durante lo svolgimento di questo sprint sono state riscontrate difficoltà riguardanti l'uso di nuove tecnologie durante la codifica e il test dei singoli microservizi e nell'integrazione fra i diversi microservizi che hanno comportato un ritardo nella data prevista.
+
+==== Retrospettiva
+Nonostante un lieve ritardo rispetto alla pianificazione, tutte le attività previste sono state completate con successo. Come ci è stato detto dall'azienda #box(image(g.azzurro, width: 5em, height: auto)), il progetto è stato portato a termine in modo eccellente, rispettando gli obiettivi prefissati e garantendo un risultato di alta qualità.
+
+==== Punto di avanzamento raggiunto e prospettive di completamento
+Al termine dell'ultimo periodo è emerso che tutti gli obiettivi prefissati sono stati raggiunti con successo, rispettando il budget complessivo di *`12,740.00 €`* e utilizzandolo interamente. Durante il periodo, sono stati consumati *`1,715.00 €`*.
+
+#avanzamento(100, 100, "10")
+
+#pagebreak()
+=== *Sommario finale*
+Dopo aver completato la revisione #glossary("RTB") in data *`21/02/2024`*, il gruppo ha potuto dedicarsi a tempo pieno al completamento del progetto didattico e si considera ora pronto per affrontare la seconda revisione che inizierà dopo l'invio della lettera di presentazione e che prevederà un primo colloqui con il *#p.cardin* e continuerà poi con il colloquio con il *#p.vardanega*.\
+
+Nel periodo intercorso tra le due revisioni, il team ha redatto i documenti specifici relativi al prodotto, tra cui la `Specifica Tecnica` e il `Manuale Utente`. I documenti già prodotti per la prima revisione sono stati invece oggetto di aggiornamenti e affinamenti minori. La maggior parte delle ore di lavoro è stata investita nella progettazione e nello studio dell’architettura, nonché nelle attività di codifica e sviluppo del prodotto e dei test.
+
+Ogni membro del gruppo ha rispettato il vincolo delle 91 ore produttive, con un lieve scostamento individuale compreso tra le 90 e le 92 ore, rientrando comunque nei limiti accettabili. Il preventivo a finire, fissato sin dalla candidatura a *`12.740,00 €`*, è rimasto invariato ed è stato rispettato in pieno: l’intero importo è stato utilizzato. A causa di alcune difficoltà tecniche incontrate durante la fase di integrazione del prodotto, la consegna finale ha subito un lieve slittamento rispetto alla data inizialmente prevista (`11/04/2025`). Il progetto è stato infatti completato il *`15/04/2025`*, come concordato alla conclusione dell’ottavo periodo.
+
+==== Riepilogo prospetto orario
+===== Ore consumate (PB)
+#let ore-consumate-totale(dati) = {
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let ruoli = ("RS", "AM", "AN", "PR", "PG", "VR", "Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n
+    .split()
+    .last())
+
+  let header = ([],) + ruoli.map(r => [*#r*])
+
+  let r = (
+    header
+      + (persone).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)))).flatten()
+      + ("Totale",).map(el => [*#el*])
+      + (dati.map(row => row.at(0)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(1)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(2)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(3)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(4)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(5)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(6)).sum(),).map(el => [*#el*])
+  )
+
+
+  figure(
+    align(
+      center,
+      table(
+        columns: 1fr,
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row != 0 { white } else { rgb(209, 197, 174) },
+        [*Ore consumate durante il periodo `PB`*],
+        table(
+          columns: (auto,) + (1fr,) * 6 + (auto,),
+          inset: 5pt,
+          align: center,
+          fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+          ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)])
+        )
+      ),
+    ),
+    caption: [Impegno orario effettivo per ruolo di ciascun membro al termine del periodo `PB`.],
+  )
+  v(1.5em)
+}
+#ore-consumate-totale((
+  (5, 2, 3, 10, 16, 16),
+  (6, 1, 3, 12, 19, 12),
+  (2, 2.5, 3, 13, 23, 12),
+  (2, 1.5, 3, 14, 18, 15),
+  (2, 2, 2, 10, 21, 15.5),
+  (1, 4, 3, 13, 20, 12.5),
+  (6, 3, 2.5, 13, 20, 8.5),
+))
+
+#pagebreak()
+===== Ore consumate (Totale)
+#let ore-rimaste-totale(dati) = {
+  let dati = dati.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let ruoli = ("RS", "AM", "AN", "PR", "PG", "VR", "Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n
+    .split()
+    .last())
+
+  let header = ([],) + ruoli.map(r => [*#r*])
+
+  let r = (
+    header
+      + (persone).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y)))).flatten()
+      + ("Totale",).map(el => [*#el*])
+      + (dati.map(row => row.at(0)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(1)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(2)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(3)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(4)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(5)).sum(),).map(el => [*#el*])
+      + (dati.map(row => row.at(6)).sum(),).map(el => [*#el*])
+  )
+
+
+  figure(
+    align(
+      center,
+      table(
+        columns: 1fr,
+        inset: 7pt,
+        align: center,
+        fill: (_, row) => if row != 0 { white } else { rgb(209, 197, 174) },
+        [*Ore consumate durante l'intero progetto*],
+        table(
+          columns: (auto,) + (1fr,) * 6 + (auto,),
+          inset: 5pt,
+          align: center,
+          fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+          ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)])
+        )
+      ),
+    ),
+    caption: [Impegno orario totale per ruolo di ciascun membro durante l'intero progetto.],
+  )
+  v(1.5em)
+}
+#ore-rimaste-totale((
+  (5+4, 2+5, 3+8, 10+8, 16+8, 16+6),
+  (6+3, 1+6, 3+8, 12+5, 19+4, 12+11),
+  (2+7, 2.5+6.5, 3+8, 13+4, 23+1, 12+10),
+  (2+7, 1.5+6.5, 3+8, 14+3, 18+7, 15+7),
+  (2+7, 2+6, 2+9, 10+6, 21+3, 15.5+6.5),
+  (1+8, 4+5, 3+8, 13+4, 20+3, 12.5+9.5),
+  (6+3, 3+5, 2.5+8.5, 13+4, 20+5, 8.5+12.5),
+))
+==== Riepilogo prospetto economico
+===== Costi totali
+#let costo-totale(dati, dati1) = {
+  let dati = dati.map(row => row + (row.sum(),))
+  let dati1 = dati1.map(row => row + (row.sum(),))
+  let ruoli_tot = ("Responsabile", "Amministratore", "Analista", "Progettista", "Programmatore", "Verificatore")
+  let periodo = ("Periodo 1", "Periodo 2", "Periodo 3", "Periodo 4", "Periodo 5", "Totale")
+  let periodo1 = ("Periodo 6", "Periodo 7", "Periodo 8", "Periodo 9", "Periodo 10", "Totale")
+  let persone = (p.belenkov, p.benedetti, p.campagnaro, p.ferazzani, p.fracaro, p.mahdi, p.santi).map(n => n
+    .split()
+    .last())
+
+  let header = ([*Ruolo*],) + periodo.map(r => [*#r*])
+  let header1 = ([*Ruolo*],) + periodo1.map(r => [*#r*])
+
+  let r = (
+    header
+      + (ruoli_tot).map(el => [*#el*]).zip(dati.map(x => x.map(y => str(y) + " €"))).flatten()
+      + ("Totale",).map(el => [*#el*])
+      + (dati.map(row => row.at(0)).sum(),).map(el => [*#el €*])
+      + (dati.map(row => row.at(1)).sum(),).map(el => [*#el €*])
+      + (dati.map(row => row.at(2)).sum(),).map(el => [*#el €*])
+      + (dati.map(row => row.at(3)).sum(),).map(el => [*#el €*])
+      + (dati.map(row => row.at(4)).sum(),).map(el => [*#el €*])
+      + (dati.map(row => row.at(5)).sum(),).map(el => [*#el €*])
+  )
+
+  let r1 = (
+    header1
+      + (ruoli_tot).map(el => [*#el*]).zip(dati1.map(x => x.map(y => str(y) + " €"))).flatten()
+      + ("Totale",).map(el => [*#el*])
+      + (dati1.map(row => row.at(0)).sum(),).map(el => [*#el €*])
+      + (dati1.map(row => row.at(1)).sum(),).map(el => [*#el €*])
+      + (dati1.map(row => row.at(2)).sum(),).map(el => [*#el €*])
+      + (dati1.map(row => row.at(3)).sum(),).map(el => [*#el €*])
+      + (dati1.map(row => row.at(4)).sum(),).map(el => [*#el €*])
+      + (dati1.map(row => row.at(5)).sum(),).map(el => [*#el €*])
+  )
+
+  figure(
+    align(
+      center,
+      table(
+        columns: 1fr,
+        inset: 6pt,
+        align: center,
+        fill: (_, row) => if row != 0 { white } else { rgb(209, 197, 174) },
+        [*Costi totali dell'intero progetto*],
+        table(
+          columns: (auto,) + (1fr,) * 5 + (auto,),
+          inset: 4.3pt,
+          align: center,
+          fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+          ..r.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)])
+        ),
+        table(
+          columns: (auto,) + (1fr,) * 5 + (auto,),
+          inset: 4.3pt,
+          align: center,
+          fill: (_, row) => if calc.odd(row) { luma(230) } else { white },
+          ..r1.map(el => text(size: 1em, hyphenate: false)[#par(justify: false, el)])
+        ),
+        [Il costo complessivo ammonta a *`12,740.00 €`*]
+      ),
+    ),
+    caption: [Aggiornamenti economici del progetto al termine del periodo `PB`.],
+  )
+  v(1.5em)
+}
+#costo-totale(
+  (
+  (330, 330, 210, 240, 60),
+  (280, 140, 200, 160, 20),
+  (300, 250, 250, 300, 337.5),
+  (100, 250, 275, 225, 0),
+  (75, 120, 165, 105, 0),
+  (232.5, 202.5, 187.5, 255, 60),
+  ),
+  (
+  (180, 150, 90, 210, 90),
+  (90, 40, 0, 60, 130),
+  (325, 37.5, 0, 75, 50),
+  (475, 887.5, 400, 312.5, 50),
+  (30, 82.5, 525, 810, 607.5),
+  (135, 97.5, 127.5, 225, 787.5),
+  )
+)
