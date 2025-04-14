@@ -4,17 +4,10 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
-    "0.0.1",
-    "2025-02-27",
-    (p.ferazzani),
+    "0.0.8",
+    "2025-04-11",
     (p.mahdi),
-    [
-      Prima stesura documento
-    ],
-    "0.0.*",
-    "2025-02-27",
-    (p.santi),
-    (p.mahdi),
+    (p.benedetti),
     [
       Stesura sezione microservizio Api-Gateway
     ],
