@@ -190,23 +190,23 @@ Next.js è un framework per la creazione di applicazioni web in React. Il team h
 
 
 
-Il microservizio *API Gateway* svolge un ruolo cruciale nell'architettura di #glossary("BuddyBot"), fungendo da punto di ingresso centralizzato per tutte le richieste provenienti dal frontend e indirizzandole verso i microservizi appropriati. Questo componente garantisce il routing delle richieste e la gestione delle risposte.
+Il microservizio *API Gateway* svolge un ruolo cruciale nell'architettura di #glossary("BuddyBot"), fungendo da punto di ingresso centralizzato per tutte le richieste provenienti dal frontend e indirizzandole verso i microservizi appropriati, garantendo il routing delle richieste e la gestione delle risposte.
 
 Come per gli altri microservizi, anche l'API Gateway è stato progettato secondo i principi dell'architettura esagonale, al fine di garantire una netta separazione tra la logica di business e le applicazioni esterne. L'obiettivo è quello di mantenere il sistema flessibile, testabile e facilmente manutenibile.
 
-In particolare, l'API Gateway interagisce con i microservizi tramite porte e adattatori dedicati, utilizzando API REST per comunicare con il #glossary ("front-end") e  RabbitMQ per messaggistica con gli alri microservizi . Questo approccio consente di mantenere l'API Gateway completamente agnostico rispetto ai dettagli di implementazione dei microservizi, favorendo una maggiore scalabilità nel futuro.
+In particolare, l'API Gateway interagisce con i microservizi tramite porte e adattatori dedicati, utilizzando #glossary("Rest-Api") per comunicare con il #glossary ("front-end") e  #glossary("RabbitMQ") per la messaggistica con gli alri microservizi . Questo approccio consente di mantenere l'API Gateway completamente agnostico rispetto ai dettagli di implementazione dei microservizi, favorendo una maggiore scalabilità nel futuro.
 
-Compiti dell'API-gateway:
-- comunicazione attraverso API REST con il front-end (`@Get('get-storico')` e  `@Post('get-risposta')`);
-- instradamento delle richieste v microservizi appropriati ( 'Storico" e "ChatBot") e recupero delle risposte:
-- risposta usecase;
-- storico usecase;
-- scheduling del fetch delle informazioni nel microservizio  "Information".
+Compiti dell'API gateway:
+- comunicazione attraverso #glossary("Rest-Api") con il front-end (`@Get('get-storico')` e  `@Post('get-risposta')`);
+- instradamento delle richieste ai microservizi appropriati ( Storico, ChatBot e Information):
+  - recupero di nuova risposta dal servizio di Chatbot;
+  - recupero dello storico dal servizio di Storico;
+  - scheduling del fetch delle informazioni nel microservizio  "Information".
 
 
 == Risposta Use-Case:
 
-L'Endpoint 'get-risposta' riceve dal frontend una richiesta `@Post('get-risposta')` contenente "(text)" corpo e "(date)"data della domanda,
+L'endpoint 'get-risposta' riceve dal frontend una richiesta `@Post('get-risposta')` contenente il corpo "(text)" e la data "(date)" della domanda,
 
 #sourcecode[```tsx
   async getRisposta(@Body('text') text: string, @Body('timestamp') timestamp: string): Promise<ChatDTO>   
@@ -223,7 +223,7 @@ export class ReqAnswerDTO {
   }
   ```]
   
-e si aspetta di ritornare un ogetto "ChatDTO" contenente la risposta dalla domanda  posta.
+e restituisce un oggetto "ChatDTO" contenente la risposta dalla domanda  posta.
 
 #sourcecode[```tsx
 import { MessageDto } from "./message.dto";
@@ -258,20 +258,20 @@ export class ProvChat {
 
 contenente la domanda fatta e la risposta che è stata generata.
 
-Prima di essere passata verso al front-end, "ProvChat" viene mandata verso il microservizio di "Storico"
+Prima di essere passata verso al front-end, "ProvChat" viene inviata al microservizio "Storico"
 
 #sourcecode[```tsx
 postStorico(chat: ProvChat): Promise<Chat>;
   ```]
 
-, il quale salva e assegna un UUID alla nuova #glossary ("Chat"), oltre alla data del #glossary ("Fetch"), in 'lastUpdate' a cui appartengono le informazioni con cui è statat generata. Lo "Storico" ritorna un oggetto "Chat" completo che quindi viene passato, attraverso l' #glossary("Endpoint") al front-end per essere visualizzato.
+, il quale salva e assegna un UUID alla nuova #glossary ("Chat"), oltre alla data del #glossary ("Fetch"), in 'lastUpdate' a cui appartengono le informazioni con cui è stata generata. Lo "Storico" ritorna un oggetto "Chat" completo che quindi viene passato, attraverso l' #glossary("Endpoint") al front-end per essere visualizzato.
 
 
 
 == Storico Use-Case:
 
 Usato per caricare le chat salvate nel database del microservizio "Storico" nel front-end.
-L'End-point 'get-storico' riceve una richiesta all'interno di 
+L'endpoint 'get-storico' riceve una richiesta all'interno di 
 
 #sourcecode[```tsx
   export class RequestChatDTO {
@@ -282,7 +282,7 @@ L'End-point 'get-storico' riceve una richiesta all'interno di
 }
   ```]
 
-con ("id") UUID dell'ultima chat visualizzabile nell'interfaccia grafica front-end e un ("numChat"), numero delle chat(domanda + risposta) antecedenti a questa da caricare insieme.
+con ("id") UUID dell'ultima chat visualizzabile nell'interfaccia grafica front-end e un ("numChat"), numero di chat(domanda + risposta) antecedenti a questa da caricare insieme.
 
 #sourcecode[```tsx
  async getStorico(@Query('id') id?: string,@Query('num') numChat?: number): Promise<ChatDTO[]>
@@ -327,10 +327,19 @@ Inoltre Api-Gateway si occupa anche dello scheduling del fetch delle informazion
 #sourcecode[```tsx
 postUpdate(LastFetch:string): Promise<Boolean>;
   ```]
-per essere salvata e poi fornita all'utente all'interno della #glossary ("Chat") che riceve . 
+per essere salvata e poi fornita all'utente all'interno della #glossary ("Chat") che riceve indocando a quando risalgono le informazioni usate per formulare la risposta. 
 
+Prima però viene fatto un check per controllare se esiste una data di #glossary("fetch") nel database con
 
-Per gestire lo scheduling viene usato `@Cron` della libreria  `@nestjs/schedule`. Oltre alla data vengono  passati anche una serie di oggetti che contengono dati sulle repository che vengono usati dal microservizio di "Information" per fare il fetch delle informazioni.
+#sourcecode[```tsx
+getLastUpdate(): Promise<LastUpdateCMD>;
+  ```]
+
+, se non non esiste significa che non è stato ancora fatto nessun fetch e in questo caso viene effettuato un fetch completo che recupera tutte le informazioni. In questo caso noi abbiamo messo la data di qualche mese fa per facilitare il test siccome il fetch, soprattutto di github, richiede tempo, ma se non si mettesse una data viene fatto il fetch di tutto.
+
+Nel caso invece esista questa viene usata come data di partenza.
+
+Per gestire lo scheduling viene usato `@Cron` della libreria  `@nestjs/schedule`(in questo caso è stato impostato per essere effettuato ogni 5 minuti su richiesta dell'azienda). Oltre alla data vengono  passati anche una serie di oggetti che contengono dati sulle repository che vengono usati dal microservizio di "Information" per fare il fetch delle informazioni.
 
 #sourcecode[```tsx
   ...
@@ -397,7 +406,7 @@ export class TasksService implements OnModuleInit {
 }
   ```]
 
-Come *'FetchGithubCMD'* che contiene  le informazioni della repo a cui fare riferimento, questi sono salvati in un file .env per essere facilmente modificabili.
+Con *'FetchGithubCMD'* che contiene  le informazioni della repo a cui fare riferimento, questi sono salvati in un file '.env' per essere facilmente modificabili.
 
 #sourcecode[```tsx
   
@@ -418,7 +427,7 @@ export class RepoGithubCMD{
 }
   ```]
   
-  Sono state messe 3 diverse funzioni di fetch , una per ogni fonte, per rendere il codice facilmente espandibile in futuro, nel caso si vogliano aggiungere nuovi fonti basterà aggiungere la loro funzione e creare il loro oggetto con i dati necessari. Ma anche nel caso si voglia dare tempi di scheduling differenti ad ogni fonte o salvare nel database date di scheduling diverse per ognuna.
+  Sono state messe 3 diverse funzioni per il fetch , una per ogni fonte, per rendere il codice facilmente espandibile in futuro, nel caso si vogliano aggiungere nuovi fonti basterà aggiungere la loro funzione e creare il loro oggetto con i dati necessari. Ma anche nel caso si voglia dare tempi di scheduling differenti ad ogni fonte e salvare nel database date di diverse per ciascuna.
   
 #sourcecode[```tsx
 
@@ -429,4 +438,3 @@ export interface InfoPort {
 }
   ```]
   
-  #pagebreak()
