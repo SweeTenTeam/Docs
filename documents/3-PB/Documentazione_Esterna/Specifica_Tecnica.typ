@@ -324,7 +324,7 @@ Interfaccia che definisce il contratto del caso d'uso, delegando la responsabili
 
 ===== RetrievalInfoService
 
-Implementazione concreta di RetrievalInfoUseCase, si occupa della logica principale del caso d'uso. Riceve il comando, interagisce con la porta RetrievalInfoPort, la quale viene inniettata nel costruttore, e restituisce il risultato sotto forma di array di Information.
+Implementazione concreta di RetrievalInfoUseCase, si occupa della logica principale del caso d'uso. Riceve il comando, interagisce con la porta RetrievalInfoPort, la quale viene iniettata nel costruttore, e restituisce il risultato sotto forma di array di Information.
 
 ===== RetrieveCmd
 
