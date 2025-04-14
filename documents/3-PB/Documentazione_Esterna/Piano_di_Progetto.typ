@@ -1439,7 +1439,7 @@ Al termine dell'ottavo periodo è emerso un lieve scostamento tra i costi previs
 *Giorni di ritardo*: #pos(0);\
 
 ==== Pianificazione
-Durante la settimana del nono sprint, il team si concentrerà sull'implementazione del microservizio 'chatbot', dopo averne presentato la progettazione a #box(image(g.azzurro, width: 5em, height: auto)) nell’incontro di fine #glossary("Sprint") precedente. Parallelamente, proseguiranno le attività di sviluppo e test degli altri microservizi.
+Durante la settimana del nono sprint, il team si concentrerà sull'implementazione del microservizio 'chatbot', dopo averne presentato la progettazione a #box(image(g.azzurro, width: 5em, height: auto)) nell'incontro di fine #glossary("Sprint") precedente. Parallelamente, proseguiranno le attività di sviluppo e test degli altri microservizi.
 Infine, è prevista una riunione a fine sprint con #box(image(g.azzurro, width: 5em, height: auto)) per mostrare gli avanzamenti fatti ed esporre alcune problematiche.
 
 ==== Rischi attesi
@@ -1558,9 +1558,9 @@ Al termine dell'ultimo periodo è emerso che tutti gli obiettivi prefissati sono
 === *Sommario finale*
 Dopo aver completato la revisione #glossary("RTB") in data *`21/02/2024`*, il gruppo ha potuto dedicarsi a tempo pieno al completamento del progetto didattico e si considera ora pronto per affrontare la seconda revisione che inizierà dopo l'invio della lettera di presentazione e che prevederà un primo colloqui con il *#p.cardin* e continuerà poi con il colloquio con il *#p.vardanega*.\
 
-Nel periodo intercorso tra le due revisioni, il team ha redatto i documenti specifici relativi al prodotto, tra cui la `Specifica Tecnica` e il `Manuale Utente`. I documenti già prodotti per la prima revisione sono stati invece oggetto di aggiornamenti e affinamenti minori. La maggior parte delle ore di lavoro è stata investita nella progettazione e nello studio dell’architettura, nonché nelle attività di codifica e sviluppo del prodotto e dei test.
+Nel periodo intercorso tra le due revisioni, il team ha redatto i documenti specifici relativi al prodotto, tra cui la `Specifica Tecnica` e il `Manuale Utente`. I documenti già prodotti per la prima revisione sono stati invece oggetto di aggiornamenti e affinamenti minori. La maggior parte delle ore di lavoro è stata investita nella progettazione e nello studio dell'architettura, nonché nelle attività di codifica e sviluppo del prodotto e dei test.
 
-Ogni membro del gruppo ha rispettato il vincolo delle 91 ore produttive, con un lieve scostamento individuale compreso tra le 90 e le 92 ore, rientrando comunque nei limiti accettabili. Il preventivo a finire, fissato sin dalla candidatura a *`12.740,00 €`*, è rimasto invariato ed è stato rispettato in pieno: l’intero importo è stato utilizzato. A causa di alcune difficoltà tecniche incontrate durante la fase di integrazione del prodotto, la consegna finale ha subito un lieve slittamento rispetto alla data inizialmente prevista (`11/04/2025`). Il progetto è stato infatti completato il *`15/04/2025`*, come concordato alla conclusione dell’ottavo periodo.
+Ogni membro del gruppo ha rispettato il vincolo delle 91 ore produttive, con un lieve scostamento individuale compreso tra le 90 e le 92 ore, rientrando comunque nei limiti accettabili. Il preventivo a finire, fissato sin dalla candidatura a *`12.740,00 €`*, è rimasto invariato ed è stato rispettato in pieno: l'intero importo è stato utilizzato. A causa di alcune difficoltà tecniche incontrate durante la fase di integrazione del prodotto, la consegna finale ha subito un lieve slittamento rispetto alla data inizialmente prevista (`11/04/2025`). Il progetto è stato infatti completato il *`15/04/2025`*, come concordato alla conclusione dell'ottavo periodo.
 
 ==== Riepilogo prospetto orario
 ===== Ore consumate (PB)
