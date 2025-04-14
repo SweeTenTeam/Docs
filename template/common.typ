@@ -60,7 +60,7 @@
   header: "/images/specifica-tecnica/header.png",
   navbar: "/images/specifica-tecnica/navbar.png",
   chat: "/images/specifica-tecnica/chatWindow.png",
-  bubble: "/images/specifica-tecnica/bubble.png",
+  bubble: "/images/specifica-tecnica/Bubble.png",
   input: "/images/specifica-tecnica/inputForm.png",
   uml: "/images/specifica-tecnica/uml.png",
   chatUml: "/images/specifica-tecnica/chatBotUML.png",
@@ -108,6 +108,9 @@
   MI: "/images/verbali/Message.png",
 )
 
+#let st = (
+diag_api_gateway: "/images/specifica-tecnica/api-gateway.png",
+)
 
 //team members
 #let p = (
