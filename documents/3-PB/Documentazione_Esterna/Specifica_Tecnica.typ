@@ -183,11 +183,11 @@ Next.js è un framework per la creazione di applicazioni web in React. Il team h
 
 
 
-Il microservizio *API Gateway* svolge un ruolo cruciale nell'architettura di #glossary("BuddyBot"), fungendo da punto di ingresso centralizzato per tutte le richieste provenienti dal frontend e indirizzandole verso i microservizi appropriati, garantendo il routing delle richieste e la gestione delle risposte.
+Il microservizio *API Gateway* svolge un ruolo cruciale nell'architettura di #glossary("BuddyBot"), fungendo da punto di ingresso centralizzato per tutte le richieste provenienti dal #glossary("front-end") e indirizzandole verso i microservizi appropriati, garantendo il routing delle richieste e la gestione delle risposte.
 
 Come per gli altri microservizi, anche l'API Gateway è stato progettato secondo i principi dell'architettura esagonale, al fine di garantire una netta separazione tra la logica di business e le applicazioni esterne. L'obiettivo è quello di mantenere il sistema flessibile, testabile e facilmente manutenibile.
 
-In particolare, l'API Gateway interagisce con i microservizi tramite porte e adattatori dedicati, utilizzando #glossary("Rest-Api") per comunicare con il #glossary ("front-end") e  #glossary("RabbitMQ") per la messaggistica con gli altri microservizi. Questo approccio consente di mantenere l'API Gateway completamente agnostico rispetto ai dettagli di implementazione dei microservizi, favorendo una maggiore scalabilità nel futuro.
+In particolare, l'API Gateway interagisce con i microservizi tramite porte e adattatori dedicati, utilizzando #glossary("Rest-Api") per comunicare con il #glossary("front-end") e  #glossary("RabbitMQ") per la messaggistica con gli altri microservizi. Questo approccio consente di mantenere l'API Gateway completamente agnostico rispetto ai dettagli di implementazione dei microservizi, favorendo una maggiore scalabilità nel futuro.
 
 Compiti dell'API gateway:
 - comunicazione attraverso #glossary("Rest-Api") con il front-end (`@Get('get-storico')` e  `@Post('get-risposta')`);
@@ -199,7 +199,7 @@ Compiti dell'API gateway:
 
 == Risposta Use-Case:
 
-L'endpoint 'get-risposta' riceve dal frontend una richiesta `@Post('get-risposta')` contenente il corpo "(text)" e la data "(date)" della domanda,
+L'endpoint 'get-risposta' riceve dal #glossary("front-end") una richiesta `@Post('get-risposta')` contenente il corpo "(text)" e la data "(date)" della domanda,
 
 #sourcecode[```tsx
   async getRisposta(@Body('text') text: string, @Body('timestamp') timestamp: string): Promise<ChatDTO>   
@@ -251,7 +251,7 @@ export class ProvChat {
 
 contenente la domanda fatta e la risposta che è stata generata.
 
-Prima di essere passata verso al front-end, "ProvChat" viene inviata al microservizio "Storico"
+Prima di essere passata verso il front-end, "ProvChat" viene inviata al microservizio "Storico"
 
 #sourcecode[```tsx
 postStorico(chat: ProvChat): Promise<Chat>;
