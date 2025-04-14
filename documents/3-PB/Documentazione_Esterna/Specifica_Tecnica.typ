@@ -194,7 +194,7 @@ Il microservizio *API Gateway* svolge un ruolo cruciale nell'architettura di #gl
 
 Come per gli altri microservizi, anche l'API Gateway è stato progettato secondo i principi dell'architettura esagonale, al fine di garantire una netta separazione tra la logica di business e le applicazioni esterne. L'obiettivo è quello di mantenere il sistema flessibile, testabile e facilmente manutenibile.
 
-In particolare, l'API Gateway interagisce con i microservizi tramite porte e adattatori dedicati, utilizzando #glossary("Rest-Api") per comunicare con il #glossary ("front-end") e  #glossary("RabbitMQ") per la messaggistica con gli alri microservizi . Questo approccio consente di mantenere l'API Gateway completamente agnostico rispetto ai dettagli di implementazione dei microservizi, favorendo una maggiore scalabilità nel futuro.
+In particolare, l'API Gateway interagisce con i microservizi tramite porte e adattatori dedicati, utilizzando #glossary("Rest-Api") per comunicare con il #glossary ("front-end") e  #glossary("RabbitMQ") per la messaggistica con gli altri microservizi. Questo approccio consente di mantenere l'API Gateway completamente agnostico rispetto ai dettagli di implementazione dei microservizi, favorendo una maggiore scalabilità nel futuro.
 
 Compiti dell'API gateway:
 - comunicazione attraverso #glossary("Rest-Api") con il front-end (`@Get('get-storico')` e  `@Post('get-risposta')`);
@@ -327,7 +327,7 @@ Inoltre Api-Gateway si occupa anche dello scheduling del fetch delle informazion
 #sourcecode[```tsx
 postUpdate(LastFetch:string): Promise<Boolean>;
   ```]
-per essere salvata e poi fornita all'utente all'interno della #glossary ("Chat") che riceve indocando a quando risalgono le informazioni usate per formulare la risposta. 
+per essere salvata e poi fornita all'utente all'interno della #glossary ("Chat") che riceve indicando a quando risalgono le informazioni usate per formulare la risposta. 
 
 Prima però viene fatto un check per controllare se esiste una data di #glossary("fetch") nel database con
 
@@ -335,7 +335,7 @@ Prima però viene fatto un check per controllare se esiste una data di #glossary
 getLastUpdate(): Promise<LastUpdateCMD>;
   ```]
 
-, se non non esiste significa che non è stato ancora fatto nessun fetch e in questo caso viene effettuato un fetch completo che recupera tutte le informazioni. In questo caso noi abbiamo messo la data di qualche mese fa per facilitare il test siccome il fetch, soprattutto di github, richiede tempo, ma se non si mettesse una data viene fatto il fetch di tutto.
+, se non esiste significa che non è stato ancora fatto nessun fetch e in questo caso viene effettuato un fetch completo che recupera tutte le informazioni. In questo caso noi abbiamo messo la data di qualche mese fa per facilitare il test siccome il fetch, soprattutto di github, richiede tempo, ma se non si mettesse una data viene fatto il fetch di tutto.
 
 Nel caso invece esista questa viene usata come data di partenza.
 
@@ -437,4 +437,3 @@ export interface InfoPort {
   fetchUpdateConf(req: FetchConfluenceCMD): Promise<Boolean>;
 }
   ```]
-  
