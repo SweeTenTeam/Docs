@@ -75,28 +75,29 @@ La presenza di un termine nel Glossario viene segnalata direttamente nel documen
 
 == Riferimenti
 === Normativi
-- Norme di progetto v1.0.0
-- Presentazione capitolato d'appalto: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9.pdf")
+- `Norme di Progetto v1.0.0`
+
+- Documentazione e presentazione del capitolato d'appalto C9: BuddyBot \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9.pdf") (Ultimo accesso: 2025-04-14) \
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C9p.pdf") (Ultimo accesso: 2025-04-14)
+
+- Regolamento del progetto didattico: \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf") (Ultimo accesso: 2025-04-14)
 
 === Informativi
 
-- ISO/EIC 9126
-#link("https://en.wikipedia.org/wiki/ISO/IEC_9126", "Standard ISO/IEC 9126")
+- `ISO/EIC 9126` \ #link("https://en.wikipedia.org/wiki/ISO/IEC_9126") (Ultimo accesso: 2025-04-14)
 
-- T7 - Qualità del software
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf", "T07.pdf")
+- T7 - Qualità del software \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf") (Ultimo accesso: 2025-04-14)
 
-- T8 - Qualità di processo
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf", "T08.pdf")
+- T8 - Qualità di processo \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf") (Ultimo accesso: 2025-04-14)
 
-- T9 - Verifica e validazione: introduzione
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf", "T09.pdf")
+- T9 - Verifica e validazione: introduzione \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf") (Ultimo accesso: 2025-04-14)
 
-- T10 - Verifica e validazione: analisi statica
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf", "T10.pdf")
+- T10 - Verifica e validazione: analisi statica \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf") (Ultimo accesso: 2025-04-14)
 
-- T11 - Verifica e validazione: analisi dinamica aka testing
-#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf", "T11.pdf")
+- T11 - Verifica e validazione: analisi dinamica aka testing \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf") (Ultimo accesso: 2025-04-14)
+
+- `Glossario v2.0.0`: \ #link("https://sweetenteam.github.io/docs/PB/Documentazione_Interna/Glossario") (Ultimo accesso: 2025-04-14)
+
 #pagebreak()
 = *Obiettivi di qualità*
 Ogni #glossary("processo") viene valutato mediante l'applicazione di metriche specifiche, la cui definizione è dettagliata nelle sezioni Metriche di qualità del processo e Metriche di qualità del prodotto del documento Norme di Progetto v1.0.0. Queste sezioni delineano i criteri necessari affinchè le metriche siano considerate accettabili o eccellenti.
@@ -283,7 +284,7 @@ A partire dalla sezione successiva verranno inseriti i test svolti riepilogati i
   - NI (NON IMPLEMENTATO): non è stato predisposto alcun test per la verifica della funzionalità specifica.
 #pagebreak()
 == *Test di unità*
-I test di unità sono concepiti per verificare il corretto funzionamento delle singole componenti del codice. Per "`unità`" si intendono funzioni, classi o, più in generale, qualsiasi entità autonoma incaricata di svolgere compiti specifici all’interno del software. Per implementare in modo efficace questa tipologia di test, abbiamo adottato il framework di unit testing *`Jest`*, che ci ha permesso di scrivere test chiari e manutenibili. A supporto della qualità del codice, abbiamo inoltre integrato *`ESLint`*, uno strumento utile per rilevare errori sintattici e problemi stilistici, garantendo così uno standard elevato durante lo sviluppo.
+I test di unità sono concepiti per verificare il corretto funzionamento delle singole componenti del codice. Per "`unità`" si intendono funzioni, classi o, più in generale, qualsiasi entità autonoma incaricata di svolgere compiti specifici all'interno del software. Per implementare in modo efficace questa tipologia di test, abbiamo adottato il framework di unit testing *`Jest`*, che ci ha permesso di scrivere test chiari e manutenibili. A supporto della qualità del codice, abbiamo inoltre integrato *`ESLint`*, uno strumento utile per rilevare errori sintattici e problemi stilistici, garantendo così uno standard elevato durante lo sviluppo.
 
 #figure(
   table(
@@ -427,27 +428,27 @@ I test di unità sono concepiti per verificare il corretto funzionamento delle s
 
     [TU-64], [Verifica che venga lanciato un errore di tipo CONNESSIONE per errori con codice di stato tra 400 e 499. (frontend)], [V],
 
-    [TU-65], [Verificare che il controller FetchHistoryController, una volta ricevuto un messaggio sulla coda fetch_queue, richiami correttamente il metodo fetchStoricoChat del caso d’uso e restituisca una lista di oggetti ChatDTO costruita a partire dai Chat ottenuti. (chat history)], [V],
+    [TU-65], [Verificare che il controller FetchHistoryController, una volta ricevuto un messaggio sulla coda fetch_queue, richiami correttamente il metodo fetchStoricoChat del caso d'uso e restituisca una lista di oggetti ChatDTO costruita a partire dai Chat ottenuti. (chat history)], [V],
 
-    [TU-66], [Verificare che il service FetchHistoryService invochi correttamente il metodo fetchStoricoChat dell’adapter con i parametri attesi e restituisca il risultato senza modificarlo. (chat history)], [V],
+    [TU-66], [Verificare che il service FetchHistoryService invochi correttamente il metodo fetchStoricoChat dell'adapter con i parametri attesi e restituisca il risultato senza modificarlo. (chat history)], [V],
 
-    [TU-67], [Verificare che l’adapter FetchHistoryAdapter richiami il metodo fetchStoricoChat del repository con i parametri corretti e trasformi i dati ricevuti in oggetti del dominio Chat, mappando correttamente i campi. (chat history)], [V],
+    [TU-67], [Verificare che l'adapter FetchHistoryAdapter richiami il metodo fetchStoricoChat del repository con i parametri corretti e trasformi i dati ricevuti in oggetti del dominio Chat, mappando correttamente i campi. (chat history)], [V],
 
-    [TU-68], [Verificare che il metodo fetchStoricoChat del repository recuperi correttamente lo storico delle chat dal database, gestendo sia il caso in cui l’id dell’ultima chat sia presente (con query basata su answerDate), sia il caso in cui non lo sia (recupero degli ultimi N record più recenti). (chat history)], [V],
+    [TU-68], [Verificare che il metodo fetchStoricoChat del repository recuperi correttamente lo storico delle chat dal database, gestendo sia il caso in cui l'id dell'ultima chat sia presente (con query basata su answerDate), sia il caso in cui non lo sia (recupero degli ultimi N record più recenti). (chat history)], [V],
 
-    [TU-69], [Verificare che il controller ChatConsumer, al ricevimento di un messaggio sulla coda chat_message, trasformi correttamente il CreateChatDTO in un InsertChatCmd, invochi il metodo insertChat del caso d’uso e restituisca un ChatDTO. (chat history)], [V],
+    [TU-69], [Verificare che il controller ChatConsumer, al ricevimento di un messaggio sulla coda chat_message, trasformi correttamente il CreateChatDTO in un InsertChatCmd, invochi il metodo insertChat del caso d'uso e restituisca un ChatDTO. (chat history)], [V],
 
-    [TU-70], [Verificare che il service InsertChatService invochi correttamente il metodo insertChat dell’adapter (implementazione della Port Out) con i parametri ricevuti e restituisca il risultato senza applicare ulteriori trasformazioni. (chat history)], [V],
+    [TU-70], [Verificare che il service InsertChatService invochi correttamente il metodo insertChat dell'adapter (implementazione della Port Out) con i parametri ricevuti e restituisca il risultato senza applicare ulteriori trasformazioni. (chat history)], [V],
 
-    [TU-71], [Verificare che l’adapter InsertChatAdapter invochi il metodo insertChat del repository con i parametri estratti dal InsertChatCmd e restituisca un oggetto Chat costruito correttamente a partire dalla ChatEntity restituita. (chat history)], [V],
+    [TU-71], [Verificare che l'adapter InsertChatAdapter invochi il metodo insertChat del repository con i parametri estratti dal InsertChatCmd e restituisca un oggetto Chat costruito correttamente a partire dalla ChatEntity restituita. (chat history)], [V],
 
-    [TU-72], [Verificare che il metodo insertChat del repository crei correttamente una nuova istanza di ChatEntity utilizzando anche la data dell’ultimo fetch delle informazioni (LastUpdateEntity) e la salvi nel database. (chat history)], [V],
+    [TU-72], [Verificare che il metodo insertChat del repository crei correttamente una nuova istanza di ChatEntity utilizzando anche la data dell'ultimo fetch delle informazioni (LastUpdateEntity) e la salvi nel database. (chat history)], [V],
 
     [TU-73], [Verificare che il controller InsertLastUpdateController, al ricevimento di un messaggio sulla coda lastFetch_queue, costruisca correttamente un LastUpdateCmd, invochi il metodo insertLastRetrieval del service e restituisca il risultato booleano. (chat history)], [V],
 
-    [TU-74], [Verificare che il service InsertLastUpdateService invochi il metodo insertLastRetrieval dell’adapter (implementazione della Port Out) con i dati forniti e restituisca il valore booleano risultante. (chat history)], [V],
+    [TU-74], [Verificare che il service InsertLastUpdateService invochi il metodo insertLastRetrieval dell'adapter (implementazione della Port Out) con i dati forniti e restituisca il valore booleano risultante. (chat history)], [V],
 
-    [TU-75], [Verificare che l’adapter InsertLastUpdateAdapter invochi il metodo insertLastRetrieval del repository ChatRepository passando correttamente la data di LastFetch ricevuta nel comando. (chat history)], [V],
+    [TU-75], [Verificare che l'adapter InsertLastUpdateAdapter invochi il metodo insertLastRetrieval del repository ChatRepository passando correttamente la data di LastFetch ricevuta nel comando. (chat history)], [V],
 
     [TU-76], [Verificare che il metodo insertLastRetrieval del repository aggiorni correttamente il record LastUpdateEntity esistente con la nuova data fornita. (chat history)], [V],
 
@@ -455,17 +456,17 @@ I test di unità sono concepiti per verificare il corretto funzionamento delle s
 
     [TU-78], [Verificare che il controller FetchLastUpdateController, al ricevimento di un messaggio sulla coda getLastUpdate_queue, invochi il metodo fetchLastUpdate del service e restituisca un LastUpdateDTO contenente il valore corretto di lastFetch. (chat history)], [V],
 
-    [TU-79], [Verificare che il service FetchLastUpdateService invochi correttamente il metodo fetchLastUpdate dell’adapter (implementazione della Port Out) e restituisca un oggetto LastUpdate con il valore atteso. (chat history)], [V],
+    [TU-79], [Verificare che il service FetchLastUpdateService invochi correttamente il metodo fetchLastUpdate dell'adapter (implementazione della Port Out) e restituisca un oggetto LastUpdate con il valore atteso. (chat history)], [V],
 
-    [TU-80], [Verificare che l’adapter fetchLastUpdateAdapter invochi il metodo fetchLastUpdate del repository ChatRepository e trasformi correttamente la LastUpdateEntity in un oggetto LastUpdate del dominio. (chat history)], [V],
+    [TU-80], [Verificare che l'adapter fetchLastUpdateAdapter invochi il metodo fetchLastUpdate del repository ChatRepository e trasformi correttamente la LastUpdateEntity in un oggetto LastUpdate del dominio. (chat history)], [V],
 
     [TU-81], [Verificare che il metodo fetchLastUpdate del repository recuperi correttamente il record LastUpdateEntity con id 1 dal database e lo restituisca. (chat history)], [V],
 
     [TU-82], [Verificare che il metodo insertChat del repository lanci un errore se il record LastUpdateEntity non è presente nel database. (chat history)], [V],
 
-    [TU-83], [Verificare che il metodo fetchStoricoChat del repository lanci un errore se l’id della chat specificata non corrisponde a nessun record. (chat history)], [V],
+    [TU-83], [Verificare che il metodo fetchStoricoChat del repository lanci un errore se l'id della chat specificata non corrisponde a nessun record. (chat history)], [V],
 
-    [TU-84], [Verificare che il metodo insertLastRetrieval del repository restituisca false nel caso si verifichi un errore durante l’operazione di aggiornamento o inserimento. (chat history)], [V],
+    [TU-84], [Verificare che il metodo insertLastRetrieval del repository restituisca false nel caso si verifichi un errore durante l'operazione di aggiornamento o inserimento. (chat history)], [V],
 
     [TU-85], [Verificare che il metodo fetchLastUpdate del repository lanci un errore se il record LastUpdateEntity non è presente nel database. (chat history)], [V],
 
@@ -672,12 +673,44 @@ I test di unità sono concepiti per verificare il corretto funzionamento delle s
     [TU-187], [Verifica che deleteByMetadata elimini correttamente i documenti in base ai metadati (Qdrant-information-repository.spec.ts). (information vector db)], [V],
 
     [TU-188], [Verifica che deleteByMetadata gestisca gli errori durante l'eliminazione (Qdrant-information-repository.spec.ts). (information vector db)], [V],
+
+    [TU-189], [Verificare che `ApiController.getStorico` trasformi correttamente i parametri query in un `RequestChatCMD` e invochi `GetStoricoUseCase.execute()` restituendo un array di `ChatDTO`. (api gateway)], [V],  
+
+    [TU-190], [Verificare che `GetStoricoService.execute()` invochi `StoricoPort.getStorico()` con i parametri ricevuti e restituisca i dati senza modifiche. (api gateway)], [V],  
+
+    [TU-191], [Verificare che `StoricoMessageAdapter.getStorico()` trasformi i dati RabbitMQ in oggetti `Chat` del dominio, mappando correttamente `content` e `timestamp`. (api gateway)], [V],  
+
+    [TU-192], [Verificare che `ApiController.getRisposta` trasformi il body della richiesta in un `ReqAnswerCmd`, invochi `GetChatUseCase.execute()`, e restituisca un `ChatDTO`. (api gateway)], [V],  
+
+    [TU-193], [Verificare che `GetRispostaService.execute()` invochi `ChatBotPort.getRisposta()` e `StoricoPort.postStorico()`, e restituisca il risultato di quest'ultimo. (api gateway)], [V],  
+
+    [TU-194],  
+    [Verificare che `MessageAdapter.getRisposta()` trasformi la risposta RabbitMQ in un `ProvChat`, preservando `question`, `answer`, e `timestamp`. (api gateway)],  
+    [V],  
+
+    [TU-195], [Verificare che `StoricoMessageAdapter.postStorico()` costruisca un oggetto `Chat` dal `ProvChat` con i campi `Message` annidati (`content` + `timestamp`). (api gateway)], [V],  
+    
+    [TU-196], [Verificare che `StoricoMessageAdapter.postUpdate()` invochi `HistoryService.sendMessage()` con un `LastUpdateCMD` contenente la data corretta. (api gateway)], [V],  
+
+    [TU-197], [Verificare che `StoricoMessageAdapter.getLastUpdate()` trasformi la risposta RabbitMQ in un `LastUpdateCMD`. (api gateway)], [V],  
+
+    [TU-198], [Verificare che `StoricoMessageAdapter.getStorico()` lanci un errore se la risposta RabbitMQ non contiene `question.content` o `answer.content`. (api gateway)], [V],  
+
+    [TU-199], [Verificare che `GetRispostaService.execute()` lanci un errore se `ChatBotPort.getRisposta()` restituisce un oggetto senza `timestamp`. (api gateway)], [V],
+
+    [TU-200], [Verificare che la classe ReqAnswerCmd inizializzi correttamente i suoi campi privati e li esponga attraverso i getter appropriati, preservando i riferimenti agli oggetti originali. (chatbot)], [V],
+
+    [TU-201], [Verificare che l'entità Chat memorizzi correttamente la domanda e la risposta e li restituisca attraverso i metodi getter, funzionando anche con stringhe vuote. (chatbot)], [V],
+
+    [TU-202], [Verificare che l'entità Metadata memorizzi correttamente i valori di origin, type e originID e li esponga attraverso getter e accesso diretto alle proprietà. (chatbot)], [V],
+
+    [TU-203], [Verificare che l'entità Information mantenga i riferimenti alla stringa di content e all'oggetto Metadata durante la sua creazione, esponendo i valori attraverso getter appropriati. (chatbot)], [V],
   ),
   caption: "Stato dei test di unità"
 )
 #pagebreak()
 == *Test di integrazione*
-I test di accettazione sono finalizzati a garantire che il prodotto soddisfi i #glossary("requisiti") utente come specificati nel #glossary("capitolato"). Essi vengono eseguiti in presenza del committente e dimostrano la conformità del prodotto alle aspettative attraverso l’esecuzione dei casi di prova previsti nel capitolato. Il superamento positivo di tali test durante il collaudo finale generalmente conduce al rilascio definitivo del prodotto.
+I test di accettazione sono finalizzati a garantire che il prodotto soddisfi i #glossary("requisiti") utente come specificati nel #glossary("capitolato"). Essi vengono eseguiti in presenza del committente e dimostrano la conformità del prodotto alle aspettative attraverso l'esecuzione dei casi di prova previsti nel capitolato. Il superamento positivo di tali test durante il collaudo finale generalmente conduce al rilascio definitivo del prodotto.
 #figure(
   table(
     columns: (1fr, 6fr, 1fr),
@@ -692,13 +725,13 @@ I test di accettazione sono finalizzati a garantire che il prodotto soddisfi i #
   inset: (left: 0.5em, right: 0.5em),
     [Codice], [Descrizione], [Stato],
 
-    [TI-01], [Verificare che il flusso fetchChatHistory nel controller FetchHistoryController richiami correttamente il servizio, l’adapter e il repository mockato, restituendo una lista di ChatDTO correttamente mappata a partire da entità ChatEntity. (chat history)], [V],
+    [TI-01], [Verificare che il flusso fetchChatHistory nel controller FetchHistoryController richiami correttamente il servizio, l'adapter e il repository mockato, restituendo una lista di ChatDTO correttamente mappata a partire da entità ChatEntity. (chat history)], [V],
 
-    [TI-02], [Verificare che il flusso di inserimento chat (in db) nel controller ChatConsumer richiami correttamente il servizio, l’adapter e il repository mockato, e restituisca un ChatDTO costruito a partire da una ChatEntity. (chat history)], [V],
+    [TI-02], [Verificare che il flusso di inserimento chat (in db) nel controller ChatConsumer richiami correttamente il servizio, l'adapter e il repository mockato, e restituisca un ChatDTO costruito a partire da una ChatEntity. (chat history)], [V],
 
-    [TI-03], [Verificare che il controller InsertLastUpdateController, attraverso il service e l’adapter, invochi correttamente il metodo insertLastRetrieval del repository con la data contenuta nel LastUpdateDTO e restituisca true. (chat history)], [V],
+    [TI-03], [Verificare che il controller InsertLastUpdateController, attraverso il service e l'adapter, invochi correttamente il metodo insertLastRetrieval del repository con la data contenuta nel LastUpdateDTO e restituisca true. (chat history)], [V],
 
-    [TI-04], [Verificare che il controller FetchLastUpdateController, attraverso il service e l’adapter, invochi il metodo fetchLastUpdate del repository, e restituisca un LastUpdateDTO contenente il valore corretto. (chat history)], [V],
+    [TI-04], [Verificare che il controller FetchLastUpdateController, attraverso il service e l'adapter, invochi il metodo fetchLastUpdate del repository, e restituisca un LastUpdateDTO contenente il valore corretto. (chat history)], [V],
 
     [TI-05], [Verificare l'interazione tra il componente Header e il hook useTheme per il cambio di tema. (frontend)], [V],
 
@@ -746,12 +779,39 @@ I test di accettazione sono finalizzati a garantire che il prodotto soddisfi i #
 
     [TI-27], [Verificare che il sistema gestisca correttamente gli errori durante il recupero delle informazioni (RetrievalService.integration.spec.ts). (information vector db)], [V],
 
+    [TI-28], [Verificare che `GET /get-storico` restituisca 500 se `HistoryService` risponde con dati malformati. (api gateway)], [V],  
+
+    [TI-29], [Verificare che `POST /get-risposta` restituisca 500 se il servizio RabbitMQ del chatbot non è raggiungibile. (api gateway)], [V],
+
+    [TI-30], [Verificare che una richiesta `GET /get-storico` invochi correttamente `GetStoricoService` → `StoricoMessageAdapter` → `HistoryService`, restituendo `ChatDTO[]` con i campi `question.content` e `answer.content`. (api gateway)], [V],  
+
+    [TI-31], [Verificare che una richiesta `POST /get-risposta` invochi `GetRispostaService` → `MessageAdapter` (per il chatbot) → `StoricoMessageAdapter` (per il salvataggio), e restituisca un `ChatDTO` con la struttura annidata `{ question: { content, timestamp }, ... }`. (api gateway)], [V],  
+      
+    [TI-32], [Verificare che il flusso di salvataggio data ultimo fetch (`postUpdate`) invochi `HistoryService` con la data corretta e restituisca `true` in caso di successo. (api gateway)], [V],  
+
+    [TI-33], [Verificare che il flusso di recupero data ultimo fetch (`getLastUpdate`) restituisca un `LastUpdateCMD` con il campo `LastFetch` valorizzato. (api gateway)], [V],
+
+    [TI-34], [Verificare che il flusso di salvataggio storico (`postStorico`) invochi `HistoryService` con un `Chat` correttamente costruito e restituisca `true` in caso di successo. (api gateway)], [V],
+
+    [TI-35], [Verificare che ElaborazioneService richiami correttamente i metodi searchVectorDb del VectorDbPort e generateAnswer del LLMPort, passando i parametri appropriati e restituendo la risposta generata. (chatbot)], [V],
+
+    [TI-36], [Verificare che ChatController, quando riceve una chiamata getAnswer con un ReqAnswerDTO, crei correttamente un oggetto ReqAnswerCmd, invochi il metodo getAnswer del caso d'uso ElaborazioneUseCase e restituisca la risposta ottenuta. (chatbot)], [V],
+
+    [TI-37], [Verificare che VectorDbAdapter, quando invocato con una query, chiami correttamente il metodo sendMessage del VectorDbClient con i parametri corretti e trasformi la risposta in un array di oggetti Information. (chatbot)], [V],
+
+    [TI-38], [Verificare che GroqAdapter (tramite implementazione mock) filtri correttamente i documenti che supererebbero il limite di token, producendo log appropriati e restituendo una risposta basata sulle informazioni filtrate. (chatbot)], [V],
+
+    [TI-39], [Verificare che GroqAdapter gestisca correttamente il caso di array di informazioni vuoto, restituendo una risposta predefinita che indica l'assenza di informazioni rilevanti. (chatbot)], [V],
+
+    [TI-40], [Verificare che VectorDbAdapter propaghi correttamente gli errori provenienti dal client e gestisca i casi di risposta vuota, restituendo un array vuoto. (chatbot)], [V],
+
+    [TI-41], [Verificare che VectorDbAdapter possa elaborare le risposte JSON correttamente quando queste sono già state deserializzate. (chatbot)], [V],
   ),
   caption: "Stato dei test di integrazione"
 )
 #pagebreak()
 == *Test di sistema*
-I test di sistema sono una fase del processo di testing software che mira a verificare che il sistema soddisfi i #glossary("requisiti") specificati nella sezione Requisiti di funzionalità del documento `Analisi dei Requisiti`. Questa fase di testing è condotta sul sistema nel suo complesso, dopo che i test di unità e di integrazione sono stati completati con successo. L’obiettivo principale dei test di sistema è assicurare che l’applicazione sia in grado di svolgere le sue funzioni nel contesto del suo ambiente operativo.
+I test di sistema sono una fase del processo di testing software che mira a verificare che il sistema soddisfi i #glossary("requisiti") specificati nella sezione Requisiti di funzionalità del documento `Analisi dei Requisiti`. Questa fase di testing è condotta sul sistema nel suo complesso, dopo che i test di unità e di integrazione sono stati completati con successo. L'obiettivo principale dei test di sistema è assicurare che l'applicazione sia in grado di svolgere le sue funzioni nel contesto del suo ambiente operativo.
 
 #figure(
   table(
@@ -813,7 +873,7 @@ I test di sistema sono una fase del processo di testing software che mira a veri
 )
 #pagebreak()
 == *Test di accettazione*
-I test di accettazione sono finalizzati a garantire che il prodotto soddisfi i #glossary("requisiti") utente come specificati nel capitolato. Essi vengono eseguiti in presenza del committente e dimostrano la conformità del prodotto alle aspettative attraverso l’esecuzione dei casi di prova previsti nel capitolato. Il superamento positivo di tali test durante il collaudo finale generalmente conduce al rilascio definitivo del prodotto.
+I test di accettazione sono finalizzati a garantire che il prodotto soddisfi i #glossary("requisiti") utente come specificati nel capitolato. Essi vengono eseguiti in presenza del committente e dimostrano la conformità del prodotto alle aspettative attraverso l'esecuzione dei casi di prova previsti nel capitolato. Il superamento positivo di tali test durante il collaudo finale generalmente conduce al rilascio definitivo del prodotto.
 
 #figure(
   table(
@@ -969,19 +1029,19 @@ In conclusione, possiamo affermare che tutti i documenti prodotti risultano legg
 == *`M-PRD-CRO`* - Copertura dei requisiti opzionali
 #figure(image(gq.CRO, width: 100%), caption: [Proiezione della copertura dei requisiti opzionali nei vari periodi di progetto.])\
 
-*`PB`*: Dal grafico si può osservare come la copertura dei #glossary("requisiti") opzionali sia stata posticipata fino alle fasi conclusive del progetto. Nei primi #glossary("sprint") successivi alla revisione RTB non è stato possibile dedicare risorse a queste funzionalità, poiché l’attenzione è stata concentrata principalmente sui #glossary("requisiti") obbligatori e desiderabili. Solo a partire dallo #glossary("Sprint") 9 è iniziato un lavoro concreto su questa categoria, che ha trovato il suo completamento quasi totale nell’ultimo #glossary("sprint"). La decisione di procedere comunque con l’implementazione di diversi #glossary("requisiti") opzionali, pur non essendo strettamente necessari, è stata motivata dalla volontà del gruppo di consegnare un prodotto quanto più completo possibile. Questo approccio ci ha permesso di superare il valore ottimale inferiore per la metrica, migliorando ulteriormente la qualità percepita del sistema finale.
+*`PB`*: Dal grafico si può osservare come la copertura dei #glossary("requisiti") opzionali sia stata posticipata fino alle fasi conclusive del progetto. Nei primi #glossary("sprint") successivi alla revisione RTB non è stato possibile dedicare risorse a queste funzionalità, poiché l'attenzione è stata concentrata principalmente sui #glossary("requisiti") obbligatori e desiderabili. Solo a partire dallo #glossary("Sprint") 9 è iniziato un lavoro concreto su questa categoria, che ha trovato il suo completamento quasi totale nell'ultimo #glossary("sprint"). La decisione di procedere comunque con l'implementazione di diversi #glossary("requisiti") opzionali, pur non essendo strettamente necessari, è stata motivata dalla volontà del gruppo di consegnare un prodotto quanto più completo possibile. Questo approccio ci ha permesso di superare il valore ottimale inferiore per la metrica, migliorando ulteriormente la qualità percepita del sistema finale.
 
 #pagebreak()
 == *`M-PRD-CC`* - Code coverage
-#figure(image(gq.NCR, width: 100%), caption: [Proiezione della code coverage nei vari periodi di progetto.])\
+#figure(image(gq.CC, width: 100%), caption: [Proiezione della code coverage nei vari periodi di progetto.])\
 
-*`PB`*:
+*`PB`*: Analizzando il grafico, si osserva come la *`code coverage`* abbia registrato una crescita costante a partire dallo #glossary("Sprint") 7, momento in cui abbiamo dato avvio all'attività di testing, in parallelo allo sviluppo del prodotto. Grazie a una pianificazione attenta e a un progressivo affinamento della strategia di test, siamo riusciti a dedicare sempre più risorse a questa attività, fino a raggiungere, nell'ultimo #glossary("sprint"), un'ottima copertura del codice pari al `91,75%`, superiore al valore minimo richiesto. Riteniamo che questo risultato testimoni l'efficacia del nostro approccio e l'attenzione costante alla qualità del #glossary("software") lungo tutto il processo di sviluppo.
 
 #pagebreak()
 == *`M-PRD-BC`* - Branch coverage
-#figure(image(gq.NCR, width: 100%), caption: [Proiezione della branch coverage nei vari periodi di progetto.])\
+#figure(image(gq.BC, width: 100%), caption: [Proiezione della branch coverage nei vari periodi di progetto.])\
 
-*`PB`*:
+*`PB`*: Dall'analisi del grafico si osserva come, durante lo #glossary("Sprint 6"), la *`branch coverage`* fosse prossima allo zero, per poi crescere gradualmente e superare il limite accettabile tra lo #glossary("Sprint") 8 e lo #glossary("Sprint") 9. Nel corso dello Sprint 10, il valore ha infine raggiunto una soglia prossima all'obiettivo ottimale di circa `80%`. Questo andamento suggerisce che l'introduzione dei test abbia dato risultati tangibili fin dalle prime fasi, consentendo di coprire progressivamente un numero sempre maggiore di diramazioni del flusso d'esecuzione del codice. Il superamento del limite minimo prima e l'avvicinamento al valore ottimale poi evidenziano come la strategia di testing sia stata efficace nel garantire un progressivo aumento della copertura e, di conseguenza, nell'assicurare solidità e affidabilità crescenti al #glossary("software").
 
 #pagebreak()
 == *`M-PRD-FD`* - Failure density

@@ -101,6 +101,8 @@
   CRV: "/images/PdQ/CRV.svg",
   CS: "/images/PdQ/CS.svg",
   FD: "/images/PdQ/FD.svg",
+  CC: "/images/PdQ/CC.svg",
+  BC: "/images/PdQ/BC.svg",
 )
 
 // Immagini per i verbali
