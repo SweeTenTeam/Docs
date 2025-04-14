@@ -4,6 +4,13 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.0.X",
+    "2025-02-27",
+    (p.belenkov),
+    (p.fracaro),
+    [
+      Aggiunta documentazione raccolta e salvataggio informazioni da Github e Confluence
+    ],
     "0.0.1",
     "2025-02-27",
     (p.ferazzani),
@@ -172,7 +179,7 @@ Next.js è un framework per la creazione di applicazioni web in React. Il team h
 
 = Architettura di sistema
 
-=== Github
+=== Recupero e memorizzazione dei dati da GitHub
 
 #figure(
     image(spc.github_fetch, width: 100%, height: auto),
@@ -190,8 +197,8 @@ Classe che viene ricevuta in input dall'`InformationController`, contiene una li
 ```typescript
 export class FetchGithubDto {
   constructor (
-    public readonly repoDTOList: RepoGithubDTO[],
-    public readonly lastUpdate?: Date
+    private repoDTOList: RepoGithubDTO[],
+    private lastUpdate?: Date
   ){}
 }
 ```
@@ -203,9 +210,9 @@ Classe che contiene le informazioni necessarie a identificare univocamente la ri
 ```ts
 export class RepoGithubDTO{
   constructor(
-    public readonly owner: string,
-    public readonly repoName: string,
-    public readonly branch_name: string
+    private owner: string,
+    private repoName: string,
+    private branch_name: string
   ){}
 }
 ```
@@ -407,12 +414,15 @@ export class WorkflowRun {
   }
 } 
 ```
+==== GithubFetchAndStoreController
+Controller che resta in attesa di messaggi sulla coda `information-queue`, al fine di portare a termine le operazioni di raccolta e salvataggio delle informazioni ottenute da Github. Ritorna come output un oggetto `ResultDTO`.
+
 ==== GithubUseCase
 Interfaccia che si comporta da porta d'ingresso alla business logic, offre il metodo `fetchAndStoreInfo`, che prende in input il `GithubCmd` ricevuto dal controller.
 
 ```ts
 export interface GithubUseCase {
-    fetchAndStoreGithubInfo(req: GithubCmd): Promise<boolean>;
+    fetchAndStoreGithubInfo(req: GithubCmd): Promise<Result>;
 }
 ```
 ==== GithubService
@@ -469,7 +479,7 @@ Questa classe implementa:
 - `GithubPullRequestAPIPort`
 - `GithubRepositoryAPIPort`
 - `GithubWorkflowAPIPort`
-ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `GithubAPIFacade`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic.
+ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `GithubAPIRepository`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic.
 
 ==== GithubAPIRepository
 Questa è la classe che si occupa di interfacciarsi direttamente con le API di Github. Esegue richieste tramite il client offerto da `octo-kit` e ritorna JSON con i dati 'grezzi'.
@@ -486,7 +496,7 @@ export interface GithubStoreInfoPort {
 ==== GithubStoreInfoAdapter
 Questa classe implementa `GithubStoreInfoPort`, si occupa di trasformare i `GithubInfo` in `Information` per poter essere usati dal `qdrant-information-repository` ed essere salvati sul database vettoriale.
 
-=== Confluence
+=== Recupero e memorizzazione dei dati da Confluence
 
 #figure(
     image(spc.confluence, width: 100%, height: auto),
@@ -530,10 +540,10 @@ Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo
 
 
 ==== ConfluenceAPIAdapter
-Questa classe implementa `ConfluenceAPIPort`, ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `ConfluenceAPIFacade`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic di `ConfluenceDocument`.
+Questa classe implementa `ConfluenceAPIPort`, ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `ConfluenceAPIRepository`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic di `ConfluenceDocument`.
 
 ==== ConfluenceAPIRepository
-Questa è la classe che si occupa di interfacciarsi direttamente con le API di Confluence. Esegue richieste tramite il client offerto da `confluence.js` e ritorna JSON con i dati 'grezzi'.
+Questa è la classe che si occupa di interfacciarsi direttamente con le API di Confluence. Esegue richieste HTTP e ritorna JSON con i dati 'grezzi'.
 
 ==== ConfluenceStorePort
 Questa è l'interfaccia che funge da porta d'uscita (outbound port) al fine di salvare i `ConfluenceDocument` nel database vettoriale, offre il metodo `storeDocuments` che riceve in input una lista di `ConfluenceDocument`.
