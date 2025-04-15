@@ -51,7 +51,6 @@
     "2025-02-27",
     (p.ferazzani),
     (p.mahdi),
-    (p.benedetti),
     [
       Stesura sezione microservizio Api-Gateway
     ],
@@ -212,269 +211,8 @@ TailwindCSS è un framework CSS utilizzato per la creazione di interfacce utente
 Next.js è un framework per la creazione di applicazioni web in React. Il team ha scelto di utilizzare Next.js per i metodi nativi a disposizione per le richieste alle API e per utilizzare una tecnologia più nuova rispetto al resto.
 #figure(image(tc.next, width: 5em, height: auto), caption: "Logo di Next.js")
 
-= Analisi
-
-
 #pagebreak()
 
-=== Microservizio Api-Gateway
-
-
-
-#figure(
-    image(st.diag_api_gateway, width: 100%, height: auto),
-    caption: "Diagramma UML del microservizio Api-Gateway",
-) 
-
-
-
-Il microservizio *API Gateway* svolge un ruolo cruciale nell'architettura di #glossary("BuddyBot"), fungendo da punto di ingresso centralizzato per tutte le richieste provenienti dal #glossary("front-end") e indirizzandole verso i microservizi appropriati, garantendo il routing delle richieste e la gestione delle risposte.
-
-Come per gli altri microservizi, anche l'API Gateway è stato progettato secondo i principi dell'architettura esagonale, al fine di garantire una netta separazione tra la logica di business e le applicazioni esterne. L'obiettivo è quello di mantenere il sistema flessibile, testabile e facilmente manutenibile.
-
-In particolare, l'API Gateway interagisce con i microservizi tramite porte e adattatori dedicati, utilizzando #glossary("Rest-Api") per comunicare con il #glossary("front-end") e  #glossary("RabbitMQ") per la messaggistica con gli altri microservizi. Questo approccio consente di mantenere l'API Gateway completamente agnostico rispetto ai dettagli di implementazione dei microservizi, favorendo una maggiore scalabilità nel futuro.
-
-Compiti dell'API gateway:
-- comunicazione attraverso #glossary("Rest-Api") con il front-end (`@Get('get-storico')` e  `@Post('get-risposta')`);
-- instradamento delle richieste ai microservizi appropriati ( Storico, ChatBot e Information):
-  - recupero di nuova risposta dal servizio di Chatbot;
-  - recupero dello storico dal servizio di Storico;
-  - scheduling del fetch delle informazioni nel microservizio  "Information".
-
-
-== Risposta Use-Case:
-
-L'endpoint 'get-risposta' riceve dal #glossary("front-end") una richiesta `@Post('get-risposta')` contenente il corpo "(text)" e la data "(date)" della domanda,
-
-#sourcecode[```tsx
-  async getRisposta(@Body('text') text: string, @Body('timestamp') timestamp: string): Promise<ChatDTO>   
-  ```]
-
-all'interno di un 
-
-#sourcecode[```tsx
-export class ReqAnswerDTO {
-    constructor(
-      public readonly text: string,
-      public readonly date: string
-    ) {}
-  }
-  ```]
-  
-e restituisce un oggetto "ChatDTO" contenente la risposta dalla domanda  posta.
-
-#sourcecode[```tsx
-import { MessageDto } from "./message.dto";
-export class ChatDTO {
-  constructor(
-    public readonly id: string,
-    public readonly question: MessageDto,
-    public readonly answer: MessageDto,
-    public readonly lastUpdate: string,
-  ) {}
-}
-
-export class MessageDto {
-  constructor(
-    public readonly content: string,
-    public readonly timestamp: string,
-  ) {}
-}
-  ```]
-
-Prima però la richiesta viene mandata al microservizio di "Chatbot" che restituisce una risposta
-
-#sourcecode[```tsx
-export class ProvChat {
-  constructor(
-    public readonly question: string,
-    public readonly answer: string,
-    public readonly timestamp: string,
-  ) {}
-}
-  ```]
-
-contenente la domanda fatta e la risposta che è stata generata.
-
-Prima di essere passata verso il front-end, "ProvChat" viene inviata al microservizio "Storico"
-
-#sourcecode[```tsx
-postStorico(chat: ProvChat): Promise<Chat>;
-  ```]
-
-, il quale salva e assegna un UUID alla nuova #glossary ("Chat"), oltre alla data del #glossary ("Fetch"), in 'lastUpdate' a cui appartengono le informazioni con cui è stata generata. Lo "Storico" ritorna un oggetto "Chat" completo che quindi viene passato, attraverso l' #glossary("Endpoint") al front-end per essere visualizzato.
-
-
-
-== Storico Use-Case:
-
-Usato per caricare le chat salvate nel database del microservizio "Storico" nel front-end.
-L'endpoint 'get-storico' riceve una richiesta all'interno di 
-
-#sourcecode[```tsx
-  export class RequestChatDTO {
-  constructor(
-    public readonly id: string,
-    public readonly numChat: number
-  ) {}
-}
-  ```]
-
-con ("id") UUID dell'ultima chat visualizzabile nell'interfaccia grafica front-end e un ("numChat"), numero di chat(domanda + risposta) antecedenti a questa da caricare insieme.
-
-#sourcecode[```tsx
- async getStorico(@Query('id') id?: string,@Query('num') numChat?: number): Promise<ChatDTO[]>
-  ```]
-
-e restituisce al front-end un array di "Chat" invece che una sola. Se il sistema è stato appena avviato, viene mandata una richiesta con id ='  ' e num = 1 che restituisce l'ultima chat in ordine cronologico salvata nel database.
-
-Le "Chat" recuperate con 
-
-#sourcecode[```tsx
- getStorico(req: RequestChatCMD): Promise<Chat[]>;
-  ```]
-
-vengono mandate al front-end con questo formato #glossary ("Json")
-
-#sourcecode[```json
-.
-.
-[
-      {
-        "id": "ID DELLA CHAT",
-        "question": {
-          "content": "Domanda"
-          "timestamp": "DATA DOMANDA"
-        },
-        "answer": {
-          "content": "Risposta",
-          "timestamp": "DATA RISPOSTA"
-        }
-      }
-]
-.
-.
-  ```]
-
-dove vengono suddivise e visualizzate in ordine cronologico .
-
-
-== Scheduling del Fetch:
-Inoltre Api-Gateway si occupa anche dello scheduling del fetch delle informazioni nel microservizio di "Information" e del passaggio della data in cui viene effettuato al microservizio di "Storico" con
-
-#sourcecode[```tsx
-postUpdate(LastFetch:string): Promise<Boolean>;
-  ```]
-per essere salvata e poi fornita all'utente all'interno della #glossary ("Chat") che riceve indicando a quando risalgono le informazioni usate per formulare la risposta. 
-
-Prima però viene fatto un check per controllare se esiste una data di #glossary("fetch") nel database con
-
-#sourcecode[```tsx
-getLastUpdate(): Promise<LastUpdateCMD>;
-  ```]
-
-, se non esiste significa che non è stato ancora fatto nessun fetch e in questo caso viene effettuato un fetch completo che recupera tutte le informazioni. In questo caso noi abbiamo messo la data di qualche mese fa per facilitare il test siccome il fetch, soprattutto di github, richiede tempo, ma se non si mettesse una data viene fatto il fetch di tutto.
-
-Nel caso invece esista questa viene usata come data di partenza.
-
-Per gestire lo scheduling viene usato `@Cron` della libreria  `@nestjs/schedule`(in questo caso è stato impostato per essere effettuato ogni 5 minuti su richiesta dell'azienda). Oltre alla data vengono  passati anche una serie di oggetti che contengono dati sulle repository che vengono usati dal microservizio di "Information" per fare il fetch delle informazioni.
-
-#sourcecode[```tsx
-  ...
-export class TasksService implements OnModuleInit {
-  private readonly logger = new Logger(TasksService.name);
-
-  constructor(
-    @Inject('InfoPort') private readonly infoPort: InfoPort,
-    @Inject('StoricoPort') private readonly storicoPort: StoricoPort,
-  ) {}
-
-  @Cron('0 */5 * * * *')
-  async handleCron() {
-    this.logger.debug('Esecuzione FETCH ogni TOT (ogni 5 min)...');
-    await this.runFetch();
-  }
-
-  private async runFetch() {
-    try {
-      this.logger.debug('Richiesta della data di ultimo FETCH (SERVICE)');
-      const isoDateString = await this.storicoPort.getLastUpdate();
-      
-      let DataFetch: Date;
-
-      if (!isoDateString?.LastFetch) {
-
-        DataFetch = new Date();
-        DataFetch.setMonth(DataFetch.getMonth() - 9);
-        this.logger.warn(`Nessuna data FETCH (SERVICE) precedente. Uso data di fallback: ${DataFetch}`);
-      } else {
-        DataFetch = new Date(isoDateString.LastFetch);
-        this.logger.debug(`FETCH (SERVICE) da data salvata trovata: ${DataFetch}`);
-      }
-
-      const boardId = 1;
-      const jiraCmd = new FetchJiraCMD(boardId, DataFetch);
-      const confCmd = new FetchConfluenceCMD(DataFetch);
-
-      const owner = process.env.GITHUB_OWNER || 'SweeTenTeam';
-      const repoName = process.env.GITHUB_REPO || 'BuddyBot';
-      const branch = process.env.GITHUB_BRANCH || 'develop';
-      const repoCMD = new RepoGithubCMD(owner, repoName, branch);
-      const githubCmd = new FetchGithubCMD([repoCMD], DataFetch);
-
-      const resultFetchJira = await this.infoPort.fetchUpdateJira(jiraCmd);
-      const resultFetchConf = await this.infoPort.fetchUpdateConf(confCmd);
-      const resultFetchGithub = await this.infoPort.fetchUpdateGithub(githubCmd);
-
-      if (resultFetchJira && resultFetchGithub && resultFetchConf) {
-        this.logger.log(`FETCH (SERVICE) completato con successo.`);
-
-        const NewDataFetch = new Date();
-        const lastUpdateCmd = new LastUpdateCMD(NewDataFetch.toISOString());
-        const result = await this.storicoPort.postUpdate(lastUpdateCmd);
-
-        this.logger.debug(`Salvataggio data fetch riuscito: ${result}`);
-      } else {
-        this.logger.error(`FETCH (SERVICE) fallito: almeno uno dei servizi ha dato errore.`);
-      }
-    } catch (error) {
-      this.logger.error('Errore nel FETCH (SERVICE) iniziale', error);
-    }
-  }
-}
-  ```]
-
-Con *'FetchGithubCMD'* che contiene  le informazioni della repo a cui fare riferimento, questi sono salvati in un file '.env' per essere facilmente modificabili.
-
-#sourcecode[```tsx
-  
-import { RepoGithubCMD } from "./RepoGithubCMD.js";
-export class FetchGithubCMD {
-    constructor (
-        public readonly repoDTOList: RepoGithubCMD[],
-        public readonly lastUpdate: Date
-    ){}
-}
-//CHE USA
-export class RepoGithubCMD{
-    constructor(
-        public readonly owner: string,
-        public readonly repoName: string,
-        public readonly branch_name: string
-    ){}
-}
-  ```]
-  
-  Sono state messe 3 diverse funzioni per il fetch , una per ogni fonte, per rendere il codice facilmente espandibile in futuro, nel caso si vogliano aggiungere nuovi fonti basterà aggiungere la loro funzione e creare il loro oggetto con i dati necessari. Ma anche nel caso si voglia dare tempi di scheduling differenti ad ogni fonte e salvare nel database date di diverse per ciascuna.
-  
-#sourcecode[```tsx
-
-export interface InfoPort {
-  fetchUpdateGithub(req: FetchGithubCMD): Promise<Boolean>;
-  fetchUpdateJira(req: FetchJiraCMD): Promise<Boolean>;
-  fetchUpdateConf(req: FetchConfluenceCMD): Promise<Boolean>;
-}
-  ```]
 === ShadCn
 
 Libreria di componenti pre-impostati, pronti all'uso e altamente customizzabili. Il team ha scelto di utilizzare ShadCn per la sua facilità d'uso e per la sua documentazione dettagliata, oltre che per sfruttare al massimo il principio del riuso.
@@ -623,7 +361,267 @@ Uno degli aspetti fondamentali dell'implementazione del backend è stato l'uso d
 
 NestJS adotta un *container per le dipendenze* che consente di dichiarare i provider una sola volta e iniettarli ovunque siano richiesti tramite il costruttore delle classi. Ogni modulo dell'applicazione può registrare provider, che vengono poi risolti automaticamente dal framework quando una classe dichiara di averne bisogno.
 
+#pagebreak();
+
 = Progettazione di dettaglio
+
+== Microservizio Api-Gateway
+
+#figure(
+    image(st.diag_api_gateway, width: 100%, height: auto),
+    caption: "Diagramma UML del microservizio Api-Gateway",
+) 
+
+
+
+Il microservizio *API Gateway* svolge un ruolo cruciale nell'architettura di #glossary("BuddyBot"), fungendo da punto di ingresso centralizzato per tutte le richieste provenienti dal #glossary("front-end") e indirizzandole verso i microservizi appropriati, garantendo il routing delle richieste e la gestione delle risposte.
+
+Come per gli altri microservizi, anche l'API Gateway è stato progettato secondo i principi dell'architettura esagonale, al fine di garantire una netta separazione tra la logica di business e le applicazioni esterne. L'obiettivo è quello di mantenere il sistema flessibile, testabile e facilmente manutenibile.
+
+In particolare, l'API Gateway interagisce con i microservizi tramite porte e adattatori dedicati, utilizzando #glossary("Rest-Api") per comunicare con il #glossary("front-end") e  #glossary("RabbitMQ") per la messaggistica con gli altri microservizi. Questo approccio consente di mantenere l'API Gateway completamente agnostico rispetto ai dettagli di implementazione dei microservizi, favorendo una maggiore scalabilità nel futuro.
+
+Compiti dell'API gateway:
+- comunicazione attraverso #glossary("Rest-Api") con il front-end (`@Get('get-storico')` e  `@Post('get-risposta')`);
+- instradamento delle richieste ai microservizi appropriati ( Storico, ChatBot e Information):
+  - recupero di nuova risposta dal servizio di Chatbot;
+  - recupero dello storico dal servizio di Storico;
+  - scheduling del fetch delle informazioni nel microservizio  "Information".
+
+
+=== Risposta Use-Case:
+
+L'endpoint 'get-risposta' riceve dal #glossary("front-end") una richiesta `@Post('get-risposta')` contenente il corpo "(text)" e la data "(date)" della domanda,
+
+#sourcecode[```tsx
+  async getRisposta(@Body('text') text: string, @Body('timestamp') timestamp: string): Promise<ChatDTO>   
+  ```]
+
+all'interno di un 
+
+#sourcecode[```tsx
+export class ReqAnswerDTO {
+    constructor(
+      public readonly text: string,
+      public readonly date: string
+    ) {}
+  }
+  ```]
+  
+e restituisce un oggetto "ChatDTO" contenente la risposta dalla domanda  posta.
+
+#sourcecode[```tsx
+import { MessageDto } from "./message.dto";
+export class ChatDTO {
+  constructor(
+    public readonly id: string,
+    public readonly question: MessageDto,
+    public readonly answer: MessageDto,
+    public readonly lastUpdate: string,
+  ) {}
+}
+
+export class MessageDto {
+  constructor(
+    public readonly content: string,
+    public readonly timestamp: string,
+  ) {}
+}
+  ```]
+
+Prima però la richiesta viene mandata al microservizio di "Chatbot" che restituisce una risposta
+
+#sourcecode[```tsx
+export class ProvChat {
+  constructor(
+    public readonly question: string,
+    public readonly answer: string,
+    public readonly timestamp: string,
+  ) {}
+}
+  ```]
+
+contenente la domanda fatta e la risposta che è stata generata.
+
+Prima di essere passata verso il front-end, "ProvChat" viene inviata al microservizio "Storico"
+
+#sourcecode[```tsx
+postStorico(chat: ProvChat): Promise<Chat>;
+  ```]
+
+, il quale salva e assegna un UUID alla nuova #glossary ("Chat"), oltre alla data del #glossary ("Fetch"), in 'lastUpdate' a cui appartengono le informazioni con cui è stata generata. Lo "Storico" ritorna un oggetto "Chat" completo che quindi viene passato, attraverso l' #glossary("Endpoint") al front-end per essere visualizzato.
+
+
+
+=== Storico Use-Case:
+
+Usato per caricare le chat salvate nel database del microservizio "Storico" nel front-end.
+L'endpoint 'get-storico' riceve una richiesta all'interno di 
+
+#sourcecode[```tsx
+  export class RequestChatDTO {
+  constructor(
+    public readonly id: string,
+    public readonly numChat: number
+  ) {}
+}
+  ```]
+
+con ("id") UUID dell'ultima chat visualizzabile nell'interfaccia grafica front-end e un ("numChat"), numero di chat(domanda + risposta) antecedenti a questa da caricare insieme.
+
+#sourcecode[```tsx
+ async getStorico(@Query('id') id?: string,@Query('num') numChat?: number): Promise<ChatDTO[]>
+  ```]
+
+e restituisce al front-end un array di "Chat" invece che una sola. Se il sistema è stato appena avviato, viene mandata una richiesta con id ='  ' e num = 1 che restituisce l'ultima chat in ordine cronologico salvata nel database.
+
+Le "Chat" recuperate con 
+
+#sourcecode[```tsx
+ getStorico(req: RequestChatCMD): Promise<Chat[]>;
+  ```]
+
+vengono mandate al front-end con questo formato #glossary ("Json")
+
+#sourcecode[```json
+.
+.
+[
+      {
+        "id": "ID DELLA CHAT",
+        "question": {
+          "content": "Domanda"
+          "timestamp": "DATA DOMANDA"
+        },
+        "answer": {
+          "content": "Risposta",
+          "timestamp": "DATA RISPOSTA"
+        }
+      }
+]
+.
+.
+  ```]
+
+dove vengono suddivise e visualizzate in ordine cronologico .
+
+
+=== Scheduling del Fetch:
+Inoltre Api-Gateway si occupa anche dello scheduling del fetch delle informazioni nel microservizio di "Information" e del passaggio della data in cui viene effettuato al microservizio di "Storico" con
+
+#sourcecode[```tsx
+postUpdate(LastFetch:string): Promise<Boolean>;
+  ```]
+per essere salvata e poi fornita all'utente all'interno della #glossary ("Chat") che riceve indicando a quando risalgono le informazioni usate per formulare la risposta. 
+
+Prima però viene fatto un check per controllare se esiste una data di #glossary("fetch") nel database con
+
+#sourcecode[```tsx
+getLastUpdate(): Promise<LastUpdateCMD>;
+  ```]
+
+, se non esiste significa che non è stato ancora fatto nessun fetch e in questo caso viene effettuato un fetch completo che recupera tutte le informazioni. In questo caso noi abbiamo messo la data di qualche mese fa per facilitare il test siccome il fetch, soprattutto di github, richiede tempo, ma se non si mettesse una data viene fatto il fetch di tutto.
+
+Nel caso invece esista questa viene usata come data di partenza.
+
+Per gestire lo scheduling viene usato `@Cron` della libreria  `@nestjs/schedule`(in questo caso è stato impostato per essere effettuato ogni 5 minuti su richiesta dell'azienda). Oltre alla data vengono  passati anche una serie di oggetti che contengono dati sulle repository che vengono usati dal microservizio di "Information" per fare il fetch delle informazioni.
+
+#sourcecode[```tsx
+  ...
+export class TasksService implements OnModuleInit {
+  private readonly logger = new Logger(TasksService.name);
+
+  constructor(
+    @Inject('InfoPort') private readonly infoPort: InfoPort,
+    @Inject('StoricoPort') private readonly storicoPort: StoricoPort,
+  ) {}
+
+  @Cron('0 */5 * * * *')
+  async handleCron() {
+    this.logger.debug('Esecuzione FETCH ogni TOT (ogni 5 min)...');
+    await this.runFetch();
+  }
+
+  private async runFetch() {
+    try {
+      this.logger.debug('Richiesta della data di ultimo FETCH (SERVICE)');
+      const isoDateString = await this.storicoPort.getLastUpdate();
+      
+      let DataFetch: Date;
+
+      if (!isoDateString?.LastFetch) {
+
+        DataFetch = new Date();
+        DataFetch.setMonth(DataFetch.getMonth() - 9);
+        this.logger.warn(`Nessuna data FETCH (SERVICE) precedente. Uso data di fallback: ${DataFetch}`);
+      } else {
+        DataFetch = new Date(isoDateString.LastFetch);
+        this.logger.debug(`FETCH (SERVICE) da data salvata trovata: ${DataFetch}`);
+      }
+
+      const boardId = 1;
+      const jiraCmd = new FetchJiraCMD(boardId, DataFetch);
+      const confCmd = new FetchConfluenceCMD(DataFetch);
+
+      const owner = process.env.GITHUB_OWNER || 'SweeTenTeam';
+      const repoName = process.env.GITHUB_REPO || 'BuddyBot';
+      const branch = process.env.GITHUB_BRANCH || 'develop';
+      const repoCMD = new RepoGithubCMD(owner, repoName, branch);
+      const githubCmd = new FetchGithubCMD([repoCMD], DataFetch);
+
+      const resultFetchJira = await this.infoPort.fetchUpdateJira(jiraCmd);
+      const resultFetchConf = await this.infoPort.fetchUpdateConf(confCmd);
+      const resultFetchGithub = await this.infoPort.fetchUpdateGithub(githubCmd);
+
+      if (resultFetchJira && resultFetchGithub && resultFetchConf) {
+        this.logger.log(`FETCH (SERVICE) completato con successo.`);
+
+        const NewDataFetch = new Date();
+        const lastUpdateCmd = new LastUpdateCMD(NewDataFetch.toISOString());
+        const result = await this.storicoPort.postUpdate(lastUpdateCmd);
+
+        this.logger.debug(`Salvataggio data fetch riuscito: ${result}`);
+      } else {
+        this.logger.error(`FETCH (SERVICE) fallito: almeno uno dei servizi ha dato errore.`);
+      }
+    } catch (error) {
+      this.logger.error('Errore nel FETCH (SERVICE) iniziale', error);
+    }
+  }
+}
+  ```]
+
+Con *'FetchGithubCMD'* che contiene  le informazioni della repo a cui fare riferimento, questi sono salvati in un file '.env' per essere facilmente modificabili.
+
+#sourcecode[```tsx
+  
+import { RepoGithubCMD } from "./RepoGithubCMD.js";
+export class FetchGithubCMD {
+    constructor (
+        public readonly repoDTOList: RepoGithubCMD[],
+        public readonly lastUpdate: Date
+    ){}
+}
+//CHE USA
+export class RepoGithubCMD{
+    constructor(
+        public readonly owner: string,
+        public readonly repoName: string,
+        public readonly branch_name: string
+    ){}
+}
+  ```]
+  
+  Sono state messe 3 diverse funzioni per il fetch , una per ogni fonte, per rendere il codice facilmente espandibile in futuro, nel caso si vogliano aggiungere nuovi fonti basterà aggiungere la loro funzione e creare il loro oggetto con i dati necessari. Ma anche nel caso si voglia dare tempi di scheduling differenti ad ogni fonte e salvare nel database date di diverse per ciascuna.
+  
+#sourcecode[```tsx
+
+export interface InfoPort {
+  fetchUpdateGithub(req: FetchGithubCMD): Promise<Boolean>;
+  fetchUpdateJira(req: FetchJiraCMD): Promise<Boolean>;
+  fetchUpdateConf(req: FetchConfluenceCMD): Promise<Boolean>;
+}
+  ```]
+
 == Progettazione frontend
 #set page(flipped: true)
 \
@@ -1080,18 +1078,18 @@ export class Adaptee {
 #pagebreak()
 
 
-= Microservizio Chatbot
+== Microservizio Chatbot
 #figure(image(spc.chatUml, width:118%, height: auto), caption: [UML ChatBot])
 
 Il microservizio Chatbot rappresenta una componente cruciale all'interno dell'architettura di #glossary("BuddyBot"), essendo responsabile dell'elaborazione delle domande degli utenti e della generazione di risposte pertinenti. Questo microservizio è progettato secondo i principi dell'architettura esagonale garantendo una netta separazione tra la logica di business e i dettagli implementativi.
 
 La sua funzione principale è quella di ricevere una domanda dall'utente, arricchirla con informazioni contestuali recuperate dal microservizio Informazioni, e utilizzare queste informazioni per generare una risposta accurata e rilevante attraverso un modello di linguaggio esterno (LLM).
 
-== Architettura e Componenti
+=== Architettura e Componenti
 
 L'architettura del microservizio è strutturata in diversi layer, ciascuno con responsabilità ben definite:
 
-=== Domain Layer
+==== Domain Layer
 Il Domain Layer contiene le entità core e i value objects che rappresentano i concetti fondamentali del dominio, indipendenti da qualsiasi tecnologia specifica:
 
 - *Entità*:
@@ -1102,7 +1100,7 @@ Il Domain Layer contiene le entità core e i value objects che rappresentano i c
 - *Value Objects*:
   - `ReqAnswerCmd`: Command object che incapsula la richiesta dell'utente
 
-=== Application Layer
+==== Application Layer
 L'Application Layer coordina il flusso di dati e implementa i casi d'uso dell'applicazione, orchestrando il lavoro delle entità del dominio:
 
 - *Use Cases (Interfaces)*:
@@ -1117,7 +1115,7 @@ L'Application Layer coordina il flusso di dati e implementa i casi d'uso dell'ap
 
 Questo layer implementa la logica applicativa senza dipendere direttamente da meccanismi specifici di persistenza o comunicazione, utilizzando le interfacce (ports) per interagire con il mondo esterno.
 
-=== Adapters Layer
+==== Adapters Layer
 L'Adapters Layer traduce le interazioni tra il core dell'applicazione e il mondo esterno, gestendo le conversioni di formato e protocollo:
 
 - *Adapters In*:
@@ -1133,7 +1131,7 @@ L'Adapters Layer traduce le interazioni tra il core dell'applicazione e il mondo
 
 Gli adapter isolano il core dell'applicazione dai dettagli di implementazione delle tecnologie esterne, consentendo di sostituire facilmente tali tecnologie senza modificare la logica di business.
 
-=== Infrastructure Layer
+==== Infrastructure Layer
 L'Infrastructure Layer fornisce implementazioni concrete per servizi esterni, configurazioni e meccanismi di comunicazione:
 
 - *Clients*:
@@ -1149,7 +1147,7 @@ L'Infrastructure Layer fornisce implementazioni concrete per servizi esterni, co
 
 Questo layer si concentra esclusivamente sui dettagli tecnici e sulle implementazioni specifiche delle tecnologie, mantenendo queste preoccupazioni separate dalla logica di business.
 
-== Flusso Principale di Elaborazione
+=== Flusso Principale di Elaborazione
 
 Il flusso principale per la generazione di una risposta segue questi passaggi:
 
@@ -1343,7 +1341,7 @@ export class Metadata {
 }
 ```]
 
-== Integrazione con LangChain e Groq
+=== Integrazione con LangChain e Groq
 
 Il microservizio utilizza #glossary("LangChain") come framework per semplificare l'interazione con i modelli di linguaggio. In particolare:
 
@@ -1371,7 +1369,7 @@ Per l'integrazione con il modello #glossary("Groq"), il servizio utilizza il mod
 }
 ```]
 
-== Comunicazione con Altri Microservizi
+=== Comunicazione con Altri Microservizi
 
 La comunicazione con altri microservizi avviene principalmente tramite RabbitMQ:
 
@@ -1404,7 +1402,7 @@ const app = await NestFactory.createMicroservice<MicroserviceOptions>(
 ```]
 
 #pagebreak()
-== Configurazione e Ambiente
+=== Configurazione e Ambiente
 
 Il microservizio utilizza variabili d'ambiente per gestire le configurazioni:
 
@@ -1413,12 +1411,12 @@ Il microservizio utilizza variabili d'ambiente per gestire le configurazioni:
 
 La configurazione dell'ambiente è gestita tramite il modulo `ConfigModule` di NestJS, che carica automaticamente le variabili d'ambiente all'avvio dell'applicazione.
 
-== Conclusione
+=== Conclusione
 
 Il microservizio Chatbot rappresenta il cuore intelligente di #glossary("BuddyBot"), responsabile della generazione di risposte accurate e contestualmente rilevanti. La sua architettura esagonale garantisce una chiara separazione delle responsabilità, facilitando la manutenzione e l'evoluzione del sistema nel tempo. L'integrazione con #glossary("LangChain") e #glossary("Groq") fornisce capacità avanzate di elaborazione del linguaggio naturale, mentre la comunicazione tramite RabbitMQ assicura un'integrazione efficiente con gli altri componenti del sistema.
 
 #set page(flipped: true)
-=== Microservizio Storico Chat
+== Microservizio Storico Chat
 \
 \
 
@@ -1432,7 +1430,7 @@ In particolare, l'interazione con PostgreSQL è delegata a un repository dedicat
 La logica applicativa, invece, accede ai dati attraverso alle Port & Adapter di output, fungendo da mediatori con il repository.
 Questo approccio consente di mantenere l'"application" completamente agnostica rispetto alla tecnologia di persistenza, favorendo una maggiore manutenibilità, testabilità e flessibilità.
 
-==== Quattro casi d'uso
+=== Quattro casi d'uso
 Questo microservizio è stato progettato per l'esecuzione di 4 principali operazioni.
 - *Recupero dello Storico della Chat*
   - L'obiettivo è quello di recuperare dal database una specifica quantità di messaggi richiesti
@@ -1445,7 +1443,7 @@ Questo microservizio è stato progettato per l'esecuzione di 4 principali operaz
 
 Nelle prossime sezioni verranno riepilogati i 4 flussi per le rispettive operazioni.
 
-===== Recupero dello Storico della Chat
+=== Recupero dello Storico della Chat
 
 - *`FetchRequestDTO`*: rappresenta il Data Transfer Object utilizzato per contenere la richiesta di recupero dello storico. Include due parametri, ovvero:
   - ID: identificativo che rappresenta l'ultima `Chat` (coppia di messaggi, come verrà spiegato nella specifica classe) precedentemente caricata. Questo valore viene utilizzato come punto di riferimento cronologico per effettuare il fetch dei messaggi successivi, seguendo un ordinamento decrescente (dal più recente al meno recente);
@@ -1576,7 +1574,7 @@ Nelle prossime sezioni verranno riepilogati i 4 flussi per le rispettive operazi
   }
   ```]
 
-===== Inserimento di nuovi messaggi
+=== Inserimento di nuovi messaggi
 
 - *`InsertRequestDTO`*: rappresenta il Data Transfer Object utilizzato per contenere la richiesta di inserimento nel database di una nuova Chat (coppia di messaggi). Include tre parametri, ovvero:
   - question: una stringa contenente la domanda posta;
@@ -1657,7 +1655,7 @@ export class LastUpdateEntity {
 }
 ```]
 
-===== Inserimento dell'ultima data di recupero informazioni
+=== Inserimento dell'ultima data di recupero informazioni
 
 - *`LastUpdateDTO`*: data transfer object utilizzato per rappresentare il payload della richiesta in arrivo. Contiene un unico campo lastFetch, espresso come stringa, che rappresenta la data da registrare come ultimo fetch delle informazioni.
 
@@ -1713,7 +1711,7 @@ export class LastUpdateEntity {
 
 - *`LastUpdateEntity`*: rappresenta l'entità incaricata di tracciare la data dell'ultimo #glossary("Retrieval periodico") effettuato, ovvero l'ultimo momento in cui è stato eseguito un fetch globale delle informazioni. Nel database, la tabella _last_update_ ospita un unico record persistente, contenente esclusivamente la data di aggiornamento più recente.
 
-===== Ottenimento della data di ultimo recupero / aggiornamento informazioni
+=== Ottenimento della data di ultimo recupero / aggiornamento informazioni
 
 - *`LastUpdateDTO`*: data transfer object utilizzato per trasmettere verso l'esterno il valore corrente della data di ultimo aggiornamento.
 
