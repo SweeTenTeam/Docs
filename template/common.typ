@@ -1,4 +1,4 @@
-#import "@preview/tablex:0.0.8": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
+#import "@preview/tablex:0.0.9": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
 #import "@preview/codelst:2.0.1": sourcecode
 #import "@preview/cetz:0.2.0": *
 //variables for cover
@@ -23,7 +23,7 @@
   diagUC_elab_domanda: "/images/analisi-dei-requisiti/UC_elab_domanda.png",
   diacUC_inserimento_domanda: "/images/analisi-dei-requisiti/UC_inserimento_domanda.png",
   diagUC_UI-icone-doc: "/images/analisi-dei-requisiti/UC_Icon-UI_Docs.png",
-  diagUC_modifica_domanda:"/images/analisi-dei-requisiti/UC_modifica_domanda.png",
+  diagUC_modifica_domanda: "/images/analisi-dei-requisiti/UC_modifica_domanda.png",
   diagUC_seleziona_mod: "/images/analisi-dei-requisiti/UC_seleziona_mod.png",
   diagUC_chatbot_mess: "/images/analisi-dei-requisiti/UC_mess_chat.png",
   diagUC_user_mess: "/images/analisi-dei-requisiti/UC_user_mess.png",
@@ -72,6 +72,21 @@
   road: "/images/norme/roadmap.png",
 )
 
+#let mu = (
+  connection-error: "/images/manuale-utente/connection-error.png",
+  empty-history: "/images/manuale-utente/empty-history.png",
+  server-error: "/images/manuale-utente/server-error.png",
+  navbar: "/images/manuale-utente/navbar.png",
+  timeout-error: "/images/manuale-utente/timeout-error.png",
+  input-area: "/images/manuale-utente/input-area.png",
+  char-error: "/images/manuale-utente/char-error.png",
+  esempio: "/images/manuale-utente/esempio.png",
+  load-more: "/images/manuale-utente/load-more.png",
+  last-updated: "/images/manuale-utente/last-updated.png",
+  nav-left: "/images/manuale-utente/nav-left.png",
+  nav-right: "/images/manuale-utente/nav-right.png",
+)
+
 //Piano di qualifica
 #let gq = (
   AC: "/images/PdQ/AC.svg",
@@ -114,3 +129,5 @@
   NdP: "https://sweetenteam.github.io/pdf/documentazione_interna/rtb/Norme_di_Progetto_v1.0.0.pdf",
   Glossario: "https://sweetenteam.github.io/docs/RTB/Glossario",
 )
+
+
