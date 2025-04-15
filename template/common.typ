@@ -50,7 +50,29 @@
   next: "/images/analisi-dei-requisiti/next.png",
   tlw: "/images/analisi-dei-requisiti/tailwind.png",
   reactq: "/images/analisi-dei-requisiti/reactq.png",
+  jest: "/images/analisi-dei-requisiti/jest.png",
+  esl: "/images/analisi-dei-requisiti/esl.png",
+  shad: "/images/analisi-dei-requisiti/shad.png",
+  lucide: "/images/analisi-dei-requisiti/lucide.jpg",
 )
+
+#let spc = (
+  header: "/images/specifica-tecnica/header.png",
+  navbar: "/images/specifica-tecnica/navbar.png",
+  chat: "/images/specifica-tecnica/chatWindow.png",
+  bubble: "/images/specifica-tecnica/Bubble.png",
+  input: "/images/specifica-tecnica/inputForm.png",
+  uml: "/images/specifica-tecnica/uml.png",
+  chatUml: "/images/specifica-tecnica/chatBotUML.png",
+  prog_history: "/images/specifica-tecnica/prog_HistoryMicroserv.png",
+  confluence: "/images/specifica-tecnica/confluence.png",
+  github_fetch: "/images/specifica-tecnica/github_fetch.png",
+  github_store: "/images/specifica-tecnica/github_store.png",
+  diag_fetch_jira: "/images/specifica-tecnica/fetch_store_jira.png",
+  diag_retr_info: "/images/specifica-tecnica/retr_info.png",
+  diag_api_gateway: "/images/specifica-tecnica/api-gateway.png",
+)
+
 
 //Norme di progetto Immagini
 #let gn = (
@@ -87,17 +109,10 @@
   PV: "/images/PdQ/PV.svg",
 )
 
-#let spc = (
-  confluence: "/images/specifica-tecnica/confluence.png",
-  github_fetch: "/images/specifica-tecnica/github_fetch.png",
-  github_store: "/images/specifica-tecnica/github_store.png",
-)
-
 // Immagini per i verbali
 #let vb = (
   MI: "/images/verbali/Message.png",
 )
-
 
 //team members
 #let p = (
@@ -111,7 +126,7 @@
   santi: "Andrea Santi",
   vardanega: "Prof. Tullio Vardanega",
   cardin: "Prof. Riccardo Cardin",
-  blank: "",
+  blank: "blank",
 )
 
 //docs
