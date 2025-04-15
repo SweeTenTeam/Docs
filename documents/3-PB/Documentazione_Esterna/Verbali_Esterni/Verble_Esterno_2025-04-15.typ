@@ -23,13 +23,13 @@
 
 - Luogo: Google Meet;
 
-- Ora di inizio: 10:00;
+- Ora di inizio: 10:30;
 
 - Ora di fine: 11:20;
 
 - Partecipanti: #p.belenkov, #p.benedetti, #p.ferazzani, #p.fracaro, #p.mahdi, #p.campagnaro, #p.santi.
 
-- Partecipanti Esterni: Mattia Gottardello, Martina Daniele.
+- Partecipanti Esterni: Nicola Boscaro, Martina Daniele.
 
 
 == Ordine del giorno
