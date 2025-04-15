@@ -999,7 +999,7 @@ In conclusione, possiamo affermare che tutti i documenti prodotti risultano legg
 
 #pagebreak()
 
-== *`M-PRC-TE`* - Efficienza Temporale
+== *`M-PRC-TE`* - Temporal Efficiency
 #figure(image(gq.TE1, width: 100%), caption: [Proiezione dell'efficienza temporale nei vari periodi di progetto.])\
 
 *`RTB`*: Il grafico mostra l'andamento della metrica sull'efficienza temporale nel corso dei vari periodi. Nei primi due periodi, la metrica si posiziona oltre il limite superiore accettabile, per poi stabilizzarsi entro valori adeguati a partire dal terzo periodo. Questo comportamento riflette il processo di adattamento del gruppo alle nuove tecnologie, ambienti e linguaggi richiesti, oltre che alle pratiche di gestione del progetto. Nel tempo, si osserva un netto miglioramento, con una riduzione del tempo necessario per raggiungere i risultati desiderati, segno di una maggiore esperienza acquisita dai membri del gruppo.
