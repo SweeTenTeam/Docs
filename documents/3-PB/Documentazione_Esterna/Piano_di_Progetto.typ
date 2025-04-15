@@ -181,7 +181,7 @@ La presenza di un termine all'interno del Glossario è evidenziata dal #glossary
 - Regolamento del progetto didattico: \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf") (Ultimo accesso: 2025-04-10)
 
 === Riferimenti informativi
-- I processi di ciclo di vita del software \
+- T2 - Processi di ciclo di vita del software \
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf") (Ultimo accesso: 2025-04-10)
 
 - T4 - Gestione di progetto \
