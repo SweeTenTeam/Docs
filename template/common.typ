@@ -64,7 +64,13 @@
   input: "/images/specifica-tecnica/inputForm.png",
   uml: "/images/specifica-tecnica/uml.png",
   chatUml: "/images/specifica-tecnica/chatBotUML.png",
-  prog_history: "/images/specifica-tecnica/prog_HistoryMicroserv.png"
+  prog_history: "/images/specifica-tecnica/prog_HistoryMicroserv.png",
+  confluence: "/images/specifica-tecnica/confluence.png",
+  github_fetch: "/images/specifica-tecnica/github_fetch.png",
+  github_store: "/images/specifica-tecnica/github_store.png",
+  diag_fetch_jira: "/images/specifica-tecnica/fetch_store_jira.png",
+  diag_retr_info: "/images/specifica-tecnica/retr_info.png",
+  diag_api_gateway: "/images/specifica-tecnica/api-gateway.png",
 )
 
 
@@ -106,12 +112,6 @@
 // Immagini per i verbali
 #let vb = (
   MI: "/images/verbali/Message.png",
-)
-
-#let st = (
-diag_fetch_jira: "/images/specifica-tecnica/fetch_store_jira.png",
-diag_retr_info: "/images/specifica-tecnica/retr_info.png",
-diag_api_gateway: "/images/specifica-tecnica/api-gateway.png",
 )
 
 //team members

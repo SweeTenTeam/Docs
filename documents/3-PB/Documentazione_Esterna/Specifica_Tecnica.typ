@@ -5,8 +5,15 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "0.0.9",
+    "2025-04-15",
+    (p.belenkov),
+    (p.fracaro),
+    [
+      Aggiunta documentazione raccolta e salvataggio informazioni da Github e Confluence
+    ],
     "0.0.8",
-    "2025-04-04",
+    "2025-04-12",
     (p.fracaro),
     (p.belenkov),
     [
@@ -20,7 +27,7 @@
       Stesura tracciamento stato requisiti funzionali
     ],
     "0.0.6",
-    "2025-04-10",
+    "2025-04-09",
     (p.santi),
     (p.mahdi),
     [
@@ -261,6 +268,7 @@ L'utilizzo di Docker porta molti vantaggi, tra cui:
 
 _Docker Compose_ viene utilizzato per orchestrare e avviare automaticamente i container, garantendo l'interconnessione tra i microservizi e i database senza necessità di configurazioni manuali complesse.
 
+= Architettura di sistema
 
 == Strutturazione Generale del Sistema
 
@@ -824,7 +832,7 @@ export class Adaptee {
 == Microservizio Api-Gateway
 
 #figure(
-    image(st.diag_api_gateway, width: 100%, height: auto),
+    image(spc.diag_api_gateway, width: 100%, height: auto),
     caption: "Diagramma UML del microservizio Api-Gateway",
 ) 
 
@@ -1806,11 +1814,389 @@ Entità di repository per *Metadata*, essenziale per l'identificazione e gestion
 ==== Result
 Classe di supporto che fornisce un meccanismo standardizzato per rappresentare l'esito di operazioni di recupero e salvataggio dati. Permette di distinguere tra successo e fallimento, e in caso di errore, di fornire una descrizione dettagliata.
 
+=== Recupero e memorizzazione dei dati da GitHub
+
+#figure(
+    image(spc.github_fetch, width: 100%, height: auto),
+    caption: "Diagramma UML di dettaglio riguardo alla raccolta delle informazioni di Github",
+) 
+
+#figure(
+    image(spc.github_store, width: 100%, height: auto),
+    caption: "Diagramma UML di dettaglio riguardo al salvataggio delle informazioni di Github",
+) 
+
+==== FetchGithubDTO
+Classe che viene ricevuta in input dall'`InformationController`, contiene una lista di `RepoDTO`, spiegati in seguito, e la data dall'ultima raccolta di informazioni.
+
+```typescript
+export class FetchGithubDto {
+  constructor (
+    private repoDTOList: RepoGithubDTO[],
+    private lastUpdate?: Date
+  ){}
+}
+```
+==== RepoDTO
+Classe che contiene le informazioni necessarie a identificare univocamente la risorsa di cui vogliamo raccogliere le informazioni, ossia:
+- a chi appartiene il repository su #glossary("Github")
+- il nome del repository
+- il branch del repository
+```ts
+export class RepoGithubDTO{
+  constructor(
+    private owner: string,
+    private repoName: string,
+    private branch_name: string
+  ){}
+}
+```
+
+==== GithubCmd
+Questa classe rappresenta il Command che riceve la business logic, contiene una lista di `RepoCmd`, che contiene gli stessi campi di `RepoDTO`, e lo stesso 'lastUpdate' ricevuto nel `FetchGithubDto`
+
+```ts
+export class GithubCmd {
+  constructor(
+    private repoCmdList:RepoCmd[],
+    private lastUpdate?:Date
+  ){}  
+}
+```
+
+==== RepoCmd
+Questa classe è la classe `RepoDTO` adattata alla business logic.
+
+```ts
+export class RepoCmd{
+  constructor (
+    private owner: string,
+    private repoName: string,
+    private branch_name: string
+  ){}
+}
+```
+
+==== Commit
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere dei commit di una determinata repository.
+
+```ts
+export class Commit{
+    constructor(
+        private repoName: string,
+        private ownerRepository: string,
+        private branch: string,
+        private hash: string,
+        private message: string,
+        private dateOfCommit: string,
+        private modifiedFiles: string[],
+        private author: string,
+    ) {}
+    
+    toStringifiedJson(): string {
+        return JSON.stringify(this);
+    }
+
+    getMetadata(): Metadata {
+      return new Metadata(Origin.GITHUB, Type.COMMIT, this.hash);
+    }
+}
+``` 
+
+==== File
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere dei files di un determinato branch in una determinata repository.
+
+```ts
+export class File{
+    constructor(
+        private path: string,
+        private sha: string,
+        private repositoryName: string,
+        private branchName: string,
+        private content: string
+    ) {}
+    
+    toStringifiedJson(): string {
+        return JSON.stringify(this);
+    }
+
+    getMetadata(): Metadata {
+      return new Metadata(Origin.GITHUB, Type.FILE, this.sha);
+    }
+}
+```
+==== PullRequest
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere delle pull requests in una determinata repository.
+
+```ts
+export class PullRequest{
+    constructor(
+        private id: number,
+        private pull_number: number,
+        private title: string,
+        private description: string,
+        private status: string,
+        private assignees: string[],
+        private reviewers: string[],
+        private comments: CommentPR[],
+        private modifiedFiles: string[],
+        private fromBranch: string,
+        private toBranch: string,
+        private repository_name: string,
+    ) {}
+    
+    toStringifiedJson(): string {
+        return JSON.stringify(this);
+    }
+
+    getMetadata(): Metadata {
+      return new Metadata(Origin.GITHUB, Type.PULLREQUEST, this.id.toString());
+    }
+}
+```
+
+==== CommentPR
+Questa classe è oggetto della business logic, è contenuta all'interno di `PullRequest` in quanto si occupa di contenere al suo interno le informazioni riguardanti un determinato commento di review su una `PullRequest`.
+
+```ts
+export class CommentPR{
+    constructor(
+        private authorName: string,
+        private content: string,
+        private date: Date
+    ){}
+
+    getAuthorName(): string {
+        return this.authorName;
+    }
+
+    getContent(): string {
+        return this.content;
+    }
+
+    getDate(): Date {
+        return this.date;
+    }
+}
+```
+
+==== Repository
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere di una determinata repository.
+
+```ts
+export class Repository {
+    constructor(
+    private id: number,
+    private name: string,
+    private createdAt: string,
+    private lastUpdate: string,
+    private mainLanguage: string,
+  ) {}
+  
+  toStringifiedJson(): string {
+    return JSON.stringify(this);
+  }
+  
+  getMetadata(): Metadata {
+    return new Metadata(Origin.GITHUB, Type.REPOSITORY, this.id.toString());
+  }
+}
+```
+
+==== Workflow
+Questa classe è oggetto della business logic, contiene le informazioni che vogliamo raccogliere dei workflow in una determinata repository.
+
+```ts
+export class Workflow{
+  constructor(
+    private id: number,
+    private name: string,
+    private state: string,
+    private repository_name: string,
+  ) {}
+
+  toStringifiedJson(): string {
+    return JSON.stringify(this);
+  }
+
+  getMetadata(): Metadata {
+    return new Metadata(Origin.GITHUB, Type.WORKFLOW, this.id.toString());
+  }
+}
+```
+
+==== WorkflowRun
+Questa classe è oggetto della business logic, è contenuta all'interno di `Workflow` in quanto si occupa di contenere al suo interno le informazioni riguardanti una determinata run di un `Workflow`.
+
+```ts
+export class WorkflowRun {
+  constructor(
+    private readonly id: number,
+    private readonly status: string,
+    private readonly duration_seconds: number,
+    private log: string,
+    private trigger: string,
+    private workflow_id: number,
+    private workflow_name: string
+  ) {}
+
+  toStringifiedJson(): string {
+    return JSON.stringify(this);
+  }
+
+   getMetadata(): Metadata {
+    return new Metadata(Origin.GITHUB, Type.WORKFLOW_RUN, this.id.toString());
+  }
+} 
+```
+==== GithubFetchAndStoreController
+Controller che resta in attesa di messaggi sulla coda `information-queue`, al fine di portare a termine le operazioni di raccolta e salvataggio delle informazioni ottenute da Github. Ritorna come output un oggetto `ResultDTO`.
+
+==== GithubUseCase
+Interfaccia che si comporta da porta d'ingresso alla business logic, offre il metodo `fetchAndStoreInfo`, che prende in input il `GithubCmd` ricevuto dal controller.
+
+```ts
+export interface GithubUseCase {
+    fetchAndStoreGithubInfo(req: GithubCmd): Promise<Result>;
+}
+```
+==== GithubService
+La classe principale della business logic, che implementa `GithubUseCase` citato precedentemente. Si occupa di recuperare tutte le informazioni descritte nell'#glossary("Analisi dei Requisiti") e di salvarle nel database vettoriale.
+
+==== GithubCommitAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchCommitInfo` che riceve in input `GithubCmd` e ritorna in output una lista di `Commit`.
+
+```ts
+export interface GithubCommitAPIPort {
+    fetchGithubCommitsInfo(req: GithubCmd): Promise<Commit[]>
+}
+```
+
+==== GithubFileAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchGithubFilesInfo` che riceve in input `FileCmd` e ritorna in output una lista di `Commit`.
+
+```ts
+export interface GithubFilesAPIPort {
+    fetchGithubFilesInfo(req: FileCmd[]): Promise<File[]>
+}
+```
+==== GithubPullRequestAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchGithubPullRequestsInfo` che riceve in input `GithubCmd` e ritorna in output una lista di `PullRequest`.
+
+```ts
+export interface GithubPullRequestsAPIPort {
+    fetchGithubPullRequestsInfo(req: GithubCmd): Promise<PullRequest[]>
+}
+```
+==== GithubRepositoryAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchGithubRepositoryInfo` che riceve in input `GithubCmd` e ritorna in output una lista di `Repository`.
+
+```ts
+export interface GithubRepositoryAPIPort {
+    fetchGithubRepositoryInfo(req: GithubCmd): Promise<Repository[]>
+}
+```
+==== GithubWorkflowAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre i metodi: 
+- `fetchGithubWorkflowInfo` che riceve in input `GithubCmd` e ritorna in output una lista di `Workflow`.
+- `fetchGithubWorkflowRuns` che riceve in input `WorkflowRunCmd` e ritorna in output una lista di `WorkflowRun`.
+
+```ts
+export interface GithubWorkflowsAPIPort {
+    fetchGithubWorkflowInfo(req: GithubCmd): Promise<Workflow[]>
+    fetchGithubWorkflowRuns(req: WorkflowRunCmd): Promise<WorkflowRun[]>
+}
+```
+==== GithubAPIAdapter
+Questa classe implementa:
+- `GithubCommitAPIPort`
+- `GithubFileAPIPort`
+- `GithubPullRequestAPIPort`
+- `GithubRepositoryAPIPort`
+- `GithubWorkflowAPIPort`
+ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `GithubAPIRepository`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic.
+
+==== GithubAPIRepository
+Questa è la classe che si occupa di interfacciarsi direttamente con le API di Github. Esegue richieste tramite il client offerto da `octo-kit` e ritorna JSON con i dati 'grezzi'.
+
+==== GithubStoreInfoPort
+Questa è l'interfaccia che funge da porta d'uscita (outbound port) al fine di salvare i `GithubInfo` nel database vettoriale, offre il metodo `storeGithubInfo` che riceve in input una lista di `GithubInfo`.
+
+```typescript
+export interface GithubStoreInfoPort {
+    storeGithubInfo(req: GithubInfo): Promise<boolean>
+}
+```
+
+==== GithubStoreInfoAdapter
+Questa classe implementa `GithubStoreInfoPort`, si occupa di trasformare i `GithubInfo` in `Information` per poter essere usati dal `qdrant-information-repository` ed essere salvati sul database vettoriale.
+
+=== Recupero e memorizzazione dei dati da Confluence
+
+#figure(
+    image(spc.confluence, width: 100%, height: auto),
+    caption: "Diagramma UML di dettaglio riguardo a Confluence",
+) 
+
+==== ConfluenceController
+Controller che resta in attesa di messaggi sulla coda `information-queue`, al fine di portare a termine le operazioni di raccolta e salvataggio delle informazioni ottenute da Confluence. Ritorna come output un oggetto `ResultDTO`.
+
+==== ConfluenceUseCase
+Interfaccia che si comporta da porta d'ingresso alla business logic, offre il metodo `fetchAndStoreDocument`, che prende in input il `ConfluenceCmd` ricevuto dal controller e ritorna come output un oggetto `Result`.
+
+```typescript
+export interface ConfluenceUseCase {
+  fetchAndStoreConfluenceInfo(req: ConfluenceCmd): Promise<Result>;
+}
+```
+
+==== ConfluenceService
+La classe principale della business logic, che implementa `ConfluenceUseCase` citato precedentemente. Si occupa di recuperare i documenti creati e modificati entro una certa data, presente all'interno di `ConfluenceCmd`.
+
+```typescript
+export class ConfluenceService implements ConfluenceUseCase {
+  constructor(
+    @Inject(CONFLUENCE_API_PORT) private readonly confluenceAPIAdapter: ConfluenceAPIPort,
+    @Inject(CONFLUENCE_STORE_INFO_PORT) private readonly confluenceStoreAdapter: ConfluenceStoreInfoPort
+  ) {}
+
+  async fetchAndStoreConfluenceInfo(req: ConfluenceCmd): Promise<Result> {
+    const documents = await this.confluenceAPIAdapter.fetchDocuments(req);
+    return await this.confluenceStoreAdapter.storeDocuments(documents);;
+  }
+}
+```
+
+==== ConfluenceDocument
+Classe del domain, definisce le informazioni che vengono raccolte e viene usato come oggetto della business logic.
+
+==== ConfluenceAPIPort
+Interfaccia che si comporta come porta d'uscita (outbound port), offre il metodo `fetchDocuments` che riceve in input `ConfluenceCmd` e ritorna in output una lista di ConfluenceDocument.
+
+
+==== ConfluenceAPIAdapter
+Questa classe implementa `ConfluenceAPIPort`, ponendosi come adapter tra la business logic e la classe che si occupa di fare le richieste API, ossia `ConfluenceAPIRepository`. Trasforma infatti gli oggetti JSON 'grezzi' ritornati da quest'ultima e li trasforma negli oggetti della business logic di `ConfluenceDocument`.
+
+==== ConfluenceAPIRepository
+Questa è la classe che si occupa di interfacciarsi direttamente con le API di Confluence. Esegue richieste HTTP e ritorna JSON con i dati 'grezzi'.
+
+==== ConfluenceStorePort
+Questa è l'interfaccia che funge da porta d'uscita (outbound port) al fine di salvare i `ConfluenceDocument` nel database vettoriale, offre il metodo `storeDocuments` che riceve in input una lista di `ConfluenceDocument`.
+
+```typescript
+export interface ConfluenceStoreInfoPort {
+  storeDocuments(req: ConfluenceDocument[]): Promise<Result>;
+}
+```
+
+==== ConfluenceStoreAdapter
+Questa classe implementa `ConfluenceStorePort`, si occupa di trasformare i `ConfluenceDocument` in `Information` per poter essere usati dal `qdrant-information-repository` ed essere salvati sul database vettoriale.
+
 === Recupero e memorizzazione dei dati da Jira
 
 Il seguente diagramma illustra le classi coinvolte nel caso d'uso "Recupero e memorizzazione dei ticket di Jira", evidenziando l'architettura esagonale adottata:
 #figure(
-  image(st.diag_fetch_jira, width: 42em, fit: "contain"),
+  image(spc.diag_fetch_jira, width: 42em, fit: "contain"),
   caption: "Diagramma delle classi per il caso d'uso di recupero e memorizzazione dei ticket di Jira",
 )
 
@@ -1866,14 +2252,11 @@ Definisce l'interfaccia per la memorizzazione dei ticket, permettendo al nucleo 
 Implementa *StoreJiraPort* gestendo la persistenza dei ticket nel database vettoriale tramite *qdrant-information-repository*. Si occupa della trasformazione dei dati nel formato appropriato e dell'interazione con il meccanismo di storage.
 
 
-
-
-
 === Recupero di informazioni rilevanti basato sulle query utente
 
 Il seguente diagramma illustra le classi coinvolte nel caso d'uso "Recupero delle informazioni rilevanti basato sulle query utente", evidenziando l'architettura esagonale adottata: 
 #figure(
-  image(st.diag_retr_info, width: 42em, fit: "contain"),
+  image(spc.diag_retr_info, width: 42em, fit: "contain"),
   caption: "Diagramma delle classi per il caso d'uso di recupero di informazioni rilevanti basato sulle query utente",
 )
 ==== Componenti Principali
