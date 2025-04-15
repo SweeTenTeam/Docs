@@ -109,6 +109,8 @@
 )
 
 #let st = (
+diag_fetch_jira: "/images/specifica-tecnica/fetch_store_jira.png",
+diag_retr_info: "/images/specifica-tecnica/retr_info.png",
 diag_api_gateway: "/images/specifica-tecnica/api-gateway.png",
 )
 
