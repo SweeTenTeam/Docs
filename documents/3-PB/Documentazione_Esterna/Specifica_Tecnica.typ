@@ -223,8 +223,8 @@ Questa classe rappresenta il Command che riceve la business logic, contiene una 
 ```ts
 export class GithubCmd {
   constructor(
-    public readonly repoCmdList:RepoCmd[],
-    public readonly lastUpdate?:Date
+    private repoCmdList:RepoCmd[],
+    private lastUpdate?:Date
   ){}  
 }
 ```
@@ -235,9 +235,9 @@ Questa classe è la classe `RepoDTO` adattata alla business logic.
 ```ts
 export class RepoCmd{
   constructor (
-    public readonly owner: string,
-    public readonly repoName: string,
-    public readonly branch_name: string
+    private owner: string,
+    private repoName: string,
+    private branch_name: string
   ){}
 }
 ```
