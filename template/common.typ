@@ -10,6 +10,7 @@
   docs: "docs",
   logo: "/images/logos/sweetenteam.png",
   azzurro: "/images/logos/AzzurroDigitale-logo.png",
+  buddy: "/images/logos/buddy.png",
   unipd: "/images/logos/Universita_Padova_transparent.png",
 )
 
@@ -50,7 +51,29 @@
   next: "/images/analisi-dei-requisiti/next.png",
   tlw: "/images/analisi-dei-requisiti/tailwind.png",
   reactq: "/images/analisi-dei-requisiti/reactq.png",
+  jest: "/images/analisi-dei-requisiti/jest.png",
+  esl: "/images/analisi-dei-requisiti/esl.png",
+  shad: "/images/analisi-dei-requisiti/shad.png",
+  lucide: "/images/analisi-dei-requisiti/lucide.jpg",
 )
+
+#let spc = (
+  header: "/images/specifica-tecnica/header.png",
+  navbar: "/images/specifica-tecnica/navbar.png",
+  chat: "/images/specifica-tecnica/chatWindow.png",
+  bubble: "/images/specifica-tecnica/Bubble.png",
+  input: "/images/specifica-tecnica/inputForm.png",
+  uml: "/images/specifica-tecnica/uml.png",
+  chatUml: "/images/specifica-tecnica/chatBotUML.png",
+  prog_history: "/images/specifica-tecnica/prog_HistoryMicroserv.png",
+  confluence: "/images/specifica-tecnica/confluence.png",
+  github_fetch: "/images/specifica-tecnica/github_fetch.png",
+  github_store: "/images/specifica-tecnica/github_store.png",
+  diag_fetch_jira: "/images/specifica-tecnica/fetch_store_jira.png",
+  diag_retr_info: "/images/specifica-tecnica/retr_info.png",
+  diag_api_gateway: "/images/specifica-tecnica/api-gateway.png",
+)
+
 
 //Norme di progetto Immagini
 #let gn = (
@@ -108,7 +131,6 @@
   MI: "/images/verbali/Message.png",
 )
 
-
 //team members
 #let p = (
   azzurro: "AzzurroDigitale",
@@ -121,11 +143,12 @@
   santi: "Andrea Santi",
   vardanega: "Prof. Tullio Vardanega",
   cardin: "Prof. Riccardo Cardin",
-  blank: "",
+  blank: "blank",
 )
 
 //docs
 #let d = (
+  AdR: "https://sweetenteam.github.io/pdf/documentazione_esterna/rtb/Analisi_dei_Requisiti_v1.1.0.pdf",
   vGlossario: "v1.0",
   PdQ: "https://sweetenteam.github.io/pdf/documentazione_esterna/rtb/Piano_di_Qualifica_v1.0.0.pdf",
   NdP: "https://sweetenteam.github.io/pdf/documentazione_interna/rtb/Norme_di_Progetto_v1.0.0.pdf",
