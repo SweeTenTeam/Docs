@@ -312,7 +312,7 @@ Nella parte inferiore sinistra dell'area di input è presente contatore di carat
   caption: "Messaggio di errore",
 )
 
-Nel caso in cui il sistema generi una risposta troppo lunga, viene generato un messaggio di errore che informa l'utente dell'accaduto. In tal caso, l'utente può provare a riformulare la domanda in modo da ottenere una risposta più breve. TOFIX
+Nel caso in cui il sistema generi una risposta troppo lunga, viene generato un messaggio di errore che informa l'utente dell'accaduto. In tal caso, l'utente può provare a riformulare la domanda in modo da ottenere una risposta più breve. 
 #figure(
   image(mu.char-error, width: 100%, height: auto),
   caption: "Messaggio di errore",
