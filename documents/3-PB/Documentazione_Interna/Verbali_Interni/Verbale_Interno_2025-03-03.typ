@@ -7,6 +7,11 @@
     p.cardin,
   ),
   changelog: (
+    "1.0",
+    "2025-04-16",
+    (p.fracaro),
+    (p.santi),
+    "Revisione verbale per PB",
     "0.1",
     "2025-03-08",
     (p.belenkov),
