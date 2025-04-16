@@ -27,7 +27,7 @@
   diagUC_seleziona_mod: "/images/analisi-dei-requisiti/UC_seleziona_mod.png",
   diagUC_chatbot_mess: "/images/analisi-dei-requisiti/UC_mess_chat.png",
   diagUC_user_mess: "/images/analisi-dei-requisiti/UC_user_mess.png",
-  diagUC_load_more: "/images/analisi-dei-requisiti/UC_LoadMore.png"
+  diagUC_load_more: "/images/analisi-dei-requisiti/UC_LoadMore.png",
 )
 
 // tecnologie per AdR
@@ -74,6 +74,7 @@
 )
 
 #let mu = (
+  answer-error: "/images/manuale-utente/answer-error.png",
   connection-error: "/images/manuale-utente/connection-error.png",
   empty-history: "/images/manuale-utente/empty-history.png",
   server-error: "/images/manuale-utente/server-error.png",

@@ -44,7 +44,7 @@ Questo documento è redatto con approccio incrementale e modificato nel tempo pe
 
 == Glossario
 
-Per evitare ambiguità e incomprensione riguardanti la terminologia tecnica utilizzata nel documento, viene redatto e adottato un Glossario contenente le definizioni dei termini tecnici utilizzati. Il Glossario è consultabile #link("https://sweetenteam.github.io/docs/PB/glossario", "qui") e i termini presenti nel documento sono evidenziati con #glossary("questo stile").
+Per evitare ambiguità e incomprensione riguardanti la terminologia tecnica utilizzata nel documento, viene redatto e adottato un Glossario contenente le definizioni dei termini tecnici utilizzati. Il Glossario è consultabile sul nostro sito all'indirizzo #link("https://sweetenteam.github.io/docs/PB/Glossario") e i termini presenti nel documento sono evidenziati con #glossary("questo stile").
 
 
 == Riferimenti
@@ -312,9 +312,9 @@ Nella parte inferiore sinistra dell'area di input è presente contatore di carat
   caption: "Messaggio di errore",
 )
 
-Nel caso in cui il sistema generi una risposta troppo lunga, viene generato un messaggio di errore che informa l'utente dell'accaduto. In tal caso, l'utente può provare a riformulare la domanda in modo da ottenere una risposta più breve. 
+Nel caso in cui il sistema generi una risposta troppo lunga, viene generato un messaggio di errore che informa l'utente dell'accaduto. In tal caso, l'utente può provare a riformulare la domanda in modo da ottenere una risposta più breve.
 #figure(
-  image(mu.char-error, width: 100%, height: auto),
+  image(mu.answer-error, width: 100%, height: auto),
   caption: "Messaggio di errore",
 )
 
