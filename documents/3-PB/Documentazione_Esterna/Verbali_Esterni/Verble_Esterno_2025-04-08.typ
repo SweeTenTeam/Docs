@@ -7,6 +7,13 @@
     p.cardin,
   ),
   changelog: (
+    "1.0",
+    "2025-04-16",
+    (p.mahdi),
+    (p.benedetti),
+    [
+      Approvazione per firma
+    ],
     "0.1",
     "2025-04-08",
     (p.ferazzani),
