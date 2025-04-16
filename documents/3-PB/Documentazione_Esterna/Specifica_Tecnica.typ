@@ -5,6 +5,13 @@
   title: "Specifica Tecnica",
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "1.0.0",
+    "2025-04-15",
+    (p.belenkov),
+    (p.mahdi),
+    [
+      Approvazione per PB
+    ],
     "0.0.9",
     "2025-04-15",
     (p.belenkov),
@@ -39,7 +46,7 @@
     (p.fracaro),
     [
       Aggiunta sezione microservizio ChatBot
-      ],
+    ],
     "0.0.4",
     "2025-04-03",
     (p.fracaro),
@@ -63,8 +70,8 @@
     ],
     "0.0.1",
     "2025-02-27",
-    (p.ferazzani),
     (p.mahdi),
+    (p.benedetti),
     [
       Stesura sezione microservizio Api-Gateway
     ],
