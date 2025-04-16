@@ -11,7 +11,7 @@
     none,
     "2025-04-15",
     p.mahdi,
-    p.campagnaro,
+    p.santi,
     [
       Prima stesura del documento
     ],
@@ -64,12 +64,12 @@ Per agevolare la consultazione dei documenti, il gruppo si è munito di un sito 
 
 #align(center, link("https://sweetenteam.github.io/docs/PB"))
 
-Viene inoltre fornito il *MVP*, approvato dal proponente in data 15/04/2025, è disponibile al seguente link:
+Viene inoltre fornito il *MVP*, approvato dal proponente in data 15/04/2025, disponibile al seguente link:
 
 #align(center, link("https://github.com/SweeTenTeam/BuddyBot"))
 
 
-Il gruppo #g.name è riuscito a rispettare i costi preventivati di *€12.740,00*. Tuttavia è stato registrato un ritardo di 4 giorni rispetto a quanto preventivato, la data di consegna era infatti prevista per la data 11/04/2024.
+Il gruppo #g.name è riuscito a rispettare i costi preventivati di *€12.740,00* consumando l'intero budget. Tuttavia è stato registrato un ritardo di 4 giorni rispetto a quanto preventivato, la data di consegna era infatti prevista per la data 11/04/2024.
 Le tabelle orarie sono riportate nel documento *`Piano_di_Progetto_v2.0.0.pdf`*
 
 #linebreak()
