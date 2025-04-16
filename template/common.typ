@@ -28,6 +28,7 @@
   diagUC_seleziona_mod: "/images/analisi-dei-requisiti/UC_seleziona_mod.png",
   diagUC_chatbot_mess: "/images/analisi-dei-requisiti/UC_mess_chat.png",
   diagUC_user_mess: "/images/analisi-dei-requisiti/UC_user_mess.png",
+  diagUC_load_more: "/images/analisi-dei-requisiti/UC_LoadMore.png"
 )
 
 // tecnologie per AdR
@@ -95,6 +96,21 @@
   road: "/images/norme/roadmap.png",
 )
 
+#let mu = (
+  connection-error: "/images/manuale-utente/connection-error.png",
+  empty-history: "/images/manuale-utente/empty-history.png",
+  server-error: "/images/manuale-utente/server-error.png",
+  navbar: "/images/manuale-utente/navbar.png",
+  timeout-error: "/images/manuale-utente/timeout-error.png",
+  input-area: "/images/manuale-utente/input-area.png",
+  char-error: "/images/manuale-utente/char-error.png",
+  esempio: "/images/manuale-utente/esempio.png",
+  load-more: "/images/manuale-utente/load-more.png",
+  last-updated: "/images/manuale-utente/last-updated.png",
+  nav-left: "/images/manuale-utente/nav-left.png",
+  nav-right: "/images/manuale-utente/nav-right.png",
+)
+
 //Piano di qualifica
 #let gq = (
   AC: "/images/PdQ/AC.svg",
@@ -137,3 +153,5 @@
   NdP: "https://sweetenteam.github.io/pdf/documentazione_interna/rtb/Norme_di_Progetto_v1.0.0.pdf",
   Glossario: "https://sweetenteam.github.io/docs/RTB/Glossario",
 )
+
+
