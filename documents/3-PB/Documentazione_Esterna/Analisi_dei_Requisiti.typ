@@ -5,6 +5,13 @@
   managers: (p.belenkov, p.mahdi),
   recipients: (p.vardanega, p.cardin, p.azzurro),
   changelog: (
+    "2.0.0",
+    "2025-04-16",
+    (p.santi),
+    (p.fracaro),
+    [
+      Approvazione documento per PB
+    ],
     "1.1.2",
     "2025-04-11",
     (p.fracaro),
