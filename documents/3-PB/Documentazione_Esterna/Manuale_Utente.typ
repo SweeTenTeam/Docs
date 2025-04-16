@@ -8,7 +8,14 @@
     p.cardin,
   ),
   changelog: (
-    "0.0.1",
+    "1.0.0",
+    "2025-04-16",
+    p.mahdi,
+    p.santi,
+    [
+      Approvazione documento per PB
+    ],
+    "1.0.1",
     "2025-03-10",
     p.ferazzani,
     p.mahdi,
