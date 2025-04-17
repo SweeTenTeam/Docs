@@ -892,10 +892,10 @@ Queste cartelle sono organizzate nel modo seguente, (i termini in *`grassetto`* 
   - *`Documentazione_Esterna`*:
     - *`Verbali_Esterni`*;
     - `Analisi_dei_Requisiti_v2.0.0.pdf`;
-    - `Manuale_Utente_v2.0.0.pdf`;
+    - `Manuale_Utente_v1.0.0.pdf`;
     - `Piano_di_Progetto_v2.0.0.pdf`;
     - `Piano_di_Qualifica_v2.0.0.pdf`.
-    - `Specifica_Tecnica_v2.0.0.pdf`;
+    - `Specifica_Tecnica_v1.0.0.pdf`;
     
   - *`Documentazione_Interna`*:
     - *`Verbali_Interni`*;
