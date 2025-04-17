@@ -15,7 +15,7 @@
     [
       Approvazione documento per PB
     ],
-    "1.0.1",
+    "0.1.0",
     "2025-03-10",
     p.ferazzani,
     p.mahdi,
