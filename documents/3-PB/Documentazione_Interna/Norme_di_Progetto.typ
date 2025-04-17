@@ -316,28 +316,28 @@ I verbali esterni, al contrario dei verbali interni, una volta redatti, verranno
 === Strumenti
 Gli strumenti software utilizzati nel processo di fornitura sono descritti di seguito.
 
-==== #glossary("Telegram")
+==== Telegram
 Servizio di messaggistica istantanea utilizzato per come metodo di comunicunicazione asincrona tra membri del gruppo.
 
-==== #glossary("Gmail")
+==== Gmail
 Servizio di posta elettronica utilizzato come metodo di comunicunicazione formale fra il team e i referenti del progetto.
 
-==== #glossary("Discord")
+==== Discord
 Piattaforma utilizzata dal team per effettuare videochiamate e scambiare informazioni, file, dati utili, link e appunti. #glossary("Discord"), attraverso un apposito canale, viene utilizzato anche per avere un riscontro immediato con il team di #box(image(g.azzurro, width: 5em, height: auto)).
 
-==== #glossary("Google Meet")
+==== Google Meet
 Piattaforma dove vengono svolti incontri, ogni due settimane, con l'azienda e i responsabili del progetto.
 
-==== #glossary("Google Calendar")
+==== Google Calendar
 Servizio che offre la possibilità di visualizzare le riunioni esterne e fissate dalla Proponente.
 
-==== #glossary("Fogli Google")
+==== Fogli Google
 Applicazione online che consente di creare e formattare fogli di calcolo. Viene utilizzata dal team per inserire e organizzare i dati relativi a preventivi e consuntivi dei vari periodi;
 
-==== #glossary("GitHub")
+==== GitHub
 Piattaforma online che consente agli sviluppatori di creare, salvare, gestire e condividere il proprio codice sorgente, facilitando la collaborazione e il controllo delle versioni.
 
-==== #glossary("Typst")
+==== Typst
 Linguaggio utilizzato per la creazione e la redazione della documentazione.
 
 == *Sviluppo*
@@ -373,7 +373,7 @@ Questa fase include tre aspetti principali:
 - *Supporto alla progettazione*: Fornitura di una base chiara e strutturata che consenta ai progettisti di definire in modo efficace l'architettura e il design del sistema, facilitando il lavoro successivo.
 - *Miglioramento della comunicazione*: Creazione di un linguaggio comune che agevoli il dialogo tra i fornitori e gli #glossary("stakeholders"), assicurando un allineamento completo sulle aspettative e sugli obiettivi.
 
-==== Diagrammi #glossary("UML") dei casi d'uso
+==== Diagrammi UML dei casi d'uso
 Un diagramma di caso d'uso è uno strumento grafico e intuitivo utilizzato per rappresentare in modo sintetico e comprensibile le funzionalità di un sistema e le interazioni tra gli attori e il sistema stesso. Fornisce una visione d'insieme degli scenari d'uso, descrivendo le azioni necessarie per consentire agli utenti di completare specifiche attività. Questo tipo di diagramma è particolarmente utile durante la fase di analisi e progettazione, in quanto evidenzia chiaramente i requisiti funzionali del sistema senza entrare nei dettagli implementativi.
 
 *Componenti principali*:
