@@ -77,6 +77,7 @@
     ],
   ),
   show_images_list: true,
+  image_width: 45%,
 )
 
 = *Introduzione*
