@@ -404,14 +404,14 @@
 #let glossary(word) = {
   let t = underline(word)
   if word != "questo stile" {
-    t = link(g.website + "/docs/RTB/Glossario" + "#" + lower(word.slice(0).replace(" ", "-")))[*#word*]
+    t = link(g.website + "/docs/PB/Documentazione_Interna/Glossario" + "#" + lower(word.slice(0).replace(" ", "-")))[*#word*]
   }
 
   text(fill: rgb("#a99c84"), style: "italic")[#t*#sub("G")*]
 }
 
 #let LTG(word) = {
-  let url = g.website + "/docs/RTB/Glossario#" + lower(word)
+  let url = g.website + "/docs/PB/Documentazione_Interna/Glossario#" + lower(word)
   let t = underline(word)
   let LTG = link(url)[*#t*]
   return LTG
