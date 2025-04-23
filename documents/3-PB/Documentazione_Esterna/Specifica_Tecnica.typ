@@ -2548,6 +2548,7 @@ Implementazione concreta della porta RetrievalInfoPort, interagisce con qdrant-i
   caption: "Stato Requisiti Funzionali",
 )
 #pagebreak()
+
 == Grafici riassuntivi
 #figure(image("../../../images/specifica-tecnica/reqObbligatori.png", width:70%),
   caption: [Stato dei requisiti funzionali obbligatori]
