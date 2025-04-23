@@ -704,6 +704,7 @@ export const chatReducer = (state: ChatState, action: ChatAction): ChatState => 
   }
 };
   ```]
+#pagebreak()
 
 === Gestione e adattamento dei dati per la chat
 Nel frontend di BuddyBot viene utilizzato il design pattern `Adapter` per gestire la comunicazione con le API e adattare i dati in un formato utilizzabile dall'applicazione.
@@ -1084,6 +1085,8 @@ export class RepoGithubCMD{
   ```]
   
   Sono state messe 3 diverse funzioni per il fetch , una per ogni fonte, per rendere il codice facilmente espandibile in futuro, nel caso si vogliano aggiungere nuovi fonti basterà aggiungere la loro funzione e creare il loro oggetto con i dati necessari. Ma anche nel caso si voglia dare tempi di scheduling differenti ad ogni fonte e salvare nel database date di diverse per ciascuna.
+
+  #pagebreak()
   
 #sourcecode[```tsx
 
@@ -1093,6 +1096,7 @@ export interface InfoPort {
   fetchUpdateConf(req: FetchConfluenceCMD): Promise<Boolean>;
 }
   ```]
+#pagebreak()
 
 == Microservizio Chatbot
 #figure(image(spc.chatUml, width:118%, height: auto), caption: [UML ChatBot])
@@ -1107,6 +1111,7 @@ L'architettura del microservizio è strutturata in diversi layer, ciascuno con r
 
 ==== Domain Layer
 Il Domain Layer contiene le entità core e i value objects che rappresentano i concetti fondamentali del dominio, indipendenti da qualsiasi tecnologia specifica:
+#pagebreak()
 
 - *Entità*:
   - `Chat`: Rappresenta una conversazione completa con domanda e risposta
@@ -1179,7 +1184,6 @@ Il flusso principale per la generazione di una risposta segue questi passaggi:
    - Le informazioni contestuali recuperate vengono combinate con la domanda originale
    - Il servizio utilizza `LLMPort` per interagire con un modello di linguaggio (#glossary("Groq"))
    - La risposta generata viene formattata come oggetto `Chat`
-#pagebreak()
 4. *Restituzione della risposta*
    - Il risultato viene restituito al chiamante (API Gateway)
 
@@ -1224,7 +1228,6 @@ export class ElaborazioneService implements ElaborazioneUseCase {
   }
 }
 ```]
-#pagebreak()
 ==== Adapters
 
 - *GroqAdapter*: Implementa `LLMPort` per interagire con il modello di linguaggio #glossary("Groq"). Utilizza #glossary("LangChain") per gestire i prompt e il parsing delle risposte.
@@ -1263,7 +1266,6 @@ export class GroqAdapter implements LLMPort {
 }
 ```]
 
-#pagebreak()
 
 - *VectorDbAdapter*: Implementa `VectorDbPort` per interagire con il microservizio DB Vettoriale tramite RabbitMQ.
 
@@ -1822,6 +1824,8 @@ Entità di repository per *Metadata*, essenziale per l'identificazione e gestion
 ==== Result
 Classe di supporto che fornisce un meccanismo standardizzato per rappresentare l'esito di operazioni di recupero e salvataggio dati. Permette di distinguere tra successo e fallimento, e in caso di errore, di fornire una descrizione dettagliata.
 
+#pagebreak()
+
 === Recupero e memorizzazione dei dati da GitHub
 
 #figure(
@@ -1845,6 +1849,8 @@ export class FetchGithubDto {
   ){}
 }
 ```
+#pagebreak()
+
 ==== RepoDTO
 Classe che contiene le informazioni necessarie a identificare univocamente la risorsa di cui vogliamo raccogliere le informazioni, ossia:
 - a chi appartiene il repository su #glossary("Github")
@@ -2068,6 +2074,7 @@ export interface GithubUseCase {
     fetchAndStoreGithubInfo(req: GithubCmd): Promise<Result>;
 }
 ```
+#pagebreak()
 ==== GithubService
 La classe principale della business logic, che implementa `GithubUseCase` citato precedentemente. Si occupa di recuperare tutte le informazioni descritte nell'#glossary("Analisi dei Requisiti") e di salvarle nel database vettoriale.
 
@@ -2138,6 +2145,7 @@ export interface GithubStoreInfoPort {
 
 ==== GithubStoreInfoAdapter
 Questa classe implementa `GithubStoreInfoPort`, si occupa di trasformare i `GithubInfo` in `Information` per poter essere usati dal `qdrant-information-repository` ed essere salvati sul database vettoriale.
+#pagebreak()
 
 === Recupero e memorizzazione dei dati da Confluence
 
@@ -2200,6 +2208,7 @@ export interface ConfluenceStoreInfoPort {
 ==== ConfluenceStoreAdapter
 Questa classe implementa `ConfluenceStorePort`, si occupa di trasformare i `ConfluenceDocument` in `Information` per poter essere usati dal `qdrant-information-repository` ed essere salvati sul database vettoriale.
 
+#pagebreak()
 === Recupero e memorizzazione dei dati da Jira
 
 Il seguente diagramma illustra le classi coinvolte nel caso d'uso "Recupero e memorizzazione dei ticket di Jira", evidenziando l'architettura esagonale adottata:
@@ -2258,7 +2267,7 @@ Definisce l'interfaccia per la memorizzazione dei ticket, permettendo al nucleo 
 ===== StoreJiraAdapter
 
 Implementa *StoreJiraPort* gestendo la persistenza dei ticket nel database vettoriale tramite *qdrant-information-repository*. Si occupa della trasformazione dei dati nel formato appropriato e dell'interazione con il meccanismo di storage.
-
+#pagebreak()
 
 === Recupero di informazioni rilevanti basato sulle query utente
 
