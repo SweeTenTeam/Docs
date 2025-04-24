@@ -1,5 +1,8 @@
 #import "/template/document.typ": *
 
+#set text(
+  size: 10.2pt
+)
 
 #show: project.with(
   title: "Lettera di Presentazione",
@@ -62,7 +65,7 @@ Al suo interno si possono trovare i documenti:
 
 Per agevolare la consultazione dei documenti, il gruppo si è munito di un sito web:
 
-#align(center, link("https://sweetenteam.github.io/docs/PB"))
+#align(center, link("https://sweetenteam.github.io"))
 
 Viene inoltre fornito il *MVP*, approvato dal proponente in data 15/04/2025, disponibile al seguente link:
 
