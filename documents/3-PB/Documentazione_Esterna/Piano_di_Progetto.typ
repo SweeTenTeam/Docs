@@ -471,7 +471,7 @@ A seguito di un confronto approfondito con l'azienda proponente e dopo un'attent
 
 A differenza dei modelli tradizionali, quello #glossary("Agile") si caratterizza per un approccio iterativo e dinamico. Il modello scelto implementato prevede cicli di sviluppo della durata di una o due settimane, durante i quali il team lavora in modo autonomo, pianificando, eseguendo e valutando le attività progettuali.
 
-== Principi Fondamentali
+== Principi fondamentali
 
 L'approccio #glossary("Agile") si basa su alcuni principi chiave che lo distinguono dai modelli di sviluppo tradizionali:
 
@@ -479,7 +479,7 @@ L'approccio #glossary("Agile") si basa su alcuni principi chiave che lo distingu
 - *Collaborazione*: Creazione di un ambiente di lavoro che favorisce comunicazione continua, condivisione delle conoscenze e supporto reciproco.
 - *Sviluppo Incrementale*: Realizzazione del prodotto attraverso rilasci frequenti e funzionali, che permettono una verifica continua.
 
-== Vantaggi Attesi
+== Vantaggi attesi
 
 L'adozione del modello #glossary("Agile") offre diversi benefici strategici:
 
@@ -487,7 +487,7 @@ L'adozione del modello #glossary("Agile") offre diversi benefici strategici:
 - *Soddisfazione degli Stakeholder*: Review periodiche e feedback continui garantiscono che il prodotto finale corrisponda alle aspettative dei committenti.
 - *Motivazione del Team*: L'approccio auto-organizzativo e la visualizzazione dei progressi mantengono alto il coinvolgimento dei membri.
 
-== Pratiche Implementative
+== Pratiche implementative
 
 Il modello #glossary("Agile") si concretizzerà attraverso:
 
